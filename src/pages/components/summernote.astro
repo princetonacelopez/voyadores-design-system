@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+---
+<BaseLayout title="Summernote" activeSection="components">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.voyadores.theme.min.css" />
+    <link rel="stylesheet" href="/css/summernote/summernote-bs5.min.css" />
+    <link rel="stylesheet" href="/css/summernote/summernote.voyadores.min.css" />
+  </Fragment>
+
+  <PageHeader
+    eyebrow="Components / Others"
+    title="Summernote"
+    description="A simple, hackable WYSIWYG rich-text editor built on Bootstrap 5. The Voyadores theme integrates seamlessly with the design system's color tokens."
+  />
+
+  <section class="sec">
+    <h2>Setup</h2>
+    <div class="code-block"><pre is:raw><code>&lt;link rel="stylesheet" href="https://cdn.voyadores.com/content/css/summernote/summernote-bs5.min.css" /&gt;
+&lt;link rel="stylesheet" href="https://cdn.voyadores.com/content/css/summernote/summernote.voyadores.min.css" /&gt;
+
+&lt;script src="https://cdn.voyadores.com/content/js/jquery/jquery-3.6.0.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.voyadores.com/content/js/bootstrap/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.voyadores.com/content/js/summernote/summernote-bs5.min.js"&gt;&lt;/script&gt;</code></pre></div>
+  </section>
+
+  <section class="sec">
+    <h2>Demo</h2>
+    <div class="bs-scope">
+      <div id="summernote">
+        <p>Start typing your content here. Use the toolbar above to <strong>format text</strong>, add <u>links</u>, insert images, or create lists.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Usage</h2>
+    <div class="code-block"><pre is:raw><code>// Basic initialization
+$('#editor').summernote({
+  height: 300,
+  placeholder: 'Start typing…',
+});
+
+// Get HTML content
+var html = $('#editor').summernote('code');
+
+// Set content
+$('#editor').summernote('code', '&lt;p&gt;Hello&lt;/p&gt;');
+
+// Destroy
+$('#editor').summernote('destroy');</code></pre></div>
+  </section>
+</BaseLayout>
+
+<script is:inline src="/js/jquery/jquery-3.6.0.min.js"></script>
+<script is:inline src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+<script is:inline src="/js/summernote/summernote-bs5.min.js"></script>
+<script is:inline>
+$(function () {
+  $('#summernote').summernote({
+    height: 280,
+    placeholder: 'Start typing…',
+    toolbar: [
+      ['style',  ['bold', 'italic', 'underline', 'clear']],
+      ['font',   ['strikethrough']],
+      ['para',   ['ul', 'ol', 'paragraph']],
+      ['insert', ['link', 'picture', 'hr']],
+      ['view',   ['codeview']],
+    ],
+  });
+});
+</script>
+
+<style>
+  .sec { margin-bottom: 56px; }
+  .sec h2 { font-size: 20px; font-weight: 500; letter-spacing: -.4px; color: var(--black); margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--g5); }
+  .code-block { background: #161616; border-radius: 4px; overflow: auto; }
+  .code-block pre { margin: 0; padding: 20px 24px; }
+  .code-block code { font-family: var(--mono); font-size: 13px; color: #f5f5f5; line-height: 1.8; white-space: pre; }
+  .bs-scope { cursor: auto; }
+</style>

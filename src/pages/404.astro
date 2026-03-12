@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="404 — Page Not Found">
+  <div class="notfound">
+    <p class="nf-code">404</p>
+    <h1 class="nf-h1">Page not found</h1>
+    <p class="nf-body">The page you're looking for doesn't exist or has been moved.</p>
+    <a href="/" class="nf-cta">← Back to Home</a>
+  </div>
+</BaseLayout>
+
+<style>
+  .notfound {
+    display: flex; flex-direction: column;
+    padding: 80px 0;
+  }
+  .nf-code {
+    font-size: 12px; font-weight: 600; font-family: var(--mono);
+    color: var(--brand); letter-spacing: .06em;
+    text-transform: uppercase; margin-bottom: 16px;
+  }
+  .nf-h1 {
+    font-size: 42px; font-weight: 600;
+    line-height: 1.04; letter-spacing: -.84px;
+    color: var(--black); margin-bottom: 16px;
+  }
+  .nf-body {
+    font-size: 16px; font-weight: 500;
+    color: var(--g2); line-height: 1.6; margin-bottom: 32px;
+  }
+  .nf-cta {
+    display: inline-flex; align-items: center;
+    padding: 12px 24px; background: var(--black);
+    color: var(--white); font-size: 14px; font-weight: 600;
+    border-radius: 6px; transition: background .15s;
+  }
+  .nf-cta:hover { background: var(--brand); }
+</style>

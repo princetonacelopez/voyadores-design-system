@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+---
+<BaseLayout title="Selectize" activeSection="components">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.voyadores.theme.min.css" />
+    <link rel="stylesheet" href="/css/selectize/selectize.voyadores.min.css" />
+  </Fragment>
+
+  <PageHeader
+    eyebrow="Components / Others"
+    title="Selectize"
+    description="jQuery-based enhanced select with search, multi-select, tagging, and remote data support. Ships with a Voyadores-branded theme."
+  />
+
+  <section class="sec">
+    <h2>Setup</h2>
+    <div class="code-block"><pre is:raw><code>&lt;link rel="stylesheet" href="https://cdn.voyadores.com/content/css/selectize/selectize.voyadores.min.css" /&gt;
+
+&lt;script src="https://cdn.voyadores.com/content/js/jquery/jquery-3.6.0.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.voyadores.com/content/js/selectize/selectize.min.js"&gt;&lt;/script&gt;</code></pre></div>
+  </section>
+
+  <section class="sec">
+    <h2>Demo</h2>
+    <div class="demo-area bs-scope">
+      <div class="field-group">
+        <label>Single Select</label>
+        <select id="sel-single" placeholder="Pick a category…">
+          <option value="">Pick a category…</option>
+          <option value="sales">Sales</option>
+          <option value="hr">Human Resources</option>
+          <option value="fin">Finance</option>
+          <option value="ops">Operations</option>
+          <option value="it">Information Technology</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Multi-select with tags</label>
+        <select id="sel-multi" multiple placeholder="Select skills…">
+          <option value="js">JavaScript</option>
+          <option value="ts">TypeScript</option>
+          <option value="py">Python</option>
+          <option value="cs">C#</option>
+          <option value="sql">SQL</option>
+          <option value="php">PHP</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Tag creation (type and press Enter)</label>
+        <input id="sel-tags" type="text" placeholder="Add tags…" />
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Usage</h2>
+    <div class="code-block"><pre is:raw><code>// Single select
+$('#my-select').selectize();
+
+// Multi-select with remove button
+$('#my-select').selectize({
+  plugins: ['remove_button'],
+  maxItems: null,
+});
+
+// Tag creation
+$('#my-input').selectize({
+  delimiter: ',',
+  persist: false,
+  create: function (input) {
+    return { value: input, text: input };
+  },
+});</code></pre></div>
+  </section>
+</BaseLayout>
+
+<script is:inline src="/js/jquery/jquery-3.6.0.min.js"></script>
+<script is:inline src="/js/selectize/selectize.min.js"></script>
+<script is:inline>
+$(function () {
+  $('#sel-single').selectize({ allowEmptyOption: true });
+  $('#sel-multi').selectize({ plugins: ['remove_button'], maxItems: null });
+  $('#sel-tags').selectize({ delimiter: ',', persist: false, create: function (input) { return { value: input, text: input }; } });
+});
+</script>
+
+<style>
+  .sec { margin-bottom: 56px; }
+  .sec h2 { font-size: 20px; font-weight: 500; letter-spacing: -.4px; color: var(--black); margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--g5); }
+  .code-block { background: #161616; border-radius: 4px; overflow: auto; }
+  .code-block pre { margin: 0; padding: 20px 24px; }
+  .code-block code { font-family: var(--mono); font-size: 13px; color: #f5f5f5; line-height: 1.8; white-space: pre; }
+  .demo-area { padding: 24px; border: 1px solid var(--g5); border-radius: 2px; background: var(--white); }
+  .bs-scope { cursor: auto; }
+  .field-group { margin-bottom: 20px; }
+  .field-group:last-child { margin-bottom: 0; }
+  .field-group label { display: block; font-size: 12px; font-weight: 600; color: var(--black); margin-bottom: 6px; }
+</style>

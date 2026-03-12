@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+---
+<BaseLayout title="Dropzone" activeSection="components">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/css/dropzone/dropzone.min.css" />
+  </Fragment>
+
+  <PageHeader
+    eyebrow="Components / Others"
+    title="Dropzone"
+    description="Standalone drag-and-drop file upload library with image preview thumbnails, progress bars, file type/size validation, and customizable templates."
+  />
+
+  <section class="sec">
+    <h2>Setup</h2>
+    <div class="code-block"><pre is:raw><code>&lt;link rel="stylesheet" href="https://cdn.voyadores.com/content/css/dropzone/dropzone.min.css" /&gt;
+
+&lt;script src="https://cdn.voyadores.com/content/js/dropzone/dropzone.min.js"&gt;&lt;/script&gt;</code></pre></div>
+  </section>
+
+  <section class="sec">
+    <h2>Demo</h2>
+    <div class="demo-area">
+      <div id="demo-dropzone" class="dropzone dz-voyadores"></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Usage</h2>
+    <div class="code-block"><pre is:raw><code>Dropzone.autoDiscover = false;
+
+const dz = new Dropzone('#my-dropzone', {
+  url: '/api/upload',         // required upload endpoint
+  maxFiles: 10,
+  maxFilesize: 5,             // MB
+  acceptedFiles: 'image/*,.pdf',
+  addRemoveLinks: true,
+  dictDefaultMessage: 'Drop files here or click to upload',
+
+  // Lifecycle hooks
+  init: function () {
+    this.on('addedfile', function (file) {
+      console.log('File added:', file.name);
+    });
+    this.on('success', function (file, response) {
+      console.log('Uploaded:', file.name, response);
+    });
+    this.on('error', function (file, errorMessage) {
+      console.error('Upload error:', errorMessage);
+    });
+    this.on('removedfile', function (file) {
+      console.log('Removed:', file.name);
+    });
+  },
+});
+
+// Programmatic control
+dz.removeAllFiles();        // clear all files
+dz.disable();               // disable dropzone
+dz.enable();                // re-enable</code></pre></div>
+  </section>
+</BaseLayout>
+
+<script is:inline src="/js/dropzone/dropzone.min.js"></script>
+<script is:inline>
+(function () {
+  Dropzone.autoDiscover = false;
+
+  new Dropzone('#demo-dropzone', {
+    url: '/api/upload',
+    autoProcessQueue: false,
+    maxFiles: 8,
+    maxFilesize: 5,
+    acceptedFiles: 'image/*,.pdf',
+    addRemoveLinks: true,
+    dictDefaultMessage: 'Drop files here or <u>click to upload</u>',
+    dictRemoveFile: 'Remove',
+    dictMaxFilesExceeded: 'You can upload up to 8 files.',
+    dictFileTooBig: 'File is too large ({{filesize}} MB). Max: {{maxFilesize}} MB.',
+  });
+})();
+</script>
+
+<style>
+  .sec { margin-bottom: 56px; }
+  .sec h2 { font-size: 20px; font-weight: 500; letter-spacing: -.4px; color: var(--black); margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--g5); }
+  .code-block { background: #161616; border-radius: 4px; overflow: auto; }
+  .code-block pre { margin: 0; padding: 20px 24px; }
+  .code-block code { font-family: var(--mono); font-size: 13px; color: #f5f5f5; line-height: 1.8; white-space: pre; }
+  .demo-area { padding: 24px; border: 1px solid var(--g5); border-radius: 2px; background: var(--white); }
+
+  /* Voyadores Dropzone overrides */
+  .dz-voyadores.dropzone {
+    border: 2px dashed var(--g4);
+    border-radius: 8px;
+    background: var(--g6);
+    min-height: 180px;
+    transition: border-color .2s, background .2s;
+  }
+  .dz-voyadores.dropzone.dz-drag-hover {
+    border-color: var(--brand);
+    background: rgba(247,146,30,.04);
+  }
+  .dz-voyadores .dz-message {
+    font-size: 13px;
+    color: var(--g2);
+    padding: 28px;
+    margin: 0;
+  }
+  .dz-voyadores .dz-preview .dz-remove {
+    font-size: 10px;
+    color: var(--g3);
+    text-decoration: none;
+  }
+  .dz-voyadores .dz-preview .dz-progress .dz-upload {
+    background: var(--brand);
+  }
+  .dz-voyagers .dz-preview.dz-success .dz-success-mark { opacity: 1; }
+</style>

@@ -1,0 +1,41 @@
+---
+interface Props {
+  family: string;
+  weights?: Array<{ weight: number; label: string; style?: string }>;
+  description?: string;
+}
+const { family, weights = [], description } = Astro.props;
+const pangram = 'The quick brown fox jumps over the lazy dog.';
+---
+<div class="specimen">
+  <div class="sp-hd">
+    <h3>{family}</h3>
+    {description && <p class="sp-desc">{description}</p>}
+  </div>
+  <div class="sp-display" style={`font-family:"${family}",sans-serif`}>Aa</div>
+  <p class="sp-text" style={`font-family:"${family}",sans-serif`}>{pangram}</p>
+  {weights.length > 0 && (
+    <div class="sp-weights">
+      {weights.map(w => (
+        <div class="spw">
+          <span class="spw-l">{w.label}</span>
+          <span class="spw-s" style={`font-family:"${family}",sans-serif;font-weight:${w.weight};font-style:${w.style||'normal'}`}>
+            {pangram.slice(0,36)}
+          </span>
+        </div>
+      ))}
+    </div>
+  )}
+</div>
+<style>
+  .specimen { border: 1px solid var(--g5); border-radius: 2px; padding: 28px; margin-bottom: 8px; }
+  .sp-hd { margin-bottom: 20px; }
+  .sp-hd h3 { font-size: 14px; font-weight: 600; color: var(--black); margin-bottom: 4px; }
+  .sp-desc { font-size: 12px; font-weight: 500; color: var(--g2); }
+  .sp-display { font-size: 72px; font-weight: 700; line-height: 1; color: var(--black); letter-spacing: -.03em; margin-bottom: 16px; }
+  .sp-text { font-size: 15px; color: var(--g1); margin-bottom: 20px; }
+  .sp-weights { border-top: 1px solid var(--g5); padding-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+  .spw { display: grid; grid-template-columns: 140px 1fr; gap: 12px; align-items: baseline; }
+  .spw-l { font-size: 11px; font-family: var(--mono); color: var(--g2); }
+  .spw-s { font-size: 14px; color: var(--g1); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+</style>

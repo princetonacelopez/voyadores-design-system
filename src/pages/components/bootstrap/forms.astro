@@ -1,0 +1,194 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+---
+
+<BaseLayout title="Forms" activeSection="components">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.voyadores.theme.min.css" />
+  </Fragment>
+
+  <PageHeader
+    eyebrow="Components / Bootstrap"
+    title="Forms"
+    description="Full form control library: text inputs, textareas, selects, checkboxes, radios, switches, range, and file upload. All styled to the Voyadores theme."
+  />
+
+  <div class="demo">
+      <div class="demo-preview bs-scope" style="flex-direction:column;align-items:stretch;gap:16px;max-width:480px">
+        <!-- Text input -->
+        <div class="mb-0">
+          <label for="demo-text" class="form-label">Text input</label>
+          <input type="text" class="form-control" id="demo-text" placeholder="Enter text…" />
+          <div class="form-text">Helper text appears here.</div>
+        </div>
+        <!-- Email -->
+        <div class="mb-0">
+          <label for="demo-email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="demo-email" placeholder="name@example.com" />
+        </div>
+        <!-- Textarea -->
+        <div class="mb-0">
+          <label for="demo-area" class="form-label">Textarea</label>
+          <textarea class="form-control" id="demo-area" rows="3" placeholder="Your message…"></textarea>
+        </div>
+        <!-- Select -->
+        <div class="mb-0">
+          <label for="demo-select" class="form-label">Select</label>
+          <select class="form-select" id="demo-select">
+            <option selected>Choose option…</option>
+            <option>Option A</option>
+            <option>Option B</option>
+            <option>Option C</option>
+          </select>
+        </div>
+        <!-- Checkbox + Radio + Switch -->
+        <div class="d-flex flex-wrap gap-3">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="cb1" checked />
+            <label class="form-check-label" for="cb1">Checkbox</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="r" id="r1" checked />
+            <label class="form-check-label" for="r1">Radio A</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="r" id="r2" />
+            <label class="form-check-label" for="r2">Radio B</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="sw1" checked />
+            <label class="form-check-label" for="sw1">Switch</label>
+          </div>
+        </div>
+        <!-- Range + File -->
+        <div class="mb-0">
+          <label for="demo-range" class="form-label">Range</label>
+          <input type="range" class="form-range" id="demo-range" min="0" max="100" value="40" />
+        </div>
+        <div class="mb-0">
+          <label for="demo-file" class="form-label">File upload</label>
+          <input class="form-control" type="file" id="demo-file" />
+        </div>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="html-form">HTML</button>
+      </div>
+      <pre is:raw id="html-form"><code>&lt;!-- Text input --&gt;
+&lt;div class="mb-3"&gt;
+  &lt;label for="email" class="form-label"&gt;Email address&lt;/label&gt;
+  &lt;input type="email" class="form-control" id="email" placeholder="name@example.com" /&gt;
+  &lt;div class="form-text"&gt;Helper text.&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Textarea --&gt;
+&lt;div class="mb-3"&gt;
+  &lt;label for="msg" class="form-label"&gt;Message&lt;/label&gt;
+  &lt;textarea class="form-control" id="msg" rows="3"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+
+&lt;!-- Select --&gt;
+&lt;div class="mb-3"&gt;
+  &lt;label for="sel" class="form-label"&gt;Example select&lt;/label&gt;
+  &lt;select class="form-select" id="sel"&gt;
+    &lt;option selected&gt;Choose…&lt;/option&gt;
+    &lt;option&gt;Option A&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+
+&lt;!-- Checkbox --&gt;
+&lt;div class="form-check"&gt;
+  &lt;input class="form-check-input" type="checkbox" id="cb" /&gt;
+  &lt;label class="form-check-label" for="cb"&gt;Check me&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;!-- Radio --&gt;
+&lt;div class="form-check"&gt;
+  &lt;input class="form-check-input" type="radio" name="group" id="r1" /&gt;
+  &lt;label class="form-check-label" for="r1"&gt;Option A&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;!-- Switch --&gt;
+&lt;div class="form-check form-switch"&gt;
+  &lt;input class="form-check-input" type="checkbox" role="switch" id="sw" /&gt;
+  &lt;label class="form-check-label" for="sw"&gt;Toggle&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;!-- Range --&gt;
+&lt;input type="range" class="form-range" min="0" max="100" /&gt;
+
+&lt;!-- File --&gt;
+&lt;input class="form-control" type="file" /&gt;</code></pre>
+    </div>
+
+  <!-- Bootstrap JS bundle (Popper included) -->
+  <script is:inline src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+
+  <script>
+      // Code tabs
+    document.querySelectorAll('.cb-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        const block  = btn.closest('.code-block');
+        block.querySelectorAll('.cb-tab').forEach(b => b.classList.remove('is-on'));
+        block.querySelectorAll('pre').forEach(p => p.style.display = 'none');
+        btn.classList.add('is-on');
+        const pre = document.getElementById(target);
+        if (pre) pre.style.display = '';
+      });
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  /* Sections */
+  .csec { margin-bottom: 72px; scroll-margin-top: 24px; }
+  .csec-desc {
+    font-size: 13px; font-weight: 400; color: var(--g2);
+    line-height: 1.7; margin-bottom: 20px;
+  }
+  .csec-desc code {
+    font-family: var(--mono); font-size: .875em;
+    background: var(--g5); padding: 1px 5px; border-radius: 3px;
+    color: var(--g1);
+  }
+
+  /* Demo box */
+  .demo { margin-bottom: 16px; }
+  .demo-preview {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    padding: 28px; border: 1px solid var(--g5);
+    border-radius: 4px; background: var(--white);
+    align-items: center;
+  }
+
+  /* Code block */
+  .code-block {
+    background: #111; border-radius: 4px; overflow: hidden;
+  }
+  .cb-tabs {
+    display: flex; gap: 0;
+    border-bottom: 1px solid #2a2a2a; padding: 0 16px;
+  }
+  .cb-tab {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: .04em; text-transform: uppercase;
+    color: #666; background: none; border: none;
+    padding: 10px 14px; border-bottom: 2px solid transparent;
+    transition: color .12s, border-color .12s;
+  }
+  .cb-tab:hover  { color: #ccc; }
+  .cb-tab.is-on  { color: var(--brand); border-bottom-color: var(--brand); }
+  .code-block pre { margin: 0; padding: 20px 24px; overflow-x: auto; }
+  .code-block code {
+    font-family: var(--mono); font-size: 12.5px;
+    color: #e8e8e8; line-height: 1.85; white-space: pre;
+  }
+
+  /* Override Bootstrap base styles to protect site layout */
+  .bs-scope * { cursor: auto !important; }
+  .bs-scope { font-family: var(--vds-font-sans-serif, "Lexend", sans-serif); }
+</style>

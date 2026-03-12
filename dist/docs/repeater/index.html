@@ -1,0 +1,424 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Voyadores — Visual Identity Guidelines"><title>Repeater — Voyadores</title><link rel="canonical" href="https://design.voyadores.com/docs/repeater/"><link rel="icon" type="image/svg+xml" href="/icons/favicon/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon/favicon-32x32.png"><link rel="apple-touch-icon" href="/icons/favicon/apple-touch-icon.png"><!-- Urbanist + Chivo Mono --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"><!-- Voyadores Icon Font --><link rel="stylesheet" href="/fonts/Voyadores-Icon/voyadores-icon.css"><!-- Anti-flash theme init (must be inline, before render) --><script>
+      (function () {
+        var t = localStorage.getItem('voy-theme') || 'system';
+        var dark = t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+        document.documentElement.setAttribute('data-color-scheme', t);
+      })();
+    </script><!-- Page-specific head content --><link rel="stylesheet" href="/_astro/_slug_@_@astro.Dmf4ngD0.css">
+<link rel="stylesheet" href="/_astro/BaseLayout.CRrhjZsn.css"></head> <body> <!-- Modern inversion cursor --> <div class="c-cursor" id="c-cursor"></div> <div class="app-shell"> <!-- Topbar (mobile) — logo removed; sidebar has the logo at full height --> <header class="topbar" id="topbar"> <button class="ham" id="menu-toggle" aria-label="Open menu"> <span></span><span></span><span></span> </button> <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle theme" title="Toggle theme"> <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg> <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> <svg class="icon-system" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg> </button> </header> <div class="overlay" id="sidebar-overlay"></div> <aside id="sidebar" class="sidebar" data-astro-cid-ssfzsv2f> <!-- Logo --> <a href="/" class="s-logo" data-astro-cid-ssfzsv2f> <img class="logo-light" src="/images/voyadores-logo-combination-horizontal-light.svg" alt="Voyadores" width="128" data-astro-cid-ssfzsv2f> <img class="logo-dark" src="/images/voyadores-logo-combination-horizontal-dark.svg" alt="Voyadores" width="128" data-astro-cid-ssfzsv2f> </a> <!-- Nav --> <nav class="s-nav" aria-label="Main" data-astro-cid-ssfzsv2f> <!-- Design System flat links (top-level, no collapse) --> <div class="s-top-section" data-astro-cid-ssfzsv2f> <a href="/" class="s-link" data-astro-cid-ssfzsv2f> Home </a><a href="/introduction" class="s-link" data-astro-cid-ssfzsv2f> Introduction </a><a href="/strategy" class="s-link" data-astro-cid-ssfzsv2f> Strategy </a> </div> <!-- Get Started super-group --> <div class="s-group" id="grp-get-started" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-get-started" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Get Started</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <!-- Design sub-group --> <div class="s-subgroup" id="grp-gs-design" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-gs-design" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Design</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/figma-libraries" class="s-sublink" data-astro-cid-ssfzsv2f> Figma Libraries </a><a href="/get-started/design/ux-design-process" class="s-sublink" data-astro-cid-ssfzsv2f> UX Design Process &amp; Guidelines </a> </div> </div> <!-- Develop sub-group --> <div class="s-subgroup" id="grp-gs-develop" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-gs-develop" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Develop</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/get-started/develop/developer-setup" class="s-sublink" data-astro-cid-ssfzsv2f> Developer Setup </a><a href="/get-started/develop/build-categorization" class="s-sublink" data-astro-cid-ssfzsv2f> Build Categorization Process </a><a href="/get-started/develop/code-branching" class="s-sublink" data-astro-cid-ssfzsv2f> Code Branching Guidelines </a><a href="/get-started/develop/code-management" class="s-sublink" data-astro-cid-ssfzsv2f> Code Management Guidelines </a><a href="/get-started/develop/versioning" class="s-sublink" data-astro-cid-ssfzsv2f> Versioning </a> </div> </div> <!-- Internal sub-group --> <div class="s-subgroup" id="grp-gs-internal" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-gs-internal" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Internal</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/get-started/internal/changelog-guidelines" class="s-sublink" data-astro-cid-ssfzsv2f> Changelog Guidelines </a><a href="/get-started/internal/meeting-invitation-guidelines" class="s-sublink" data-astro-cid-ssfzsv2f> Meeting Guidelines </a> </div> </div> </div> </div> <!-- Grouped top-level nav --> <div class="s-group" id="grp-brand" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-brand" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Brand</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <a href="/color" class="s-link" data-astro-cid-ssfzsv2f> Color </a><a href="/images" class="s-link" data-astro-cid-ssfzsv2f> Images </a><a href="/logo" class="s-link" data-astro-cid-ssfzsv2f> Logo </a><a href="/typography" class="s-link" data-astro-cid-ssfzsv2f> Typography </a> </div> </div><div class="s-group" id="grp-content" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-content" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Content</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <a href="/language-and-grammar" class="s-link" data-astro-cid-ssfzsv2f> Language and Grammar </a><a href="/iconography" class="s-link" data-astro-cid-ssfzsv2f> Iconography </a><a href="/illustrations" class="s-link" data-astro-cid-ssfzsv2f> Illustrations </a> </div> </div> <!-- Components super-group --> <div class="s-group s-group--components" id="grp-components" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-components" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Components</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <!-- Bootstrap sub-group --> <div class="s-subgroup" id="grp-bootstrap" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-bootstrap" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Bootstrap</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/components/bootstrap/accordion" class="s-sublink" data-astro-cid-ssfzsv2f> Accordion </a><a href="/components/bootstrap/alerts" class="s-sublink" data-astro-cid-ssfzsv2f> Alerts </a><a href="/components/bootstrap/badges" class="s-sublink" data-astro-cid-ssfzsv2f> Badges </a><a href="/components/bootstrap/breadcrumb" class="s-sublink" data-astro-cid-ssfzsv2f> Breadcrumb </a><a href="/components/bootstrap/button-group" class="s-sublink" data-astro-cid-ssfzsv2f> Button Group </a><a href="/components/bootstrap/buttons" class="s-sublink" data-astro-cid-ssfzsv2f> Buttons </a><a href="/components/bootstrap/cards" class="s-sublink" data-astro-cid-ssfzsv2f> Cards </a><a href="/components/bootstrap/carousel" class="s-sublink" data-astro-cid-ssfzsv2f> Carousel </a><a href="/components/bootstrap/dropdowns" class="s-sublink" data-astro-cid-ssfzsv2f> Dropdowns </a><a href="/components/bootstrap/forms" class="s-sublink" data-astro-cid-ssfzsv2f> Forms </a><a href="/components/bootstrap/input-group" class="s-sublink" data-astro-cid-ssfzsv2f> Input Group </a><a href="/components/bootstrap/list-group" class="s-sublink" data-astro-cid-ssfzsv2f> List Group </a><a href="/components/bootstrap/modal" class="s-sublink" data-astro-cid-ssfzsv2f> Modal </a><a href="/components/bootstrap/navbar" class="s-sublink" data-astro-cid-ssfzsv2f> Navbar </a><a href="/components/bootstrap/navs" class="s-sublink" data-astro-cid-ssfzsv2f> Navs &amp; Tabs </a><a href="/components/bootstrap/offcanvas" class="s-sublink" data-astro-cid-ssfzsv2f> Offcanvas </a><a href="/components/bootstrap/pagination" class="s-sublink" data-astro-cid-ssfzsv2f> Pagination </a><a href="/components/bootstrap/placeholders" class="s-sublink" data-astro-cid-ssfzsv2f> Placeholders </a><a href="/components/bootstrap/popovers" class="s-sublink" data-astro-cid-ssfzsv2f> Popovers </a><a href="/components/bootstrap/progress" class="s-sublink" data-astro-cid-ssfzsv2f> Progress </a><a href="/components/bootstrap/spinners" class="s-sublink" data-astro-cid-ssfzsv2f> Spinners </a><a href="/components/bootstrap/tables" class="s-sublink" data-astro-cid-ssfzsv2f> Tables </a><a href="/components/bootstrap/toasts" class="s-sublink" data-astro-cid-ssfzsv2f> Toasts </a><a href="/components/bootstrap/tooltips" class="s-sublink" data-astro-cid-ssfzsv2f> Tooltips </a><a href="/components/bootstrap/validation" class="s-sublink" data-astro-cid-ssfzsv2f> Validation </a> </div> </div> <!-- Others sub-group --> <div class="s-subgroup" id="grp-others" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-others" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Others</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/components/dropzone" class="s-sublink" data-astro-cid-ssfzsv2f> Dropzone </a><a href="/components/file-upload" class="s-sublink" data-astro-cid-ssfzsv2f> File Upload </a><a href="/components/file-viewer" class="s-sublink" data-astro-cid-ssfzsv2f> File Viewer </a><a href="/components/form-validation" class="s-sublink" data-astro-cid-ssfzsv2f> Form Validation </a><a href="/components/highcharts" class="s-sublink" data-astro-cid-ssfzsv2f> Highcharts </a><a href="/components/mask" class="s-sublink" data-astro-cid-ssfzsv2f> Mask </a><a href="/components/moment" class="s-sublink" data-astro-cid-ssfzsv2f> Moment </a><a href="/components/noty" class="s-sublink" data-astro-cid-ssfzsv2f> Noty </a><a href="/components/numeral" class="s-sublink" data-astro-cid-ssfzsv2f> Numeral </a><a href="/components/repeater" class="s-sublink" data-astro-cid-ssfzsv2f> Repeater </a><a href="/components/selectize" class="s-sublink" data-astro-cid-ssfzsv2f> Selectize </a><a href="/components/summernote" class="s-sublink" data-astro-cid-ssfzsv2f> Summernote </a><a href="/components/table" class="s-sublink" data-astro-cid-ssfzsv2f> Table 2.2.1 </a><a href="/components/template-editor" class="s-sublink" data-astro-cid-ssfzsv2f> Template Editor </a><a href="/components/treeview" class="s-sublink" data-astro-cid-ssfzsv2f> Treeview </a><a href="/components/wizard-form" class="s-sublink" data-astro-cid-ssfzsv2f> Wizard Form </a> </div> </div> </div> </div> <!-- Documentation super-group --> <div class="s-group s-group--docs is-open" id="grp-docs" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-docs" aria-expanded="true" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Documentation</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <!-- App Shell sub-group --> <div class="s-subgroup" id="grp-docs-shell" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-shell" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>App Shell</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/detection" class="s-sublink" data-astro-cid-ssfzsv2f> Browser &amp; TZ Detection </a><a href="/docs/menu-web" class="s-sublink" data-astro-cid-ssfzsv2f> Menu Web </a><a href="/docs/theme-picker" class="s-sublink" data-astro-cid-ssfzsv2f> Theme Picker </a> </div> </div> <!-- Modules sub-group --> <div class="s-subgroup" id="grp-docs-modules" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-modules" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Modules</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/default-url" class="s-sublink" data-astro-cid-ssfzsv2f> Default URL </a><a href="/docs/feature-onboarding" class="s-sublink" data-astro-cid-ssfzsv2f> Feature Onboarding </a><a href="/docs/notifications" class="s-sublink" data-astro-cid-ssfzsv2f> Notifications </a><a href="/docs/quicklinks" class="s-sublink" data-astro-cid-ssfzsv2f> Quick Links </a><a href="/docs/user-onboarding" class="s-sublink" data-astro-cid-ssfzsv2f> User Onboarding </a><a href="/docs/visual-indicator" class="s-sublink" data-astro-cid-ssfzsv2f> Visual Indicator </a> </div> </div> <!-- Utilities sub-group --> <div class="s-subgroup" id="grp-docs-utilities" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-utilities" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Utilities</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/browser-storage" class="s-sublink" data-astro-cid-ssfzsv2f> Browser Storage </a><a href="/docs/datetime-picker" class="s-sublink" data-astro-cid-ssfzsv2f> DateTime Picker </a><a href="/docs/request-and-uri" class="s-sublink" data-astro-cid-ssfzsv2f> Request &amp; URI </a><a href="/docs/view-model" class="s-sublink" data-astro-cid-ssfzsv2f> ViewModelBase </a> </div> </div> <!-- Plugins sub-group --> <div class="s-subgroup is-open" id="grp-docs-plugins" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-plugins" aria-expanded="true" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Plugins</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/action-button-manager" class="s-sublink" data-astro-cid-ssfzsv2f> Action Button Manager </a><a href="/docs/currency-picker" class="s-sublink" data-astro-cid-ssfzsv2f> Currency Picker </a><a href="/docs/file-template-editor" class="s-sublink" data-astro-cid-ssfzsv2f> File Template Editor </a><a href="/docs/repeater" class="s-sublink is-on" data-astro-cid-ssfzsv2f> Repeater </a><a href="/docs/table-plugin" class="s-sublink" data-astro-cid-ssfzsv2f> Table Plugin </a><a href="/docs/template-editor" class="s-sublink" data-astro-cid-ssfzsv2f> Template Editor </a><a href="/docs/treeview" class="s-sublink" data-astro-cid-ssfzsv2f> Treeview </a><a href="/docs/wizard-form" class="s-sublink" data-astro-cid-ssfzsv2f> Wizard Form </a> </div> </div> </div> </div> </nav> <!-- Sidebar footer: theme toggle --> <div class="s-footer" data-astro-cid-ssfzsv2f> <button class="theme-toggle s-theme-btn" id="theme-toggle-sidebar" aria-label="Toggle theme" title="Toggle theme" data-astro-cid-ssfzsv2f> <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f><circle cx="12" cy="12" r="5" data-astro-cid-ssfzsv2f></circle><line x1="12" y1="1" x2="12" y2="3" data-astro-cid-ssfzsv2f></line><line x1="12" y1="21" x2="12" y2="23" data-astro-cid-ssfzsv2f></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" data-astro-cid-ssfzsv2f></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" data-astro-cid-ssfzsv2f></line><line x1="1" y1="12" x2="3" y2="12" data-astro-cid-ssfzsv2f></line><line x1="21" y1="12" x2="23" y2="12" data-astro-cid-ssfzsv2f></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" data-astro-cid-ssfzsv2f></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" data-astro-cid-ssfzsv2f></line></svg> <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" data-astro-cid-ssfzsv2f></path></svg> <svg class="icon-system" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f><rect x="2" y="3" width="20" height="14" rx="2" data-astro-cid-ssfzsv2f></rect><line x1="8" y1="21" x2="16" y2="21" data-astro-cid-ssfzsv2f></line><line x1="12" y1="17" x2="12" y2="21" data-astro-cid-ssfzsv2f></line></svg> <span class="s-theme-label" data-astro-cid-ssfzsv2f> <span class="label-light" data-astro-cid-ssfzsv2f>Light mode</span> <span class="label-dark" data-astro-cid-ssfzsv2f>Dark mode</span> <span class="label-system" data-astro-cid-ssfzsv2f>System</span> </span> </button> </div> </aside> <script>
+(function () {
+  // Generic group toggle for all .s-group and .s-subgroup headers
+  document.querySelectorAll('[data-group]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id   = btn.getAttribute('data-group');
+      var el   = document.getElementById(id);
+      if (!el) return;
+      var open = el.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+})();
+</script> <main class="main" id="main">  <div class="doc-page" data-astro-cid-rnp3zwhq> <!-- Page header --> <header class="doc-header" data-astro-cid-rnp3zwhq> <p class="doc-eyebrow" data-astro-cid-rnp3zwhq>Documentation</p> <h1 data-astro-cid-rnp3zwhq>Repeater</h1> <dl class="doc-meta" data-astro-cid-rnp3zwhq>  <dt data-astro-cid-rnp3zwhq>Version</dt> <dd data-astro-cid-rnp3zwhq>1.6.1</dd>  <dt data-astro-cid-rnp3zwhq>Files</dt> <dd data-astro-cid-rnp3zwhq>`repeater-1-6-1.min.js`</dd>  <dt data-astro-cid-rnp3zwhq>Author</dt> <dd data-astro-cid-rnp3zwhq>Network Economic Services Ventures Philippines, Inc.</dd>  <dt data-astro-cid-rnp3zwhq>Last Updated</dt> <dd data-astro-cid-rnp3zwhq>2024-10-01</dd>  </dl> </header> <!-- Markdown body --> <div class="doc-body" data-astro-cid-rnp3zwhq> <h2 id="1-overview">1. Overview</h2>
+<p>The jQuery Custom Repeater is a jQuery plugin that renders dynamic HTML from a data source — either a static array or a remote API endpoint. It handles all state screens automatically: loading, empty, 403, 404, and 500. The output HTML is fully controlled by a <code>mappingFunction</code> you provide, making it usable for cards, lists, tables, or any repeating UI pattern.</p>
+<hr>
+<h2 id="2-features">2. Features</h2>
+<ul>
+<li><strong>Two data modes:</strong> static array or AJAX endpoint (GET or POST)</li>
+<li><strong>Automatic state management:</strong> loading, empty, 403, 404, 500</li>
+<li><strong>Fully custom output:</strong> you define the HTML via <code>mappingFunction</code></li>
+<li><strong>Programmatic refresh:</strong> call <code>refresh</code> with new params to reload</li>
+<li><strong>Data-only refresh:</strong> call <code>refreshData</code> to re-render without a network request</li>
+<li><strong>Clear method:</strong> wipe the container without re-initializing</li>
+<li><strong>Configurable empty state:</strong> custom message, image, or full HTML override</li>
+<li><strong>CDN-aware image paths:</strong> reads base URL from a hidden <code>#voyadores-cdn-url</code> input</li>
+</ul>
+<hr>
+<h2 id="3-dependencies">3. Dependencies</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Dependency</th><th>Version</th><th>Notes</th></tr></thead><tbody><tr><td>jQuery</td><td>3.x recommended</td><td>Required. Must be loaded before the plugin.</td></tr></tbody></table>
+<hr>
+<h2 id="4-setup">4. Setup</h2>
+<h3 id="via-cdn">Via CDN</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#6A737D">&#x3C;!-- jQuery --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">script</span><span style="color:#B392F0"> src</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"https://cdn.voyadores.com/content/js/jquery/jquery-3.6.0.min.js"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">&#x3C;!-- Repeater plugin --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">script</span><span style="color:#B392F0"> src</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"https://cdn.voyadores.com/content/js/repeater/repeater-1-6-1.min.js"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h3 id="cdn-base-url-helper-required-for-state-images">CDN Base URL Helper (required for state images)</h3>
+<p>Add this hidden input anywhere in your page so the plugin can resolve absolute image paths:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">input</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"hidden"</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"voyadores-cdn-url"</span><span style="color:#B392F0"> value</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"https://cdn.voyadores.com"</span><span style="color:#E1E4E8"> /></span></span></code></pre>
+<p>If omitted, state images will use relative paths (empty string prefix), which may result in broken images.</p>
+<hr>
+<h2 id="5-required-html-structure">5. Required HTML Structure</h2>
+<p>The repeater targets any container element identified by an <code>id</code>. The plugin empties and repopulates this container on every render.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"my-list"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span></code></pre>
+<p>Initialize on that element:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#my-list'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">repeater</span><span style="color:#E1E4E8">({ </span><span style="color:#F97583">...</span><span style="color:#E1E4E8"> });</span></span></code></pre>
+<hr>
+<h2 id="6-configuration-options">6. Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Option</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>endpoint</code></td><td><code>string</code></td><td><code>""</code></td><td>API URL. Leave empty to use static <code>data</code>.</td></tr><tr><td><code>type</code></td><td><code>string</code></td><td><code>"GET"</code></td><td>HTTP method. <code>"GET"</code> or <code>"POST"</code>.</td></tr><tr><td><code>async</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Whether the AJAX call is asynchronous.</td></tr><tr><td><code>params</code></td><td><code>object</code></td><td><code>{}</code></td><td>Query params (GET) or body (POST) sent with the request.</td></tr><tr><td><code>data</code></td><td><code>array</code></td><td><code>[]</code></td><td>Static data array. Used when <code>endpoint</code> is empty.</td></tr><tr><td><code>mappingFunction</code></td><td><code>function(data)</code></td><td>returns <code>""</code></td><td>Receives the data and returns an HTML string.</td></tr><tr><td><code>success</code></td><td><code>function(data)</code></td><td>no-op</td><td>Called after a successful render. Receives the raw data.</td></tr><tr><td><code>fail</code></td><td><code>function(message)</code></td><td>no-op</td><td>Called when an unsupported HTTP method is used.</td></tr><tr><td><code>messageNoResultHeader</code></td><td><code>string</code></td><td><code>"No data found"</code></td><td>Heading shown in the default empty state.</td></tr><tr><td><code>messageNoResult</code></td><td><code>string</code></td><td><code>"There's nothing to display here at the moment."</code></td><td>Body text shown in the default empty state.</td></tr><tr><td><code>cssClassNoResult</code></td><td><code>string</code></td><td><code>""</code></td><td>Extra CSS class applied to all state screen wrappers.</td></tr><tr><td><code>imageEmpty</code></td><td><code>string</code></td><td><code>/content/images/states/empty/voyadores.default.empty.svg</code></td><td>Path (relative to CDN base) for the empty state image.</td></tr><tr><td><code>customEmpty</code></td><td><code>string|null</code></td><td><code>null</code></td><td>Full HTML string to override the default empty state.</td></tr></tbody></table>
+<blockquote>
+<p><strong>Note:</strong> <code>sortKey</code> and <code>sortType</code> are reserved fields in the options object but are not yet implemented by the plugin logic.</p>
+</blockquote>
+<hr>
+<h2 id="7-data-modes">7. Data Modes</h2>
+<h3 id="static-mode">Static Mode</h3>
+<p>Set <code>endpoint</code> to <code>""</code> (or omit it) and pass data directly:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#my-list'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">repeater</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  data: [</span></span>
+<span class="line"><span style="color:#E1E4E8">    { id: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, name: </span><span style="color:#9ECBFF">'Item A'</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">    { id: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, name: </span><span style="color:#9ECBFF">'Item B'</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">  ],</span></span>
+<span class="line"><span style="color:#B392F0">  mappingFunction</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> data.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">item</span><span style="color:#F97583"> =></span><span style="color:#9ECBFF"> `&#x3C;div class="item">${</span><span style="color:#E1E4E8">item</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">name</span><span style="color:#9ECBFF">}&#x3C;/div>`</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">join</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="ajax-mode--get">AJAX Mode — GET</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#my-list'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">repeater</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  endpoint: </span><span style="color:#9ECBFF">'/api/items'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  type: </span><span style="color:#9ECBFF">'GET'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  params: { category: </span><span style="color:#9ECBFF">'tools'</span><span style="color:#E1E4E8">, page: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#B392F0">  mappingFunction</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> data.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">item</span><span style="color:#F97583"> =></span><span style="color:#9ECBFF"> `&#x3C;div class="item">${</span><span style="color:#E1E4E8">item</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">name</span><span style="color:#9ECBFF">}&#x3C;/div>`</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">join</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<p>The params are appended as a query string: <code>/api/items?category=tools&#x26;page=1</code></p>
+<h3 id="ajax-mode--post">AJAX Mode — POST</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#my-list'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">repeater</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  endpoint: </span><span style="color:#9ECBFF">'/api/items/search'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  type: </span><span style="color:#9ECBFF">'POST'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  params: { query: </span><span style="color:#9ECBFF">'button'</span><span style="color:#E1E4E8">, limit: </span><span style="color:#79B8FF">20</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#B392F0">  mappingFunction</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> data.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">item</span><span style="color:#F97583"> =></span><span style="color:#9ECBFF"> `&#x3C;li>${</span><span style="color:#E1E4E8">item</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">label</span><span style="color:#9ECBFF">}&#x3C;/li>`</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">join</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<blockquote>
+<p>Only <code>GET</code> and <code>POST</code> are supported. Any other <code>type</code> value will trigger the <code>fail</code> callback with an “Unsupported call type” message and abort.</p>
+</blockquote>
+<hr>
+<h2 id="8-mapping-function">8. Mapping Function</h2>
+<p>The <code>mappingFunction</code> is the core of the plugin. It receives the response data and must return an HTML string. If it returns an empty string or throws an error, the empty state is shown instead.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#B392F0">mappingFunction</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">data </span><span style="color:#F97583">||</span><span style="color:#F97583"> !</span><span style="color:#E1E4E8">data.</span><span style="color:#79B8FF">length</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">return</span><span style="color:#9ECBFF"> ''</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> data.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">item</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#9ECBFF"> `</span></span>
+<span class="line"><span style="color:#9ECBFF">      &#x3C;div class="card mb-2"></span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;div class="card-body"></span></span>
+<span class="line"><span style="color:#9ECBFF">          &#x3C;h5 class="card-title">${</span><span style="color:#E1E4E8">item</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">title</span><span style="color:#9ECBFF">}&#x3C;/h5></span></span>
+<span class="line"><span style="color:#9ECBFF">          &#x3C;p class="card-text">${</span><span style="color:#E1E4E8">item</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">description</span><span style="color:#9ECBFF">}&#x3C;/p></span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;/div></span></span>
+<span class="line"><span style="color:#9ECBFF">      &#x3C;/div></span></span>
+<span class="line"><span style="color:#9ECBFF">    `</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }).</span><span style="color:#B392F0">join</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>Return empty string to trigger the empty state</strong> — no need to render a fallback yourself.</p>
+<hr>
+<h2 id="9-commands-reference">9. Commands Reference</h2>
+<p>After initialization, call methods by passing a command string as the first argument.</p>
+<h3 id="refresh"><code>refresh</code></h3>
+<p>Reloads data from the endpoint (or re-renders static data). Optionally update <code>params</code>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// Refresh with existing params</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#my-list'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">repeater</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'refresh'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Refresh with new params</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#my-list'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">repeater</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'refresh'</span><span style="color:#E1E4E8">, { page: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, category: </span><span style="color:#9ECBFF">'icons'</span><span style="color:#E1E4E8"> });</span></span></code></pre>
+<h3 id="refreshdata"><code>refreshData</code></h3>
+<p>Re-renders the current output using new static <code>data</code> — no network request.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#my-list'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">repeater</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'refreshData'</span><span style="color:#E1E4E8">, [</span></span>
+<span class="line"><span style="color:#E1E4E8">  { id: </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">, name: </span><span style="color:#9ECBFF">'Item C'</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">  { id: </span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">, name: </span><span style="color:#9ECBFF">'Item D'</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">]);</span></span></code></pre>
+<h3 id="clear"><code>clear</code></h3>
+<p>Empties the container. Does not reset options or state.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#my-list'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">repeater</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'clear'</span><span style="color:#E1E4E8">);</span></span></code></pre>
+<hr>
+<h2 id="10-state-screens">10. State Screens</h2>
+<p>The plugin automatically displays a full-container state screen while loading or when an HTTP error occurs. All images are resolved against the CDN base URL from <code>#voyadores-cdn-url</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>State</th><th>Trigger</th><th>Image</th></tr></thead><tbody><tr><td><strong>Loading</strong></td><td>Before any request starts</td><td><code>/content/images/states/loader/voyadores-loader.gif</code> (32px)</td></tr><tr><td><strong>403 Forbidden</strong></td><td>Server returns 403</td><td><code>/content/images/states/error/voyadores-403.svg</code> (160px)</td></tr><tr><td><strong>404 Not Found</strong></td><td>Server returns 404</td><td><code>/content/images/states/error/voyadores-404.svg</code> (160px)</td></tr><tr><td><strong>500 Server Error</strong></td><td>Server returns 500</td><td><code>/content/images/states/error/voyadores-500.svg</code> (160px)</td></tr><tr><td><strong>Empty</strong></td><td><code>mappingFunction</code> returns <code>""</code> or throws</td><td>Configurable via <code>imageEmpty</code></td></tr></tbody></table>
+<p>State screens are styled with:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#85E89D">text-center</span><span style="color:#85E89D"> status-text</span><span style="color:#E1E4E8"> rounded </span><span style="color:#85E89D">p-6</span><span style="color:#E1E4E8"> {</span><span style="color:#79B8FF">cssClassNoResult</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#85E89D">background-color</span><span style="color:#E1E4E8">: rgba(106, 106, 106, 0</span><span style="color:#B392F0">.06</span><span style="color:#E1E4E8">)</span></span></code></pre>
+<hr>
+<h2 id="11-empty-state-customization">11. Empty State Customization</h2>
+<h3 id="option-a--change-the-text-and-image">Option A — Change the text and image</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#my-list'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">repeater</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  imageEmpty: </span><span style="color:#9ECBFF">'/content/images/states/empty/general.notifications.empty.svg'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  messageNoResultHeader: </span><span style="color:#9ECBFF">'No notifications'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  messageNoResult: </span><span style="color:#9ECBFF">'You have no new notifications at this time.'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  cssClassNoResult: </span><span style="color:#9ECBFF">'my-empty-class'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  mappingFunction</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) { </span><span style="color:#F97583">return</span><span style="color:#9ECBFF"> ''</span><span style="color:#E1E4E8">; }</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Image filename</th><th>Rendered width</th></tr></thead><tbody><tr><td><code>general.notifications.empty.svg</code></td><td>160px</td></tr><tr><td><code>voyadores.default.empty.svg</code></td><td>80px</td></tr><tr><td>Any other path</td><td>160px</td></tr></tbody></table>
+<h3 id="option-b--provide-fully-custom-html">Option B — Provide fully custom HTML</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#my-list'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">repeater</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  customEmpty: </span><span style="color:#9ECBFF">`</span></span>
+<span class="line"><span style="color:#9ECBFF">    &#x3C;div class="text-center py-5"></span></span>
+<span class="line"><span style="color:#9ECBFF">      &#x3C;p class="text-muted">Nothing here yet. Try a different filter.&#x3C;/p></span></span>
+<span class="line"><span style="color:#9ECBFF">    &#x3C;/div></span></span>
+<span class="line"><span style="color:#9ECBFF">  `</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  mappingFunction</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) { </span><span style="color:#F97583">return</span><span style="color:#9ECBFF"> ''</span><span style="color:#E1E4E8">; }</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<p>When <code>customEmpty</code> is set, it overrides the default empty state entirely (including the image and messages).</p>
+<hr>
+<h2 id="12-callbacks">12. Callbacks</h2>
+<h3 id="successdata"><code>success(data)</code></h3>
+<p>Called after a successful render — whether from static data or a 200 response.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#B392F0">success</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Rendered'</span><span style="color:#E1E4E8">, data.</span><span style="color:#79B8FF">length</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'items'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">  updatePaginationControls</span><span style="color:#E1E4E8">(data);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="failmessage"><code>fail(message)</code></h3>
+<p>Called only when an unsupported HTTP method is configured (not for HTTP error codes — those are handled by the built-in state screens).</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#B392F0">fail</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">message</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Repeater config error:'</span><span style="color:#E1E4E8">, message);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
+<h2 id="13-usage-examples">13. Usage Examples</h2>
+<h3 id="card-list-from-api">Card list from API</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">input</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"hidden"</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"voyadores-cdn-url"</span><span style="color:#B392F0"> value</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"https://cdn.voyadores.com"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"product-cards"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#product-cards'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">repeater</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  endpoint: </span><span style="color:#9ECBFF">'/api/products'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  type: </span><span style="color:#9ECBFF">'GET'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  params: { limit: </span><span style="color:#79B8FF">12</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#B392F0">  mappingFunction</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> data.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">p</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">      return</span><span style="color:#9ECBFF"> `</span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;div class="col-md-4 mb-3"></span></span>
+<span class="line"><span style="color:#9ECBFF">          &#x3C;div class="card h-100"></span></span>
+<span class="line"><span style="color:#9ECBFF">            &#x3C;div class="card-body"></span></span>
+<span class="line"><span style="color:#9ECBFF">              &#x3C;h6 class="card-title">${</span><span style="color:#E1E4E8">p</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">name</span><span style="color:#9ECBFF">}&#x3C;/h6></span></span>
+<span class="line"><span style="color:#9ECBFF">              &#x3C;p class="card-text text-muted">${</span><span style="color:#E1E4E8">p</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">description</span><span style="color:#9ECBFF">}&#x3C;/p></span></span>
+<span class="line"><span style="color:#9ECBFF">            &#x3C;/div></span></span>
+<span class="line"><span style="color:#9ECBFF">          &#x3C;/div></span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;/div></span></span>
+<span class="line"><span style="color:#9ECBFF">      `</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }).</span><span style="color:#B392F0">join</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#B392F0">  success</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Loaded'</span><span style="color:#E1E4E8">, data.</span><span style="color:#79B8FF">length</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'products'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h3 id="notification-list-with-custom-empty-state">Notification list with custom empty state</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">ul</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"notifications"</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"list-group"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">ul</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#notifications'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">repeater</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  endpoint: </span><span style="color:#9ECBFF">'/api/notifications'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  type: </span><span style="color:#9ECBFF">'GET'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  imageEmpty: </span><span style="color:#9ECBFF">'/content/images/states/empty/general.notifications.empty.svg'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  messageNoResultHeader: </span><span style="color:#9ECBFF">'All caught up'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  messageNoResult: </span><span style="color:#9ECBFF">'No new notifications.'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  mappingFunction</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> data.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">n</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">      return</span><span style="color:#9ECBFF"> `&#x3C;li class="list-group-item">${</span><span style="color:#E1E4E8">n</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">message</span><span style="color:#9ECBFF">}&#x3C;/li>`</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }).</span><span style="color:#B392F0">join</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h3 id="refresh-on-filter-change">Refresh on filter change</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">select</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"category-filter"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"all"</span><span style="color:#E1E4E8">>All&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"active"</span><span style="color:#E1E4E8">>Active&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"archived"</span><span style="color:#E1E4E8">>Archived&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">select</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"item-list"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#item-list'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">repeater</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  endpoint: </span><span style="color:#9ECBFF">'/api/items'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  type: </span><span style="color:#9ECBFF">'GET'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  params: { category: </span><span style="color:#9ECBFF">'all'</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#B392F0">  mappingFunction</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> data.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">item</span><span style="color:#F97583"> =></span><span style="color:#9ECBFF"> `&#x3C;div class="item-row">${</span><span style="color:#E1E4E8">item</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">label</span><span style="color:#9ECBFF">}&#x3C;/div>`</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">join</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#category-filter'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">on</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'change'</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  $</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#item-list'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">repeater</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'refresh'</span><span style="color:#E1E4E8">, { category: </span><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">val</span><span style="color:#E1E4E8">() });</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h3 id="static-data-with-refreshdata">Static data with refreshData</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// Initial render</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#local-list'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">repeater</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  data: initialItems,</span></span>
+<span class="line"><span style="color:#B392F0">  mappingFunction</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> data.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">i</span><span style="color:#F97583"> =></span><span style="color:#9ECBFF"> `&#x3C;div>${</span><span style="color:#E1E4E8">i</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">name</span><span style="color:#9ECBFF">}&#x3C;/div>`</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">join</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Later, update with new data without a network call</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#local-list'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">repeater</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'refreshData'</span><span style="color:#E1E4E8">, updatedItems);</span></span></code></pre>
+<hr>
+<h2 id="14-best-practices">14. Best Practices</h2>
+<ul>
+<li><strong>Always set <code>#voyadores-cdn-url</code></strong> — without it, state images will be broken in environments with a base URL.</li>
+<li><strong>Return <code>""</code> from <code>mappingFunction</code> to trigger the empty state</strong> rather than rendering your own fallback UI; this keeps state handling consistent.</li>
+<li><strong>Use <code>refreshData</code> instead of <code>refresh</code></strong> when your data is already available client-side — it avoids an unnecessary network round trip.</li>
+<li><strong>Keep <code>async: false</code> only for synchronous requirements</strong> — for most UI use cases, consider setting <code>async: true</code> to avoid blocking the browser during AJAX calls.</li>
+<li><strong>Use <code>customEmpty</code></strong> when the default empty state layout doesn’t fit your design — it accepts any HTML string.</li>
+<li><strong>Sanitize data before rendering in <code>mappingFunction</code></strong> — the plugin does no output escaping; XSS protection is your responsibility if any data comes from user input.</li>
+</ul> </div> </div>  </main> <!-- Right TOC sidebar --> <aside class="r-toc" id="r-toc" aria-label="On this page"> <div class="toc-label">On this page</div> <nav class="toc-nav" id="toc-nav"></nav> </aside> </div> <script type="module">const d=document.documentElement,L=document.querySelectorAll(".theme-toggle"),f=window.matchMedia("(prefers-color-scheme: dark)"),u=["light","dark","system"];function v(t){t==="dark"||t==="system"&&f.matches?d.setAttribute("data-theme","dark"):d.removeAttribute("data-theme"),d.setAttribute("data-color-scheme",t),localStorage.setItem("voy-theme",t)}f.addEventListener("change",()=>{d.getAttribute("data-color-scheme")==="system"&&v("system")});L.forEach(t=>{t.addEventListener("click",()=>{const n=d.getAttribute("data-color-scheme")||"system",s=u[(u.indexOf(n)+1)%u.length];v(s)})});const m=document.getElementById("c-cursor");if(m&&window.matchMedia("(pointer: fine)").matches){let t=0,n=0,s=0,c=0;const a=.16;document.addEventListener("mousemove",r=>{t=r.clientX,n=r.clientY}),(function r(){s+=(t-s)*a,c+=(n-c)*a,m.style.transform=`translate(${s}px,${c}px)`,requestAnimationFrame(r)})(),document.addEventListener("mouseleave",()=>{m.style.opacity="0"}),document.addEventListener("mouseenter",()=>{m.style.opacity="1"})}const g=document.getElementById("menu-toggle"),y=document.getElementById("sidebar-overlay"),h=document.getElementById("sidebar"),b=()=>{h.classList.add("open"),y.classList.add("show"),document.body.style.overflow="hidden",g.classList.add("open")},E=()=>{h.classList.remove("open"),y.classList.remove("show"),document.body.style.overflow="",g.classList.remove("open")};g.addEventListener("click",()=>h.classList.contains("open")?E():b());y.addEventListener("click",E);(function(){const n=document.getElementById("main"),s=document.getElementById("r-toc"),c=document.getElementById("toc-nav");if(!n||!s||!c)return;const a=Array.from(n.querySelectorAll("h2"));if(a.length<2)return;a.forEach((e,o)=>{if(!e.id){const i=e.textContent.trim().toLowerCase().replace(/[^a-z0-9\s-]/g,"").replace(/\s+/g,"-").replace(/-+/g,"-").replace(/^-|-$/g,"")||`section-${o}`;e.id=i}}),a.forEach(e=>{const o=document.createElement("a");o.href="#"+e.id,o.className="toc-link",o.textContent=e.textContent.trim(),o.addEventListener("click",i=>{i.preventDefault();const l=document.getElementById(e.id);l&&l.scrollIntoView({behavior:"smooth",block:"start"})}),c.appendChild(o)}),s.classList.add("has-items"),d.classList.add("has-toc");const r=Array.from(c.querySelectorAll(".toc-link")),p=new IntersectionObserver(e=>{e.forEach(o=>{const i=r.find(l=>l.getAttribute("href")==="#"+o.target.id);i&&i.classList.toggle("is-active",o.isIntersecting)})},{rootMargin:"-5% 0px -75% 0px",threshold:0});a.forEach(e=>p.observe(e))})();</script> </body> </html>

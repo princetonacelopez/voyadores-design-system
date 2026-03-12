@@ -1,0 +1,648 @@
+---
+interface Props {
+  activeSection?: string;
+}
+const { activeSection = '' } = Astro.props;
+const path = Astro.url.pathname;
+const isComponents = path.startsWith('/components');
+const isBootstrap  = path.startsWith('/components/bootstrap');
+const isOthers     = isComponents && !isBootstrap && path !== '/components' && path !== '/components/';
+
+function active(href: string) {
+  if (href === '/') return path === '/' || path === '';
+  return path.startsWith(href);
+}
+
+const getStartedDesign = [
+  { label: 'Figma Libraries',              href: '/figma-libraries'                         },
+  { label: 'UX Design Process & Guidelines', href: '/get-started/design/ux-design-process'  },
+];
+
+const getStartedInternal = [
+  { label: 'Changelog Guidelines', href: '/get-started/internal/changelog-guidelines'          },
+  { label: 'Meeting Guidelines',   href: '/get-started/internal/meeting-invitation-guidelines' },
+];
+
+const getStartedDevelop = [
+  { label: 'Developer Setup',              href: '/get-started/develop/developer-setup'        },
+  { label: 'Build Categorization Process', href: '/get-started/develop/build-categorization' },
+  { label: 'Code Branching Guidelines',    href: '/get-started/develop/code-branching'        },
+  { label: 'Code Management Guidelines',   href: '/get-started/develop/code-management'       },
+  { label: 'Versioning',                   href: '/get-started/develop/versioning'            },
+];
+
+const isGetStarted = path.startsWith('/get-started');
+
+const designSystemLinks = [
+  { label: 'Home',         href: '/'            },
+  { label: 'Introduction', href: '/introduction' },
+  { label: 'Strategy',     href: '/strategy'     },
+];
+
+const navGroups = [
+  {
+    id: 'grp-brand',
+    label: 'Brand',
+    items: [
+      { label: 'Color',      href: '/color'      },
+      { label: 'Images',     href: '/images'     },
+      { label: 'Logo',       href: '/logo'       },
+      { label: 'Typography', href: '/typography' },
+    ],
+  },
+  {
+    id: 'grp-content',
+    label: 'Content',
+    items: [
+      { label: 'Language and Grammar', href: '/language-and-grammar' },
+      { label: 'Iconography',         href: '/iconography'        },
+      { label: 'Illustrations', href: '/illustrations' },
+    ],
+  },
+];
+
+const bootstrapComponents = [
+  { label: 'Accordion',    href: '/components/bootstrap/accordion'    },
+  { label: 'Alerts',       href: '/components/bootstrap/alerts'       },
+  { label: 'Badges',       href: '/components/bootstrap/badges'       },
+  { label: 'Breadcrumb',   href: '/components/bootstrap/breadcrumb'   },
+  { label: 'Button Group', href: '/components/bootstrap/button-group' },
+  { label: 'Buttons',      href: '/components/bootstrap/buttons'      },
+  { label: 'Cards',        href: '/components/bootstrap/cards'        },
+  { label: 'Carousel',     href: '/components/bootstrap/carousel'     },
+  { label: 'Dropdowns',    href: '/components/bootstrap/dropdowns'    },
+  { label: 'Forms',        href: '/components/bootstrap/forms'        },
+  { label: 'Input Group',  href: '/components/bootstrap/input-group'  },
+  { label: 'List Group',   href: '/components/bootstrap/list-group'   },
+  { label: 'Modal',        href: '/components/bootstrap/modal'        },
+  { label: 'Navbar',       href: '/components/bootstrap/navbar'       },
+  { label: 'Navs & Tabs',  href: '/components/bootstrap/navs'         },
+  { label: 'Offcanvas',    href: '/components/bootstrap/offcanvas'    },
+  { label: 'Pagination',   href: '/components/bootstrap/pagination'   },
+  { label: 'Placeholders', href: '/components/bootstrap/placeholders' },
+  { label: 'Popovers',     href: '/components/bootstrap/popovers'     },
+  { label: 'Progress',     href: '/components/bootstrap/progress'     },
+  { label: 'Spinners',     href: '/components/bootstrap/spinners'     },
+  { label: 'Tables',       href: '/components/bootstrap/tables'       },
+  { label: 'Toasts',       href: '/components/bootstrap/toasts'       },
+  { label: 'Tooltips',     href: '/components/bootstrap/tooltips'     },
+  { label: 'Validation',   href: '/components/bootstrap/validation'   },
+];
+
+const otherComponents = [
+  { label: 'Dropzone',         href: '/components/dropzone'         },
+  { label: 'File Upload',      href: '/components/file-upload'      },
+  { label: 'File Viewer',      href: '/components/file-viewer'      },
+  { label: 'Form Validation',  href: '/components/form-validation'  },
+  { label: 'Highcharts',       href: '/components/highcharts'       },
+  { label: 'Mask',             href: '/components/mask'             },
+  { label: 'Moment',           href: '/components/moment'           },
+  { label: 'Noty',             href: '/components/noty'             },
+  { label: 'Numeral',          href: '/components/numeral'          },
+  { label: 'Repeater',         href: '/components/repeater'         },
+  { label: 'Selectize',        href: '/components/selectize'        },
+  { label: 'Summernote',       href: '/components/summernote'       },
+  { label: 'Table 2.2.1',      href: '/components/table'            },
+  { label: 'Template Editor',  href: '/components/template-editor'  },
+  { label: 'Treeview',         href: '/components/treeview'         },
+  { label: 'Wizard Form',      href: '/components/wizard-form'      },
+];
+
+const docsShell = [
+  { label: 'Browser & TZ Detection', href: '/docs/detection'    },
+  { label: 'Menu Web',               href: '/docs/menu-web'     },
+  { label: 'Theme Picker',           href: '/docs/theme-picker' },
+];
+
+const docsModules = [
+  { label: 'Default URL',        href: '/docs/default-url'         },
+  { label: 'Feature Onboarding', href: '/docs/feature-onboarding'  },
+  { label: 'Notifications',      href: '/docs/notifications'       },
+  { label: 'Quick Links',        href: '/docs/quicklinks'          },
+  { label: 'User Onboarding',    href: '/docs/user-onboarding'     },
+  { label: 'Visual Indicator',   href: '/docs/visual-indicator'    },
+];
+
+const docsUtilities = [
+  { label: 'Browser Storage',  href: '/docs/browser-storage'  },
+  { label: 'DateTime Picker',  href: '/docs/datetime-picker'  },
+  { label: 'Request & URI',    href: '/docs/request-and-uri'  },
+  { label: 'ViewModelBase',    href: '/docs/view-model'        },
+];
+
+const docsPlugins = [
+  { label: 'Action Button Manager', href: '/docs/action-button-manager' },
+  { label: 'Currency Picker',       href: '/docs/currency-picker'       },
+  { label: 'File Template Editor',  href: '/docs/file-template-editor'  },
+  { label: 'Repeater',              href: '/docs/repeater'              },
+  { label: 'Table Plugin',          href: '/docs/table-plugin'          },
+  { label: 'Template Editor',       href: '/docs/template-editor'       },
+  { label: 'Treeview',              href: '/docs/treeview'              },
+  { label: 'Wizard Form',           href: '/docs/wizard-form'           },
+];
+
+const isDocs = path.startsWith('/docs');
+---
+
+<aside id="sidebar" class="sidebar">
+  <!-- Logo -->
+  <a href="/" class="s-logo">
+    <img class="logo-light" src="/images/voyadores-logo-combination-horizontal-light.svg" alt="Voyadores" width="128" />
+    <img class="logo-dark"  src="/images/voyadores-logo-combination-horizontal-dark.svg"  alt="Voyadores" width="128" />
+  </a>
+
+  <!-- Nav -->
+  <nav class="s-nav" aria-label="Main">
+
+    <!-- Design System flat links (top-level, no collapse) -->
+    <div class="s-top-section">
+      {designSystemLinks.map(item => (
+        <a
+          href={item.href}
+          class:list={['s-link', { 'is-on': active(item.href) }]}
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+
+    <!-- Get Started super-group -->
+    <div class:list={['s-group', { 'is-open': isGetStarted }]} id="grp-get-started">
+      <button
+        class="s-group-header"
+        data-group="grp-get-started"
+        aria-expanded={isGetStarted ? 'true' : 'false'}
+      >
+        <span class="s-group-label">Get Started</span>
+        <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+
+      <div class="s-group-items">
+
+        <!-- Design sub-group -->
+        <div class:list={['s-subgroup', { 'is-open': getStartedDesign.some(i => path === i.href || path === i.href + '/') }]} id="grp-gs-design">
+          <button
+            class="s-subgroup-header"
+            data-group="grp-gs-design"
+            aria-expanded={getStartedDesign.some(i => path === i.href || path === i.href + '/') ? 'true' : 'false'}
+          >
+            <span>Design</span>
+            <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="s-subgroup-items">
+            {getStartedDesign.map(item => (
+              <a href={item.href} class:list={['s-sublink', { 'is-on': path === item.href || path === item.href + '/' }]}>
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- Develop sub-group -->
+        <div class:list={['s-subgroup', { 'is-open': getStartedDevelop.some(i => path === i.href || path === i.href + '/') }]} id="grp-gs-develop">
+          <button
+            class="s-subgroup-header"
+            data-group="grp-gs-develop"
+            aria-expanded={getStartedDevelop.some(i => path === i.href || path === i.href + '/') ? 'true' : 'false'}
+          >
+            <span>Develop</span>
+            <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="s-subgroup-items">
+            {getStartedDevelop.map(item => (
+              <a href={item.href} class:list={['s-sublink', { 'is-on': path === item.href || path === item.href + '/' }]}>
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- Internal sub-group -->
+        <div class:list={['s-subgroup', { 'is-open': getStartedInternal.some(i => path === i.href || path === i.href + '/') }]} id="grp-gs-internal">
+          <button
+            class="s-subgroup-header"
+            data-group="grp-gs-internal"
+            aria-expanded={getStartedInternal.some(i => path === i.href || path === i.href + '/') ? 'true' : 'false'}
+          >
+            <span>Internal</span>
+            <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="s-subgroup-items">
+            {getStartedInternal.map(item => (
+              <a href={item.href} class:list={['s-sublink', { 'is-on': path === item.href || path === item.href + '/' }]}>
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Grouped top-level nav -->
+    {navGroups.map(group => {
+      const groupActive = group.items.some(i => active(i.href));
+      return (
+        <div class:list={['s-group', { 'is-open': groupActive }]} id={group.id}>
+          <button
+            class="s-group-header"
+            data-group={group.id}
+            aria-expanded={groupActive ? 'true' : 'false'}
+          >
+            <span class="s-group-label">{group.label}</span>
+            <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="s-group-items">
+            {group.items.map(item => (
+              <a
+                href={item.href}
+                class:list={['s-link', { 'is-on': active(item.href) }]}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      );
+    })}
+
+    <!-- Components super-group -->
+    <div class:list={['s-group s-group--components', { 'is-open': isComponents }]} id="grp-components">
+      <button
+        class="s-group-header"
+        data-group="grp-components"
+        aria-expanded={isComponents ? 'true' : 'false'}
+      >
+        <span class="s-group-label">Components</span>
+        <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+
+      <div class="s-group-items">
+
+        <!-- Bootstrap sub-group -->
+        <div class:list={['s-subgroup', { 'is-open': isBootstrap || path === '/components' || path === '/components/' }]} id="grp-bootstrap">
+          <button
+            class="s-subgroup-header"
+            data-group="grp-bootstrap"
+            aria-expanded={(isBootstrap || path === '/components' || path === '/components/') ? 'true' : 'false'}
+          >
+            <span>Bootstrap</span>
+            <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="s-subgroup-items">
+            {bootstrapComponents.map(item => (
+              <a
+                href={item.href}
+                class:list={['s-sublink', { 'is-on': path === item.href || path === item.href + '/' }]}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- Others sub-group -->
+        <div class:list={['s-subgroup', { 'is-open': isOthers }]} id="grp-others">
+          <button
+            class="s-subgroup-header"
+            data-group="grp-others"
+            aria-expanded={isOthers ? 'true' : 'false'}
+          >
+            <span>Others</span>
+            <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="s-subgroup-items">
+            {otherComponents.map(item => (
+              <a
+                href={item.href}
+                class:list={['s-sublink', { 'is-on': path === item.href || path === item.href + '/' }]}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Documentation super-group -->
+    <div class:list={['s-group s-group--docs', { 'is-open': isDocs }]} id="grp-docs">
+      <button
+        class="s-group-header"
+        data-group="grp-docs"
+        aria-expanded={isDocs ? 'true' : 'false'}
+      >
+        <span class="s-group-label">Documentation</span>
+        <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+
+      <div class="s-group-items">
+
+        <!-- App Shell sub-group -->
+        <div class:list={['s-subgroup', { 'is-open': docsShell.some(i => path === i.href || path === i.href + '/') }]} id="grp-docs-shell">
+          <button
+            class="s-subgroup-header"
+            data-group="grp-docs-shell"
+            aria-expanded={docsShell.some(i => path === i.href || path === i.href + '/') ? 'true' : 'false'}
+          >
+            <span>App Shell</span>
+            <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="s-subgroup-items">
+            {docsShell.map(item => (
+              <a href={item.href} class:list={['s-sublink', { 'is-on': path === item.href || path === item.href + '/' }]}>
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- Modules sub-group -->
+        <div class:list={['s-subgroup', { 'is-open': docsModules.some(i => path === i.href || path === i.href + '/') }]} id="grp-docs-modules">
+          <button
+            class="s-subgroup-header"
+            data-group="grp-docs-modules"
+            aria-expanded={docsModules.some(i => path === i.href || path === i.href + '/') ? 'true' : 'false'}
+          >
+            <span>Modules</span>
+            <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="s-subgroup-items">
+            {docsModules.map(item => (
+              <a href={item.href} class:list={['s-sublink', { 'is-on': path === item.href || path === item.href + '/' }]}>
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- Utilities sub-group -->
+        <div class:list={['s-subgroup', { 'is-open': docsUtilities.some(i => path === i.href || path === i.href + '/') }]} id="grp-docs-utilities">
+          <button
+            class="s-subgroup-header"
+            data-group="grp-docs-utilities"
+            aria-expanded={docsUtilities.some(i => path === i.href || path === i.href + '/') ? 'true' : 'false'}
+          >
+            <span>Utilities</span>
+            <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="s-subgroup-items">
+            {docsUtilities.map(item => (
+              <a href={item.href} class:list={['s-sublink', { 'is-on': path === item.href || path === item.href + '/' }]}>
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- Plugins sub-group -->
+        <div class:list={['s-subgroup', { 'is-open': docsPlugins.some(i => path === i.href || path === i.href + '/') }]} id="grp-docs-plugins">
+          <button
+            class="s-subgroup-header"
+            data-group="grp-docs-plugins"
+            aria-expanded={docsPlugins.some(i => path === i.href || path === i.href + '/') ? 'true' : 'false'}
+          >
+            <span>Plugins</span>
+            <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="s-subgroup-items">
+            {docsPlugins.map(item => (
+              <a href={item.href} class:list={['s-sublink', { 'is-on': path === item.href || path === item.href + '/' }]}>
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </nav>
+
+  <!-- Sidebar footer: theme toggle -->
+  <div class="s-footer">
+    <button class="theme-toggle s-theme-btn" id="theme-toggle-sidebar" aria-label="Toggle theme" title="Toggle theme">
+      <svg class="icon-sun"    width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg class="icon-moon"   width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-system" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      <span class="s-theme-label">
+        <span class="label-light">Light mode</span>
+        <span class="label-dark">Dark mode</span>
+        <span class="label-system">System</span>
+      </span>
+    </button>
+  </div>
+</aside>
+
+<script is:inline>
+(function () {
+  // Generic group toggle for all .s-group and .s-subgroup headers
+  document.querySelectorAll('[data-group]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id   = btn.getAttribute('data-group');
+      var el   = document.getElementById(id);
+      if (!el) return;
+      var open = el.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+})();
+</script>
+
+<style>
+  .sidebar {
+    position: fixed; top: 0; left: 0;
+    width: var(--sidebar); height: 100vh;
+    background: var(--white);
+    border-right: 1px solid var(--g5);
+    display: flex; flex-direction: column;
+    z-index: 150;
+    overflow-y: auto; overflow-x: hidden;
+    transition: background .25s, border-color .25s;
+  }
+
+  /* ── Top-level Design System links ──────────────────────────────────── */
+  .s-top-section {
+    padding: 8px 0 4px;
+    border-bottom: 1px solid var(--g5);
+    margin-bottom: 2px;
+  }
+  /* Match left indent to Get Started group header (24px not 32px) */
+  .s-top-section .s-link {
+    padding-left: 24px;
+    min-height: 36px;
+    display: flex; align-items: center;
+  }
+
+  /* ── Logo ─────────────────────────────────────────────────────────────── */
+  .s-logo {
+    display: block; padding: 24px 24px 20px;
+    flex-shrink: 0; border-bottom: 1px solid var(--g5);
+    margin-bottom: 8px;
+    transition: border-color .25s;
+  }
+  .s-logo img { width: 120px; height: auto; }
+
+  /* ── Nav shell ───────────────────────────────────────────────────────── */
+  .s-nav { display: flex; flex-direction: column; flex: 1; padding: 4px 0; }
+
+  /* ── Group (top-level collapsible section) ───────────────────────────── */
+  .s-group { }
+
+  .s-group-header {
+    display: flex; align-items: center; justify-content: space-between;
+    width: 100%; padding: 8px 16px 8px 24px;
+    background: none; border: none;
+    font-size: 11px; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--g2);
+    cursor: pointer; text-align: left;
+    transition: color .15s;
+    gap: 4px;
+  }
+  .s-group-header:hover { color: var(--black); }
+  .s-group-header .s-group-label { flex: 1; }
+
+  /* Chevron rotation */
+  .s-chevron { transition: transform .22s cubic-bezier(.4,0,.2,1); flex-shrink: 0; }
+  .s-group.is-open > .s-group-header .s-chevron,
+  .s-subgroup.is-open > .s-subgroup-header .s-chevron { transform: rotate(180deg); }
+
+  /* Animated height for group items */
+  .s-group-items {
+    overflow: hidden; max-height: 0;
+    transition: max-height .28s cubic-bezier(.4,0,.2,1);
+  }
+  .s-group.is-open > .s-group-items { max-height: 2000px; }
+
+  /* ── Regular nav link inside a group ─────────────────────────────────── */
+  .s-link {
+    display: block; padding: 8px 16px 8px 32px;
+    font-size: 14px; font-weight: 500; color: var(--g2);
+    line-height: 1.4; text-decoration: none;
+    border-left: 2px solid transparent;
+    transition: color .12s, background .12s, border-color .12s;
+    white-space: nowrap;
+  }
+  .s-link:hover { color: var(--black); background: rgba(127,127,127,.06); }
+  .s-link.is-on {
+    color: var(--brand); font-weight: 600;
+    border-left-color: var(--brand);
+    background: rgba(247,146,30,.06);
+  }
+
+  /* ── Sub-group (Bootstrap / Others inside Components) ────────────────── */
+  .s-subgroup { }
+
+  .s-subgroup-header {
+    display: flex; align-items: center; justify-content: space-between;
+    width: 100%; padding: 7px 16px 7px 32px;
+    background: none; border: none;
+    font-size: 13px; font-weight: 600; color: var(--g2);
+    cursor: pointer; text-align: left;
+    transition: color .15s;
+    gap: 4px;
+  }
+  .s-subgroup-header span { flex: 1; }
+  .s-subgroup-header:hover { color: var(--black); }
+
+  .s-subgroup-items {
+    overflow: hidden; max-height: 0;
+    transition: max-height .28s cubic-bezier(.4,0,.2,1);
+  }
+  .s-subgroup.is-open > .s-subgroup-items { max-height: 1600px; }
+
+  /* ── Sub-link (inside Bootstrap or Others) ───────────────────────────── */
+  .s-sublink {
+    display: block; padding: 6px 16px 6px 44px;
+    font-size: 13px; font-weight: 400; color: var(--g2);
+    line-height: 1.4; text-decoration: none; white-space: nowrap;
+    border-left: 2px solid transparent;
+    transition: color .12s, background .12s, border-color .12s;
+  }
+  .s-sublink:hover { color: var(--black); background: rgba(127,127,127,.04); }
+  .s-sublink.is-on {
+    color: var(--brand); font-weight: 600;
+    border-left-color: var(--brand);
+    background: rgba(247,146,30,.05);
+  }
+
+  /* ── Divider between groups ──────────────────────────────────────────── */
+  .s-group + .s-group { border-top: 1px solid var(--g5); margin-top: 2px; padding-top: 2px; }
+
+  /* ── Footer: theme toggle ────────────────────────────────────────────── */
+  .s-footer {
+    flex-shrink: 0;
+    padding: 12px 16px;
+    border-top: 1px solid var(--g5);
+    margin-top: auto;
+    transition: border-color .25s;
+  }
+
+  .s-theme-btn {
+    display: flex; align-items: center; gap: 10px;
+    width: 100%; padding: 8px 12px; border-radius: 6px;
+    background: var(--g6); border: 1px solid var(--g5);
+    color: var(--g1); font-size: 13px; font-weight: 500;
+    transition: background .15s, border-color .15s, color .15s;
+    text-align: left;
+  }
+  .s-theme-btn:hover { background: var(--g5); border-color: var(--g4); color: var(--black); }
+
+  .s-theme-label { flex: 1; }
+  /* label-* visibility is controlled by global CSS in BaseLayout */
+
+  /* ── Mobile ──────────────────────────────────────────────────────────── */
+  @media (max-width: 767px) {
+    .sidebar {
+      transform: translateX(-100%);
+      transition: transform .25s cubic-bezier(.4,0,.2,1), background .25s, border-color .25s;
+      /* Full height — covers topbar, starts from very top */
+      padding-top: 0;
+      top: 0;
+      height: 100vh;
+      z-index: 210; /* above topbar (200) */
+      width: min(var(--sidebar), 88vw);
+      box-shadow: none;
+    }
+    .sidebar.open {
+      transform: translateX(0);
+      box-shadow: 4px 0 32px rgba(0,0,0,.18);
+    }
+    /* Logo area adds spacing at top instead of padding-top */
+    .s-logo { padding-top: 28px; }
+
+    /* Bigger touch targets on mobile */
+    .s-link        { min-height: 44px; display: flex; align-items: center; }
+    .s-group-header   { min-height: 44px; }
+    .s-subgroup-header { min-height: 44px; }
+    .s-sublink     { padding-top: 8px; padding-bottom: 8px; }
+    .s-theme-btn   { min-height: 48px; }
+  }
+</style>

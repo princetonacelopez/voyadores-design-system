@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+---
+<BaseLayout title="Template Editor" activeSection="components">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/css/template-editor/template-editor.css" />
+  </Fragment>
+
+  <PageHeader
+    eyebrow="Components / Others"
+    title="Template Editor"
+    description="Dual-mode WYSIWYG/code editor that preserves Razor template syntax. Supports image insert/resize, rich formatting toolbar, and round-trip Razor tag extraction via Map-based substitution."
+  />
+
+  <section class="sec">
+    <h2>Setup</h2>
+    <div class="code-block"><pre is:raw><code>&lt;link rel="stylesheet" href="https://cdn.voyadores.com/content/css/template-editor/template-editor.css" /&gt;
+
+&lt;script type="module"&gt;
+import FileTemplateEditor from 'https://cdn.voyadores.com/content/js/file-template-editor/file-template-editor.js';
+&lt;/script&gt;</code></pre></div>
+  </section>
+
+  <section class="sec">
+    <h2>Demo</h2>
+    <div class="demo-area">
+      <div id="demo-template-editor"></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Usage</h2>
+    <div class="code-block"><pre is:raw><code>import FileTemplateEditor from 'https://cdn.voyadores.com/content/js/file-template-editor/file-template-editor.js';
+
+// Initialize — pass the element ID (without #)
+const editor = new FileTemplateEditor('my-editor', {
+  initialContent: '&lt;p&gt;Hello @Model.FirstName,&lt;/p&gt;&lt;p&gt;Your balance is @Model.Balance.&lt;/p&gt;',
+  height: 300,
+  placeholder: 'Start typing here...',
+  onInit: function () {
+    console.log('Editor ready');
+  },
+});
+
+// Get HTML (Razor tags restored)
+const html = editor.getContent();
+
+// Set content
+editor.setContent('&lt;p&gt;New content with @Model.Name&lt;/p&gt;');
+
+// Destroy
+editor.destroy();</code></pre></div>
+
+    <h3 class="sub-h3">JSON Template Editor</h3>
+    <div class="code-block"><pre is:raw><code>import { JSONEditor } from 'https://cdn.voyadores.com/content/js/file-template-editor/json-template-editor.js';
+
+const jsonEditor = new JSONEditor('my-json-editor');
+
+// Set JSON value
+jsonEditor.setValue('{ "name": "Juan", "amount": 5000 }');
+
+// Get JSON string
+const raw = jsonEditor.getJSON();
+
+// Validate
+if (jsonEditor.isValid()) {
+  const data = JSON.parse(raw);
+}</code></pre></div>
+  </section>
+</BaseLayout>
+
+<script is:inline type="module">
+import FileTemplateEditor from '/js/file-template-editor/file-template-editor.js';
+
+const editor = new FileTemplateEditor('demo-template-editor', {
+  initialContent: '<p>Dear <strong>@Model.FirstName @Model.LastName</strong>,</p><p>Your account balance as of <em>@Model.Date</em> is <strong>@Model.Balance</strong>.</p><p>Thank you for banking with Voyadores.</p>',
+  height: 280,
+});
+</script>
+
+<style>
+  .sec { margin-bottom: 56px; }
+  .sec h2 { font-size: 20px; font-weight: 500; letter-spacing: -.4px; color: var(--black); margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--g5); }
+  .sub-h3 { font-size: 15px; font-weight: 600; color: var(--black); margin: 24px 0 12px; }
+  .code-block { background: #161616; border-radius: 4px; overflow: auto; margin-bottom: 0; }
+  .code-block pre { margin: 0; padding: 20px 24px; }
+  .code-block code { font-family: var(--mono); font-size: 13px; color: #f5f5f5; line-height: 1.8; white-space: pre; }
+  .demo-area { padding: 24px; border: 1px solid var(--g5); border-radius: 2px; background: var(--white); cursor: auto; }
+</style>

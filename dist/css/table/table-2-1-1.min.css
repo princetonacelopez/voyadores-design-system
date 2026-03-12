@@ -1,0 +1,336 @@
+﻿/* ==========================================================================
+   CUSTOM TABLE PLUGIN STYLES v2.1.0
+   ========================================================================== */
+
+/* ==========================================================================
+   TABLE BASE STYLES
+   ========================================================================== */
+
+/* Two-phase table layout: starts auto for natural sizing, switches to fixed for performance */
+table.table-custom {
+	table-layout: auto; /* Initial phase - let browser calculate natural widths */
+	transition: table-layout 0.1s ease; /* Smooth transition when switching to fixed */
+}
+
+/* When table layout becomes fixed (after initial calculation) */
+table.table-custom[style*="table-layout: fixed"] {
+	table-layout: fixed; /* Performance phase - consistent column widths */
+}
+
+/* Prevent text wrapping and show ellipsis for overflow content in plugin tables */
+table.table-custom td {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+table.table-custom th {
+	word-break: break-all;
+	white-space: normal;
+}
+
+table.table-custom.table > thead > tr > th {
+	padding: 0.5rem;
+	vertical-align: middle;
+}
+
+/* ==========================================================================
+   SORTABLE COLUMNS - Button-based Implementation (WAI-ARIA Guidelines)
+   ========================================================================== */
+
+/* Style for sorting arrows */
+th.sortable a.sort {
+	padding-right: 32px;
+	position: relative;
+}
+
+th.sortable a.sort:before,
+th.sortable a.sort:after {
+	position: absolute;
+	display: block;
+	opacity: 0.25;
+	right: 10px;
+	line-height: 10px;
+	width: 16px;
+	height: 16px;
+}
+
+th.sortable a.sort:before {
+	bottom: 24%;
+	content: "";
+	background: url('data:image/svg+xml,<svg id="Layer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><defs><style>.cls-1{fill:%2325314c;}</style></defs><path id="caret-up" class="cls-1" d="M13.3,8.6l4.38,5.194A1.34,1.34,0,0,1,16.648,16h-9.3a1.34,1.34,0,0,1-1.034-2.2L10.7,8.6A1.706,1.706,0,0,1,13.3,8.6Z"/></svg>');
+	background-repeat: no-repeat;
+}
+
+th.sortable a.sort:after {
+	top: 24%;
+	content: "";
+	background: url('data:image/svg+xml,<svg id="Layer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><defs><style>.cls-1{fill:%2325314c;}</style></defs><path id="caret-down" class="cls-1" d="M10.7,15.4,6.318,10.2A1.34,1.34,0,0,1,7.352,8h9.3a1.34,1.34,0,0,1,1.034,2.2L13.3,15.4A1.706,1.706,0,0,1,10.7,15.4Z"/></svg>');
+	background-repeat: no-repeat;
+}
+
+th.sortable a.sort.sort-asc:before,
+th.sortable a.sort.sort-desc:after {
+	opacity: 0.75;
+}
+
+[data-bs-theme="dark"] th.sortable a.sort:before,
+[data-bs-theme="dark"] th.sortable a.sort:after {
+	filter: invert(1) grayscale(1);
+}
+
+/* ==========================================================================
+   NON-SORTABLE COLUMN HEADERS
+   ========================================================================== */
+
+/* Non-sortable columns - consistent layout */
+table.table-custom.table th:not(.col-sortable, .col-freeze) {
+	position: relative;
+}
+
+/* Flex container wrapper for non-sortable columns */
+table.table-custom.table th:not(.col-sortable) .header-content {
+	display: flex;
+	align-items: center;
+	min-width: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Header text styling for all columns */
+table.table-custom th .header-text {
+	flex: 1 1 auto;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* ==========================================================================
+   COLUMN RESIZE SYSTEM (Desktop Only)
+   ========================================================================== */
+
+/* Resizable columns - minimal styling */
+table.table-custom th.col-resizable {
+	position: relative;
+}
+
+/* Resize handle - full-height strip on right edge (Grid.js pattern) */
+table.table-custom th.col-resizable .col-resize-cursor-area {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 5px;
+	cursor: ew-resize;
+	transition: background-color 0.15s ease;
+}
+
+/* Show full-height colored strip on hover — same pattern as Grid.js */
+table.table-custom th.col-resizable:hover .col-resize-cursor-area {
+	background-color: rgba(247, 146, 30, 0.35);
+}
+
+/* Bright strip while actively dragging, subtle tint on the header */
+table.table-custom th.col-resize-active {
+	background-color: rgba(247, 146, 30, 0.06) !important;
+}
+
+table.table-custom th.col-resize-active .col-resize-cursor-area {
+	background-color: #f7921e !important;
+}
+
+/* Lock cursor and selection during active resize drag */
+table.table-custom.col-table-resizing {
+	cursor: ew-resize;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+table.table-custom.col-table-resizing * {
+	cursor: ew-resize !important;
+	-webkit-user-select: none !important;
+	-moz-user-select: none !important;
+	-ms-user-select: none !important;
+	user-select: none !important;
+}
+
+
+/* ==========================================================================
+   COLUMN DRAG & DROP (Desktop Only)
+   ========================================================================== */
+
+/* Draggable column headers - visual feedback for interactivity */
+table.table-custom th.col-draggable {
+	cursor: grab;
+	transition: background-color 0.2s ease;
+}
+
+/* Currently being dragged */
+table.table-custom th.is-dragging {
+	opacity: 0.5;
+	cursor: grabbing;
+}
+
+/* Drag over target */
+table.table-custom th.drag-over {
+	background-color: rgba(247, 146, 30, 0.1);
+	border-left: 2px solid #f7921e;
+}
+
+/* Dark theme - more visible drag-over background */
+[data-bs-theme="dark"] table.table-custom th.drag-over {
+	background-color: rgba(247, 146, 30, 0.2);
+}
+
+/* Frozen columns - disable dragging */
+table.table-custom th.col-draggable.col-freeze {
+	cursor: not-allowed !important;
+}
+
+table.table-custom th.col-draggable.col-freeze:hover {
+	background-color: transparent !important;
+}
+
+/* Ghost element styling during drag operation */
+table.table-custom .sortable-ghost {
+	opacity: 0.4;
+	background-color: rgba(247, 146, 30, 0.32) !important;
+}
+
+/* Element being dragged - elevated appearance */
+table.table-custom .sortable-drag {
+	opacity: 1 !important;
+	background-color: white !important;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+	transform: rotate(3deg) !important;
+}
+
+/* Active drag state */
+table.table-custom .sortable-chosen {
+	cursor: grabbing;
+}
+
+/* Column highlighting during drag operations */
+table.table-custom .col-drag-highlight {
+	position: relative;
+	background-color: rgba(247, 146, 30, 0.15) !important;
+}
+
+/* Column highlight overlay */
+table.table-custom .col-highlight-overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	background: linear-gradient(
+		180deg,
+		rgba(247, 146, 30, 0.2) 0%,
+		rgba(247, 146, 30, 0.15) 50%,
+		rgba(247, 146, 30, 0.2) 100%
+	);
+	border-left: 3px solid rgba(247, 146, 30, 0.6);
+	border-right: 3px solid rgba(247, 146, 30, 0.6);
+	pointer-events: none;
+	z-index: 10;
+	transition: all 0.15s ease-out;
+	box-shadow:
+		inset 0 0 20px rgba(247, 146, 30, 0.1),
+		0 0 10px rgba(247, 146, 30, 0.2);
+}
+
+/* Smooth column animations during reordering */
+table.table-custom.col-dragging tbody td {
+	transition: transform 0.15s ease-out;
+}
+
+/* Disable transitions during active drag */
+table.table-custom.col-dragging .sortable-drag ~ * {
+	transition: none !important;
+}
+
+/* ==========================================================================
+   UTILITY CLASSES
+   ========================================================================== */
+
+/* Screen reader only content - accessible but visually hidden */
+table.table-custom .sr-only {
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	position: absolute;
+	overflow: hidden;
+}
+
+/* Empty state image sizing */
+table.table-custom
+	img[src="/content/images/states/empty/voyadores.default.empty.svg"] {
+	width: 80px;
+}
+
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVENESS
+   Disable interactive features below 992px for touch-friendly experience
+   ========================================================================== */
+
+@media (max-width: 991.98px) {
+	/* Hide resize cursor areas */
+	table.table-custom .col-resize-cursor-area {
+		display: none !important;
+	}
+
+	table.table-custom th.col-resizable,
+	table.table-custom th.col-resizable:hover {
+		cursor: default !important;
+	}
+
+	/* Disable draggable styling */
+	table.table-custom th.col-draggable {
+		cursor: default !important;
+	}
+
+	table.table-custom th.col-draggable:hover {
+		background-color: transparent !important;
+	}
+
+	/* Disable sortable ghost effects */
+	table.table-custom .sortable-ghost,
+	table.table-custom .sortable-drag,
+	table.table-custom .sortable-chosen {
+		opacity: 1 !important;
+		background-color: inherit !important;
+		box-shadow: none !important;
+		transform: none !important;
+		cursor: default !important;
+	}
+
+	/* Hide column drag highlights */
+	table.table-custom .col-drag-highlight {
+		background-color: transparent !important;
+	}
+
+	table.table-custom .col-drag-highlight::after {
+		display: none !important;
+	}
+
+	/* Hide column highlight */
+	table.table-custom .col-highlight-overlay {
+		display: none !important;
+	}
+}
+
+.col-icon {
+	width: 56px;
+}
+
+/* Checking table body rows fewer than 3 children */
+.table-custom:has(tbody > tr:first-child:nth-last-child(-n + 3)):has(
+		[data-bs-toggle="dropdown"].show
+	) {
+	margin-bottom: 132px;
+}

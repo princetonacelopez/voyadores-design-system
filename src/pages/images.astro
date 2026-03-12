@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const illustrations = [
+  { src: '/images/illustrations/home.start.onboarding-welcome.svg',          label: 'Onboarding Welcome'        },
+  { src: '/images/illustrations/home.start.onboarding.multi-platform.svg',   label: 'Multi-platform'            },
+  { src: '/images/illustrations/home.start.onboarding.reliable-support.svg', label: 'Reliable Support'          },
+  { src: '/images/illustrations/home.start.onboarding.access-anywhere.svg',  label: 'Access Anywhere'           },
+  { src: '/images/illustrations/home.start.onboarding.finish.svg',           label: 'Onboarding Finish'         },
+  { src: '/images/illustrations/accounting.svg',                              label: 'Accounting'                },
+  { src: '/images/illustrations/inventory.svg',                               label: 'Inventory'                 },
+  { src: '/images/illustrations/human-resources.svg',                         label: 'Human Resources'           },
+  { src: '/images/illustrations/home.start.announcement.svg',                 label: 'Announcement'              },
+  { src: '/images/illustrations/home.start.help-tips.svg',                    label: 'Help & Tips'               },
+  { src: '/images/illustrations/home.start.onboarding.tour.svg',              label: 'Product Tour'              },
+  { src: '/images/illustrations/alert.svg',                                   label: 'Alert'                     },
+];
+
+const logos = [
+  { src: '/images/voyadores-logo-combination-horizontal-light.svg', label: 'Logo Horizontal (Light)' },
+  { src: '/images/voyadores-logo-combination-horizontal-dark.svg',  label: 'Logo Horizontal (Dark)', dark: true },
+  { src: '/images/voyadores-logo-icon.svg',                         label: 'Logo Icon'               },
+];
+---
+
+<BaseLayout title="Images" activeSection="images">
+  <PageHeader
+    eyebrow="Images"
+    title="Image Library"
+    description="Voyadores brand logos, product illustrations, and module background images used across the platform."
+  />
+
+  <!-- Logos -->
+  <section class="sec">
+    <h2>Logos</h2>
+    <div class="logo-row">
+      {logos.map(l => (
+        <div class="logo-item">
+          <div class="logo-canvas" style={l.dark ? 'background:#161616' : 'background:#f8f8f8; border: 1px solid var(--g5)'}>
+            <img src={l.src} alt={l.label} />
+          </div>
+          <span class="img-label">{l.label}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Illustrations -->
+  <section class="sec">
+    <h2>Illustrations</h2>
+    <p class="sec-body">SVG illustrations used across onboarding flows, feature highlights, and module landing screens.</p>
+    <div class="illus-grid">
+      {illustrations.map(i => (
+        <div class="illus-item">
+          <div class="illus-canvas">
+            <img src={i.src} alt={i.label} loading="lazy" />
+          </div>
+          <span class="img-label">{i.label}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Module images -->
+  <section class="sec">
+    <h2>Module Images</h2>
+    <p class="sec-body">Photographic backgrounds used across application modules and landing screens.</p>
+    <div class="login-grid">
+      {[0,1,2,3,4].map(n => (
+        <div class="login-item">
+          <div class="login-canvas">
+            <img src={`/images/login/background-login-${n}.jpg`} alt={`Module background ${n}`} loading="lazy" />
+          </div>
+          <span class="img-label">Background {n}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Usage guidelines -->
+  <section class="sec">
+    <h2>Guidelines</h2>
+    <div class="guidelines">
+      {[
+        ['Use SVG for illustrations',              'SVG format is scalable, lightweight, and theme-compatible. Prefer SVG for all illustrations and icons.'],
+        ['Respect aspect ratios',                  'Never stretch or distort images. Use object-fit: contain for illustrations and object-fit: cover for backgrounds.'],
+        ['Lazy-load below-the-fold images',        'Add loading="lazy" on any image not visible on initial page load to reduce network overhead.'],
+        ['Provide descriptive alt text',           'Every image must have a meaningful alt attribute. Use an empty alt="" only for purely decorative images.'],
+        ['Optimize for web delivery',              'Compress JPEGs and PNGs before use. Prefer modern formats (.webp) with fallbacks for compatibility.'],
+      ].map(([title, desc]) => (
+        <div class="gl-row">
+          <span class="gl-title">{title}</span>
+          <span class="gl-desc">{desc}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .sec { margin-bottom: 64px; }
+  .sec h2 {
+    font-size: 20px; font-weight: 500; letter-spacing: -.4px; color: var(--black);
+    margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--g5);
+  }
+  .sec-body { font-size: 14px; font-weight: 500; color: var(--g2); line-height: 1.7; margin-bottom: 24px; }
+
+  .img-label { display: block; font-size: 12px; font-weight: 500; color: var(--g2); margin-top: 8px; }
+
+  /* Logos */
+  .logo-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .logo-canvas {
+    height: 120px; border-radius: 2px;
+    display: flex; align-items: center; justify-content: center; padding: 24px;
+  }
+  .logo-canvas img { max-width: 140px; max-height: 64px; object-fit: contain; }
+
+  /* Illustrations */
+  .illus-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .illus-canvas {
+    height: 160px; background: var(--g6); border: 1px solid var(--g5);
+    border-radius: 2px; display: flex; align-items: center; justify-content: center; padding: 24px;
+    overflow: hidden;
+  }
+  .illus-canvas img { max-width: 100%; max-height: 120px; object-fit: contain; }
+
+  /* Login */
+  .login-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  .login-canvas {
+    aspect-ratio: 16/9; border-radius: 2px;
+    overflow: hidden; background: var(--g5);
+  }
+  .login-canvas img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* Guidelines */
+  .guidelines { border: 1px solid var(--g5); border-radius: 2px; overflow: hidden; }
+  .gl-row {
+    display: grid; grid-template-columns: 280px 1fr;
+    gap: 16px; padding: 16px 20px;
+    border-bottom: 1px solid var(--g5);
+    font-size: 13px;
+  }
+  .gl-row:last-child { border-bottom: none; }
+  .gl-row:hover { background: var(--g6); }
+  .gl-title { font-weight: 600; color: var(--black); }
+  .gl-desc  { font-weight: 500; color: var(--g2); line-height: 1.5; }
+
+  @media (max-width: 900px) {
+    .illus-grid { grid-template-columns: repeat(3, 1fr); }
+    .login-grid { grid-template-columns: repeat(3, 1fr); }
+    .logo-row   { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .illus-grid { grid-template-columns: repeat(2, 1fr); }
+    .login-grid { grid-template-columns: repeat(2, 1fr); }
+    .gl-row { grid-template-columns: 1fr; }
+  }
+</style>

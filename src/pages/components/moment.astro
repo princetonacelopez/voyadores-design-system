@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+---
+<BaseLayout title="Moment.js" activeSection="components">
+
+  <PageHeader
+    eyebrow="Components / Others"
+    title="Moment.js"
+    description="Parse, validate, manipulate, and display dates and times. Lightweight standalone library with locale support, relative time, and duration formatting."
+  />
+
+  <section class="sec">
+    <h2>Setup</h2>
+    <div class="code-block"><pre is:raw><code>&lt;script src="https://cdn.voyadores.com/content/js/moment/moment.min.js"&gt;&lt;/script&gt;</code></pre></div>
+  </section>
+
+  <section class="sec">
+    <h2>Demo</h2>
+    <div class="demo-area">
+      <div class="moment-grid" id="moment-output"></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Usage</h2>
+    <div class="code-block"><pre is:raw><code>// Current date/time
+moment().format('MMMM Do YYYY, h:mm:ss a');  // "February 28th 2026, 3:45:22 pm"
+
+// Parse a date
+moment('2026-01-15').format('dddd, MMMM D YYYY'); // "Thursday, January 15 2026"
+
+// Relative time
+moment('2025-06-01').fromNow();   // "9 months ago"
+moment('2026-12-31').toNow();     // "in 10 months"
+
+// Manipulate
+moment().add(7, 'days').format('YYYY-MM-DD');     // 7 days from now
+moment().subtract(1, 'month').format('MMMM YYYY'); // last month
+
+// Duration
+moment.duration(90, 'minutes').humanize(); // "an hour"
+moment.duration(2, 'days').asHours();      // 48
+
+// Diff
+const a = moment('2026-01-01');
+const b = moment('2026-12-31');
+b.diff(a, 'days'); // 364
+
+// Validate
+moment('2026-02-30').isValid(); // false
+moment('2026-02-28').isValid(); // true</code></pre></div>
+  </section>
+</BaseLayout>
+
+<script is:inline src="/js/moment/moment.min.js"></script>
+<script is:inline>
+(function () {
+  var now  = moment();
+  var rows = [
+    { label: 'Current date & time',     value: now.format('MMMM Do YYYY, h:mm:ss a')          },
+    { label: 'ISO 8601',                value: now.toISOString()                               },
+    { label: 'Unix timestamp',          value: now.unix()                                      },
+    { label: 'Day of week',             value: now.format('dddd')                              },
+    { label: 'Week number',             value: 'Week ' + now.week() + ' of ' + now.year()     },
+    { label: '7 days from now',         value: now.clone().add(7, 'days').format('MMM D, YYYY') },
+    { label: '1 month ago',             value: now.clone().subtract(1, 'month').fromNow()      },
+    { label: 'Start of month',          value: now.clone().startOf('month').format('MMMM D, YYYY') },
+    { label: 'End of month',            value: now.clone().endOf('month').format('MMMM D, YYYY')   },
+    { label: '90 min duration',         value: moment.duration(90, 'minutes').humanize()       },
+    { label: 'Days left in year',       value: moment('2026-12-31').diff(now, 'days') + ' days' },
+    { label: 'Relative (2025-01-01)',   value: moment('2025-01-01').fromNow()                  },
+  ];
+
+  var html = rows.map(function (r) {
+    return '<div class="m-row"><span class="m-label">' + r.label + '</span><span class="m-value">' + r.value + '</span></div>';
+  }).join('');
+
+  document.getElementById('moment-output').innerHTML = html;
+})();
+</script>
+
+<style>
+  .sec { margin-bottom: 56px; }
+  .sec h2 { font-size: 20px; font-weight: 500; letter-spacing: -.4px; color: var(--black); margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--g5); }
+  .code-block { background: #161616; border-radius: 4px; overflow: auto; }
+  .code-block pre { margin: 0; padding: 20px 24px; }
+  .code-block code { font-family: var(--mono); font-size: 13px; color: #f5f5f5; line-height: 1.8; white-space: pre; }
+  .demo-area { padding: 24px; border: 1px solid var(--g5); border-radius: 2px; background: var(--white); }
+  .moment-grid { display: flex; flex-direction: column; gap: 0; }
+  .m-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--g5); gap: 16px; }
+  .m-row:last-child { border-bottom: none; }
+  .m-label { font-size: 12px; font-weight: 500; color: var(--g2); flex-shrink: 0; }
+  .m-value { font-size: 13px; font-weight: 500; color: var(--black); font-family: var(--mono); text-align: right; }
+</style>

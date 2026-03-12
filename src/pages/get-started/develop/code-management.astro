@@ -1,0 +1,284 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+
+const guidelines = [
+  {
+    id: 'fmb',
+    icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>`,
+    color: 'purple',
+    title: 'Feature Main Branch (FMB)',
+    summary: 'Create a Feature Main Branch for centralized integration of feature branches, providing a stable baseline for testing and production.',
+    items: [
+      {
+        label: 'Creation by Team Lead',
+        desc: 'Ensures a centralized and consistent approach to branch management.',
+      },
+      {
+        label: 'Structured Development',
+        desc: 'Developers should follow the Code Branching Guidelines for structured development.',
+      },
+    ],
+  },
+  {
+    id: 'commits',
+    icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><line x1="3" y1="12" x2="9" y2="12"/><line x1="15" y1="12" x2="21" y2="12"/></svg>`,
+    color: 'blue',
+    title: 'Frequent Commits',
+    summary: 'Encourage developers to make smaller, more frequent commits rather than large, infrequent ones. This facilitates easier code review and reduces conflicts.',
+    items: [
+      {
+        label: 'Commit Messages',
+        desc: 'Developers should write informative and concise commit messages.',
+      },
+    ],
+  },
+  {
+    id: 'prs',
+    icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>`,
+    color: 'green',
+    title: 'Pull Requests (PRs)',
+    summary: 'Require developers to create pull requests daily for code review before merging changes into the main branch.',
+    items: [],
+  },
+  {
+    id: 'reviews',
+    icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`,
+    color: 'orange',
+    title: 'Code Reviews',
+    summary: 'Make code reviews a mandatory part of the development process. Ensure that experienced team members review and provide constructive feedback on each pull request.',
+    items: [
+      {
+        label: 'Reviewer Responsibility',
+        desc: 'Code reviewers play a crucial role in maintaining code quality; they should thoroughly review pull requests.',
+      },
+      {
+        label: 'Review Schedule',
+        desc: 'PR reviews occur every 1:00 PM and 4:00 PM daily.',
+      },
+      {
+        label: 'Merge Buffer',
+        desc: 'Ensure 5–10 minutes from the last approver before merging the branch.',
+      },
+    ],
+  },
+  {
+    id: 'fmb-updates',
+    icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.5"/></svg>`,
+    color: 'teal',
+    title: 'FMB Regular Updates',
+    summary: 'All Feature Main Branches should be updated End of Business (EOB) daily.',
+    items: [],
+  },
+  {
+    id: 'pulls',
+    icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`,
+    color: 'indigo',
+    title: 'Daily Pulls',
+    summary: 'Developers should pull changes from their respective Feature Main Branch daily to stay in sync with the latest code.',
+    items: [],
+  },
+  {
+    id: 'publishing',
+    icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>`,
+    color: 'red',
+    title: 'Publishing',
+    summary: 'Generate the publish copy from the Feature Main Branch for consistency.',
+    items: [
+      {
+        label: 'Master Repository',
+        desc: 'Utilize the master repository for the version next in line for production deployment.',
+      },
+      {
+        label: 'Separate Master Branch',
+        desc: 'Create a separate master branch in the Published Repository for subsequent FMBs.',
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout title="Code Management Guidelines">
+  <PageHeader
+    eyebrow="Get Started — Develop"
+    title="Code Management Guidelines"
+    description="Standards and practices for managing code throughout the development lifecycle — from branching to publishing."
+  />
+
+  <section class="sec">
+    <h2>Guidelines</h2>
+    <div class="guidelines-list">
+      {guidelines.map((g, i) => (
+        <div class:list={['g-card', `g-card--${g.color}`]} id={g.id}>
+          <div class="g-card-header">
+            <div class:list={['g-icon', `g-icon--${g.color}`]} set:html={g.icon} />
+            <div class="g-header-text">
+              <span class="g-num">{String(i + 1).padStart(2, '0')}</span>
+              <h3>{g.title}</h3>
+            </div>
+          </div>
+          <p class="g-summary">{g.summary}</p>
+          {g.items.length > 0 && (
+            <div class="g-items">
+              {g.items.map(item => (
+                <div class="g-item">
+                  <div class="g-item-dot"></div>
+                  <div>
+                    <span class="g-item-label">{item.label}</span>
+                    <span class="g-item-sep"> — </span>
+                    <span class="g-item-desc">{item.desc}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Quick Reference -->
+  <section class="sec">
+    <h2>Quick Reference</h2>
+    <div class="ref-table">
+      <div class="ref-row ref-row--header">
+        <span>Practice</span>
+        <span>Who</span>
+        <span>Cadence</span>
+      </div>
+      {[
+        { practice: 'Create Feature Main Branch', who: 'Team Lead',   cadence: 'Per version cycle' },
+        { practice: 'Commit changes',             who: 'Developer',   cadence: 'Frequently, small units' },
+        { practice: 'Create Pull Request',        who: 'Developer',   cadence: 'Daily' },
+        { practice: 'Code Review',                who: 'Reviewer',    cadence: '1:00 PM & 4:00 PM' },
+        { practice: 'Update FMB',                 who: 'Team Lead',   cadence: 'End of Business (EOB)' },
+        { practice: 'Pull from FMB',              who: 'Developer',   cadence: 'Daily' },
+        { practice: 'Generate publish copy',      who: 'Team Lead',   cadence: 'Per release cycle' },
+      ].map(row => (
+        <div class="ref-row">
+          <span class="ref-practice">{row.practice}</span>
+          <span class="ref-who">{row.who}</span>
+          <span class="ref-cadence">{row.cadence}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .sec { margin-bottom: 72px; }
+
+  .sec h2 {
+    font-size: 20px; font-weight: 600; letter-spacing: -.4px; color: var(--black);
+    margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--g5);
+  }
+
+  /* ── Guidelines list ─────────────────────────────────────────────────── */
+  .guidelines-list { display: flex; flex-direction: column; gap: 8px; }
+
+  .g-card {
+    border: 1px solid var(--g5); border-radius: 8px;
+    padding: 18px 20px; background: var(--white);
+    border-left-width: 3px;
+  }
+
+  .g-card--purple { border-left-color: #7952b3; }
+  .g-card--blue   { border-left-color: #186ade; }
+  .g-card--green  { border-left-color: #077d55; }
+  .g-card--orange { border-left-color: #f7921e; }
+  .g-card--teal   { border-left-color: #167b7d; }
+  .g-card--indigo { border-left-color: #545fe8; }
+  .g-card--red    { border-left-color: #d91f11; }
+
+  .g-card-header {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 10px;
+  }
+
+  .g-icon {
+    flex-shrink: 0; width: 30px; height: 30px; border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .g-icon--purple { background: rgba(121,82,179,.1);  color: #7952b3; }
+  .g-icon--blue   { background: rgba(24,106,222,.1);  color: #186ade; }
+  .g-icon--green  { background: rgba(7,125,85,.1);    color: #077d55; }
+  .g-icon--orange { background: rgba(247,146,30,.12); color: #b8650a; }
+  .g-icon--teal   { background: rgba(22,123,125,.1);  color: #167b7d; }
+  .g-icon--indigo { background: rgba(84,95,232,.1);   color: #3a44c8; }
+  .g-icon--red    { background: rgba(217,31,17,.08);  color: #d91f11; }
+
+  .g-header-text { display: flex; align-items: baseline; gap: 8px; }
+
+  .g-num {
+    font-family: var(--mono); font-size: 10px; font-weight: 700;
+    color: var(--g3);
+  }
+
+  .g-card-header h3 {
+    font-size: 14px; font-weight: 700; color: var(--black);
+  }
+
+  .g-summary {
+    font-size: 13px; font-weight: 500; color: var(--g1); line-height: 1.7;
+    max-width: 680px; margin-bottom: 0;
+  }
+
+  .g-items {
+    margin-top: 12px; display: flex; flex-direction: column; gap: 6px;
+    padding-top: 12px; border-top: 1px solid var(--g5);
+  }
+
+  .g-item {
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+
+  .g-item-dot {
+    flex-shrink: 0; width: 5px; height: 5px; border-radius: 50%;
+    background: var(--g3); margin-top: 6px;
+  }
+
+  .g-item-label {
+    font-size: 12px; font-weight: 700; color: var(--black);
+  }
+  .g-item-sep {
+    font-size: 12px; color: var(--g3);
+  }
+  .g-item-desc {
+    font-size: 12px; font-weight: 500; color: var(--g2); line-height: 1.6;
+  }
+
+  /* ── Quick Reference table ───────────────────────────────────────────── */
+  .ref-table {
+    border: 1px solid var(--g5); border-radius: 8px; overflow: hidden;
+  }
+
+  .ref-row {
+    display: grid; grid-template-columns: 2fr 1fr 1.4fr;
+    padding: 11px 18px; border-bottom: 1px solid var(--g5);
+    gap: 16px; align-items: center;
+  }
+  .ref-row:last-child { border-bottom: none; }
+
+  .ref-row--header {
+    background: var(--g6);
+    font-size: 10px; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--g2);
+  }
+
+  .ref-practice {
+    font-size: 13px; font-weight: 600; color: var(--black);
+  }
+  .ref-who {
+    font-size: 12px; font-weight: 500; color: var(--g2);
+  }
+  .ref-cadence {
+    font-size: 12px; font-weight: 500; color: var(--g1);
+    font-family: var(--mono);
+  }
+
+  /* ── Responsive ──────────────────────────────────────────────────────── */
+  @media (max-width: 640px) {
+    .ref-row { grid-template-columns: 1fr 1fr; }
+    .ref-row > :last-child { grid-column: 1 / -1; color: var(--g2); font-size: 11px; }
+  }
+</style>

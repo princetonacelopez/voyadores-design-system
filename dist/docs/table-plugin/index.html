@@ -1,0 +1,1093 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Voyadores — Visual Identity Guidelines"><title>Table Plugin — Voyadores</title><link rel="canonical" href="https://design.voyadores.com/docs/table-plugin/"><link rel="icon" type="image/svg+xml" href="/icons/favicon/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon/favicon-32x32.png"><link rel="apple-touch-icon" href="/icons/favicon/apple-touch-icon.png"><!-- Urbanist + Chivo Mono --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"><!-- Voyadores Icon Font --><link rel="stylesheet" href="/fonts/Voyadores-Icon/voyadores-icon.css"><!-- Anti-flash theme init (must be inline, before render) --><script>
+      (function () {
+        var t = localStorage.getItem('voy-theme') || 'system';
+        var dark = t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+        document.documentElement.setAttribute('data-color-scheme', t);
+      })();
+    </script><!-- Page-specific head content --><link rel="stylesheet" href="/_astro/_slug_@_@astro.Dmf4ngD0.css">
+<link rel="stylesheet" href="/_astro/BaseLayout.CRrhjZsn.css"></head> <body> <!-- Modern inversion cursor --> <div class="c-cursor" id="c-cursor"></div> <div class="app-shell"> <!-- Topbar (mobile) — logo removed; sidebar has the logo at full height --> <header class="topbar" id="topbar"> <button class="ham" id="menu-toggle" aria-label="Open menu"> <span></span><span></span><span></span> </button> <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle theme" title="Toggle theme"> <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg> <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> <svg class="icon-system" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg> </button> </header> <div class="overlay" id="sidebar-overlay"></div> <aside id="sidebar" class="sidebar" data-astro-cid-ssfzsv2f> <!-- Logo --> <a href="/" class="s-logo" data-astro-cid-ssfzsv2f> <img class="logo-light" src="/images/voyadores-logo-combination-horizontal-light.svg" alt="Voyadores" width="128" data-astro-cid-ssfzsv2f> <img class="logo-dark" src="/images/voyadores-logo-combination-horizontal-dark.svg" alt="Voyadores" width="128" data-astro-cid-ssfzsv2f> </a> <!-- Nav --> <nav class="s-nav" aria-label="Main" data-astro-cid-ssfzsv2f> <!-- Design System flat links (top-level, no collapse) --> <div class="s-top-section" data-astro-cid-ssfzsv2f> <a href="/" class="s-link" data-astro-cid-ssfzsv2f> Home </a><a href="/introduction" class="s-link" data-astro-cid-ssfzsv2f> Introduction </a><a href="/strategy" class="s-link" data-astro-cid-ssfzsv2f> Strategy </a> </div> <!-- Get Started super-group --> <div class="s-group" id="grp-get-started" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-get-started" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Get Started</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <!-- Design sub-group --> <div class="s-subgroup" id="grp-gs-design" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-gs-design" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Design</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/figma-libraries" class="s-sublink" data-astro-cid-ssfzsv2f> Figma Libraries </a><a href="/get-started/design/ux-design-process" class="s-sublink" data-astro-cid-ssfzsv2f> UX Design Process &amp; Guidelines </a> </div> </div> <!-- Develop sub-group --> <div class="s-subgroup" id="grp-gs-develop" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-gs-develop" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Develop</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/get-started/develop/developer-setup" class="s-sublink" data-astro-cid-ssfzsv2f> Developer Setup </a><a href="/get-started/develop/build-categorization" class="s-sublink" data-astro-cid-ssfzsv2f> Build Categorization Process </a><a href="/get-started/develop/code-branching" class="s-sublink" data-astro-cid-ssfzsv2f> Code Branching Guidelines </a><a href="/get-started/develop/code-management" class="s-sublink" data-astro-cid-ssfzsv2f> Code Management Guidelines </a><a href="/get-started/develop/versioning" class="s-sublink" data-astro-cid-ssfzsv2f> Versioning </a> </div> </div> <!-- Internal sub-group --> <div class="s-subgroup" id="grp-gs-internal" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-gs-internal" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Internal</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/get-started/internal/changelog-guidelines" class="s-sublink" data-astro-cid-ssfzsv2f> Changelog Guidelines </a><a href="/get-started/internal/meeting-invitation-guidelines" class="s-sublink" data-astro-cid-ssfzsv2f> Meeting Guidelines </a> </div> </div> </div> </div> <!-- Grouped top-level nav --> <div class="s-group" id="grp-brand" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-brand" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Brand</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <a href="/color" class="s-link" data-astro-cid-ssfzsv2f> Color </a><a href="/images" class="s-link" data-astro-cid-ssfzsv2f> Images </a><a href="/logo" class="s-link" data-astro-cid-ssfzsv2f> Logo </a><a href="/typography" class="s-link" data-astro-cid-ssfzsv2f> Typography </a> </div> </div><div class="s-group" id="grp-content" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-content" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Content</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <a href="/language-and-grammar" class="s-link" data-astro-cid-ssfzsv2f> Language and Grammar </a><a href="/iconography" class="s-link" data-astro-cid-ssfzsv2f> Iconography </a><a href="/illustrations" class="s-link" data-astro-cid-ssfzsv2f> Illustrations </a> </div> </div> <!-- Components super-group --> <div class="s-group s-group--components" id="grp-components" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-components" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Components</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <!-- Bootstrap sub-group --> <div class="s-subgroup" id="grp-bootstrap" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-bootstrap" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Bootstrap</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/components/bootstrap/accordion" class="s-sublink" data-astro-cid-ssfzsv2f> Accordion </a><a href="/components/bootstrap/alerts" class="s-sublink" data-astro-cid-ssfzsv2f> Alerts </a><a href="/components/bootstrap/badges" class="s-sublink" data-astro-cid-ssfzsv2f> Badges </a><a href="/components/bootstrap/breadcrumb" class="s-sublink" data-astro-cid-ssfzsv2f> Breadcrumb </a><a href="/components/bootstrap/button-group" class="s-sublink" data-astro-cid-ssfzsv2f> Button Group </a><a href="/components/bootstrap/buttons" class="s-sublink" data-astro-cid-ssfzsv2f> Buttons </a><a href="/components/bootstrap/cards" class="s-sublink" data-astro-cid-ssfzsv2f> Cards </a><a href="/components/bootstrap/carousel" class="s-sublink" data-astro-cid-ssfzsv2f> Carousel </a><a href="/components/bootstrap/dropdowns" class="s-sublink" data-astro-cid-ssfzsv2f> Dropdowns </a><a href="/components/bootstrap/forms" class="s-sublink" data-astro-cid-ssfzsv2f> Forms </a><a href="/components/bootstrap/input-group" class="s-sublink" data-astro-cid-ssfzsv2f> Input Group </a><a href="/components/bootstrap/list-group" class="s-sublink" data-astro-cid-ssfzsv2f> List Group </a><a href="/components/bootstrap/modal" class="s-sublink" data-astro-cid-ssfzsv2f> Modal </a><a href="/components/bootstrap/navbar" class="s-sublink" data-astro-cid-ssfzsv2f> Navbar </a><a href="/components/bootstrap/navs" class="s-sublink" data-astro-cid-ssfzsv2f> Navs &amp; Tabs </a><a href="/components/bootstrap/offcanvas" class="s-sublink" data-astro-cid-ssfzsv2f> Offcanvas </a><a href="/components/bootstrap/pagination" class="s-sublink" data-astro-cid-ssfzsv2f> Pagination </a><a href="/components/bootstrap/placeholders" class="s-sublink" data-astro-cid-ssfzsv2f> Placeholders </a><a href="/components/bootstrap/popovers" class="s-sublink" data-astro-cid-ssfzsv2f> Popovers </a><a href="/components/bootstrap/progress" class="s-sublink" data-astro-cid-ssfzsv2f> Progress </a><a href="/components/bootstrap/spinners" class="s-sublink" data-astro-cid-ssfzsv2f> Spinners </a><a href="/components/bootstrap/tables" class="s-sublink" data-astro-cid-ssfzsv2f> Tables </a><a href="/components/bootstrap/toasts" class="s-sublink" data-astro-cid-ssfzsv2f> Toasts </a><a href="/components/bootstrap/tooltips" class="s-sublink" data-astro-cid-ssfzsv2f> Tooltips </a><a href="/components/bootstrap/validation" class="s-sublink" data-astro-cid-ssfzsv2f> Validation </a> </div> </div> <!-- Others sub-group --> <div class="s-subgroup" id="grp-others" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-others" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Others</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/components/dropzone" class="s-sublink" data-astro-cid-ssfzsv2f> Dropzone </a><a href="/components/file-upload" class="s-sublink" data-astro-cid-ssfzsv2f> File Upload </a><a href="/components/file-viewer" class="s-sublink" data-astro-cid-ssfzsv2f> File Viewer </a><a href="/components/form-validation" class="s-sublink" data-astro-cid-ssfzsv2f> Form Validation </a><a href="/components/highcharts" class="s-sublink" data-astro-cid-ssfzsv2f> Highcharts </a><a href="/components/mask" class="s-sublink" data-astro-cid-ssfzsv2f> Mask </a><a href="/components/moment" class="s-sublink" data-astro-cid-ssfzsv2f> Moment </a><a href="/components/noty" class="s-sublink" data-astro-cid-ssfzsv2f> Noty </a><a href="/components/numeral" class="s-sublink" data-astro-cid-ssfzsv2f> Numeral </a><a href="/components/repeater" class="s-sublink" data-astro-cid-ssfzsv2f> Repeater </a><a href="/components/selectize" class="s-sublink" data-astro-cid-ssfzsv2f> Selectize </a><a href="/components/summernote" class="s-sublink" data-astro-cid-ssfzsv2f> Summernote </a><a href="/components/table" class="s-sublink" data-astro-cid-ssfzsv2f> Table 2.2.1 </a><a href="/components/template-editor" class="s-sublink" data-astro-cid-ssfzsv2f> Template Editor </a><a href="/components/treeview" class="s-sublink" data-astro-cid-ssfzsv2f> Treeview </a><a href="/components/wizard-form" class="s-sublink" data-astro-cid-ssfzsv2f> Wizard Form </a> </div> </div> </div> </div> <!-- Documentation super-group --> <div class="s-group s-group--docs is-open" id="grp-docs" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-docs" aria-expanded="true" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Documentation</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <!-- App Shell sub-group --> <div class="s-subgroup" id="grp-docs-shell" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-shell" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>App Shell</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/detection" class="s-sublink" data-astro-cid-ssfzsv2f> Browser &amp; TZ Detection </a><a href="/docs/menu-web" class="s-sublink" data-astro-cid-ssfzsv2f> Menu Web </a><a href="/docs/theme-picker" class="s-sublink" data-astro-cid-ssfzsv2f> Theme Picker </a> </div> </div> <!-- Modules sub-group --> <div class="s-subgroup" id="grp-docs-modules" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-modules" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Modules</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/default-url" class="s-sublink" data-astro-cid-ssfzsv2f> Default URL </a><a href="/docs/feature-onboarding" class="s-sublink" data-astro-cid-ssfzsv2f> Feature Onboarding </a><a href="/docs/notifications" class="s-sublink" data-astro-cid-ssfzsv2f> Notifications </a><a href="/docs/quicklinks" class="s-sublink" data-astro-cid-ssfzsv2f> Quick Links </a><a href="/docs/user-onboarding" class="s-sublink" data-astro-cid-ssfzsv2f> User Onboarding </a><a href="/docs/visual-indicator" class="s-sublink" data-astro-cid-ssfzsv2f> Visual Indicator </a> </div> </div> <!-- Utilities sub-group --> <div class="s-subgroup" id="grp-docs-utilities" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-utilities" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Utilities</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/browser-storage" class="s-sublink" data-astro-cid-ssfzsv2f> Browser Storage </a><a href="/docs/datetime-picker" class="s-sublink" data-astro-cid-ssfzsv2f> DateTime Picker </a><a href="/docs/request-and-uri" class="s-sublink" data-astro-cid-ssfzsv2f> Request &amp; URI </a><a href="/docs/view-model" class="s-sublink" data-astro-cid-ssfzsv2f> ViewModelBase </a> </div> </div> <!-- Plugins sub-group --> <div class="s-subgroup is-open" id="grp-docs-plugins" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-plugins" aria-expanded="true" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Plugins</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/action-button-manager" class="s-sublink" data-astro-cid-ssfzsv2f> Action Button Manager </a><a href="/docs/currency-picker" class="s-sublink" data-astro-cid-ssfzsv2f> Currency Picker </a><a href="/docs/file-template-editor" class="s-sublink" data-astro-cid-ssfzsv2f> File Template Editor </a><a href="/docs/repeater" class="s-sublink" data-astro-cid-ssfzsv2f> Repeater </a><a href="/docs/table-plugin" class="s-sublink is-on" data-astro-cid-ssfzsv2f> Table Plugin </a><a href="/docs/template-editor" class="s-sublink" data-astro-cid-ssfzsv2f> Template Editor </a><a href="/docs/treeview" class="s-sublink" data-astro-cid-ssfzsv2f> Treeview </a><a href="/docs/wizard-form" class="s-sublink" data-astro-cid-ssfzsv2f> Wizard Form </a> </div> </div> </div> </div> </nav> <!-- Sidebar footer: theme toggle --> <div class="s-footer" data-astro-cid-ssfzsv2f> <button class="theme-toggle s-theme-btn" id="theme-toggle-sidebar" aria-label="Toggle theme" title="Toggle theme" data-astro-cid-ssfzsv2f> <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f><circle cx="12" cy="12" r="5" data-astro-cid-ssfzsv2f></circle><line x1="12" y1="1" x2="12" y2="3" data-astro-cid-ssfzsv2f></line><line x1="12" y1="21" x2="12" y2="23" data-astro-cid-ssfzsv2f></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" data-astro-cid-ssfzsv2f></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" data-astro-cid-ssfzsv2f></line><line x1="1" y1="12" x2="3" y2="12" data-astro-cid-ssfzsv2f></line><line x1="21" y1="12" x2="23" y2="12" data-astro-cid-ssfzsv2f></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" data-astro-cid-ssfzsv2f></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" data-astro-cid-ssfzsv2f></line></svg> <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" data-astro-cid-ssfzsv2f></path></svg> <svg class="icon-system" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f><rect x="2" y="3" width="20" height="14" rx="2" data-astro-cid-ssfzsv2f></rect><line x1="8" y1="21" x2="16" y2="21" data-astro-cid-ssfzsv2f></line><line x1="12" y1="17" x2="12" y2="21" data-astro-cid-ssfzsv2f></line></svg> <span class="s-theme-label" data-astro-cid-ssfzsv2f> <span class="label-light" data-astro-cid-ssfzsv2f>Light mode</span> <span class="label-dark" data-astro-cid-ssfzsv2f>Dark mode</span> <span class="label-system" data-astro-cid-ssfzsv2f>System</span> </span> </button> </div> </aside> <script>
+(function () {
+  // Generic group toggle for all .s-group and .s-subgroup headers
+  document.querySelectorAll('[data-group]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id   = btn.getAttribute('data-group');
+      var el   = document.getElementById(id);
+      if (!el) return;
+      var open = el.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+})();
+</script> <main class="main" id="main">  <div class="doc-page" data-astro-cid-rnp3zwhq> <!-- Page header --> <header class="doc-header" data-astro-cid-rnp3zwhq> <p class="doc-eyebrow" data-astro-cid-rnp3zwhq>Documentation</p> <h1 data-astro-cid-rnp3zwhq>Table Plugin</h1> <dl class="doc-meta" data-astro-cid-rnp3zwhq>  <dt data-astro-cid-rnp3zwhq>Version</dt> <dd data-astro-cid-rnp3zwhq>2.2.1</dd>  <dt data-astro-cid-rnp3zwhq>Files</dt> <dd data-astro-cid-rnp3zwhq>`table-2-2-1.min.js` + `table-2-2-1.css`</dd>  <dt data-astro-cid-rnp3zwhq>Author</dt> <dd data-astro-cid-rnp3zwhq>Network Economic Services Ventures Philippines, Inc.</dd>  <dt data-astro-cid-rnp3zwhq>Last Updated</dt> <dd data-astro-cid-rnp3zwhq>2026-02-27</dd>  </dl> </header> <!-- Markdown body --> <div class="doc-body" data-astro-cid-rnp3zwhq> <h2 id="1-overview">1. Overview</h2>
+<p>The Voyadores Custom Table Plugin is a jQuery plugin that enhances standard HTML <code>&#x3C;table></code> elements with data loading, sorting, column resizing, column reordering, and animated row operations — all styled with the Voyadores Bootstrap theme.</p>
+<p>It supports two data modes:</p>
+<ul>
+<li><strong>Static:</strong> Pass a pre-built <code>data</code> array directly.</li>
+<li><strong>AJAX:</strong> Point it at an API <code>endpoint</code> and it handles fetching, pagination, and error states automatically.</li>
+</ul>
+<hr>
+<h2 id="2-features">2. Features</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Feature</th><th>Desktop</th><th>Mobile (&#x3C; 992px)</th></tr></thead><tbody><tr><td>AJAX or static data loading</td><td>✓</td><td>✓</td></tr><tr><td>Loading / empty / error states</td><td>✓</td><td>✓</td></tr><tr><td>Column sorting (asc / desc)</td><td>✓</td><td>✓</td></tr><tr><td>Column resize (drag handle)</td><td>✓</td><td>✗ (hidden)</td></tr><tr><td>Column drag-and-drop reorder</td><td>✓</td><td>✗ (disabled)</td></tr><tr><td>Row counter (<code>#</code>) column</td><td>✓</td><td>✓</td></tr><tr><td>Load more / pagination</td><td>✓</td><td>✓</td></tr><tr><td>Animated add row</td><td>✓</td><td>✓</td></tr><tr><td>Animated update row</td><td>✓</td><td>✓</td></tr><tr><td>Animated remove row</td><td>✓</td><td>✓</td></tr><tr><td>View Transition API support</td><td>✓</td><td>✓</td></tr><tr><td>Dark theme</td><td>✓</td><td>✓</td></tr><tr><td><code>prefers-reduced-motion</code></td><td>✓</td><td>✓</td></tr></tbody></table>
+<hr>
+<h2 id="3-dependencies">3. Dependencies</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Library</th><th>Version</th><th>Required</th></tr></thead><tbody><tr><td>jQuery</td><td>3.x recommended</td><td><strong>Yes</strong></td></tr><tr><td>Bootstrap 5</td><td>5.3.x (Voyadores theme)</td><td><strong>Yes</strong> (for base table styles)</td></tr><tr><td>Voyadores Bootstrap theme CSS</td><td>latest</td><td><strong>Yes</strong></td></tr></tbody></table>
+<p>Both jQuery and Bootstrap must be loaded <strong>before</strong> the plugin files.</p>
+<hr>
+<h2 id="4-setup">4. Setup</h2>
+<h3 id="1-include-files">1. Include files</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#6A737D">&#x3C;!-- In &#x3C;head> --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">link</span><span style="color:#B392F0"> rel</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"stylesheet"</span><span style="color:#B392F0"> href</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"/css/bootstrap/bootstrap.voyadores.theme.min.css"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">link</span><span style="color:#B392F0"> rel</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"stylesheet"</span><span style="color:#B392F0"> href</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"/css/table/table-2-2-1.css"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">&#x3C;!-- Before closing &#x3C;/body> --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">script</span><span style="color:#B392F0"> src</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"/js/jquery/jquery.min.js"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">script</span><span style="color:#B392F0"> src</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"/js/bootstrap/bootstrap.bundle.min.js"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">script</span><span style="color:#B392F0"> src</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"/js/table/table-2-2-1.min.js"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h3 id="2-add-the-cdn-url-input">2. Add the CDN URL input</h3>
+<p>The plugin reads the base domain URL from a hidden input with <code>id="voyadores-cdn-url"</code>. This drives the paths for all state images (loader, error, empty). Add it once per page, anywhere in the <code>&#x3C;body></code>:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">input</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"hidden"</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"voyadores-cdn-url"</span><span style="color:#B392F0"> value</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"https://your-cdn-or-domain.com"</span><span style="color:#E1E4E8"> /></span></span></code></pre>
+<p>Leave <code>value</code> empty (<code>""</code>) to use relative paths (works for same-origin apps).</p>
+<h3 id="3-initialize">3. Initialize</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#myTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">({ </span><span style="color:#6A737D">/* options */</span><span style="color:#E1E4E8"> });</span></span></code></pre>
+<hr>
+<h2 id="5-required-html-structure">5. Required HTML Structure</h2>
+<p>The plugin requires a <code>&#x3C;table></code> with a unique <code>id</code>, a <code>&#x3C;thead></code> row with <code>&#x3C;th></code> elements, and an empty <code>&#x3C;tbody></code>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">table</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"myTable"</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"table table-hover table-bordered"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">thead</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">tr</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">>Name&#x3C;/</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">>Email&#x3C;/</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">>Status&#x3C;/</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">tr</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">thead</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">tbody</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#6A737D">    &#x3C;!-- Plugin populates this --></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">tbody</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">table</span><span style="color:#E1E4E8">></span></span></code></pre>
+<blockquote>
+<p><strong>Important:</strong> The <code>id</code> attribute on <code>&#x3C;table></code> is <strong>required</strong>. The plugin will silently do nothing if it is missing.</p>
+</blockquote>
+<hr>
+<h2 id="6-configuration-options">6. Configuration Options</h2>
+<p>Pass these as a plain object to initialize the plugin.</p>
+<h3 id="data--endpoint">Data &#x26; Endpoint</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Option</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>endpoint</code></td><td><code>string</code></td><td><code>""</code></td><td>API URL to fetch data from. If empty, uses the <code>data</code> array instead.</td></tr><tr><td><code>data</code></td><td><code>Array</code></td><td><code>[]</code></td><td>Static data array. Used when <code>endpoint</code> is empty.</td></tr><tr><td><code>params</code></td><td><code>function</code></td><td><code>() => ({})</code></td><td>Function that returns an object of query parameters appended to the endpoint URL.</td></tr><tr><td><code>transformData</code></td><td><code>function | null</code></td><td><code>null</code></td><td>Optional function to transform the raw API response before rendering. Receives the raw data, must return a transformed array.</td></tr><tr><td><code>async</code></td><td><code>boolean</code></td><td><code>true</code></td><td>Whether the AJAX call is asynchronous.</td></tr></tbody></table>
+<h3 id="rendering">Rendering</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Option</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>mappingFunction</code></td><td><code>function</code></td><td><code>() => ""</code></td><td><strong>Required for data display.</strong> Receives the data array, must return an HTML string of <code>&#x3C;tr></code> elements.</td></tr><tr><td><code>success</code></td><td><code>function</code></td><td><code>() => ""</code></td><td>Callback fired after data is successfully rendered. Receives the data array.</td></tr><tr><td><code>fail</code></td><td><code>function</code></td><td><code>() => ""</code></td><td>Reserved for future failure handling.</td></tr><tr><td><code>rowCounter</code></td><td><code>boolean</code></td><td><code>true</code></td><td>Whether to prepend a <code>#</code> counter column to each row.</td></tr></tbody></table>
+<h3 id="empty--error-states">Empty / Error States</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Option</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>messageNoResultHeader</code></td><td><code>string</code></td><td><code>"No data found"</code></td><td>Heading shown when data is empty (200 but no rows).</td></tr><tr><td><code>messageNoResult</code></td><td><code>string</code></td><td><code>"There's nothing to display here at the moment."</code></td><td>Body text for the empty state.</td></tr><tr><td><code>messageNoPermission</code></td><td><code>string</code></td><td><code>"You don't have permission to view this content."</code></td><td>Body text for 403 responses.</td></tr><tr><td><code>messageErrorOccured</code></td><td><code>string</code></td><td><code>"There's a problem loading this content. Please try again later."</code></td><td>Body text for 500 responses.</td></tr><tr><td><code>messageNotFound</code></td><td><code>string</code></td><td><code>"The content you're looking for isn't available. It might have been moved or deleted."</code></td><td>Body text for 404 responses.</td></tr><tr><td><code>cssClassNoResult</code></td><td><code>string</code></td><td><code>""</code></td><td>Additional CSS class applied to the state <code>&#x3C;td></code> wrapper.</td></tr><tr><td><code>imageEmpty</code></td><td><code>string</code></td><td><code>"/content/images/states/empty/voyadores.default.empty.svg"</code></td><td>Path (relative to the CDN URL) for the empty state image.</td></tr><tr><td><code>messageLoading</code></td><td><code>string</code></td><td><code>"Loading data..."</code></td><td>Accessible label for the loading state (used in <code>sr-only</code> span).</td></tr></tbody></table>
+<h3 id="headers">Headers</h3>
+<p>Nested under <code>headers</code>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Option</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>headers.columns</code></td><td><code>Array</code></td><td><code>[]</code></td><td>Array of column configuration objects. See <a href="#7-column-configuration">Column Configuration</a>.</td></tr><tr><td><code>headers.hideOnEmpty</code></td><td><code>boolean</code></td><td><code>false</code></td><td>Hides the <code>&#x3C;thead></code> row when there is no data.</td></tr><tr><td><code>headers.columnReorder</code></td><td><code>boolean</code></td><td><code>true</code></td><td>Enables drag-and-drop column reordering globally. Individual columns can be excluded (see restrictions below).</td></tr></tbody></table>
+<h3 id="load-more">Load More</h3>
+<p>Nested under <code>loadMore</code>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Option</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>loadMore.id</code></td><td><code>string</code></td><td><code>""</code></td><td>The <code>id</code> of the “Load more” button element. Required to activate pagination.</td></tr><tr><td><code>loadMore.hideOnEmpty</code></td><td><code>boolean</code></td><td><code>true</code></td><td>Hides the button when a page returns fewer results than <code>showOnPageSize</code>.</td></tr><tr><td><code>loadMore.showOnPageSize</code></td><td><code>number</code></td><td><code>20</code></td><td>Minimum result count from a page to keep the “Load more” button visible.</td></tr><tr><td><code>loadMore.onEmpty</code></td><td><code>function</code></td><td><code>() => ""</code></td><td>Callback fired when a loaded page returns zero results. Receives the button element.</td></tr></tbody></table>
+<hr>
+<h2 id="7-column-configuration">7. Column Configuration</h2>
+<p>Each object in <code>headers.columns</code> configures one column. The plugin matches columns by the <code>column</code> property.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">headers</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#B392F0">  columns</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#E1E4E8">      column: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,           </span><span style="color:#6A737D">// Match by 1-based column index (or exact header text string)</span></span>
+<span class="line"><span style="color:#E1E4E8">      context: </span><span style="color:#9ECBFF">'name'</span><span style="color:#E1E4E8">,     </span><span style="color:#6A737D">// Data key used for sorting</span></span>
+<span class="line"><span style="color:#E1E4E8">      sortable: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      resizable: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      width: </span><span style="color:#9ECBFF">'200px'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      minWidth: </span><span style="color:#9ECBFF">'100px'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      maxWidth: </span><span style="color:#9ECBFF">'400px'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      defaultSort: </span><span style="color:#9ECBFF">'asc'</span><span style="color:#E1E4E8">,  </span><span style="color:#6A737D">// 'asc' | 'desc'</span></span>
+<span class="line"><span style="color:#E1E4E8">      customText: </span><span style="color:#9ECBFF">'Full Name'</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// Override header label</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">  ]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="column-properties">Column Properties</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>column</code></td><td><code>number | string</code></td><td><strong>Required.</strong> Column index (1-based) or exact header text string to match against.</td></tr><tr><td><code>context</code></td><td><code>string</code></td><td>Data object key to sort by. Required when <code>sortable: true</code>.</td></tr><tr><td><code>sortable</code></td><td><code>boolean</code></td><td>Enables click-to-sort on this column header. Only works with <code>string</code> or <code>number</code> data types — columns with object/array values are automatically demoted.</td></tr><tr><td><code>resizable</code></td><td><code>boolean</code></td><td>Adds a drag handle to the right edge of the header for width adjustment. Disabled on touch screens.</td></tr><tr><td><code>width</code></td><td><code>string</code></td><td>Explicit CSS width (e.g. <code>"150px"</code>). Applied as an inline style. Persisted when the user resizes.</td></tr><tr><td><code>minWidth</code></td><td><code>string</code></td><td>Minimum column width during resize (e.g. <code>"80px"</code>).</td></tr><tr><td><code>maxWidth</code></td><td><code>string</code></td><td>Maximum column width during resize (e.g. <code>"500px"</code>).</td></tr><tr><td><code>defaultSort</code></td><td><code>string</code></td><td>Initial sort direction when the column is first clicked: <code>'asc'</code> (default) or <code>'desc'</code>.</td></tr><tr><td><code>customText</code></td><td><code>string</code></td><td>Overrides the rendered header label text. Does not affect sorting context.</td></tr><tr><td><code>originalIndex</code></td><td><code>number</code></td><td>Override the auto-assigned original column index. Only needed in edge cases.</td></tr></tbody></table>
+<h3 id="columns-excluded-from-reordering">Columns excluded from reordering</h3>
+<p>The following column types cannot be dragged regardless of <code>columnReorder</code>:</p>
+<ul>
+<li>Columns with class <code>row-counter</code></li>
+<li>Columns with class <code>col-icon</code></li>
+<li>Columns with class <code>visually-hidden</code> or containing a <code>.visually-hidden</code> child</li>
+<li>Columns containing a checkbox or radio input</li>
+</ul>
+<hr>
+<h2 id="8-usage-examples">8. Usage Examples</h2>
+<h3 id="81-static-data">8.1 Static Data</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">table</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"employeeTable"</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"table table-hover table-bordered"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">thead</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">tr</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">>Name&#x3C;/</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">>Department&#x3C;/</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">>Status&#x3C;/</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">tr</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">thead</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">tbody</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">tbody</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">table</span><span style="color:#E1E4E8">></span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> employees</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#E1E4E8">  { name: </span><span style="color:#9ECBFF">'Maria Santos'</span><span style="color:#E1E4E8">,  department: </span><span style="color:#9ECBFF">'Finance'</span><span style="color:#E1E4E8">,    status: </span><span style="color:#9ECBFF">'Active'</span><span style="color:#E1E4E8">   },</span></span>
+<span class="line"><span style="color:#E1E4E8">  { name: </span><span style="color:#9ECBFF">'Juan dela Cruz'</span><span style="color:#E1E4E8">, department: </span><span style="color:#9ECBFF">'Operations'</span><span style="color:#E1E4E8">, status: </span><span style="color:#9ECBFF">'Inactive'</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#employeeTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  data: employees,</span></span>
+<span class="line"><span style="color:#B392F0">  mappingFunction</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> data.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">row</span><span style="color:#F97583"> =></span><span style="color:#9ECBFF"> `</span></span>
+<span class="line"><span style="color:#9ECBFF">      &#x3C;tr></span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;td>${</span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">name</span><span style="color:#9ECBFF">}&#x3C;/td></span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;td>${</span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">department</span><span style="color:#9ECBFF">}&#x3C;/td></span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;td>${</span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">status</span><span style="color:#9ECBFF">}&#x3C;/td></span></span>
+<span class="line"><span style="color:#9ECBFF">      &#x3C;/tr></span></span>
+<span class="line"><span style="color:#9ECBFF">    `</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">join</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#B392F0">  success</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`Rendered ${</span><span style="color:#E1E4E8">data</span><span style="color:#9ECBFF">.</span><span style="color:#79B8FF">length</span><span style="color:#9ECBFF">} rows.`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="82-ajax-endpoint">8.2 AJAX Endpoint</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#invoiceTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  endpoint: </span><span style="color:#9ECBFF">'/api/invoices'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  params</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">      startDate: </span><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#date-from'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">val</span><span style="color:#E1E4E8">(),</span></span>
+<span class="line"><span style="color:#E1E4E8">      endDate:   </span><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#date-to'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">val</span><span style="color:#E1E4E8">(),</span></span>
+<span class="line"><span style="color:#E1E4E8">      status:    </span><span style="color:#9ECBFF">'unpaid'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#B392F0">  mappingFunction</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> data.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">row</span><span style="color:#F97583"> =></span><span style="color:#9ECBFF"> `</span></span>
+<span class="line"><span style="color:#9ECBFF">      &#x3C;tr></span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;td>${</span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">invoiceNo</span><span style="color:#9ECBFF">}&#x3C;/td></span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;td>${</span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">client</span><span style="color:#9ECBFF">}&#x3C;/td></span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;td>${</span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">amount</span><span style="color:#9ECBFF">}&#x3C;/td></span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;td>${</span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">dueDate</span><span style="color:#9ECBFF">}&#x3C;/td></span></span>
+<span class="line"><span style="color:#9ECBFF">      &#x3C;/tr></span></span>
+<span class="line"><span style="color:#9ECBFF">    `</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">join</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">  messageNoResult: </span><span style="color:#9ECBFF">'No unpaid invoices found.'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="83-with-sortable-and-resizable-columns">8.3 With Sortable and Resizable Columns</h3>
+<p>The <code>column</code> value is the <strong>1-based</strong> column index in the <code>&#x3C;thead></code> row. If you also have a row counter (<code>rowCounter: true</code>, the default), the counter column becomes index 1 and your first data column becomes index 2 in the DOM — but the plugin adjusts for this automatically when <code>rowCounter</code> is <code>true</code>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#productTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  endpoint: </span><span style="color:#9ECBFF">'/api/products'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  mappingFunction</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> data.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">row</span><span style="color:#F97583"> =></span><span style="color:#9ECBFF"> `</span></span>
+<span class="line"><span style="color:#9ECBFF">      &#x3C;tr></span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;td>${</span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">sku</span><span style="color:#9ECBFF">}&#x3C;/td></span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;td>${</span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">name</span><span style="color:#9ECBFF">}&#x3C;/td></span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;td>${</span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">price</span><span style="color:#9ECBFF">}&#x3C;/td></span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;td>${</span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">stock</span><span style="color:#9ECBFF">}&#x3C;/td></span></span>
+<span class="line"><span style="color:#9ECBFF">      &#x3C;/tr></span></span>
+<span class="line"><span style="color:#9ECBFF">    `</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">join</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">  headers: {</span></span>
+<span class="line"><span style="color:#E1E4E8">    columns: [</span></span>
+<span class="line"><span style="color:#E1E4E8">      { column: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, context: </span><span style="color:#9ECBFF">'sku'</span><span style="color:#E1E4E8">,   sortable: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, resizable: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, width: </span><span style="color:#9ECBFF">'120px'</span><span style="color:#E1E4E8">, minWidth: </span><span style="color:#9ECBFF">'80px'</span><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">      { column: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, context: </span><span style="color:#9ECBFF">'name'</span><span style="color:#E1E4E8">,  sortable: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, resizable: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, width: </span><span style="color:#9ECBFF">'240px'</span><span style="color:#E1E4E8">, minWidth: </span><span style="color:#9ECBFF">'120px'</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">      { column: </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">, context: </span><span style="color:#9ECBFF">'price'</span><span style="color:#E1E4E8">, sortable: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, resizable: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, width: </span><span style="color:#9ECBFF">'100px'</span><span style="color:#E1E4E8">, minWidth: </span><span style="color:#9ECBFF">'80px'</span><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">      { column: </span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">, context: </span><span style="color:#9ECBFF">'stock'</span><span style="color:#E1E4E8">, sortable: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, resizable: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">, width: </span><span style="color:#9ECBFF">'100px'</span><span style="color:#E1E4E8">, minWidth: </span><span style="color:#9ECBFF">'60px'</span><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">    ],</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="84-ajax-with-transform">8.4 AJAX with Transform</h3>
+<p>Use <code>transformData</code> when the API wraps data in a container object:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#orderTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  endpoint: </span><span style="color:#9ECBFF">'/api/orders'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  transformData</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">response</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#6A737D">    // API returns { data: [...], meta: {...} }</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> response?.data </span><span style="color:#F97583">??</span><span style="color:#E1E4E8"> [];</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#B392F0">  mappingFunction</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> data.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">row</span><span style="color:#F97583"> =></span><span style="color:#9ECBFF"> `&#x3C;tr>&#x3C;td>${</span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">orderId</span><span style="color:#9ECBFF">}&#x3C;/td>&#x3C;td>${</span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">total</span><span style="color:#9ECBFF">}&#x3C;/td>&#x3C;/tr>`</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">join</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="85-disabling-row-counter">8.5 Disabling Row Counter</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#simpleTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  data: myData,</span></span>
+<span class="line"><span style="color:#E1E4E8">  rowCounter: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  mappingFunction</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) { </span><span style="color:#6A737D">/* ... */</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="86-custom-empty-state">8.6 Custom Empty State</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#reportTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  endpoint: </span><span style="color:#9ECBFF">'/api/reports'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  imageEmpty: </span><span style="color:#9ECBFF">'/images/states/empty/no-reports.svg'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  messageNoResultHeader: </span><span style="color:#9ECBFF">'No reports yet'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  messageNoResult: </span><span style="color:#9ECBFF">'Generate your first report to see it here.'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  mappingFunction</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) { </span><span style="color:#6A737D">/* ... */</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<hr>
+<h2 id="9-commands-reference">9. Commands Reference</h2>
+<p>After initialization, use the same <code>$('#table').table(command, params)</code> syntax to control the table.</p>
+<h3 id="refresh"><code>refresh</code></h3>
+<p>Reloads the table. Resets the page counter to 1.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Re-fetch from endpoint (no change to params)</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#myTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'refresh'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Re-fetch with a new static data array</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#myTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'refresh'</span><span style="color:#E1E4E8">, newDataArray);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Re-fetch with updated params object</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#myTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'refresh'</span><span style="color:#E1E4E8">, { startDate: </span><span style="color:#9ECBFF">'2026-01-01'</span><span style="color:#E1E4E8"> });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Re-fetch with a new params function</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#myTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'refresh'</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> ({ status: </span><span style="color:#9ECBFF">'active'</span><span style="color:#E1E4E8"> }));</span></span></code></pre>
+<h3 id="clear"><code>clear</code></h3>
+<p>Empties the <code>&#x3C;tbody></code> immediately, without rendering any state.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#myTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'clear'</span><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="add"><code>add</code></h3>
+<p>Inserts a single row without a full re-render. If the table is in an empty or error state, it triggers a full rebuild instead.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#myTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'add'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">  item: { name: </span><span style="color:#9ECBFF">'Ana Reyes'</span><span style="color:#E1E4E8">, department: </span><span style="color:#9ECBFF">'HR'</span><span style="color:#E1E4E8">, status: </span><span style="color:#9ECBFF">'Active'</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">  insertAt: </span><span style="color:#9ECBFF">'first'</span><span style="color:#E1E4E8">,  </span><span style="color:#6A737D">// 'first' | 'last' | 0-based index | negative index</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><code>insertAt</code> value</th><th>Behavior</th></tr></thead><tbody><tr><td><code>'last'</code> (default)</td><td>Appends after the last row</td></tr><tr><td><code>'first'</code></td><td>Prepends before the first row</td></tr><tr><td><code>2</code> (positive number)</td><td>Inserts at the given 0-based position</td></tr><tr><td><code>-1</code> (negative number)</td><td>Inserts relative to the end (<code>data.length - 1</code>)</td></tr></tbody></table>
+<p>The new row plays the <strong>row-added</strong> orange glow animation (or a View Transition if the browser supports it).</p>
+<h3 id="update"><code>update</code></h3>
+<p>Replaces a single row in-place. Matches by a key property (preferred) or by numeric index fallback.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Match by key property</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#myTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'update'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">  key:  </span><span style="color:#9ECBFF">'employeeId'</span><span style="color:#E1E4E8">,              </span><span style="color:#6A737D">// Property name to match</span></span>
+<span class="line"><span style="color:#E1E4E8">  item: { employeeId: </span><span style="color:#79B8FF">42</span><span style="color:#E1E4E8">, name: </span><span style="color:#9ECBFF">'Ana Reyes'</span><span style="color:#E1E4E8">, status: </span><span style="color:#9ECBFF">'Inactive'</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Fallback: match by 0-based row index</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#myTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'update'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">  at:   </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  item: { name: </span><span style="color:#9ECBFF">'Updated Name'</span><span style="color:#E1E4E8">, status: </span><span style="color:#9ECBFF">'Active'</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<p>Update supports <strong>partial updates</strong> — only the properties included in <code>item</code> are merged with the existing row data. Unspecified properties retain their current values.</p>
+<p>The updated row plays the <strong>row-updated</strong> heartbeat glow animation.</p>
+<h3 id="remove"><code>remove</code></h3>
+<p>Removes a single row by matching a key/value pair.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#myTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'remove'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">  key:   </span><span style="color:#9ECBFF">'invoiceId'</span><span style="color:#E1E4E8">,   </span><span style="color:#6A737D">// Property name to match</span></span>
+<span class="line"><span style="color:#E1E4E8">  value: </span><span style="color:#79B8FF">1024</span><span style="color:#E1E4E8">,          </span><span style="color:#6A737D">// Value to match against</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<p>If the last row is removed, the table transitions to the empty state automatically. The removed row plays the <strong>row-removing</strong> fade-out + collapse animation before being detached from the DOM.</p>
+<hr>
+<h2 id="10-row-animation-events">10. Row Animation Events</h2>
+<p>The plugin uses the <strong>View Transition API</strong> when available (Chrome 111+, Edge 111+). In unsupported browsers, CSS keyframe animations are used as a fallback.</p>
+<h3 id="add-animation">Add animation</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Phase</th><th>VT (modern browsers)</th><th>Fallback (CSS)</th></tr></thead><tbody><tr><td>Row insertion</td><td>Slot opens via VT repositioning</td><td>Height expands from 0 to natural height</td></tr><tr><td>After insert</td><td>Orange glow fades over 10s (<code>row-added</code>)</td><td>Same orange glow</td></tr></tbody></table>
+<h3 id="update-animation">Update animation</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Phase</th><th>VT</th><th>Fallback</th></tr></thead><tbody><tr><td>Row swap</td><td>Old row cross-fades to new row via VT</td><td>Direct <code>replaceWith</code></td></tr><tr><td>After swap</td><td>Heartbeat glow over 10s (<code>row-updated</code>)</td><td>Same heartbeat glow</td></tr></tbody></table>
+<h3 id="remove-animation">Remove animation</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Phase</th><th>VT</th><th>Fallback</th></tr></thead><tbody><tr><td>Row removal</td><td>Row cross-fades out via VT, others slide up</td><td>Fade-out (0.2s) + height-collapse (0.25s)</td></tr><tr><td>Duration</td><td>~350ms</td><td>~620ms</td></tr></tbody></table>
+<h3 id="prefers-reduced-motion"><code>prefers-reduced-motion</code></h3>
+<p>All glow animations and row animations are disabled when the user has enabled reduced motion in their OS settings. View Transition API animation duration is reduced to <code>0.01ms</code>.</p>
+<hr>
+<h2 id="11-load-more--pagination">11. Load More / Pagination</h2>
+<p>The plugin adds <code>?page=N</code> to every AJAX call automatically. To enable “load more” behavior:</p>
+<ol>
+<li>Add a button to your page with a unique <code>id</code>.</li>
+<li>Configure <code>loadMore.id</code> with that <code>id</code>.</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"loadMoreBtn"</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"btn btn-outline-secondary mt-3"</span><span style="color:#E1E4E8">>Load more&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#myTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  endpoint: </span><span style="color:#9ECBFF">'/api/transactions'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  loadMore: {</span></span>
+<span class="line"><span style="color:#E1E4E8">    id: </span><span style="color:#9ECBFF">'loadMoreBtn'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    showOnPageSize: </span><span style="color:#79B8FF">20</span><span style="color:#E1E4E8">,  </span><span style="color:#6A737D">// Hide button if fewer than 20 results returned</span></span>
+<span class="line"><span style="color:#E1E4E8">    hideOnEmpty: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">    onEmpty</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">btn</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">      $</span><span style="color:#E1E4E8">(btn).</span><span style="color:#B392F0">text</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'All records loaded'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">prop</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'disabled'</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#B392F0">  mappingFunction</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) { </span><span style="color:#6A737D">/* ... */</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<ul>
+<li>First load: <code>GET /api/transactions?page=1</code></li>
+<li>User clicks “Load more”: <code>GET /api/transactions?page=2</code></li>
+<li>New rows are <strong>appended</strong> to existing rows (not replacing them)</li>
+<li>If the active sort is applied, newly loaded rows are sorted in-place before appending</li>
+<li>The button hides automatically when a page returns fewer results than <code>showOnPageSize</code></li>
+<li>Calling <code>table('refresh')</code> resets the page counter to 1 and replaces all rows</li>
+</ul>
+<hr>
+<h2 id="12-dark-theme">12. Dark Theme</h2>
+<p>Bootstrap dark theme is supported out of the box. Apply <code>data-bs-theme="dark"</code> to the <code>&#x3C;html></code> element or any parent container:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">html</span><span style="color:#B392F0"> data-bs-theme</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"dark"</span><span style="color:#E1E4E8">></span></span></code></pre>
+<p>The plugin reverses the sort arrow icons using <code>filter: invert(1) grayscale(1)</code> so they remain visible in dark mode.</p>
+<hr>
+<h2 id="13-mobile--responsive-behavior">13. Mobile &#x26; Responsive Behavior</h2>
+<p>At viewport widths <strong>≤ 991.98px</strong> (tablets and phones):</p>
+<ul>
+<li>Column <strong>resize handles</strong> are hidden (<code>display: none !important</code>)</li>
+<li>Column resize <strong>cursors</strong> revert to default</li>
+<li>Drag-and-drop column <strong>reorder</strong> is not initialized (resize/reorder are desktop-only UX patterns)</li>
+<li>All other features (sorting, load more, row animations) continue to work normally</li>
+</ul>
+<p>No additional configuration is required — this behavior is built into the CSS.</p>
+<hr>
+<h2 id="14-css-classes-reference">14. CSS Classes Reference</h2>
+<h3 id="applied-by-the-plugin-to-the-table">Applied by the plugin to the <code>&#x3C;table></code></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Class</th><th>When applied</th></tr></thead><tbody><tr><td><code>table-custom</code></td><td>Always — added on initialization</td></tr><tr><td><code>fixed-layout</code></td><td>After first data render when at least one resizable column is configured</td></tr><tr><td><code>col-table-resizing</code></td><td>While the user is actively dragging a column resize handle</td></tr></tbody></table>
+<h3 id="applied-by-the-plugin-to-th-elements">Applied by the plugin to <code>&#x3C;th></code> elements</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Class</th><th>When applied</th></tr></thead><tbody><tr><td><code>sortable</code></td><td>Column is configured as sortable</td></tr><tr><td><code>col-resizable</code></td><td>Column is configured as resizable</td></tr><tr><td><code>col-resize-active</code></td><td>Column header being actively resized</td></tr><tr><td><code>is-dragging</code></td><td>Column header being dragged for reorder</td></tr><tr><td><code>drag-over</code></td><td>Column header being dragged over as a drop target</td></tr><tr><td><code>row-counter</code></td><td>Auto-prepended row counter <code>&#x3C;th></code></td></tr></tbody></table>
+<h3 id="applied-by-the-plugin-to-td-elements">Applied by the plugin to <code>&#x3C;td></code> elements</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Class</th><th>When applied</th></tr></thead><tbody><tr><td><code>row-counter</code></td><td>Auto-prepended row counter <code>&#x3C;td></code></td></tr><tr><td><code>sort-active</code></td><td>All cells in the currently sorted column</td></tr><tr><td><code>status-text</code></td><td>The <code>&#x3C;td></code> inside a loading / empty / error state row</td></tr></tbody></table>
+<h3 id="applied-by-the-plugin-to-tr-elements">Applied by the plugin to <code>&#x3C;tr></code> elements</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Class</th><th>When applied</th><th>Duration</th></tr></thead><tbody><tr><td><code>row-added</code></td><td>After a row is added via <code>add</code> command</td><td>Removed after 10.2s</td></tr><tr><td><code>row-updated</code></td><td>After a row is updated via <code>update</code> command</td><td>Removed after 10.1s</td></tr><tr><td><code>row-removing</code></td><td>While a row is being removed (fallback animation only)</td><td>Removed after 620ms</td></tr></tbody></table>
+<h3 id="sort-link-classes-on-a-classsort">Sort link classes (on <code>&#x3C;a class="sort"></code>)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Class</th><th>Meaning</th></tr></thead><tbody><tr><td><code>sort-asc</code></td><td>Currently sorted ascending</td></tr><tr><td><code>sort-desc</code></td><td>Currently sorted descending</td></tr><tr><td><code>active</code></td><td>This column is the currently active sort</td></tr></tbody></table>
+<h3 id="utility-classes-usable-in-your-markup">Utility classes (usable in your markup)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Class</th><th>Effect</th></tr></thead><tbody><tr><td><code>col-icon</code></td><td>56px fixed-width column; excluded from reordering</td></tr><tr><td><code>row-counter</code></td><td>56px fixed-width column; excluded from reordering</td></tr><tr><td><code>sr-only</code></td><td>Visually hidden but accessible to screen readers</td></tr></tbody></table>
+<hr>
+<h2 id="15-state-images">15. State Images</h2>
+<p>The plugin displays state images for loading, empty, and error conditions. Image URLs are constructed as:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>{voyadores-cdn-url} + {image path}</span></span></code></pre>
+<p>Where <code>{voyadores-cdn-url}</code> is the <code>value</code> of <code>&#x3C;input id="voyadores-cdn-url"></code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>State</th><th>HTTP Status</th><th>Default Path</th></tr></thead><tbody><tr><td>Loading</td><td>—</td><td><code>/content/images/states/loader/voyadores-loader.gif</code></td></tr><tr><td>No permission</td><td>403</td><td><code>/content/images/states/error/voyadores-403.svg</code></td></tr><tr><td>Not found</td><td>404</td><td><code>/content/images/states/error/voyadores-404.svg</code></td></tr><tr><td>Server error</td><td>500</td><td><code>/content/images/states/error/voyadores-500.svg</code></td></tr><tr><td>Empty data</td><td>200</td><td><code>/content/images/states/empty/voyadores.default.empty.svg</code></td></tr></tbody></table>
+<p>To use a custom empty state image, pass <code>imageEmpty</code> in the options:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#myTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  imageEmpty: </span><span style="color:#9ECBFF">'/content/images/states/empty/my-custom-empty.svg'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#6A737D">  // ...</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<p>Only the empty state image is configurable. Error state images are fixed.</p>
+<hr>
+<h2 id="16-debugging--troubleshooting">16. Debugging &#x26; Troubleshooting</h2>
+<h3 id="table-renders-nothing-after-initialization">Table renders nothing after initialization</h3>
+<p>The plugin calls <code>return</code> silently if <code>id</code> is missing.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#6A737D">&#x3C;!-- Wrong --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">table</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"table"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">&#x3C;!-- Correct --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">table</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"myTable"</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"table"</span><span style="color:#E1E4E8">></span></span></code></pre>
+<hr>
+<h3 id="unable-to-trigger-refresh-no-existing-instance-found"><code>Unable to trigger 'refresh'. No existing instance found</code></h3>
+<p>This error means you are calling a command on a table that has not been initialized yet, or the <code>id</code> doesn’t match.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Must initialize first</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#myTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">({ data: [], </span><span style="color:#B392F0">mappingFunction</span><span style="color:#E1E4E8">() { </span><span style="color:#F97583">return</span><span style="color:#9ECBFF"> ''</span><span style="color:#E1E4E8">; } });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Then use commands</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#myTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'refresh'</span><span style="color:#E1E4E8">, newData);</span></span></code></pre>
+<hr>
+<h3 id="the-option-params-for-mytable-must-be-a-function"><code>The option 'params' for #myTable must be a function</code></h3>
+<p><code>params</code> must always be a <strong>function</strong> that returns an object, not a plain object.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Wrong</span></span>
+<span class="line"><span style="color:#B392F0">params</span><span style="color:#E1E4E8">: { </span><span style="color:#B392F0">status</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'active'</span><span style="color:#E1E4E8"> }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Correct</span></span>
+<span class="line"><span style="color:#B392F0">params</span><span style="color:#E1E4E8">: () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> ({ status: </span><span style="color:#9ECBFF">'active'</span><span style="color:#E1E4E8"> })</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Also correct (dynamic)</span></span>
+<span class="line"><span style="color:#B392F0">params</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: </span><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#statusFilter'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">val</span><span style="color:#E1E4E8">(),</span></span>
+<span class="line"><span style="color:#E1E4E8">    search: </span><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#searchInput'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">val</span><span style="color:#E1E4E8">(),</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"><span style="color:#E1E4E8">},</span></span></code></pre>
+<hr>
+<h3 id="sort-does-not-work-on-a-column">Sort does not work on a column</h3>
+<p>The plugin validates data types before enabling sort. It will log a warning and disable sorting if the column’s values are not all <code>string</code> or <code>number</code>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Unable to set column 'X' as sortable. The context 'Y' is not of type string or number.</span></span></code></pre>
+<hr>
+<h3 id="columns-are-not-matching-in-headerscolumns">Columns are not matching in <code>headers.columns</code></h3>
+<p>The <code>column</code> property matches against the <strong>1-based column index</strong> (counting from left) or the <strong>exact header text</strong> of the <code>&#x3C;th></code>. If <code>rowCounter: true</code> (default), the <code>#</code> counter column becomes the first <code>&#x3C;th></code> in the DOM, shifting subsequent columns.</p>
+<p>Example — with row counter enabled:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">thead</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">tr</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#6A737D">    &#x3C;!-- #  (row-counter, index 0 in DOM) --></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">>Name&#x3C;/</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">>       </span><span style="color:#6A737D">&#x3C;!-- index 1 in column config --></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">>Email&#x3C;/</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">>      </span><span style="color:#6A737D">&#x3C;!-- index 2 in column config --></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">tr</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">thead</span><span style="color:#E1E4E8">></span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">headers</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#B392F0">  columns</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">    { column: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, context: </span><span style="color:#9ECBFF">'name'</span><span style="color:#E1E4E8">,  sortable: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">    { column: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, context: </span><span style="color:#9ECBFF">'email'</span><span style="color:#E1E4E8">, sortable: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">  ]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Alternatively, match by header text string:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">{ </span><span style="color:#B392F0">column</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'Name'</span><span style="color:#E1E4E8">,  </span><span style="color:#B392F0">context</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'name'</span><span style="color:#E1E4E8">,  </span><span style="color:#B392F0">sortable</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">{ </span><span style="color:#B392F0">column</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'Email'</span><span style="color:#E1E4E8">, </span><span style="color:#B392F0">context</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'email'</span><span style="color:#E1E4E8">, </span><span style="color:#B392F0">sortable</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8"> },</span></span></code></pre>
+<hr>
+<h3 id="data-is-not-an-array--object-structure-mismatch">Data is not an array / Object structure mismatch</h3>
+<p>The plugin validates data on every fetch. Both conditions will cause the table to render as empty (<code>[]</code>):</p>
+<ol>
+<li><strong><code>The data is not an array.</code></strong> — Your API returned an object, null, or non-array. Use <code>transformData</code> to extract the array.</li>
+<li><strong><code>Object structure mismatch.</code></strong> — Not all objects in the array have the same keys. Normalize your data server-side or with <code>transformData</code>.</li>
+</ol>
+<hr>
+<h3 id="resize--reorder-not-working-on-mobile">Resize / reorder not working on mobile</h3>
+<p>This is expected behavior. Both features are disabled at <code>≤ 991.98px</code> viewport width. Test on a desktop browser.</p>
+<hr>
+<h3 id="row-animations-not-playing">Row animations not playing</h3>
+<p>Check if <code>prefers-reduced-motion: reduce</code> is enabled in the OS accessibility settings. All animations are intentionally disabled in that mode per WCAG guidelines.</p>
+<p>For the modern add/update/remove animations (VT path), the browser must support the <strong>View Transition API</strong> (Chrome 111+, Edge 111+). On Firefox or Safari, the CSS fallback animations are used instead.</p>
+<hr>
+<h2 id="17-best-practices">17. Best Practices</h2>
+<h3 id="keep-mappingfunction-pure">Keep <code>mappingFunction</code> pure</h3>
+<p>The mapping function receives the data array and returns HTML. Do not mutate the array inside it — use <code>transformData</code> for that.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Bad</span></span>
+<span class="line"><span style="color:#B392F0">mappingFunction</span><span style="color:#E1E4E8">(data) {</span></span>
+<span class="line"><span style="color:#E1E4E8">  data.</span><span style="color:#B392F0">sort</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">a</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">b</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> a.name.</span><span style="color:#B392F0">localeCompare</span><span style="color:#E1E4E8">(b.name)); </span><span style="color:#6A737D">// mutates!</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> data.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">row</span><span style="color:#F97583"> =></span><span style="color:#9ECBFF"> `&#x3C;tr>...&#x3C;/tr>`</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">join</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">},</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Good — sort in transformData</span></span>
+<span class="line"><span style="color:#B392F0">transformData</span><span style="color:#E1E4E8">(data) {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> [</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">data].</span><span style="color:#B392F0">sort</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">a</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">b</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> a.name.</span><span style="color:#B392F0">localeCompare</span><span style="color:#E1E4E8">(b.name));</span></span>
+<span class="line"><span style="color:#E1E4E8">},</span></span>
+<span class="line"><span style="color:#B392F0">mappingFunction</span><span style="color:#E1E4E8">(data) {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> data.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">row</span><span style="color:#F97583"> =></span><span style="color:#9ECBFF"> `&#x3C;tr>...&#x3C;/tr>`</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">join</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">},</span></span></code></pre>
+<h3 id="use-key-for-add--update--remove-when-possible">Use <code>key</code> for add / update / remove when possible</h3>
+<p>Matching by <code>key</code> property is safer than matching by index (<code>at</code>). Index-based matching is fragile if rows are sorted or reordered.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Preferred</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#myTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'update'</span><span style="color:#E1E4E8">, { key: </span><span style="color:#9ECBFF">'employeeId'</span><span style="color:#E1E4E8">, item: updatedEmployee });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Avoid when key is available</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#myTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'update'</span><span style="color:#E1E4E8">, { at: </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">, item: updatedEmployee });</span></span></code></pre>
+<h3 id="escape-html-in-mappingfunction">Escape HTML in <code>mappingFunction</code></h3>
+<p>Never insert raw user data directly into HTML strings. Escape values to prevent XSS:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> escapeHtml</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">str</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> d</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> document.</span><span style="color:#B392F0">createElement</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'div'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  d.textContent </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> str;</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> d.innerHTML;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">mappingFunction</span><span style="color:#E1E4E8">(data) {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> data.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">row</span><span style="color:#F97583"> =></span><span style="color:#9ECBFF"> `</span></span>
+<span class="line"><span style="color:#9ECBFF">    &#x3C;tr></span></span>
+<span class="line"><span style="color:#9ECBFF">      &#x3C;td>${</span><span style="color:#B392F0">escapeHtml</span><span style="color:#9ECBFF">(</span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">name</span><span style="color:#9ECBFF">)</span><span style="color:#9ECBFF">}&#x3C;/td></span></span>
+<span class="line"><span style="color:#9ECBFF">      &#x3C;td>${</span><span style="color:#B392F0">escapeHtml</span><span style="color:#9ECBFF">(</span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">email</span><span style="color:#9ECBFF">)</span><span style="color:#9ECBFF">}&#x3C;/td></span></span>
+<span class="line"><span style="color:#9ECBFF">    &#x3C;/tr></span></span>
+<span class="line"><span style="color:#9ECBFF">  `</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">join</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">},</span></span></code></pre>
+<h3 id="set-voyadores-cdn-url-once-at-the-layout-level">Set <code>voyadores-cdn-url</code> once at the layout level</h3>
+<p>Put the hidden input in your base layout template so every page that uses the table plugin will automatically have it available:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#6A737D">&#x3C;!-- In base layout --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">input</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"hidden"</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"voyadores-cdn-url"</span><span style="color:#B392F0"> value</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"{{ config('app.cdn_url') }}"</span><span style="color:#E1E4E8"> /></span></span></code></pre>
+<h3 id="namespace-your-refresh-calls">Namespace your refresh calls</h3>
+<p>When multiple filters control a table, use a single coordinated refresh rather than calling refresh from each filter’s change handler independently:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> refreshTable</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  $</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#myTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'refresh'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#statusFilter, #dateRange, #searchInput'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">on</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'change input'</span><span style="color:#E1E4E8">, </span><span style="color:#B392F0">debounce</span><span style="color:#E1E4E8">(refreshTable, </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">));</span></span></code></pre>
+<h3 id="pair-loadmore-with-a-reasonable-showonpagesize">Pair <code>loadMore</code> with a reasonable <code>showOnPageSize</code></h3>
+<p>Set <code>showOnPageSize</code> to match your API’s page size exactly. If your API returns 20 items per page, set <code>showOnPageSize: 20</code>. This ensures the button hides correctly on the last page without an extra empty request.</p>
+<hr>
+<p><em>Documentation maintained by the Voyadores Design System team. For plugin issues or feature requests, contact the frontend platform team.</em></p> </div> </div>  </main> <!-- Right TOC sidebar --> <aside class="r-toc" id="r-toc" aria-label="On this page"> <div class="toc-label">On this page</div> <nav class="toc-nav" id="toc-nav"></nav> </aside> </div> <script type="module">const d=document.documentElement,L=document.querySelectorAll(".theme-toggle"),f=window.matchMedia("(prefers-color-scheme: dark)"),u=["light","dark","system"];function v(t){t==="dark"||t==="system"&&f.matches?d.setAttribute("data-theme","dark"):d.removeAttribute("data-theme"),d.setAttribute("data-color-scheme",t),localStorage.setItem("voy-theme",t)}f.addEventListener("change",()=>{d.getAttribute("data-color-scheme")==="system"&&v("system")});L.forEach(t=>{t.addEventListener("click",()=>{const n=d.getAttribute("data-color-scheme")||"system",s=u[(u.indexOf(n)+1)%u.length];v(s)})});const m=document.getElementById("c-cursor");if(m&&window.matchMedia("(pointer: fine)").matches){let t=0,n=0,s=0,c=0;const a=.16;document.addEventListener("mousemove",r=>{t=r.clientX,n=r.clientY}),(function r(){s+=(t-s)*a,c+=(n-c)*a,m.style.transform=`translate(${s}px,${c}px)`,requestAnimationFrame(r)})(),document.addEventListener("mouseleave",()=>{m.style.opacity="0"}),document.addEventListener("mouseenter",()=>{m.style.opacity="1"})}const g=document.getElementById("menu-toggle"),y=document.getElementById("sidebar-overlay"),h=document.getElementById("sidebar"),b=()=>{h.classList.add("open"),y.classList.add("show"),document.body.style.overflow="hidden",g.classList.add("open")},E=()=>{h.classList.remove("open"),y.classList.remove("show"),document.body.style.overflow="",g.classList.remove("open")};g.addEventListener("click",()=>h.classList.contains("open")?E():b());y.addEventListener("click",E);(function(){const n=document.getElementById("main"),s=document.getElementById("r-toc"),c=document.getElementById("toc-nav");if(!n||!s||!c)return;const a=Array.from(n.querySelectorAll("h2"));if(a.length<2)return;a.forEach((e,o)=>{if(!e.id){const i=e.textContent.trim().toLowerCase().replace(/[^a-z0-9\s-]/g,"").replace(/\s+/g,"-").replace(/-+/g,"-").replace(/^-|-$/g,"")||`section-${o}`;e.id=i}}),a.forEach(e=>{const o=document.createElement("a");o.href="#"+e.id,o.className="toc-link",o.textContent=e.textContent.trim(),o.addEventListener("click",i=>{i.preventDefault();const l=document.getElementById(e.id);l&&l.scrollIntoView({behavior:"smooth",block:"start"})}),c.appendChild(o)}),s.classList.add("has-items"),d.classList.add("has-toc");const r=Array.from(c.querySelectorAll(".toc-link")),p=new IntersectionObserver(e=>{e.forEach(o=>{const i=r.find(l=>l.getAttribute("href")==="#"+o.target.id);i&&i.classList.toggle("is-active",o.isIntersecting)})},{rootMargin:"-5% 0px -75% 0px",threshold:0});a.forEach(e=>p.observe(e))})();</script> </body> </html>

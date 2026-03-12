@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+---
+<BaseLayout title="Mask" activeSection="components">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.voyadores.theme.min.css" />
+  </Fragment>
+
+  <PageHeader
+    eyebrow="Components / Others"
+    title="Mask"
+    description="jQuery Mask Plugin for formatting input fields as the user types — phone numbers, dates, currency, postal codes, and custom patterns."
+  />
+
+  <section class="sec">
+    <h2>Setup</h2>
+    <div class="code-block"><pre is:raw><code>&lt;script src="https://cdn.voyadores.com/content/js/jquery/jquery-3.6.0.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.voyadores.com/content/js/mask/jquery.mask.min.js"&gt;&lt;/script&gt;</code></pre></div>
+  </section>
+
+  <section class="sec">
+    <h2>Demo</h2>
+    <div class="demo-area bs-scope">
+      {[
+        { id: 'm-phone',    label: 'PH Mobile Number', mask: '0000-000-0000',       placeholder: '0917-123-4567' },
+        { id: 'm-land',     label: 'Landline',          mask: '(00) 0000-0000',      placeholder: '(02) 8123-4567' },
+        { id: 'm-date',     label: 'Date',              mask: '00/00/0000',          placeholder: 'MM/DD/YYYY'    },
+        { id: 'm-time',     label: 'Time',              mask: '00:00',               placeholder: 'HH:MM'         },
+        { id: 'm-currency', label: 'Amount (₱)',        mask: '000,000,000.00',      placeholder: '1,000.00'      },
+        { id: 'm-zip',      label: 'ZIP Code',          mask: '0000',               placeholder: '1600'          },
+        { id: 'm-tin',      label: 'TIN',               mask: '000-000-000-000',     placeholder: '123-456-789-000'},
+        { id: 'm-ip',       label: 'IP Address',        mask: '099.099.099.099',     placeholder: '192.168.1.1'   },
+      ].map(f => (
+        <div class="mask-field">
+          <label>{f.label}</label>
+          <div class="mask-row">
+            <input id={f.id} type="text" class="m-input" placeholder={f.placeholder} data-mask={f.mask} />
+            <code class="mask-pattern">{f.mask}</code>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Usage</h2>
+    <div class="code-block"><pre is:raw><code>// Apply mask to an input
+$('#phone').mask('0000-000-0000');
+
+// Use data attribute (auto-initialized)
+&lt;input type="text" data-mask="00/00/0000" /&gt;
+
+// Mask with optional digits (9)
+$('#ip').mask('099.099.099.099');
+
+// Custom translations
+$('#custom').mask('AAA-000', {
+  translation: { A: { pattern: /[A-Z]/ } }
+});</code></pre></div>
+  </section>
+</BaseLayout>
+
+<script is:inline src="/js/jquery/jquery-3.6.0.min.js"></script>
+<script is:inline src="/js/mask/jquery.mask.min.js"></script>
+<script is:inline>
+$(function () {
+  $('[data-mask]').each(function () {
+    $(this).mask($(this).data('mask'));
+  });
+});
+</script>
+
+<style>
+  .sec { margin-bottom: 56px; }
+  .sec h2 { font-size: 20px; font-weight: 500; letter-spacing: -.4px; color: var(--black); margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--g5); }
+  .code-block { background: #161616; border-radius: 4px; overflow: auto; }
+  .code-block pre { margin: 0; padding: 20px 24px; }
+  .code-block code { font-family: var(--mono); font-size: 13px; color: #f5f5f5; line-height: 1.8; white-space: pre; }
+  .demo-area { padding: 24px; border: 1px solid var(--g5); border-radius: 2px; background: var(--white); display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+  .bs-scope { cursor: auto; }
+  .mask-field label { display: block; font-size: 11px; font-weight: 600; color: var(--black); margin-bottom: 5px; }
+  .mask-row { display: flex; gap: 8px; align-items: center; }
+  .m-input { flex: 1; font-family: var(--mono); font-size: 13px; padding: 7px 10px; border: 1px solid var(--g4); border-radius: 4px; color: var(--black); background: var(--white); outline: none; }
+  .m-input:focus { border-color: var(--brand); }
+  .mask-pattern { font-family: var(--mono); font-size: 10px; color: var(--g3); white-space: nowrap; }
+</style>

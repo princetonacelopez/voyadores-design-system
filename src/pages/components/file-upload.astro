@@ -1,0 +1,182 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+---
+<BaseLayout title="File Upload" activeSection="components">
+
+  <PageHeader
+    eyebrow="Components / Others"
+    title="File Upload"
+    description="jQuery File Upload plugin with chunked uploads, progress tracking, image preview, and AJAX-based multi-file handling. Supports validation, drag-and-drop, and resumable uploads."
+  />
+
+  <section class="sec">
+    <h2>Setup</h2>
+    <div class="code-block"><pre is:raw><code>&lt;script src="https://cdn.voyadores.com/content/js/jquery/jquery-3.6.0.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.voyadores.com/content/js/file-upload/jquery.ui.widget.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.voyadores.com/content/js/file-upload/jquery.iframe-transport.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.voyadores.com/content/js/file-upload/jquery.fileupload.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- Optional add-ons --&gt;
+&lt;script src="https://cdn.voyadores.com/content/js/file-upload/jquery.fileupload-process.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.voyadores.com/content/js/file-upload/jquery.fileupload-validate.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.voyadores.com/content/js/file-upload/jquery.fileupload-image.min.js"&gt;&lt;/script&gt;</code></pre></div>
+  </section>
+
+  <section class="sec">
+    <h2>Demo</h2>
+    <div class="demo-area">
+      <div class="fu-wrap">
+        <label class="fu-drop-zone" id="fu-zone">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <span class="fu-drop-text">Drag &amp; drop files here, or <u>click to browse</u></span>
+          <span class="fu-hint">PNG, JPG, PDF — max 5 MB each</span>
+          <input id="fu-input" type="file" multiple accept="image/*,.pdf" />
+        </label>
+
+        <div id="fu-list" class="fu-list"></div>
+
+        <div class="fu-global-progress" id="fu-global-progress" style="display:none">
+          <div class="fu-progress-bar" id="fu-progress-bar"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Usage</h2>
+    <div class="code-block"><pre is:raw><code>$('#file-input').fileupload({
+  url: '/api/upload',
+  dataType: 'json',
+  maxFileSize: 5000000,          // 5 MB
+  acceptFileTypes: /(\.|\/)(gif|jpe?g|png|pdf)$/i,
+  add: function (e, data) {
+    // Inspect data.files[0] before upload
+    data.submit();
+  },
+  done: function (e, data) {
+    // data.result = server response
+    console.log('Uploaded', data.files[0].name, data.result);
+  },
+  fail: function (e, data) {
+    console.error('Upload failed', data.errorThrown);
+  },
+  progress: function (e, data) {
+    var pct = parseInt(data.loaded / data.total * 100, 10);
+    $('#progress-bar').css('width', pct + '%').text(pct + '%');
+  },
+  progressall: function (e, data) {
+    var pct = parseInt(data.loaded / data.total * 100, 10);
+    $('#global-bar').css('width', pct + '%');
+  },
+});
+
+// Chunked upload
+$('#file-input').fileupload({
+  url: '/api/upload/chunked',
+  maxChunkSize: 1000000,   // 1 MB chunks
+});</code></pre></div>
+  </section>
+</BaseLayout>
+
+<script is:inline src="/js/jquery/jquery-3.6.0.min.js"></script>
+<script is:inline src="/js/file-upload/jquery.ui.widget.min.js"></script>
+<script is:inline src="/js/file-upload/jquery.iframe-transport.min.js"></script>
+<script is:inline src="/js/file-upload/jquery.fileupload.min.js"></script>
+<script is:inline>
+$(function () {
+  var MAX_SIZE = 5 * 1024 * 1024; // 5 MB
+
+  function formatSize(bytes) {
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+    return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+  }
+
+  function addFileRow(file, id) {
+    var isImg = file.type.startsWith('image/');
+    var row = $('<div class="fu-file-row" id="fu-row-' + id + '">' +
+      '<div class="fu-file-icon">' + (isImg ? '&#128247;' : '&#128196;') + '</div>' +
+      '<div class="fu-file-info">' +
+        '<span class="fu-file-name">' + file.name + '</span>' +
+        '<span class="fu-file-size">' + formatSize(file.size) + '</span>' +
+      '</div>' +
+      '<div class="fu-file-status" id="fu-status-' + id + '"><span class="fu-badge fu-badge-pending">Pending</span></div>' +
+    '</div>');
+    $('#fu-list').append(row);
+  }
+
+  function simulateUpload(id) {
+    var status = $('#fu-status-' + id);
+    var progress = 0;
+    var bar = $('<div class="fu-mini-bar"><div class="fu-mini-fill" style="width:0%"></div></div>');
+    status.html('').append(bar);
+
+    var iv = setInterval(function () {
+      progress += Math.random() * 20;
+      if (progress >= 100) {
+        progress = 100;
+        clearInterval(iv);
+        status.html('<span class="fu-badge fu-badge-done">&#10003; Done</span>');
+      }
+      bar.find('.fu-mini-fill').css('width', Math.min(progress, 100) + '%');
+    }, 120);
+  }
+
+  var fileId = 0;
+  var zone = $('#fu-zone');
+
+  zone.on('dragover', function (e) { e.preventDefault(); zone.addClass('fu-drag-over'); });
+  zone.on('dragleave drop', function () { zone.removeClass('fu-drag-over'); });
+
+  $('#fu-input').on('change', function () {
+    var files = this.files;
+    for (var i = 0; i < files.length; i++) {
+      var file = files[i];
+      if (file.size > MAX_SIZE) {
+        alert(file.name + ' exceeds 5 MB limit.');
+        continue;
+      }
+      fileId++;
+      addFileRow(file, fileId);
+      simulateUpload(fileId);
+    }
+    this.value = '';
+  });
+});
+</script>
+
+<style>
+  .sec { margin-bottom: 56px; }
+  .sec h2 { font-size: 20px; font-weight: 500; letter-spacing: -.4px; color: var(--black); margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--g5); }
+  .code-block { background: #161616; border-radius: 4px; overflow: auto; }
+  .code-block pre { margin: 0; padding: 20px 24px; }
+  .code-block code { font-family: var(--mono); font-size: 13px; color: #f5f5f5; line-height: 1.8; white-space: pre; }
+  .demo-area { padding: 24px; border: 1px solid var(--g5); border-radius: 2px; background: var(--white); }
+
+  .fu-wrap { display: flex; flex-direction: column; gap: 16px; }
+  .fu-drop-zone {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 8px; padding: 40px 24px; border: 2px dashed var(--g4); border-radius: 8px;
+    background: var(--g6); cursor: pointer; transition: border-color .2s, background .2s;
+  }
+  .fu-drop-zone:hover, .fu-drop-zone.fu-drag-over { border-color: var(--brand); background: rgba(247,146,30,.04); }
+  .fu-drop-zone input { display: none; }
+  .fu-drop-text { font-size: 13px; color: var(--g2); }
+  .fu-hint { font-size: 11px; color: var(--g3); }
+
+  .fu-list { display: flex; flex-direction: column; gap: 8px; }
+  .fu-file-row { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid var(--g5); border-radius: 6px; background: var(--white); }
+  .fu-file-icon { font-size: 20px; line-height: 1; flex-shrink: 0; }
+  .fu-file-info { flex: 1; min-width: 0; }
+  .fu-file-name { display: block; font-size: 12px; font-weight: 600; color: var(--black); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .fu-file-size { display: block; font-size: 11px; color: var(--g3); }
+  .fu-file-status { flex-shrink: 0; min-width: 80px; text-align: right; }
+
+  .fu-badge { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 99px; }
+  .fu-badge-pending { background: var(--g5); color: var(--g2); }
+  .fu-badge-done { background: #dcfce7; color: #15803d; }
+
+  .fu-mini-bar { width: 80px; height: 4px; background: var(--g5); border-radius: 99px; overflow: hidden; margin-left: auto; }
+  .fu-mini-fill { height: 100%; background: var(--brand); border-radius: 99px; transition: width .1s; }
+</style>

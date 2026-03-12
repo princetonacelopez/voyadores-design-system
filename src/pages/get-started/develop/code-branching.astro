@@ -1,0 +1,468 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+---
+
+<BaseLayout title="Code Branching Guidelines">
+  <PageHeader
+    eyebrow="Get Started — Develop"
+    title="Code Branching Guidelines"
+    description="Naming conventions and compliance standards for managing Git branches across all NESV repositories."
+  />
+
+  <!-- Compliance Status -->
+  <section class="sec">
+    <h2>Repository Compliance</h2>
+    <p class="body-text">To accurately measure compliance requirements, all repositories are assigned one of three statuses.</p>
+
+    <div class="status-grid">
+      <div class="status-card status-card--compliant">
+        <div class="status-dot status-dot--compliant"></div>
+        <div class="status-body">
+          <h3>Compliant</h3>
+          <p>New repositories start as Compliant as long as they adhere consistently to this convention. Compliant status is lost when a repeated violation occurs.</p>
+        </div>
+      </div>
+      <div class="status-card status-card--partial">
+        <div class="status-dot status-dot--partial"></div>
+        <div class="status-body">
+          <h3>Partially Compliant</h3>
+          <p>Existing repositories can attain Partially Compliant status after following the convention over a reasonable amount of time.</p>
+        </div>
+      </div>
+      <div class="status-card status-card--non">
+        <div class="status-dot status-dot--non"></div>
+        <div class="status-body">
+          <h3>Non-Compliant</h3>
+          <p>All existing repositories start with Non-Compliant status by default until they demonstrate adherence to the convention.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Branch Types -->
+  <section class="sec">
+    <h2>Branch Types</h2>
+
+    <div class="branch-list">
+
+      <!-- Development -->
+      <div class="branch-card">
+        <div class="branch-card-header">
+          <div class="branch-icon branch-icon--dev">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+          </div>
+          <div>
+            <div class="branch-type-label">Main Branch</div>
+            <h3>Development</h3>
+          </div>
+          <code class="branch-name-chip">development</code>
+        </div>
+        <p class="branch-desc">The main branch for all changes. All Change branches must originate from here. Major and Minor Change branches merge back into this branch once QA is cleared.</p>
+      </div>
+
+      <!-- Client Change -->
+      <div class="branch-card">
+        <div class="branch-card-header">
+          <div class="branch-icon branch-icon--client">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <div class="branch-type-label">Change Branch</div>
+            <h3>Client Change Branch</h3>
+          </div>
+          <code class="branch-name-chip branch-name-chip--cc">CC-*</code>
+        </div>
+        <p class="branch-desc">Contains changes requested by a client — new features and/or bug reports.</p>
+        <div class="branch-sub">
+          <div class="branch-sub-label">Can branch off when necessary for:</div>
+          <ul class="branch-sub-list">
+            <li>Test result changes from the team</li>
+            <li>Additional changes scoped-in</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Internal Change -->
+      <div class="branch-card">
+        <div class="branch-card-header">
+          <div class="branch-icon branch-icon--internal">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div>
+            <div class="branch-type-label">Change Branch</div>
+            <h3>Internal Change Branch</h3>
+          </div>
+          <code class="branch-name-chip branch-name-chip--ic">IC-*</code>
+        </div>
+        <p class="branch-desc">Contains changes reported by the internal team. These changes should only contain bug fixes and feature corrections.</p>
+        <div class="branch-sub">
+          <div class="branch-sub-label">Can branch off when necessary for:</div>
+          <ul class="branch-sub-list">
+            <li>Test result changes from the team</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Naming Convention -->
+  <section class="sec">
+    <h2>Naming Convention</h2>
+
+    <div class="naming-rules">
+
+      <div class="naming-rule">
+        <div class="naming-rule-num">1</div>
+        <div class="naming-rule-body">
+          <p class="naming-rule-title">Development branch</p>
+          <p class="naming-rule-desc">Uses the name <code>development</code>.</p>
+          <div class="example-pill">
+            <span class="example-pill-label">Branch</span>
+            <code class="branch-tag branch-tag--dev">development</code>
+          </div>
+        </div>
+      </div>
+
+      <div class="naming-rule">
+        <div class="naming-rule-num">2</div>
+        <div class="naming-rule-body">
+          <p class="naming-rule-title">Feature Main Branch</p>
+          <p class="naming-rule-desc">Uses the prefix <code>CC</code> followed by a dash and the 4-digit version number with periods replaced by underscores.</p>
+          <div class="format-block">
+            <div class="format-row">
+              <span class="fmt-badge fmt-badge--format">Format</span>
+              <code>CC-[major]_[minor]_[release]_[build]</code>
+            </div>
+            <div class="format-row">
+              <span class="fmt-badge fmt-badge--example">Example</span>
+              <span class="fmt-desc">A major change request with version 2.2.0 →</span>
+              <code class="branch-tag branch-tag--cc">CC-2_2_0_0</code>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="naming-rule">
+        <div class="naming-rule-num">3</div>
+        <div class="naming-rule-body">
+          <p class="naming-rule-title">Change Branch (Client)</p>
+          <p class="naming-rule-desc">Prefixed with <code>CC</code>. The second part is the 3-digit version with periods replaced by underscores.</p>
+          <div class="format-block">
+            <div class="format-row">
+              <span class="fmt-badge fmt-badge--format">Format</span>
+              <code>CC-[major]_[minor]_[release]</code>
+            </div>
+            <div class="format-row">
+              <span class="fmt-badge fmt-badge--example">Example</span>
+              <span class="fmt-desc">Client change request v2.2.0 →</span>
+              <code class="branch-tag branch-tag--cc">CC-2_2_0</code>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="naming-rule">
+        <div class="naming-rule-num">4</div>
+        <div class="naming-rule-body">
+          <p class="naming-rule-title">Change Branch (Internal)</p>
+          <p class="naming-rule-desc">Prefixed with <code>IC</code>. The second part is the 3-digit version with periods replaced by underscores.</p>
+          <div class="format-block">
+            <div class="format-row">
+              <span class="fmt-badge fmt-badge--format">Format</span>
+              <code>IC-[major]_[minor]_[release]</code>
+            </div>
+            <div class="format-row">
+              <span class="fmt-badge fmt-badge--example">Example</span>
+              <span class="fmt-desc">Internal QA change request v2.2.1 →</span>
+              <code class="branch-tag branch-tag--ic">CC-2_2_1</code>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Branch Rules -->
+  <section class="sec">
+    <h2>Branch Rules</h2>
+
+    <div class="rules-list">
+      <div class="rule-item">
+        <div class="rule-dot"></div>
+        <p>Major and Minor releases are the changes that shall branch out from <code>development</code>.</p>
+      </div>
+      <div class="rule-item">
+        <div class="rule-dot"></div>
+        <p>Build and Release branches must branch out from Major and Minor branches.</p>
+      </div>
+      <div class="rule-item">
+        <div class="rule-dot"></div>
+        <p>All completed individual branches by developers must merge back to Major and Minor branches.</p>
+      </div>
+      <div class="rule-item">
+        <div class="rule-dot"></div>
+        <p>QA shall be performed in the Major or Minor branch.</p>
+      </div>
+      <div class="rule-item">
+        <div class="rule-dot"></div>
+        <p>Once QA is cleared, Major and Minor branches can merge back to <code>development</code>.</p>
+      </div>
+    </div>
+
+    <!-- Flow diagram -->
+    <div class="flow-diagram">
+      <div class="flow-label">Branch Flow</div>
+      <div class="flow-track">
+        <div class="flow-node flow-node--dev">development</div>
+        <div class="flow-arrow">
+          <svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M0 6h18M13 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="flow-node flow-node--major">CC / IC (Major & Minor)</div>
+        <div class="flow-arrow">
+          <svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M0 6h18M13 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="flow-node flow-node--build">Build / Release branches</div>
+        <div class="flow-arrow flow-arrow--back">
+          <svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M20 6H2M7 1L2 6l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="flow-arrow-label">After QA</span>
+        </div>
+        <div class="flow-node flow-node--dev">development</div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .sec { margin-bottom: 72px; }
+
+  .sec h2 {
+    font-size: 20px; font-weight: 600; letter-spacing: -.4px; color: var(--black);
+    margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--g5);
+  }
+
+  .body-text {
+    font-size: 14px; font-weight: 500; color: var(--g1); line-height: 1.7;
+    max-width: 640px; margin-bottom: 28px;
+  }
+
+  code {
+    font-family: var(--mono); font-size: .9em;
+    background: var(--g6); border: 1px solid var(--g5);
+    padding: 1px 6px; border-radius: 3px; color: var(--g1);
+  }
+
+  /* ── Status grid ─────────────────────────────────────────────────────── */
+  .status-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+  }
+
+  .status-card {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 18px 20px; border-radius: 8px;
+    border: 1px solid var(--g5); background: var(--white);
+  }
+
+  .status-dot {
+    flex-shrink: 0; width: 10px; height: 10px; border-radius: 50%; margin-top: 5px;
+  }
+  .status-dot--compliant { background: #077d55; box-shadow: 0 0 0 3px rgba(7,125,85,.15); }
+  .status-dot--partial   { background: #b8650a; box-shadow: 0 0 0 3px rgba(247,146,30,.2); }
+  .status-dot--non       { background: #d91f11; box-shadow: 0 0 0 3px rgba(217,31,17,.12); }
+
+  .status-card h3 {
+    font-size: 13px; font-weight: 700; color: var(--black); margin-bottom: 6px;
+  }
+  .status-card p {
+    font-size: 12px; font-weight: 500; color: var(--g2); line-height: 1.6;
+  }
+
+  /* ── Branch cards ────────────────────────────────────────────────────── */
+  .branch-list { display: flex; flex-direction: column; gap: 10px; }
+
+  .branch-card {
+    border: 1px solid var(--g5); border-radius: 8px;
+    padding: 18px 20px; background: var(--white);
+  }
+
+  .branch-card-header {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap;
+  }
+
+  .branch-icon {
+    flex-shrink: 0; width: 32px; height: 32px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .branch-icon--dev      { background: rgba(84,95,232,.1);  color: #3a44c8; }
+  .branch-icon--client   { background: rgba(7,125,85,.1);   color: #077d55; }
+  .branch-icon--internal { background: rgba(247,146,30,.1); color: #b8650a; }
+
+  .branch-type-label {
+    font-size: 9px; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--g2); margin-bottom: 2px;
+  }
+
+  .branch-card-header h3 {
+    font-size: 14px; font-weight: 700; color: var(--black); line-height: 1;
+  }
+
+  .branch-name-chip {
+    margin-left: auto; font-family: var(--mono); font-size: 12px; font-weight: 700;
+    padding: 4px 10px; border-radius: 5px;
+    background: var(--g6); border: 1px solid var(--g5); color: var(--g1);
+  }
+  .branch-name-chip--cc { background: rgba(7,125,85,.08);   border-color: rgba(7,125,85,.2);   color: #077d55; }
+  .branch-name-chip--ic { background: rgba(247,146,30,.08); border-color: rgba(247,146,30,.25); color: #b8650a; }
+
+  .branch-desc {
+    font-size: 13px; font-weight: 500; color: var(--g1); line-height: 1.6;
+    margin-bottom: 12px; max-width: 620px;
+  }
+
+  .branch-sub {
+    background: var(--g6); border: 1px solid var(--g5); border-radius: 6px;
+    padding: 12px 14px;
+  }
+  .branch-sub-label {
+    font-size: 10px; font-weight: 700; letter-spacing: .07em;
+    text-transform: uppercase; color: var(--g2); margin-bottom: 8px;
+  }
+  .branch-sub-list {
+    padding-left: 16px; display: flex; flex-direction: column; gap: 4px; list-style: disc;
+  }
+  .branch-sub-list li {
+    font-size: 12px; font-weight: 500; color: var(--g1); line-height: 1.5;
+  }
+
+  /* ── Naming rules ────────────────────────────────────────────────────── */
+  .naming-rules { display: flex; flex-direction: column; gap: 0; }
+
+  .naming-rule {
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 20px 0; border-bottom: 1px solid var(--g5);
+  }
+  .naming-rule:last-child { border-bottom: none; }
+
+  .naming-rule-num {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+    background: var(--g5); color: var(--g1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; margin-top: 2px;
+  }
+
+  .naming-rule-body { flex: 1; min-width: 0; }
+
+  .naming-rule-title {
+    font-size: 14px; font-weight: 700; color: var(--black);
+    margin-bottom: 5px;
+  }
+  .naming-rule-desc {
+    font-size: 13px; font-weight: 500; color: var(--g1); line-height: 1.6;
+    margin-bottom: 14px; max-width: 520px;
+  }
+
+  .format-block {
+    background: var(--g6); border: 1px solid var(--g5); border-radius: 6px;
+    padding: 12px 16px; display: flex; flex-direction: column; gap: 8px;
+  }
+
+  .format-row {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+
+  .fmt-badge {
+    flex-shrink: 0; font-size: 9px; font-weight: 700; letter-spacing: .07em;
+    text-transform: uppercase; padding: 2px 7px; border-radius: 3px;
+  }
+  .fmt-badge--format  { background: rgba(84,95,232,.1);  color: #3a44c8; }
+  .fmt-badge--example { background: rgba(7,125,85,.1);   color: #077d55; }
+
+  .fmt-desc {
+    font-size: 12px; font-weight: 500; color: var(--g2);
+  }
+
+  .example-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--g6); border: 1px solid var(--g5);
+    border-radius: 5px; padding: 6px 12px; margin-top: 4px;
+  }
+  .example-pill-label {
+    font-size: 9px; font-weight: 700; letter-spacing: .07em;
+    text-transform: uppercase; color: var(--g3);
+  }
+
+  .branch-tag {
+    font-family: var(--mono); font-size: 12px; font-weight: 700;
+    padding: 3px 10px; border-radius: 4px;
+  }
+  .branch-tag--dev { background: rgba(84,95,232,.1);  color: #3a44c8; border: 1px solid rgba(84,95,232,.2); }
+  .branch-tag--cc  { background: rgba(7,125,85,.1);   color: #077d55; border: 1px solid rgba(7,125,85,.2); }
+  .branch-tag--ic  { background: rgba(247,146,30,.1); color: #b8650a; border: 1px solid rgba(247,146,30,.25); }
+
+  /* ── Branch rules ────────────────────────────────────────────────────── */
+  .rules-list {
+    display: flex; flex-direction: column; gap: 0;
+    border: 1px solid var(--g5); border-radius: 8px; overflow: hidden;
+    margin-bottom: 28px;
+  }
+
+  .rule-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 13px 18px; border-bottom: 1px solid var(--g5);
+  }
+  .rule-item:last-child { border-bottom: none; }
+
+  .rule-dot {
+    flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--brand); margin-top: 7px;
+  }
+
+  .rule-item p {
+    font-size: 13px; font-weight: 500; color: var(--g1); line-height: 1.6;
+  }
+
+  /* ── Flow diagram ────────────────────────────────────────────────────── */
+  .flow-diagram {
+    background: var(--g6); border: 1px solid var(--g5); border-radius: 8px;
+    padding: 20px 24px;
+  }
+
+  .flow-label {
+    font-size: 10px; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--g2); margin-bottom: 16px;
+  }
+
+  .flow-track {
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  }
+
+  .flow-node {
+    font-family: var(--mono); font-size: 11px; font-weight: 700;
+    padding: 6px 12px; border-radius: 5px; white-space: nowrap;
+  }
+  .flow-node--dev   { background: rgba(84,95,232,.1); color: #3a44c8; border: 1px solid rgba(84,95,232,.25); }
+  .flow-node--major { background: rgba(7,125,85,.1);  color: #077d55; border: 1px solid rgba(7,125,85,.25); }
+  .flow-node--build { background: rgba(247,146,30,.1); color: #b8650a; border: 1px solid rgba(247,146,30,.3); }
+
+  .flow-arrow { color: var(--g3); display: flex; align-items: center; }
+
+  .flow-arrow--back {
+    display: flex; flex-direction: column; align-items: center; gap: 2px; color: var(--g3);
+  }
+  .flow-arrow-label {
+    font-size: 9px; font-weight: 600; letter-spacing: .05em;
+    text-transform: uppercase; color: var(--g2);
+  }
+
+  /* ── Responsive ──────────────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .status-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .flow-track { flex-direction: column; align-items: flex-start; }
+    .flow-arrow, .flow-arrow--back { transform: rotate(90deg); }
+  }
+</style>

@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const principles = [
+  {
+    n: '01',
+    title: 'Simple',
+    body: 'We cut complexity at every layer. Language is plain, interfaces are clean, and flows are direct. MSME owners and their teams should never need a manual to use what we build.',
+  },
+  {
+    n: '02',
+    title: 'Modern',
+    body: 'Voyadores looks and feels contemporary—not trendy. We adopt conventions that are proven and accessible, while staying ahead of the tools our users\' competitors are using.',
+  },
+  {
+    n: '03',
+    title: 'Empowering',
+    body: 'Every feature is designed to give Philippine businesses more control, more confidence, and more time. We succeed when our users feel capable and unstoppable.',
+  },
+  {
+    n: '04',
+    title: 'Conversational yet professional',
+    body: 'Our voice is warm and direct—like a knowledgeable colleague, not a corporate manual. We speak clearly, avoid jargon, and respect the intelligence of every user.',
+  },
+  {
+    n: '05',
+    title: 'Solution-focused',
+    body: 'We lead with what users can do, not what the system does. Error messages point to fixes. Empty states suggest next steps. Every touchpoint moves the user forward.',
+  },
+  {
+    n: '06',
+    title: 'Culturally aware',
+    body: 'We design for the Philippine context—local formats for dates, currency, and addresses; inclusive language that reflects the diversity of the communities we serve.',
+  },
+];
+
+const values = [
+  { label: 'Trustworthy',  desc: 'Enterprise-grade reliability for every Philippine business.' },
+  { label: 'Efficient',    desc: 'Built for MSMEs doing real work with real deadlines.' },
+  { label: 'Inclusive',    desc: 'Designed for every user, every context, every community.' },
+  { label: 'Coherent',     desc: 'One system, many surfaces—always recognizably Voyadores.' },
+];
+---
+
+<BaseLayout title="Strategy" activeSection="strategy">
+  <PageHeader
+    eyebrow="Strategy"
+    title="Brand Strategy"
+    description="The thinking behind Voyadores—the voice, principles, and values that inform every design and content decision we make."
+  />
+
+  <div class="content">
+
+    <!-- Principles -->
+    <section class="sec">
+      <h2>Brand Attributes</h2>
+      <div class="principles-list">
+        {principles.map(p => (
+          <div class="principle">
+            <span class="p-num">{p.n}</span>
+            <div class="p-body">
+              <h3>{p.title}</h3>
+              <p>{p.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Brand values -->
+    <section class="sec">
+      <h2>Brand Values</h2>
+      <div class="values-grid">
+        {values.map(v => (
+          <div class="value-card">
+            <h3>{v.label}</h3>
+            <p>{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Mission -->
+    <section class="sec sec--quote">
+      <blockquote class="mission-quote">
+        "We empower Philippine MSMEs with the tools, language, and interfaces they need to grow—
+        simple enough for day one, powerful enough for the long run."
+      </blockquote>
+      <cite>Voyadores Brand Team</cite>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .content { display: flex; flex-direction: column; }
+
+  .sec { margin-bottom: 64px; }
+
+  .sec h2 {
+    font-size: 20px; font-weight: 500;
+    letter-spacing: -0.4px; color: var(--black);
+    margin-bottom: 20px; padding-bottom: 20px;
+    border-bottom: 1px solid var(--g5);
+  }
+
+  /* Principles */
+  .principles-list { display: flex; flex-direction: column; }
+
+  .principle {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--g5);
+    align-items: flex-start;
+  }
+  .principle:first-child { border-top: 1px solid var(--g5); }
+
+  .p-num {
+    font-size: 11px; font-weight: 600; font-family: var(--mono);
+    color: var(--g2); padding-top: 3px;
+  }
+
+  .p-body h3 {
+    font-size: 16px; font-weight: 600;
+    color: var(--black); margin-bottom: 8px;
+    letter-spacing: -.01em;
+  }
+
+  .p-body p {
+    font-size: 14px; font-weight: 500;
+    color: var(--g2); line-height: 1.7; max-width: 560px;
+  }
+
+  /* Values */
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .value-card {
+    padding: 24px;
+    border: 1px solid var(--g5);
+    border-radius: 2px;
+  }
+
+  .value-card h3 {
+    font-size: 14px; font-weight: 700;
+    color: var(--black); margin-bottom: 8px;
+  }
+
+  .value-card p {
+    font-size: 12px; font-weight: 500;
+    color: var(--g2); line-height: 1.5;
+  }
+
+  /* Quote */
+  .sec--quote { border-left: 2px solid var(--brand); padding-left: 24px; }
+  .sec--quote h2 { display: none; }
+
+  .mission-quote {
+    font-size: 20px; font-weight: 500;
+    line-height: 1.5; letter-spacing: -.02em;
+    color: var(--black); margin-bottom: 12px;
+    font-style: normal;
+  }
+
+  cite {
+    font-size: 12px; font-weight: 500;
+    color: var(--g2); font-style: normal;
+  }
+
+  @media (max-width: 767px) {
+    .values-grid { grid-template-columns: repeat(2, 1fr); }
+    .principle { grid-template-columns: 1fr; gap: 8px; }
+  }
+</style>

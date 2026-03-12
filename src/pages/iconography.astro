@@ -1,0 +1,517 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import iconList from '../data/icons.json';
+
+const totalIcons = iconList.length;
+
+const CDN = 'https://cdn.voyadores.com/content/icons';
+
+function toLabel(filename: string): string {
+  return filename
+    .replace(/\.(svg|png)$/i, '')
+    .replace(/^icon-bank-/, '')
+    .replace(/^icon-location-type-/, '')
+    .replace(/^icon-/, '')
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, (c: string) => c.toUpperCase());
+}
+
+const featured = [
+  'home','settings','user','users','search','bell',
+  'calendar','chart-bar','file-text','folder','download','upload',
+  'edit','trash','check','times','plus','minus',
+  'lock','unlock','eye','eye-slash','mail','phone',
+];
+
+// ─── SVG Icon Sets ────────────────────────────────────────────────────────────
+
+const bankIcons = [
+  'icon-bank-al-amanah.svg',
+  'icon-bank-anz.svg',
+  'icon-bank-aub.svg',
+  'icon-bank-banco-de-oro.svg',
+  'icon-bank-bangkok-bank.svg',
+  'icon-bank-bank-of-america.svg',
+  'icon-bank-bank-of-commerce.svg',
+  'icon-bank-bpi.svg',
+  'icon-bank-cash.svg',
+  'icon-bank-cathay-united-bank.svg',
+  'icon-bank-chang-hwa.svg',
+  'icon-bank-china-bank.svg',
+  'icon-bank-china-trust.svg',
+  'icon-bank-cimb.svg',
+  'icon-bank-citysavings.svg',
+  'icon-bank-default.svg',
+  'icon-bank-deutsche.svg',
+  'icon-bank-development-bank-of-the-philippines.svg',
+  'icon-bank-east-west.svg',
+  'icon-bank-first-commercial-bank.svg',
+  'icon-bank-first-valley-bank.svg',
+  'icon-bank-gcash.svg',
+  'icon-bank-gotyme.svg',
+  'icon-bank-hsbc.svg',
+  'icon-bank-hua-nan-bank.svg',
+  'icon-bank-ibk.svg',
+  'icon-bank-ing-bank.svg',
+  'icon-bank-instapay.svg',
+  'icon-bank-jpmorgan-chase-bank.svg',
+  'icon-bank-keb.svg',
+  'icon-bank-landbank.svg',
+  'icon-bank-maya.svg',
+  'icon-bank-maybank.svg',
+  'icon-bank-metrobank.svg',
+  'icon-bank-mizuho.svg',
+  'icon-bank-mufg.svg',
+  'icon-bank-pbcom.svg',
+  'icon-bank-philippine-business-bank.svg',
+  'icon-bank-philippine-national-bank.svg',
+  'icon-bank-philtrust.svg',
+  'icon-bank-psbank.svg',
+  'icon-bank-pvb.svg',
+  'icon-bank-rcbc.svg',
+  'icon-bank-robinsons-bank.svg',
+  'icon-bank-security-bank.svg',
+  'icon-bank-shinhan-bank.svg',
+  'icon-bank-smbc.svg',
+  'icon-bank-standard-chartered.svg',
+  'icon-bank-ucpb.svg',
+  'icon-bank-union-bank.svg',
+  'icon-bank-uob.svg',
+].map(f => ({ file: f, dir: 'banks', label: toLabel(f) }));
+
+const paymentIcons = [
+  { file: 'paypal-logo.png', dir: 'payment', label: 'PayPal' },
+];
+
+const governmentIcons = [
+  'pag-ibig.svg',
+  'philhealth.svg',
+  'sss.svg',
+].map(f => ({ file: f, dir: 'government', label: toLabel(f) }));
+
+const companyLoanIcons = [
+  'company.svg',
+  'pag-ibig.svg',
+  'sss.svg',
+].map(f => ({ file: f, dir: 'company-loan', label: toLabel(f) }));
+
+const locationIcons = [
+  'icon-location-type-area.svg',
+  'icon-location-type-bin.svg',
+  'icon-location-type-location.svg',
+  'icon-location-type-store.svg',
+  'icon-location-type-warehouse.svg',
+].map(f => ({ file: f, dir: 'location-types', label: toLabel(f) }));
+
+const fileTypeIcons = [
+  'csv-file.png',
+  'doc-file.png',
+  'eml-file.png',
+  'jpg-file.png',
+  'pdf-file.png',
+  'png-file.png',
+  'svg-file.png',
+  'xls-file.png',
+].map(f => ({ file: f, dir: 'file-types', label: toLabel(f).replace(' File', '').toUpperCase() }));
+
+const svgSets = [
+  {
+    name: 'Banks & Payments',
+    desc: 'Philippine banks, international banks, e-wallets, and payment rails.',
+    icons: [...bankIcons, ...paymentIcons],
+  },
+  {
+    name: 'Government Agencies',
+    desc: 'Philippine government agency logos for SSS, PAG-IBIG, and PhilHealth.',
+    icons: governmentIcons,
+  },
+  {
+    name: 'Company Loan',
+    desc: 'Company and loan provider icons used in benefit and loan modules.',
+    icons: companyLoanIcons,
+  },
+  {
+    name: 'Location Types',
+    desc: 'Icons for warehousing and inventory location classification.',
+    icons: locationIcons,
+  },
+  {
+    name: 'File Types',
+    desc: 'Document and file format icons for attachment and viewer components.',
+    icons: fileTypeIcons,
+  },
+];
+
+const totalSvgIcons = svgSets.reduce((n, s) => n + s.icons.length, 0);
+---
+
+<BaseLayout title="Iconography" activeSection="icons">
+  <PageHeader
+    eyebrow="Iconography"
+    title="Iconography"
+    description={`The Voyadores icon system includes a ${totalIcons}-icon font in Regular and Solid weights, plus ${totalSvgIcons} SVG and PNG asset icons for banks, agencies, locations, and file types.`}
+  />
+
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="stat"><span class="stat-n">{totalIcons}+</span><span class="stat-l">Icon Font Icons</span></div>
+    <div class="stat"><span class="stat-n">2</span><span class="stat-l">Weights</span></div>
+    <div class="stat"><span class="stat-n">{totalSvgIcons}</span><span class="stat-l">SVG / PNG Assets</span></div>
+    <div class="stat"><span class="stat-n">{svgSets.length}</span><span class="stat-l">Asset Sets</span></div>
+  </div>
+
+  <!-- ─── Icon Font ─────────────────────────────────────────────────────────── -->
+
+  <!-- Usage -->
+  <section class="sec">
+    <h2>Icon Font — Usage</h2>
+    <div class="code-block">
+      <pre><code>&lt;!-- Regular weight --&gt;
+&lt;i class="vi-regular vi-home"&gt;&lt;/i&gt;
+
+&lt;!-- Solid weight --&gt;
+&lt;i class="vi-solid vi-home"&gt;&lt;/i&gt;
+
+&lt;!-- Custom size --&gt;
+&lt;i class="vi-regular vi-settings" style="font-size:2rem"&gt;&lt;/i&gt;</code></pre>
+    </div>
+  </section>
+
+  <!-- Searchable grid -->
+  <section class="sec">
+    <div class="search-hd">
+      <div class="search-hd-left">
+        <h2 id="all-icons-title">All Icons</h2>
+        <div class="icon-tabs" role="tablist" aria-label="Icon weight">
+          <button class="icon-tab is-active" id="tab-regular" role="tab" aria-selected="true"  data-weight="regular">Regular</button>
+          <button class="icon-tab"            id="tab-solid"   role="tab" aria-selected="false" data-weight="solid">Solid</button>
+        </div>
+      </div>
+      <div class="search-wrap">
+        <i class="vi-regular vi-search si-icon"></i>
+        <input id="icon-q" type="search" class="search-input" placeholder={`Search ${totalIcons} icons…`} autocomplete="off" />
+        <span id="icon-count" class="si-count">{totalIcons}</span>
+      </div>
+    </div>
+    <div id="icons-grid" class="all-icons-grid">
+      {iconList.map(name => (
+        <button class="ic" data-name={name} title={name} data-copy-class={`vi-regular vi-${name}`}>
+          <i class:list={['vi-regular', `vi-${name}`]}></i>
+          <span>{name}</span>
+        </button>
+      ))}
+    </div>
+    <p id="no-results" class="no-res" style="display:none">No icons found.</p>
+  </section>
+
+  <!-- ─── SVG / PNG Asset Icons ─────────────────────────────────────────────── -->
+
+  <section class="sec">
+    <h2>SVG Icon Sets</h2>
+    <p class="sec-body">
+      Asset icons are served from the CDN and used directly as <code>&lt;img&gt;</code> tags or background images.
+      Click <strong>Copy URL</strong> to copy the full CDN path, or <strong>Download</strong> to save the file.
+    </p>
+  </section>
+
+  {svgSets.map(set => (
+    <section class="sec svg-set-sec">
+      <div class="svg-set-hd">
+        <div>
+          <h3 class="svg-set-title">{set.name}</h3>
+          <p class="svg-set-desc">{set.desc}</p>
+        </div>
+        <span class="svg-set-count">{set.icons.length} icons</span>
+      </div>
+
+      <div class="svg-icon-grid">
+        {set.icons.map(icon => {
+          const cdnUrl = `${CDN}/${icon.dir}/${icon.file}`;
+          const localUrl = `/icons/${icon.dir}/${icon.file}`;
+          return (
+            <div class="sic">
+              <div class="sic-preview">
+                <img src={localUrl} alt={icon.label} loading="lazy" />
+              </div>
+              <div class="sic-label">{icon.label}</div>
+              <div class="sic-filename">{icon.file}</div>
+              <div class="sic-actions">
+                <button class="sic-btn sic-copy" data-copy={cdnUrl} title={`Copy CDN URL for ${icon.file}`}>
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                  Copy URL
+                </button>
+                <a class="sic-btn sic-dl" href={localUrl} download={icon.file} title={`Download ${icon.file}`}>
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  Download
+                </a>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  ))}
+
+  <!-- Copy toast -->
+  <div class="toast" id="toast">Copied!</div>
+</BaseLayout>
+
+<script is:inline>
+  // ── Icon font grid — copy class name on click ────────────────────────────
+  var grid  = document.getElementById('icons-grid');
+  var toast = document.getElementById('toast');
+
+  function showToast(msg) {
+    toast.textContent = msg || 'Copied!';
+    toast.classList.add('show');
+    setTimeout(function () { toast.classList.remove('show'); }, 1800);
+  }
+
+  grid && grid.addEventListener('click', function (e) {
+    var btn = e.target.closest('.ic');
+    if (!btn) return;
+    var cls = btn.dataset.copyClass;
+    if (!cls) return;
+    navigator.clipboard && navigator.clipboard.writeText(cls).then(function () {
+      showToast('Copied: ' + cls);
+    });
+  });
+
+  // ── Weight tab toggle ─────────────────────────────────────────────────────
+  var tabs  = document.querySelectorAll('.icon-tab');
+  var title = document.getElementById('all-icons-title');
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var weight = tab.dataset.weight; // 'regular' or 'solid'
+      var other  = weight === 'regular' ? 'solid' : 'regular';
+
+      // Update tab active state
+      tabs.forEach(function (t) {
+        var active = t.dataset.weight === weight;
+        t.classList.toggle('is-active', active);
+        t.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+
+      // Update section heading
+      if (title) title.textContent = 'All Icons — ' + (weight === 'regular' ? 'Regular' : 'Solid');
+
+      // Swap all icon classes and copy targets
+      var icons = grid ? grid.querySelectorAll('.ic') : [];
+      icons.forEach(function (btn) {
+        var i   = btn.querySelector('i');
+        var nm  = btn.dataset.name;
+        if (!i || !nm) return;
+        i.className = 'vi-' + weight + ' vi-' + nm;
+        btn.dataset.copyClass = 'vi-' + weight + ' vi-' + nm;
+      });
+    });
+  });
+
+  // ── SVG icons — copy CDN URL ─────────────────────────────────────────────
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-copy]');
+    if (!btn || btn.tagName === 'A') return; // skip download links
+    var url = btn.dataset.copy;
+    navigator.clipboard && navigator.clipboard.writeText(url).then(function () {
+      showToast('Copied: ' + url.split('/').pop());
+    });
+  });
+
+  // ── Icon font search ─────────────────────────────────────────────────────
+  var q     = document.getElementById('icon-q');
+  var count = document.getElementById('icon-count');
+  var noRes = document.getElementById('no-results');
+
+  q && q.addEventListener('input', function () {
+    var val = q.value.toLowerCase().trim();
+    var items = grid ? grid.querySelectorAll('.ic') : [];
+    var vis = 0;
+    items.forEach(function (el) {
+      var show = !val || (el.dataset.name || '').includes(val);
+      el.style.display = show ? '' : 'none';
+      if (show) vis++;
+    });
+    count.textContent = String(vis);
+    noRes.style.display = vis === 0 ? 'block' : 'none';
+  });
+</script>
+
+<style>
+  /* Stats */
+  .stats-row {
+    display: flex; gap: 40px; padding: 0 0 32px;
+    border-bottom: 1px solid var(--g5); margin-bottom: 64px; flex-wrap: wrap;
+  }
+  .stat { display: flex; flex-direction: column; gap: 2px; }
+  .stat-n { font-size: 32px; font-weight: 700; color: var(--black); letter-spacing: -.02em; }
+  .stat-l { font-size: 12px; font-weight: 500; color: var(--g2); }
+
+  .sec { margin-bottom: 64px; }
+  .sec h2 {
+    font-size: 20px; font-weight: 500; letter-spacing: -.4px; color: var(--black);
+    margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--g5);
+  }
+  .sec-body { font-size: 14px; font-weight: 500; color: var(--g2); line-height: 1.7; margin-bottom: 24px; }
+  .sec-body code { font-family: var(--mono); font-size: .875em; color: var(--black); }
+  .sec-body strong { font-weight: 700; color: var(--black); }
+
+  /* Code block */
+  .code-block { background: #161616; border-radius: 4px; overflow: auto; }
+  .code-block pre { margin: 0; padding: 20px 24px; }
+  .code-block code { font-family: var(--mono); font-size: 13px; color: #f5f5f5; line-height: 1.8; white-space: pre; }
+
+  /* Featured grid */
+  .icon-feature-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 8px;
+  }
+  .ifc {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 6px; padding: 16px 8px 12px;
+    border: 1px solid var(--g5); border-radius: 2px; background: var(--white);
+    transition: border-color .12s;
+  }
+  .ifc:hover { border-color: var(--g3); }
+  .ifc-preview { color: var(--g1); font-size: 1.5rem; line-height: 1; height: 28px; display: flex; align-items: center; }
+  .ifc-name { font-size: 10px; font-weight: 500; color: var(--g2); text-align: center; }
+
+  /* Search header */
+  .search-hd { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+  .search-hd-left { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .search-hd h2 { margin: 0; padding: 0; border: 0; }
+
+  /* Weight tabs */
+  .icon-tabs { display: flex; gap: 2px; background: var(--g6); border: 1px solid var(--g5); border-radius: 6px; padding: 3px; }
+  .icon-tab {
+    font-family: var(--font); font-size: 12px; font-weight: 600;
+    padding: 5px 14px; border: none; border-radius: 4px;
+    background: transparent; color: var(--g2);
+    cursor: pointer; transition: background .15s, color .15s;
+  }
+  .icon-tab:hover { color: var(--black); }
+  .icon-tab.is-active { background: var(--white); color: var(--black); box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+  .search-wrap { position: relative; display: flex; align-items: center; }
+  .si-icon { position: absolute; left: 10px; font-size: 1rem; color: var(--g2); pointer-events: none; }
+  .search-input {
+    font-family: var(--font); font-size: 13px; font-weight: 500;
+    padding: 8px 40px 8px 34px;
+    border: 1px solid var(--g4); border-radius: 4px;
+    background: var(--white); color: var(--black);
+    width: 240px; outline: none; transition: border-color .15s;
+  }
+  .search-input:focus { border-color: var(--brand); }
+  .si-count { position: absolute; right: 10px; font-size: 11px; font-family: var(--mono); color: var(--g3); pointer-events: none; }
+
+  /* All icons grid */
+  .all-icons-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 6px;
+  }
+  .ic {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 5px; padding: 12px 6px 10px;
+    border: 1px solid var(--g5); border-radius: 2px;
+    background: var(--white); font-family: var(--font);
+    transition: border-color .12s, background .12s; cursor: pointer;
+  }
+  .ic:hover  { border-color: var(--brand); background: rgba(247,146,30,.04); }
+  .ic:active { background: rgba(247,146,30,.1); }
+  .ic .vi-regular,
+  .ic .vi-solid { font-size: 1.25rem; color: var(--g1); line-height: 1; }
+  .ic span {
+    font-size: 9px; font-weight: 500; color: var(--g2); line-height: 1.3; text-align: center;
+    overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; max-width: 64px;
+  }
+  .no-res { text-align: center; padding: 40px; font-size: 14px; color: var(--g2); }
+
+  /* ─── SVG Set sections ─────────────────────────────────────────────────── */
+  .svg-set-hd {
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+    margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--g5);
+  }
+  .svg-set-title {
+    font-size: 18px; font-weight: 500; letter-spacing: -.3px; color: var(--black); margin-bottom: 4px;
+  }
+  .svg-set-desc { font-size: 13px; color: var(--g2); line-height: 1.5; }
+  .svg-set-count {
+    font-size: 11px; font-weight: 700; font-family: var(--mono);
+    color: var(--g2); background: var(--g6); border: 1px solid var(--g5);
+    padding: 4px 10px; border-radius: 100px; white-space: nowrap; flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* SVG icon grid */
+  .svg-icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 8px;
+  }
+
+  .sic {
+    display: flex; flex-direction: column;
+    border: 1px solid var(--g5); border-radius: 4px;
+    background: var(--white); overflow: hidden;
+    transition: border-color .12s, box-shadow .12s;
+  }
+  .sic:hover { border-color: var(--g3); box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+
+  .sic-preview {
+    display: flex; align-items: center; justify-content: center;
+    background: var(--g6); padding: 20px 16px; min-height: 80px;
+    border-bottom: 1px solid var(--g5);
+  }
+  .sic-preview img {
+    max-width: 56px; max-height: 48px; object-fit: contain;
+    display: block;
+  }
+
+  .sic-label {
+    font-size: 12px; font-weight: 600; color: var(--black);
+    padding: 10px 12px 2px; line-height: 1.3;
+  }
+  .sic-filename {
+    font-size: 10px; font-family: var(--mono); color: var(--g3);
+    padding: 0 12px 10px;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+
+  .sic-actions {
+    display: flex; gap: 4px;
+    padding: 8px 10px 10px; margin-top: auto;
+  }
+  .sic-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 4px;
+    flex: 1; padding: 6px 4px;
+    font-family: var(--font); font-size: 10px; font-weight: 600;
+    border: 1px solid var(--g5); border-radius: 3px;
+    background: var(--white); color: var(--g2);
+    cursor: pointer; text-decoration: none;
+    transition: border-color .1s, color .1s, background .1s;
+    white-space: nowrap;
+  }
+  .sic-btn:hover  { border-color: var(--g3); color: var(--black); background: var(--g6); }
+  .sic-copy.sic-copied { color: #077d55; border-color: #077d55; background: rgba(7,125,85,.06); }
+
+  .sic-dl:hover { border-color: var(--brand); color: var(--brand); }
+
+  /* Toast */
+  .toast {
+    position: fixed; bottom: 24px; left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: var(--black); color: var(--white);
+    font-size: 13px; font-weight: 600;
+    padding: 10px 20px; border-radius: 6px;
+    pointer-events: none; z-index: 9999;
+    transition: transform .2s cubic-bezier(.34,1.56,.64,1), opacity .2s;
+    opacity: 0;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+  @media (max-width: 767px) {
+    .search-input { width: 180px; }
+    .svg-icon-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+  }
+  @media (max-width: 480px) {
+    .svg-icon-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>

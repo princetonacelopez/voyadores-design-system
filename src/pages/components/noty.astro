@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+---
+<BaseLayout title="Noty" activeSection="components">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/css/noty/noty.min.css" />
+    <link rel="stylesheet" href="/css/noty/noty.voyadores.min.css" />
+    <link rel="stylesheet" href="/css/noty/animate.min.css" />
+  </Fragment>
+
+  <PageHeader
+    eyebrow="Components / Others"
+    title="Noty"
+    description="A dependency-free notification library. The Voyadores theme adds brand-aligned styles for success, error, warning, info, and confirmation toasts."
+  />
+
+  <section class="sec">
+    <h2>Setup</h2>
+    <div class="code-block"><pre is:raw><code>&lt;link rel="stylesheet" href="https://cdn.voyadores.com/content/css/noty/noty.min.css" /&gt;
+&lt;link rel="stylesheet" href="https://cdn.voyadores.com/content/css/noty/noty.voyadores.min.css" /&gt;
+&lt;link rel="stylesheet" href="https://cdn.voyadores.com/content/css/noty/animate.min.css" /&gt;
+
+&lt;script src="https://cdn.voyadores.com/content/js/jquery/jquery-3.6.0.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.voyadores.com/content/js/noty/2.3.8/packaged/jquery.noty.packaged.min.js"&gt;&lt;/script&gt;</code></pre></div>
+  </section>
+
+  <section class="sec">
+    <h2>Demo</h2>
+    <div class="demo-area bs-scope">
+      <p class="demo-note">Click a button to trigger a notification.</p>
+      <div class="btn-row">
+        <button id="btn-success" class="nb nb--success">Success</button>
+        <button id="btn-error"   class="nb nb--error">Error</button>
+        <button id="btn-warning" class="nb nb--warning">Warning</button>
+        <button id="btn-info"    class="nb nb--info">Info</button>
+        <button id="btn-top"     class="nb nb--default">Top Center</button>
+        <button id="btn-confirm" class="nb nb--default">Confirm</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Usage</h2>
+    <div class="code-block"><pre is:raw><code>// Basic notification
+noty({
+  text: 'Operation completed successfully.',
+  type: 'success',    // success | error | warning | info
+  layout: 'topRight', // topRight | topCenter | bottomRight | center
+  timeout: 3000,
+  animation: {
+    open:  'animated fadeInRight',
+    close: 'animated fadeOutRight',
+    easing: 'swing',
+    speed: 500,
+  },
+});
+
+// Confirmation dialog
+noty({
+  text: 'Are you sure you want to delete this?',
+  type: 'confirm',
+  layout: 'center',
+  buttons: [
+    { addClass: 'btn btn-danger', text: 'Delete', onClick: function (n) { n.close(); } },
+    { addClass: 'btn btn-secondary', text: 'Cancel', onClick: function (n) { n.close(); } },
+  ],
+});</code></pre></div>
+  </section>
+</BaseLayout>
+
+<script is:inline src="/js/jquery/jquery-3.6.0.min.js"></script>
+<script is:inline src="/js/noty/2.3.8/packaged/jquery.noty.packaged.min.js"></script>
+<script is:inline>
+$(function () {
+  function notify(type, text, layout) {
+    noty({ text: text, type: type, layout: layout || 'topRight', timeout: 3000,
+      animation: { open: 'animated fadeInRight', close: 'animated fadeOutRight', easing: 'swing', speed: 400 } });
+  }
+  $('#btn-success').on('click', function () { notify('success', 'Record saved successfully.'); });
+  $('#btn-error').on('click',   function () { notify('error',   'Something went wrong. Please try again.'); });
+  $('#btn-warning').on('click', function () { notify('warning', 'Your session will expire in 5 minutes.'); });
+  $('#btn-info').on('click',    function () { notify('information', 'A new update is available.'); });
+  $('#btn-top').on('click',     function () { notify('information', 'Notification shown at top center.', 'topCenter'); });
+  $('#btn-confirm').on('click', function () {
+    noty({ text: 'Delete this record permanently?', type: 'confirm', layout: 'center',
+      buttons: [
+        { addClass: 'btn btn-sm btn-danger',     text: 'Delete', onClick: function (n) { notify('success', 'Record deleted.'); n.close(); } },
+        { addClass: 'btn btn-sm btn-secondary',  text: 'Cancel', onClick: function (n) { n.close(); } },
+      ]
+    });
+  });
+});
+</script>
+
+<style>
+  .sec { margin-bottom: 56px; }
+  .sec h2 { font-size: 20px; font-weight: 500; letter-spacing: -.4px; color: var(--black); margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--g5); }
+  .code-block { background: #161616; border-radius: 4px; overflow: auto; }
+  .code-block pre { margin: 0; padding: 20px 24px; }
+  .code-block code { font-family: var(--mono); font-size: 13px; color: #f5f5f5; line-height: 1.8; white-space: pre; }
+  .demo-area { padding: 24px; border: 1px solid var(--g5); border-radius: 2px; background: var(--white); }
+  .bs-scope { cursor: auto; }
+  .demo-note { font-size: 13px; color: var(--g2); margin-bottom: 16px; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .nb { font-family: var(--font); font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 4px; border: none; cursor: pointer; }
+  .nb--success { background: #077d55; color: #fff; }
+  .nb--error   { background: #d91f11; color: #fff; }
+  .nb--warning { background: #f5c518; color: #333; }
+  .nb--info    { background: #186ade; color: #fff; }
+  .nb--default { background: var(--g6); color: var(--black); border: 1px solid var(--g4); }
+</style>

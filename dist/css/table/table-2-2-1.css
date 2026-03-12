@@ -1,0 +1,348 @@
+/* ==========================================================================
+   CUSTOM TABLE PLUGIN STYLES v2.2.0
+   ========================================================================== */
+
+/* ==========================================================================
+   TABLE BASE STYLES
+   ========================================================================== */
+
+/* Two-phase table layout: starts auto for natural sizing, switches to fixed for performance */
+table.table-custom {
+	table-layout: auto; /* Initial phase - let browser calculate natural widths */
+	transition: table-layout 0.1s ease; /* Smooth transition when switching to fixed */
+}
+
+/* When table layout becomes fixed (after initial calculation) */
+table.table-custom[style*="table-layout: fixed"] {
+	table-layout: fixed; /* Performance phase - consistent column widths */
+}
+
+/* Prevent text wrapping and show ellipsis for overflow content in plugin tables */
+table.table-custom td {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+table.table-custom th {
+	word-break: break-all;
+	white-space: normal;
+}
+
+table.table-custom.table > thead > tr > th {
+	padding: 0.5rem;
+	vertical-align: middle;
+}
+
+/* ==========================================================================
+   SORTABLE COLUMNS - Button-based Implementation (WAI-ARIA Guidelines)
+   ========================================================================== */
+
+/* Style for sorting arrows */
+th.sortable a.sort {
+	padding-right: 32px;
+	position: relative;
+}
+
+th.sortable a.sort:before,
+th.sortable a.sort:after {
+	position: absolute;
+	display: block;
+	opacity: 0.25;
+	right: 10px;
+	line-height: 10px;
+	width: 16px;
+	height: 16px;
+}
+
+th.sortable a.sort:before {
+	bottom: 24%;
+	content: "";
+	background: url('data:image/svg+xml,<svg id="Layer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><defs><style>.cls-1{fill:%2325314c;}</style></defs><path id="caret-up" class="cls-1" d="M13.3,8.6l4.38,5.194A1.34,1.34,0,0,1,16.648,16h-9.3a1.34,1.34,0,0,1-1.034-2.2L10.7,8.6A1.706,1.706,0,0,1,13.3,8.6Z"/></svg>');
+	background-repeat: no-repeat;
+}
+
+th.sortable a.sort:after {
+	top: 24%;
+	content: "";
+	background: url('data:image/svg+xml,<svg id="Layer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><defs><style>.cls-1{fill:%2325314c;}</style></defs><path id="caret-down" class="cls-1" d="M10.7,15.4,6.318,10.2A1.34,1.34,0,0,1,7.352,8h9.3a1.34,1.34,0,0,1,1.034,2.2L13.3,15.4A1.706,1.706,0,0,1,10.7,15.4Z"/></svg>');
+	background-repeat: no-repeat;
+}
+
+th.sortable a.sort.sort-asc:before,
+th.sortable a.sort.sort-desc:after {
+	opacity: 0.75;
+}
+
+[data-bs-theme="dark"] th.sortable a.sort:before,
+[data-bs-theme="dark"] th.sortable a.sort:after {
+	filter: invert(1) grayscale(1);
+}
+
+/* ==========================================================================
+   COLUMN RESIZE SYSTEM (Desktop Only)
+   ========================================================================== */
+
+/* Resizable columns - minimal styling */
+table.table-custom th.col-resizable {
+	position: relative;
+}
+
+/* Resize handle - full-height strip on right edge (Grid.js pattern) */
+table.table-custom th.col-resizable .col-resize-cursor-area {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 5px;
+	cursor: ew-resize;
+	transition: background-color 0.15s ease;
+}
+
+/* Show full-height colored strip on hover — same pattern as Grid.js */
+table.table-custom th.col-resizable:hover .col-resize-cursor-area {
+	background-color: rgba(247, 146, 30, 0.35);
+}
+
+/* Bright strip while actively dragging, subtle tint on the header */
+table.table-custom th.col-resize-active {
+	background-color: rgba(247, 146, 30, 0.06) !important;
+}
+
+table.table-custom th.col-resize-active .col-resize-cursor-area {
+	background-color: #f7921e !important;
+}
+
+/* Lock cursor and selection during active resize drag */
+table.table-custom.col-table-resizing {
+	cursor: ew-resize;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+table.table-custom.col-table-resizing * {
+	cursor: ew-resize !important;
+	-webkit-user-select: none !important;
+	-moz-user-select: none !important;
+	-ms-user-select: none !important;
+	user-select: none !important;
+}
+
+/* ==========================================================================
+   COLUMN DRAG & DROP (Desktop Only)
+   ========================================================================== */
+
+/* Currently being dragged */
+table.table-custom th.is-dragging {
+	opacity: 0.5;
+	cursor: grabbing;
+}
+
+/* Drag over target */
+table.table-custom th.drag-over {
+	background-color: rgba(247, 146, 30, 0.1);
+	border-left: 2px solid #f7921e;
+}
+
+/* Dark theme - more visible drag-over background */
+[data-bs-theme="dark"] table.table-custom th.drag-over {
+	background-color: rgba(247, 146, 30, 0.2);
+}
+
+/* ==========================================================================
+   UTILITY CLASSES
+   ========================================================================== */
+
+/* Screen reader only content - accessible but visually hidden */
+table.table-custom .sr-only {
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	position: absolute;
+	overflow: hidden;
+}
+
+/* Empty state image sizing */
+table.table-custom
+	img[src="/content/images/states/empty/voyadores.default.empty.svg"] {
+	width: 80px;
+}
+
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVENESS
+   Disable interactive features below 992px for touch-friendly experience
+   ========================================================================== */
+
+@media (max-width: 991.98px) {
+	/* Hide resize cursor areas */
+	table.table-custom .col-resize-cursor-area {
+		display: none !important;
+	}
+
+	table.table-custom th.col-resizable,
+	table.table-custom th.col-resizable:hover {
+		cursor: default !important;
+	}
+}
+
+.col-icon,
+.row-counter {
+	width: 56px;
+}
+
+/* Checking table body rows fewer than 3 children */
+.table-custom:has(tbody > tr:first-child:nth-last-child(-n + 3)):has(
+		[data-bs-toggle="dropdown"].show
+	) {
+	margin-bottom: 132px;
+}
+
+/* ==========================================================================
+   ROW EVENT ANIMATIONS
+   Approach mirrors index.html: JS assigns a unique view-transition-name to
+   every tr after each render. The VT API then handles gap-closing (remove)
+   and slot-opening (add) by tracking each row across DOM mutations.
+   CSS classes provide the per-cell glow feedback for add and update.
+   ========================================================================== */
+
+/*
+ * VIEW TRANSITION API — global timing
+ * Matches the cubic-bezier from index.html for a natural material feel.
+ * Applies to all named elements (the tr rows) so repositioning is consistent.
+ */
+::view-transition-group(*) {
+	animation-duration: 0.35s;
+	animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   REMOVE
+   VT path:  browser fades out the old row snapshot, remaining rows slide
+             up smoothly to close the gap (all carry unique vt names).
+   Fallback: fade-out → height-collapse.
+   ========================================================================== */
+
+@keyframes table-row-fade-out {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes table-row-collapse {
+	from {
+		height: var(--row-height, 52px);
+	}
+	to {
+		height: 0;
+	}
+}
+
+/* Fallback only — no orange bg, no swipe */
+table.table-custom tbody tr.row-removing {
+	pointer-events: none;
+}
+
+table.table-custom tbody tr.row-removing > td {
+	overflow: hidden !important;
+	background-color: transparent !important;
+	box-shadow: none !important;
+	--vds-table-bg-state: transparent;
+	--vds-table-bg-type: transparent;
+	animation:
+		table-row-fade-out 0.2s ease-in 0s forwards,
+		table-row-collapse 0.25s ease-out 0.15s forwards;
+}
+
+/* ==========================================================================
+   ADD — tr-level glow fades in after the slot opens.
+   td backgrounds are forced transparent so the tr glow shows through.
+   On class removal, Bootstrap td styles restore automatically.
+   ========================================================================== */
+
+@keyframes table-row-glow-in {
+	from {
+		background-color: rgba(247, 146, 30, 0.55);
+	}
+	25% {
+		background-color: rgba(247, 146, 30, 0.4);
+	}
+	60% {
+		background-color: rgba(247, 146, 30, 0.15);
+	}
+	100% {
+		background-color: transparent;
+	}
+}
+
+table.table-custom tbody tr.row-added {
+	animation: table-row-glow-in 10s ease-out forwards;
+}
+
+table.table-custom tbody tr.row-added > td,
+table.table-custom tbody tr.row-added:hover > td {
+	background-color: transparent !important;
+	box-shadow: none !important;
+	--vds-table-bg-state: transparent;
+	--vds-table-bg-type: transparent;
+}
+
+/* ==========================================================================
+   UPDATE — tr-level orange glow heartbeat, fades over 10s. No movement.
+   ========================================================================== */
+
+@keyframes table-row-update {
+	0% {
+		background-color: rgba(247, 146, 30, 0.28);
+	}
+	12% {
+		background-color: rgba(247, 146, 30, 0.42);
+	}
+	35% {
+		background-color: rgba(247, 146, 30, 0.22);
+	}
+	70% {
+		background-color: rgba(247, 146, 30, 0.07);
+	}
+	100% {
+		background-color: transparent;
+	}
+}
+
+table.table-custom tbody tr.row-updated {
+	animation: table-row-update 10s ease-out forwards;
+}
+
+table.table-custom tbody tr.row-updated > td,
+table.table-custom tbody tr.row-updated:hover > td {
+	background-color: transparent !important;
+	box-shadow: none !important;
+	--vds-table-bg-state: transparent;
+	--vds-table-bg-type: transparent;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+	table.table-custom tbody tr.row-added,
+	table.table-custom tbody tr.row-updated {
+		animation: none !important;
+	}
+
+	table.table-custom tbody tr.row-added > td,
+	table.table-custom tbody tr.row-updated > td,
+	table.table-custom tbody tr.row-removing > td {
+		transition: none !important;
+	}
+
+	::view-transition-group(*) {
+		animation-duration: 0.01ms !important;
+	}
+}

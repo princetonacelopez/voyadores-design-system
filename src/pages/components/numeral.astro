@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+---
+<BaseLayout title="Numeral.js" activeSection="components">
+
+  <PageHeader
+    eyebrow="Components / Others"
+    title="Numeral.js"
+    description="Format and manipulate numbers with locale-aware number formatting. Supports currency, percentages, ordinals, byte sizes, and custom format strings."
+  />
+
+  <section class="sec">
+    <h2>Setup</h2>
+    <div class="code-block"><pre is:raw><code>&lt;script src="https://cdn.voyadores.com/content/js/numeral/numeral.min.js"&gt;&lt;/script&gt;</code></pre></div>
+  </section>
+
+  <section class="sec">
+    <h2>Demo</h2>
+    <div class="demo-area">
+      <div class="num-section-label">Number Formatting</div>
+      <div class="num-grid" id="num-output-format"></div>
+
+      <div class="num-section-label" style="margin-top:24px">Currency (PHP)</div>
+      <div class="num-grid" id="num-output-currency"></div>
+
+      <div class="num-section-label" style="margin-top:24px">Percentages &amp; Other</div>
+      <div class="num-grid" id="num-output-other"></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Usage</h2>
+    <div class="code-block"><pre is:raw><code>// Basic formatting
+numeral(1000).format('0,0');           // "1,000"
+numeral(1234567.89).format('0,0.00');  // "1,234,567.89"
+numeral(0.5).format('0%');             // "50%"
+numeral(0.743).format('0.0%');         // "74.3%"
+
+// Currency
+numeral(1234567).format('$0,0.00');    // "$1,234,567.00"
+numeral(1234567).format('$ 0,0');      // "$ 1,234,567"
+
+// Abbreviated
+numeral(1000).format('0.0a');          // "1.0k"
+numeral(1000000).format('0.0a');       // "1.0m"
+numeral(1250000000).format('0.0a');    // "1.3b"
+
+// Bytes
+numeral(1024).format('0.00b');         // "1.00 KB"
+numeral(1048576).format('0.00b');      // "1.00 MB"
+
+// Ordinals
+numeral(1).format('0o');               // "1st"
+numeral(22).format('0o');              // "22nd"
+
+// Arithmetic
+numeral(10).add(5).value();            // 15
+numeral(100).subtract(30).value();     // 70
+numeral(5).multiply(3).value();        // 15
+numeral(100).divide(4).value();        // 25
+
+// Unformat (string → number)
+numeral('1,234,567.89').value();       // 1234567.89
+numeral('74.3%').value();              // 0.743</code></pre></div>
+  </section>
+</BaseLayout>
+
+<script is:inline src="/js/numeral/numeral.min.js"></script>
+<script is:inline>
+(function () {
+  function row(label, format, value) {
+    return '<div class="n-row">' +
+      '<span class="n-label">' + label + '</span>' +
+      '<span class="n-format">' + format + '</span>' +
+      '<span class="n-value">' + numeral(value).format(format) + '</span>' +
+    '</div>';
+  }
+
+  document.getElementById('num-output-format').innerHTML = [
+    row('Integer',            '0,0',        1234567),
+    row('Two decimals',       '0,0.00',     1234567.891),
+    row('Leading zeroes',     '00000',       123),
+    row('Abbreviated (k)',    '0.0a',       12500),
+    row('Abbreviated (m)',    '0.0a',       1250000),
+    row('Abbreviated (b)',    '0.0a',       1250000000),
+    row('Ordinal',            '0o',         22),
+  ].join('');
+
+  document.getElementById('num-output-currency').innerHTML = [
+    row('PHP compact',        '0,0',        1234567.50),
+    row('PHP two decimals',   '0,0.00',     1234567.50),
+    row('Negative',           '0,0.00',     -9876.50),
+    row('Small amount',       '0,0.00',     0.75),
+  ].join('');
+
+  document.getElementById('num-output-other').innerHTML = [
+    row('Percentage',         '0%',         0.5),
+    row('Percentage decimal', '0.0%',       0.7432),
+    row('Bytes (KB)',         '0.00b',      1024),
+    row('Bytes (MB)',         '0.00b',      1048576),
+    row('Bytes (GB)',         '0.00b',      1073741824),
+  ].join('');
+})();
+</script>
+
+<style>
+  .sec { margin-bottom: 56px; }
+  .sec h2 { font-size: 20px; font-weight: 500; letter-spacing: -.4px; color: var(--black); margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--g5); }
+  .code-block { background: #161616; border-radius: 4px; overflow: auto; }
+  .code-block pre { margin: 0; padding: 20px 24px; }
+  .code-block code { font-family: var(--mono); font-size: 13px; color: #f5f5f5; line-height: 1.8; white-space: pre; }
+  .demo-area { padding: 24px; border: 1px solid var(--g5); border-radius: 2px; background: var(--white); }
+
+  .num-section-label { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--g3); margin-bottom: 8px; }
+  .num-grid { display: flex; flex-direction: column; }
+  .n-row { display: grid; grid-template-columns: 180px 140px 1fr; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--g5); gap: 16px; }
+  .n-row:last-child { border-bottom: none; }
+  .n-label { font-size: 12px; font-weight: 500; color: var(--g2); }
+  .n-format { font-size: 12px; font-family: var(--mono); color: var(--g3); background: var(--g6); padding: 2px 6px; border-radius: 3px; }
+  .n-value { font-size: 14px; font-weight: 600; color: var(--black); font-family: var(--mono); text-align: right; }
+  @media (max-width: 640px) { .n-row { grid-template-columns: 1fr 1fr; } .n-format { display: none; } }
+</style>

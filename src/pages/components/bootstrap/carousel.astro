@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+---
+
+<BaseLayout title="Carousel" activeSection="components">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.voyadores.theme.min.css" />
+  </Fragment>
+
+  <PageHeader
+    eyebrow="Components / Bootstrap"
+    title="Carousel"
+    description="Slideshow component for cycling through elements. Supports controls, indicators, captions, and optional auto-play. Add .carousel-fade for crossfade transitions."
+  />
+
+  <div class="demo">
+      <div class="demo-preview bs-scope" style="flex-direction:column;align-items:stretch">
+        <div id="demoCarousel" class="carousel slide" style="max-width:500px">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#demoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#demoCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner" style="border-radius:4px;overflow:hidden">
+            <div class="carousel-item active">
+              <div style="height:200px;background:linear-gradient(135deg,#f7921e,#fcca91);display:flex;align-items:center;justify-content:center">
+                <div class="carousel-caption d-block" style="position:static;padding:0;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.4)">
+                  <h5>Slide One</h5><p>Primary brand gradient</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div style="height:200px;background:linear-gradient(135deg,#186ade,#545fe8);display:flex;align-items:center;justify-content:center">
+                <div class="carousel-caption d-block" style="position:static;padding:0;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.4)">
+                  <h5>Slide Two</h5><p>Info / blue gradient</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div style="height:200px;background:linear-gradient(135deg,#077d55,#16a163);display:flex;align-items:center;justify-content:center">
+                <div class="carousel-caption d-block" style="position:static;padding:0;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.4)">
+                  <h5>Slide Three</h5><p>Success / green gradient</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#demoCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#demoCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="html-car">HTML</button>
+        <button class="cb-tab" data-tab="js-car">JS</button>
+      </div>
+      <pre is:raw id="html-car"><code>&lt;div id="myCarousel" class="carousel slide" data-bs-ride="carousel"&gt;
+  &lt;!-- Indicators --&gt;
+  &lt;div class="carousel-indicators"&gt;
+    &lt;button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0"
+      class="active" aria-current="true" aria-label="Slide 1"&gt;&lt;/button&gt;
+    &lt;button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"
+      aria-label="Slide 2"&gt;&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Slides --&gt;
+  &lt;div class="carousel-inner"&gt;
+    &lt;div class="carousel-item active"&gt;
+      &lt;img src="..." class="d-block w-100" alt="Slide 1" /&gt;
+      &lt;div class="carousel-caption d-none d-md-block"&gt;
+        &lt;h5&gt;Caption Title&lt;/h5&gt;
+        &lt;p&gt;Caption text.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-item"&gt;
+      &lt;img src="..." class="d-block w-100" alt="Slide 2" /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Controls --&gt;
+  &lt;button class="carousel-control-prev" type="button"
+    data-bs-target="#myCarousel" data-bs-slide="prev"&gt;
+    &lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="carousel-control-next" type="button"
+    data-bs-target="#myCarousel" data-bs-slide="next"&gt;
+    &lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- Crossfade transition --&gt;
+&lt;div class="carousel carousel-fade"&gt; ... &lt;/div&gt;</code></pre>
+      <pre is:raw id="js-car" style="display:none"><code>const el = document.getElementById('myCarousel');
+const carousel = new bootstrap.Carousel(el, {
+  interval: 5000,  // ms between slides (false = no auto-play)
+  pause: 'hover',  // pause on hover
+  wrap: true,      // cycle back to start
+  touch: true,     // swipe support
+  ride: 'carousel', // start immediately
+});
+
+carousel.prev();
+carousel.next();
+carousel.to(1); // jump to slide index
+
+// Events
+el.addEventListener('slid.bs.carousel', event =&gt; {
+  console.log('Current slide index:', event.to);
+});</code></pre>
+    </div>
+
+  <!-- Bootstrap JS bundle (Popper included) -->
+  <script is:inline src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+
+  <script>
+      // Code tabs
+    document.querySelectorAll('.cb-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        const block  = btn.closest('.code-block');
+        block.querySelectorAll('.cb-tab').forEach(b => b.classList.remove('is-on'));
+        block.querySelectorAll('pre').forEach(p => p.style.display = 'none');
+        btn.classList.add('is-on');
+        const pre = document.getElementById(target);
+        if (pre) pre.style.display = '';
+      });
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  /* Sections */
+  .csec { margin-bottom: 72px; scroll-margin-top: 24px; }
+  .csec-desc {
+    font-size: 13px; font-weight: 400; color: var(--g2);
+    line-height: 1.7; margin-bottom: 20px;
+  }
+  .csec-desc code {
+    font-family: var(--mono); font-size: .875em;
+    background: var(--g5); padding: 1px 5px; border-radius: 3px;
+    color: var(--g1);
+  }
+
+  /* Demo box */
+  .demo { margin-bottom: 16px; }
+  .demo-preview {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    padding: 28px; border: 1px solid var(--g5);
+    border-radius: 4px; background: var(--white);
+    align-items: center;
+  }
+
+  /* Code block */
+  .code-block {
+    background: #111; border-radius: 4px; overflow: hidden;
+  }
+  .cb-tabs {
+    display: flex; gap: 0;
+    border-bottom: 1px solid #2a2a2a; padding: 0 16px;
+  }
+  .cb-tab {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: .04em; text-transform: uppercase;
+    color: #666; background: none; border: none;
+    padding: 10px 14px; border-bottom: 2px solid transparent;
+    transition: color .12s, border-color .12s;
+  }
+  .cb-tab:hover  { color: #ccc; }
+  .cb-tab.is-on  { color: var(--brand); border-bottom-color: var(--brand); }
+  .code-block pre { margin: 0; padding: 20px 24px; overflow-x: auto; }
+  .code-block code {
+    font-family: var(--mono); font-size: 12.5px;
+    color: #e8e8e8; line-height: 1.85; white-space: pre;
+  }
+
+  /* Override Bootstrap base styles to protect site layout */
+  .bs-scope * { cursor: auto !important; }
+  .bs-scope { font-family: var(--vds-font-sans-serif, "Lexend", sans-serif); }
+</style>

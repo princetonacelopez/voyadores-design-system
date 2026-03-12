@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+---
+
+<BaseLayout title="Pagination" activeSection="components">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.voyadores.theme.min.css" />
+  </Fragment>
+
+  <PageHeader
+    eyebrow="Components / Bootstrap"
+    title="Pagination"
+    description="Multi-page navigation component. Use .pagination-lg / .pagination-sm for size variants and .justify-content-center for alignment."
+  />
+
+  <div class="demo">
+      <div class="demo-preview bs-scope" style="flex-direction:column;gap:12px;align-items:flex-start">
+        <nav aria-label="Default pagination">
+          <ul class="pagination mb-0">
+            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active" aria-current="page"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Small pagination">
+          <ul class="pagination pagination-sm mb-0">
+            <li class="page-item"><a class="page-link" href="#">«</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">»</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="html-pag">HTML</button>
+      </div>
+      <pre is:raw id="html-pag"><code>&lt;nav aria-label="Page navigation"&gt;
+  &lt;ul class="pagination"&gt;
+    &lt;li class="page-item disabled"&gt;
+      &lt;a class="page-link" href="#"&gt;Previous&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="page-item active" aria-current="page"&gt;
+      &lt;a class="page-link" href="#"&gt;2&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="page-item"&gt;
+      &lt;a class="page-link" href="#"&gt;Next&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- Sizes --&gt;
+&lt;ul class="pagination pagination-lg"&gt;...&lt;/ul&gt;
+&lt;ul class="pagination pagination-sm"&gt;...&lt;/ul&gt;
+
+&lt;!-- Centered --&gt;
+&lt;ul class="pagination justify-content-center"&gt;...&lt;/ul&gt;</code></pre>
+    </div>
+
+  <!-- Bootstrap JS bundle (Popper included) -->
+  <script is:inline src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+
+  <script>
+      // Code tabs
+    document.querySelectorAll('.cb-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        const block  = btn.closest('.code-block');
+        block.querySelectorAll('.cb-tab').forEach(b => b.classList.remove('is-on'));
+        block.querySelectorAll('pre').forEach(p => p.style.display = 'none');
+        btn.classList.add('is-on');
+        const pre = document.getElementById(target);
+        if (pre) pre.style.display = '';
+      });
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  /* Sections */
+  .csec { margin-bottom: 72px; scroll-margin-top: 24px; }
+  .csec-desc {
+    font-size: 13px; font-weight: 400; color: var(--g2);
+    line-height: 1.7; margin-bottom: 20px;
+  }
+  .csec-desc code {
+    font-family: var(--mono); font-size: .875em;
+    background: var(--g5); padding: 1px 5px; border-radius: 3px;
+    color: var(--g1);
+  }
+
+  /* Demo box */
+  .demo { margin-bottom: 16px; }
+  .demo-preview {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    padding: 28px; border: 1px solid var(--g5);
+    border-radius: 4px; background: var(--white);
+    align-items: center;
+  }
+
+  /* Code block */
+  .code-block {
+    background: #111; border-radius: 4px; overflow: hidden;
+  }
+  .cb-tabs {
+    display: flex; gap: 0;
+    border-bottom: 1px solid #2a2a2a; padding: 0 16px;
+  }
+  .cb-tab {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: .04em; text-transform: uppercase;
+    color: #666; background: none; border: none;
+    padding: 10px 14px; border-bottom: 2px solid transparent;
+    transition: color .12s, border-color .12s;
+  }
+  .cb-tab:hover  { color: #ccc; }
+  .cb-tab.is-on  { color: var(--brand); border-bottom-color: var(--brand); }
+  .code-block pre { margin: 0; padding: 20px 24px; overflow-x: auto; }
+  .code-block code {
+    font-family: var(--mono); font-size: 12.5px;
+    color: #e8e8e8; line-height: 1.85; white-space: pre;
+  }
+
+  /* Override Bootstrap base styles to protect site layout */
+  .bs-scope * { cursor: auto !important; }
+  .bs-scope { font-family: var(--vds-font-sans-serif, "Lexend", sans-serif); }
+</style>

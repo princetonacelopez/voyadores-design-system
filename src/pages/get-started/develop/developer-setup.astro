@@ -1,0 +1,328 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+
+const bundledTools = [
+  {
+    name: 'Visual Studio 2019',
+    desc: 'Primary IDE for .NET development. Required for building and running Voyadores server-side projects.',
+    type: 'IDE',
+    color: 'purple',
+  },
+  {
+    name: 'MS SQL Server 2014',
+    desc: 'Relational database engine used by all Voyadores applications. Install before running any project locally.',
+    type: 'Database',
+    color: 'red',
+  },
+  {
+    name: '.NET Framework 3.5',
+    desc: 'Required by MS SQL Server 2014. Must be installed before the SQL Server setup or the installer will fail.',
+    type: 'Runtime',
+    note: 'Required by MS SQL Server 2014',
+    color: 'blue',
+  },
+  {
+    name: 'Sourcetree',
+    desc: 'GUI client for Git. Provides a visual interface for managing branches, commits, and pull requests without using the command line.',
+    type: 'Git GUI',
+    color: 'teal',
+  },
+];
+
+const otherTools = [
+  {
+    name: 'Windows Remote Desktop',
+    desc: 'Used to connect to remote development and staging servers.',
+    link: 'https://apps.microsoft.com/detail/9wzdncrfj3ps',
+    linkLabel: 'Microsoft Store',
+    icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
+  },
+  {
+    name: 'Git',
+    desc: 'Version control system. Required for cloning repositories and following the Code Branching Guidelines.',
+    link: 'https://git-scm.com/downloads',
+    linkLabel: 'git-scm.com',
+    icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>`,
+  },
+  {
+    name: 'Node.js',
+    desc: 'JavaScript runtime required for front-end tooling, package management, and build scripts.',
+    link: 'https://nodejs.org',
+    linkLabel: 'nodejs.org',
+    icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/></svg>`,
+  },
+  {
+    name: 'VS Code',
+    desc: 'Lightweight code editor for front-end work, markdown, and configuration files. Recommended alongside Visual Studio 2019.',
+    link: 'https://code.visualstudio.com',
+    linkLabel: 'code.visualstudio.com',
+    icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+  },
+  {
+    name: 'Terminal',
+    desc: 'Command-line interface for running scripts, Git commands, and Node.js tooling. Use Windows Terminal, Git Bash, or PowerShell.',
+    link: 'https://apps.microsoft.com/detail/9n0dx20hk701',
+    linkLabel: 'Windows Terminal',
+    icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>`,
+  },
+];
+---
+
+<BaseLayout title="Developer Setup">
+  <PageHeader
+    eyebrow="Get Started — Develop"
+    title="Developer Setup"
+    description="Everything you need to set up a local development environment for Voyadores projects. Install the bundled tools first, then the individual tools."
+  />
+
+  <!-- Setup Bundle Download -->
+  <section class="sec">
+    <h2>Setup Bundle</h2>
+    <p class="body-text">The setup bundle contains the core tools required for local development. Download and run each installer in the order listed below.</p>
+
+    <div class="download-banner">
+      <div class="download-banner-left">
+        <div class="download-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </div>
+        <div>
+          <div class="download-title">Voyadores Developer Setup Bundle</div>
+          <div class="download-meta">Visual Studio 2019 · MS SQL Server 2014 · .NET 3.5 · Sourcetree</div>
+        </div>
+      </div>
+      <a class="download-btn" href="https://nesv-my.sharepoint.com/:u:/r/personal/support_nesventures_com/Documents/Shared/Technical%20Operations/Turnover%20Files/Princetone%20Ace%20Lopez/Internal%20FIles/nesv-dev-setup.zip?csf=1&web=1&e=ZOMB4Z" target="_blank" rel="noopener noreferrer">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download ZIP
+      </a>
+    </div>
+
+    <div class="bundle-list">
+      {bundledTools.map((tool, i) => (
+        <div class="bundle-item">
+          <div class="bundle-order">{i + 1}</div>
+          <div class:list={['bundle-type', `bundle-type--${tool.color}`]}>{tool.type}</div>
+          <div class="bundle-body">
+            <p class="bundle-name">{tool.name}</p>
+            <p class="bundle-desc">{tool.desc}</p>
+            {tool.note && <div class="bundle-note">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              {tool.note}
+            </div>}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Other Required Tools -->
+  <section class="sec">
+    <h2>Other Required Tools</h2>
+    <p class="body-text">Install these tools separately. Most are available as free downloads from their official sites.</p>
+
+    <div class="tools-list">
+      {otherTools.map(tool => (
+        <div class="tool-card">
+          <div class="tool-icon" set:html={tool.icon} />
+          <div class="tool-body">
+            <div class="tool-header">
+              <p class="tool-name">{tool.name}</p>
+              <a class="tool-link" href={tool.link} target="_blank" rel="noopener noreferrer">
+                {tool.linkLabel}
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+            <p class="tool-desc">{tool.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Install Order -->
+  <section class="sec">
+    <h2>Recommended Install Order</h2>
+    <div class="order-list">
+      {[
+        { n: '1', label: 'Download and extract the Setup Bundle ZIP' },
+        { n: '2', label: 'Install .NET Framework 3.5 first' },
+        { n: '3', label: 'Install MS SQL Server 2014' },
+        { n: '4', label: 'Install Visual Studio 2019' },
+        { n: '5', label: 'Install Sourcetree and connect your Git account' },
+        { n: '6', label: 'Install Git (command-line)' },
+        { n: '7', label: 'Install Node.js (LTS version recommended)' },
+        { n: '8', label: 'Install VS Code and Windows Terminal' },
+        { n: '9', label: 'Install Windows Remote Desktop from the Microsoft Store' },
+        { n: '10', label: 'Clone the required repositories via Sourcetree or terminal' },
+      ].map(step => (
+        <div class="order-item">
+          <div class="order-n">{step.n}</div>
+          <p class="order-label">{step.label}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .sec { margin-bottom: 72px; }
+
+  .sec h2 {
+    font-size: 20px; font-weight: 600; letter-spacing: -.4px; color: var(--black);
+    margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--g5);
+  }
+
+  .body-text {
+    font-size: 14px; font-weight: 500; color: var(--g1); line-height: 1.7;
+    max-width: 680px; margin-bottom: 24px;
+  }
+
+  /* ── Download banner ─────────────────────────────────────────────────── */
+  .download-banner {
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    padding: 20px 24px; border: 1px solid var(--g5); border-radius: 8px;
+    background: var(--g6); margin-bottom: 20px; flex-wrap: wrap;
+  }
+
+  .download-banner-left { display: flex; align-items: center; gap: 16px; }
+
+  .download-icon {
+    flex-shrink: 0; width: 44px; height: 44px; border-radius: 10px;
+    background: var(--brand); color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .download-title {
+    font-size: 14px; font-weight: 700; color: var(--black); margin-bottom: 3px;
+  }
+  .download-meta {
+    font-size: 12px; font-weight: 500; color: var(--g2);
+  }
+
+  .download-btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-family: var(--font); font-size: 13px; font-weight: 700;
+    padding: 10px 20px; border-radius: 6px;
+    background: var(--brand); color: var(--white);
+    text-decoration: none; flex-shrink: 0;
+    transition: background .15s;
+  }
+  .download-btn:hover { background: #e0831a; }
+
+  /* ── Bundle list ─────────────────────────────────────────────────────── */
+  .bundle-list {
+    display: flex; flex-direction: column; gap: 0;
+    border: 1px solid var(--g5); border-radius: 8px; overflow: hidden;
+  }
+
+  .bundle-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 16px 18px; border-bottom: 1px solid var(--g5);
+  }
+  .bundle-item:last-child { border-bottom: none; }
+
+  .bundle-order {
+    flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%;
+    background: var(--g5); color: var(--g1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; font-family: var(--mono);
+    margin-top: 2px;
+  }
+
+  .bundle-type {
+    flex-shrink: 0; margin-top: 3px;
+    font-size: 9px; font-weight: 800; letter-spacing: .07em;
+    text-transform: uppercase; padding: 3px 8px; border-radius: 3px;
+    white-space: nowrap;
+  }
+  .bundle-type--purple { background: rgba(121,82,179,.1);  color: #7952b3; }
+  .bundle-type--red    { background: rgba(217,31,17,.1);   color: #d91f11; }
+  .bundle-type--blue   { background: rgba(24,106,222,.1);  color: #186ade; }
+  .bundle-type--teal   { background: rgba(22,123,125,.1);  color: #167b7d; }
+
+  .bundle-body { flex: 1; min-width: 0; }
+
+  .bundle-name {
+    font-size: 14px; font-weight: 700; color: var(--black); margin-bottom: 4px;
+  }
+  .bundle-desc {
+    font-size: 13px; font-weight: 500; color: var(--g1); line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  .bundle-note {
+    display: inline-flex; align-items: center; gap: 5px;
+    margin-top: 8px; font-size: 11px; font-weight: 600; color: #b8650a;
+    background: rgba(247,146,30,.1); border: 1px solid rgba(247,146,30,.25);
+    padding: 3px 10px; border-radius: 4px;
+  }
+
+  /* ── Other tools list ────────────────────────────────────────────────── */
+  .tools-list { display: flex; flex-direction: column; gap: 8px; }
+
+  .tool-card {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 16px 18px; border: 1px solid var(--g5); border-radius: 8px;
+    background: var(--white);
+  }
+
+  .tool-icon {
+    flex-shrink: 0; width: 34px; height: 34px; border-radius: 8px;
+    background: var(--g6); border: 1px solid var(--g5);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--g2); margin-top: 2px;
+  }
+
+  .tool-body { flex: 1; min-width: 0; }
+
+  .tool-header {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 5px; flex-wrap: wrap;
+  }
+
+  .tool-name {
+    font-size: 14px; font-weight: 700; color: var(--black);
+  }
+
+  .tool-link {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 11px; font-weight: 600; color: var(--brand);
+    text-decoration: none;
+    transition: opacity .12s;
+  }
+  .tool-link:hover { opacity: .7; }
+
+  .tool-desc {
+    font-size: 13px; font-weight: 500; color: var(--g1); line-height: 1.6;
+  }
+
+  /* ── Install order ───────────────────────────────────────────────────── */
+  .order-list {
+    display: flex; flex-direction: column; gap: 0;
+    border: 1px solid var(--g5); border-radius: 8px; overflow: hidden;
+  }
+
+  .order-item {
+    display: flex; align-items: center; gap: 14px;
+    padding: 13px 18px; border-bottom: 1px solid var(--g5);
+  }
+  .order-item:last-child { border-bottom: none; }
+  .order-item:hover { background: var(--g6); }
+
+  .order-n {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+    background: var(--brand); color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; font-family: var(--mono);
+  }
+
+  .order-label {
+    font-size: 13px; font-weight: 500; color: var(--g1); line-height: 1.5;
+  }
+
+  /* ── Responsive ──────────────────────────────────────────────────────── */
+  @media (max-width: 640px) {
+    .download-banner { flex-direction: column; align-items: flex-start; }
+    .download-btn { width: 100%; justify-content: center; }
+  }
+</style>

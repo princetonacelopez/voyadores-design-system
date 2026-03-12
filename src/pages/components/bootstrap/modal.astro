@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+---
+
+<BaseLayout title="Modal" activeSection="components">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.voyadores.theme.min.css" />
+  </Fragment>
+
+  <PageHeader
+    eyebrow="Components / Bootstrap"
+    title="Modal"
+    description="Dialog overlays with header, body, and footer. Supports sizes (.modal-sm, .modal-lg, .modal-xl), centered positioning, and scrollable body."
+  />
+
+  <div class="demo">
+      <div class="demo-preview bs-scope" style="gap:8px">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#demoModal">
+          Open Modal
+        </button>
+        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#demoModalLg">
+          Large Modal
+        </button>
+        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#demoModalSm">
+          Small Modal
+        </button>
+      </div>
+    </div>
+
+    <!-- Default Modal -->
+    <div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="demoModalLabel">Confirm Action</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to proceed? This action cannot be undone.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Large Modal -->
+    <div class="modal fade" id="demoModalLg" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Large Modal</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">Large modal body — ideal for forms, tables, or detail views.</div>
+          <div class="modal-footer"><button class="btn btn-primary" data-bs-dismiss="modal">Done</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Small Modal -->
+    <div class="modal fade" id="demoModalSm" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Delete Item?</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">This cannot be undone.</div>
+          <div class="modal-footer">
+            <button class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+            <button class="btn btn-danger btn-sm">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="html-modal">HTML</button>
+        <button class="cb-tab" data-tab="js-modal">JS</button>
+      </div>
+      <pre is:raw id="html-modal"><code>&lt;!-- Trigger button --&gt;
+&lt;button type="button" class="btn btn-primary"
+  data-bs-toggle="modal" data-bs-target="#myModal"&gt;
+  Open Modal
+&lt;/button&gt;
+
+&lt;!-- Modal structure --&gt;
+&lt;div class="modal fade" id="myModal" tabindex="-1"
+  aria-labelledby="myModalLabel" aria-hidden="true"&gt;
+  &lt;div class="modal-dialog"&gt;  &lt;!-- Add .modal-lg / .modal-sm / .modal-xl --&gt;
+    &lt;div class="modal-content"&gt;
+      &lt;div class="modal-header"&gt;
+        &lt;h5 class="modal-title" id="myModalLabel"&gt;Modal Title&lt;/h5&gt;
+        &lt;button type="button" class="btn-close"
+          data-bs-dismiss="modal" aria-label="Close"&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-body"&gt;
+        Modal body content.
+      &lt;/div&gt;
+      &lt;div class="modal-footer"&gt;
+        &lt;button type="button" class="btn btn-outline-secondary"
+          data-bs-dismiss="modal"&gt;Cancel&lt;/button&gt;
+        &lt;button type="button" class="btn btn-primary"&gt;Save&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Options via dialog modifiers --&gt;
+&lt;div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"&gt;</code></pre>
+      <pre is:raw id="js-modal" style="display:none"><code>// Programmatic control
+const modalEl = document.getElementById('myModal');
+const modal = new bootstrap.Modal(modalEl, {
+  backdrop: true, // true | false | 'static'
+  keyboard: true, // close on Escape
+  focus: true,
+});
+
+modal.show();
+modal.hide();
+modal.toggle();
+modal.dispose();
+
+// Pass data into a modal
+modalEl.addEventListener('show.bs.modal', event =&gt; {
+  const button = event.relatedTarget; // trigger element
+  const id = button.getAttribute('data-item-id');
+  modalEl.querySelector('.modal-body').textContent = `Editing item ${id}`;
+});
+
+// Events: show.bs.modal | shown.bs.modal | hide.bs.modal | hidden.bs.modal</code></pre>
+    </div>
+
+  <!-- Bootstrap JS bundle (Popper included) -->
+  <script is:inline src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+
+  <script>
+      // Code tabs
+    document.querySelectorAll('.cb-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        const block  = btn.closest('.code-block');
+        block.querySelectorAll('.cb-tab').forEach(b => b.classList.remove('is-on'));
+        block.querySelectorAll('pre').forEach(p => p.style.display = 'none');
+        btn.classList.add('is-on');
+        const pre = document.getElementById(target);
+        if (pre) pre.style.display = '';
+      });
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  /* Sections */
+  .csec { margin-bottom: 72px; scroll-margin-top: 24px; }
+  .csec-desc {
+    font-size: 13px; font-weight: 400; color: var(--g2);
+    line-height: 1.7; margin-bottom: 20px;
+  }
+  .csec-desc code {
+    font-family: var(--mono); font-size: .875em;
+    background: var(--g5); padding: 1px 5px; border-radius: 3px;
+    color: var(--g1);
+  }
+
+  /* Demo box */
+  .demo { margin-bottom: 16px; }
+  .demo-preview {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    padding: 28px; border: 1px solid var(--g5);
+    border-radius: 4px; background: var(--white);
+    align-items: center;
+  }
+
+  /* Code block */
+  .code-block {
+    background: #111; border-radius: 4px; overflow: hidden;
+  }
+  .cb-tabs {
+    display: flex; gap: 0;
+    border-bottom: 1px solid #2a2a2a; padding: 0 16px;
+  }
+  .cb-tab {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: .04em; text-transform: uppercase;
+    color: #666; background: none; border: none;
+    padding: 10px 14px; border-bottom: 2px solid transparent;
+    transition: color .12s, border-color .12s;
+  }
+  .cb-tab:hover  { color: #ccc; }
+  .cb-tab.is-on  { color: var(--brand); border-bottom-color: var(--brand); }
+  .code-block pre { margin: 0; padding: 20px 24px; overflow-x: auto; }
+  .code-block code {
+    font-family: var(--mono); font-size: 12.5px;
+    color: #e8e8e8; line-height: 1.85; white-space: pre;
+  }
+
+  /* Override Bootstrap base styles to protect site layout */
+  .bs-scope * { cursor: auto !important; }
+  .bs-scope { font-family: var(--vds-font-sans-serif, "Lexend", sans-serif); }
+</style>

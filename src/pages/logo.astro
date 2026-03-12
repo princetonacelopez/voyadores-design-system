@@ -1,0 +1,227 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const logos = [
+  { name: 'Horizontal — Light',   file: '/images/voyadores-logo-combination-horizontal-light.svg',  bg: '#ffffff', dark: false },
+  { name: 'Horizontal — Dark',    file: '/images/voyadores-logo-combination-horizontal-dark.svg',   bg: '#161616', dark: true  },
+  { name: 'Vertical — Light',     file: '/images/voyadores-logo-combination-vertical-light.svg',    bg: '#ffffff', dark: false, tall: true },
+  { name: 'Vertical — Dark',      file: '/images/voyadores-logo-combination-vertical-dark.svg',     bg: '#161616', dark: true,  tall: true },
+  { name: 'Icon mark — Light',    file: '/images/voyadores-logo-icon.svg',                          bg: '#ffffff', dark: false, icon: true },
+  { name: 'Icon mark — Brand',    file: '/images/voyadores-logo-icon.svg',                          bg: '#f7921e', dark: false, icon: true },
+];
+---
+
+<BaseLayout title="Logo" activeSection="logo">
+  <PageHeader
+    eyebrow="Logo"
+    title="Brand Mark"
+    description="The Voyadores logo system—wordmarks, icon marks, and clear space rules for every context."
+  />
+
+  <!-- Logo grid -->
+  <section class="sec">
+    <h2>Logo Variants</h2>
+    <div class="logo-grid">
+      {logos.map(l => (
+        <div class="logo-card">
+          <div class="logo-canvas" style={`background:${l.bg}; border: ${l.dark ? 'none' : '1px solid var(--g5)'};`}>
+            <img
+              src={l.file}
+              alt={l.name}
+              class:list={['logo-img', l.icon ? 'logo-img--icon' : l.tall ? 'logo-img--tall' : '']}
+            />
+          </div>
+          <p class="logo-label">{l.name}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Clear space -->
+  <section class="sec">
+    <h2>Clear Space</h2>
+    <p class="sec-body">Always maintain a minimum clear space equal to the height of the "V" letterform on all sides of the logo.</p>
+    <div class="clearspace-demo">
+      <div class="cs-inner">
+        <img src="/images/voyadores-logo-combination-horizontal-light.svg" alt="Voyadores logo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Color usage -->
+  <section class="sec">
+    <h2>Color Usage</h2>
+    <div class="usage-grid">
+      {[
+        { bg: '#ffffff', border: true,  label: 'On white',  ok: true  },
+        { bg: '#161616', border: false, label: 'On dark',   ok: true  },
+        { bg: '#f7921e', border: false, label: 'On brand',  ok: true  },
+        { bg: '#f0f0f0', border: false, label: 'On light gray', ok: true },
+        { bg: '#186ade', border: false, label: 'On color',  ok: false },
+        { bg: '#8f49de', border: false, label: 'On purple', ok: false },
+      ].map(u => (
+        <div class="usage-card">
+          <div class="uc-canvas" style={`background:${u.bg}; ${u.border ? 'border:1px solid var(--g5);' : ''}`}>
+            <img src={`/images/voyadores-logo-${u.bg === '#161616' || u.bg === '#f7921e' ? 'combination-horizontal-dark' : 'combination-horizontal-light'}.svg`} alt="" />
+            <span class:list={['uc-status', u.ok ? 'uc-status--ok' : 'uc-status--no']}>
+              {u.ok ? '✓' : '✕'}
+            </span>
+          </div>
+          <p class="uc-label">{u.label}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Don'ts -->
+  <section class="sec">
+    <h2>Do's and Don'ts</h2>
+    <div class="rules-grid">
+      <div class="rules-col rules-col--do">
+        <h3><span class="rule-badge rule-badge--do">Do</span></h3>
+        <ul>
+          <li>Use official SVG or PNG assets</li>
+          <li>Maintain minimum clear space</li>
+          <li>Use approved color combinations</li>
+          <li>Scale proportionally</li>
+          <li>Use on sufficient contrast backgrounds</li>
+        </ul>
+      </div>
+      <div class="rules-col rules-col--dont">
+        <h3><span class="rule-badge rule-badge--dont">Don't</span></h3>
+        <ul>
+          <li>Stretch or distort the logo</li>
+          <li>Apply drop shadows or filters</li>
+          <li>Recreate or redraw the logo</li>
+          <li>Place on low-contrast backgrounds</li>
+          <li>Use unapproved color variations</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .sec { margin-bottom: 64px; }
+
+  .sec h2 {
+    font-size: 20px; font-weight: 500;
+    letter-spacing: -.4px; color: var(--black);
+    margin-bottom: 20px; padding-bottom: 20px;
+    border-bottom: 1px solid var(--g5);
+  }
+
+  .sec-body {
+    font-size: 14px; font-weight: 500; color: var(--g2);
+    line-height: 1.7; max-width: 520px; margin-bottom: 24px;
+  }
+
+  /* Logo grid */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .logo-card {}
+
+  .logo-canvas {
+    height: 160px;
+    display: flex; align-items: center; justify-content: center;
+    padding: 32px; border-radius: 2px;
+    overflow: hidden; position: relative;
+  }
+
+  .logo-img { max-width: 180px; max-height: 64px; object-fit: contain; }
+  .logo-img--icon { max-width: 56px; max-height: 56px; }
+  .logo-img--tall { max-height: 100px; }
+
+  .logo-label {
+    font-size: 12px; font-weight: 500; color: var(--g2);
+    margin-top: 10px;
+  }
+
+  /* Clear space */
+  .clearspace-demo {
+    border: 1px solid var(--g5);
+    border-radius: 2px;
+    padding: 48px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--g6);
+  }
+  .cs-inner {
+    padding: 32px;
+    border: 1.5px dashed var(--g3);
+    background: var(--white);
+  }
+  .cs-inner img { max-width: 200px; height: auto; }
+
+  /* Color usage */
+  .usage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .uc-canvas {
+    height: 120px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 2px; padding: 24px;
+    position: relative;
+  }
+  .uc-canvas img { max-width: 140px; }
+
+  .uc-status {
+    position: absolute; top: 8px; right: 8px;
+    width: 20px; height: 20px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 700;
+  }
+  .uc-status--ok { background: #077d55; color: #fff; }
+  .uc-status--no { background: #d91f11; color: #fff; }
+
+  .uc-label {
+    font-size: 12px; font-weight: 500; color: var(--g2); margin-top: 8px;
+  }
+
+  /* Rules */
+  .rules-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  }
+
+  .rules-col {
+    padding: 24px; border: 1px solid;
+    border-radius: 2px;
+  }
+  .rules-col--do   { border-color: #c7ebd1; background: #f3fbf6; }
+  .rules-col--dont { border-color: #fadcd9; background: #fef2f2; }
+
+  .rules-col h3 { margin-bottom: 16px; }
+
+  .rule-badge {
+    display: inline-block;
+    font-size: 11px; font-weight: 700;
+    padding: 3px 10px; border-radius: 100px;
+  }
+  .rule-badge--do   { background: #077d55; color: #fff; }
+  .rule-badge--dont { background: #d91f11; color: #fff; }
+
+  .rules-col ul {
+    list-style: none; display: flex; flex-direction: column; gap: 10px;
+  }
+  .rules-col li {
+    font-size: 13px; font-weight: 500; color: var(--g1);
+    padding-left: 14px; position: relative; line-height: 1.5;
+  }
+  .rules-col li::before {
+    content: '–'; position: absolute; left: 0; color: var(--g3);
+  }
+
+  @media (max-width: 767px) {
+    .logo-grid, .usage-grid, .rules-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .logo-grid, .usage-grid, .rules-grid { grid-template-columns: 1fr; }
+  }
+</style>

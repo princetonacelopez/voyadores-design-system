@@ -1,0 +1,298 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const allDocs = import.meta.glob('../../../docs/*.md');
+  return Object.entries(allDocs).map(([path, loader]) => {
+    const slug = path.split('/').pop()!.replace('.md', '');
+    return { params: { slug }, props: { loader } };
+  });
+}
+
+const { slug } = Astro.params;
+const { loader } = Astro.props as { loader: () => Promise<any> };
+
+const mod       = await loader();
+const Content   = mod.Content;
+const fm        = mod.frontmatter ?? {};
+
+const pageTitle = fm.title ?? slug
+  .replace(/-/g, ' ')
+  .replace(/\b\w/g, (c: string) => c.toUpperCase());
+
+const meta = [
+  { key: 'Version',      val: fm.version     },
+  { key: 'Files',        val: fm.files       },
+  { key: 'Author',       val: fm.author      },
+  { key: 'Last Updated', val: fm.lastUpdated },
+].filter(m => m.val);
+---
+
+<BaseLayout title={pageTitle}>
+  <div class="doc-page">
+
+    <!-- Page header -->
+    <header class="doc-header">
+      <p class="doc-eyebrow">Documentation</p>
+      <h1>{pageTitle}</h1>
+      {meta.length > 0 && (
+        <dl class="doc-meta">
+          {meta.map(m => (
+            <>
+              <dt>{m.key}</dt>
+              <dd>{m.val}</dd>
+            </>
+          ))}
+        </dl>
+      )}
+    </header>
+
+    <!-- Markdown body -->
+    <div class="doc-body">
+      <Content />
+    </div>
+
+  </div>
+</BaseLayout>
+
+<style>
+  /* ── Shell ───────────────────────────────────────────────────────────── */
+  .doc-page {
+    max-width: 860px;
+    padding: 0 0 96px;
+  }
+
+  /* ── Page header ─────────────────────────────────────────────────────── */
+  .doc-header {
+    padding-bottom: 32px;
+    margin-bottom: 48px;
+    border-bottom: 1px solid var(--g5);
+  }
+
+  .doc-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--g2);
+    margin-bottom: 10px;
+  }
+
+  .doc-header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -.5px;
+    color: var(--black);
+    margin-bottom: 20px;
+  }
+
+  /* ── Meta definition list ────────────────────────────────────────────── */
+  .doc-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--g5);
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 640px;
+  }
+
+  .doc-meta dt,
+  .doc-meta dd {
+    /* each pair is a row via grid on the parent */
+  }
+
+  /* Use a grid trick: dt + dd sit side-by-side in the same row */
+  .doc-meta {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+  }
+
+  .doc-meta dt {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--g2);
+    padding: 10px 14px;
+    background: var(--g6);
+    border-bottom: 1px solid var(--g5);
+    display: flex;
+    align-items: center;
+  }
+
+  .doc-meta dd {
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--mono);
+    color: var(--g1);
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--g5);
+    display: flex;
+    align-items: center;
+    word-break: break-word;
+  }
+
+  /* Remove border from last row */
+  .doc-meta dt:last-of-type,
+  .doc-meta dd:last-of-type {
+    border-bottom: none;
+  }
+
+  /* ── Markdown body ───────────────────────────────────────────────────── */
+  .doc-body { }
+
+  /* Suppress h1 inside markdown body (title is in .doc-header) */
+  .doc-body :global(h1) { display: none; }
+
+  .doc-body :global(h2) {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 40px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--g5);
+    color: var(--black);
+  }
+
+  .doc-body :global(h3) {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 28px 0 8px;
+    color: var(--black);
+  }
+
+  .doc-body :global(h4) {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--g2);
+    margin: 24px 0 6px;
+  }
+
+  .doc-body :global(hr) {
+    border: none;
+    border-top: 1px solid var(--g5);
+    margin: 28px 0;
+  }
+
+  .doc-body :global(p) {
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--g1);
+    margin: 0 0 12px;
+  }
+
+  .doc-body :global(:not(pre) > code) {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    background: var(--g6);
+    color: var(--black);
+    border: 1px solid var(--g5);
+    border-radius: 4px;
+    padding: 1px 5px;
+  }
+
+  .doc-body :global(pre) {
+    background: #1a1a1a;
+    border-radius: 8px;
+    padding: 18px 20px;
+    overflow-x: auto;
+    margin: 12px 0 20px;
+  }
+
+  .doc-body :global(pre code) {
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.65;
+    color: #e8e8e8;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  .doc-body :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+    margin: 12px 0 24px;
+  }
+
+  .doc-body :global(th) {
+    background: var(--g6);
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid var(--g5);
+    white-space: nowrap;
+    color: var(--black);
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+
+  .doc-body :global(td) {
+    padding: 7px 12px;
+    border: 1px solid var(--g5);
+    vertical-align: top;
+    color: var(--g1);
+    line-height: 1.5;
+  }
+
+  .doc-body :global(tr:nth-child(even) td) {
+    background: rgba(0,0,0,.018);
+  }
+
+  .doc-body :global(ul),
+  .doc-body :global(ol) {
+    padding-left: 24px;
+    margin: 0 0 14px;
+  }
+
+  .doc-body :global(li) {
+    font-size: 13px;
+    line-height: 1.75;
+    color: var(--g1);
+    margin-bottom: 2px;
+  }
+
+  .doc-body :global(blockquote) {
+    border-left: 3px solid var(--brand);
+    margin: 0 0 16px;
+    padding: 10px 16px;
+    background: rgba(247,146,30,.05);
+    border-radius: 0 6px 6px 0;
+  }
+
+  .doc-body :global(blockquote p) {
+    margin: 0;
+    font-size: 12.5px;
+    color: var(--g1);
+  }
+
+  .doc-body :global(ol li a),
+  .doc-body :global(ul li a) {
+    color: var(--brand);
+    text-decoration: none;
+  }
+
+  .doc-body :global(ol li a:hover),
+  .doc-body :global(ul li a:hover) {
+    text-decoration: underline;
+  }
+
+  .doc-body :global(h1 a),
+  .doc-body :global(h2 a),
+  .doc-body :global(h3 a),
+  .doc-body :global(h4 a) {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* ── Responsive ──────────────────────────────────────────────────────── */
+  @media (max-width: 640px) {
+    .doc-header h1 { font-size: 28px; }
+    .doc-meta { grid-template-columns: 100px 1fr; }
+  }
+</style>

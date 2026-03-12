@@ -1,0 +1,171 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+---
+
+<BaseLayout title="Accordion" activeSection="components">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.voyadores.theme.min.css" />
+  </Fragment>
+
+  <PageHeader
+    eyebrow="Components / Bootstrap"
+    title="Accordion"
+    description="Collapsible panels built on the Collapse plugin. Set data-bs-parent to keep only one panel open at a time. Add .accordion-flush to remove borders."
+  />
+
+  <div class="demo">
+      <div class="demo-preview bs-scope" style="flex-direction:column;align-items:stretch">
+        <div class="accordion" id="accordionDemo">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#acc1" aria-expanded="true">
+                What is the Voyadores Design System?
+              </button>
+            </h2>
+            <div id="acc1" class="accordion-collapse collapse show" data-bs-parent="#accordionDemo">
+              <div class="accordion-body">
+                The Voyadores Design System is a collection of reusable components, design tokens, and guidelines for building consistent enterprise web applications.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc2" aria-expanded="false">
+                How do I get started?
+              </button>
+            </h2>
+            <div id="acc2" class="accordion-collapse collapse" data-bs-parent="#accordionDemo">
+              <div class="accordion-body">
+                Include the Bootstrap Voyadores theme CSS and Bootstrap JS bundle in your HTML. Then use the component classes as documented.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc3" aria-expanded="false">
+                Is dark mode supported?
+              </button>
+            </h2>
+            <div id="acc3" class="accordion-collapse collapse" data-bs-parent="#accordionDemo">
+              <div class="accordion-body">
+                Yes. Add <code>data-bs-theme="dark"</code> to any element to activate dark mode scoped to that container.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="html-acc">HTML</button>
+        <button class="cb-tab" data-tab="js-acc">JS</button>
+      </div>
+      <pre is:raw id="html-acc"><code>&lt;div class="accordion" id="accordionExample"&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button" type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapseOne"
+        aria-expanded="true"&gt;
+        Panel title
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="collapseOne" class="accordion-collapse collapse show"
+      data-bs-parent="#accordionExample"&gt;
+      &lt;div class="accordion-body"&gt;
+        Panel body content goes here.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Additional items follow the same pattern --&gt;
+&lt;/div&gt;
+
+&lt;!-- Flush (no outer borders) --&gt;
+&lt;div class="accordion accordion-flush" id="flushExample"&gt; ... &lt;/div&gt;</code></pre>
+      <pre is:raw id="js-acc" style="display:none"><code>// Programmatic control
+const collapseEl = document.getElementById('collapseOne');
+const bsCollapse = new bootstrap.Collapse(collapseEl, {
+  toggle: false // don't toggle on init
+});
+
+bsCollapse.show();
+bsCollapse.hide();
+bsCollapse.toggle();
+
+// Events
+collapseEl.addEventListener('shown.bs.collapse', () =&gt; {
+  console.log('Panel is now open');
+});</code></pre>
+    </div>
+
+  <!-- Bootstrap JS bundle (Popper included) -->
+  <script is:inline src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+
+  <script>
+      // Code tabs
+    document.querySelectorAll('.cb-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        const block  = btn.closest('.code-block');
+        block.querySelectorAll('.cb-tab').forEach(b => b.classList.remove('is-on'));
+        block.querySelectorAll('pre').forEach(p => p.style.display = 'none');
+        btn.classList.add('is-on');
+        const pre = document.getElementById(target);
+        if (pre) pre.style.display = '';
+      });
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  /* Sections */
+  .csec { margin-bottom: 72px; scroll-margin-top: 24px; }
+  .csec-desc {
+    font-size: 13px; font-weight: 400; color: var(--g2);
+    line-height: 1.7; margin-bottom: 20px;
+  }
+  .csec-desc code {
+    font-family: var(--mono); font-size: .875em;
+    background: var(--g5); padding: 1px 5px; border-radius: 3px;
+    color: var(--g1);
+  }
+
+  /* Demo box */
+  .demo { margin-bottom: 16px; }
+  .demo-preview {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    padding: 28px; border: 1px solid var(--g5);
+    border-radius: 4px; background: var(--white);
+    align-items: center;
+  }
+
+  /* Code block */
+  .code-block {
+    background: #111; border-radius: 4px; overflow: hidden;
+  }
+  .cb-tabs {
+    display: flex; gap: 0;
+    border-bottom: 1px solid #2a2a2a; padding: 0 16px;
+  }
+  .cb-tab {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: .04em; text-transform: uppercase;
+    color: #666; background: none; border: none;
+    padding: 10px 14px; border-bottom: 2px solid transparent;
+    transition: color .12s, border-color .12s;
+  }
+  .cb-tab:hover  { color: #ccc; }
+  .cb-tab.is-on  { color: var(--brand); border-bottom-color: var(--brand); }
+  .code-block pre { margin: 0; padding: 20px 24px; overflow-x: auto; }
+  .code-block code {
+    font-family: var(--mono); font-size: 12.5px;
+    color: #e8e8e8; line-height: 1.85; white-space: pre;
+  }
+
+  /* Override Bootstrap base styles to protect site layout */
+  .bs-scope * { cursor: auto !important; }
+  .bs-scope { font-family: var(--vds-font-sans-serif, "Lexend", sans-serif); }
+</style>

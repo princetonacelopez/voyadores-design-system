@@ -1,0 +1,278 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+---
+
+<BaseLayout title="Versioning">
+  <PageHeader
+    eyebrow="Get Started — Develop"
+    title="Versioning"
+    description="NESV follows a four-part versioning system to clearly identify the currentness, stability, and release stage of every software build."
+  />
+
+  <!-- Version Anatomy -->
+  <section class="sec">
+    <h2>Version Anatomy</h2>
+    <p class="body-text">A software version is an identifier of the currentness of a software. NESV follows a versioning system with four numeric parts, each representing a distinct level of change.</p>
+
+    <!-- Visual version display -->
+    <div class="version-display">
+      <div class="version-parts">
+        <div class="version-part version-part--major">
+          <span class="version-num">0</span>
+          <span class="version-part-label">Major</span>
+        </div>
+        <span class="version-sep">.</span>
+        <div class="version-part version-part--minor">
+          <span class="version-num">0</span>
+          <span class="version-part-label">Minor</span>
+        </div>
+        <span class="version-sep">.</span>
+        <div class="version-part version-part--release">
+          <span class="version-num">0</span>
+          <span class="version-part-label">Release</span>
+        </div>
+        <span class="version-sep">.</span>
+        <div class="version-part version-part--build">
+          <span class="version-num">0</span>
+          <span class="version-part-label">Build</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Part definitions -->
+  <section class="sec">
+    <h2>Version Parts</h2>
+
+    <div class="parts-list">
+
+      <div class="part-card">
+        <div class="part-card-left">
+          <div class="part-indicator part-indicator--major">
+            <span class="part-pos">1st</span>
+          </div>
+          <div class="part-connector"></div>
+        </div>
+        <div class="part-card-body">
+          <div class="part-header">
+            <span class="part-badge part-badge--major">Major</span>
+            <code class="part-format">X.0.0.0</code>
+          </div>
+          <h3>Major Version</h3>
+          <p>The first numeric part of the version. It identifies the main version of the software and is dictated by changes requested and approved by the client. It usually contains additional features and/or significant changes in an existing feature.</p>
+          <div class="part-tags">
+            <span class="part-tag">Client-driven</span>
+            <span class="part-tag">New features</span>
+            <span class="part-tag">Significant changes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="part-card">
+        <div class="part-card-left">
+          <div class="part-indicator part-indicator--minor">
+            <span class="part-pos">2nd</span>
+          </div>
+          <div class="part-connector"></div>
+        </div>
+        <div class="part-card-body">
+          <div class="part-header">
+            <span class="part-badge part-badge--minor">Minor</span>
+            <code class="part-format">0.X.0.0</code>
+          </div>
+          <h3>Minor Version</h3>
+          <p>The second numeric part of the version. Minor versions also originate from changes requested and approved by the client. They can contain features and/or feature modifications, but these changes often stem from an existing feature.</p>
+          <div class="part-tags">
+            <span class="part-tag">Client-driven</span>
+            <span class="part-tag">Feature modifications</span>
+            <span class="part-tag">Existing feature changes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="part-card">
+        <div class="part-card-left">
+          <div class="part-indicator part-indicator--release">
+            <span class="part-pos">3rd</span>
+          </div>
+          <div class="part-connector"></div>
+        </div>
+        <div class="part-card-body">
+          <div class="part-header">
+            <span class="part-badge part-badge--release">Release</span>
+            <code class="part-format">0.0.X.0</code>
+          </div>
+          <h3>Release Version</h3>
+          <p>The third numeric part of the version. Release updates originate from the development team's release cycle. It is an incremental progression.</p>
+          <div class="part-tags">
+            <span class="part-tag">Dev team driven</span>
+            <span class="part-tag">Release cycle</span>
+            <span class="part-tag">Incremental</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="part-card part-card--last">
+        <div class="part-card-left">
+          <div class="part-indicator part-indicator--build">
+            <span class="part-pos">4th</span>
+          </div>
+        </div>
+        <div class="part-card-body">
+          <div class="part-header">
+            <span class="part-badge part-badge--build">Build</span>
+            <code class="part-format">0.0.0.X</code>
+          </div>
+          <h3>Build Version</h3>
+          <p>The last part of the version. It usually denotes that an update has been made to the build but does not contain significant additions or feature changes — rather, corrections or improvements to the build.</p>
+          <div class="part-tags">
+            <span class="part-tag">Corrections</span>
+            <span class="part-tag">Improvements</span>
+            <span class="part-tag">No feature changes</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .sec { margin-bottom: 72px; }
+
+  .sec h2 {
+    font-size: 20px; font-weight: 600; letter-spacing: -.4px; color: var(--black);
+    margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--g5);
+  }
+
+  .body-text {
+    font-size: 14px; font-weight: 500; color: var(--g1); line-height: 1.7;
+    max-width: 640px; margin-bottom: 36px;
+  }
+
+  /* ── Version display ─────────────────────────────────────────────────── */
+  .version-display {
+    display: inline-block;
+    background: var(--g6); border: 1px solid var(--g5);
+    border-radius: 12px; padding: 32px 40px;
+  }
+
+  .version-parts {
+    display: flex; align-items: flex-end; gap: 4px;
+  }
+
+  .version-sep {
+    font-size: 40px; font-weight: 300; color: var(--g3);
+    line-height: 1; margin-bottom: 22px; font-family: var(--mono);
+  }
+
+  .version-part {
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+  }
+
+  .version-num {
+    font-family: var(--mono); font-size: 48px; font-weight: 700;
+    line-height: 1; padding: 10px 20px; border-radius: 10px;
+    border: 2px solid transparent; min-width: 72px; text-align: center;
+  }
+
+  .version-part--major .version-num { color: #3a44c8; background: rgba(84,95,232,.1); border-color: rgba(84,95,232,.2); }
+  .version-part--minor .version-num { color: #077d55; background: rgba(7,125,85,.1);  border-color: rgba(7,125,85,.2);  }
+  .version-part--release .version-num { color: #b8650a; background: rgba(247,146,30,.12); border-color: rgba(247,146,30,.25); }
+  .version-part--build .version-num { color: #d91f11; background: rgba(217,31,17,.08); border-color: rgba(217,31,17,.18); }
+
+  .version-part-label {
+    font-size: 10px; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .version-part--major   .version-part-label { color: #3a44c8; }
+  .version-part--minor   .version-part-label { color: #077d55; }
+  .version-part--release .version-part-label { color: #b8650a; }
+  .version-part--build   .version-part-label { color: #d91f11; }
+
+  /* ── Parts list ──────────────────────────────────────────────────────── */
+  .parts-list { display: flex; flex-direction: column; }
+
+  .part-card {
+    display: flex; gap: 0;
+  }
+
+  .part-card-left {
+    display: flex; flex-direction: column; align-items: center;
+    flex-shrink: 0; width: 56px;
+  }
+
+  .part-indicator {
+    flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 1px; z-index: 1;
+  }
+  .part-indicator--major   { background: rgba(84,95,232,.12); border: 2px solid rgba(84,95,232,.3);  }
+  .part-indicator--minor   { background: rgba(7,125,85,.1);   border: 2px solid rgba(7,125,85,.25);  }
+  .part-indicator--release { background: rgba(247,146,30,.1); border: 2px solid rgba(247,146,30,.3); }
+  .part-indicator--build   { background: rgba(217,31,17,.08); border: 2px solid rgba(217,31,17,.2);  }
+
+  .part-pos {
+    font-size: 8px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase;
+  }
+  .part-indicator--major   .part-pos { color: #3a44c8; }
+  .part-indicator--minor   .part-pos { color: #077d55; }
+  .part-indicator--release .part-pos { color: #b8650a; }
+  .part-indicator--build   .part-pos { color: #d91f11; }
+
+  .part-connector {
+    flex: 1; width: 2px; background: var(--g5); margin: 4px 0;
+  }
+
+  .part-card-body {
+    flex: 1; padding: 0 0 36px 20px; padding-top: 6px;
+  }
+  .part-card--last .part-card-body { padding-bottom: 0; }
+
+  .part-header {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 10px;
+  }
+
+  .part-badge {
+    font-size: 10px; font-weight: 800; letter-spacing: .05em;
+    text-transform: uppercase; padding: 3px 10px; border-radius: 4px;
+  }
+  .part-badge--major   { background: rgba(84,95,232,.12);  color: #3a44c8; }
+  .part-badge--minor   { background: rgba(7,125,85,.12);   color: #077d55; }
+  .part-badge--release { background: rgba(247,146,30,.15); color: #b8650a; }
+  .part-badge--build   { background: rgba(217,31,17,.1);   color: #d91f11; }
+
+  .part-format {
+    font-family: var(--mono); font-size: 13px; color: var(--g2);
+    background: var(--g6); border: 1px solid var(--g5);
+    padding: 2px 8px; border-radius: 4px;
+  }
+
+  .part-card-body h3 {
+    font-size: 16px; font-weight: 700; color: var(--black);
+    margin-bottom: 8px; letter-spacing: -.2px;
+  }
+
+  .part-card-body p {
+    font-size: 13px; font-weight: 500; color: var(--g1);
+    line-height: 1.7; max-width: 560px; margin-bottom: 14px;
+  }
+
+  .part-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  .part-tag {
+    font-size: 11px; font-weight: 500; color: var(--g2);
+    background: var(--g6); border: 1px solid var(--g5);
+    padding: 3px 10px; border-radius: 100px;
+  }
+
+  /* ── Responsive ──────────────────────────────────────────────────────── */
+  @media (max-width: 640px) {
+    .version-display { padding: 20px 24px; }
+    .version-num { font-size: 36px; padding: 8px 14px; min-width: 54px; }
+    .version-sep { font-size: 32px; margin-bottom: 18px; }
+    .part-card-left { width: 40px; }
+  }
+</style>

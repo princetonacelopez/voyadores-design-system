@@ -1,0 +1,420 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Voyadores — Visual Identity Guidelines"><title>Theme Picker — Voyadores</title><link rel="canonical" href="https://design.voyadores.com/docs/theme-picker/"><link rel="icon" type="image/svg+xml" href="/icons/favicon/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon/favicon-32x32.png"><link rel="apple-touch-icon" href="/icons/favicon/apple-touch-icon.png"><!-- Urbanist + Chivo Mono --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"><!-- Voyadores Icon Font --><link rel="stylesheet" href="/fonts/Voyadores-Icon/voyadores-icon.css"><!-- Anti-flash theme init (must be inline, before render) --><script>
+      (function () {
+        var t = localStorage.getItem('voy-theme') || 'system';
+        var dark = t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+        document.documentElement.setAttribute('data-color-scheme', t);
+      })();
+    </script><!-- Page-specific head content --><link rel="stylesheet" href="/_astro/_slug_@_@astro.Dmf4ngD0.css">
+<link rel="stylesheet" href="/_astro/BaseLayout.CRrhjZsn.css"></head> <body> <!-- Modern inversion cursor --> <div class="c-cursor" id="c-cursor"></div> <div class="app-shell"> <!-- Topbar (mobile) — logo removed; sidebar has the logo at full height --> <header class="topbar" id="topbar"> <button class="ham" id="menu-toggle" aria-label="Open menu"> <span></span><span></span><span></span> </button> <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle theme" title="Toggle theme"> <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg> <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> <svg class="icon-system" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg> </button> </header> <div class="overlay" id="sidebar-overlay"></div> <aside id="sidebar" class="sidebar" data-astro-cid-ssfzsv2f> <!-- Logo --> <a href="/" class="s-logo" data-astro-cid-ssfzsv2f> <img class="logo-light" src="/images/voyadores-logo-combination-horizontal-light.svg" alt="Voyadores" width="128" data-astro-cid-ssfzsv2f> <img class="logo-dark" src="/images/voyadores-logo-combination-horizontal-dark.svg" alt="Voyadores" width="128" data-astro-cid-ssfzsv2f> </a> <!-- Nav --> <nav class="s-nav" aria-label="Main" data-astro-cid-ssfzsv2f> <!-- Design System flat links (top-level, no collapse) --> <div class="s-top-section" data-astro-cid-ssfzsv2f> <a href="/" class="s-link" data-astro-cid-ssfzsv2f> Home </a><a href="/introduction" class="s-link" data-astro-cid-ssfzsv2f> Introduction </a><a href="/strategy" class="s-link" data-astro-cid-ssfzsv2f> Strategy </a> </div> <!-- Get Started super-group --> <div class="s-group" id="grp-get-started" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-get-started" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Get Started</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <!-- Design sub-group --> <div class="s-subgroup" id="grp-gs-design" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-gs-design" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Design</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/figma-libraries" class="s-sublink" data-astro-cid-ssfzsv2f> Figma Libraries </a><a href="/get-started/design/ux-design-process" class="s-sublink" data-astro-cid-ssfzsv2f> UX Design Process &amp; Guidelines </a> </div> </div> <!-- Develop sub-group --> <div class="s-subgroup" id="grp-gs-develop" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-gs-develop" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Develop</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/get-started/develop/developer-setup" class="s-sublink" data-astro-cid-ssfzsv2f> Developer Setup </a><a href="/get-started/develop/build-categorization" class="s-sublink" data-astro-cid-ssfzsv2f> Build Categorization Process </a><a href="/get-started/develop/code-branching" class="s-sublink" data-astro-cid-ssfzsv2f> Code Branching Guidelines </a><a href="/get-started/develop/code-management" class="s-sublink" data-astro-cid-ssfzsv2f> Code Management Guidelines </a><a href="/get-started/develop/versioning" class="s-sublink" data-astro-cid-ssfzsv2f> Versioning </a> </div> </div> <!-- Internal sub-group --> <div class="s-subgroup" id="grp-gs-internal" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-gs-internal" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Internal</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/get-started/internal/changelog-guidelines" class="s-sublink" data-astro-cid-ssfzsv2f> Changelog Guidelines </a><a href="/get-started/internal/meeting-invitation-guidelines" class="s-sublink" data-astro-cid-ssfzsv2f> Meeting Guidelines </a> </div> </div> </div> </div> <!-- Grouped top-level nav --> <div class="s-group" id="grp-brand" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-brand" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Brand</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <a href="/color" class="s-link" data-astro-cid-ssfzsv2f> Color </a><a href="/images" class="s-link" data-astro-cid-ssfzsv2f> Images </a><a href="/logo" class="s-link" data-astro-cid-ssfzsv2f> Logo </a><a href="/typography" class="s-link" data-astro-cid-ssfzsv2f> Typography </a> </div> </div><div class="s-group" id="grp-content" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-content" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Content</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <a href="/language-and-grammar" class="s-link" data-astro-cid-ssfzsv2f> Language and Grammar </a><a href="/iconography" class="s-link" data-astro-cid-ssfzsv2f> Iconography </a><a href="/illustrations" class="s-link" data-astro-cid-ssfzsv2f> Illustrations </a> </div> </div> <!-- Components super-group --> <div class="s-group s-group--components" id="grp-components" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-components" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Components</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <!-- Bootstrap sub-group --> <div class="s-subgroup" id="grp-bootstrap" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-bootstrap" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Bootstrap</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/components/bootstrap/accordion" class="s-sublink" data-astro-cid-ssfzsv2f> Accordion </a><a href="/components/bootstrap/alerts" class="s-sublink" data-astro-cid-ssfzsv2f> Alerts </a><a href="/components/bootstrap/badges" class="s-sublink" data-astro-cid-ssfzsv2f> Badges </a><a href="/components/bootstrap/breadcrumb" class="s-sublink" data-astro-cid-ssfzsv2f> Breadcrumb </a><a href="/components/bootstrap/button-group" class="s-sublink" data-astro-cid-ssfzsv2f> Button Group </a><a href="/components/bootstrap/buttons" class="s-sublink" data-astro-cid-ssfzsv2f> Buttons </a><a href="/components/bootstrap/cards" class="s-sublink" data-astro-cid-ssfzsv2f> Cards </a><a href="/components/bootstrap/carousel" class="s-sublink" data-astro-cid-ssfzsv2f> Carousel </a><a href="/components/bootstrap/dropdowns" class="s-sublink" data-astro-cid-ssfzsv2f> Dropdowns </a><a href="/components/bootstrap/forms" class="s-sublink" data-astro-cid-ssfzsv2f> Forms </a><a href="/components/bootstrap/input-group" class="s-sublink" data-astro-cid-ssfzsv2f> Input Group </a><a href="/components/bootstrap/list-group" class="s-sublink" data-astro-cid-ssfzsv2f> List Group </a><a href="/components/bootstrap/modal" class="s-sublink" data-astro-cid-ssfzsv2f> Modal </a><a href="/components/bootstrap/navbar" class="s-sublink" data-astro-cid-ssfzsv2f> Navbar </a><a href="/components/bootstrap/navs" class="s-sublink" data-astro-cid-ssfzsv2f> Navs &amp; Tabs </a><a href="/components/bootstrap/offcanvas" class="s-sublink" data-astro-cid-ssfzsv2f> Offcanvas </a><a href="/components/bootstrap/pagination" class="s-sublink" data-astro-cid-ssfzsv2f> Pagination </a><a href="/components/bootstrap/placeholders" class="s-sublink" data-astro-cid-ssfzsv2f> Placeholders </a><a href="/components/bootstrap/popovers" class="s-sublink" data-astro-cid-ssfzsv2f> Popovers </a><a href="/components/bootstrap/progress" class="s-sublink" data-astro-cid-ssfzsv2f> Progress </a><a href="/components/bootstrap/spinners" class="s-sublink" data-astro-cid-ssfzsv2f> Spinners </a><a href="/components/bootstrap/tables" class="s-sublink" data-astro-cid-ssfzsv2f> Tables </a><a href="/components/bootstrap/toasts" class="s-sublink" data-astro-cid-ssfzsv2f> Toasts </a><a href="/components/bootstrap/tooltips" class="s-sublink" data-astro-cid-ssfzsv2f> Tooltips </a><a href="/components/bootstrap/validation" class="s-sublink" data-astro-cid-ssfzsv2f> Validation </a> </div> </div> <!-- Others sub-group --> <div class="s-subgroup" id="grp-others" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-others" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Others</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/components/dropzone" class="s-sublink" data-astro-cid-ssfzsv2f> Dropzone </a><a href="/components/file-upload" class="s-sublink" data-astro-cid-ssfzsv2f> File Upload </a><a href="/components/file-viewer" class="s-sublink" data-astro-cid-ssfzsv2f> File Viewer </a><a href="/components/form-validation" class="s-sublink" data-astro-cid-ssfzsv2f> Form Validation </a><a href="/components/highcharts" class="s-sublink" data-astro-cid-ssfzsv2f> Highcharts </a><a href="/components/mask" class="s-sublink" data-astro-cid-ssfzsv2f> Mask </a><a href="/components/moment" class="s-sublink" data-astro-cid-ssfzsv2f> Moment </a><a href="/components/noty" class="s-sublink" data-astro-cid-ssfzsv2f> Noty </a><a href="/components/numeral" class="s-sublink" data-astro-cid-ssfzsv2f> Numeral </a><a href="/components/repeater" class="s-sublink" data-astro-cid-ssfzsv2f> Repeater </a><a href="/components/selectize" class="s-sublink" data-astro-cid-ssfzsv2f> Selectize </a><a href="/components/summernote" class="s-sublink" data-astro-cid-ssfzsv2f> Summernote </a><a href="/components/table" class="s-sublink" data-astro-cid-ssfzsv2f> Table 2.2.1 </a><a href="/components/template-editor" class="s-sublink" data-astro-cid-ssfzsv2f> Template Editor </a><a href="/components/treeview" class="s-sublink" data-astro-cid-ssfzsv2f> Treeview </a><a href="/components/wizard-form" class="s-sublink" data-astro-cid-ssfzsv2f> Wizard Form </a> </div> </div> </div> </div> <!-- Documentation super-group --> <div class="s-group s-group--docs is-open" id="grp-docs" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-docs" aria-expanded="true" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Documentation</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <!-- App Shell sub-group --> <div class="s-subgroup is-open" id="grp-docs-shell" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-shell" aria-expanded="true" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>App Shell</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/detection" class="s-sublink" data-astro-cid-ssfzsv2f> Browser &amp; TZ Detection </a><a href="/docs/menu-web" class="s-sublink" data-astro-cid-ssfzsv2f> Menu Web </a><a href="/docs/theme-picker" class="s-sublink is-on" data-astro-cid-ssfzsv2f> Theme Picker </a> </div> </div> <!-- Modules sub-group --> <div class="s-subgroup" id="grp-docs-modules" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-modules" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Modules</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/default-url" class="s-sublink" data-astro-cid-ssfzsv2f> Default URL </a><a href="/docs/feature-onboarding" class="s-sublink" data-astro-cid-ssfzsv2f> Feature Onboarding </a><a href="/docs/notifications" class="s-sublink" data-astro-cid-ssfzsv2f> Notifications </a><a href="/docs/quicklinks" class="s-sublink" data-astro-cid-ssfzsv2f> Quick Links </a><a href="/docs/user-onboarding" class="s-sublink" data-astro-cid-ssfzsv2f> User Onboarding </a><a href="/docs/visual-indicator" class="s-sublink" data-astro-cid-ssfzsv2f> Visual Indicator </a> </div> </div> <!-- Utilities sub-group --> <div class="s-subgroup" id="grp-docs-utilities" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-utilities" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Utilities</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/browser-storage" class="s-sublink" data-astro-cid-ssfzsv2f> Browser Storage </a><a href="/docs/datetime-picker" class="s-sublink" data-astro-cid-ssfzsv2f> DateTime Picker </a><a href="/docs/request-and-uri" class="s-sublink" data-astro-cid-ssfzsv2f> Request &amp; URI </a><a href="/docs/view-model" class="s-sublink" data-astro-cid-ssfzsv2f> ViewModelBase </a> </div> </div> <!-- Plugins sub-group --> <div class="s-subgroup" id="grp-docs-plugins" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-plugins" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Plugins</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/action-button-manager" class="s-sublink" data-astro-cid-ssfzsv2f> Action Button Manager </a><a href="/docs/currency-picker" class="s-sublink" data-astro-cid-ssfzsv2f> Currency Picker </a><a href="/docs/file-template-editor" class="s-sublink" data-astro-cid-ssfzsv2f> File Template Editor </a><a href="/docs/repeater" class="s-sublink" data-astro-cid-ssfzsv2f> Repeater </a><a href="/docs/table-plugin" class="s-sublink" data-astro-cid-ssfzsv2f> Table Plugin </a><a href="/docs/template-editor" class="s-sublink" data-astro-cid-ssfzsv2f> Template Editor </a><a href="/docs/treeview" class="s-sublink" data-astro-cid-ssfzsv2f> Treeview </a><a href="/docs/wizard-form" class="s-sublink" data-astro-cid-ssfzsv2f> Wizard Form </a> </div> </div> </div> </div> </nav> <!-- Sidebar footer: theme toggle --> <div class="s-footer" data-astro-cid-ssfzsv2f> <button class="theme-toggle s-theme-btn" id="theme-toggle-sidebar" aria-label="Toggle theme" title="Toggle theme" data-astro-cid-ssfzsv2f> <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f><circle cx="12" cy="12" r="5" data-astro-cid-ssfzsv2f></circle><line x1="12" y1="1" x2="12" y2="3" data-astro-cid-ssfzsv2f></line><line x1="12" y1="21" x2="12" y2="23" data-astro-cid-ssfzsv2f></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" data-astro-cid-ssfzsv2f></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" data-astro-cid-ssfzsv2f></line><line x1="1" y1="12" x2="3" y2="12" data-astro-cid-ssfzsv2f></line><line x1="21" y1="12" x2="23" y2="12" data-astro-cid-ssfzsv2f></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" data-astro-cid-ssfzsv2f></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" data-astro-cid-ssfzsv2f></line></svg> <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" data-astro-cid-ssfzsv2f></path></svg> <svg class="icon-system" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f><rect x="2" y="3" width="20" height="14" rx="2" data-astro-cid-ssfzsv2f></rect><line x1="8" y1="21" x2="16" y2="21" data-astro-cid-ssfzsv2f></line><line x1="12" y1="17" x2="12" y2="21" data-astro-cid-ssfzsv2f></line></svg> <span class="s-theme-label" data-astro-cid-ssfzsv2f> <span class="label-light" data-astro-cid-ssfzsv2f>Light mode</span> <span class="label-dark" data-astro-cid-ssfzsv2f>Dark mode</span> <span class="label-system" data-astro-cid-ssfzsv2f>System</span> </span> </button> </div> </aside> <script>
+(function () {
+  // Generic group toggle for all .s-group and .s-subgroup headers
+  document.querySelectorAll('[data-group]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id   = btn.getAttribute('data-group');
+      var el   = document.getElementById(id);
+      if (!el) return;
+      var open = el.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+})();
+</script> <main class="main" id="main">  <div class="doc-page" data-astro-cid-rnp3zwhq> <!-- Page header --> <header class="doc-header" data-astro-cid-rnp3zwhq> <p class="doc-eyebrow" data-astro-cid-rnp3zwhq>Documentation</p> <h1 data-astro-cid-rnp3zwhq>Theme Picker</h1> <dl class="doc-meta" data-astro-cid-rnp3zwhq>  <dt data-astro-cid-rnp3zwhq>Version</dt> <dd data-astro-cid-rnp3zwhq>1.0.0</dd>  <dt data-astro-cid-rnp3zwhq>Files</dt> <dd data-astro-cid-rnp3zwhq>`content/js/application/application.theme.picker.js`</dd>  <dt data-astro-cid-rnp3zwhq>Author</dt> <dd data-astro-cid-rnp3zwhq>Network Economic Services Ventures Philippines, Inc.</dd>  <dt data-astro-cid-rnp3zwhq>Last Updated</dt> <dd data-astro-cid-rnp3zwhq>2026-03-10</dd>  </dl> </header> <!-- Markdown body --> <div class="doc-body" data-astro-cid-rnp3zwhq> <h2 id="1-overview">1. Overview</h2>
+<p><code>ApplicationThemePicker</code> is an ES module class that manages the application’s visual theme (Light, Dark, or System). It reads and persists the user’s theme preference as a cookie, resolves the system-level <code>prefers-color-scheme</code> media query for the System option, and updates the browser’s <code>&#x3C;meta name="theme-color"></code> on load.</p>
+<p>An instance is created and the meta color is applied automatically when the module is imported.</p>
+<hr>
+<h2 id="2-features">2. Features</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Feature</th><th>Description</th></tr></thead><tbody><tr><td>Four theme values</td><td>Light, Dark, System Light, System Dark encoded as numeric strings</td></tr><tr><td>Cookie persistence</td><td>Theme stored in a <code>theme</code> cookie with a 1-year expiry on the root domain</td></tr><tr><td>System theme resolution</td><td>Reads <code>prefers-color-scheme</code> media query to distinguish system light from system dark</td></tr><tr><td>Meta theme-color update</td><td>Updates <code>&#x3C;meta name="theme-color"></code> to match the active theme on load</td></tr><tr><td>Auto-init</td><td>Module-level initialization applies the meta color without any manual call</td></tr></tbody></table>
+<hr>
+<h2 id="3-dependencies">3. Dependencies</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Library</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>jQuery</td><td><strong>Yes</strong></td><td>Used by <code>changeThemeColor</code> to query <code>$('meta[name="theme-color"]')</code></td></tr></tbody></table>
+<hr>
+<h2 id="4-setup">4. Setup</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#6A737D">&#x3C;!-- In &#x3C;head> — must exist before the module runs --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">meta</span><span style="color:#B392F0"> name</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"theme-color"</span><span style="color:#B392F0"> content</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"#F5F5F5"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">&#x3C;!-- As an ES module --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">script</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"module"</span><span style="color:#B392F0"> src</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"/js/application/application.theme.picker.js"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span></code></pre>
+<p>The module creates <code>themePickerViewModel</code> and calls <code>changeThemeColor</code> automatically on import. To use the instance in other modules, import and re-instantiate:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> ApplicationThemePicker </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> '/js/application/application.theme.picker.js'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> themePicker</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> ApplicationThemePicker</span><span style="color:#E1E4E8">();</span></span></code></pre>
+<blockquote>
+<p>The auto-initialized <code>themePickerViewModel</code> is module-scoped and not exported. Create a new instance if you need programmatic access elsewhere.</p>
+</blockquote>
+<hr>
+<h2 id="5-theme-constants">5. Theme Constants</h2>
+<p>Theme values are numeric strings stored in <code>this.THEMES</code>. The comments in source describe them as 3-bit flags:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Constant</th><th>Value</th><th>Bit pattern</th><th>Meaning</th></tr></thead><tbody><tr><td><code>THEMES.Light</code></td><td><code>'0'</code></td><td><code>000</code></td><td>Explicit light mode</td></tr><tr><td><code>THEMES.Dark</code></td><td><code>'1'</code></td><td><code>001</code></td><td>Explicit dark mode</td></tr><tr><td><code>THEMES.SystemLight</code></td><td><code>'4'</code></td><td><code>100</code></td><td>System preference resolved to light</td></tr><tr><td><code>THEMES.SystemDark</code></td><td><code>'6'</code></td><td><code>110</code></td><td>System preference resolved to dark</td></tr></tbody></table>
+<p>These values are written to and read from the <code>theme</code> cookie.</p>
+<hr>
+<h2 id="6-auto-initialization">6. Auto-Initialization</h2>
+<p>At the bottom of the module, outside the class, the following runs on every import:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> themePickerViewModel</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> ApplicationThemePicker</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> theme</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> themePickerViewModel.</span><span style="color:#B392F0">getCurrentTheme</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">themePickerViewModel.</span><span style="color:#B392F0">changeThemeColor</span><span style="color:#E1E4E8">(theme.value);</span></span></code></pre>
+<p>This ensures the <code>&#x3C;meta name="theme-color"></code> content reflects the saved preference immediately when the page loads, before any user interaction.</p>
+<hr>
+<h2 id="7-public-methods">7. Public Methods</h2>
+<h3 id="loadtheme"><code>loadTheme()</code></h3>
+<p>Reads the saved theme cookie and writes it back (re-affirming the cookie expiry). Falls back to <code>THEMES.Light</code> (<code>'0'</code>) if no cookie exists.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">themePicker.</span><span style="color:#B392F0">loadTheme</span><span style="color:#E1E4E8">();</span></span></code></pre>
+<blockquote>
+<p>The <code>location.reload()</code> call is commented out in source. Callers are responsible for triggering any re-render needed after calling this method.</p>
+</blockquote>
+<hr>
+<h3 id="getcurrenttheme"><code>getCurrentTheme()</code></h3>
+<p>Returns the current theme as a <code>{ label, value }</code> object.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> theme</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> themePicker.</span><span style="color:#B392F0">getCurrentTheme</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#6A737D">// → { label: 'light', value: '0' }</span></span>
+<span class="line"><span style="color:#6A737D">// → { label: 'dark',  value: '1' }</span></span>
+<span class="line"><span style="color:#6A737D">// → { label: 'system', value: '4' }  (or '6')</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Return key</th><th>Type</th><th>Possible values</th></tr></thead><tbody><tr><td><code>label</code></td><td><code>string</code></td><td><code>'light'</code> · <code>'dark'</code> · <code>'system'</code></td></tr><tr><td><code>value</code></td><td><code>string</code></td><td><code>'0'</code> · <code>'1'</code> · <code>'4'</code> · <code>'6'</code></td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Saved cookie value</th><th><code>label</code> returned</th></tr></thead><tbody><tr><td><code>'0'</code> (Light)</td><td><code>'light'</code></td></tr><tr><td><code>'1'</code> (Dark)</td><td><code>'dark'</code></td></tr><tr><td><code>'4'</code> (SystemLight)</td><td><code>'system'</code></td></tr><tr><td><code>'6'</code> (SystemDark)</td><td><code>'system'</code></td></tr><tr><td><em>(no cookie)</em></td><td><code>'light'</code> (default)</td></tr></tbody></table>
+<hr>
+<h3 id="setthemetheme"><code>setTheme(theme)</code></h3>
+<p>Accepts a human-readable theme string, resolves it to the corresponding constant, and writes the cookie.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">themePicker.</span><span style="color:#B392F0">setTheme</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'dark'</span><span style="color:#E1E4E8">);    </span><span style="color:#6A737D">// writes '1'</span></span>
+<span class="line"><span style="color:#E1E4E8">themePicker.</span><span style="color:#B392F0">setTheme</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'light'</span><span style="color:#E1E4E8">);   </span><span style="color:#6A737D">// writes '0'</span></span>
+<span class="line"><span style="color:#E1E4E8">themePicker.</span><span style="color:#B392F0">setTheme</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'system'</span><span style="color:#E1E4E8">);  </span><span style="color:#6A737D">// writes '4' or '6' based on system preference</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Accepted values</th></tr></thead><tbody><tr><td><code>theme</code></td><td><code>string</code></td><td><code>'light'</code> · <code>'dark'</code> · <code>'system'</code></td></tr></tbody></table>
+<p>Any unrecognized string falls back to <code>THEMES.Light</code> (<code>'0'</code>).</p>
+<p>When <code>'system'</code> is passed, <code>getCurrentSystemTheme()</code> is called to resolve the current OS preference to <code>SystemLight</code> (<code>'4'</code>) or <code>SystemDark</code> (<code>'6'</code>).</p>
+<hr>
+<h3 id="getcurrentsystemtheme"><code>getCurrentSystemTheme()</code></h3>
+<p>Reads the OS-level color scheme preference via the <code>prefers-color-scheme</code> CSS media query.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> systemTheme</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> themePicker.</span><span style="color:#B392F0">getCurrentSystemTheme</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#6A737D">// → '4'  (SystemLight, when OS is light)</span></span>
+<span class="line"><span style="color:#6A737D">// → '6'  (SystemDark, when OS is dark)</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>OS preference</th><th>Returns</th></tr></thead><tbody><tr><td>Dark (<code>prefers-color-scheme: dark</code>)</td><td><code>'6'</code> (SystemDark)</td></tr><tr><td>Light or no preference</td><td><code>'4'</code> (SystemLight)</td></tr></tbody></table>
+<hr>
+<h3 id="changethemecolortheme"><code>changeThemeColor(theme)</code></h3>
+<p>Updates the <code>content</code> attribute of <code>&#x3C;meta name="theme-color"></code> to match the given theme.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">themePicker.</span><span style="color:#B392F0">changeThemeColor</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'1'</span><span style="color:#E1E4E8">);       </span><span style="color:#6A737D">// → #272727  (dark)</span></span>
+<span class="line"><span style="color:#E1E4E8">themePicker.</span><span style="color:#B392F0">changeThemeColor</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'6'</span><span style="color:#E1E4E8">);       </span><span style="color:#6A737D">// → #272727  (system dark)</span></span>
+<span class="line"><span style="color:#E1E4E8">themePicker.</span><span style="color:#B392F0">changeThemeColor</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'dark'</span><span style="color:#E1E4E8">);    </span><span style="color:#6A737D">// → #272727  (string also accepted)</span></span>
+<span class="line"><span style="color:#E1E4E8">themePicker.</span><span style="color:#B392F0">changeThemeColor</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'0'</span><span style="color:#E1E4E8">);       </span><span style="color:#6A737D">// → #F5F5F5  (light)</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Condition</th><th><code>content</code> value</th></tr></thead><tbody><tr><td><code>theme === '1'</code> (Dark)</td><td><code>#272727</code></td></tr><tr><td><code>theme === '6'</code> (SystemDark)</td><td><code>#272727</code></td></tr><tr><td><code>theme === 'dark'</code> (string)</td><td><code>#272727</code></td></tr><tr><td>All other values</td><td><code>#F5F5F5</code></td></tr></tbody></table>
+<p>Accepts both numeric string constants (<code>'1'</code>, <code>'6'</code>) and the human-readable <code>'dark'</code> string.</p>
+<hr>
+<h2 id="8-private-methods">8. Private Methods</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Returns</th><th>Description</th></tr></thead><tbody><tr><td><code>#getTheme(theme)</code></td><td><code>string</code></td><td>Maps <code>'light'</code>/<code>'dark'</code>/<code>'system'</code> to the numeric theme constant. Calls <code>getCurrentSystemTheme()</code> for <code>'system'</code>. Falls back to <code>THEMES.Light</code>.</td></tr><tr><td><code>#getPreferredTheme()</code></td><td><code>string</code></td><td>Reads the <code>theme</code> cookie from <code>document.cookie</code>. Returns empty string if not found.</td></tr><tr><td><code>#setCookie(theme)</code></td><td><code>void</code></td><td>Writes <code>theme={value}</code> cookie with 1-year expiry, <code>path=/</code>, on the root domain.</td></tr><tr><td><code>#getAppDomain()</code></td><td><code>string</code></td><td>Strips subdomain from <code>window.location.hostname</code>. Returns root domain (e.g. <code>"voyadores.com"</code>).</td></tr></tbody></table>
+<hr>
+<h2 id="9-theme-cookie">9. Theme Cookie</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Property</th><th>Value</th></tr></thead><tbody><tr><td>Name</td><td><code>theme</code></td></tr><tr><td>Value</td><td>Numeric string: <code>'0'</code>, <code>'1'</code>, <code>'4'</code>, or <code>'6'</code></td></tr><tr><td>Expires</td><td>1 year from time of write</td></tr><tr><td>Path</td><td><code>/</code></td></tr><tr><td>Domain</td><td>Root domain (subdomain stripped — see <code>#getAppDomain()</code>)</td></tr></tbody></table>
+<p>The cookie is read on every call to <code>getCurrentTheme()</code>, <code>loadTheme()</code>, or any method that calls <code>#getPreferredTheme()</code>. There is no in-memory cache — each read parses <code>document.cookie</code> directly.</p>
+<hr>
+<h2 id="10-required-dom-elements">10. Required DOM Elements</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Element</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td><code>&#x3C;meta name="theme-color"></code></td><td><strong>Yes</strong></td><td>Updated by <code>changeThemeColor()</code>. Must exist before the module loads.</td></tr></tbody></table>
+<hr>
+<h2 id="11-full-example">11. Full Example</h2>
+<h3 id="basic-page-setup">Basic page setup</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">html</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">head</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">meta</span><span style="color:#B392F0"> name</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"theme-color"</span><span style="color:#B392F0"> content</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"#F5F5F5"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">link</span><span style="color:#B392F0"> rel</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"stylesheet"</span><span style="color:#B392F0"> href</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"/css/bootstrap/bootstrap.voyadores.theme.min.css"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">head</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">body</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">script</span><span style="color:#B392F0"> src</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"/js/jquery/jquery.min.js"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">script</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"module"</span><span style="color:#B392F0"> src</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"/js/application/application.theme.picker.js"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">body</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">html</span><span style="color:#E1E4E8">></span></span></code></pre>
+<p>The meta color is updated automatically on import. No further code is needed for the initial load.</p>
+<h3 id="changing-the-theme-from-a-settings-menu">Changing the theme from a settings menu</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> ApplicationThemePicker </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> '/js/application/application.theme.picker.js'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> themePicker</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> ApplicationThemePicker</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">document.</span><span style="color:#B392F0">getElementById</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'btn-theme-light'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'click'</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    themePicker.</span><span style="color:#B392F0">setTheme</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'light'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    themePicker.</span><span style="color:#B392F0">changeThemeColor</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'0'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    location.</span><span style="color:#B392F0">reload</span><span style="color:#E1E4E8">(); </span><span style="color:#6A737D">// re-apply server-rendered theme</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">document.</span><span style="color:#B392F0">getElementById</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'btn-theme-dark'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'click'</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    themePicker.</span><span style="color:#B392F0">setTheme</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'dark'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    themePicker.</span><span style="color:#B392F0">changeThemeColor</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'1'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    location.</span><span style="color:#B392F0">reload</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">document.</span><span style="color:#B392F0">getElementById</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'btn-theme-system'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'click'</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    themePicker.</span><span style="color:#B392F0">setTheme</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'system'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> systemValue</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> themePicker.</span><span style="color:#B392F0">getCurrentSystemTheme</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    themePicker.</span><span style="color:#B392F0">changeThemeColor</span><span style="color:#E1E4E8">(systemValue);</span></span>
+<span class="line"><span style="color:#E1E4E8">    location.</span><span style="color:#B392F0">reload</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="reading-the-current-theme">Reading the current theme</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> themePicker</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> ApplicationThemePicker</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">label</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">value</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> themePicker.</span><span style="color:#B392F0">getCurrentTheme</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(label);   </span><span style="color:#6A737D">// → "dark"</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(value);   </span><span style="color:#6A737D">// → "1"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Applying theme class to &#x3C;html> element</span></span>
+<span class="line"><span style="color:#E1E4E8">document.documentElement.</span><span style="color:#B392F0">setAttribute</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'data-bs-theme'</span><span style="color:#E1E4E8">, label </span><span style="color:#F97583">===</span><span style="color:#9ECBFF"> 'system'</span><span style="color:#F97583"> ?</span><span style="color:#9ECBFF"> 'light'</span><span style="color:#F97583"> :</span><span style="color:#E1E4E8"> label);</span></span></code></pre>
+<h3 id="checking-system-preference">Checking system preference</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> themePicker</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> ApplicationThemePicker</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> systemTheme</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> themePicker.</span><span style="color:#B392F0">getCurrentSystemTheme</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (systemTheme </span><span style="color:#F97583">===</span><span style="color:#E1E4E8"> themePicker.</span><span style="color:#79B8FF">THEMES</span><span style="color:#E1E4E8">.SystemDark) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'OS is using dark mode'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre> </div> </div>  </main> <!-- Right TOC sidebar --> <aside class="r-toc" id="r-toc" aria-label="On this page"> <div class="toc-label">On this page</div> <nav class="toc-nav" id="toc-nav"></nav> </aside> </div> <script type="module">const d=document.documentElement,L=document.querySelectorAll(".theme-toggle"),f=window.matchMedia("(prefers-color-scheme: dark)"),u=["light","dark","system"];function v(t){t==="dark"||t==="system"&&f.matches?d.setAttribute("data-theme","dark"):d.removeAttribute("data-theme"),d.setAttribute("data-color-scheme",t),localStorage.setItem("voy-theme",t)}f.addEventListener("change",()=>{d.getAttribute("data-color-scheme")==="system"&&v("system")});L.forEach(t=>{t.addEventListener("click",()=>{const n=d.getAttribute("data-color-scheme")||"system",s=u[(u.indexOf(n)+1)%u.length];v(s)})});const m=document.getElementById("c-cursor");if(m&&window.matchMedia("(pointer: fine)").matches){let t=0,n=0,s=0,c=0;const a=.16;document.addEventListener("mousemove",r=>{t=r.clientX,n=r.clientY}),(function r(){s+=(t-s)*a,c+=(n-c)*a,m.style.transform=`translate(${s}px,${c}px)`,requestAnimationFrame(r)})(),document.addEventListener("mouseleave",()=>{m.style.opacity="0"}),document.addEventListener("mouseenter",()=>{m.style.opacity="1"})}const g=document.getElementById("menu-toggle"),y=document.getElementById("sidebar-overlay"),h=document.getElementById("sidebar"),b=()=>{h.classList.add("open"),y.classList.add("show"),document.body.style.overflow="hidden",g.classList.add("open")},E=()=>{h.classList.remove("open"),y.classList.remove("show"),document.body.style.overflow="",g.classList.remove("open")};g.addEventListener("click",()=>h.classList.contains("open")?E():b());y.addEventListener("click",E);(function(){const n=document.getElementById("main"),s=document.getElementById("r-toc"),c=document.getElementById("toc-nav");if(!n||!s||!c)return;const a=Array.from(n.querySelectorAll("h2"));if(a.length<2)return;a.forEach((e,o)=>{if(!e.id){const i=e.textContent.trim().toLowerCase().replace(/[^a-z0-9\s-]/g,"").replace(/\s+/g,"-").replace(/-+/g,"-").replace(/^-|-$/g,"")||`section-${o}`;e.id=i}}),a.forEach(e=>{const o=document.createElement("a");o.href="#"+e.id,o.className="toc-link",o.textContent=e.textContent.trim(),o.addEventListener("click",i=>{i.preventDefault();const l=document.getElementById(e.id);l&&l.scrollIntoView({behavior:"smooth",block:"start"})}),c.appendChild(o)}),s.classList.add("has-items"),d.classList.add("has-toc");const r=Array.from(c.querySelectorAll(".toc-link")),p=new IntersectionObserver(e=>{e.forEach(o=>{const i=r.find(l=>l.getAttribute("href")==="#"+o.target.id);i&&i.classList.toggle("is-active",o.isIntersecting)})},{rootMargin:"-5% 0px -75% 0px",threshold:0});a.forEach(e=>p.observe(e))})();</script> </body> </html>

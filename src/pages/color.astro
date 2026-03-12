@@ -1,0 +1,260 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const orangeScale = [
+  { name: '100', hex: '#fcf3e8', v: '--vds-luminous-orange-100' },
+  { name: '200', hex: '#fae1c5', v: '--vds-luminous-orange-200' },
+  { name: '300', hex: '#fcca91', v: '--vds-luminous-orange-300' },
+  { name: '400', hex: '#f9b361', v: '--vds-luminous-orange-400' },
+  { name: '500', hex: '#f7921e', v: '--vds-luminous-orange-500', primary: true },
+  { name: '600', hex: '#a35f10', v: '--vds-luminous-orange-600' },
+  { name: '700', hex: '#794509', v: '--vds-luminous-orange-700' },
+  { name: '800', hex: '#5b3205', v: '--vds-luminous-orange-800' },
+  { name: '900', hex: '#432403', v: '--vds-luminous-orange-900' },
+  { name: '1000',hex: '#261201', v: '--vds-luminous-orange-1000' },
+];
+
+const grayScale = [
+  { name: '100', hex: '#f5f5f5', v: '--vds-gray-100' },
+  { name: '200', hex: '#e5e5e5', v: '--vds-gray-200' },
+  { name: '300', hex: '#d5d5d5', v: '--vds-gray-300' },
+  { name: '400', hex: '#a4a4a4', v: '--vds-gray-400' },
+  { name: '500', hex: '#888888', v: '--vds-gray-500' },
+  { name: '600', hex: '#6a6a6a', v: '--vds-gray-600' },
+  { name: '700', hex: '#4e4e4e', v: '--vds-gray-700' },
+  { name: '800', hex: '#393939', v: '--vds-gray-800' },
+  { name: '900', hex: '#272727', v: '--vds-gray-900' },
+  { name: '1000',hex: '#161616', v: '--vds-gray-1000' },
+];
+
+const semantic = [
+  { name: 'Primary',   hex: '#f7921e', v: '--vds-primary',   label: 'Luminous Orange' },
+  { name: 'Secondary', hex: '#6a6a6a', v: '--vds-secondary', label: 'Gray'            },
+  { name: 'Success',   hex: '#077d55', v: '--vds-success',   label: 'Green'           },
+  { name: 'Info',      hex: '#186ade', v: '--vds-info',      label: 'Blue'            },
+  { name: 'Warning',   hex: '#f5c518', v: '--vds-warning',   label: 'Yellow'          },
+  { name: 'Danger',    hex: '#d91f11', v: '--vds-danger',    label: 'Red'             },
+];
+
+const extended = [
+  { name: 'Blue',   hex: '#186ade', v: '--vds-blue'   },
+  { name: 'Indigo', hex: '#545fe8', v: '--vds-indigo' },
+  { name: 'Purple', hex: '#8f49de', v: '--vds-purple' },
+  { name: 'Pink',   hex: '#cc1d92', v: '--vds-pink'   },
+  { name: 'Red',    hex: '#d91f11', v: '--vds-red'    },
+  { name: 'Orange', hex: '#e86427', v: '--vds-orange' },
+  { name: 'Yellow', hex: '#f5c518', v: '--vds-yellow' },
+  { name: 'Green',  hex: '#077d55', v: '--vds-green'  },
+  { name: 'Teal',   hex: '#167b7d', v: '--vds-teal'   },
+  { name: 'Cyan',   hex: '#067a91', v: '--vds-cyan'   },
+];
+
+function lum(hex: string) {
+  const n = parseInt(hex.replace('#',''), 16);
+  return .2126*((n>>16)&0xff) + .7152*((n>>8)&0xff) + .0722*(n&0xff);
+}
+function textOn(hex: string) { return lum(hex) > 140 ? '#000' : '#fff'; }
+---
+
+<BaseLayout title="Color" activeSection="color">
+  <PageHeader
+    eyebrow="Color"
+    title="Color Palette"
+    description="All color tokens defined as CSS custom properties (--vds-*) on :root. Apply consistently across light and dark modes."
+  />
+
+  <!-- Semantic -->
+  <section class="sec">
+    <h2>Semantic Colors</h2>
+    <p class="sec-body">Use semantic tokens for interactive elements, alerts, and status indicators.</p>
+    <div class="sw-row">
+      {semantic.map(s => (
+        <div class="sw-item">
+          <div class="sw-block" style={`background:${s.hex}; color:${textOn(s.hex)}`}>
+            <span class="sw-block-hex">{s.hex}</span>
+          </div>
+          <div class="sw-meta">
+            <span class="sw-name">{s.name}</span>
+            <span class="sw-sub">{s.label}</span>
+            <span class="sw-var">{s.v}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Orange scale -->
+  <section class="sec">
+    <div class="sec-hd">
+      <h2>Luminous Orange</h2>
+      <span class="primary-chip">Primary</span>
+    </div>
+    <div class="scale-bar">
+      {orangeScale.map(s => (
+        <div style={`background:${s.hex};flex:1`} title={`${s.name}: ${s.hex}`}></div>
+      ))}
+    </div>
+    <div class="scale-grid">
+      {orangeScale.map(s => (
+        <div class:list={['scale-card', s.primary ? 'scale-card--primary' : '']}>
+          <div class="sc-swatch" style={`background:${s.hex}`}></div>
+          <div class="sc-meta">
+            <span class="sc-name">{s.name}</span>
+            <span class="sc-hex">{s.hex}</span>
+            <span class="sc-var">{s.v}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Gray scale -->
+  <section class="sec">
+    <h2>Gray Scale</h2>
+    <div class="scale-bar">
+      {grayScale.map(s => (
+        <div style={`background:${s.hex};flex:1`} title={`${s.name}: ${s.hex}`}></div>
+      ))}
+    </div>
+    <div class="scale-grid">
+      {grayScale.map(s => (
+        <div class="scale-card">
+          <div class="sc-swatch" style={`background:${s.hex}`}></div>
+          <div class="sc-meta">
+            <span class="sc-name">{s.name}</span>
+            <span class="sc-hex">{s.hex}</span>
+            <span class="sc-var">{s.v}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Extended -->
+  <section class="sec">
+    <h2>Extended Palette</h2>
+    <div class="ext-grid">
+      {extended.map(s => (
+        <div class="ext-card">
+          <div class="ext-swatch" style={`background:${s.hex}`}></div>
+          <span class="ext-name">{s.name}</span>
+          <span class="ext-hex">{s.hex}</span>
+          <span class="ext-var">{s.v}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Dark mode -->
+  <section class="sec">
+    <h2>Dark Mode</h2>
+    <p class="sec-body">Apply <code>data-bs-theme="dark"</code> to any element to enable dark theme tokens.</p>
+    <div class="dark-demo">
+      <code class="dark-code">data-bs-theme="dark"</code>
+      <div class="dark-swatches">
+        {[
+          { label: 'Primary',    hex: '#f9b361' },
+          { label: 'Success',    hex: '#16a163' },
+          { label: 'Info',       hex: '#3d8df5' },
+          { label: 'Danger',     hex: '#fa5343' },
+          { label: 'Body text',  hex: '#f5f5f5' },
+          { label: 'Background', hex: '#161616' },
+        ].map(s => (
+          <div class="ds-item">
+            <div class="ds-swatch" style={`background:${s.hex}; border:1px solid rgba(255,255,255,.1)`}></div>
+            <span class="ds-label">{s.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .sec { margin-bottom: 64px; }
+  .sec-hd { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--g5); }
+  .sec h2 {
+    font-size: 20px; font-weight: 500; letter-spacing: -.4px; color: var(--black);
+    margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--g5);
+  }
+  .sec-hd h2 { margin: 0; padding: 0; border: 0; }
+  .sec-body { font-size: 14px; font-weight: 500; color: var(--g2); line-height: 1.7; max-width: 520px; margin-bottom: 24px; }
+  .sec-body code { font-family: var(--mono); font-size: .875em; }
+
+  .primary-chip {
+    font-size: 11px; font-weight: 600; color: var(--brand);
+    background: rgba(247,146,30,.1);
+    border: 1px solid rgba(247,146,30,.3);
+    border-radius: 100px; padding: 2px 10px;
+  }
+
+  /* Semantic row */
+  .sw-row {
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px;
+  }
+  .sw-item { }
+  .sw-block {
+    height: 80px; border-radius: 2px;
+    display: flex; align-items: flex-end; padding: 8px;
+    font-size: 11px; font-family: var(--mono); font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .sw-block-hex { opacity: .8; }
+  .sw-meta { display: flex; flex-direction: column; gap: 2px; }
+  .sw-name { font-size: 13px; font-weight: 600; color: var(--black); }
+  .sw-sub  { font-size: 12px; font-weight: 500; color: var(--g2); }
+  .sw-var  { font-size: 11px; font-family: var(--mono); color: var(--g2); }
+
+  /* Scale bar */
+  .scale-bar {
+    display: flex; height: 10px; border-radius: 2px; overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  /* Scale grid */
+  .scale-grid {
+    display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px;
+  }
+  .scale-card { }
+  .scale-card--primary .sc-swatch { outline: 2px solid var(--brand); outline-offset: 2px; }
+
+  .sc-swatch { height: 56px; border-radius: 2px; margin-bottom: 8px; border: 1px solid var(--g5); }
+  .sc-meta { display: flex; flex-direction: column; gap: 1px; }
+  .sc-name { font-size: 11px; font-weight: 600; color: var(--black); }
+  .sc-hex  { font-size: 10px; font-family: var(--mono); color: var(--g2); }
+  .sc-var  { font-size: 9px;  font-family: var(--mono); color: var(--g3); display: none; }
+
+  /* Extended */
+  .ext-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;
+  }
+  .ext-card { border: 1px solid var(--g5); border-radius: 2px; overflow: hidden; }
+  .ext-swatch { height: 64px; }
+  .ext-name { display: block; font-size: 13px; font-weight: 600; color: var(--black); padding: 10px 12px 2px; }
+  .ext-hex  { display: block; font-size: 11px; font-family: var(--mono); color: var(--g2); padding: 0 12px; }
+  .ext-var  { display: block; font-size: 10px; font-family: var(--mono); color: var(--g3); padding: 2px 12px 10px; }
+
+  /* Dark demo */
+  .dark-demo { background: #161616; border-radius: 4px; padding: 28px; }
+  .dark-code {
+    display: inline-block; font-family: var(--mono); font-size: 12px;
+    color: #fcca91; background: rgba(255,255,255,.08);
+    padding: 4px 10px; border-radius: 4px; margin-bottom: 20px;
+  }
+  .dark-swatches { display: flex; gap: 16px; flex-wrap: wrap; }
+  .ds-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .ds-swatch { width: 44px; height: 44px; border-radius: 6px; }
+  .ds-label { font-size: 11px; color: #888; }
+
+  @media (max-width: 900px) {
+    .sw-row { grid-template-columns: repeat(3, 1fr); }
+    .scale-grid { grid-template-columns: repeat(5, 1fr); }
+    .ext-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .sw-row { grid-template-columns: repeat(2, 1fr); }
+    .scale-grid { grid-template-columns: repeat(4, 1fr); }
+    .ext-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

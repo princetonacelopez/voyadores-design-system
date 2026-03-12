@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+---
+<BaseLayout title="Form Validation" activeSection="components">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.voyadores.theme.min.css" />
+    <link rel="stylesheet" href="/css/form-validation/form-validation.min.css" />
+  </Fragment>
+
+  <PageHeader
+    eyebrow="Components / Others"
+    title="Form Validation"
+    description="jQuery plugin for client-side form validation with built-in rules (required, email, minlength, pattern), custom validators, and Bootstrap-compatible error messages."
+  />
+
+  <section class="sec">
+    <h2>Setup</h2>
+    <div class="code-block"><pre is:raw><code>&lt;link rel="stylesheet" href="https://cdn.voyadores.com/content/css/form-validation/form-validation.min.css" /&gt;
+
+&lt;script src="https://cdn.voyadores.com/content/js/jquery/jquery-3.6.0.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.voyadores.com/content/js/form-validation/form-validation-1.0.0.min.js"&gt;&lt;/script&gt;</code></pre></div>
+  </section>
+
+  <section class="sec">
+    <h2>Demo</h2>
+    <div class="demo-area bs-scope">
+      <form id="demo-form" novalidate>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label" for="fv-fname">First Name <span class="req">*</span></label>
+            <input type="text" class="form-control" id="fv-fname" name="firstName" placeholder="Juan" />
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="fv-lname">Last Name <span class="req">*</span></label>
+            <input type="text" class="form-control" id="fv-lname" name="lastName" placeholder="dela Cruz" />
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="fv-email">Email Address <span class="req">*</span></label>
+            <input type="email" class="form-control" id="fv-email" name="email" placeholder="juan@example.com" />
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="fv-phone">Mobile Number <span class="req">*</span></label>
+            <input type="tel" class="form-control" id="fv-phone" name="phone" placeholder="09171234567" />
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="col-12">
+            <label class="form-label" for="fv-dept">Department <span class="req">*</span></label>
+            <select class="form-select" id="fv-dept" name="department">
+              <option value="">Select a department…</option>
+              <option value="hr">Human Resources</option>
+              <option value="it">Information Technology</option>
+              <option value="fin">Finance</option>
+              <option value="ops">Operations</option>
+            </select>
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="col-12">
+            <label class="form-label" for="fv-bio">Bio <span class="req">*</span></label>
+            <textarea class="form-control" id="fv-bio" name="bio" rows="3" placeholder="Tell us about yourself…"></textarea>
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="fv-agree" name="agree" />
+              <label class="form-check-label" for="fv-agree">I agree to the Terms of Service <span class="req">*</span></label>
+              <div class="invalid-feedback"></div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 d-flex gap-2">
+          <button type="submit" class="btn btn-primary">Submit Form</button>
+          <button type="reset" class="btn btn-outline-secondary">Reset</button>
+        </div>
+      </form>
+      <div id="fv-result" class="fv-result" style="display:none"></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Usage</h2>
+    <div class="code-block"><pre is:raw><code>// Form must have [novalidate] attribute
+$('#my-form').formValidate({
+  trigger: 'submit',   // 'submit' | 'blur' | 'timeout'
+  fields: {
+    username: {
+      rules: {
+        required:  true,
+        minlength: 3,
+        maxlength: 30,
+      },
+    },
+    email: {
+      rules: { required: true },
+    },
+    password: {
+      rules: {
+        required: true,
+        pattern:  '[password]',   // built-in strong-password regex
+      },
+    },
+    domain: {
+      rules: {
+        pattern: '[domain]',      // built-in domain regex
+      },
+    },
+  },
+  onSubmit: function (data) {
+    // data = { firstName: '...', email: '...', ... }
+    console.log('Valid!', data);
+  },
+  onReset: function () {
+    console.log('Form reset');
+  },
+  resetOnSubmit: false,
+});
+
+// Methods
+$('#my-form').formValidate('reset');
+$('#my-form').formValidate('validate');</code></pre></div>
+  </section>
+</BaseLayout>
+
+<script is:inline src="/js/jquery/jquery-3.6.0.min.js"></script>
+<script is:inline src="/js/form-validation/form-validation-1.0.0.min.js"></script>
+<script is:inline>
+$(function () {
+  $('#demo-form').formValidate({
+    trigger: 'submit',
+    fields: {
+      firstName:  { rules: { required: true, minlength: 2 } },
+      lastName:   { rules: { required: true, minlength: 2 } },
+      email:      { rules: { required: true } },
+      phone:      { rules: { required: true, minlength: 10, maxlength: 11 } },
+      department: { rules: { required: true } },
+      bio:        { rules: { required: true, minlength: 10 } },
+      agree:      { rules: { required: true } },
+    },
+    onSubmit: function (data) {
+      var result = document.getElementById('fv-result');
+      result.style.display = 'block';
+      result.innerHTML = '<strong>Form submitted!</strong> Data: <code>' + JSON.stringify(data, null, 2) + '</code>';
+    },
+    onReset: function () {
+      var result = document.getElementById('fv-result');
+      result.style.display = 'none';
+    },
+  });
+});
+</script>
+
+<style>
+  .sec { margin-bottom: 56px; }
+  .sec h2 { font-size: 20px; font-weight: 500; letter-spacing: -.4px; color: var(--black); margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--g5); }
+  .code-block { background: #161616; border-radius: 4px; overflow: auto; }
+  .code-block pre { margin: 0; padding: 20px 24px; }
+  .code-block code { font-family: var(--mono); font-size: 13px; color: #f5f5f5; line-height: 1.8; white-space: pre; }
+  .demo-area { padding: 24px; border: 1px solid var(--g5); border-radius: 2px; background: var(--white); }
+  .bs-scope { cursor: auto; }
+  .req { color: #d91f11; }
+  .fv-result { margin-top: 20px; padding: 16px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 4px; font-size: 12px; white-space: pre-wrap; font-family: var(--mono); }
+</style>

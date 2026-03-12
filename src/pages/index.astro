@@ -1,0 +1,398 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Home" activeSection="home">
+
+  <!-- Hero -->
+  <section class="hero">
+    <p class="hero-eyebrow">Visual Identity Guidelines</p>
+    <h1 class="hero-h1">Voyadores<br/>Design System</h1>
+    <p class="hero-body">
+      A comprehensive guide to Voyadores' visual language—covering brand identity,
+      color, typography, icons, and UI components that power every product we build.
+    </p>
+    <a href="/introduction" class="hero-cta">Get Started</a>
+  </section>
+
+  <!-- Grid -->
+  <section class="grid-section">
+    <div class="card-grid">
+
+      <a href="/introduction" class="card">
+        <div class="card-thumb card-thumb--intro">
+          <div class="ct-label">Introduction</div>
+        </div>
+        <div class="card-body">
+          <h3>Introduction</h3>
+          <p>What Voyadores is and how the design system came to be.</p>
+        </div>
+      </a>
+
+      <a href="/strategy" class="card">
+        <div class="card-thumb card-thumb--strategy">
+          <div class="ct-label">Strategy</div>
+        </div>
+        <div class="card-body">
+          <h3>Strategy</h3>
+          <p>Core design principles, values, and the philosophy behind every decision.</p>
+        </div>
+      </a>
+
+      <a href="/logo" class="card">
+        <div class="card-thumb card-thumb--logo">
+          <img src="/images/voyadores-logo-combination-horizontal-light.svg" alt="Logo" />
+        </div>
+        <div class="card-body">
+          <h3>Logo</h3>
+          <p>Logo variants, clear space, and usage guidelines for all contexts.</p>
+        </div>
+      </a>
+
+      <a href="/typography" class="card">
+        <div class="card-thumb card-thumb--type">
+          <span class="ct-type-sample">Aa</span>
+        </div>
+        <div class="card-body">
+          <h3>Typography</h3>
+          <p>Urbanist and Chivo Mono—type scale, weights, and usage examples.</p>
+        </div>
+      </a>
+
+      <a href="/color" class="card">
+        <div class="card-thumb card-thumb--color">
+          <div class="ct-swatches">
+            <span style="background:#fcca91"></span>
+            <span style="background:#f9b361"></span>
+            <span style="background:#f7921e"></span>
+            <span style="background:#a35f10"></span>
+            <span style="background:#794509"></span>
+            <span style="background:#272727"></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Color</h3>
+          <p>The full color palette with semantic tokens and CSS custom properties.</p>
+        </div>
+      </a>
+
+      <a href="/images" class="card">
+        <div class="card-thumb card-thumb--images">
+          <div class="ct-img-grid">
+            <img src="/images/illustrations/home.start.onboarding.multi-platform.svg" alt="" />
+            <img src="/images/illustrations/accounting.svg" alt="" />
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Images</h3>
+          <p>Illustrations, backgrounds, state graphics, and photography guidelines.</p>
+        </div>
+      </a>
+
+      <a href="/iconography" class="card">
+        <div class="card-thumb card-thumb--icons">
+          <div class="ct-icons">
+            <i class="vi-regular vi-home"></i>
+            <i class="vi-regular vi-settings"></i>
+            <i class="vi-regular vi-user"></i>
+            <i class="vi-regular vi-chart-bar"></i>
+            <i class="vi-regular vi-file-text"></i>
+            <i class="vi-regular vi-search"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Icons</h3>
+          <p>1,300+ icons in regular and solid weights via Voyadores-Icon font.</p>
+        </div>
+      </a>
+
+      <a href="/language-and-grammar" class="card">
+        <div class="card-thumb card-thumb--content">
+          <div class="ct-content-preview">
+            <div class="ctp-rule"></div>
+            <div class="ctp-rule ctp-rule--short"></div>
+            <div class="ctp-rule"></div>
+            <div class="ctp-rule ctp-rule--xshort"></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Content</h3>
+          <p>Writing standards, grammar rules, and microcopy patterns for all Voyadores products.</p>
+        </div>
+      </a>
+
+      <a href="/components" class="card">
+        <div class="card-thumb card-thumb--resources">
+          <div class="ct-resource-preview">
+            <div class="rp-btn">Button</div>
+            <div class="rp-input">Text field</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Components</h3>
+          <p>Bootstrap 5 components and Voyadores UI patterns with live demos and code.</p>
+        </div>
+      </a>
+
+      <a href="/documentation" class="card">
+        <div class="card-thumb card-thumb--docs">
+          <div class="ct-docs-preview">
+            <div class="dp-block dp-block--title"></div>
+            <div class="dp-block dp-block--line"></div>
+            <div class="dp-block dp-block--line dp-block--short"></div>
+            <div class="dp-block dp-block--code"></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Documentation</h3>
+          <p>Technical reference docs for Voyadores application modules, utilities, and plugins.</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ── Hero ─────────────────────────────────────── */
+  .hero {
+    padding-bottom: 80px;
+    border-bottom: 1px solid var(--g5);
+    margin-bottom: 80px;
+  }
+
+  .hero-eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--g2);
+    margin-bottom: 20px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  .hero-h1 {
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1.04;
+    letter-spacing: -0.84px;
+    color: var(--black);
+    margin-bottom: 20px;
+  }
+
+  .hero-body {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--g2);
+    max-width: 480px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background: var(--black);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background .15s ease;
+  }
+  .hero-cta:hover { background: var(--brand); }
+
+  /* ── Card Grid ───────────────────────────────── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--g5);
+    border-radius: 2px;
+    overflow: hidden;
+    text-decoration: none;
+    background: var(--white);
+    transition: border-color .15s ease;
+  }
+  .card:hover { border-color: var(--g3); }
+
+  /* Card thumbs */
+  .card-thumb {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--g6);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .card-thumb--intro    { background: var(--ct-intro-bg); }
+  .card-thumb--strategy { background: var(--ct-strategy-bg); }
+  .card-thumb--logo     { background: var(--ct-logo-bg); padding: 24px; }
+  .card-thumb--logo img { max-width: 160px; max-height: 56px; object-fit: contain; }
+  .card-thumb--type     { background: var(--ct-type-bg); }
+  .card-thumb--color    { background: var(--white); padding: 0; }
+  .card-thumb--images   { background: var(--ct-images-bg); padding: 20px; }
+  .card-thumb--icons    { background: var(--ct-icons-bg); }
+  .card-thumb--resources{ background: var(--ct-resources-bg); }
+
+  /* ── Card thumb colour tokens (light) ───────────── */
+  :root {
+    --ct-intro-bg:     #f0f0f0;
+    --ct-strategy-bg:  #f0f0f0;
+    --ct-logo-bg:      #fff8f2;
+    --ct-type-bg:      #f8f8f8;
+    --ct-images-bg:    #f8f8f8;
+    --ct-icons-bg:     #f8f8f8;
+    --ct-resources-bg: #f8f8f8;
+    --ct-content-bg:   #f4f4f4;
+    --ct-docs-bg:      #f8f8f8;
+    --ct-docs-line:    #d4d4d4;
+    --ct-docs-code:    #e6e6e6;
+  }
+
+  /* ── Card thumb colour tokens (dark) ────────────── */
+  :global([data-theme="dark"]) {
+    --ct-intro-bg:     #212121;
+    --ct-strategy-bg:  #212121;
+    --ct-logo-bg:      #1e1a16;
+    --ct-type-bg:      #1c1c1c;
+    --ct-images-bg:    #1c1c1c;
+    --ct-icons-bg:     #1c1c1c;
+    --ct-resources-bg: #1c1c1c;
+    --ct-content-bg:   #1e1e1e;
+    --ct-docs-bg:      #1c1c1c;
+    --ct-docs-line:    #3a3a3a;
+    --ct-docs-code:    #2a2a2a;
+  }
+
+  .ct-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--g2);
+    letter-spacing: .04em;
+  }
+
+  .ct-type-sample {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--black);
+    letter-spacing: -2px;
+  }
+
+  .ct-swatches {
+    display: flex;
+    width: 100%; height: 100%;
+  }
+  .ct-swatches span { flex: 1; }
+
+  .ct-img-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+  }
+  .ct-img-grid img { width: 100%; height: 64px; object-fit: contain; }
+
+  .ct-icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    padding: 20px;
+    color: var(--g1);
+  }
+  .ct-icons .vi-regular { font-size: 1.5rem; line-height: 1; }
+
+  /* Content card */
+  .card-thumb--content { background: var(--ct-content-bg); padding: 24px; }
+  .ct-content-preview { display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 180px; }
+  .ctp-rule { height: 3px; border-radius: 2px; background: var(--g3); }
+  .ctp-rule--short  { width: 70%; }
+  .ctp-rule--xshort { width: 40%; }
+
+  /* Docs card */
+  .card-thumb--docs { background: var(--ct-docs-bg); padding: 20px; }
+  .ct-docs-preview { display: flex; flex-direction: column; gap: 7px; width: 100%; max-width: 180px; }
+  .dp-block { border-radius: 2px; }
+  .dp-block--title { height: 4px; background: #f7921e; width: 60%; }
+  .dp-block--line   { height: 3px; background: var(--ct-docs-line); }
+  .dp-block--short  { width: 70%; }
+  .dp-block--code   { height: 22px; background: var(--ct-docs-code); border-radius: 3px; margin-top: 4px; }
+
+  .ct-resource-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .rp-btn {
+    background: var(--brand);
+    color: var(--white);
+    font-size: 12px; font-weight: 600;
+    padding: 6px 14px; border-radius: 4px;
+  }
+  .rp-input {
+    background: var(--white);
+    border: 1px solid var(--g4);
+    font-size: 12px; color: var(--g2);
+    padding: 6px 10px; border-radius: 4px;
+    width: 130px;
+  }
+
+  /* Card body */
+  .card-body {
+    padding: 20px;
+    border-top: 1px solid var(--g5);
+    flex: 1;
+  }
+
+  .card-body h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 6px;
+    letter-spacing: -.01em;
+  }
+
+  .card-body p {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--g2);
+    line-height: 1.5;
+  }
+
+  /* ── Dark mode explicit overrides (thumbs + foreground) ─────────────── */
+  :global([data-theme="dark"]) .card-thumb--intro    { background: #212121; }
+  :global([data-theme="dark"]) .card-thumb--strategy { background: #212121; }
+  :global([data-theme="dark"]) .card-thumb--logo     { background: #1e1a16; }
+  :global([data-theme="dark"]) .card-thumb--type     { background: #1c1c1c; }
+  :global([data-theme="dark"]) .card-thumb--color    { background: #141414; }
+  :global([data-theme="dark"]) .card-thumb--images   { background: #1c1c1c; }
+  :global([data-theme="dark"]) .card-thumb--icons    { background: #1c1c1c; }
+  :global([data-theme="dark"]) .card-thumb--content  { background: #1e1e1e; }
+  :global([data-theme="dark"]) .card-thumb--resources{ background: #1c1c1c; }
+  :global([data-theme="dark"]) .card-thumb--docs     { background: #1c1c1c; }
+
+  /* Keep text/icons legible on dark thumb backgrounds */
+  :global([data-theme="dark"]) .ct-type-sample { color: #f0f0f0; }
+  :global([data-theme="dark"]) .ct-icons       { color: #e4e4e4; }
+  :global([data-theme="dark"]) .ct-label       { color: #888888; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .card-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-h1 { font-size: 36px; }
+  }
+  @media (max-width: 600px) {
+    .card-grid { grid-template-columns: 1fr; }
+    .hero-h1 { font-size: 28px; }
+  }
+</style>

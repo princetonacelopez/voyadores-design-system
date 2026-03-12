@@ -1,0 +1,473 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+---
+
+<BaseLayout title="Changelog Guidelines">
+  <PageHeader
+    eyebrow="Get Started — Internal"
+    title="Changelog Guidelines"
+    description="Standards for creating and structuring Changelogs across change request development cycles."
+  />
+
+  <!-- Definition and Objective -->
+  <section class="sec">
+    <h2>Definition and Objective</h2>
+
+    <div class="def-cards">
+      <div class="def-card def-card--def">
+        <div class="def-card-label">Definition</div>
+        <p>A changelog is an informal document of a Change Request (requirement). It is an in-between step between a client's requirements (in any form such as email, chats, or documents) and a Business Requirements Document (BRD).</p>
+      </div>
+      <div class="def-card def-card--obj">
+        <div class="def-card-label">Objective</div>
+        <p>BRDs' detail-oriented nature requires time to complete. This requirement stalls development in two ways:</p>
+        <ul>
+          <li>Pausing development until a BRD is finalized creates a delay</li>
+          <li>Changes in requirements during development do not end up being reflected in the BRD</li>
+        </ul>
+        <p class="def-card-extra">Since Changelogs are easy to create, they solve both problems. Additionally, the organization of a Changelog makes it:</p>
+        <ul>
+          <li>Easier for anyone to write</li>
+          <li>Easier for developers and designers to understand and implement</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Format -->
+  <section class="sec">
+    <h2>Format</h2>
+    <p class="body-text">The name of a Changelog should be categorized into one of two types. Each type uses a specific format to ensure consistent monitoring and traceability.</p>
+
+    <!-- Standard -->
+    <div class="type-block">
+      <div class="type-block-header">
+        <span class="type-badge type-badge--standard">Standard</span>
+        <h3>Standard</h3>
+      </div>
+      <p class="type-desc">Used to track and document requested changes systematically. Must clearly indicate the version and status to ensure proper monitoring and traceability.</p>
+
+      <div class="structure-grid">
+        <div class="structure-item">
+          <div class="structure-key">Version Number</div>
+          <div class="structure-val">Identifies the version of the requested changes.</div>
+        </div>
+        <div class="structure-item">
+          <div class="structure-key">Status</div>
+          <div class="structure-val">
+            Represents the current progress of the request.
+            <div class="status-pills">
+              <span class="status-pill status-pill--inc">INC</span>
+              <span class="status-pill status-pill--tbd">TBD</span>
+              <span class="status-pill status-pill--active">ACTIVE</span>
+              <span class="status-pill status-pill--done">DONE</span>
+            </div>
+          </div>
+        </div>
+        <div class="structure-item">
+          <div class="structure-key">CR Title</div>
+          <div class="structure-val">A concise title summarizing the requested change.</div>
+        </div>
+      </div>
+
+      <div class="format-block">
+        <div class="format-row-item">
+          <span class="fmt-badge fmt-badge--format">Format</span>
+          <code>[Status] [Version (Optional)] – [Title]</code>
+        </div>
+        <div class="format-row-item format-row-item--examples">
+          <span class="fmt-badge fmt-badge--example">Examples</span>
+          <div class="format-examples">
+            <span class="format-example">ACTIVE v3.1 – Voyadores Incident Report</span>
+            <span class="format-example">DONE – Voyadores Payroll Enhancement</span>
+            <span class="format-example">TBD – Fleet Management Route Optimization</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Customization -->
+    <div class="type-block">
+      <div class="type-block-header">
+        <span class="type-badge type-badge--custom">Customization</span>
+        <h3>Customization</h3>
+      </div>
+      <p class="type-desc">Used to track customization requests for a specific account. Must clearly indicate the status, version, account code, and change request title to ensure accurate documentation and traceability.</p>
+
+      <div class="structure-grid">
+        <div class="structure-item">
+          <div class="structure-key">Version Number</div>
+          <div class="structure-val">Specifies the version of the requested changes.</div>
+        </div>
+        <div class="structure-item">
+          <div class="structure-key">Status</div>
+          <div class="structure-val">
+            Indicates the current progress of the update.
+            <div class="status-pills">
+              <span class="status-pill status-pill--inc">INC</span>
+              <span class="status-pill status-pill--tbd">TBD</span>
+              <span class="status-pill status-pill--active">ACTIVE</span>
+              <span class="status-pill status-pill--done">DONE</span>
+            </div>
+          </div>
+        </div>
+        <div class="structure-item">
+          <div class="structure-key">Account Code</div>
+          <div class="structure-val">Identifies the specific account associated with the customization request.</div>
+        </div>
+        <div class="structure-item">
+          <div class="structure-key">CR Title</div>
+          <div class="structure-val">A concise title summarizing the requested change.</div>
+        </div>
+      </div>
+
+      <div class="format-block">
+        <div class="format-row-item">
+          <span class="fmt-badge fmt-badge--format">Format</span>
+          <code>[Status] [Version (Optional)] – [Account Code]: [Title]</code>
+        </div>
+        <div class="format-row-item format-row-item--examples">
+          <span class="fmt-badge fmt-badge--example">Examples</span>
+          <div class="format-examples">
+            <span class="format-example">ACTIVE v2.0 – NESV001: HR Payroll Customization</span>
+            <span class="format-example">DONE – VYD002: Inventory Module Enhancement</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Body -->
+  <section class="sec">
+    <h2>Body</h2>
+
+    <div class="body-steps">
+      <div class="body-step">
+        <div class="body-step-num">1</div>
+        <div class="body-step-content">
+          <h4>Main Software Requirement</h4>
+          <p>Describe the main software requirement specification in a sentence. Provide a short but concise description containing the main objective and general behavior of the change.</p>
+        </div>
+      </div>
+      <div class="body-step">
+        <div class="body-step-num">2</div>
+        <div class="body-step-content">
+          <h4>Breakdown</h4>
+          <p>Specify the breakdown of the main requirement in the Changelog body. It should be bulleted with detailed instruction to group changes respectively and quantify them. Each item should be organized by change type:</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Change types -->
+    <div class="change-types">
+
+      <div class="change-type-card change-type-card--visible">
+        <div class="change-type-header">
+          <span class="change-type-badge change-type-badge--visible">Visible Change</span>
+          <p class="change-type-desc">Changes that are perceptible to the user — UI modifications, new screens, updated interactions.</p>
+        </div>
+        <div class="change-type-structure">
+          <div class="structure-label">Structure</div>
+          <div class="tree">
+            <div class="tree-row tree-row--l1">
+              <span class="tree-icon">▸</span>
+              <span class="tree-label">Module</span>
+            </div>
+            <div class="tree-row tree-row--l2">
+              <span class="tree-icon">▸</span>
+              <span class="tree-label">Screen</span>
+            </div>
+            <div class="tree-row tree-row--l3">
+              <span class="tree-icon">•</span>
+              <span class="tree-label tree-label--ui">UI element (modals, views, section) – <em>description of the change</em></span>
+            </div>
+            <div class="tree-row tree-row--l3">
+              <span class="tree-icon">•</span>
+              <span class="tree-label tree-label--ui">Feature description with scenarios</span>
+            </div>
+          </div>
+          <p class="change-type-note">It is important to lay down the hierarchical location of the change. This helps localize the changes in the application. Typically follows: <strong>Module › Sub-module › Screen › UI Element</strong>. However, this is a guide — change will vary from feature to feature.</p>
+        </div>
+      </div>
+
+      <div class="change-type-card change-type-card--nonvisible">
+        <div class="change-type-header">
+          <span class="change-type-badge change-type-badge--nonvisible">Non-visible Change</span>
+          <p class="change-type-desc">Changes that are not directly perceptible to the user — backend logic, data handling, performance improvements.</p>
+        </div>
+        <div class="change-type-structure">
+          <div class="structure-label">Structure</div>
+          <div class="tree">
+            <div class="tree-row tree-row--l1">
+              <span class="tree-icon">▸</span>
+              <span class="tree-label">Module</span>
+            </div>
+            <div class="tree-row tree-row--l2">
+              <span class="tree-icon">•</span>
+              <span class="tree-label tree-label--ui">Description of the change</span>
+            </div>
+          </div>
+          <p class="change-type-note">Non-visible changes have a laxer structure. Typically, it involves identifying the topmost hierarchical group and specifying the changes under it.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Status Reference -->
+  <section class="sec">
+    <h2>Status Reference</h2>
+    <div class="status-table">
+      {[
+        { status: 'INC',    color: 'inc',    label: 'Incomplete',  desc: 'The changelog is still being written and is not yet ready for review or development.' },
+        { status: 'TBD',    color: 'tbd',    label: 'To Be Determined', desc: 'Requirements are pending clarification or approval before development can begin.' },
+        { status: 'ACTIVE', color: 'active', label: 'Active',      desc: 'The changelog has been finalized and development is currently in progress.' },
+        { status: 'DONE',   color: 'done',   label: 'Done',        desc: 'All changes in this changelog have been implemented and completed.' },
+      ].map(s => (
+        <div class="status-row">
+          <span class:list={['status-pill', `status-pill--${s.color}`]}>{s.status}</span>
+          <span class="status-label">{s.label}</span>
+          <span class="status-desc">{s.desc}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .sec { margin-bottom: 72px; }
+
+  .sec h2 {
+    font-size: 20px; font-weight: 600; letter-spacing: -.4px; color: var(--black);
+    margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--g5);
+  }
+
+  .body-text {
+    font-size: 14px; font-weight: 500; color: var(--g1); line-height: 1.7;
+    max-width: 680px; margin-bottom: 28px;
+  }
+
+  /* ── Definition cards ────────────────────────────────────────────────── */
+  .def-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .def-card {
+    padding: 20px 22px; border-radius: 8px; border: 1px solid var(--g5);
+    background: var(--white);
+  }
+  .def-card--def { border-left: 3px solid var(--brand); }
+  .def-card--obj  { border-left: 3px solid #186ade; }
+
+  .def-card-label {
+    font-size: 9px; font-weight: 800; letter-spacing: .1em;
+    text-transform: uppercase; margin-bottom: 10px;
+  }
+  .def-card--def .def-card-label { color: var(--brand); }
+  .def-card--obj  .def-card-label { color: #186ade; }
+
+  .def-card p {
+    font-size: 13px; font-weight: 500; color: var(--g1); line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .def-card p:last-child { margin-bottom: 0; }
+  .def-card-extra { margin-top: 12px; }
+
+  .def-card ul {
+    padding-left: 18px; list-style: disc;
+    display: flex; flex-direction: column; gap: 5px; margin-bottom: 10px;
+  }
+  .def-card li { font-size: 13px; font-weight: 500; color: var(--g2); line-height: 1.5; }
+
+  /* ── Type block ──────────────────────────────────────────────────────── */
+  .type-block {
+    border: 1px solid var(--g5); border-radius: 8px;
+    overflow: hidden; margin-bottom: 16px;
+  }
+
+  .type-block-header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px 18px; background: var(--g6); border-bottom: 1px solid var(--g5);
+  }
+  .type-block-header h3 {
+    font-size: 14px; font-weight: 700; color: var(--black);
+  }
+
+  .type-badge {
+    font-size: 9px; font-weight: 800; letter-spacing: .07em;
+    text-transform: uppercase; padding: 3px 9px; border-radius: 4px;
+  }
+  .type-badge--standard   { background: rgba(7,125,85,.1);  color: #077d55; }
+  .type-badge--custom     { background: rgba(84,95,232,.1); color: #3a44c8; }
+
+  .type-desc {
+    font-size: 13px; font-weight: 500; color: var(--g1); line-height: 1.6;
+    padding: 14px 18px 0; max-width: 680px;
+  }
+
+  /* ── Structure grid ──────────────────────────────────────────────────── */
+  .structure-grid {
+    margin: 14px 18px; display: flex; flex-direction: column; gap: 0;
+    border: 1px solid var(--g5); border-radius: 6px; overflow: hidden;
+  }
+
+  .structure-item {
+    display: grid; grid-template-columns: 140px 1fr;
+    gap: 12px; align-items: flex-start;
+    padding: 10px 14px; border-bottom: 1px solid var(--g5);
+  }
+  .structure-item:last-child { border-bottom: none; }
+
+  .structure-key {
+    font-size: 11px; font-weight: 700; color: var(--g2);
+    text-transform: uppercase; letter-spacing: .06em;
+    padding-top: 2px;
+  }
+  .structure-val {
+    font-size: 12px; font-weight: 500; color: var(--g1); line-height: 1.6;
+  }
+
+  /* ── Status pills ────────────────────────────────────────────────────── */
+  .status-pills { display: flex; gap: 5px; margin-top: 6px; flex-wrap: wrap; }
+
+  .status-pill {
+    font-size: 9px; font-weight: 800; letter-spacing: .07em;
+    padding: 2px 8px; border-radius: 3px;
+  }
+  .status-pill--inc    { background: rgba(217,31,17,.1);   color: #d91f11; }
+  .status-pill--tbd    { background: rgba(127,127,127,.1); color: var(--g2); }
+  .status-pill--active { background: rgba(247,146,30,.12); color: #b8650a; }
+  .status-pill--done   { background: rgba(7,125,85,.1);    color: #077d55; }
+
+  /* ── Format block ────────────────────────────────────────────────────── */
+  .format-block {
+    margin: 0 18px 18px;
+    background: var(--g6); border: 1px solid var(--g5); border-radius: 6px;
+    padding: 12px 16px; display: flex; flex-direction: column; gap: 10px;
+  }
+
+  .format-row-item { display: flex; align-items: flex-start; gap: 10px; flex-wrap: wrap; }
+  .format-row-item--examples { align-items: flex-start; }
+
+  .fmt-badge {
+    flex-shrink: 0; font-size: 9px; font-weight: 700; letter-spacing: .07em;
+    text-transform: uppercase; padding: 2px 7px; border-radius: 3px;
+    margin-top: 1px;
+  }
+  .fmt-badge--format  { background: rgba(84,95,232,.1);  color: #3a44c8; }
+  .fmt-badge--example { background: rgba(7,125,85,.1);   color: #077d55; }
+
+  .format-block code {
+    font-family: var(--mono); font-size: 12px; color: var(--g1);
+    background: var(--white); border: 1px solid var(--g5);
+    padding: 3px 8px; border-radius: 4px;
+  }
+
+  .format-examples { display: flex; flex-direction: column; gap: 4px; }
+  .format-example  { font-size: 13px; font-weight: 500; color: var(--g1); font-style: italic; }
+
+  /* ── Body steps ──────────────────────────────────────────────────────── */
+  .body-steps { display: flex; flex-direction: column; gap: 0; margin-bottom: 20px; }
+
+  .body-step {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 14px 0; border-bottom: 1px solid var(--g5);
+  }
+  .body-step:last-child { border-bottom: none; }
+
+  .body-step-num {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+    background: var(--brand); color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; margin-top: 2px;
+  }
+
+  .body-step-content h4 {
+    font-size: 14px; font-weight: 700; color: var(--black); margin-bottom: 6px;
+  }
+  .body-step-content p {
+    font-size: 13px; font-weight: 500; color: var(--g1); line-height: 1.7;
+    max-width: 640px;
+  }
+
+  /* ── Change type cards ───────────────────────────────────────────────── */
+  .change-types { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .change-type-card {
+    border: 1px solid var(--g5); border-radius: 8px; overflow: hidden;
+  }
+
+  .change-type-header {
+    padding: 14px 16px; border-bottom: 1px solid var(--g5); background: var(--g6);
+  }
+
+  .change-type-badge {
+    display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: .06em;
+    text-transform: uppercase; padding: 3px 9px; border-radius: 4px; margin-bottom: 8px;
+  }
+  .change-type-badge--visible    { background: rgba(7,125,85,.1);   color: #077d55; }
+  .change-type-badge--nonvisible { background: rgba(84,95,232,.1);  color: #3a44c8; }
+
+  .change-type-desc {
+    font-size: 12px; font-weight: 500; color: var(--g2); line-height: 1.5;
+  }
+
+  .change-type-structure { padding: 14px 16px; }
+
+  .structure-label {
+    font-size: 9px; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--g3); margin-bottom: 10px;
+  }
+
+  /* ── Tree ────────────────────────────────────────────────────────────── */
+  .tree { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+
+  .tree-row { display: flex; align-items: flex-start; gap: 6px; }
+  .tree-row--l1 { padding-left: 0; }
+  .tree-row--l2 { padding-left: 16px; }
+  .tree-row--l3 { padding-left: 32px; }
+
+  .tree-icon { font-size: 10px; color: var(--g3); flex-shrink: 0; margin-top: 2px; }
+  .tree-label { font-size: 12px; font-weight: 600; color: var(--black); line-height: 1.5; }
+  .tree-label--ui { font-weight: 400; color: var(--g1); }
+  .tree-label--ui em { font-style: italic; color: var(--g2); }
+
+  .change-type-note {
+    font-size: 12px; font-weight: 500; color: var(--g2); line-height: 1.6;
+    padding: 10px 12px; background: var(--g6); border-radius: 4px;
+    border: 1px solid var(--g5);
+  }
+  .change-type-note strong { font-weight: 700; color: var(--g1); }
+
+  /* ── Status table ────────────────────────────────────────────────────── */
+  .status-table {
+    display: flex; flex-direction: column; gap: 0;
+    border: 1px solid var(--g5); border-radius: 8px; overflow: hidden;
+  }
+
+  .status-row {
+    display: grid; grid-template-columns: 80px 140px 1fr;
+    align-items: center; gap: 16px;
+    padding: 12px 18px; border-bottom: 1px solid var(--g5);
+  }
+  .status-row:last-child { border-bottom: none; }
+  .status-row:hover { background: var(--g6); }
+
+  .status-label {
+    font-size: 13px; font-weight: 600; color: var(--black);
+  }
+  .status-desc {
+    font-size: 12px; font-weight: 500; color: var(--g2); line-height: 1.5;
+  }
+
+  /* ── Responsive ──────────────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .def-cards    { grid-template-columns: 1fr; }
+    .change-types { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .status-row { grid-template-columns: 70px 1fr; }
+    .status-row .status-label { display: none; }
+    .structure-item { grid-template-columns: 1fr; gap: 4px; }
+  }
+</style>

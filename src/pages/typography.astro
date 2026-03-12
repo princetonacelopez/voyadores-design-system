@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const typeScale = [
+  { label: 'Display',     size: '3rem',    weight: 700, ls: '-0.03em', sample: 'Voyadores Design System'          },
+  { label: 'Heading 1',   size: '2rem',    weight: 700, ls: '-0.02em', sample: 'Account Overview'                 },
+  { label: 'Heading 2',   size: '1.5rem',  weight: 600, ls: '-0.015em',sample: 'Inventory Management'            },
+  { label: 'Heading 3',   size: '1.25rem', weight: 600, ls: '-0.01em', sample: 'Transaction Details'              },
+  { label: 'Heading 4',   size: '1.0625rem',weight:600, ls: '0',       sample: 'Invoice Summary'                  },
+  { label: 'Body Large',  size: '1rem',    weight: 400, ls: '0',       sample: 'The quick brown fox jumps over the lazy dog.' },
+  { label: 'Body',        size: '.9375rem',weight: 400, ls: '0',       sample: 'Enterprise-grade web applications for Philippine businesses.' },
+  { label: 'Body Small',  size: '.875rem', weight: 400, ls: '0',       sample: 'Additional context and supporting text.' },
+  { label: 'Caption',     size: '.8125rem',weight: 400, ls: '0',       sample: 'Helper text and field captions.'  },
+  { label: 'Label',       size: '.75rem',  weight: 500, ls: '.02em',   sample: 'Field Label'                      },
+  { label: 'Overline',    size: '.6875rem',weight: 600, ls: '.08em',   sample: 'OVERLINE TEXT'                    },
+];
+
+const urbanistWeights = [100,200,300,400,500,600,700,800,900];
+const chivoWeights    = [100,200,300,400,500,600,700,800,900];
+---
+
+<BaseLayout title="Typography" activeSection="typography">
+  <PageHeader
+    eyebrow="Typography"
+    title="Type System"
+    description="Urbanist is our primary typeface. Chivo Mono handles all code and monospace contexts."
+  />
+
+  <!-- Tokens -->
+  <section class="sec">
+    <h2>Font Tokens</h2>
+    <div class="token-row">
+      <div class="token-card">
+        <span class="tk-label">Sans-serif</span>
+        <span class="tk-var">--font</span>
+        <span class="tk-sample tk-sample--sans">Urbanist</span>
+      </div>
+      <div class="token-card">
+        <span class="tk-label">Monospace</span>
+        <span class="tk-var">--mono</span>
+        <span class="tk-sample tk-sample--mono">Chivo Mono</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Type scale -->
+  <section class="sec">
+    <h2>Type Scale</h2>
+    <div class="scale-table">
+      {typeScale.map(t => (
+        <div class="st-row">
+          <div class="st-meta">
+            <span class="st-label">{t.label}</span>
+            <span class="st-props">{t.size} / {t.weight}</span>
+          </div>
+          <div class="st-sample" style={`font-size:${t.size};font-weight:${t.weight};letter-spacing:${t.ls};font-family:var(--font);`}>
+            {t.sample}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Urbanist specimen -->
+  <section class="sec">
+    <h2>Urbanist</h2>
+    <div class="specimen">
+      <div class="sp-display" style="font-family:var(--font)">Aa</div>
+      <p class="sp-pangram" style="font-family:var(--font)">The quick brown fox jumps over the lazy dog.</p>
+      <p class="sp-alpha" style="font-family:var(--font)">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789 !@#$%&</p>
+      <div class="sp-weights">
+        {urbanistWeights.map(w => (
+          <div class="spw-row">
+            <span class="spw-label">{w}</span>
+            <span class="spw-sample" style={`font-weight:${w};font-family:var(--font)`}>The quick brown fox — {w}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Chivo Mono specimen -->
+  <section class="sec">
+    <h2>Chivo Mono</h2>
+    <div class="specimen">
+      <div class="sp-display sp-display--mono">Aa</div>
+      <p class="sp-pangram sp-pangram--mono">const voyadores = &#123; version: '1.0.0', primary: '#f7921e' &#125;;</p>
+      <p class="sp-alpha sp-alpha--mono">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789</p>
+      <div class="sp-weights">
+        {chivoWeights.map(w => (
+          <div class="spw-row">
+            <span class="spw-label">{w}</span>
+            <span class="spw-sample" style={`font-weight:${w};font-family:var(--mono)`}>const primary = '#f7921e'; — {w}</span>
+          </div>
+        ))}
+        <div class="spw-row">
+          <span class="spw-label">400i</span>
+          <span class="spw-sample" style="font-weight:400;font-style:italic;font-family:var(--mono)">// Italic — comment text example</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Code example -->
+  <section class="sec">
+    <h2>Usage</h2>
+    <div class="code-block">
+      <pre><code>.element &#123;
+  font-family: var(--vds-font-sans-serif);   /* "Lexend" */
+  font-family: var(--vds-font-monospace);    /* "Chivo Mono" */
+  font-size:   var(--vds-body-font-size);    /* 0.875rem */
+  font-weight: var(--vds-body-font-weight);  /* 400 */
+  line-height: var(--vds-body-line-height);  /* 1.5 */
+&#125;</code></pre>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .sec { margin-bottom: 64px; }
+  .sec h2 {
+    font-size: 20px; font-weight: 500; letter-spacing: -.4px; color: var(--black);
+    margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--g5);
+  }
+
+  /* Tokens */
+  .token-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .token-card { padding: 24px; border: 1px solid var(--g5); border-radius: 2px; }
+  .tk-label { display: block; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--g2); margin-bottom: 6px; }
+  .tk-var   { display: block; font-size: 12px; font-family: var(--mono); color: var(--g2); margin-bottom: 12px; }
+  .tk-sample { display: block; font-size: 22px; font-weight: 600; color: var(--black); }
+  .tk-sample--sans { font-family: var(--font); }
+  .tk-sample--mono { font-family: var(--mono); }
+
+  /* Scale table */
+  .scale-table { border: 1px solid var(--g5); border-radius: 2px; overflow: hidden; }
+  .st-row {
+    display: grid; grid-template-columns: 160px 1fr;
+    gap: 24px; align-items: center;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--g5);
+    background: var(--white);
+  }
+  .st-row:last-child { border-bottom: none; }
+  .st-row:hover { background: var(--g6); }
+  .st-meta { display: flex; flex-direction: column; gap: 2px; flex-shrink: 0; }
+  .st-label { font-size: 12px; font-weight: 600; color: var(--black); }
+  .st-props { font-size: 11px; font-family: var(--mono); color: var(--g2); }
+  .st-sample { color: var(--black); line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  /* Specimen */
+  .specimen { border: 1px solid var(--g5); border-radius: 2px; padding: 32px; }
+  .sp-display { font-size: 80px; font-weight: 700; line-height: 1; color: var(--black); letter-spacing: -.03em; margin-bottom: 20px; font-family: var(--font); }
+  .sp-display--mono { font-family: var(--mono); }
+  .sp-pangram { font-size: 16px; font-weight: 400; color: var(--g1); line-height: 1.6; margin-bottom: 8px; font-family: var(--font); }
+  .sp-pangram--mono { font-family: var(--mono); font-size: 14px; }
+  .sp-alpha  { font-size: 13px; color: var(--g2); margin-bottom: 28px; font-family: var(--font); word-break: break-all; }
+  .sp-alpha--mono { font-family: var(--mono); }
+
+  .sp-weights { border-top: 1px solid var(--g5); padding-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+  .spw-row { display: grid; grid-template-columns: 48px 1fr; gap: 16px; align-items: baseline; }
+  .spw-label  { font-size: 11px; font-family: var(--mono); color: var(--g2); }
+  .spw-sample { font-size: 15px; color: var(--g1); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  /* Code */
+  .code-block { background: #161616; border-radius: 4px; overflow: auto; }
+  .code-block pre { margin: 0; padding: 24px; }
+  .code-block code { font-family: var(--mono); font-size: 13px; color: #f5f5f5; line-height: 1.8; white-space: pre; }
+
+  @media (max-width: 480px) {
+    .token-row { grid-template-columns: 1fr; }
+    .st-row { grid-template-columns: 1fr; gap: 6px; }
+  }
+</style>

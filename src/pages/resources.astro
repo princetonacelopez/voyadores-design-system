@@ -1,0 +1,822 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const CDN = 'https://cdn.voyadores.com/content';
+
+const categories = [
+  // ─── Foundation ───────────────────────────────────────────────────────────
+  {
+    group: 'Foundation', name: 'Bootstrap Theme',
+    icon: 'vi-layers', color: '#7952b3', bg: 'rgba(121,82,179,.08)',
+    desc: 'Voyadores-branded Bootstrap 5 theme CSS and JS bundle.',
+    files: [
+      { path: 'css/bootstrap/bootstrap.voyadores.theme.css',     type: 'css' },
+      { path: 'css/bootstrap/bootstrap.voyadores.theme.min.css', type: 'css' },
+      { path: 'js/bootstrap/bootstrap.bundle.min.js',            type: 'js'  },
+      { path: 'js/bootstrap/bootstrap.min.js',                   type: 'js'  },
+      { path: 'js/bootstrap/bootstrap.esm.min.js',               type: 'js'  },
+    ],
+  },
+  {
+    group: 'Foundation', name: 'Voyadores Icon Font',
+    icon: 'vi-star', color: '#f7921e', bg: 'rgba(247,146,30,.08)',
+    desc: 'Icon font stylesheet and ligature support script.',
+    files: [
+      { path: 'fonts/Voyadores-Icon/voyadores-icon.css',     type: 'css' },
+      { path: 'fonts/Voyadores-Icon/voyadores-icon.min.css', type: 'css' },
+      { path: 'fonts/Voyadores-Icon/liga.js',                type: 'js'  },
+      { path: 'fonts/Voyadores-Icon/liga.min.js',            type: 'js'  },
+    ],
+  },
+  {
+    group: 'Foundation', name: 'Fonts',
+    icon: 'vi-file-text', color: '#545fe8', bg: 'rgba(84,95,232,.08)',
+    desc: 'Lexend and system typeface @font-face declarations.',
+    files: [
+      { path: 'fonts/fonts.css',        type: 'css' },
+      { path: 'fonts/fonts.min.css',    type: 'css' },
+      { path: 'fonts/Lexend/fonts.css', type: 'css' },
+    ],
+  },
+
+  // ─── Voyadores Components ──────────────────────────────────────────────────
+  {
+    group: 'Voyadores Components', name: 'Table',
+    icon: 'vi-table', color: '#077d55', bg: 'rgba(7,125,85,.08)',
+    desc: 'Data table with sorting, filtering, pagination, and row animations.',
+    files: [
+      { path: 'css/table/table-2-2-1.css',     type: 'css' },
+      { path: 'css/table/table-2-2-1.min.css', type: 'css' },
+      { path: 'css/table/table-2-1-1.css',     type: 'css' },
+      { path: 'css/table/table-2-1-1.min.css', type: 'css' },
+      { path: 'css/table/table-2-1-0.css',     type: 'css' },
+      { path: 'css/table/table-2-1-0.min.css', type: 'css' },
+      { path: 'css/table/table-2-0-1.css',     type: 'css' },
+      { path: 'css/table/table-2-0-1.min.css', type: 'css' },
+      { path: 'css/table/table-2-0-0.css',     type: 'css' },
+      { path: 'css/table/table-2-0-0.min.css', type: 'css' },
+      { path: 'js/table/table-2-2-1.js',       type: 'js'  },
+      { path: 'js/table/table-2-2-1.min.js',   type: 'js'  },
+      { path: 'js/table/table-2-1-1.js',       type: 'js'  },
+      { path: 'js/table/table-2-1-1.min.js',   type: 'js'  },
+      { path: 'js/table/table-2-1-0.js',       type: 'js'  },
+      { path: 'js/table/table-2-1-0.min.js',   type: 'js'  },
+      { path: 'js/table/table-2-0-1.js',       type: 'js'  },
+      { path: 'js/table/table-2-0-1.min.js',   type: 'js'  },
+      { path: 'js/table/table-2-0-0.js',       type: 'js'  },
+      { path: 'js/table/table-2-0-0.min.js',   type: 'js'  },
+      { path: 'js/table/table-1-5-3.js',       type: 'js'  },
+      { path: 'js/table/table-1-5-3.min.js',   type: 'js'  },
+    ],
+  },
+  {
+    group: 'Voyadores Components', name: 'Action Button Manager',
+    icon: 'vi-square', color: '#186ade', bg: 'rgba(24,106,222,.08)',
+    desc: 'State-aware responsive toolbar button manager with permission control.',
+    files: [
+      { path: 'js/action-button-manager/action-button-manager.js',     type: 'js' },
+      { path: 'js/action-button-manager/action-button-manager.min.js', type: 'js' },
+    ],
+  },
+  {
+    group: 'Voyadores Components', name: 'Form Validation',
+    icon: 'vi-form', color: '#077d55', bg: 'rgba(7,125,85,.08)',
+    desc: 'Client-side form validation with Voyadores-styled error messages.',
+    files: [
+      { path: 'css/form-validation/form-validation.css',         type: 'css' },
+      { path: 'css/form-validation/form-validation.min.css',     type: 'css' },
+      { path: 'js/form-validation/form-validation-1.0.0.js',     type: 'js'  },
+      { path: 'js/form-validation/form-validation-1.0.0.min.js', type: 'js'  },
+    ],
+  },
+  {
+    group: 'Voyadores Components', name: 'Template Editor',
+    icon: 'vi-file-text', color: '#8f49de', bg: 'rgba(143,73,222,.08)',
+    desc: 'Multi-section form template builder, viewer, and dual-role reviewer.',
+    files: [
+      { path: 'css/template-editor/template-editor.css',          type: 'css' },
+      { path: 'js/template-editor/model.js',                      type: 'js'  },
+      { path: 'js/template-editor/viewModel.js',                  type: 'js'  },
+      { path: 'js/template-editor/commands.js',                   type: 'js'  },
+      { path: 'js/template-editor/utils.js',                      type: 'js'  },
+      { path: 'js/template-editor/template-builder.js',           type: 'js'  },
+      { path: 'js/template-editor/template-viewer.js',            type: 'js'  },
+      { path: 'js/template-editor/template-reviewer.js',          type: 'js'  },
+      { path: 'js/template-editor/vendor/sortable.js',            type: 'js'  },
+      { path: 'js/template-editor/vendor/sortable.min.js',        type: 'js'  },
+    ],
+  },
+  {
+    group: 'Voyadores Components', name: 'File Template Editor',
+    icon: 'vi-file-text', color: '#cc1d92', bg: 'rgba(204,29,146,.08)',
+    desc: 'WYSIWYG + code editor for HTML and ASP.NET Razor CSHTML templates.',
+    files: [
+      { path: 'js/file-template-editor/file-template-editor.js',  type: 'js' },
+      { path: 'js/file-template-editor/json-template-editor.js',  type: 'js' },
+    ],
+  },
+  {
+    group: 'Voyadores Components', name: 'File Viewer',
+    icon: 'vi-file', color: '#d91f11', bg: 'rgba(217,31,17,.08)',
+    desc: 'In-browser PDF, CSV, and image viewers with toolbar.',
+    files: [
+      { path: 'js/file-viewer/file-viewer-factory.js',       type: 'js' },
+      { path: 'js/file-viewer/base-viewer.js',               type: 'js' },
+      { path: 'js/file-viewer/toolbar-manager.js',           type: 'js' },
+      { path: 'js/file-viewer/event-bus.js',                 type: 'js' },
+      { path: 'js/file-viewer/file-utils.js',                type: 'js' },
+      { path: 'js/file-viewer/errors.js',                    type: 'js' },
+      { path: 'js/file-viewer/viewers/pdf-viewer.js',        type: 'js' },
+      { path: 'js/file-viewer/viewers/csv-viewer.js',        type: 'js' },
+      { path: 'js/file-viewer/viewers/image-viewer.js',      type: 'js' },
+      { path: 'js/file-viewer-alt/file-viewer-factory.js',   type: 'js' },
+      { path: 'js/file-viewer-alt/base-viewer.js',           type: 'js' },
+      { path: 'js/file-viewer-alt/toolbar-manager.js',       type: 'js' },
+      { path: 'js/file-viewer-alt/event-bus.js',             type: 'js' },
+      { path: 'js/file-viewer-alt/file-utils.js',            type: 'js' },
+      { path: 'js/file-viewer-alt/errors.js',                type: 'js' },
+      { path: 'js/file-viewer-alt/viewers/pdf-viewer.js',    type: 'js' },
+      { path: 'js/file-viewer-alt/viewers/csv-viewer.js',    type: 'js' },
+      { path: 'js/file-viewer-alt/viewers/image-viewer.js',  type: 'js' },
+    ],
+  },
+  {
+    group: 'Voyadores Components', name: 'Wizard Form',
+    icon: 'vi-flag', color: '#6a6a6a', bg: 'rgba(106,106,106,.08)',
+    desc: 'Multi-step modal form wizard with progress bar and lifecycle callbacks.',
+    files: [
+      { path: 'js/wizard-form/wizard-form.min.js', type: 'js' },
+    ],
+  },
+  {
+    group: 'Voyadores Components', name: 'Repeater',
+    icon: 'vi-square', color: '#e86427', bg: 'rgba(232,100,39,.08)',
+    desc: 'Dynamic form field repeater for add/remove row interactions.',
+    files: [
+      { path: 'js/repeater/repeater-1-6-1.js',     type: 'js' },
+      { path: 'js/repeater/repeater-1-6-1.min.js', type: 'js' },
+      { path: 'js/repeater/repeater-1-6.js',       type: 'js' },
+      { path: 'js/repeater/repeater-1-6.min.js',   type: 'js' },
+      { path: 'js/repeater/repeater-1-5.js',       type: 'js' },
+      { path: 'js/repeater/repeater-1-5.min.js',   type: 'js' },
+      { path: 'js/repeater/repeater-1-1.js',       type: 'js' },
+      { path: 'js/repeater/repeater-1-1.min.js',   type: 'js' },
+      { path: 'js/repeater/repeater-1-0.js',       type: 'js' },
+      { path: 'js/repeater/repeater-1-0.min.js',   type: 'js' },
+    ],
+  },
+  {
+    group: 'Voyadores Components', name: 'Load More',
+    icon: 'vi-square', color: '#167b7d', bg: 'rgba(22,123,125,.08)',
+    desc: 'Append-on-scroll and load-more-button pagination.',
+    files: [
+      { path: 'js/loadmore/load-more-1-4.js',     type: 'js' },
+      { path: 'js/loadmore/load-more-1-4.min.js', type: 'js' },
+      { path: 'js/loadmore/load-more-1-3.js',     type: 'js' },
+      { path: 'js/loadmore/load-more-1-3.min.js', type: 'js' },
+    ],
+  },
+  {
+    group: 'Voyadores Components', name: 'Batch Processor',
+    icon: 'vi-square', color: '#545fe8', bg: 'rgba(84,95,232,.08)',
+    desc: 'Sequential batch task runner with progress callbacks.',
+    files: [
+      { path: 'js/batch-processor/batch-processor-1-0-0.js',     type: 'js' },
+      { path: 'js/batch-processor/batch-processor-1-0-0.min.js', type: 'js' },
+    ],
+  },
+  {
+    group: 'Voyadores Components', name: 'Treeview',
+    icon: 'vi-file', color: '#8f49de', bg: 'rgba(143,73,222,.08)',
+    desc: 'Hierarchical tree navigation component.',
+    files: [
+      { path: 'css/treeview/treeview-1-0-0.css',     type: 'css' },
+      { path: 'css/treeview/treeview-1-0-0.min.css', type: 'css' },
+      { path: 'js/treeview/treeview-1-0-0.js',       type: 'js'  },
+      { path: 'js/treeview/treeview-1-0-0.min.js',   type: 'js'  },
+    ],
+  },
+  {
+    group: 'Voyadores Components', name: 'CSV Viewer (Heiho)',
+    icon: 'vi-table', color: '#077d55', bg: 'rgba(7,125,85,.08)',
+    desc: 'CSV data viewer rendered as an interactive table.',
+    files: [
+      { path: 'css/csv/heiho.voyadores.css',     type: 'css' },
+      { path: 'css/csv/heiho.voyadores.min.css', type: 'css' },
+      { path: 'css/csv/heiho.css',               type: 'css' },
+      { path: 'css/csv/heiho.min.css',           type: 'css' },
+      { path: 'js/csv/heiho.voyadores.js',       type: 'js'  },
+      { path: 'js/csv/heiho.voyadores.min.js',   type: 'js'  },
+      { path: 'js/csv/heiho.js',                 type: 'js'  },
+      { path: 'js/csv/heiho.min.js',             type: 'js'  },
+    ],
+  },
+  {
+    group: 'Voyadores Components', name: 'Geo Locator',
+    icon: 'vi-map', color: '#d91f11', bg: 'rgba(217,31,17,.08)',
+    desc: 'Browser Geolocation API helper with map integration.',
+    files: [
+      { path: 'js/geo-locator/geo-locator-1.0.0.js',     type: 'js' },
+      { path: 'js/geo-locator/geo-locator-1.0.0.min.js', type: 'js' },
+    ],
+  },
+  {
+    group: 'Voyadores Components', name: 'URL Hash Handler',
+    icon: 'vi-square', color: '#6a6a6a', bg: 'rgba(106,106,106,.08)',
+    desc: 'Client-side URL hash state management.',
+    files: [
+      { path: 'js/hash/url-hash-handler-1.0.js',     type: 'js' },
+      { path: 'js/hash/url-hash-handler-1.0.min.js', type: 'js' },
+    ],
+  },
+  {
+    group: 'Voyadores Components', name: 'Chunk',
+    icon: 'vi-square', color: '#186ade', bg: 'rgba(24,106,222,.08)',
+    desc: 'Array chunking utility for processing large datasets in slices.',
+    files: [
+      { path: 'js/chunk/chunk-1-0-0.js',     type: 'js' },
+      { path: 'js/chunk/chunk-1-0-0.min.js', type: 'js' },
+    ],
+  },
+  {
+    group: 'Voyadores Components', name: 'Application Modules',
+    icon: 'vi-square', color: '#545fe8', bg: 'rgba(84,95,232,.08)',
+    desc: 'Core app modules: notifications, quicklinks, tooltips, onboarding, helpers.',
+    files: [
+      { path: 'js/application/application.common.js',                    type: 'js' },
+      { path: 'js/application/application.common.min.js',                type: 'js' },
+      { path: 'js/application/application.helpers.js',                   type: 'js' },
+      { path: 'js/application/application.helpers.min.js',               type: 'js' },
+      { path: 'js/application/application.notifications.js',             type: 'js' },
+      { path: 'js/application/application.notifications.min.js',         type: 'js' },
+      { path: 'js/application/application.notifications.get.js',         type: 'js' },
+      { path: 'js/application/application.notifications.get.min.js',     type: 'js' },
+      { path: 'js/application/application.quicklinks.js',                type: 'js' },
+      { path: 'js/application/application.quicklinks.min.js',            type: 'js' },
+      { path: 'js/application/application.quicklinks.get.js',            type: 'js' },
+      { path: 'js/application/application.quicklinks.get.min.js',        type: 'js' },
+      { path: 'js/application/application.quicklinks.create.js',         type: 'js' },
+      { path: 'js/application/application.quicklinks.create.min.js',     type: 'js' },
+      { path: 'js/application/application.tooltip.js',                   type: 'js' },
+      { path: 'js/application/application.tooltip.min.js',               type: 'js' },
+      { path: 'js/application/application.feature-onboarding.js',        type: 'js' },
+      { path: 'js/application/application.feature-onboarding.min.js',    type: 'js' },
+      { path: 'js/application/application.viewmodel.min.js',             type: 'js' },
+    ],
+  },
+
+  // ─── Third-party ──────────────────────────────────────────────────────────
+  {
+    group: 'Third-party', name: 'jQuery',
+    icon: 'vi-square', color: '#186ade', bg: 'rgba(24,106,222,.08)',
+    desc: 'jQuery core library, UI widgets, validation, and plugin dependencies.',
+    files: [
+      { path: 'js/jquery/jquery-3.6.0.min.js',               type: 'js'  },
+      { path: 'js/jquery/jquery-3.6.0.slim.min.js',          type: 'js'  },
+      { path: 'js/jquery/jquery-ui.min.js',                   type: 'js'  },
+      { path: 'css/jquery/jquery-ui.min.css',                 type: 'css' },
+      { path: 'js/jquery/jquery.cookie.min.js',               type: 'js'  },
+      { path: 'js/jquery/jquery.datetimepicker.min.js',       type: 'js'  },
+      { path: 'css/jquery/jquery.datetimepicker.min.css',     type: 'css' },
+      { path: 'js/jquery/jquery.fileDownload.min.js',         type: 'js'  },
+      { path: 'js/jquery/jquery.validate.min.js',             type: 'js'  },
+      { path: 'js/jquery/jquery.validate.unobtrusive.min.js', type: 'js'  },
+      { path: 'js/jquery/jquery.noty.application.min.js',     type: 'js'  },
+      { path: 'js/jquery/multiple-select.min.js',             type: 'js'  },
+      { path: 'css/jquery/multiple-select.min.css',           type: 'css' },
+      { path: 'css/jquery/jquery.currency.min.css',           type: 'css' },
+      { path: 'css/jquery/jquery.fileupload.min.css',         type: 'css' },
+      { path: 'css/jquery/jquery.percentify.min.css',         type: 'css' },
+      { path: 'js/mask/jquery.mask.min.js',                   type: 'js'  },
+    ],
+  },
+  {
+    group: 'Third-party', name: 'Popper',
+    icon: 'vi-bell', color: '#6a6a6a', bg: 'rgba(106,106,106,.08)',
+    desc: 'Tooltip and popover positioning library.',
+    files: [
+      { path: 'js/popper/popper.min.js',         type: 'js' },
+      { path: 'js/popper/umd/popper.min.js',     type: 'js' },
+      { path: 'js/popper/esm/popper.min.js',     type: 'js' },
+    ],
+  },
+  {
+    group: 'Third-party', name: 'Noty',
+    icon: 'vi-bell', color: '#f5c518', bg: 'rgba(245,197,24,.08)',
+    desc: 'Toast notification library with Voyadores theme and animation support.',
+    files: [
+      { path: 'css/noty/noty.css',                                       type: 'css' },
+      { path: 'css/noty/noty.min.css',                                   type: 'css' },
+      { path: 'css/noty/noty.voyadores.css',                             type: 'css' },
+      { path: 'css/noty/noty.voyadores.min.css',                         type: 'css' },
+      { path: 'css/noty/animate.css',                                    type: 'css' },
+      { path: 'css/noty/animate.min.css',                                type: 'css' },
+      { path: 'js/noty/jquery.noty.min.js',                              type: 'js'  },
+      { path: 'js/noty/promise.min.js',                                  type: 'js'  },
+      { path: 'js/noty/2.3.8/jquery.noty.min.js',                       type: 'js'  },
+      { path: 'js/noty/2.3.8/packaged/jquery.noty.packaged.min.js',     type: 'js'  },
+    ],
+  },
+  {
+    group: 'Third-party', name: 'Summernote',
+    icon: 'vi-file-text', color: '#8f49de', bg: 'rgba(143,73,222,.08)',
+    desc: 'WYSIWYG rich text editor with Bootstrap 5 and Voyadores theme. Language packs under js/summernote/lang/.',
+    files: [
+      { path: 'css/summernote/summernote-bs5.css',         type: 'css' },
+      { path: 'css/summernote/summernote-bs5.min.css',     type: 'css' },
+      { path: 'css/summernote/summernote.voyadores.css',   type: 'css' },
+      { path: 'css/summernote/summernote.voyadores.min.css', type: 'css' },
+      { path: 'css/summernote/summernote.css',             type: 'css' },
+      { path: 'css/summernote/summernote.min.css',         type: 'css' },
+      { path: 'js/summernote/summernote-bs5.min.js',       type: 'js'  },
+      { path: 'js/summernote/summernote.min.js',           type: 'js'  },
+    ],
+  },
+  {
+    group: 'Third-party', name: 'Selectize',
+    icon: 'vi-caret-down', color: '#067a91', bg: 'rgba(6,122,145,.08)',
+    desc: 'Enhanced select dropdown with search, tagging, and remote data.',
+    files: [
+      { path: 'css/selectize/selectize.voyadores.css',        type: 'css' },
+      { path: 'css/selectize/selectize.voyadores.min.css',    type: 'css' },
+      { path: 'css/selectize/selectize.bootstrap5.css',       type: 'css' },
+      { path: 'css/selectize/selectize.bootstrap5.min.css',   type: 'css' },
+      { path: 'css/selectize/selectize.default.css',          type: 'css' },
+      { path: 'css/selectize/selectize.default.min.css',      type: 'css' },
+      { path: 'js/selectize/selectize.min.js',                type: 'js'  },
+      { path: 'js/selectize/selectize.plugins.voyadores.js',  type: 'js'  },
+      { path: 'js/selectize/selectize.plugins.voyadores.min.js', type: 'js' },
+    ],
+  },
+  {
+    group: 'Third-party', name: 'Tom Select',
+    icon: 'vi-caret-down', color: '#067a91', bg: 'rgba(6,122,145,.08)',
+    desc: 'Modern enhanced select with search, tagging, and virtual scroll.',
+    files: [
+      { path: 'css/tom-select/tom-select.voyadores.css',      type: 'css' },
+      { path: 'css/tom-select/tom-select.voyadores.min.css',  type: 'css' },
+      { path: 'css/tom-select/tom-select.bootstrap5.min.css', type: 'css' },
+      { path: 'css/tom-select/tom-select.default.min.css',    type: 'css' },
+      { path: 'css/tom-select/tom-select.min.css',            type: 'css' },
+      { path: 'js/tom-select/tom-select.complete.min.js',     type: 'js'  },
+    ],
+  },
+  {
+    group: 'Third-party', name: 'Calendar',
+    icon: 'vi-calendar', color: '#545fe8', bg: 'rgba(84,95,232,.08)',
+    desc: 'Full calendar component. Language packs available under js/calendar/language/.',
+    files: [
+      { path: 'css/calendar/calendar.min.css', type: 'css' },
+      { path: 'js/calendar/calendar.min.js',   type: 'js'  },
+      { path: 'js/calendar/app.min.js',        type: 'js'  },
+    ],
+  },
+  {
+    group: 'Third-party', name: 'Datetime Picker',
+    icon: 'vi-calendar', color: '#545fe8', bg: 'rgba(84,95,232,.08)',
+    desc: 'jQuery date and time picker with Voyadores theme.',
+    files: [
+      { path: 'css/datetime-picker/datetimepicker.voyadores.css',     type: 'css' },
+      { path: 'css/datetime-picker/datetimepicker.voyadores.min.css', type: 'css' },
+      { path: 'css/datetime-picker/jquery.datetimepicker.css',        type: 'css' },
+      { path: 'css/datetime-picker/jquery.datetimepicker.min.css',    type: 'css' },
+      { path: 'js/jquery/jquery.datetimepicker.min.js',               type: 'js'  },
+    ],
+  },
+  {
+    group: 'Third-party', name: 'Dropzone',
+    icon: 'vi-file', color: '#e86427', bg: 'rgba(232,100,39,.08)',
+    desc: 'Drag-and-drop file upload with thumbnail preview.',
+    files: [
+      { path: 'css/dropzone/dropzone.min.css', type: 'css' },
+      { path: 'css/dropzone/basic.min.css',    type: 'css' },
+      { path: 'js/dropzone/dropzone.min.js',   type: 'js'  },
+    ],
+  },
+  {
+    group: 'Third-party', name: 'Driver (Onboarding)',
+    icon: 'vi-flag', color: '#6a6a6a', bg: 'rgba(106,106,106,.08)',
+    desc: 'Product tour, feature spotlight, and interactive walkthrough library.',
+    files: [
+      { path: 'css/driver/driver.css',     type: 'css' },
+      { path: 'css/driver/driver.min.css', type: 'css' },
+      { path: 'js/driver/driver.js',       type: 'js'  },
+      { path: 'js/driver/driver.min.js',   type: 'js'  },
+    ],
+  },
+  {
+    group: 'Third-party', name: 'Leaflet',
+    icon: 'vi-map', color: '#077d55', bg: 'rgba(7,125,85,.08)',
+    desc: 'Interactive maps library for custom markers and clusters.',
+    files: [
+      { path: 'css/leaflet/leaflet.css',        type: 'css' },
+      { path: 'css/leaflet/leaflet.min.css',    type: 'css' },
+      { path: 'js/leaflet/leaflet-1.9.4.min.js', type: 'js' },
+    ],
+  },
+  {
+    group: 'Third-party', name: 'Highcharts',
+    icon: 'vi-chart-bar', color: '#167b7d', bg: 'rgba(22,123,125,.08)',
+    desc: 'Interactive charting library. Modules and themes available under js/highcharts/.',
+    files: [
+      { path: 'js/highcharts/highcharts.min.js',                       type: 'js' },
+      { path: 'js/highcharts/highcharts-more.min.js',                  type: 'js' },
+      { path: 'js/highcharts/highcharts-3d.min.js',                    type: 'js' },
+      { path: 'js/highcharts/modules/data.min.js',                     type: 'js' },
+      { path: 'js/highcharts/modules/drilldown.min.js',                type: 'js' },
+      { path: 'js/highcharts/modules/exporting.min.js',                type: 'js' },
+      { path: 'js/highcharts/modules/offline-exporting.min.js',        type: 'js' },
+      { path: 'js/highcharts/modules/heatmap.min.js',                  type: 'js' },
+      { path: 'js/highcharts/modules/funnel.min.js',                   type: 'js' },
+      { path: 'js/highcharts/modules/treemap.min.js',                  type: 'js' },
+      { path: 'js/highcharts/modules/solid-gauge.min.js',              type: 'js' },
+      { path: 'js/highcharts/modules/no-data-to-display.min.js',       type: 'js' },
+      { path: 'js/highcharts/modules/boost.min.js',                    type: 'js' },
+      { path: 'js/highcharts/themes/erp-theme.min.js',                 type: 'js' },
+      { path: 'js/highcharts/themes/dark-unica.min.js',                type: 'js' },
+      { path: 'js/highcharts/themes/grid-light.min.js',                type: 'js' },
+      { path: 'js/highcharts/themes/dark-blue.min.js',                 type: 'js' },
+    ],
+  },
+  {
+    group: 'Third-party', name: 'File Upload',
+    icon: 'vi-file', color: '#cc1d92', bg: 'rgba(204,29,146,.08)',
+    desc: 'jQuery File Upload plugin and Voyadores uploader wrapper.',
+    files: [
+      { path: 'js/file-upload/fileupload-1-0.min.js',              type: 'js' },
+      { path: 'js/file-upload/uploader-1-0.min.js',                type: 'js' },
+      { path: 'js/file-upload/jquery.fileupload.min.js',           type: 'js' },
+      { path: 'js/file-upload/jquery.fileupload-ui.min.js',        type: 'js' },
+      { path: 'js/file-upload/jquery.fileupload-process.min.js',   type: 'js' },
+      { path: 'js/file-upload/jquery.fileupload-validate.min.js',  type: 'js' },
+      { path: 'js/file-upload/jquery.fileupload-image.min.js',     type: 'js' },
+      { path: 'js/file-upload/jquery.iframe-transport.min.js',     type: 'js' },
+    ],
+  },
+
+  // ─── Utilities ────────────────────────────────────────────────────────────
+  {
+    group: 'Utilities', name: 'Axios',
+    icon: 'vi-square', color: '#6a6a6a', bg: 'rgba(106,106,106,.08)',
+    desc: 'Promise-based HTTP client for the browser.',
+    files: [{ path: 'js/axios/axios.min.js', type: 'js' }],
+  },
+  {
+    group: 'Utilities', name: 'Moment.js',
+    icon: 'vi-calendar', color: '#6a6a6a', bg: 'rgba(106,106,106,.08)',
+    desc: 'Date and time parsing, manipulation, and formatting.',
+    files: [{ path: 'js/moment/moment.min.js', type: 'js' }],
+  },
+  {
+    group: 'Utilities', name: 'Numeral.js',
+    icon: 'vi-square', color: '#6a6a6a', bg: 'rgba(106,106,106,.08)',
+    desc: 'Number and currency formatting library.',
+    files: [{ path: 'js/numeral/numeral.min.js', type: 'js' }],
+  },
+  {
+    group: 'Utilities', name: 'Papa Parse',
+    icon: 'vi-table', color: '#077d55', bg: 'rgba(7,125,85,.08)',
+    desc: 'Fast, in-browser CSV parser.',
+    files: [{ path: 'js/papaparse/papaparse.min.js', type: 'js' }],
+  },
+  {
+    group: 'Utilities', name: 'PDF.js',
+    icon: 'vi-file', color: '#d91f11', bg: 'rgba(217,31,17,.08)',
+    desc: 'Mozilla PDF rendering engine for in-browser PDF display.',
+    files: [{ path: 'js/pdfjs/pdf.min.js', type: 'js' }],
+  },
+  {
+    group: 'Utilities', name: 'jQuery Mask',
+    icon: 'vi-form', color: '#6a6a6a', bg: 'rgba(106,106,106,.08)',
+    desc: 'Input masking plugin for phone, date, and custom formats.',
+    files: [{ path: 'js/mask/jquery.mask.min.js', type: 'js' }],
+  },
+  {
+    group: 'Utilities', name: 'Modernizr',
+    icon: 'vi-square', color: '#6a6a6a', bg: 'rgba(106,106,106,.08)',
+    desc: 'Browser feature detection library.',
+    files: [{ path: 'js/modernizr/modernizr-2.8.3.min.js', type: 'js' }],
+  },
+  {
+    group: 'Utilities', name: 'Generic PDF Generator',
+    icon: 'vi-file', color: '#d91f11', bg: 'rgba(217,31,17,.08)',
+    desc: 'PDF content helper for generating downloadable documents.',
+    files: [
+      { path: 'js/generic-pdf-generator/pdf-content-helper.js',     type: 'js' },
+      { path: 'js/generic-pdf-generator/pdf-content-helper.min.js', type: 'js' },
+    ],
+  },
+  {
+    group: 'Utilities', name: 'jQuery Utils',
+    icon: 'vi-square', color: '#186ade', bg: 'rgba(24,106,222,.08)',
+    desc: 'Voyadores jQuery utility helpers and form validation helpers.',
+    files: [
+      { path: 'js/jquery-utils/jquery-utils.min.js', type: 'js' },
+    ],
+  },
+  {
+    group: 'Utilities', name: 'iOS PWA Splash',
+    icon: 'vi-square', color: '#6a6a6a', bg: 'rgba(106,106,106,.08)',
+    desc: 'Programmatic iOS PWA splash screen generator.',
+    files: [{ path: 'js/ios-pwa-splash/ios-pwa-splash.min.js', type: 'js' }],
+  },
+];
+
+const groups = ['Foundation', 'Voyadores Components', 'Third-party', 'Utilities'];
+
+const totalFiles = categories.reduce((n, c) => n + c.files.length, 0);
+---
+
+<BaseLayout title="CDN Files" activeSection="resources">
+  <PageHeader
+    eyebrow="Get Started — Develop"
+    title="CDN Files"
+    description={`${totalFiles} files across ${categories.length} libraries, served from the Voyadores CDN. Copy any URL to reference it directly in your project.`}
+  />
+
+  <!-- CDN banner -->
+  <section class="sec">
+    <div class="cdn-banner">
+      <div class="cdn-banner-left">
+        <span class="cdn-label">Base URL</span>
+        <code class="cdn-url">https://cdn.voyadores.com/content</code>
+      </div>
+      <button class="copy-base-btn" data-copy="https://cdn.voyadores.com/content">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        Copy
+      </button>
+    </div>
+    <p class="cdn-note">All files follow the pattern: <code>https://cdn.voyadores.com/content/<em>path/to/file.ext</em></code></p>
+  </section>
+
+  <!-- Filter bar -->
+  <section class="sec">
+    <div class="filter-bar">
+      <div class="search-wrap">
+        <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="searchInput" placeholder="Filter by filename or path…" autocomplete="off" />
+      </div>
+      <div class="type-tabs">
+        <button class="tt tt--active" data-type="all">All</button>
+        <button class="tt tt--css" data-type="css">CSS</button>
+        <button class="tt tt--js" data-type="js">JS</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- File groups -->
+  {groups.map(group => {
+    const groupCats = categories.filter(c => c.group === group);
+    return (
+      <section class="sec group-sec" data-group={group}>
+        <h2 class="group-heading">{group}</h2>
+        <div class="cat-list">
+          {groupCats.map(cat => (
+            <div class="cat-block" data-cat={cat.name}>
+              <div class="cat-header">
+                <div class="cat-icon" style={`color:${cat.color};background:${cat.bg}`}>
+                  <i class:list={['vi-regular', cat.icon]}></i>
+                </div>
+                <div class="cat-meta">
+                  <h3>{cat.name}</h3>
+                  <p>{cat.desc}</p>
+                </div>
+                <span class="cat-count">{cat.files.length}</span>
+              </div>
+              <div class="file-list">
+                {cat.files.map(file => (
+                  <div class="file-row" data-type={file.type} data-path={file.path}>
+                    <span class:list={['type-badge', `type-${file.type}`]}>{file.type}</span>
+                    <span class="file-name">{file.path.split('/').pop()}</span>
+                    <span class="file-dir">/{file.path.split('/').slice(0, -1).join('/')}/</span>
+                    <button class="copy-url-btn" data-copy={`${CDN}/${file.path}`}>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                      Copy URL
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  })}
+
+  <p class="no-results" id="noResults" style="display:none">No files match your filter.</p>
+</BaseLayout>
+
+<script is:inline>
+  // ── Copy to clipboard ────────────────────────────────────────────────────
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-copy]');
+    if (!btn) return;
+    var url = btn.dataset.copy;
+    navigator.clipboard.writeText(url).then(function () {
+      var original = btn.innerHTML;
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(function () {
+        btn.innerHTML = original;
+        btn.classList.remove('copied');
+      }, 1500);
+    });
+  });
+
+  // ── Filter ───────────────────────────────────────────────────────────────
+  var searchInput = document.getElementById('searchInput');
+  var typeBtns = document.querySelectorAll('.tt');
+  var noResults = document.getElementById('noResults');
+  var activeType = 'all';
+
+  function applyFilter() {
+    var q = searchInput.value.toLowerCase().trim();
+
+    document.querySelectorAll('.file-row').forEach(function (row) {
+      var path = row.dataset.path.toLowerCase();
+      var type = row.dataset.type;
+      var typeMatch = activeType === 'all' || type === activeType;
+      var searchMatch = !q || path.includes(q);
+      row.style.display = (typeMatch && searchMatch) ? '' : 'none';
+    });
+
+    // Hide empty cat-blocks
+    var anyVisible = false;
+    document.querySelectorAll('.cat-block').forEach(function (block) {
+      var vis = Array.from(block.querySelectorAll('.file-row')).some(function (r) {
+        return r.style.display !== 'none';
+      });
+      block.style.display = vis ? '' : 'none';
+      if (vis) anyVisible = true;
+    });
+
+    // Hide empty group-secs
+    document.querySelectorAll('.group-sec').forEach(function (sec) {
+      var vis = Array.from(sec.querySelectorAll('.cat-block')).some(function (b) {
+        return b.style.display !== 'none';
+      });
+      sec.style.display = vis ? '' : 'none';
+    });
+
+    noResults.style.display = anyVisible ? 'none' : 'block';
+  }
+
+  typeBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      typeBtns.forEach(function (b) { b.classList.remove('tt--active'); });
+      btn.classList.add('tt--active');
+      activeType = btn.dataset.type;
+      applyFilter();
+    });
+  });
+
+  searchInput.addEventListener('input', applyFilter);
+</script>
+
+<style>
+  .sec { margin-bottom: 56px; }
+
+  /* CDN Banner */
+  .cdn-banner {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 16px 20px; border: 1px solid var(--g5); border-radius: 4px;
+    background: var(--g6);
+  }
+  .cdn-banner-left { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0; }
+  .cdn-label {
+    font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--g2); white-space: nowrap;
+  }
+  .cdn-url {
+    font-family: var(--mono); font-size: 13px; color: var(--black);
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .copy-base-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font); font-size: 12px; font-weight: 600;
+    padding: 7px 14px; border-radius: 4px; border: 1px solid var(--g4);
+    background: var(--white); color: var(--black); cursor: pointer;
+    white-space: nowrap; transition: border-color .12s, background .12s;
+  }
+  .copy-base-btn:hover { border-color: var(--g3); background: var(--g6); }
+  .copy-base-btn.copied { color: #077d55; border-color: #077d55; }
+
+  .cdn-note {
+    margin-top: 10px; font-size: 12px; color: var(--g2); line-height: 1.6;
+  }
+  .cdn-note code { font-family: var(--mono); font-size: 12px; color: var(--g1); }
+  .cdn-note em { font-style: normal; color: var(--brand); }
+
+  /* Filter bar */
+  .filter-bar {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .search-wrap {
+    position: relative; flex: 1; min-width: 200px;
+  }
+  .search-icon {
+    position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+    color: var(--g3); pointer-events: none;
+  }
+  #searchInput {
+    width: 100%; padding: 9px 12px 9px 36px;
+    font-family: var(--font); font-size: 13px; color: var(--black);
+    border: 1px solid var(--g5); border-radius: 4px;
+    background: var(--white); outline: none; transition: border-color .12s;
+  }
+  #searchInput:focus { border-color: var(--brand); }
+  #searchInput::placeholder { color: var(--g3); }
+
+  .type-tabs { display: flex; gap: 4px; }
+  .tt {
+    padding: 7px 16px; border-radius: 4px; border: 1px solid var(--g5);
+    font-family: var(--font); font-size: 12px; font-weight: 600;
+    color: var(--g2); background: var(--white); cursor: pointer;
+    transition: border-color .12s, color .12s, background .12s;
+  }
+  .tt:hover { border-color: var(--g3); color: var(--black); }
+  .tt--active { border-color: var(--black); color: var(--black); background: var(--g6); }
+  .tt--css.tt--active { border-color: #186ade; color: #186ade; background: rgba(24,106,222,.06); }
+  .tt--js.tt--active  { border-color: #f5c518; color: #70491c; background: rgba(245,197,24,.1); }
+
+  /* Group headings */
+  .group-heading {
+    font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--g2); margin-bottom: 16px; padding-bottom: 12px;
+    border-bottom: 1px solid var(--g5);
+  }
+
+  /* Category blocks */
+  .cat-list { display: flex; flex-direction: column; gap: 8px; }
+
+  .cat-block { border: 1px solid var(--g5); border-radius: 4px; overflow: hidden; }
+
+  .cat-header {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 16px; background: var(--white);
+  }
+  .cat-icon {
+    width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+  }
+  .cat-meta { flex: 1; min-width: 0; }
+  .cat-meta h3 { font-size: 13px; font-weight: 600; color: var(--black); margin-bottom: 2px; }
+  .cat-meta p  { font-size: 12px; color: var(--g2); line-height: 1.4; }
+  .cat-count {
+    font-size: 10px; font-weight: 700; font-family: var(--mono);
+    color: var(--g2); background: var(--g6); border: 1px solid var(--g5);
+    padding: 3px 8px; border-radius: 100px; white-space: nowrap;
+  }
+
+  /* File list */
+  .file-list { border-top: 1px solid var(--g5); }
+
+  .file-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 9px 16px; border-bottom: 1px solid var(--g6);
+    transition: background .08s;
+  }
+  .file-row:last-child { border-bottom: none; }
+  .file-row:hover { background: rgba(0,0,0,.015); }
+
+  .type-badge {
+    font-family: var(--mono); font-size: 9px; font-weight: 700;
+    letter-spacing: .06em; text-transform: uppercase;
+    padding: 2px 6px; border-radius: 3px; flex-shrink: 0;
+  }
+  .type-css { background: rgba(24,106,222,.1); color: #186ade; }
+  .type-js  { background: rgba(245,197,24,.15); color: #70491c; }
+
+  .file-name {
+    font-family: var(--mono); font-size: 12px; font-weight: 600;
+    color: var(--black); white-space: nowrap; flex-shrink: 0;
+  }
+  .file-dir {
+    font-family: var(--mono); font-size: 11px; color: var(--g3);
+    flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+
+  .copy-url-btn {
+    display: inline-flex; align-items: center; gap: 5px; flex-shrink: 0;
+    font-family: var(--font); font-size: 11px; font-weight: 600; color: var(--g2);
+    padding: 5px 10px; border-radius: 3px; border: 1px solid var(--g5);
+    background: var(--white); cursor: pointer;
+    transition: border-color .1s, color .1s, background .1s; white-space: nowrap;
+  }
+  .copy-url-btn:hover { border-color: var(--g3); color: var(--black); background: var(--g6); }
+  .copy-url-btn.copied { color: #077d55; border-color: #077d55; background: rgba(7,125,85,.05); }
+
+  /* No results */
+  .no-results {
+    text-align: center; font-size: 13px; color: var(--g2); padding: 48px 0;
+  }
+
+  @media (max-width: 640px) {
+    .file-dir { display: none; }
+    .cdn-banner { flex-direction: column; align-items: flex-start; }
+    .filter-bar { flex-direction: column; align-items: stretch; }
+    .type-tabs { width: 100%; }
+    .tt { flex: 1; text-align: center; }
+  }
+</style>

@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+---
+
+<BaseLayout title="Toasts" activeSection="components">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.voyadores.theme.min.css" />
+  </Fragment>
+
+  <PageHeader
+    eyebrow="Components / Bootstrap"
+    title="Toasts"
+    description="Lightweight notifications that auto-dismiss. Position with .toast-container and Bootstrap position utilities. Requires JS initialization."
+  />
+
+  <div class="demo">
+      <div class="demo-preview bs-scope" style="gap:8px">
+        <button type="button" class="btn btn-primary" id="triggerToast">Show Toast</button>
+        <button type="button" class="btn btn-success" id="triggerToastSuccess">Success Toast</button>
+        <button type="button" class="btn btn-danger" id="triggerToastDanger">Error Toast</button>
+      </div>
+      <!-- Toast container -->
+      <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index:9000">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <div class="rounded me-2" style="width:14px;height:14px;background:var(--vds-primary)"></div>
+            <strong class="me-auto">Voyadores</strong>
+            <small>just now</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">Hello! This is a live toast notification.</div>
+        </div>
+        <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="polite" aria-atomic="true">
+          <div class="d-flex">
+            <div class="toast-body">✓ Record saved successfully.</div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+        </div>
+        <div id="dangerToast" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="d-flex">
+            <div class="toast-body">✕ Failed to save. Please try again.</div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="html-toast">HTML</button>
+        <button class="cb-tab" data-tab="js-toast">JS</button>
+      </div>
+      <pre is:raw id="html-toast"><code>&lt;!-- Toast container (fixed position) --&gt;
+&lt;div class="toast-container position-fixed bottom-0 end-0 p-3"&gt;
+
+  &lt;!-- Default toast --&gt;
+  &lt;div id="myToast" class="toast" role="alert"
+    aria-live="assertive" aria-atomic="true"&gt;
+    &lt;div class="toast-header"&gt;
+      &lt;strong class="me-auto"&gt;Voyadores&lt;/strong&gt;
+      &lt;small&gt;just now&lt;/small&gt;
+      &lt;button type="button" class="btn-close"
+        data-bs-dismiss="toast" aria-label="Close"&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="toast-body"&gt;Hello, world!&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Colored (no header) --&gt;
+  &lt;div class="toast align-items-center text-bg-success border-0" role="alert"&gt;
+    &lt;div class="d-flex"&gt;
+      &lt;div class="toast-body"&gt;Saved successfully!&lt;/div&gt;
+      &lt;button type="button" class="btn-close btn-close-white me-2 m-auto"
+        data-bs-dismiss="toast" aria-label="Close"&gt;&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+      <pre is:raw id="js-toast" style="display:none"><code>// Show a toast
+const toastEl = document.getElementById('myToast');
+const toast = new bootstrap.Toast(toastEl, {
+  autohide: true,
+  delay: 3000, // ms before auto-dismiss
+});
+toast.show();
+
+// Show and hide manually
+toast.hide();
+toast.dispose();
+
+// Events
+toastEl.addEventListener('shown.bs.toast', () =&gt; console.log('Toast shown'));
+toastEl.addEventListener('hidden.bs.toast', () =&gt; console.log('Toast hidden'));</code></pre>
+    </div>
+
+  <!-- Bootstrap JS bundle (Popper included) -->
+  <script is:inline src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+
+  <script>
+      // Code tabs
+    document.querySelectorAll('.cb-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        const block  = btn.closest('.code-block');
+        block.querySelectorAll('.cb-tab').forEach(b => b.classList.remove('is-on'));
+        block.querySelectorAll('pre').forEach(p => p.style.display = 'none');
+        btn.classList.add('is-on');
+        const pre = document.getElementById(target);
+        if (pre) pre.style.display = '';
+      });
+    });
+      // Toast buttons
+    ['triggerToast','triggerToastSuccess','triggerToastDanger'].forEach((id, i) => {
+      const ids = ['liveToast','successToast','dangerToast'];
+      const btn = document.getElementById(id);
+      if (btn) {
+        btn.addEventListener('click', () => {
+          const t = document.getElementById(ids[i]);
+          if (t) new bootstrap.Toast(t, { delay: 4000 }).show();
+        });
+      }
+    });
+
+  </script>
+</BaseLayout>
+
+<style>
+  /* Sections */
+  .csec { margin-bottom: 72px; scroll-margin-top: 24px; }
+  .csec-desc {
+    font-size: 13px; font-weight: 400; color: var(--g2);
+    line-height: 1.7; margin-bottom: 20px;
+  }
+  .csec-desc code {
+    font-family: var(--mono); font-size: .875em;
+    background: var(--g5); padding: 1px 5px; border-radius: 3px;
+    color: var(--g1);
+  }
+
+  /* Demo box */
+  .demo { margin-bottom: 16px; }
+  .demo-preview {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    padding: 28px; border: 1px solid var(--g5);
+    border-radius: 4px; background: var(--white);
+    align-items: center;
+  }
+
+  /* Code block */
+  .code-block {
+    background: #111; border-radius: 4px; overflow: hidden;
+  }
+  .cb-tabs {
+    display: flex; gap: 0;
+    border-bottom: 1px solid #2a2a2a; padding: 0 16px;
+  }
+  .cb-tab {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: .04em; text-transform: uppercase;
+    color: #666; background: none; border: none;
+    padding: 10px 14px; border-bottom: 2px solid transparent;
+    transition: color .12s, border-color .12s;
+  }
+  .cb-tab:hover  { color: #ccc; }
+  .cb-tab.is-on  { color: var(--brand); border-bottom-color: var(--brand); }
+  .code-block pre { margin: 0; padding: 20px 24px; overflow-x: auto; }
+  .code-block code {
+    font-family: var(--mono); font-size: 12.5px;
+    color: #e8e8e8; line-height: 1.85; white-space: pre;
+  }
+
+  /* Override Bootstrap base styles to protect site layout */
+  .bs-scope * { cursor: auto !important; }
+  .bs-scope { font-family: var(--vds-font-sans-serif, "Lexend", sans-serif); }
+</style>

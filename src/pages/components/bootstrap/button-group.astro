@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+---
+
+<BaseLayout title="Button Group" activeSection="components">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.voyadores.theme.min.css" />
+  </Fragment>
+
+  <PageHeader
+    eyebrow="Components / Bootstrap"
+    title="Button Group"
+    description="Group buttons with .btn-group. Use .btn-group-vertical for vertical stacking or .btn-toolbar for compound toolbars."
+  />
+
+  <div class="demo">
+      <div class="demo-preview bs-scope" style="flex-direction:column;align-items:flex-start;gap:12px">
+        <div class="btn-group" role="group" aria-label="Basic group">
+          <button type="button" class="btn btn-primary">Left</button>
+          <button type="button" class="btn btn-primary">Middle</button>
+          <button type="button" class="btn btn-primary">Right</button>
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-outline-secondary">One</button>
+          <button type="button" class="btn btn-outline-secondary">Two</button>
+          <button type="button" class="btn btn-outline-secondary">Three</button>
+        </div>
+        <div class="btn-group btn-group-lg" role="group">
+          <button type="button" class="btn btn-secondary">Large</button>
+          <button type="button" class="btn btn-secondary">Group</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="html-btngrp">HTML</button>
+      </div>
+      <pre is:raw id="html-btngrp"><code>&lt;div class="btn-group" role="group" aria-label="Basic group"&gt;
+  &lt;button type="button" class="btn btn-primary"&gt;Left&lt;/button&gt;
+  &lt;button type="button" class="btn btn-primary"&gt;Middle&lt;/button&gt;
+  &lt;button type="button" class="btn btn-primary"&gt;Right&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- Outline group --&gt;
+&lt;div class="btn-group" role="group"&gt;
+  &lt;button type="button" class="btn btn-outline-secondary"&gt;One&lt;/button&gt;
+  &lt;button type="button" class="btn btn-outline-secondary"&gt;Two&lt;/button&gt;
+  &lt;button type="button" class="btn btn-outline-secondary"&gt;Three&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- Large group --&gt;
+&lt;div class="btn-group btn-group-lg" role="group"&gt;
+  &lt;button type="button" class="btn btn-secondary"&gt;Large&lt;/button&gt;
+  &lt;button type="button" class="btn btn-secondary"&gt;Group&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+  <!-- Bootstrap JS bundle (Popper included) -->
+  <script is:inline src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+
+  <script>
+      // Code tabs
+    document.querySelectorAll('.cb-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        const block  = btn.closest('.code-block');
+        block.querySelectorAll('.cb-tab').forEach(b => b.classList.remove('is-on'));
+        block.querySelectorAll('pre').forEach(p => p.style.display = 'none');
+        btn.classList.add('is-on');
+        const pre = document.getElementById(target);
+        if (pre) pre.style.display = '';
+      });
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  /* Sections */
+  .csec { margin-bottom: 72px; scroll-margin-top: 24px; }
+  .csec-desc {
+    font-size: 13px; font-weight: 400; color: var(--g2);
+    line-height: 1.7; margin-bottom: 20px;
+  }
+  .csec-desc code {
+    font-family: var(--mono); font-size: .875em;
+    background: var(--g5); padding: 1px 5px; border-radius: 3px;
+    color: var(--g1);
+  }
+
+  /* Demo box */
+  .demo { margin-bottom: 16px; }
+  .demo-preview {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    padding: 28px; border: 1px solid var(--g5);
+    border-radius: 4px; background: var(--white);
+    align-items: center;
+  }
+
+  /* Code block */
+  .code-block {
+    background: #111; border-radius: 4px; overflow: hidden;
+  }
+  .cb-tabs {
+    display: flex; gap: 0;
+    border-bottom: 1px solid #2a2a2a; padding: 0 16px;
+  }
+  .cb-tab {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: .04em; text-transform: uppercase;
+    color: #666; background: none; border: none;
+    padding: 10px 14px; border-bottom: 2px solid transparent;
+    transition: color .12s, border-color .12s;
+  }
+  .cb-tab:hover  { color: #ccc; }
+  .cb-tab.is-on  { color: var(--brand); border-bottom-color: var(--brand); }
+  .code-block pre { margin: 0; padding: 20px 24px; overflow-x: auto; }
+  .code-block code {
+    font-family: var(--mono); font-size: 12.5px;
+    color: #e8e8e8; line-height: 1.85; white-space: pre;
+  }
+
+  /* Override Bootstrap base styles to protect site layout */
+  .bs-scope * { cursor: auto !important; }
+  .bs-scope { font-family: var(--vds-font-sans-serif, "Lexend", sans-serif); }
+</style>

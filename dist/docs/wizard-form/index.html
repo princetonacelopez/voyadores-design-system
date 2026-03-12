@@ -1,0 +1,625 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Voyadores — Visual Identity Guidelines"><title>Wizard Form — Voyadores</title><link rel="canonical" href="https://design.voyadores.com/docs/wizard-form/"><link rel="icon" type="image/svg+xml" href="/icons/favicon/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon/favicon-32x32.png"><link rel="apple-touch-icon" href="/icons/favicon/apple-touch-icon.png"><!-- Urbanist + Chivo Mono --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"><!-- Voyadores Icon Font --><link rel="stylesheet" href="/fonts/Voyadores-Icon/voyadores-icon.css"><!-- Anti-flash theme init (must be inline, before render) --><script>
+      (function () {
+        var t = localStorage.getItem('voy-theme') || 'system';
+        var dark = t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+        document.documentElement.setAttribute('data-color-scheme', t);
+      })();
+    </script><!-- Page-specific head content --><link rel="stylesheet" href="/_astro/_slug_@_@astro.Dmf4ngD0.css">
+<link rel="stylesheet" href="/_astro/BaseLayout.CRrhjZsn.css"></head> <body> <!-- Modern inversion cursor --> <div class="c-cursor" id="c-cursor"></div> <div class="app-shell"> <!-- Topbar (mobile) — logo removed; sidebar has the logo at full height --> <header class="topbar" id="topbar"> <button class="ham" id="menu-toggle" aria-label="Open menu"> <span></span><span></span><span></span> </button> <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle theme" title="Toggle theme"> <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg> <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> <svg class="icon-system" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg> </button> </header> <div class="overlay" id="sidebar-overlay"></div> <aside id="sidebar" class="sidebar" data-astro-cid-ssfzsv2f> <!-- Logo --> <a href="/" class="s-logo" data-astro-cid-ssfzsv2f> <img class="logo-light" src="/images/voyadores-logo-combination-horizontal-light.svg" alt="Voyadores" width="128" data-astro-cid-ssfzsv2f> <img class="logo-dark" src="/images/voyadores-logo-combination-horizontal-dark.svg" alt="Voyadores" width="128" data-astro-cid-ssfzsv2f> </a> <!-- Nav --> <nav class="s-nav" aria-label="Main" data-astro-cid-ssfzsv2f> <!-- Design System flat links (top-level, no collapse) --> <div class="s-top-section" data-astro-cid-ssfzsv2f> <a href="/" class="s-link" data-astro-cid-ssfzsv2f> Home </a><a href="/introduction" class="s-link" data-astro-cid-ssfzsv2f> Introduction </a><a href="/strategy" class="s-link" data-astro-cid-ssfzsv2f> Strategy </a> </div> <!-- Get Started super-group --> <div class="s-group" id="grp-get-started" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-get-started" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Get Started</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <!-- Design sub-group --> <div class="s-subgroup" id="grp-gs-design" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-gs-design" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Design</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/figma-libraries" class="s-sublink" data-astro-cid-ssfzsv2f> Figma Libraries </a><a href="/get-started/design/ux-design-process" class="s-sublink" data-astro-cid-ssfzsv2f> UX Design Process &amp; Guidelines </a> </div> </div> <!-- Develop sub-group --> <div class="s-subgroup" id="grp-gs-develop" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-gs-develop" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Develop</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/get-started/develop/developer-setup" class="s-sublink" data-astro-cid-ssfzsv2f> Developer Setup </a><a href="/get-started/develop/build-categorization" class="s-sublink" data-astro-cid-ssfzsv2f> Build Categorization Process </a><a href="/get-started/develop/code-branching" class="s-sublink" data-astro-cid-ssfzsv2f> Code Branching Guidelines </a><a href="/get-started/develop/code-management" class="s-sublink" data-astro-cid-ssfzsv2f> Code Management Guidelines </a><a href="/get-started/develop/versioning" class="s-sublink" data-astro-cid-ssfzsv2f> Versioning </a> </div> </div> <!-- Internal sub-group --> <div class="s-subgroup" id="grp-gs-internal" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-gs-internal" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Internal</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/get-started/internal/changelog-guidelines" class="s-sublink" data-astro-cid-ssfzsv2f> Changelog Guidelines </a><a href="/get-started/internal/meeting-invitation-guidelines" class="s-sublink" data-astro-cid-ssfzsv2f> Meeting Guidelines </a> </div> </div> </div> </div> <!-- Grouped top-level nav --> <div class="s-group" id="grp-brand" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-brand" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Brand</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <a href="/color" class="s-link" data-astro-cid-ssfzsv2f> Color </a><a href="/images" class="s-link" data-astro-cid-ssfzsv2f> Images </a><a href="/logo" class="s-link" data-astro-cid-ssfzsv2f> Logo </a><a href="/typography" class="s-link" data-astro-cid-ssfzsv2f> Typography </a> </div> </div><div class="s-group" id="grp-content" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-content" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Content</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <a href="/language-and-grammar" class="s-link" data-astro-cid-ssfzsv2f> Language and Grammar </a><a href="/iconography" class="s-link" data-astro-cid-ssfzsv2f> Iconography </a><a href="/illustrations" class="s-link" data-astro-cid-ssfzsv2f> Illustrations </a> </div> </div> <!-- Components super-group --> <div class="s-group s-group--components" id="grp-components" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-components" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Components</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <!-- Bootstrap sub-group --> <div class="s-subgroup" id="grp-bootstrap" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-bootstrap" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Bootstrap</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/components/bootstrap/accordion" class="s-sublink" data-astro-cid-ssfzsv2f> Accordion </a><a href="/components/bootstrap/alerts" class="s-sublink" data-astro-cid-ssfzsv2f> Alerts </a><a href="/components/bootstrap/badges" class="s-sublink" data-astro-cid-ssfzsv2f> Badges </a><a href="/components/bootstrap/breadcrumb" class="s-sublink" data-astro-cid-ssfzsv2f> Breadcrumb </a><a href="/components/bootstrap/button-group" class="s-sublink" data-astro-cid-ssfzsv2f> Button Group </a><a href="/components/bootstrap/buttons" class="s-sublink" data-astro-cid-ssfzsv2f> Buttons </a><a href="/components/bootstrap/cards" class="s-sublink" data-astro-cid-ssfzsv2f> Cards </a><a href="/components/bootstrap/carousel" class="s-sublink" data-astro-cid-ssfzsv2f> Carousel </a><a href="/components/bootstrap/dropdowns" class="s-sublink" data-astro-cid-ssfzsv2f> Dropdowns </a><a href="/components/bootstrap/forms" class="s-sublink" data-astro-cid-ssfzsv2f> Forms </a><a href="/components/bootstrap/input-group" class="s-sublink" data-astro-cid-ssfzsv2f> Input Group </a><a href="/components/bootstrap/list-group" class="s-sublink" data-astro-cid-ssfzsv2f> List Group </a><a href="/components/bootstrap/modal" class="s-sublink" data-astro-cid-ssfzsv2f> Modal </a><a href="/components/bootstrap/navbar" class="s-sublink" data-astro-cid-ssfzsv2f> Navbar </a><a href="/components/bootstrap/navs" class="s-sublink" data-astro-cid-ssfzsv2f> Navs &amp; Tabs </a><a href="/components/bootstrap/offcanvas" class="s-sublink" data-astro-cid-ssfzsv2f> Offcanvas </a><a href="/components/bootstrap/pagination" class="s-sublink" data-astro-cid-ssfzsv2f> Pagination </a><a href="/components/bootstrap/placeholders" class="s-sublink" data-astro-cid-ssfzsv2f> Placeholders </a><a href="/components/bootstrap/popovers" class="s-sublink" data-astro-cid-ssfzsv2f> Popovers </a><a href="/components/bootstrap/progress" class="s-sublink" data-astro-cid-ssfzsv2f> Progress </a><a href="/components/bootstrap/spinners" class="s-sublink" data-astro-cid-ssfzsv2f> Spinners </a><a href="/components/bootstrap/tables" class="s-sublink" data-astro-cid-ssfzsv2f> Tables </a><a href="/components/bootstrap/toasts" class="s-sublink" data-astro-cid-ssfzsv2f> Toasts </a><a href="/components/bootstrap/tooltips" class="s-sublink" data-astro-cid-ssfzsv2f> Tooltips </a><a href="/components/bootstrap/validation" class="s-sublink" data-astro-cid-ssfzsv2f> Validation </a> </div> </div> <!-- Others sub-group --> <div class="s-subgroup" id="grp-others" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-others" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Others</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/components/dropzone" class="s-sublink" data-astro-cid-ssfzsv2f> Dropzone </a><a href="/components/file-upload" class="s-sublink" data-astro-cid-ssfzsv2f> File Upload </a><a href="/components/file-viewer" class="s-sublink" data-astro-cid-ssfzsv2f> File Viewer </a><a href="/components/form-validation" class="s-sublink" data-astro-cid-ssfzsv2f> Form Validation </a><a href="/components/highcharts" class="s-sublink" data-astro-cid-ssfzsv2f> Highcharts </a><a href="/components/mask" class="s-sublink" data-astro-cid-ssfzsv2f> Mask </a><a href="/components/moment" class="s-sublink" data-astro-cid-ssfzsv2f> Moment </a><a href="/components/noty" class="s-sublink" data-astro-cid-ssfzsv2f> Noty </a><a href="/components/numeral" class="s-sublink" data-astro-cid-ssfzsv2f> Numeral </a><a href="/components/repeater" class="s-sublink" data-astro-cid-ssfzsv2f> Repeater </a><a href="/components/selectize" class="s-sublink" data-astro-cid-ssfzsv2f> Selectize </a><a href="/components/summernote" class="s-sublink" data-astro-cid-ssfzsv2f> Summernote </a><a href="/components/table" class="s-sublink" data-astro-cid-ssfzsv2f> Table 2.2.1 </a><a href="/components/template-editor" class="s-sublink" data-astro-cid-ssfzsv2f> Template Editor </a><a href="/components/treeview" class="s-sublink" data-astro-cid-ssfzsv2f> Treeview </a><a href="/components/wizard-form" class="s-sublink" data-astro-cid-ssfzsv2f> Wizard Form </a> </div> </div> </div> </div> <!-- Documentation super-group --> <div class="s-group s-group--docs is-open" id="grp-docs" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-docs" aria-expanded="true" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Documentation</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <!-- App Shell sub-group --> <div class="s-subgroup" id="grp-docs-shell" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-shell" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>App Shell</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/detection" class="s-sublink" data-astro-cid-ssfzsv2f> Browser &amp; TZ Detection </a><a href="/docs/menu-web" class="s-sublink" data-astro-cid-ssfzsv2f> Menu Web </a><a href="/docs/theme-picker" class="s-sublink" data-astro-cid-ssfzsv2f> Theme Picker </a> </div> </div> <!-- Modules sub-group --> <div class="s-subgroup" id="grp-docs-modules" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-modules" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Modules</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/default-url" class="s-sublink" data-astro-cid-ssfzsv2f> Default URL </a><a href="/docs/feature-onboarding" class="s-sublink" data-astro-cid-ssfzsv2f> Feature Onboarding </a><a href="/docs/notifications" class="s-sublink" data-astro-cid-ssfzsv2f> Notifications </a><a href="/docs/quicklinks" class="s-sublink" data-astro-cid-ssfzsv2f> Quick Links </a><a href="/docs/user-onboarding" class="s-sublink" data-astro-cid-ssfzsv2f> User Onboarding </a><a href="/docs/visual-indicator" class="s-sublink" data-astro-cid-ssfzsv2f> Visual Indicator </a> </div> </div> <!-- Utilities sub-group --> <div class="s-subgroup" id="grp-docs-utilities" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-utilities" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Utilities</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/browser-storage" class="s-sublink" data-astro-cid-ssfzsv2f> Browser Storage </a><a href="/docs/datetime-picker" class="s-sublink" data-astro-cid-ssfzsv2f> DateTime Picker </a><a href="/docs/request-and-uri" class="s-sublink" data-astro-cid-ssfzsv2f> Request &amp; URI </a><a href="/docs/view-model" class="s-sublink" data-astro-cid-ssfzsv2f> ViewModelBase </a> </div> </div> <!-- Plugins sub-group --> <div class="s-subgroup is-open" id="grp-docs-plugins" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-plugins" aria-expanded="true" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Plugins</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/action-button-manager" class="s-sublink" data-astro-cid-ssfzsv2f> Action Button Manager </a><a href="/docs/currency-picker" class="s-sublink" data-astro-cid-ssfzsv2f> Currency Picker </a><a href="/docs/file-template-editor" class="s-sublink" data-astro-cid-ssfzsv2f> File Template Editor </a><a href="/docs/repeater" class="s-sublink" data-astro-cid-ssfzsv2f> Repeater </a><a href="/docs/table-plugin" class="s-sublink" data-astro-cid-ssfzsv2f> Table Plugin </a><a href="/docs/template-editor" class="s-sublink" data-astro-cid-ssfzsv2f> Template Editor </a><a href="/docs/treeview" class="s-sublink" data-astro-cid-ssfzsv2f> Treeview </a><a href="/docs/wizard-form" class="s-sublink is-on" data-astro-cid-ssfzsv2f> Wizard Form </a> </div> </div> </div> </div> </nav> <!-- Sidebar footer: theme toggle --> <div class="s-footer" data-astro-cid-ssfzsv2f> <button class="theme-toggle s-theme-btn" id="theme-toggle-sidebar" aria-label="Toggle theme" title="Toggle theme" data-astro-cid-ssfzsv2f> <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f><circle cx="12" cy="12" r="5" data-astro-cid-ssfzsv2f></circle><line x1="12" y1="1" x2="12" y2="3" data-astro-cid-ssfzsv2f></line><line x1="12" y1="21" x2="12" y2="23" data-astro-cid-ssfzsv2f></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" data-astro-cid-ssfzsv2f></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" data-astro-cid-ssfzsv2f></line><line x1="1" y1="12" x2="3" y2="12" data-astro-cid-ssfzsv2f></line><line x1="21" y1="12" x2="23" y2="12" data-astro-cid-ssfzsv2f></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" data-astro-cid-ssfzsv2f></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" data-astro-cid-ssfzsv2f></line></svg> <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" data-astro-cid-ssfzsv2f></path></svg> <svg class="icon-system" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f><rect x="2" y="3" width="20" height="14" rx="2" data-astro-cid-ssfzsv2f></rect><line x1="8" y1="21" x2="16" y2="21" data-astro-cid-ssfzsv2f></line><line x1="12" y1="17" x2="12" y2="21" data-astro-cid-ssfzsv2f></line></svg> <span class="s-theme-label" data-astro-cid-ssfzsv2f> <span class="label-light" data-astro-cid-ssfzsv2f>Light mode</span> <span class="label-dark" data-astro-cid-ssfzsv2f>Dark mode</span> <span class="label-system" data-astro-cid-ssfzsv2f>System</span> </span> </button> </div> </aside> <script>
+(function () {
+  // Generic group toggle for all .s-group and .s-subgroup headers
+  document.querySelectorAll('[data-group]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id   = btn.getAttribute('data-group');
+      var el   = document.getElementById(id);
+      if (!el) return;
+      var open = el.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+})();
+</script> <main class="main" id="main">  <div class="doc-page" data-astro-cid-rnp3zwhq> <!-- Page header --> <header class="doc-header" data-astro-cid-rnp3zwhq> <p class="doc-eyebrow" data-astro-cid-rnp3zwhq>Documentation</p> <h1 data-astro-cid-rnp3zwhq>Wizard Form</h1> <dl class="doc-meta" data-astro-cid-rnp3zwhq>  <dt data-astro-cid-rnp3zwhq>Version</dt> <dd data-astro-cid-rnp3zwhq>1.0.0</dd>  <dt data-astro-cid-rnp3zwhq>Files</dt> <dd data-astro-cid-rnp3zwhq>`js/wizard-form/wizard-form.min.js`</dd>  <dt data-astro-cid-rnp3zwhq>Author</dt> <dd data-astro-cid-rnp3zwhq>Network Economic Services Ventures Philippines, Inc.</dd>  <dt data-astro-cid-rnp3zwhq>Last Updated</dt> <dd data-astro-cid-rnp3zwhq>2026-03-10</dd>  </dl> </header> <!-- Markdown body --> <div class="doc-body" data-astro-cid-rnp3zwhq> <h2 id="overview">Overview</h2>
+<p><code>WizardForm</code> is a lightweight ES6 class that transforms a multi-step modal form into a guided, sequential wizard experience. It manages step navigation, progress tracking, and lifecycle callbacks without any external framework dependency beyond the Voyadores Bootstrap theme.</p>
+<p>Each step is a distinct panel inside a shared modal. The wizard controls which panel is visible, renders a progress indicator, drives a progress bar, and exposes step-level callbacks so the caller can validate data, load content, or redirect flow before advancing.</p>
+<hr>
+<h2 id="features">Features</h2>
+<ul>
+<li>Multi-step form navigation (next / previous)</li>
+<li>Animated progress bar tracking completion percentage</li>
+<li>Step indicator list with active and completed states (Voyadores icons)</li>
+<li>Per-step lifecycle callbacks: <code>onEnter</code>, <code>onNext</code>, <code>onFinish</code>, <code>skipWhen</code></li>
+<li>Optional step skipping via <code>skipWhen</code> predicate</li>
+<li>Configurable finish button text and submit behavior</li>
+<li>Form reset integration (listens for native <code>reset</code> event)</li>
+<li>Optional back-navigation disable per step or globally</li>
+<li>Full API for runtime control: <code>reset</code>, <code>navigate</code>, setters</li>
+</ul>
+<hr>
+<h2 id="dependencies">Dependencies</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Dependency</th><th>Purpose</th></tr></thead><tbody><tr><td>Bootstrap 5 Modal</td><td>Container structure (<code>.modal-content</code>)</td></tr><tr><td>Voyadores Icon Font</td><td>Step indicator icons (<code>vi-solid vi-check-circle</code>, <code>vi-solid vi-contrast</code>)</td></tr></tbody></table>
+<p>No jQuery is required. WizardForm uses the native DOM API throughout.</p>
+<hr>
+<h2 id="cdn-setup">CDN Setup</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#6A737D">&#x3C;!-- Required: Voyadores Bootstrap theme (icons + base styles) --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">link</span><span style="color:#B392F0"> rel</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"stylesheet"</span><span style="color:#B392F0"> href</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"https://cdn.voyadores.com/content/css/bootstrap/bootstrap.voyadores.theme.min.css"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">link</span><span style="color:#B392F0"> rel</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"stylesheet"</span><span style="color:#B392F0"> href</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"https://cdn.voyadores.com/content/fonts/Voyadores-Icon/voyadores-icon.min.css"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">&#x3C;!-- Required: Bootstrap JS --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">script</span><span style="color:#B392F0"> src</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"https://cdn.voyadores.com/content/js/bootstrap/bootstrap.bundle.min.js"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">&#x3C;!-- WizardForm (ES Module) --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">script</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"module"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#F97583">  import</span><span style="color:#E1E4E8"> WizardForm </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'https://cdn.voyadores.com/content/js/wizard-form/wizard-form.min.js'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#6A737D">  // usage here</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span></code></pre>
+<blockquote>
+<p><strong>Important:</strong> The file uses <code>export default</code>, so it must be imported with <code>&#x3C;script type="module"></code> or a module bundler. It cannot be loaded as a classic script.</p>
+</blockquote>
+<hr>
+<h2 id="required-html-structure">Required HTML Structure</h2>
+<p>WizardForm expects a specific DOM structure inside a Bootstrap modal. The wizard container must be inside <code>.modal-content</code>, and navigation buttons must be siblings inside <code>.wizard-navigation</code> at the modal content level.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"modal fade"</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"myWizardModal"</span><span style="color:#B392F0"> tabindex</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"-1"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"modal-dialog modal-lg"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"modal-content"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">      &#x3C;!-- Modal header (optional) --></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"modal-header"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">h5</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"modal-title"</span><span style="color:#E1E4E8">>Create New Record&#x3C;/</span><span style="color:#85E89D">h5</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">      &#x3C;!-- Wizard navigation buttons (MUST be inside .modal-content) --></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"modal-footer"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"wizard-navigation"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"button"</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"prev-button btn btn-outline-secondary"</span><span style="color:#E1E4E8">>Back&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"button"</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"next-button btn btn-primary"</span><span style="color:#E1E4E8">>Next&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">      &#x3C;!-- Wizard container --></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"modal-body"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"myWizard"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">          &#x3C;!-- Progress bar --></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">progress</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"progress-bar"</span><span style="color:#B392F0"> value</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"0"</span><span style="color:#B392F0"> max</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"100"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">progress</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">          &#x3C;!-- Step indicator list --></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">ol</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"progress-indicator"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">ol</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">          &#x3C;!-- Step content panels --></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"wizard-content"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"wizard-step"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#6A737D">              &#x3C;!-- Step 1 content --></span></span>
+<span class="line"><span style="color:#E1E4E8">              &#x3C;</span><span style="color:#85E89D">h4</span><span style="color:#E1E4E8">>Basic Information&#x3C;/</span><span style="color:#85E89D">h4</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">              &#x3C;</span><span style="color:#85E89D">input</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"text"</span><span style="color:#B392F0"> name</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"name"</span><span style="color:#B392F0"> placeholder</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Full Name"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"wizard-step"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#6A737D">              &#x3C;!-- Step 2 content --></span></span>
+<span class="line"><span style="color:#E1E4E8">              &#x3C;</span><span style="color:#85E89D">h4</span><span style="color:#E1E4E8">>Contact Details&#x3C;/</span><span style="color:#85E89D">h4</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">              &#x3C;</span><span style="color:#85E89D">input</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"email"</span><span style="color:#B392F0"> name</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"email"</span><span style="color:#B392F0"> placeholder</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Email Address"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"wizard-step"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#6A737D">              &#x3C;!-- Step 3 content --></span></span>
+<span class="line"><span style="color:#E1E4E8">              &#x3C;</span><span style="color:#85E89D">h4</span><span style="color:#E1E4E8">>Review &#x26; Submit&#x3C;/</span><span style="color:#85E89D">h4</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">              &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Please review your information before submitting.&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span><span style="color:#6A737D">&#x3C;!-- /#myWizard --></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span><span style="color:#6A737D">&#x3C;!-- /.modal-body --></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span><span style="color:#6A737D">&#x3C;!-- /.modal-content --></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h3 id="required-elements">Required Elements</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Selector</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td><code>.progress-bar</code></td><td>Yes</td><td><code>&#x3C;progress></code> element — value updated automatically</td></tr><tr><td><code>.progress-indicator</code></td><td>Yes</td><td><code>&#x3C;ol></code> or <code>&#x3C;ul></code> — step titles rendered here</td></tr><tr><td><code>.wizard-content</code></td><td>Yes</td><td>Wrapper containing all <code>.wizard-step</code> panels</td></tr><tr><td><code>.wizard-step</code> (×N)</td><td>Yes</td><td>One per step — shown/hidden via <code>.active</code> class</td></tr><tr><td><code>.modal-content .wizard-navigation > .prev-button</code></td><td>Yes</td><td>Back button — searched via <code>.closest('.modal-content')</code></td></tr><tr><td><code>.modal-content .wizard-navigation > .next-button</code></td><td>Yes</td><td>Next/Finish button</td></tr></tbody></table>
+<blockquote>
+<p><strong>Note:</strong> <code>.prev-button</code> and <code>.next-button</code> are queried by traversing up to <code>.modal-content</code> from the wizard container. They do not need to be inside <code>#myWizard</code> — they just need to be inside the same <code>.modal-content</code>.</p>
+</blockquote>
+<hr>
+<h2 id="constructor">Constructor</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F97583">new</span><span style="color:#B392F0"> WizardForm</span><span style="color:#E1E4E8">(containerId, config)</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>containerId</code></td><td><code>string | Element</code></td><td>CSS selector string (e.g. <code>'#myWizard'</code>) or direct DOM element</td></tr><tr><td><code>config</code></td><td><code>object</code></td><td>Configuration object (see below)</td></tr></tbody></table>
+<hr>
+<h2 id="configuration-object">Configuration Object</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> config</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  steps: [</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">],              </span><span style="color:#6A737D">// Required — array of step definition objects</span></span>
+<span class="line"><span style="color:#E1E4E8">  allowPrevious: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,       </span><span style="color:#6A737D">// Optional — enable/disable back button (default: true)</span></span>
+<span class="line"><span style="color:#E1E4E8">  finishButtonText: </span><span style="color:#9ECBFF">'Submit'</span><span style="color:#E1E4E8">,</span><span style="color:#6A737D">// Optional — label for Next button on the last step (default: 'Finish')</span></span>
+<span class="line"><span style="color:#E1E4E8">  finishButtonSubmit: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// Optional — if true, finish button acts as form submit (default: false)</span></span>
+<span class="line"><span style="color:#E1E4E8">  formId: </span><span style="color:#9ECBFF">'myForm'</span><span style="color:#E1E4E8">,         </span><span style="color:#6A737D">// Optional — native &#x3C;form> ID to bind reset event</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<h3 id="config-properties">Config Properties</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Property</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>steps</code></td><td><code>Step[]</code></td><td>—</td><td><strong>Required.</strong> Array of step definition objects. Length determines total step count.</td></tr><tr><td><code>allowPrevious</code></td><td><code>boolean</code></td><td><code>true</code></td><td>When <code>false</code>, the Back button is always disabled regardless of current step.</td></tr><tr><td><code>finishButtonText</code></td><td><code>string</code></td><td><code>'Finish'</code></td><td>Label shown on the Next button when the user is on the last step.</td></tr><tr><td><code>finishButtonSubmit</code></td><td><code>boolean</code></td><td><code>false</code></td><td>When <code>true</code>, the finish action is treated as a form submission trigger.</td></tr><tr><td><code>formId</code></td><td><code>string</code></td><td><code>''</code></td><td>ID of a <code>&#x3C;form></code> element. When provided, WizardForm listens for the form’s <code>reset</code> event and calls <code>wizard.reset()</code> automatically.</td></tr></tbody></table>
+<hr>
+<h2 id="step-definition-object">Step Definition Object</h2>
+<p>Each entry in the <code>steps</code> array configures one step. All properties are optional except <code>title</code>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#B392F0">  title</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'Basic Information'</span><span style="color:#E1E4E8">,    </span><span style="color:#6A737D">// Required — shown in the step indicator list</span></span>
+<span class="line"><span style="color:#B392F0">  skipWhen</span><span style="color:#E1E4E8">: () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> boolean,       </span><span style="color:#6A737D">// Optional — skip this step if true</span></span>
+<span class="line"><span style="color:#B392F0">  onEnter</span><span style="color:#E1E4E8">: () </span><span style="color:#F97583">=></span><span style="color:#F97583"> void</span><span style="color:#E1E4E8">,           </span><span style="color:#6A737D">// Optional — called when this step becomes active</span></span>
+<span class="line"><span style="color:#B392F0">  onNext</span><span style="color:#E1E4E8">: (</span><span style="color:#FFAB70">next</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#F97583"> void</span><span style="color:#E1E4E8">,        </span><span style="color:#6A737D">// Optional — called when Next is clicked; must call next() to advance</span></span>
+<span class="line"><span style="color:#B392F0">  onFinish</span><span style="color:#E1E4E8">: () </span><span style="color:#F97583">=></span><span style="color:#F97583"> void</span><span style="color:#E1E4E8">,          </span><span style="color:#6A737D">// Optional — called when Next is clicked on the last step</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="step-properties">Step Properties</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>title</code></td><td><code>string</code></td><td>Displayed in the step indicator bar.</td></tr><tr><td><code>skipWhen</code></td><td><code>() => boolean</code></td><td>Called during <code>_init</code>. If it returns <code>true</code>, the wizard automatically advances past this step. Useful for conditional flows.</td></tr><tr><td><code>onEnter</code></td><td><code>() => void</code></td><td>Called when the step is activated (on init, after navigating forward, and when navigating back). Use to load dynamic content or reset field state.</td></tr><tr><td><code>onNext</code></td><td><code>(next: Function) => void</code></td><td>Called when the user clicks Next on this step. The <code>next</code> argument is a function — <strong>you must call <code>next()</code> to advance</strong>. This allows async validation: run validation, then call <code>next()</code> only on success.</td></tr><tr><td><code>onFinish</code></td><td><code>() => void</code></td><td>Called when the user clicks the finish button on the final step. Use to submit data, close the modal, or trigger confirmation.</td></tr></tbody></table>
+<hr>
+<h2 id="step-indicator-icons">Step Indicator Icons</h2>
+<p>The step indicator uses Voyadores Icon Font classes:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>State</th><th>Icon class</th><th>Description</th></tr></thead><tbody><tr><td>Pending / Active</td><td><code>vi-solid vi-contrast</code></td><td>Half-filled circle — step not yet completed</td></tr><tr><td>Completed</td><td><code>vi-solid vi-check-circle</code></td><td>Checkmark circle — step already passed</td></tr></tbody></table>
+<p>Step indicator items also receive CSS classes for styling:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>CSS class</th><th>When applied</th></tr></thead><tbody><tr><td><code>progress-step</code></td><td>Always — base class for all steps</td></tr><tr><td><code>progress-step active</code></td><td>Current step</td></tr><tr><td><code>progress-step completed</code></td><td>Steps before the current step</td></tr></tbody></table>
+<hr>
+<h2 id="public-api">Public API</h2>
+<h3 id="destroy"><code>destroy()</code></h3>
+<p>Nullifies all internal references. Call this when tearing down the wizard to prevent memory leaks (e.g. when a modal is closed and the instance is no longer needed).</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#E1E4E8">wizard.</span><span style="color:#B392F0">destroy</span><span style="color:#E1E4E8">();</span></span></code></pre>
+<h3 id="navigatedirection"><code>navigate(direction)</code></h3>
+<p>Moves the wizard forward or backward by the given number of steps. Positive = forward, negative = backward. Calls <code>onEnter</code> of the destination step if defined.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#E1E4E8">wizard.</span><span style="color:#B392F0">navigate</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">);   </span><span style="color:#6A737D">// go forward one step</span></span>
+<span class="line"><span style="color:#E1E4E8">wizard.</span><span style="color:#B392F0">navigate</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">-</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">);  </span><span style="color:#6A737D">// go back one step</span></span></code></pre>
+<h3 id="reset"><code>reset()</code></h3>
+<p>Resets the wizard to step 0, re-renders the indicator, updates navigation and progress bar, and calls the first step’s <code>onEnter</code> if defined. Also calls <code>form.reset()</code> if a <code>formId</code> was provided.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#E1E4E8">wizard.</span><span style="color:#B392F0">reset</span><span style="color:#E1E4E8">();</span></span></code></pre>
+<h3 id="setallowpreviousallow"><code>setAllowPrevious(allow)</code></h3>
+<p>Enables or disables the Back button at runtime.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#E1E4E8">wizard.</span><span style="color:#B392F0">setAllowPrevious</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// disable back navigation</span></span>
+<span class="line"><span style="color:#E1E4E8">wizard.</span><span style="color:#B392F0">setAllowPrevious</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);  </span><span style="color:#6A737D">// re-enable</span></span></code></pre>
+<h3 id="setfinishbuttontexttext"><code>setFinishButtonText(text)</code></h3>
+<p>Changes the label of the Next/Finish button at runtime.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#E1E4E8">wizard.</span><span style="color:#B392F0">setFinishButtonText</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Complete Registration'</span><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="setfinishbuttonsubmitissubmit"><code>setFinishButtonSubmit(isSubmit)</code></h3>
+<p>Changes whether the finish button acts as a submit trigger at runtime.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#E1E4E8">wizard.</span><span style="color:#B392F0">setFinishButtonSubmit</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="setformidformid"><code>setFormId(formId)</code></h3>
+<p>Updates the bound form ID at runtime.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#E1E4E8">wizard.</span><span style="color:#B392F0">setFormId</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'registrationForm'</span><span style="color:#E1E4E8">);</span></span></code></pre>
+<hr>
+<h2 id="usage-examples">Usage Examples</h2>
+<h3 id="basic-3-step-wizard">Basic 3-step wizard</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">script</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"module"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> WizardForm </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'https://cdn.voyadores.com/content/js/wizard-form/wizard-form.min.js'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> wizard</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> WizardForm</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#myWizard'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">  steps: [</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#E1E4E8">      title: </span><span style="color:#9ECBFF">'Basic Info'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">      onEnter</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">        console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Step 1 entered'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">      },</span></span>
+<span class="line"><span style="color:#B392F0">      onNext</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">next</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#6A737D">        // Validate before advancing</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> name</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> document.</span><span style="color:#B392F0">querySelector</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'[name="name"]'</span><span style="color:#E1E4E8">).value;</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">name.</span><span style="color:#B392F0">trim</span><span style="color:#E1E4E8">()) {</span></span>
+<span class="line"><span style="color:#B392F0">          alert</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Name is required'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">          return</span><span style="color:#E1E4E8">; </span><span style="color:#6A737D">// do NOT call next() — stay on this step</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#B392F0">        next</span><span style="color:#E1E4E8">(); </span><span style="color:#6A737D">// advance to step 2</span></span>
+<span class="line"><span style="color:#E1E4E8">      }</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#E1E4E8">      title: </span><span style="color:#9ECBFF">'Contact Details'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">      onEnter</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">        console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Step 2 entered'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">      },</span></span>
+<span class="line"><span style="color:#B392F0">      onNext</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">next</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">        next</span><span style="color:#E1E4E8">(); </span><span style="color:#6A737D">// advance to step 3</span></span>
+<span class="line"><span style="color:#E1E4E8">      }</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#E1E4E8">      title: </span><span style="color:#9ECBFF">'Confirmation'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">      onFinish</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#6A737D">        // Submit form data</span></span>
+<span class="line"><span style="color:#E1E4E8">        document.</span><span style="color:#B392F0">querySelector</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#myForm'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">submit</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">      }</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  ]</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h3 id="conditional-step-skipping">Conditional step skipping</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> wizard</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> WizardForm</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#myWizard'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">  steps: [</span></span>
+<span class="line"><span style="color:#E1E4E8">    { title: </span><span style="color:#9ECBFF">'Account Type'</span><span style="color:#E1E4E8">, </span><span style="color:#B392F0">onNext</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">next</span><span style="color:#E1E4E8">) { </span><span style="color:#B392F0">next</span><span style="color:#E1E4E8">(); } },</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#E1E4E8">      title: </span><span style="color:#9ECBFF">'Business Details'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#6A737D">      // Skip this step if user selected "individual" account type</span></span>
+<span class="line"><span style="color:#B392F0">      skipWhen</span><span style="color:#E1E4E8">: () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> document.</span><span style="color:#B392F0">querySelector</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'[name="accountType"]:checked'</span><span style="color:#E1E4E8">)?.value </span><span style="color:#F97583">===</span><span style="color:#9ECBFF"> 'individual'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">      onEnter</span><span style="color:#E1E4E8">() { </span><span style="color:#B392F0">loadBusinessForm</span><span style="color:#E1E4E8">(); },</span></span>
+<span class="line"><span style="color:#B392F0">      onNext</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">next</span><span style="color:#E1E4E8">) { </span><span style="color:#B392F0">next</span><span style="color:#E1E4E8">(); }</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">    { title: </span><span style="color:#9ECBFF">'Review'</span><span style="color:#E1E4E8">, </span><span style="color:#B392F0">onFinish</span><span style="color:#E1E4E8">() { </span><span style="color:#B392F0">submitForm</span><span style="color:#E1E4E8">(); } }</span></span>
+<span class="line"><span style="color:#E1E4E8">  ]</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="async-validation-with-api-call">Async validation with API call</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#B392F0">  title</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'Email Verification'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  onNext</span><span style="color:#E1E4E8">(next) {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> email</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> document.</span><span style="color:#B392F0">querySelector</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'[name="email"]'</span><span style="color:#E1E4E8">).value;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">    fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/check-email'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">      method: </span><span style="color:#9ECBFF">'POST'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">({ email }),</span></span>
+<span class="line"><span style="color:#E1E4E8">      headers: { </span><span style="color:#9ECBFF">'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span><span style="color:#E1E4E8"> }</span></span>
+<span class="line"><span style="color:#E1E4E8">    })</span></span>
+<span class="line"><span style="color:#E1E4E8">    .</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">r</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> r.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#E1E4E8">    .</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">      if</span><span style="color:#E1E4E8"> (data.available) {</span></span>
+<span class="line"><span style="color:#B392F0">        next</span><span style="color:#E1E4E8">(); </span><span style="color:#6A737D">// advance only if email is available</span></span>
+<span class="line"><span style="color:#E1E4E8">      } </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">        showError</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'This email is already registered.'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">      }</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="disable-back-navigation-on-certain-steps">Disable back navigation on certain steps</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#B392F0">  title</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'Processing'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  onEnter</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">    wizard.</span><span style="color:#B392F0">setAllowPrevious</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// lock navigation during processing</span></span>
+<span class="line"><span style="color:#B392F0">    processData</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">      wizard.</span><span style="color:#B392F0">setAllowPrevious</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">      wizard.</span><span style="color:#B392F0">navigate</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="reset-wizard-when-modal-closes">Reset wizard when modal closes</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> modal</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> document.</span><span style="color:#B392F0">getElementById</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'myWizardModal'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">modal.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'hidden.bs.modal'</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  wizard.</span><span style="color:#B392F0">reset</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="destroy-wizard-when-modal-is-removed-from-dom">Destroy wizard when modal is removed from DOM</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#E1E4E8">modal.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'hidden.bs.modal'</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  wizard.</span><span style="color:#B392F0">destroy</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">  wizard </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<hr>
+<h2 id="navigation-behavior">Navigation Behavior</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Condition</th><th>Back button</th><th>Next button label</th></tr></thead><tbody><tr><td>Step 0</td><td>Always disabled</td><td>”Next”</td></tr><tr><td>Step 1..N-2</td><td>Enabled (if <code>allowPrevious: true</code>)</td><td>“Next”</td></tr><tr><td>Last step</td><td>Enabled (if <code>allowPrevious: true</code>)</td><td>Value of <code>finishButtonText</code></td></tr><tr><td><code>allowPrevious: false</code></td><td>Always disabled</td><td>(same as above)</td></tr></tbody></table>
+<hr>
+<h2 id="progress-bar">Progress Bar</h2>
+<p>The <code>&#x3C;progress></code> element’s <code>value</code> is updated automatically on every navigation:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>progress = ((currentStep + 1) / steps.length) * 100</span></span></code></pre>
+<p>Styles the progress bar using the browser’s native <code>&#x3C;progress></code> element. Override with CSS to match your design.</p>
+<hr>
+<h2 id="css-classes-reference">CSS Classes Reference</h2>
+<p>Apply these classes in your stylesheet to control appearance:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Class</th><th>Element</th><th>Purpose</th></tr></thead><tbody><tr><td><code>.progress-bar</code></td><td><code>&#x3C;progress></code></td><td>The step progress bar</td></tr><tr><td><code>.progress-indicator</code></td><td><code>&#x3C;ol></code> / <code>&#x3C;ul></code></td><td>Container for step indicators</td></tr><tr><td><code>.progress-step</code></td><td><code>&#x3C;li></code></td><td>Individual step in the indicator</td></tr><tr><td><code>.progress-step.active</code></td><td><code>&#x3C;li></code></td><td>Currently active step</td></tr><tr><td><code>.progress-step.completed</code></td><td><code>&#x3C;li></code></td><td>Steps already passed</td></tr><tr><td><code>.progress-step-icon</code></td><td><code>&#x3C;span></code></td><td>Icon wrapper inside each step</td></tr><tr><td><code>.progress-step-title</code></td><td><code>&#x3C;span></code></td><td>Title text inside each step</td></tr><tr><td><code>.wizard-content</code></td><td><code>&#x3C;div></code></td><td>Wraps all step panels</td></tr><tr><td><code>.wizard-step</code></td><td><code>&#x3C;div></code></td><td>Individual step panel</td></tr><tr><td><code>.wizard-step.active</code></td><td><code>&#x3C;div></code></td><td>Visible step panel</td></tr><tr><td><code>.wizard-navigation</code></td><td><code>&#x3C;div></code></td><td>Wrapper for prev/next buttons</td></tr><tr><td><code>.prev-button</code></td><td><code>&#x3C;button></code></td><td>Back button</td></tr><tr><td><code>.next-button</code></td><td><code>&#x3C;button></code></td><td>Next / Finish button</td></tr></tbody></table>
+<hr>
+<h2 id="debugging">Debugging</h2>
+<h3 id="backnext-buttons-dont-work">Back/Next buttons don’t work</h3>
+<hr>
+<h3 id="step-panels-all-show-at-once">Step panels all show at once</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#B392F0">.wizard-step</span><span style="color:#E1E4E8">          { </span><span style="color:#79B8FF">display</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">none</span><span style="color:#E1E4E8">; }</span></span>
+<span class="line"><span style="color:#B392F0">.wizard-step.active</span><span style="color:#E1E4E8">   { </span><span style="color:#79B8FF">display</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">block</span><span style="color:#E1E4E8">; }</span></span></code></pre>
+<hr>
+<h3 id="progress-indicator-is-empty">Progress indicator is empty</h3>
+<hr>
+<h3 id="skipwhen-not-firing"><code>skipWhen</code> not firing</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#B392F0">onEnter</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">shouldSkip</span><span style="color:#E1E4E8">()) wizard.</span><span style="color:#B392F0">navigate</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
+<h3 id="onnext-advances-automatically-without-calling-next"><code>onNext</code> advances automatically without calling <code>next()</code></h3>
+<hr>
+<h3 id="wizard-does-not-reset-after-form-reset-event">Wizard does not reset after form <code>reset</code> event</h3>
+<hr>
+<h3 id="module-import-error-cannot-use-import-statement">Module import error: <code>Cannot use import statement</code></h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#6A737D">&#x3C;!-- Correct --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">script</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"module"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#F97583">  import</span><span style="color:#E1E4E8"> WizardForm </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> '.../wizard-form.min.js'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">&#x3C;!-- Wrong — will throw SyntaxError --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">script</span><span style="color:#B392F0"> src</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">".../wizard-form.min.js"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span></code></pre>
+<hr>
+<h2 id="best-practices">Best Practices</h2>
+<ul>
+<li><strong>Always validate in <code>onNext</code></strong> — never advance automatically without verifying required fields for that step.</li>
+<li><strong>Keep steps focused</strong> — each step should collect one logical group of data. Avoid putting too many fields in a single step.</li>
+<li><strong>Handle async in <code>onNext</code></strong> — show a loading state while async operations (API calls, file uploads) are in progress, then call <code>next()</code> on success.</li>
+<li><strong>Call <code>destroy()</code> on cleanup</strong> — if the wizard is created inside a Bootstrap modal, destroy the instance in the <code>hidden.bs.modal</code> event to avoid memory leaks and stale event listeners.</li>
+<li><strong>Provide <code>onEnter</code> for dynamic steps</strong> — use <code>onEnter</code> to populate dropdowns, load dependent data, or reset fields each time a step is entered (including on back-navigation).</li>
+<li><strong>Use <code>skipWhen</code> only for init-time conditions</strong> — for conditions that change at runtime, use <code>onEnter</code> + <code>navigate(1)</code> instead.</li>
+<li><strong>Test with <code>allowPrevious: false</code></strong> — for irreversible steps (e.g. payment confirmation), disable back navigation to prevent the user from undoing committed actions.</li>
+</ul> </div> </div>  </main> <!-- Right TOC sidebar --> <aside class="r-toc" id="r-toc" aria-label="On this page"> <div class="toc-label">On this page</div> <nav class="toc-nav" id="toc-nav"></nav> </aside> </div> <script type="module">const d=document.documentElement,L=document.querySelectorAll(".theme-toggle"),f=window.matchMedia("(prefers-color-scheme: dark)"),u=["light","dark","system"];function v(t){t==="dark"||t==="system"&&f.matches?d.setAttribute("data-theme","dark"):d.removeAttribute("data-theme"),d.setAttribute("data-color-scheme",t),localStorage.setItem("voy-theme",t)}f.addEventListener("change",()=>{d.getAttribute("data-color-scheme")==="system"&&v("system")});L.forEach(t=>{t.addEventListener("click",()=>{const n=d.getAttribute("data-color-scheme")||"system",s=u[(u.indexOf(n)+1)%u.length];v(s)})});const m=document.getElementById("c-cursor");if(m&&window.matchMedia("(pointer: fine)").matches){let t=0,n=0,s=0,c=0;const a=.16;document.addEventListener("mousemove",r=>{t=r.clientX,n=r.clientY}),(function r(){s+=(t-s)*a,c+=(n-c)*a,m.style.transform=`translate(${s}px,${c}px)`,requestAnimationFrame(r)})(),document.addEventListener("mouseleave",()=>{m.style.opacity="0"}),document.addEventListener("mouseenter",()=>{m.style.opacity="1"})}const g=document.getElementById("menu-toggle"),y=document.getElementById("sidebar-overlay"),h=document.getElementById("sidebar"),b=()=>{h.classList.add("open"),y.classList.add("show"),document.body.style.overflow="hidden",g.classList.add("open")},E=()=>{h.classList.remove("open"),y.classList.remove("show"),document.body.style.overflow="",g.classList.remove("open")};g.addEventListener("click",()=>h.classList.contains("open")?E():b());y.addEventListener("click",E);(function(){const n=document.getElementById("main"),s=document.getElementById("r-toc"),c=document.getElementById("toc-nav");if(!n||!s||!c)return;const a=Array.from(n.querySelectorAll("h2"));if(a.length<2)return;a.forEach((e,o)=>{if(!e.id){const i=e.textContent.trim().toLowerCase().replace(/[^a-z0-9\s-]/g,"").replace(/\s+/g,"-").replace(/-+/g,"-").replace(/^-|-$/g,"")||`section-${o}`;e.id=i}}),a.forEach(e=>{const o=document.createElement("a");o.href="#"+e.id,o.className="toc-link",o.textContent=e.textContent.trim(),o.addEventListener("click",i=>{i.preventDefault();const l=document.getElementById(e.id);l&&l.scrollIntoView({behavior:"smooth",block:"start"})}),c.appendChild(o)}),s.classList.add("has-items"),d.classList.add("has-toc");const r=Array.from(c.querySelectorAll(".toc-link")),p=new IntersectionObserver(e=>{e.forEach(o=>{const i=r.find(l=>l.getAttribute("href")==="#"+o.target.id);i&&i.classList.toggle("is-active",o.isIntersecting)})},{rootMargin:"-5% 0px -75% 0px",threshold:0});a.forEach(e=>p.observe(e))})();</script> </body> </html>

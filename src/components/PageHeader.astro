@@ -1,0 +1,49 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+}
+const { eyebrow, title, description } = Astro.props;
+---
+
+<header class="ph">
+  {eyebrow && <p class="ph-ey">{eyebrow}</p>}
+  <h1 class="ph-h1">{title}</h1>
+  {description && <p class="ph-desc">{description}</p>}
+</header>
+
+<style>
+  .ph {
+    padding-bottom: 64px;
+    border-bottom: 1px solid var(--g5);
+    margin-bottom: 64px;
+  }
+  .ph-ey {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--g2);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .ph-h1 {
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1.04;
+    letter-spacing: -0.84px;
+    color: var(--black);
+    margin-bottom: 16px;
+  }
+  .ph-desc {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--g2);
+    line-height: 1.6;
+    max-width: 560px;
+  }
+
+  @media (max-width: 767px) {
+    .ph-h1 { font-size: 32px; }
+  }
+</style>

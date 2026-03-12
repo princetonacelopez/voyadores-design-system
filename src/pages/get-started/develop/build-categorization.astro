@@ -1,0 +1,521 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+---
+
+<BaseLayout title="Build Categorization Process">
+  <PageHeader
+    eyebrow="Get Started — Develop"
+    title="Build Categorization Process"
+    description="A structured sub-process of the SDLC that manages software releases, controls quality, and establishes a clear standard for build classification."
+  />
+
+  <!-- Issues & Goals -->
+  <section class="sec">
+    <h2>Overview</h2>
+    <div class="two-col">
+
+      <div class="overview-card">
+        <div class="overview-card-header">
+          <div class="overview-icon overview-icon--red">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3>SDLC Issues Addressed</h3>
+        </div>
+        <ul class="overview-list">
+          <li>Build credibility issue</li>
+          <li>Quality assurance issue</li>
+          <li>Prioritization challenges</li>
+          <li>Standards</li>
+        </ul>
+      </div>
+
+      <div class="overview-card">
+        <div class="overview-card-header">
+          <div class="overview-icon overview-icon--green">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Goals</h3>
+        </div>
+        <ul class="overview-list">
+          <li>Manage the software development lifecycle efficiently</li>
+          <li>Control the quality of releases</li>
+          <li>A clear understanding of the software's stability and features at different stages of development</li>
+          <li>Process adaptability in the long run</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SDLC Integration -->
+  <section class="sec">
+    <h2>SDLC Integration</h2>
+    <p class="body-text">The Build Categorization Process is a sub-process of the NESV SDLC process. It is realized during the <strong>Business Analysis</strong> phase, specifically within the Validation (Requirements Review) stage.</p>
+
+    <div class="sdlc-phases">
+      {[
+        { n: '1', label: 'Business Analysis', active: true },
+        { n: '2', label: 'Development',       active: false },
+        { n: '3', label: 'Deployment',        active: false },
+        { n: '4', label: 'Support',           active: false },
+      ].map(phase => (
+        <div class:list={['phase-chip', { 'phase-chip--active': phase.active }]}>
+          <span class="phase-n">{phase.n}</span>
+          <span class="phase-label">{phase.label}</span>
+          {phase.active && <span class="phase-badge">Active Phase</span>}
+        </div>
+      ))}
+    </div>
+
+    <div class="ba-breakdown">
+      <div class="ba-title">Business Analysis Phase Breakdown</div>
+      <div class="ba-steps">
+        {[
+          { label: 'Elicitation',                                  sub: '' },
+          { label: 'Analysis',                                     sub: '' },
+          { label: 'Specification',                                sub: '' },
+          { label: 'Validation (Requirements Review)',             sub: 'Build Categorization Process' },
+        ].map((step, i) => (
+          <div class:list={['ba-step', { 'ba-step--highlight': !!step.sub }]}>
+            <span class="ba-step-n">{i + 1}</span>
+            <div class="ba-step-body">
+              <span class="ba-step-label">{step.label}</span>
+              {step.sub && <span class="ba-step-sub">{step.sub}</span>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Steps -->
+  <section class="sec">
+    <h2>Process Steps</h2>
+
+    <h3 class="process-cat-title">Standard Change Request</h3>
+    <div class="process-steps">
+      {[
+        {
+          letter: 'a',
+          title: 'Finalize HLS Document',
+          items: [
+            'Head should list and finalize the scope in the HLS document.',
+            'In the event Head is not available, Senior SA should take over.',
+          ],
+        },
+        {
+          letter: 'b',
+          title: 'Arrange Discussion with Technical Team for Build Categorization',
+          items: [],
+        },
+        {
+          letter: 'c',
+          title: 'Cost Estimate Creation',
+          items: [],
+        },
+        {
+          letter: 'd',
+          title: 'Approval from Management',
+          items: [],
+        },
+        {
+          letter: 'e',
+          title: 'Sales Quotation Creation',
+          items: [],
+        },
+      ].map(step => (
+        <div class="process-step">
+          <div class="step-letter">{step.letter}</div>
+          <div class="step-body">
+            <p class="step-title">{step.title}</p>
+            {step.items.length > 0 && (
+              <ul class="step-notes">
+                {step.items.map(item => <li>{item}</li>)}
+              </ul>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <h3 class="process-cat-title">Ad-hoc Change Request</h3>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-letter">a</div>
+        <div class="step-body">
+          <p class="step-title">Create Task</p>
+          <ul class="step-notes">
+            <li>Tag CL version as TBD</li>
+          </ul>
+          <div class="format-pill">
+            <span class="format-pill-label">Format</span>
+            <code>v[TBD] Change Request – Project Title</code>
+          </div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-letter">b</div>
+        <div class="step-body">
+          <p class="step-title">Arrange Discussion with Technical Team for Build Categorization</p>
+          <ul class="step-notes">
+            <li>In the event Heads are not available for discussion, Senior Devs should take over.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Build Types -->
+  <section class="sec">
+    <h2>Build Types</h2>
+
+    <div class="build-grid">
+
+      <!-- Major -->
+      <div class="build-card">
+        <div class="build-card-header build-card-header--major">
+          <span class="build-badge build-badge--major">Major Build</span>
+        </div>
+        <div class="build-card-body">
+          <p class="build-req-label">Build Requirements</p>
+          <ul class="build-list">
+            <li>New Project</li>
+            <li>Framework-related encompassing multiple modules</li>
+            <li>
+              Major Integration
+              <ul>
+                <li>API</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Minor -->
+      <div class="build-card">
+        <div class="build-card-header build-card-header--minor">
+          <span class="build-badge build-badge--minor">Minor Build</span>
+        </div>
+        <div class="build-card-body">
+          <p class="build-req-label">Build Requirements — One (1) or more significant features</p>
+          <ul class="build-list">
+            <li>
+              Minor Integration
+              <ul><li>API</li></ul>
+            </li>
+            <li>Additional Module (Menu)</li>
+            <li>
+              Additional Pages
+              <ul><li>Reports</li></ul>
+            </li>
+            <li>New Jobs</li>
+            <li>New email features</li>
+            <li>Major Schema Changes</li>
+            <li>
+              UI Modifications
+              <ul><li>Mobile responsive</li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Release -->
+      <div class="build-card">
+        <div class="build-card-header build-card-header--release">
+          <span class="build-badge build-badge--release">Release Build</span>
+        </div>
+        <div class="build-card-body">
+          <p class="build-req-label">Build Requirements — 1–10 minor features</p>
+          <ul class="build-list">
+            <li>CRUD</li>
+            <li>Filters</li>
+            <li>UI Modifications</li>
+            <li>
+              Minor Schema Changes
+              <ul><li>1–3 columns</li></ul>
+            </li>
+            <li>
+              Additional Pages
+              <ul><li>Minor Functionality</li></ul>
+            </li>
+            <li>Performance Enhancement</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Hotfix -->
+      <div class="build-card">
+        <div class="build-card-header build-card-header--hotfix">
+          <span class="build-badge build-badge--hotfix">Build or Hotfix</span>
+        </div>
+        <div class="build-card-body">
+          <p class="build-req-label">Build Requirements</p>
+          <ul class="build-list">
+            <li>
+              Hotfix / Bug fix
+              <ul>
+                <li>
+                  CL related
+                  <ul>
+                    <li>Showstopper</li>
+                    <li>Destructive for User Experience (UI / Data Issue)</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              Release
+              <ul>
+                <li>
+                  Non-CL related
+                  <ul>
+                    <li>Destructive for User Experience (UI / Data Issue)</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .sec { margin-bottom: 72px; }
+
+  .sec h2 {
+    font-size: 20px; font-weight: 600; letter-spacing: -.4px; color: var(--black);
+    margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--g5);
+  }
+
+  .body-text {
+    font-size: 14px; font-weight: 500; color: var(--g1); line-height: 1.7;
+    max-width: 680px; margin-bottom: 28px;
+  }
+  .body-text strong { font-weight: 700; color: var(--black); }
+
+  /* ── Two col ─────────────────────────────────────────────────────────── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  /* ── Overview cards ──────────────────────────────────────────────────── */
+  .overview-card {
+    border: 1px solid var(--g5); border-radius: 8px;
+    padding: 20px 22px; background: var(--white);
+  }
+
+  .overview-card-header {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
+  }
+
+  .overview-icon {
+    flex-shrink: 0; width: 30px; height: 30px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .overview-icon--red   { background: rgba(217,31,17,.1);  color: #d91f11; }
+  .overview-icon--green { background: rgba(7,125,85,.1);   color: #077d55; }
+
+  .overview-card h3 {
+    font-size: 13px; font-weight: 700; color: var(--black);
+  }
+
+  .overview-list {
+    padding-left: 18px; display: flex; flex-direction: column; gap: 7px;
+  }
+  .overview-list li {
+    font-size: 13px; font-weight: 500; color: var(--g1); line-height: 1.5;
+  }
+
+  /* ── SDLC Phases ─────────────────────────────────────────────────────── */
+  .sdlc-phases {
+    display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 28px;
+  }
+
+  .phase-chip {
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 14px; border-radius: 6px;
+    border: 1px solid var(--g5); background: var(--g6);
+  }
+  .phase-chip--active {
+    border-color: var(--brand);
+    background: rgba(247,146,30,.07);
+  }
+
+  .phase-n {
+    font-size: 10px; font-weight: 700; font-family: var(--mono);
+    color: var(--g2);
+  }
+  .phase-chip--active .phase-n { color: var(--brand); }
+
+  .phase-label {
+    font-size: 12px; font-weight: 600; color: var(--g1);
+  }
+  .phase-chip--active .phase-label { color: var(--black); }
+
+  .phase-badge {
+    font-size: 9px; font-weight: 700; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--brand);
+    background: rgba(247,146,30,.12); padding: 2px 7px; border-radius: 100px;
+  }
+
+  /* ── BA Breakdown ────────────────────────────────────────────────────── */
+  .ba-breakdown {
+    border: 1px solid var(--g5); border-radius: 8px; overflow: hidden;
+  }
+
+  .ba-title {
+    font-size: 10px; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--g2);
+    padding: 10px 18px; background: var(--g6); border-bottom: 1px solid var(--g5);
+  }
+
+  .ba-steps { display: flex; flex-direction: column; }
+
+  .ba-step {
+    display: flex; align-items: center; gap: 14px;
+    padding: 12px 18px; border-bottom: 1px solid var(--g5);
+  }
+  .ba-step:last-child { border-bottom: none; }
+  .ba-step--highlight { background: rgba(247,146,30,.04); }
+
+  .ba-step-n {
+    flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+    background: var(--g5); color: var(--g1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 700; font-family: var(--mono);
+  }
+  .ba-step--highlight .ba-step-n {
+    background: var(--brand); color: var(--white);
+  }
+
+  .ba-step-body { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+  .ba-step-label {
+    font-size: 13px; font-weight: 500; color: var(--g1);
+  }
+  .ba-step--highlight .ba-step-label { font-weight: 600; color: var(--black); }
+
+  .ba-step-sub {
+    font-size: 10px; font-weight: 700; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--brand);
+    background: rgba(247,146,30,.12); padding: 3px 9px; border-radius: 100px;
+  }
+
+  /* ── Process Steps ───────────────────────────────────────────────────── */
+  .process-cat-title {
+    font-size: 11px; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--g2);
+    margin: 0 0 12px;
+  }
+
+  .process-steps {
+    display: flex; flex-direction: column; gap: 0;
+    border: 1px solid var(--g5); border-radius: 8px;
+    overflow: hidden; margin-bottom: 32px;
+  }
+
+  .process-step {
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 14px 18px; border-bottom: 1px solid var(--g5);
+  }
+  .process-step:last-child { border-bottom: none; }
+
+  .step-letter {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 6px;
+    background: var(--g5); color: var(--g1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .step-body { flex: 1; min-width: 0; }
+
+  .step-title {
+    font-size: 13px; font-weight: 600; color: var(--black);
+    margin-bottom: 6px; line-height: 1.5;
+  }
+
+  .step-notes {
+    padding-left: 16px; display: flex; flex-direction: column; gap: 4px;
+    margin-bottom: 10px;
+  }
+  .step-notes:last-child { margin-bottom: 0; }
+  .step-notes li {
+    font-size: 12px; font-weight: 500; color: var(--g2); line-height: 1.5;
+  }
+
+  .format-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--g6); border: 1px solid var(--g5);
+    border-radius: 5px; padding: 6px 12px; margin-top: 4px;
+  }
+  .format-pill-label {
+    font-size: 9px; font-weight: 700; letter-spacing: .07em;
+    text-transform: uppercase; color: var(--g3);
+  }
+  .format-pill code {
+    font-family: var(--mono); font-size: 12px; color: var(--g1);
+  }
+
+  /* ── Build type grid ─────────────────────────────────────────────────── */
+  .build-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+  }
+
+  .build-card {
+    border: 1px solid var(--g5); border-radius: 8px;
+    overflow: hidden; background: var(--white);
+  }
+
+  .build-card-header {
+    padding: 12px 16px; border-bottom: 1px solid var(--g5);
+  }
+  .build-card-header--major   { background: rgba(84,95,232,.07);  }
+  .build-card-header--minor   { background: rgba(7,125,85,.07);   }
+  .build-card-header--release { background: rgba(247,146,30,.07); }
+  .build-card-header--hotfix  { background: rgba(217,31,17,.07);  }
+
+  .build-badge {
+    font-size: 11px; font-weight: 800; letter-spacing: .04em;
+    padding: 4px 10px; border-radius: 4px;
+  }
+  .build-badge--major   { background: rgba(84,95,232,.15);  color: #3a44c8; }
+  .build-badge--minor   { background: rgba(7,125,85,.15);   color: #077d55; }
+  .build-badge--release { background: rgba(247,146,30,.2);  color: #b8650a; }
+  .build-badge--hotfix  { background: rgba(217,31,17,.12);  color: #d91f11; }
+
+  .build-card-body { padding: 16px 18px; }
+
+  .build-req-label {
+    font-size: 10px; font-weight: 700; letter-spacing: .07em;
+    text-transform: uppercase; color: var(--g2);
+    margin-bottom: 12px;
+  }
+
+  .build-list {
+    padding-left: 16px; display: flex; flex-direction: column; gap: 6px;
+    list-style: disc;
+  }
+  .build-list li {
+    font-size: 13px; font-weight: 500; color: var(--g1); line-height: 1.5;
+  }
+  .build-list ul {
+    padding-left: 16px; margin-top: 4px;
+    list-style: circle; display: flex; flex-direction: column; gap: 3px;
+  }
+  .build-list ul li { font-size: 12px; color: var(--g2); }
+  .build-list ul ul { list-style: square; }
+
+  /* ── Responsive ──────────────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .build-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 767px) {
+    .two-col    { grid-template-columns: 1fr; }
+    .sdlc-phases { flex-direction: column; }
+    .build-grid { grid-template-columns: 1fr; }
+  }
+</style>

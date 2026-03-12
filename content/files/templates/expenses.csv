@@ -1,0 +1,2 @@
+﻿ExpenseDate,Amount,VendorName,EmployeeNumber,CategoryCode,Description,IsBillable (true/false)
+12/20/2023,1000,NESV,x,x,N/A,TRUE

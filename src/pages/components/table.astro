@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+---
+<BaseLayout title="Table 2.2.1" activeSection="components">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.voyadores.theme.min.css" />
+    <link rel="stylesheet" href="/css/table/table-2-2-1.min.css" />
+  </Fragment>
+
+  <PageHeader
+    eyebrow="Components / Others"
+    title="Table 2.2.1"
+    description="A jQuery-based data table with AJAX or static data loading, sortable/resizable columns, load-more pagination, and View Transition API row animations."
+  />
+
+  <section class="sec">
+    <h2>Setup</h2>
+    <div class="code-block"><pre is:raw><code>&lt;!-- CSS --&gt;
+&lt;link rel="stylesheet" href="https://cdn.voyadores.com/content/css/table/table-2-2-1.min.css" /&gt;
+
+&lt;!-- JS (requires jQuery) --&gt;
+&lt;script src="https://cdn.voyadores.com/content/js/jquery/jquery-3.6.0.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.voyadores.com/content/js/table/table-2-2-1.min.js"&gt;&lt;/script&gt;</code></pre></div>
+  </section>
+
+  <section class="sec">
+    <h2>Demo</h2>
+    <div class="bs-scope">
+      <table id="demo-table" class="table table-bordered table-hover table-sm align-middle">
+        <thead class="table-light">
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Usage</h2>
+    <div class="code-block"><pre is:raw><code>// The plugin is called on a &lt;table&gt; element.
+// &lt;thead&gt; columns must already exist in the HTML.
+// mappingFunction is required to render each data row.
+
+$('#my-table').table({
+  data: [...],           // static array of objects
+  // endpoint: '/api/data',  // or AJAX URL (with ?page=1 appended)
+  mappingFunction: function (data) {
+    return data.map(function (row) {
+      return '&lt;tr&gt;' +
+        '&lt;td&gt;' + row.name   + '&lt;/td&gt;' +
+        '&lt;td&gt;' + row.status + '&lt;/td&gt;' +
+      '&lt;/tr&gt;';
+    }).join('');
+  },
+  headers: {
+    columns: [
+      { column: 'Name',   context: 'name',   sortable: true  },
+      { column: 'Status', context: 'status', sortable: true  },
+    ],
+    columnReorder: true,     // drag-and-drop column reorder
+    hideOnEmpty: false,
+  },
+  rowCounter: true,          // auto-prepend # counter column
+  success: function (data) { console.log('Loaded', data.length, 'rows'); },
+});
+
+// Commands
+$('#my-table').table('refresh');                   // reload
+$('#my-table').table('refresh', newDataArray);     // replace data
+$('#my-table').table('refresh', { companyId: 2 }); // new AJAX params
+$('#my-table').table('add',    rowObject);         // append row
+$('#my-table').table('update', rowObject);         // update row
+$('#my-table').table('remove', rowObject);         // remove row
+$('#my-table').table('clear');                     // empty tbody</code></pre></div>
+  </section>
+</BaseLayout>
+
+<script is:inline src="/js/jquery/jquery-3.6.0.min.js"></script>
+<script is:inline src="/js/table/table-2-2-1.min.js"></script>
+<script is:inline>
+$(function () {
+  var names    = ['Ana Reyes','Ben Cruz','Carlo Tan','Diana Lim','Eduardo Santos','Faye Ong','Gab Flores','Hannah Go'];
+  var statuses = ['Active','Inactive','Pending'];
+  var rows = names.map(function (name, i) {
+    return {
+      name:   name,
+      email:  name.toLowerCase().replace(' ', '.') + '@example.com',
+      status: statuses[i % 3],
+      amount: (i + 1) * 1250,
+    };
+  });
+
+  var statusBadge = {
+    'Active':   '<span class="badge bg-success">Active</span>',
+    'Inactive': '<span class="badge bg-secondary">Inactive</span>',
+    'Pending':  '<span class="badge bg-warning text-dark">Pending</span>',
+  };
+
+  $('#demo-table').table({
+    data: rows,
+    mappingFunction: function (data) {
+      return data.map(function (row) {
+        return '<tr>' +
+          '<td>' + row.name + '</td>' +
+          '<td>' + row.email + '</td>' +
+          '<td>' + (statusBadge[row.status] || row.status) + '</td>' +
+          '<td>&#8369;' + row.amount.toLocaleString() + '</td>' +
+        '</tr>';
+      }).join('');
+    },
+    headers: {
+      columns: [
+        { column: 'Name',   context: 'name',   sortable: true  },
+        { column: 'Email',  context: 'email',  sortable: false },
+        { column: 'Status', context: 'status', sortable: true  },
+        { column: 'Amount', context: 'amount', sortable: true  },
+      ],
+      columnReorder: true,
+    },
+    rowCounter: true,
+  });
+});
+</script>
+
+<style>
+  .sec { margin-bottom: 56px; }
+  .sec h2 { font-size: 20px; font-weight: 500; letter-spacing: -.4px; color: var(--black); margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--g5); }
+  .bs-scope { padding: 24px; border: 1px solid var(--g5); border-radius: 2px; background: var(--white); cursor: auto; overflow-x: auto; }
+</style>

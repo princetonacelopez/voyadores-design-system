@@ -1,0 +1,1080 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Voyadores — Visual Identity Guidelines"><title>Action Button Manager — Voyadores</title><link rel="canonical" href="https://design.voyadores.com/docs/action-button-manager/"><link rel="icon" type="image/svg+xml" href="/icons/favicon/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon/favicon-32x32.png"><link rel="apple-touch-icon" href="/icons/favicon/apple-touch-icon.png"><!-- Urbanist + Chivo Mono --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"><!-- Voyadores Icon Font --><link rel="stylesheet" href="/fonts/Voyadores-Icon/voyadores-icon.css"><!-- Anti-flash theme init (must be inline, before render) --><script>
+      (function () {
+        var t = localStorage.getItem('voy-theme') || 'system';
+        var dark = t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+        document.documentElement.setAttribute('data-color-scheme', t);
+      })();
+    </script><!-- Page-specific head content --><link rel="stylesheet" href="/_astro/_slug_@_@astro.Dmf4ngD0.css">
+<link rel="stylesheet" href="/_astro/BaseLayout.CRrhjZsn.css"></head> <body> <!-- Modern inversion cursor --> <div class="c-cursor" id="c-cursor"></div> <div class="app-shell"> <!-- Topbar (mobile) — logo removed; sidebar has the logo at full height --> <header class="topbar" id="topbar"> <button class="ham" id="menu-toggle" aria-label="Open menu"> <span></span><span></span><span></span> </button> <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle theme" title="Toggle theme"> <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg> <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> <svg class="icon-system" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg> </button> </header> <div class="overlay" id="sidebar-overlay"></div> <aside id="sidebar" class="sidebar" data-astro-cid-ssfzsv2f> <!-- Logo --> <a href="/" class="s-logo" data-astro-cid-ssfzsv2f> <img class="logo-light" src="/images/voyadores-logo-combination-horizontal-light.svg" alt="Voyadores" width="128" data-astro-cid-ssfzsv2f> <img class="logo-dark" src="/images/voyadores-logo-combination-horizontal-dark.svg" alt="Voyadores" width="128" data-astro-cid-ssfzsv2f> </a> <!-- Nav --> <nav class="s-nav" aria-label="Main" data-astro-cid-ssfzsv2f> <!-- Design System flat links (top-level, no collapse) --> <div class="s-top-section" data-astro-cid-ssfzsv2f> <a href="/" class="s-link" data-astro-cid-ssfzsv2f> Home </a><a href="/introduction" class="s-link" data-astro-cid-ssfzsv2f> Introduction </a><a href="/strategy" class="s-link" data-astro-cid-ssfzsv2f> Strategy </a> </div> <!-- Get Started super-group --> <div class="s-group" id="grp-get-started" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-get-started" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Get Started</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <!-- Design sub-group --> <div class="s-subgroup" id="grp-gs-design" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-gs-design" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Design</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/figma-libraries" class="s-sublink" data-astro-cid-ssfzsv2f> Figma Libraries </a><a href="/get-started/design/ux-design-process" class="s-sublink" data-astro-cid-ssfzsv2f> UX Design Process &amp; Guidelines </a> </div> </div> <!-- Develop sub-group --> <div class="s-subgroup" id="grp-gs-develop" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-gs-develop" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Develop</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/get-started/develop/developer-setup" class="s-sublink" data-astro-cid-ssfzsv2f> Developer Setup </a><a href="/get-started/develop/build-categorization" class="s-sublink" data-astro-cid-ssfzsv2f> Build Categorization Process </a><a href="/get-started/develop/code-branching" class="s-sublink" data-astro-cid-ssfzsv2f> Code Branching Guidelines </a><a href="/get-started/develop/code-management" class="s-sublink" data-astro-cid-ssfzsv2f> Code Management Guidelines </a><a href="/get-started/develop/versioning" class="s-sublink" data-astro-cid-ssfzsv2f> Versioning </a> </div> </div> <!-- Internal sub-group --> <div class="s-subgroup" id="grp-gs-internal" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-gs-internal" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Internal</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/get-started/internal/changelog-guidelines" class="s-sublink" data-astro-cid-ssfzsv2f> Changelog Guidelines </a><a href="/get-started/internal/meeting-invitation-guidelines" class="s-sublink" data-astro-cid-ssfzsv2f> Meeting Guidelines </a> </div> </div> </div> </div> <!-- Grouped top-level nav --> <div class="s-group" id="grp-brand" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-brand" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Brand</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <a href="/color" class="s-link" data-astro-cid-ssfzsv2f> Color </a><a href="/images" class="s-link" data-astro-cid-ssfzsv2f> Images </a><a href="/logo" class="s-link" data-astro-cid-ssfzsv2f> Logo </a><a href="/typography" class="s-link" data-astro-cid-ssfzsv2f> Typography </a> </div> </div><div class="s-group" id="grp-content" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-content" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Content</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <a href="/language-and-grammar" class="s-link" data-astro-cid-ssfzsv2f> Language and Grammar </a><a href="/iconography" class="s-link" data-astro-cid-ssfzsv2f> Iconography </a><a href="/illustrations" class="s-link" data-astro-cid-ssfzsv2f> Illustrations </a> </div> </div> <!-- Components super-group --> <div class="s-group s-group--components" id="grp-components" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-components" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Components</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <!-- Bootstrap sub-group --> <div class="s-subgroup" id="grp-bootstrap" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-bootstrap" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Bootstrap</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/components/bootstrap/accordion" class="s-sublink" data-astro-cid-ssfzsv2f> Accordion </a><a href="/components/bootstrap/alerts" class="s-sublink" data-astro-cid-ssfzsv2f> Alerts </a><a href="/components/bootstrap/badges" class="s-sublink" data-astro-cid-ssfzsv2f> Badges </a><a href="/components/bootstrap/breadcrumb" class="s-sublink" data-astro-cid-ssfzsv2f> Breadcrumb </a><a href="/components/bootstrap/button-group" class="s-sublink" data-astro-cid-ssfzsv2f> Button Group </a><a href="/components/bootstrap/buttons" class="s-sublink" data-astro-cid-ssfzsv2f> Buttons </a><a href="/components/bootstrap/cards" class="s-sublink" data-astro-cid-ssfzsv2f> Cards </a><a href="/components/bootstrap/carousel" class="s-sublink" data-astro-cid-ssfzsv2f> Carousel </a><a href="/components/bootstrap/dropdowns" class="s-sublink" data-astro-cid-ssfzsv2f> Dropdowns </a><a href="/components/bootstrap/forms" class="s-sublink" data-astro-cid-ssfzsv2f> Forms </a><a href="/components/bootstrap/input-group" class="s-sublink" data-astro-cid-ssfzsv2f> Input Group </a><a href="/components/bootstrap/list-group" class="s-sublink" data-astro-cid-ssfzsv2f> List Group </a><a href="/components/bootstrap/modal" class="s-sublink" data-astro-cid-ssfzsv2f> Modal </a><a href="/components/bootstrap/navbar" class="s-sublink" data-astro-cid-ssfzsv2f> Navbar </a><a href="/components/bootstrap/navs" class="s-sublink" data-astro-cid-ssfzsv2f> Navs &amp; Tabs </a><a href="/components/bootstrap/offcanvas" class="s-sublink" data-astro-cid-ssfzsv2f> Offcanvas </a><a href="/components/bootstrap/pagination" class="s-sublink" data-astro-cid-ssfzsv2f> Pagination </a><a href="/components/bootstrap/placeholders" class="s-sublink" data-astro-cid-ssfzsv2f> Placeholders </a><a href="/components/bootstrap/popovers" class="s-sublink" data-astro-cid-ssfzsv2f> Popovers </a><a href="/components/bootstrap/progress" class="s-sublink" data-astro-cid-ssfzsv2f> Progress </a><a href="/components/bootstrap/spinners" class="s-sublink" data-astro-cid-ssfzsv2f> Spinners </a><a href="/components/bootstrap/tables" class="s-sublink" data-astro-cid-ssfzsv2f> Tables </a><a href="/components/bootstrap/toasts" class="s-sublink" data-astro-cid-ssfzsv2f> Toasts </a><a href="/components/bootstrap/tooltips" class="s-sublink" data-astro-cid-ssfzsv2f> Tooltips </a><a href="/components/bootstrap/validation" class="s-sublink" data-astro-cid-ssfzsv2f> Validation </a> </div> </div> <!-- Others sub-group --> <div class="s-subgroup" id="grp-others" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-others" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Others</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/components/dropzone" class="s-sublink" data-astro-cid-ssfzsv2f> Dropzone </a><a href="/components/file-upload" class="s-sublink" data-astro-cid-ssfzsv2f> File Upload </a><a href="/components/file-viewer" class="s-sublink" data-astro-cid-ssfzsv2f> File Viewer </a><a href="/components/form-validation" class="s-sublink" data-astro-cid-ssfzsv2f> Form Validation </a><a href="/components/highcharts" class="s-sublink" data-astro-cid-ssfzsv2f> Highcharts </a><a href="/components/mask" class="s-sublink" data-astro-cid-ssfzsv2f> Mask </a><a href="/components/moment" class="s-sublink" data-astro-cid-ssfzsv2f> Moment </a><a href="/components/noty" class="s-sublink" data-astro-cid-ssfzsv2f> Noty </a><a href="/components/numeral" class="s-sublink" data-astro-cid-ssfzsv2f> Numeral </a><a href="/components/repeater" class="s-sublink" data-astro-cid-ssfzsv2f> Repeater </a><a href="/components/selectize" class="s-sublink" data-astro-cid-ssfzsv2f> Selectize </a><a href="/components/summernote" class="s-sublink" data-astro-cid-ssfzsv2f> Summernote </a><a href="/components/table" class="s-sublink" data-astro-cid-ssfzsv2f> Table 2.2.1 </a><a href="/components/template-editor" class="s-sublink" data-astro-cid-ssfzsv2f> Template Editor </a><a href="/components/treeview" class="s-sublink" data-astro-cid-ssfzsv2f> Treeview </a><a href="/components/wizard-form" class="s-sublink" data-astro-cid-ssfzsv2f> Wizard Form </a> </div> </div> </div> </div> <!-- Documentation super-group --> <div class="s-group s-group--docs is-open" id="grp-docs" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-docs" aria-expanded="true" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Documentation</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <!-- App Shell sub-group --> <div class="s-subgroup" id="grp-docs-shell" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-shell" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>App Shell</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/detection" class="s-sublink" data-astro-cid-ssfzsv2f> Browser &amp; TZ Detection </a><a href="/docs/menu-web" class="s-sublink" data-astro-cid-ssfzsv2f> Menu Web </a><a href="/docs/theme-picker" class="s-sublink" data-astro-cid-ssfzsv2f> Theme Picker </a> </div> </div> <!-- Modules sub-group --> <div class="s-subgroup" id="grp-docs-modules" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-modules" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Modules</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/default-url" class="s-sublink" data-astro-cid-ssfzsv2f> Default URL </a><a href="/docs/feature-onboarding" class="s-sublink" data-astro-cid-ssfzsv2f> Feature Onboarding </a><a href="/docs/notifications" class="s-sublink" data-astro-cid-ssfzsv2f> Notifications </a><a href="/docs/quicklinks" class="s-sublink" data-astro-cid-ssfzsv2f> Quick Links </a><a href="/docs/user-onboarding" class="s-sublink" data-astro-cid-ssfzsv2f> User Onboarding </a><a href="/docs/visual-indicator" class="s-sublink" data-astro-cid-ssfzsv2f> Visual Indicator </a> </div> </div> <!-- Utilities sub-group --> <div class="s-subgroup" id="grp-docs-utilities" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-utilities" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Utilities</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/browser-storage" class="s-sublink" data-astro-cid-ssfzsv2f> Browser Storage </a><a href="/docs/datetime-picker" class="s-sublink" data-astro-cid-ssfzsv2f> DateTime Picker </a><a href="/docs/request-and-uri" class="s-sublink" data-astro-cid-ssfzsv2f> Request &amp; URI </a><a href="/docs/view-model" class="s-sublink" data-astro-cid-ssfzsv2f> ViewModelBase </a> </div> </div> <!-- Plugins sub-group --> <div class="s-subgroup is-open" id="grp-docs-plugins" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-plugins" aria-expanded="true" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Plugins</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/action-button-manager" class="s-sublink is-on" data-astro-cid-ssfzsv2f> Action Button Manager </a><a href="/docs/currency-picker" class="s-sublink" data-astro-cid-ssfzsv2f> Currency Picker </a><a href="/docs/file-template-editor" class="s-sublink" data-astro-cid-ssfzsv2f> File Template Editor </a><a href="/docs/repeater" class="s-sublink" data-astro-cid-ssfzsv2f> Repeater </a><a href="/docs/table-plugin" class="s-sublink" data-astro-cid-ssfzsv2f> Table Plugin </a><a href="/docs/template-editor" class="s-sublink" data-astro-cid-ssfzsv2f> Template Editor </a><a href="/docs/treeview" class="s-sublink" data-astro-cid-ssfzsv2f> Treeview </a><a href="/docs/wizard-form" class="s-sublink" data-astro-cid-ssfzsv2f> Wizard Form </a> </div> </div> </div> </div> </nav> <!-- Sidebar footer: theme toggle --> <div class="s-footer" data-astro-cid-ssfzsv2f> <button class="theme-toggle s-theme-btn" id="theme-toggle-sidebar" aria-label="Toggle theme" title="Toggle theme" data-astro-cid-ssfzsv2f> <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f><circle cx="12" cy="12" r="5" data-astro-cid-ssfzsv2f></circle><line x1="12" y1="1" x2="12" y2="3" data-astro-cid-ssfzsv2f></line><line x1="12" y1="21" x2="12" y2="23" data-astro-cid-ssfzsv2f></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" data-astro-cid-ssfzsv2f></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" data-astro-cid-ssfzsv2f></line><line x1="1" y1="12" x2="3" y2="12" data-astro-cid-ssfzsv2f></line><line x1="21" y1="12" x2="23" y2="12" data-astro-cid-ssfzsv2f></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" data-astro-cid-ssfzsv2f></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" data-astro-cid-ssfzsv2f></line></svg> <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" data-astro-cid-ssfzsv2f></path></svg> <svg class="icon-system" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f><rect x="2" y="3" width="20" height="14" rx="2" data-astro-cid-ssfzsv2f></rect><line x1="8" y1="21" x2="16" y2="21" data-astro-cid-ssfzsv2f></line><line x1="12" y1="17" x2="12" y2="21" data-astro-cid-ssfzsv2f></line></svg> <span class="s-theme-label" data-astro-cid-ssfzsv2f> <span class="label-light" data-astro-cid-ssfzsv2f>Light mode</span> <span class="label-dark" data-astro-cid-ssfzsv2f>Dark mode</span> <span class="label-system" data-astro-cid-ssfzsv2f>System</span> </span> </button> </div> </aside> <script>
+(function () {
+  // Generic group toggle for all .s-group and .s-subgroup headers
+  document.querySelectorAll('[data-group]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id   = btn.getAttribute('data-group');
+      var el   = document.getElementById(id);
+      if (!el) return;
+      var open = el.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+})();
+</script> <main class="main" id="main">  <div class="doc-page" data-astro-cid-rnp3zwhq> <!-- Page header --> <header class="doc-header" data-astro-cid-rnp3zwhq> <p class="doc-eyebrow" data-astro-cid-rnp3zwhq>Documentation</p> <h1 data-astro-cid-rnp3zwhq>Action Button Manager</h1> <dl class="doc-meta" data-astro-cid-rnp3zwhq>  <dt data-astro-cid-rnp3zwhq>Version</dt> <dd data-astro-cid-rnp3zwhq>1.0.0</dd>  <dt data-astro-cid-rnp3zwhq>Files</dt> <dd data-astro-cid-rnp3zwhq>`action-button-manager.min.js`</dd>  <dt data-astro-cid-rnp3zwhq>Author</dt> <dd data-astro-cid-rnp3zwhq>Network Economic Services Ventures Philippines, Inc.</dd>  <dt data-astro-cid-rnp3zwhq>Last Updated</dt> <dd data-astro-cid-rnp3zwhq>2026-01-09</dd>  </dl> </header> <!-- Markdown body --> <div class="doc-body" data-astro-cid-rnp3zwhq> <h2 id="1-overview">1. Overview</h2>
+<p><code>ActionButtonManager</code> is an ES6 class that manages the rendering of context-aware action buttons inside data tables. It solves the problem of showing the right buttons for the right row state (e.g., “active” vs. “pending”) while automatically adapting the layout between desktop and mobile viewports.</p>
+<p>On <strong>desktop</strong>, it renders an inline button group with an overflow dropdown for extra actions. On <strong>mobile</strong>, it renders a single button that opens a Bootstrap Offcanvas side menu listing all available actions.</p>
+<hr>
+<h2 id="2-features">2. Features</h2>
+<ul>
+<li>Responsive rendering — automatically switches between desktop and mobile layouts at a configurable breakpoint</li>
+<li>State-based button visibility — show different buttons for different row states</li>
+<li>Per-button visibility conditions — fine-grained control via <code>visibilityCondition</code> callbacks</li>
+<li>Permission-based filtering — integrates with any permission manager</li>
+<li>Context passing — row data flows from the table cell through button click to handler</li>
+<li>Desktop overflow dropdown — excess buttons collapse into a <code>⋮</code> more-actions menu</li>
+<li>Mobile offcanvas — multiple actions presented in a Bootstrap Offcanvas side drawer</li>
+<li>XSS protection — all user-controlled values HTML-escaped before rendering</li>
+<li>Delegated event handling — works with dynamically rendered tables without re-attaching</li>
+<li>Chainable API — method calls can be chained</li>
+<li>Subclass-friendly — extend with <code>_initializeDefaultButtons()</code> for reusable managers</li>
+<li>Auto-closing — dropdown and offcanvas close automatically after action execution</li>
+</ul>
+<hr>
+<h2 id="3-dependencies">3. Dependencies</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Library</th><th>Version</th><th>Required</th></tr></thead><tbody><tr><td>jQuery</td><td>3.x</td><td><strong>Yes</strong></td></tr><tr><td>Bootstrap</td><td>5.3.x</td><td><strong>Yes</strong> (Dropdown, Offcanvas, Tooltip)</td></tr></tbody></table>
+<p>Both must be available as globals (<code>$</code>, <code>bootstrap</code>) before the module is imported.</p>
+<hr>
+<h2 id="4-setup">4. Setup</h2>
+<p>The file uses an ES6 named export. Import it as a module:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#6A737D">&#x3C;!-- In &#x3C;head> or as module script --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">script</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"module"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#F97583">  import</span><span style="color:#E1E4E8"> { ActionButtonManager } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> '/js/action-button-manager/action-button-manager.min.js'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> manager</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> ActionButtonManager</span><span style="color:#E1E4E8">({ </span><span style="color:#6A737D">/* config */</span><span style="color:#E1E4E8"> });</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span></code></pre>
+<p>Or bundle it with your project’s build system (Webpack, Vite, Rollup, etc.):</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { ActionButtonManager } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> './action-button-manager.min.js'</span><span style="color:#E1E4E8">;</span></span></code></pre>
+<hr>
+<h2 id="5-required-html-structure">5. Required HTML Structure</h2>
+<h3 id="table-cell-where-buttons-are-injected">Table cell (where buttons are injected)</h3>
+<p>Your <code>mappingFunction</code> in the table plugin should call <code>manager.render()</code> and inject the result into the actions cell:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">td</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"col-icon"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#6A737D">  &#x3C;!-- manager.render() output goes here --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">td</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h3 id="offcanvas-element-mobile">Offcanvas element (mobile)</h3>
+<p>Place this <strong>once</strong> per page (typically in the layout or page template). The selector must match <code>offcanvasSelector</code> in the config (default: <code>#dv-actions-offcanvas</code>).</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"offcanvas offcanvas-bottom"</span><span style="color:#B392F0"> tabindex</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"-1"</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"dv-actions-offcanvas"</span><span style="color:#B392F0"> aria-labelledby</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"dv-actions-offcanvas-label"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"offcanvas-header border-bottom"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">h5</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"offcanvas-title"</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"dv-actions-offcanvas-label"</span><span style="color:#E1E4E8">>Actions&#x3C;/</span><span style="color:#85E89D">h5</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"button"</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"btn-close"</span><span style="color:#B392F0"> data-bs-dismiss</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"offcanvas"</span><span style="color:#B392F0"> aria-label</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Close"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"offcanvas-body"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#6A737D">    &#x3C;!-- Populated dynamically by ActionButtonManager --></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span></code></pre>
+<blockquote>
+<p><strong>Required elements inside the offcanvas:</strong></p>
+<ul>
+<li><code>.offcanvas-title</code> — updated with the row title when the drawer opens</li>
+<li><code>.offcanvas-body</code> — replaced with button HTML when the drawer opens</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="6-constructor--configuration">6. Constructor &#x26; Configuration</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> manager</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> ActionButtonManager</span><span style="color:#E1E4E8">(config);</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Option</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>breakpoint</code></td><td><code>number</code></td><td><code>992</code></td><td>Viewport width (px) below which mobile layout is used. Matches Bootstrap’s <code>lg</code> breakpoint.</td></tr><tr><td><code>offcanvasSelector</code></td><td><code>string</code></td><td><code>"#dv-actions-offcanvas"</code></td><td>jQuery selector for the offcanvas element used in mobile view.</td></tr><tr><td><code>permissionManager</code></td><td><code>object | null</code></td><td><code>null</code></td><td>Optional permission manager. Must implement <code>hasPermission(permission: string): boolean</code>.</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> manager</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> ActionButtonManager</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  breakpoint: </span><span style="color:#79B8FF">768</span><span style="color:#E1E4E8">,                          </span><span style="color:#6A737D">// Switch at md breakpoint instead</span></span>
+<span class="line"><span style="color:#E1E4E8">  offcanvasSelector: </span><span style="color:#9ECBFF">'#my-offcanvas'</span><span style="color:#E1E4E8">,       </span><span style="color:#6A737D">// Custom offcanvas element</span></span>
+<span class="line"><span style="color:#E1E4E8">  permissionManager: myPermissionService,   </span><span style="color:#6A737D">// Optional permission integration</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<hr>
+<h2 id="7-registering-buttons">7. Registering Buttons</h2>
+<p>Register every possible action button before calling <code>render()</code>. Buttons must be registered first — they won’t appear otherwise.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">manager.</span><span style="color:#B392F0">registerButton</span><span style="color:#E1E4E8">(id, config);</span></span></code></pre>
+<h3 id="parameters">Parameters</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>id</code></td><td><code>string</code></td><td>Unique identifier for the button. Used to reference it in states and in the click handler via <code>data-action</code>.</td></tr><tr><td><code>config</code></td><td><code>object</code></td><td>Button configuration (see properties below).</td></tr></tbody></table>
+<h3 id="button-configuration-properties">Button Configuration Properties</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Property</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>label</code></td><td><code>string</code></td><td><strong>Yes</strong></td><td>—</td><td>Display text. Shown in tooltips (desktop), dropdown items, and offcanvas buttons.</td></tr><tr><td><code>icon</code></td><td><code>string</code></td><td>No</td><td><code>""</code></td><td>CSS icon class (e.g. <code>"vi-regular vi-pen"</code>) or raw SVG string starting with <code>&#x3C;svg</code>. CSS classes render as <code>&#x3C;span class="...">&#x3C;/span></code>. Only use trusted SVG sources.</td></tr><tr><td><code>cssClass</code></td><td><code>string</code></td><td>No</td><td><code>""</code></td><td>Additional CSS classes added to the <code>&#x3C;button></code> element.</td></tr><tr><td><code>handler</code></td><td><code>function</code></td><td>No</td><td>—</td><td>Click handler. Receives <code>(context, $button)</code>. If omitted, the click event bubbles normally for external listeners.</td></tr><tr><td><code>visibilityCondition</code></td><td><code>function</code></td><td>No</td><td><code>() => true</code></td><td>Function receiving the row <code>context</code> object. Return <code>true</code> to show the button, <code>false</code> to hide it.</td></tr><tr><td><code>dataAttributes</code></td><td><code>object | function</code></td><td>No</td><td><code>{}</code></td><td>Data attributes to embed in the button HTML. Can be a static object or a function <code>(context) => object</code>. These are extracted back into the <code>context</code> parameter when the button is clicked.</td></tr><tr><td><code>permission</code></td><td><code>string</code></td><td>No</td><td><code>null</code></td><td>Permission key. If set, the button only renders when <code>permissionManager.hasPermission(key)</code> returns <code>true</code>.</td></tr><tr><td><code>order</code></td><td><code>number</code></td><td>No</td><td><code>999</code></td><td>Display order within a state. Lower numbers appear first. Buttons with the same order retain their registration order.</td></tr></tbody></table>
+<h3 id="method-chaining">Method chaining</h3>
+<p><code>registerButton</code> returns <code>this</code>, so calls can be chained:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">manager</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">registerButton</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'edit'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">    label: </span><span style="color:#9ECBFF">'Edit'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    icon: </span><span style="color:#9ECBFF">'vi-regular vi-pen'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    cssClass: </span><span style="color:#9ECBFF">'text-primary'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    order: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">    handler</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">context</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">$btn</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">      openEditModal</span><span style="color:#E1E4E8">(context.EmployeeId);</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">  })</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">registerButton</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'delete'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">    label: </span><span style="color:#9ECBFF">'Delete'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    icon: </span><span style="color:#9ECBFF">'vi-regular vi-trash'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    cssClass: </span><span style="color:#9ECBFF">'text-danger'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    order: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    permission: </span><span style="color:#9ECBFF">'employees.delete'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">    handler</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">context</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">$btn</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">      confirmDelete</span><span style="color:#E1E4E8">(context.EmployeeId);</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">  });</span></span></code></pre>
+<hr>
+<h2 id="8-registering-states">8. Registering States</h2>
+<p>States control which buttons are shown for each row condition. A state is a named group of button IDs.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">manager.</span><span style="color:#B392F0">registerState</span><span style="color:#E1E4E8">(stateName, buttonIds);</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>stateName</code></td><td><code>string</code></td><td>Unique state name. Pass this to <code>render()</code> to select which buttons show.</td></tr><tr><td><code>buttonIds</code></td><td><code>string[]</code></td><td>Array of button IDs (matching those registered with <code>registerButton</code>) to include in this state.</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">manager</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">registerState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'active'</span><span style="color:#E1E4E8">,   [</span><span style="color:#9ECBFF">'edit'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'deactivate'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'delete'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'view-history'</span><span style="color:#E1E4E8">])</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">registerState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'inactive'</span><span style="color:#E1E4E8">, [</span><span style="color:#9ECBFF">'activate'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'delete'</span><span style="color:#E1E4E8">])</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">registerState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'pending'</span><span style="color:#E1E4E8">,  [</span><span style="color:#9ECBFF">'approve'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'reject'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'view'</span><span style="color:#E1E4E8">]);</span></span></code></pre>
+<p>A button ID can appear in multiple states. The <code>visibilityCondition</code> on the button provides additional per-row filtering within a state.</p>
+<hr>
+<h2 id="9-rendering-buttons">9. Rendering Buttons</h2>
+<p>Call <code>render()</code> inside your table’s <code>mappingFunction</code> for each row.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> html</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> manager.</span><span style="color:#B392F0">render</span><span style="color:#E1E4E8">(state, context, options);</span></span></code></pre>
+<h3 id="parameters-1">Parameters</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>state</code></td><td><code>string</code></td><td>—</td><td>State name (from <code>registerState</code>) to determine which buttons to render.</td></tr><tr><td><code>context</code></td><td><code>object</code></td><td><code>{}</code></td><td>Row data. Passed to <code>visibilityCondition</code>, <code>dataAttributes</code> functions, and the click <code>handler</code>.</td></tr><tr><td><code>options</code></td><td><code>object</code></td><td><code>{}</code></td><td>Rendering options (see below).</td></tr></tbody></table>
+<h3 id="render-options">Render Options</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Option</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>maxInline</code></td><td><code>number</code></td><td><code>3</code></td><td>Maximum buttons to show inline on desktop before collapsing the rest into a dropdown.</td></tr><tr><td><code>label</code></td><td><code>string</code></td><td>—</td><td>Optional text label to show next to the <code>⋮</code> icon on the mobile offcanvas trigger button.</td></tr><tr><td><code>title</code></td><td><code>string</code></td><td>—</td><td>Title shown in the offcanvas header when the drawer opens on mobile.</td></tr></tbody></table>
+<h3 id="return-value">Return value</h3>
+<p>Returns an HTML string ready to inject into a table cell. Returns <code>""</code> if there are no visible buttons or if the instance has been disposed.</p>
+<h3 id="example-in-mappingfunction">Example in mappingFunction</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#employeeTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  endpoint: </span><span style="color:#9ECBFF">'/api/employees'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  mappingFunction</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> data.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">row</span><span style="color:#F97583"> =></span><span style="color:#9ECBFF"> `</span></span>
+<span class="line"><span style="color:#9ECBFF">      &#x3C;tr></span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;td>${</span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">name</span><span style="color:#9ECBFF">}&#x3C;/td></span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;td>${</span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">department</span><span style="color:#9ECBFF">}&#x3C;/td></span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;td></span></span>
+<span class="line"><span style="color:#9ECBFF">          ${</span><span style="color:#E1E4E8">manager</span><span style="color:#9ECBFF">.</span><span style="color:#B392F0">render</span><span style="color:#9ECBFF">(</span></span>
+<span class="line"><span style="color:#E1E4E8">            row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">isActive</span><span style="color:#F97583"> ?</span><span style="color:#9ECBFF"> 'active'</span><span style="color:#F97583"> :</span><span style="color:#9ECBFF"> 'inactive'</span><span style="color:#9ECBFF">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            {</span></span>
+<span class="line"><span style="color:#9ECBFF">              employeeId: </span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">id</span><span style="color:#9ECBFF">,</span></span>
+<span class="line"><span style="color:#9ECBFF">              employeeName: </span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">name</span><span style="color:#9ECBFF">,</span></span>
+<span class="line"><span style="color:#9ECBFF">              isActive: </span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">isActive</span><span style="color:#9ECBFF">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            },</span></span>
+<span class="line"><span style="color:#9ECBFF">            {</span></span>
+<span class="line"><span style="color:#9ECBFF">              maxInline: </span><span style="color:#79B8FF">3</span><span style="color:#9ECBFF">,</span></span>
+<span class="line"><span style="color:#9ECBFF">              title: </span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">name</span><span style="color:#9ECBFF">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            }</span></span>
+<span class="line"><span style="color:#9ECBFF">          )</span><span style="color:#9ECBFF">}</span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;/td></span></span>
+<span class="line"><span style="color:#9ECBFF">      &#x3C;/tr></span></span>
+<span class="line"><span style="color:#9ECBFF">    `</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">join</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<hr>
+<h2 id="10-rendering-logic-by-viewport">10. Rendering Logic by Viewport</h2>
+<p>The viewport is checked dynamically on every <code>render()</code> call using <code>window.innerWidth</code>.</p>
+<h3 id="desktop-viewport--breakpoint">Desktop (viewport > breakpoint)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Visible buttons</th><th>Result</th></tr></thead><tbody><tr><td>≤ <code>maxInline</code></td><td>All buttons rendered inline in a <code>&#x3C;div class="btn-group"></code></td></tr><tr><td>> <code>maxInline</code></td><td>First <code>(maxInline - 1)</code> buttons inline + a <code>⋮</code> dropdown for the rest</td></tr></tbody></table>
+<ul>
+<li>Buttons 1–2 rendered inline</li>
+<li>Buttons 3–5 in the <code>⋮</code> dropdown</li>
+</ul>
+<h3 id="mobile-viewport--breakpoint">Mobile (viewport ≤ breakpoint)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Visible buttons</th><th>Result</th></tr></thead><tbody><tr><td>1</td><td>Button rendered directly with desktop (<code>btn btn-outline-secondary</code>) styling</td></tr><tr><td>> 1</td><td>A single <code>⋮</code> button that opens the offcanvas drawer</td></tr></tbody></table>
+<h3 id="desktop-button-html">Desktop button HTML</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"btn-group"</span><span style="color:#B392F0"> role</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"button"</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"[cssClass] btn btn-outline-secondary"</span></span>
+<span class="line"><span style="color:#B392F0">          data-action</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"edit"</span></span>
+<span class="line"><span style="color:#B392F0">          data-toggle</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"tooltip"</span><span style="color:#B392F0"> data-bs-placement</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"top"</span><span style="color:#B392F0"> title</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Edit"</span></span>
+<span class="line"><span style="color:#B392F0">          data-employee-id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"42"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">span</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"vi-regular vi-pen"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#6A737D">  &#x3C;!-- More inline buttons... --></span></span>
+<span class="line"><span style="color:#6A737D">  &#x3C;!-- Overflow dropdown trigger --></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"button"</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"btn btn-outline-secondary px-0 w-auto"</span></span>
+<span class="line"><span style="color:#B392F0">          data-bs-toggle</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"dropdown"</span><span style="color:#B392F0"> data-bs-auto-close</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"true"</span><span style="color:#B392F0"> aria-expanded</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"false"</span></span>
+<span class="line"><span style="color:#B392F0">          aria-label</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"More actions"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">span</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"vi-solid vi-more-vertical"</span></span>
+<span class="line"><span style="color:#B392F0">          data-toggle</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"tooltip"</span><span style="color:#B392F0"> data-bs-placement</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"top"</span><span style="color:#B392F0"> title</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"More Actions"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">ul</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"dropdown-menu"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"button"</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"dropdown-item hstack gap-3"</span><span style="color:#B392F0"> data-action</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"delete"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">span</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"vi-regular vi-trash"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">>Delete</span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">ul</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h3 id="mobile-offcanvas-trigger-html">Mobile offcanvas trigger HTML</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"button"</span></span>
+<span class="line"><span style="color:#B392F0">        class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"btn btn-outline-secondary btn-open-action-offcanvas"</span></span>
+<span class="line"><span style="color:#B392F0">        data-bs-toggle</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"offcanvas"</span></span>
+<span class="line"><span style="color:#B392F0">        data-bs-target</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"#dv-actions-offcanvas"</span></span>
+<span class="line"><span style="color:#B392F0">        data-offcanvas-state</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"active"</span></span>
+<span class="line"><span style="color:#B392F0">        data-offcanvas-title</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Maria Santos"</span></span>
+<span class="line"><span style="color:#B392F0">        data-employee-id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"42"</span></span>
+<span class="line"><span style="color:#B392F0">        aria-label</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Open actions menu"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">span</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"vi-solid vi-more-vertical"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span></code></pre>
+<hr>
+<h2 id="11-offcanvas-mobile-integration">11. Offcanvas (Mobile) Integration</h2>
+<p>When the mobile offcanvas trigger is clicked, Bootstrap fires <code>show.bs.offcanvas</code>. The manager listens to this event and automatically calls <code>populateOffcanvas()</code> using the state and context data stored in the trigger button’s data attributes.</p>
+<p><strong>You do not need to call <code>populateOffcanvas()</code> manually</strong> when using <code>render()</code> — it is wired up automatically.</p>
+<h3 id="manual-offcanvas-population">Manual offcanvas population</h3>
+<p>Use <code>populateOffcanvas()</code> if you need to trigger it outside of the normal button-click flow:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">manager.</span><span style="color:#B392F0">populateOffcanvas</span><span style="color:#E1E4E8">(state, context);</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>state</code></td><td><code>string</code></td><td>State name to determine which buttons to render in the offcanvas.</td></tr><tr><td><code>context</code></td><td><code>object</code></td><td>Row data. Use <code>context.title</code> to set the offcanvas header title.</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">manager.</span><span style="color:#B392F0">populateOffcanvas</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'active'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">  title: </span><span style="color:#9ECBFF">'Maria Santos'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  employeeId: </span><span style="color:#79B8FF">42</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  isActive: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="offcanvas-button-layout">Offcanvas button layout</h3>
+<p>Buttons inside the offcanvas use <code>dropdown-item hstack gap-4 py-4</code> styling with labels visible:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"button"</span></span>
+<span class="line"><span style="color:#B392F0">        class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"[cssClass] dropdown-item hstack gap-4 py-4"</span></span>
+<span class="line"><span style="color:#B392F0">        data-action</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"edit"</span></span>
+<span class="line"><span style="color:#B392F0">        data-toggle</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"tooltip"</span><span style="color:#B392F0"> data-bs-placement</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"top"</span><span style="color:#B392F0"> title</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Edit"</span></span>
+<span class="line"><span style="color:#B392F0">        data-employee-id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"42"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">span</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"vi-regular vi-pen"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">>Edit&#x3C;/</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span></code></pre>
+<hr>
+<h2 id="12-event-handling--context">12. Event Handling &#x26; Context</h2>
+<h3 id="how-handlers-are-attached">How handlers are attached</h3>
+<p>Event handlers are attached using jQuery event delegation (<code>$(document).on('click.actionButtons', '[data-action]', ...)</code>). This means they work on dynamically rendered table rows without needing to re-attach after each table refresh.</p>
+<p>Handlers are attached <strong>once</strong> on the first <code>render()</code> or <code>populateOffcanvas()</code> call. Subsequent calls do not re-attach.</p>
+<h3 id="how-context-flows-to-handlers">How context flows to handlers</h3>
+<p>When a button is clicked, the manager reads all <code>data-*</code> attributes from the button element and converts them into a context object. This is the same object passed back to the <code>handler</code> function.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>HTML data attribute</th><th>JS dataset key</th><th>Context key (PascalCase)</th></tr></thead><tbody><tr><td><code>data-employee-id</code></td><td><code>employeeId</code></td><td><code>EmployeeId</code></td></tr><tr><td><code>data-is-active</code></td><td><code>isActive</code></td><td><code>IsActive</code></td></tr><tr><td><code>data-department-name</code></td><td><code>departmentName</code></td><td><code>DepartmentName</code></td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Raw string value</th><th>Converted type</th></tr></thead><tbody><tr><td><code>"42"</code></td><td><code>42</code> (integer)</td></tr><tr><td><code>"-5"</code></td><td><code>-5</code> (negative integer)</td></tr><tr><td><code>"3.14"</code></td><td><code>3.14</code> (float)</td></tr><tr><td><code>"true"</code></td><td><code>true</code> (boolean)</td></tr><tr><td><code>"false"</code></td><td><code>false</code> (boolean)</td></tr><tr><td>Any other string</td><td>remains a string</td></tr></tbody></table>
+<p><strong>Reserved keys</strong> are automatically excluded from the context object and should not be used as data attribute names:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Excluded key</th><th>Reason</th></tr></thead><tbody><tr><td><code>offcanvasState</code></td><td>Internal state tracking</td></tr><tr><td><code>offcanvasTitle</code></td><td>Internal title tracking</td></tr><tr><td><code>bsToggle</code></td><td>Bootstrap internal</td></tr><tr><td><code>bsTarget</code></td><td>Bootstrap internal</td></tr><tr><td><code>bsPlacement</code></td><td>Bootstrap internal</td></tr><tr><td><code>toggle</code></td><td>Tooltip internal</td></tr><tr><td><code>placement</code></td><td>Tooltip internal</td></tr><tr><td><code>action</code></td><td>Manager action identifier</td></tr></tbody></table>
+<h3 id="handler-signature">Handler signature</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">handler</span><span style="color:#E1E4E8">(context, $button) {</span></span>
+<span class="line"><span style="color:#6A737D">  // context: extracted data attributes as PascalCase object</span></span>
+<span class="line"><span style="color:#6A737D">  // $button: jQuery-wrapped button element that was clicked</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">manager.</span><span style="color:#B392F0">registerButton</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'view'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">  label: </span><span style="color:#9ECBFF">'View'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  icon: </span><span style="color:#9ECBFF">'vi-regular vi-eye'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  dataAttributes</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">context</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">      invoiceId:  context.invoiceId,</span></span>
+<span class="line"><span style="color:#E1E4E8">      customerId: context.customerId,</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#B392F0">  handler</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">context</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">$btn</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#6A737D">    // context.InvoiceId  → number (auto-coerced from data-invoice-id)</span></span>
+<span class="line"><span style="color:#6A737D">    // context.CustomerId → number (auto-coerced from data-customer-id)</span></span>
+<span class="line"><span style="color:#B392F0">    openInvoiceModal</span><span style="color:#E1E4E8">(context.InvoiceId);</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="auto-close-behavior">Auto-close behavior</h3>
+<ul>
+<li><strong>Dropdown:</strong> After a button inside the dropdown menu is clicked, the dropdown is closed via <code>bootstrap.Dropdown.getInstance().hide()</code>.</li>
+<li><strong>Offcanvas:</strong> After a button inside the offcanvas is clicked, the offcanvas is closed via <code>bootstrap.Offcanvas.getOrCreateInstance().hide()</code>.</li>
+</ul>
+<p>If a button has <strong>no handler</strong> registered, the click event bubbles normally (not prevented). In the offcanvas, the offcanvas is still closed even for handler-less buttons.</p>
+<hr>
+<h2 id="13-permission-based-access-control">13. Permission-Based Access Control</h2>
+<p>Pass a <code>permissionManager</code> object to the constructor. It must implement a single method:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="typescript"><code><span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> PermissionManager</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">  hasPermission</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">permission</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">)</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> boolean</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Buttons with a <code>permission</code> property are only rendered if the permission manager returns <code>true</code> for that key. If no <code>permissionManager</code> is configured, all buttons are treated as permitted.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Example permission manager</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> permissions</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">  hasPermission</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">key</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> userPermissions.</span><span style="color:#B392F0">includes</span><span style="color:#E1E4E8">(key);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> manager</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> ActionButtonManager</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  permissionManager: permissions,</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">manager.</span><span style="color:#B392F0">registerButton</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'delete'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">  label: </span><span style="color:#9ECBFF">'Delete'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  icon: </span><span style="color:#9ECBFF">'vi-regular vi-trash'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  permission: </span><span style="color:#9ECBFF">'records.delete'</span><span style="color:#E1E4E8">,  </span><span style="color:#6A737D">// Only shown if user has this permission</span></span>
+<span class="line"><span style="color:#B392F0">  handler</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">context</span><span style="color:#E1E4E8">) { </span><span style="color:#6A737D">/* ... */</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<hr>
+<h2 id="14-tooltips">14. Tooltips</h2>
+<p>Each button renders with <code>data-toggle="tooltip"</code> and <code>title="[label]"</code> attributes. After buttons are injected into the DOM, call <code>initializeTooltips()</code> to activate them.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// After table renders</span></span>
+<span class="line"><span style="color:#B392F0">initializeTooltips</span><span style="color:#E1E4E8">(container)</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>container</code></td><td><code>Element</code></td><td><code>document</code></td><td>Root element to search within for tooltip elements. Scope to the table for performance.</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// In table's success callback</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#myTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#6A737D">  // ...</span></span>
+<span class="line"><span style="color:#B392F0">  success</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    manager.</span><span style="color:#B392F0">initializeTooltips</span><span style="color:#E1E4E8">(document.</span><span style="color:#B392F0">getElementById</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'myTable'</span><span style="color:#E1E4E8">));</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<blockquote>
+<p><strong>Note:</strong> <code>initializeTooltips()</code> creates a new <code>bootstrap.Tooltip</code> instance for each button. If your table re-renders frequently, consider scoping the container tightly to avoid processing the entire document.</p>
+</blockquote>
+<hr>
+<h2 id="15-api-reference">15. API Reference</h2>
+<h3 id="instance-methods">Instance methods</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Returns</th><th>Description</th></tr></thead><tbody><tr><td><code>registerButton(id, config)</code></td><td><code>this</code></td><td>Registers a button. Must be called before <code>render()</code>.</td></tr><tr><td><code>registerState(stateName, buttonIds)</code></td><td><code>this</code></td><td>Registers a state with its button IDs.</td></tr><tr><td><code>getVisibleButtons(state, context)</code></td><td><code>Button[]</code></td><td>Returns sorted array of visible button configs for a state + context. Useful for inspection.</td></tr><tr><td><code>render(state, context, options)</code></td><td><code>string</code></td><td>Returns rendered HTML for the button group.</td></tr><tr><td><code>populateOffcanvas(state, context)</code></td><td><code>this</code></td><td>Manually populates the offcanvas with buttons for a given state + context.</td></tr><tr><td><code>attachHandlers(container)</code></td><td><code>this</code></td><td>Attaches delegated click and offcanvas event handlers. Called automatically on first render.</td></tr><tr><td><code>initializeTooltips(container)</code></td><td><code>this</code></td><td>Initializes Bootstrap tooltips within the given container.</td></tr><tr><td><code>dispose()</code></td><td><code>this</code></td><td>Removes all event handlers, clears registries, marks instance as disposed.</td></tr><tr><td><del><code>updateViewport(width)</code></del></td><td><code>this</code></td><td><strong>Deprecated.</strong> No-op. Viewport is now checked dynamically.</td></tr></tbody></table>
+<h3 id="static-methods">Static methods</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Returns</th><th>Description</th></tr></thead><tbody><tr><td><code>ActionButtonManager.create(config)</code></td><td><code>ActionButtonManager</code></td><td>Factory: creates a base instance with the given config.</td></tr><tr><td><code>ActionButtonManager.create(MyClass, config)</code></td><td><code>MyClass</code></td><td>Factory: creates an instance of a subclass.</td></tr></tbody></table>
+<hr>
+<h2 id="16-extending-with-subclasses">16. Extending with Subclasses</h2>
+<p>Override <code>_initializeDefaultButtons()</code> in a subclass to pre-register standard buttons. This is useful when the same set of actions is reused across multiple pages.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> EmployeeButtonManager</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> ActionButtonManager</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">  _initializeDefaultButtons</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#79B8FF">    this</span></span>
+<span class="line"><span style="color:#E1E4E8">      .</span><span style="color:#B392F0">registerButton</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'view'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">        label: </span><span style="color:#9ECBFF">'View'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        icon: </span><span style="color:#9ECBFF">'vi-regular vi-eye'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        order: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">        handler</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">context</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">$btn</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">          window.location.href </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> `/employees/${</span><span style="color:#E1E4E8">context</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">EmployeeId</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">      })</span></span>
+<span class="line"><span style="color:#E1E4E8">      .</span><span style="color:#B392F0">registerButton</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'edit'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">        label: </span><span style="color:#9ECBFF">'Edit'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        icon: </span><span style="color:#9ECBFF">'vi-regular vi-pen'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        order: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        permission: </span><span style="color:#9ECBFF">'employees.edit'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">        handler</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">context</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">$btn</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">          openEditModal</span><span style="color:#E1E4E8">(context.EmployeeId);</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">      })</span></span>
+<span class="line"><span style="color:#E1E4E8">      .</span><span style="color:#B392F0">registerButton</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'deactivate'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">        label: </span><span style="color:#9ECBFF">'Deactivate'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        icon: </span><span style="color:#9ECBFF">'vi-regular vi-power-off'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        order: </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        cssClass: </span><span style="color:#9ECBFF">'text-warning'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        permission: </span><span style="color:#9ECBFF">'employees.edit'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">        visibilityCondition</span><span style="color:#E1E4E8">: (</span><span style="color:#FFAB70">ctx</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> ctx.IsActive </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">        handler</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">context</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">$btn</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">          confirmDeactivate</span><span style="color:#E1E4E8">(context.EmployeeId);</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">      })</span></span>
+<span class="line"><span style="color:#E1E4E8">      .</span><span style="color:#B392F0">registerButton</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'activate'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">        label: </span><span style="color:#9ECBFF">'Activate'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        icon: </span><span style="color:#9ECBFF">'vi-regular vi-power-off'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        order: </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        permission: </span><span style="color:#9ECBFF">'employees.edit'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">        visibilityCondition</span><span style="color:#E1E4E8">: (</span><span style="color:#FFAB70">ctx</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> ctx.IsActive </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">        handler</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">context</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">$btn</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">          activateEmployee</span><span style="color:#E1E4E8">(context.EmployeeId);</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">      })</span></span>
+<span class="line"><span style="color:#E1E4E8">      .</span><span style="color:#B392F0">registerButton</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'delete'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">        label: </span><span style="color:#9ECBFF">'Delete'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        icon: </span><span style="color:#9ECBFF">'vi-regular vi-trash'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        order: </span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        cssClass: </span><span style="color:#9ECBFF">'text-danger'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        permission: </span><span style="color:#9ECBFF">'employees.delete'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">        handler</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">context</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">$btn</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">          confirmDelete</span><span style="color:#E1E4E8">(context.EmployeeId);</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">      })</span></span>
+<span class="line"><span style="color:#E1E4E8">      .</span><span style="color:#B392F0">registerState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'active'</span><span style="color:#E1E4E8">,   [</span><span style="color:#9ECBFF">'view'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'edit'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'deactivate'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'delete'</span><span style="color:#E1E4E8">])</span></span>
+<span class="line"><span style="color:#E1E4E8">      .</span><span style="color:#B392F0">registerState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'inactive'</span><span style="color:#E1E4E8">, [</span><span style="color:#9ECBFF">'view'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'activate'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'delete'</span><span style="color:#E1E4E8">]);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Use the factory method to instantiate</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> manager</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> ActionButtonManager.</span><span style="color:#B392F0">create</span><span style="color:#E1E4E8">(EmployeeButtonManager, {</span></span>
+<span class="line"><span style="color:#E1E4E8">  permissionManager: myPermissions,</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<hr>
+<h2 id="17-lifecycle--cleanup">17. Lifecycle &#x26; Cleanup</h2>
+<h3 id="disposal">Disposal</h3>
+<p>Call <code>dispose()</code> when the page or component using the manager is torn down. This prevents memory leaks by removing all event listeners and clearing the registries.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">manager.</span><span style="color:#B392F0">dispose</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// After disposal, all method calls are no-ops (render returns "", populateOffcanvas warns)</span></span></code></pre>
+<h3 id="checking-disposal">Checking disposal</h3>
+<p>The manager logs a warning to the console if <code>render()</code> or <code>populateOffcanvas()</code> is called after disposal. The instance cannot be reused — create a new one.</p>
+<h3 id="preventing-duplicate-handlers">Preventing duplicate handlers</h3>
+<p>The manager uses an internal <code>_handlersAttached</code> flag. Even if <code>attachHandlers()</code> is called manually multiple times, or <code>render()</code> is called repeatedly (e.g., on every table refresh), handlers are only attached once.</p>
+<hr>
+<h2 id="18-complete-usage-example">18. Complete Usage Example</h2>
+<p>This example shows a full employee table integration with states, permissions, visibility conditions, and responsive rendering.</p>
+<h3 id="html">HTML</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#6A737D">&#x3C;!-- CDN URL for state images (used by table plugin) --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">input</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"hidden"</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"voyadores-cdn-url"</span><span style="color:#B392F0"> value</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">&#x3C;!-- Table --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">table</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"employeeTable"</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"table table-hover table-bordered"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">thead</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">tr</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">>Name&#x3C;/</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">>Department&#x3C;/</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">>Status&#x3C;/</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">th</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"col-icon"</span><span style="color:#E1E4E8">>Actions&#x3C;/</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">tr</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">thead</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">tbody</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">tbody</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">table</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">&#x3C;!-- Load more button --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"loadMoreBtn"</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"btn btn-outline-secondary mt-3"</span><span style="color:#B392F0"> style</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"display:none"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  Load more</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">&#x3C;!-- Offcanvas (mobile) — one per page --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"offcanvas offcanvas-bottom"</span><span style="color:#B392F0"> tabindex</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"-1"</span></span>
+<span class="line"><span style="color:#B392F0">     id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"dv-actions-offcanvas"</span><span style="color:#B392F0"> aria-labelledby</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"dv-actions-offcanvas-label"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"offcanvas-header border-bottom"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">h5</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"offcanvas-title"</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"dv-actions-offcanvas-label"</span><span style="color:#E1E4E8">>Actions&#x3C;/</span><span style="color:#85E89D">h5</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"button"</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"btn-close"</span><span style="color:#B392F0"> data-bs-dismiss</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"offcanvas"</span><span style="color:#B392F0"> aria-label</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Close"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"offcanvas-body"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h3 id="javascript">JavaScript</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { ActionButtonManager } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> '/js/action-button-manager/action-button-manager.min.js'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 1. Create and configure the manager</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> manager</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> ActionButtonManager</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  permissionManager: {</span></span>
+<span class="line"><span style="color:#B392F0">    hasPermission</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">key</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">      return</span><span style="color:#E1E4E8"> window.userPermissions?.</span><span style="color:#B392F0">includes</span><span style="color:#E1E4E8">(key) </span><span style="color:#F97583">??</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 2. Register buttons</span></span>
+<span class="line"><span style="color:#E1E4E8">manager</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">registerButton</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'view'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">    label: </span><span style="color:#9ECBFF">'View'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    icon: </span><span style="color:#9ECBFF">'vi-regular vi-eye'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    order: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">    dataAttributes</span><span style="color:#E1E4E8">: (</span><span style="color:#FFAB70">ctx</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> ({ employeeId: ctx.employeeId }),</span></span>
+<span class="line"><span style="color:#B392F0">    handler</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">context</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">      window.location.href </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> `/employees/${</span><span style="color:#E1E4E8">context</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">EmployeeId</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">  })</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">registerButton</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'edit'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">    label: </span><span style="color:#9ECBFF">'Edit'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    icon: </span><span style="color:#9ECBFF">'vi-regular vi-pen'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    order: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    permission: </span><span style="color:#9ECBFF">'employees.edit'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">    dataAttributes</span><span style="color:#E1E4E8">: (</span><span style="color:#FFAB70">ctx</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> ({ employeeId: ctx.employeeId }),</span></span>
+<span class="line"><span style="color:#B392F0">    handler</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">context</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">      openEditModal</span><span style="color:#E1E4E8">(context.EmployeeId);</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">  })</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">registerButton</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'approve'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">    label: </span><span style="color:#9ECBFF">'Approve'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    icon: </span><span style="color:#9ECBFF">'vi-regular vi-like'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    order: </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    cssClass: </span><span style="color:#9ECBFF">'text-success'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    permission: </span><span style="color:#9ECBFF">'employees.approve'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">    dataAttributes</span><span style="color:#E1E4E8">: (</span><span style="color:#FFAB70">ctx</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> ({ employeeId: ctx.employeeId }),</span></span>
+<span class="line"><span style="color:#B392F0">    handler</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">context</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">      approveEmployee</span><span style="color:#E1E4E8">(context.EmployeeId);</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">  })</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">registerButton</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'reject'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">    label: </span><span style="color:#9ECBFF">'Reject'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    icon: </span><span style="color:#9ECBFF">'vi-regular vi-dislike'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    order: </span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    cssClass: </span><span style="color:#9ECBFF">'text-danger'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    permission: </span><span style="color:#9ECBFF">'employees.approve'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">    dataAttributes</span><span style="color:#E1E4E8">: (</span><span style="color:#FFAB70">ctx</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> ({ employeeId: ctx.employeeId }),</span></span>
+<span class="line"><span style="color:#B392F0">    handler</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">context</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">      rejectEmployee</span><span style="color:#E1E4E8">(context.EmployeeId);</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">  })</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">registerButton</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'deactivate'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">    label: </span><span style="color:#9ECBFF">'Deactivate'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    icon: </span><span style="color:#9ECBFF">'vi-regular vi-power-off'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    order: </span><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    permission: </span><span style="color:#9ECBFF">'employees.edit'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">    visibilityCondition</span><span style="color:#E1E4E8">: (</span><span style="color:#FFAB70">ctx</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> ctx.canDeactivate </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">    dataAttributes</span><span style="color:#E1E4E8">: (</span><span style="color:#FFAB70">ctx</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> ({ employeeId: ctx.employeeId }),</span></span>
+<span class="line"><span style="color:#B392F0">    handler</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">context</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">      deactivateEmployee</span><span style="color:#E1E4E8">(context.EmployeeId);</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">  })</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">registerButton</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'delete'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">    label: </span><span style="color:#9ECBFF">'Delete'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    icon: </span><span style="color:#9ECBFF">'vi-regular vi-trash'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    order: </span><span style="color:#79B8FF">6</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    cssClass: </span><span style="color:#9ECBFF">'text-danger'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    permission: </span><span style="color:#9ECBFF">'employees.delete'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">    dataAttributes</span><span style="color:#E1E4E8">: (</span><span style="color:#FFAB70">ctx</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> ({ employeeId: ctx.employeeId }),</span></span>
+<span class="line"><span style="color:#B392F0">    handler</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">context</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">      confirmDelete</span><span style="color:#E1E4E8">(context.EmployeeId);</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">  });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 3. Register states</span></span>
+<span class="line"><span style="color:#E1E4E8">manager</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">registerState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'active'</span><span style="color:#E1E4E8">,   [</span><span style="color:#9ECBFF">'view'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'edit'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'deactivate'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'delete'</span><span style="color:#E1E4E8">])</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">registerState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'inactive'</span><span style="color:#E1E4E8">, [</span><span style="color:#9ECBFF">'view'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'edit'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'delete'</span><span style="color:#E1E4E8">])</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">registerState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'pending'</span><span style="color:#E1E4E8">,  [</span><span style="color:#9ECBFF">'view'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'approve'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'reject'</span><span style="color:#E1E4E8">]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// 4. Initialize table with manager</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#employeeTable'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">table</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  endpoint: </span><span style="color:#9ECBFF">'/api/employees'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  mappingFunction</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> data.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">row</span><span style="color:#F97583"> =></span><span style="color:#9ECBFF"> `</span></span>
+<span class="line"><span style="color:#9ECBFF">      &#x3C;tr></span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;td>${</span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">name</span><span style="color:#9ECBFF">}&#x3C;/td></span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;td>${</span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">department</span><span style="color:#9ECBFF">}&#x3C;/td></span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;td>${</span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">statusLabel</span><span style="color:#9ECBFF">}&#x3C;/td></span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;td class="col-icon text-center"></span></span>
+<span class="line"><span style="color:#9ECBFF">          ${</span><span style="color:#E1E4E8">manager</span><span style="color:#9ECBFF">.</span><span style="color:#B392F0">render</span><span style="color:#9ECBFF">(</span></span>
+<span class="line"><span style="color:#E1E4E8">            row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">status</span><span style="color:#9ECBFF">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            {</span></span>
+<span class="line"><span style="color:#9ECBFF">              employeeId:    </span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">id</span><span style="color:#9ECBFF">,</span></span>
+<span class="line"><span style="color:#9ECBFF">              canDeactivate: </span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">subordinateCount</span><span style="color:#F97583"> ===</span><span style="color:#79B8FF"> 0</span><span style="color:#9ECBFF">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            },</span></span>
+<span class="line"><span style="color:#9ECBFF">            {</span></span>
+<span class="line"><span style="color:#9ECBFF">              maxInline: </span><span style="color:#79B8FF">3</span><span style="color:#9ECBFF">,</span></span>
+<span class="line"><span style="color:#9ECBFF">              title: </span><span style="color:#E1E4E8">row</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">name</span><span style="color:#9ECBFF">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            }</span></span>
+<span class="line"><span style="color:#9ECBFF">          )</span><span style="color:#9ECBFF">}</span></span>
+<span class="line"><span style="color:#9ECBFF">        &#x3C;/td></span></span>
+<span class="line"><span style="color:#9ECBFF">      &#x3C;/tr></span></span>
+<span class="line"><span style="color:#9ECBFF">    `</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">join</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#B392F0">  success</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#6A737D">    // Initialize tooltips after render</span></span>
+<span class="line"><span style="color:#E1E4E8">    manager.</span><span style="color:#B392F0">initializeTooltips</span><span style="color:#E1E4E8">(document.</span><span style="color:#B392F0">getElementById</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'employeeTable'</span><span style="color:#E1E4E8">));</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">  loadMore: {</span></span>
+<span class="line"><span style="color:#E1E4E8">    id: </span><span style="color:#9ECBFF">'loadMoreBtn'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    showOnPageSize: </span><span style="color:#79B8FF">20</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<hr>
+<h2 id="19-debugging--troubleshooting">19. Debugging &#x26; Troubleshooting</h2>
+<h3 id="buttons-not-rendering">Buttons not rendering</h3>
+<p>The manager returns <code>""</code> if the state has no registered buttons or if no buttons pass visibility/permission checks.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Inspect what's visible for a given state + context</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> visible</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> manager.</span><span style="color:#B392F0">getVisibleButtons</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'active'</span><span style="color:#E1E4E8">, { employeeId: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8"> });</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(visible); </span><span style="color:#6A737D">// Should be a non-empty array</span></span></code></pre>
+<p>State names are case-sensitive.</p>
+<hr>
+<h3 id="handlers-not-firing">Handlers not firing</h3>
+<p>The click handler is delegated to <code>[data-action]</code>. If the <code>id</code> passed to <code>registerButton()</code> is not appearing in the rendered HTML, the handler won’t trigger.</p>
+<p>After <code>dispose()</code>, all handlers are removed. Check <code>manager._isDisposed</code>.</p>
+<p>Since the handler uses delegation, any <code>stopPropagation()</code> between the button and <code>document</code> will prevent the event from reaching the manager.</p>
+<hr>
+<h3 id="context-object-has-wrong-keys-or-values">Context object has wrong keys or values</h3>
+<p>The context keys are <strong>PascalCase</strong> (first letter capitalized). For example, <code>data-employee-id</code> becomes <code>EmployeeId</code> in the handler context.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// HTML: data-employee-id="42"</span></span>
+<span class="line"><span style="color:#B392F0">handler</span><span style="color:#E1E4E8">(context) {</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(context.EmployeeId); </span><span style="color:#6A737D">// 42 (number, not "42")</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(context.employeeId); </span><span style="color:#6A737D">// undefined — wrong case</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
+<h3 id="offcanvas-not-populating-on-mobile">Offcanvas not populating on mobile</h3>
+<p>The manager looks up <code>$(this.offcanvasSelector)</code> at handler-attach time. If the offcanvas is added to the DOM after initialization, call <code>manager.attachHandlers()</code> manually.</p>
+<p>Both are required for <code>populateOffcanvas()</code> to update content.</p>
+<p>This is added automatically by <code>_createOffcanvasTrigger()</code> when <code>render()</code> is called. If you’re building the trigger manually, include it.</p>
+<hr>
+<h3 id="actionbuttonmanager-jquery-is-not-loaded-warning"><code>ActionButtonManager: jQuery is not loaded</code> warning</h3>
+<p>jQuery must be available as a global (<code>$</code>) before the module is imported. Load jQuery via <code>&#x3C;script></code> before your module import or ensure it’s bundled as a global.</p>
+<hr>
+<h3 id="permission-check-always-returns-false">Permission check always returns false</h3>
+<p>Verify your <code>permissionManager</code> is receiving the correct permission strings. Log them:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">permissionManager</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#B392F0">  hasPermission</span><span style="color:#E1E4E8">(key) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Checking permission:'</span><span style="color:#E1E4E8">, key);</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> userPermissions.</span><span style="color:#B392F0">includes</span><span style="color:#E1E4E8">(key);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
+<h2 id="20-best-practices">20. Best Practices</h2>
+<h3 id="keep-dataattributes-minimal">Keep <code>dataAttributes</code> minimal</h3>
+<p>Only embed the data the handler actually needs in the button. Avoid passing entire row objects — use the minimum set of IDs and flags required to perform the action.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Good — minimal, targeted</span></span>
+<span class="line"><span style="color:#B392F0">dataAttributes</span><span style="color:#E1E4E8">: (</span><span style="color:#FFAB70">ctx</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> ({ invoiceId: ctx.invoiceId }),</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Avoid — embeds everything, pollutes the DOM</span></span>
+<span class="line"><span style="color:#B392F0">dataAttributes</span><span style="color:#E1E4E8">: (</span><span style="color:#FFAB70">ctx</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> ctx,</span></span></code></pre>
+<h3 id="use-visibilitycondition-instead-of-state-proliferation">Use <code>visibilityCondition</code> instead of state proliferation</h3>
+<p>Prefer one state with <code>visibilityCondition</code> over many states that differ by one button:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Better — one state, conditional button</span></span>
+<span class="line"><span style="color:#E1E4E8">manager</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">registerButton</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'deactivate'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#B392F0">    visibilityCondition</span><span style="color:#E1E4E8">: (</span><span style="color:#FFAB70">ctx</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> ctx.IsActive </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#6A737D">    // ...</span></span>
+<span class="line"><span style="color:#E1E4E8">  })</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">registerState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'employee'</span><span style="color:#E1E4E8">, [</span><span style="color:#9ECBFF">'view'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'edit'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'deactivate'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'delete'</span><span style="color:#E1E4E8">]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Avoid — two almost-identical states</span></span>
+<span class="line"><span style="color:#E1E4E8">manager</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">registerState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'active'</span><span style="color:#E1E4E8">,   [</span><span style="color:#9ECBFF">'view'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'edit'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'deactivate'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'delete'</span><span style="color:#E1E4E8">])</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">registerState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'active-no-deactivate'</span><span style="color:#E1E4E8">, [</span><span style="color:#9ECBFF">'view'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'edit'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'delete'</span><span style="color:#E1E4E8">]);</span></span></code></pre>
+<h3 id="initialize-tooltips-after-every-table-render">Initialize tooltips after every table render</h3>
+<p>Tooltips must be re-initialized after every table refresh because old DOM elements are replaced. Use the <code>success</code> callback:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">success</span><span style="color:#E1E4E8">(data) {</span></span>
+<span class="line"><span style="color:#E1E4E8">  manager.</span><span style="color:#B392F0">initializeTooltips</span><span style="color:#E1E4E8">(document.</span><span style="color:#B392F0">getElementById</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'myTable'</span><span style="color:#E1E4E8">));</span></span>
+<span class="line"><span style="color:#E1E4E8">},</span></span></code></pre>
+<h3 id="dispose-on-pagecomponent-teardown">Dispose on page/component teardown</h3>
+<p>If using a SPA or long-lived pages that dynamically mount/unmount components, always call <code>dispose()</code> when tearing down the page to prevent ghost event listeners:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// On page unload or component teardown</span></span>
+<span class="line"><span style="color:#E1E4E8">manager.</span><span style="color:#B392F0">dispose</span><span style="color:#E1E4E8">();</span></span></code></pre>
+<h3 id="use-order-to-control-button-priority-on-mobile">Use <code>order</code> to control button priority on mobile</h3>
+<p>On mobile, the <code>render()</code> output is a single trigger button — the actual action list in the offcanvas is ordered by <code>order</code>. Put the most common actions first (lowest <code>order</code>) so they appear at the top of the drawer.</p>
+<h3 id="scope-initializetooltips-to-the-table">Scope <code>initializeTooltips</code> to the table</h3>
+<p>Avoid calling <code>initializeTooltips(document)</code> — it scans the entire page. Scope it to the table container for better performance, especially on large pages.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">manager.</span><span style="color:#B392F0">initializeTooltips</span><span style="color:#E1E4E8">(document.</span><span style="color:#B392F0">querySelector</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'#myTable'</span><span style="color:#E1E4E8">));</span></span></code></pre>
+<hr>
+<p><em>Documentation maintained by the Voyadores Design System team. For plugin issues or feature requests, contact the frontend platform team.</em></p> </div> </div>  </main> <!-- Right TOC sidebar --> <aside class="r-toc" id="r-toc" aria-label="On this page"> <div class="toc-label">On this page</div> <nav class="toc-nav" id="toc-nav"></nav> </aside> </div> <script type="module">const d=document.documentElement,L=document.querySelectorAll(".theme-toggle"),f=window.matchMedia("(prefers-color-scheme: dark)"),u=["light","dark","system"];function v(t){t==="dark"||t==="system"&&f.matches?d.setAttribute("data-theme","dark"):d.removeAttribute("data-theme"),d.setAttribute("data-color-scheme",t),localStorage.setItem("voy-theme",t)}f.addEventListener("change",()=>{d.getAttribute("data-color-scheme")==="system"&&v("system")});L.forEach(t=>{t.addEventListener("click",()=>{const n=d.getAttribute("data-color-scheme")||"system",s=u[(u.indexOf(n)+1)%u.length];v(s)})});const m=document.getElementById("c-cursor");if(m&&window.matchMedia("(pointer: fine)").matches){let t=0,n=0,s=0,c=0;const a=.16;document.addEventListener("mousemove",r=>{t=r.clientX,n=r.clientY}),(function r(){s+=(t-s)*a,c+=(n-c)*a,m.style.transform=`translate(${s}px,${c}px)`,requestAnimationFrame(r)})(),document.addEventListener("mouseleave",()=>{m.style.opacity="0"}),document.addEventListener("mouseenter",()=>{m.style.opacity="1"})}const g=document.getElementById("menu-toggle"),y=document.getElementById("sidebar-overlay"),h=document.getElementById("sidebar"),b=()=>{h.classList.add("open"),y.classList.add("show"),document.body.style.overflow="hidden",g.classList.add("open")},E=()=>{h.classList.remove("open"),y.classList.remove("show"),document.body.style.overflow="",g.classList.remove("open")};g.addEventListener("click",()=>h.classList.contains("open")?E():b());y.addEventListener("click",E);(function(){const n=document.getElementById("main"),s=document.getElementById("r-toc"),c=document.getElementById("toc-nav");if(!n||!s||!c)return;const a=Array.from(n.querySelectorAll("h2"));if(a.length<2)return;a.forEach((e,o)=>{if(!e.id){const i=e.textContent.trim().toLowerCase().replace(/[^a-z0-9\s-]/g,"").replace(/\s+/g,"-").replace(/-+/g,"-").replace(/^-|-$/g,"")||`section-${o}`;e.id=i}}),a.forEach(e=>{const o=document.createElement("a");o.href="#"+e.id,o.className="toc-link",o.textContent=e.textContent.trim(),o.addEventListener("click",i=>{i.preventDefault();const l=document.getElementById(e.id);l&&l.scrollIntoView({behavior:"smooth",block:"start"})}),c.appendChild(o)}),s.classList.add("has-items"),d.classList.add("has-toc");const r=Array.from(c.querySelectorAll(".toc-link")),p=new IntersectionObserver(e=>{e.forEach(o=>{const i=r.find(l=>l.getAttribute("href")==="#"+o.target.id);i&&i.classList.toggle("is-active",o.isIntersecting)})},{rootMargin:"-5% 0px -75% 0px",threshold:0});a.forEach(e=>p.observe(e))})();</script> </body> </html>

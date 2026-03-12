@@ -1,0 +1,874 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+---
+
+<BaseLayout title="Meeting Guidelines">
+  <PageHeader
+    eyebrow="Get Started — Internal"
+    title="Meeting Guidelines"
+    description="Standard formats and guidelines for sending meeting invitations across change request and non-change request discussions."
+  />
+
+  <!-- Meeting Title Formats -->
+  <section class="sec">
+    <h2>Meeting Title Formats</h2>
+
+    <h3 class="cat-title">A. Change Request</h3>
+    <div class="format-list">
+
+      <div class="format-card">
+        <div class="format-num">1</div>
+        <div class="format-body">
+          <p class="format-name">Internal Change Request Presentation <span class="format-abbr">ICRP</span></p>
+          <div class="format-row">
+            <span class="format-badge format-badge--format">Format</span>
+            <code>[Ticket No.] [Project Name] [High Level Description] – ICRP</code>
+          </div>
+          <div class="format-row">
+            <span class="format-badge format-badge--example">Example</span>
+            <span class="format-example">VOYW-000001 Voyadores Incident Report – ICRP</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="format-card">
+        <div class="format-num">2</div>
+        <div class="format-body">
+          <p class="format-name">External Change Request Presentation <span class="format-abbr">ECRP</span></p>
+          <div class="format-row">
+            <span class="format-badge format-badge--format">Format</span>
+            <code>[Ticket No.] [Project Name] [High Level Description] – ECRP</code>
+          </div>
+          <div class="format-row">
+            <span class="format-badge format-badge--example">Example</span>
+            <span class="format-example">VOYW-000001 Voyadores Incident Report – ECRP</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="format-card">
+        <div class="format-num">3</div>
+        <div class="format-body">
+          <p class="format-name">Change Request Requirement Discussion <span class="format-abbr">CRRD</span></p>
+          <div class="format-row">
+            <span class="format-badge format-badge--format">Format</span>
+            <code>[Ticket No.] [Project Name] [High Level Description] – CRRD</code>
+          </div>
+          <div class="format-row">
+            <span class="format-badge format-badge--example">Example</span>
+            <span class="format-example">VOYW-000001 Voyadores Incident Report – CRRD</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="format-card">
+        <div class="format-num">4</div>
+        <div class="format-body">
+          <p class="format-name">Change Request Design Discussion <span class="format-abbr">CRDD</span></p>
+          <div class="format-row">
+            <span class="format-badge format-badge--format">Format</span>
+            <code>[Ticket No.] [Project Name] [High Level Description] – CRDD</code>
+          </div>
+          <div class="format-row">
+            <span class="format-badge format-badge--example">Example</span>
+            <span class="format-example">VOYW-000001 Voyadores Incident Report – CRDD</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="format-card">
+        <div class="format-num">5</div>
+        <div class="format-body">
+          <p class="format-name">Change Request Technical Discussion <span class="format-abbr">CRTD</span></p>
+          <div class="format-row">
+            <span class="format-badge format-badge--format">Format</span>
+            <code>[Ticket No.] [Project Name] [High Level Description] – CRTD</code>
+          </div>
+          <div class="format-row">
+            <span class="format-badge format-badge--example">Example</span>
+            <span class="format-example">VOYW-000001 Voyadores Incident Report – CRTD</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <h3 class="cat-title">B. Non-Change Request Internal Discussion</h3>
+    <div class="format-list">
+      <div class="format-card">
+        <div class="format-body">
+          <div class="format-row">
+            <span class="format-badge format-badge--format">Format</span>
+            <code>[Project Name / Team Name] [High Level Description] Discussion</code>
+          </div>
+          <div class="format-row format-row--examples">
+            <span class="format-badge format-badge--example">Examples</span>
+            <div class="format-examples">
+              <span class="format-example">Admin Team Building 2024 Discussion</span>
+              <span class="format-example">Infra Application Migration Discussion</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="cat-title">C. Non-Change Request External Discussion</h3>
+    <div class="format-list">
+      <div class="format-card">
+        <div class="format-body">
+          <div class="format-row">
+            <span class="format-badge format-badge--format">Format</span>
+            <code>[Project Name / Team Name] [High Level Description] Discussion</code>
+          </div>
+          <div class="format-row">
+            <span class="format-badge format-badge--example">Example</span>
+            <span class="format-example">eSuite Unified Contract Discussion</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Change Request Requirements Discussion -->
+  <section class="sec">
+    <h2>Change Request Requirements Discussion <span class="h2-abbr">CRRD</span></h2>
+
+    <div class="meeting-meta">
+      <div class="meta-item">
+        <span class="meta-label">Purpose</span>
+        <p>Collaborate and analyze business processes and objectives. Participants focus on analyzing the request workflow, feature behavior, and the overall impact of the changes on the application. Permission in terms of feature accessibility and data should also be discussed.</p>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Meeting Setup</span>
+        <p>Scheduled after the business analysts gather the final requirements from the client.</p>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Meeting Title</span>
+        <code class="meta-code">CRRD – [Ticket No.] [Short Description]</code>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="participants-card">
+        <h4>Participants</h4>
+        <div class="participant-group">
+          <span class="p-badge p-badge--required">Required</span>
+          <div class="p-tags">
+            <span class="p-tag">Heads</span>
+            <span class="p-tag">Leads</span>
+            <span class="p-tag">Business Analysts</span>
+            <span class="p-tag">Systems Analysts</span>
+          </div>
+        </div>
+        <div class="participant-group">
+          <span class="p-badge p-badge--optional">Optional</span>
+          <div class="p-tags">
+            <span class="p-tag">Systems Engineers</span>
+            <span class="p-tag">UI/UX Engineers</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="agenda-card">
+        <h4>Agenda Items</h4>
+        <ol class="agenda-list">
+          <li>Scope Identification</li>
+          <li>Feature Behaviour</li>
+          <li>Workflow</li>
+          <li>Feature Role Permission</li>
+          <li>Data Permission</li>
+          <li>Impact Analysis</li>
+        </ol>
+      </div>
+    </div>
+
+    <h3 class="sub-heading">Agenda Item Explanations</h3>
+    <div class="explanation-list">
+      <div class="exp-item">
+        <div class="exp-title">Scope Identification</div>
+        <p>An essential step in project management involving defining the boundaries and objectives of the project. By clearly identifying and documenting the project's deliverables, requirements, and constraints, the scope provides a foundation for successful project execution.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-title">Feature Behaviour</div>
+        <p>How a particular feature or functionality behaves within a system or application — the expected actions, responses, and outcomes when using or interacting with that specific feature.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-title">Workflow</div>
+        <p>The sequence of steps or activities that need to be followed to complete a task or achieve a specific outcome. It outlines the logical order and dependencies between different tasks or processes within a system or organization.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-title">Feature Role Permission</div>
+        <p>Access rights and privileges within a system or application determining what actions or functions each role can perform and what data they can access or modify. The definition and identification of Feature Roles should be done by Developers.</p>
+        <div class="guideline-block">
+          <p class="guideline-label">Guidelines in Feature Role creation</p>
+          <ol>
+            <li>Single page scope</li>
+            <li>Generally divided into two functions:
+              <ul>
+                <li>Editor</li>
+                <li>Viewer</li>
+              </ul>
+            </li>
+            <li>If functionality requires a different set of permissions, a custom Feature Role will be created.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-title">Data Permission</div>
+        <p>Access and security controls placed on data within a system or application — specifying who can view, edit, or delete data and what level of access different user roles have to specific data sets.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-title">Impact Analysis</div>
+        <p>Assessing the potential consequences and effects of a proposed change or action within a system or project. It examines how a change in one area may impact other components, processes, or stakeholders and helps evaluate potential risks and mitigation strategies.</p>
+      </div>
+    </div>
+
+    <h3 class="sub-heading">Output</h3>
+    <div class="output-grid">
+      <div class="output-card">
+        <div class="output-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
+        <div>
+          <h5>Sequence Diagrams</h5>
+          <p>A visual blueprint illustrating the precise order and manner in which various components or functions within a software application communicate and collaborate, particularly when making enhancements or modifications.</p>
+          <div class="tools-row">
+            <span class="tool-tag">Word</span>
+            <span class="tool-tag">Excel</span>
+            <span class="tool-tag">Visio</span>
+            <span class="tool-tag">Lucid Chart</span>
+          </div>
+        </div>
+      </div>
+      <div class="output-card">
+        <div class="output-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <div>
+          <h5>Updated Changelog</h5>
+          <p>An informal document of a Change Request — an in-between step between client requirements (email, chats, or documents) and a Business Requirements Document (BRD). Participants create a concise and comprehensive changelog to assist developers in understanding and implementing the required changes.</p>
+          <div class="tools-row">
+            <span class="tool-tag">OneNote</span>
+          </div>
+        </div>
+      </div>
+      <div class="output-card">
+        <div class="output-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div>
+          <h5>Resource Assignment</h5>
+          <p>Helps the team with better allocation planning, ensuring that assigned resources can handle the task without neglecting other responsibilities. By the end of the meeting the team should be able to determine the specific resources needed to implement the change effectively.</p>
+        </div>
+      </div>
+      <div class="output-card">
+        <div class="output-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div>
+          <h5>Internal Timeline</h5>
+          <p>An internal schedule to which development activities will be delivered.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Change Request Design Discussion -->
+  <section class="sec">
+    <h2>Change Request Design Discussion <span class="h2-abbr">CRDD</span></h2>
+
+    <div class="meeting-meta">
+      <div class="meta-item">
+        <span class="meta-label">Purpose</span>
+        <p>Collaborate, evaluate, and discuss proposed changes or enhancements to the user interface (UI) and user experience (UX) of the application.</p>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Meeting Setup</span>
+        <p>Scheduled after the Change Request Requirements Discussion and before the Change Request Technical Discussion.</p>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Meeting Title</span>
+        <code class="meta-code">CRDD – [Ticket No.] [Short Description]</code>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="participants-card">
+        <h4>Participants</h4>
+        <div class="participant-group">
+          <span class="p-badge p-badge--required">Required</span>
+          <div class="p-tags">
+            <span class="p-tag">Head of UI/UX</span>
+            <span class="p-tag">UI/UX Engineers</span>
+            <span class="p-tag">Designers</span>
+          </div>
+        </div>
+        <div class="participant-group">
+          <span class="p-badge p-badge--optional">Optional</span>
+          <div class="p-tags">
+            <span class="p-tag">Business Analysts</span>
+            <span class="p-tag">Systems Analysts</span>
+            <span class="p-tag">Systems Engineers</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="agenda-card">
+        <h4>Agenda Items</h4>
+        <ul class="agenda-tree">
+          <li>
+            <span class="tree-item tree-item--parent">User Interface</span>
+            <ul>
+              <li>Visual Design</li>
+              <li>Navigation</li>
+              <li>Page Layout</li>
+              <li>Responsive Design</li>
+              <li>Icons and Imagery</li>
+            </ul>
+          </li>
+          <li>
+            <span class="tree-item tree-item--parent">User Experience</span>
+            <ul>
+              <li>
+                View Structure
+                <ul>
+                  <li>Page</li>
+                  <li>Dialog</li>
+                </ul>
+              </li>
+              <li>Control</li>
+              <li>Libraries</li>
+              <li>Validation</li>
+              <li>Theme</li>
+              <li>Style</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub-heading">Agenda Item Explanations</h3>
+    <div class="exp-item">
+      <div class="exp-title">User Experience (UX)</div>
+      <p>Focuses on creating a positive and intuitive experience for users interacting with a product, service, or system. It involves understanding user needs, preferences, and behaviors to design interfaces that are easy to use, visually appealing, and satisfying.</p>
+    </div>
+    <div class="explanation-list">
+      <div class="exp-item">
+        <div class="exp-title">View Structure</div>
+        <p>The organization and arrangement of different screens or views within an application — the hierarchical relationship between screens and how users navigate through them. A well-designed view structure enhances usability and allows users to easily access and navigate the desired content or functionality.</p>
+        <div class="guideline-block">
+          <ul>
+            <li><strong>Page</strong> — A distinct screen or view within an application representing a specific section or functionality, containing various components and elements that enable user interaction and information display.</li>
+            <li><strong>Dialog</strong> — A small, separate window or pop-up that appears on top of the main page. Used to capture user input, display additional information, or prompt for confirmation or decision-making.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-title">Controls</div>
+        <p>Interactive elements or components that allow users to interact with the application. Examples include buttons, checkboxes, dropdown lists, input fields, sliders, and menus — enabling users to input data, select options, initiate actions, or navigate through the application.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-title">Libraries</div>
+        <p>Pre-built sets of UI components or frameworks that provide ready-made solutions for designing and implementing user interfaces. These libraries offer a collection of reusable elements, styles, and functionalities for creating consistent and visually appealing user experiences.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-title">Validation</div>
+        <p>Checking and ensuring that user input or data meets specific requirements or constraints — verifying the accuracy, completeness, and integrity of user-provided information. Validation helps prevent errors, improve data quality, and provide feedback to users when their input does not meet specified criteria.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-title">Theme</div>
+        <p>The visual appearance and styling of an application's user interface — including color schemes, typography, iconography, and overall visual aesthetics. Themes help create a consistent and visually appealing look and feel across different screens and components.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-title">Style</div>
+        <p>Specific visual attributes and properties applied to user interface elements such as buttons, text, backgrounds, and borders — including font choices, color combinations, spacing, alignment, and overall visual presentation. Consistent styling enhances the user experience by providing a cohesive and visually pleasing interface.</p>
+      </div>
+    </div>
+
+    <h3 class="sub-heading">Output</h3>
+    <div class="output-grid">
+      <div class="output-card">
+        <div class="output-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <div>
+          <h5>Mockups</h5>
+          <p>Visual representations or prototypes depicting the proposed user interface or system behavior. The UI/UX team creates mockups after the discussion to enable both the team and the client to visualize the expected outcome of the change.</p>
+          <div class="tools-row">
+            <span class="tool-tag">Figma</span>
+          </div>
+        </div>
+      </div>
+      <div class="output-card">
+        <div class="output-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div>
+          <h5>Updated Changelog</h5>
+          <p>An informal document of a Change Request — an in-between step between the client's requirements (in any form such as email, chats, or documents) to a Business Requirements Document (BRD).</p>
+          <div class="tools-row">
+            <span class="tool-tag">OneNote</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Change Request Presentation -->
+  <section class="sec">
+    <h2>Change Request Presentation</h2>
+
+    <!-- Internal -->
+    <div class="cr-type-header">
+      <span class="cr-type-badge cr-type-badge--internal">A</span>
+      <h3>Internal Change Request Presentation <span class="format-abbr">ICRP</span></h3>
+    </div>
+
+    <div class="meeting-meta">
+      <div class="meta-item">
+        <span class="meta-label">Purpose</span>
+        <p>Discuss the high-level impact of the change request on the application. By the end of the presentation, participants should have a clear understanding of the new application process once the change request has been implemented.</p>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Meeting Setup</span>
+        <p>Scheduled after gathering the requirements from the client.</p>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Meeting Title</span>
+        <code class="meta-code">ICRP – [Ticket No.] [High Level Description]</code>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="participants-card">
+        <h4>Participants</h4>
+        <div class="participant-group">
+          <span class="p-badge p-badge--required">Required</span>
+          <div class="p-tags">
+            <span class="p-tag">Heads</span>
+            <span class="p-tag">Leads</span>
+            <span class="p-tag">Business Analysts</span>
+            <span class="p-tag">Systems Analysts</span>
+          </div>
+        </div>
+        <div class="participant-group">
+          <span class="p-badge p-badge--optional">Optional</span>
+          <div class="p-tags">
+            <span class="p-tag">Systems Engineers</span>
+            <span class="p-tag">UI/UX Engineers</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="agenda-card">
+        <h4>Agenda Items</h4>
+        <ol class="agenda-list">
+          <li>Change Request Items</li>
+          <li>Current Process</li>
+          <li>Proposed Process</li>
+          <li>Timeline</li>
+        </ol>
+      </div>
+    </div>
+
+    <h3 class="sub-heading">Agenda Item Explanations</h3>
+    <div class="explanation-list">
+      <div class="exp-item">
+        <div class="exp-title">Change Request Items</div>
+        <p>The things or elements that people want to modify or improve in a particular system or application.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-title">Current Process</div>
+        <p>Represented through a diagram or flow chart illustrating the workflow of an application or system before any changes or improvements are made. Helps the client understand the activities or processes at a high level through visual representation.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-title">Proposed Process</div>
+        <p>Represented through a diagram or flow chart. Provides the client with a broader understanding of the change request's impact when implemented in a system or application.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-title">Timeline</div>
+        <p>The schedule for implementing the proposed changes, outlining the sequence of activities and estimated timeframes for completing each step of the change request process.</p>
+        <div class="guideline-block">
+          <ol type="A">
+            <li>Requirements Gathering</li>
+            <li>Initiate Development</li>
+            <li>Internal Testing</li>
+            <li>UAT</li>
+            <li>Go or No Go</li>
+            <li>Production Deployment</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub-heading">Output</h3>
+    <div class="output-grid">
+      <div class="output-card">
+        <div class="output-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div>
+          <h5>Change Request Presentation</h5>
+          <p>A presentation conducted to discuss and present the proposed change request for a system or application, communicating the details of the change request, its objectives, and the impact it will have on the project or system.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- External -->
+    <div class="cr-type-header" style="margin-top: 48px;">
+      <span class="cr-type-badge cr-type-badge--external">B</span>
+      <h3>External Change Request Presentation <span class="format-abbr">ECRP</span></h3>
+    </div>
+
+    <div class="meeting-meta">
+      <div class="meta-item">
+        <span class="meta-label">Purpose</span>
+        <p>Present and discuss the Change Request presentation with clients, providing them with an overview of the impact of the change request on the application.</p>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Meeting Title</span>
+        <code class="meta-code">ECRP – [Ticket No.] [High Level Description]</code>
+      </div>
+    </div>
+
+    <div class="participants-card" style="max-width: 480px; margin-bottom: 28px;">
+      <h4>Participants</h4>
+      <div class="participant-group">
+        <span class="p-badge p-badge--required">Required</span>
+        <div class="p-tags">
+          <span class="p-tag">Heads</span>
+          <span class="p-tag">Leads</span>
+          <span class="p-tag">Business Analysts</span>
+          <span class="p-tag">Systems Analysts</span>
+          <span class="p-tag">Clients</span>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub-heading">Presentation Types</h3>
+    <div class="type-cards">
+      <div class="type-card">
+        <div class="type-card-num">1</div>
+        <div>
+          <h5>Pre-Deployment Presentation</h5>
+          <p>Provided to clients <strong>before</strong> the deployment of a change request or enhancement feature to production.</p>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-card-num">2</div>
+        <div>
+          <h5>Post-Deployment Presentation</h5>
+          <p>Provided to clients <strong>after</strong> the deployment of a change request or enhancement feature to production.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ── Section ────────────────────────────────────────────────────────── */
+  .sec { margin-bottom: 80px; }
+
+  .sec h2 {
+    font-size: 20px; font-weight: 600; letter-spacing: -.4px; color: var(--black);
+    margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--g5);
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+
+  .h2-abbr {
+    font-size: 11px; font-weight: 700; letter-spacing: .06em;
+    background: rgba(247,146,30,.12); color: var(--brand);
+    padding: 3px 9px; border-radius: 4px;
+    font-family: var(--mono);
+  }
+
+  .format-abbr {
+    font-size: 10px; font-weight: 800; letter-spacing: .06em;
+    background: rgba(84,95,232,.1); color: #3a44c8;
+    padding: 2px 7px; border-radius: 3px;
+    font-family: var(--mono); vertical-align: middle;
+    margin-left: 4px;
+  }
+
+  .cat-title {
+    font-size: 12px; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--g2);
+    margin: 32px 0 14px;
+  }
+  .cat-title:first-of-type { margin-top: 0; }
+
+  .sub-heading {
+    font-size: 15px; font-weight: 600; color: var(--black);
+    margin: 40px 0 16px; padding-top: 32px;
+    border-top: 1px solid var(--g5);
+  }
+
+  /* ── Format cards ────────────────────────────────────────────────────── */
+  .format-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 8px; }
+
+  .format-card {
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 16px 18px;
+    border: 1px solid var(--g5); border-radius: 6px;
+    background: var(--white);
+  }
+
+  .format-num {
+    flex-shrink: 0; width: 26px; height: 26px;
+    background: var(--brand); color: var(--white);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; margin-top: 2px;
+  }
+
+  .format-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+
+  .format-name {
+    font-size: 14px; font-weight: 700; color: var(--black);
+  }
+
+  .format-row {
+    display: flex; align-items: flex-start; gap: 10px; flex-wrap: wrap;
+  }
+  .format-row--examples { align-items: flex-start; }
+
+  .format-badge {
+    flex-shrink: 0;
+    font-size: 9px; font-weight: 700; letter-spacing: .07em;
+    text-transform: uppercase; padding: 3px 8px; border-radius: 3px;
+    margin-top: 1px;
+  }
+  .format-badge--format  { background: rgba(84,95,232,.1);  color: #3a44c8; }
+  .format-badge--example { background: rgba(7,125,85,.1);   color: #077d55; }
+
+  .format-card code {
+    font-family: var(--mono); font-size: 12px; color: var(--g1);
+    background: var(--g6); border: 1px solid var(--g5);
+    padding: 4px 8px; border-radius: 4px; line-height: 1.5;
+  }
+
+  .format-example {
+    font-size: 13px; font-weight: 500; color: var(--g1);
+    font-style: italic;
+  }
+
+  .format-examples { display: flex; flex-direction: column; gap: 4px; }
+
+  /* ── Meeting meta ────────────────────────────────────────────────────── */
+  .meeting-meta {
+    display: flex; flex-direction: column; gap: 0;
+    border: 1px solid var(--g5); border-radius: 6px;
+    overflow: hidden; margin-bottom: 24px;
+  }
+
+  .meta-item {
+    display: grid; grid-template-columns: 130px 1fr;
+    gap: 12px; align-items: baseline;
+    padding: 14px 18px; border-bottom: 1px solid var(--g5);
+  }
+  .meta-item:last-child { border-bottom: none; }
+
+  .meta-label {
+    font-size: 11px; font-weight: 700; color: var(--g2);
+    text-transform: uppercase; letter-spacing: .06em;
+    flex-shrink: 0;
+  }
+
+  .meta-item p {
+    font-size: 13px; font-weight: 500; color: var(--g1); line-height: 1.6;
+  }
+
+  .meta-code {
+    font-family: var(--mono); font-size: 12px; color: var(--g1);
+    background: var(--g6); border: 1px solid var(--g5);
+    padding: 4px 10px; border-radius: 4px; display: inline-block;
+  }
+
+  /* ── Two column ──────────────────────────────────────────────────────── */
+  .two-col {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  /* ── Participants card ───────────────────────────────────────────────── */
+  .participants-card {
+    border: 1px solid var(--g5); border-radius: 6px;
+    padding: 16px 18px; background: var(--white);
+  }
+  .participants-card h4 {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .08em; color: var(--g2); margin-bottom: 14px;
+  }
+
+  .participant-group { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 10px; }
+  .participant-group:last-child { margin-bottom: 0; }
+
+  .p-badge {
+    flex-shrink: 0; margin-top: 3px;
+    font-size: 9px; font-weight: 700; letter-spacing: .07em;
+    text-transform: uppercase; padding: 3px 8px; border-radius: 3px;
+  }
+  .p-badge--required { background: rgba(217,31,17,.1);  color: #d91f11; }
+  .p-badge--optional { background: rgba(127,127,127,.1); color: var(--g2); }
+
+  .p-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+
+  .p-tag {
+    font-size: 11px; font-weight: 500; color: var(--g1);
+    background: var(--g6); border: 1px solid var(--g5);
+    padding: 3px 9px; border-radius: 100px;
+  }
+
+  /* ── Agenda card ─────────────────────────────────────────────────────── */
+  .agenda-card {
+    border: 1px solid var(--g5); border-radius: 6px;
+    padding: 16px 18px; background: var(--white);
+  }
+  .agenda-card h4 {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .08em; color: var(--g2); margin-bottom: 14px;
+  }
+
+  .agenda-list {
+    padding-left: 18px; display: flex; flex-direction: column; gap: 6px;
+  }
+  .agenda-list li {
+    font-size: 13px; font-weight: 500; color: var(--g1); line-height: 1.5;
+  }
+
+  .agenda-tree {
+    list-style: none; padding: 0;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .agenda-tree li { font-size: 12px; font-weight: 500; color: var(--g1); }
+  .agenda-tree ul { padding-left: 16px; margin-top: 4px; list-style: disc; }
+  .agenda-tree ul li { font-size: 11px; }
+  .agenda-tree ul ul { list-style: circle; }
+
+  .tree-item { font-size: 13px; font-weight: 600; color: var(--black); }
+
+  /* ── Explanation list ────────────────────────────────────────────────── */
+  .explanation-list { display: flex; flex-direction: column; gap: 0; }
+
+  .exp-item {
+    padding: 18px 0; border-bottom: 1px solid var(--g5);
+  }
+  .exp-item:last-child { border-bottom: none; }
+
+  .exp-title {
+    font-size: 14px; font-weight: 700; color: var(--black);
+    margin-bottom: 8px;
+  }
+
+  .exp-item p {
+    font-size: 13px; font-weight: 500; color: var(--g1); line-height: 1.7;
+    max-width: 720px;
+  }
+
+  /* ── Guideline block ─────────────────────────────────────────────────── */
+  .guideline-block {
+    margin-top: 14px;
+    background: var(--g6); border: 1px solid var(--g5);
+    border-radius: 6px; padding: 14px 18px;
+  }
+  .guideline-label {
+    font-size: 11px; font-weight: 700; color: var(--g2);
+    text-transform: uppercase; letter-spacing: .07em;
+    margin-bottom: 10px;
+  }
+  .guideline-block ol, .guideline-block ul {
+    padding-left: 18px; display: flex; flex-direction: column; gap: 6px;
+  }
+  .guideline-block li {
+    font-size: 13px; font-weight: 500; color: var(--g1); line-height: 1.6;
+  }
+  .guideline-block ul { list-style: disc; margin-top: 6px; }
+  .guideline-block strong { font-weight: 700; color: var(--black); }
+
+  /* ── Output grid ─────────────────────────────────────────────────────── */
+  .output-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+  }
+
+  .output-card {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 16px 18px;
+    border: 1px solid var(--g5); border-radius: 6px;
+    background: var(--white);
+  }
+
+  .output-icon {
+    flex-shrink: 0; width: 36px; height: 36px;
+    background: var(--g6); border: 1px solid var(--g5);
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    color: var(--g2);
+  }
+
+  .output-card h5 {
+    font-size: 13px; font-weight: 700; color: var(--black); margin-bottom: 6px;
+  }
+  .output-card p {
+    font-size: 12px; color: var(--g2); line-height: 1.6;
+  }
+
+  .tools-row { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+
+  .tool-tag {
+    font-size: 10px; font-weight: 600; color: var(--g2);
+    background: var(--g6); border: 1px solid var(--g5);
+    padding: 2px 8px; border-radius: 100px;
+  }
+
+  /* ── CR Presentation type header ─────────────────────────────────────── */
+  .cr-type-header {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .cr-type-badge {
+    flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800;
+  }
+  .cr-type-badge--internal { background: rgba(247,146,30,.15); color: var(--brand); }
+  .cr-type-badge--external { background: rgba(84,95,232,.12);  color: #3a44c8; }
+
+  .cr-type-header h3 {
+    font-size: 17px; font-weight: 600; color: var(--black);
+  }
+
+  /* ── Type cards (Pre/Post deployment) ───────────────────────────────── */
+  .type-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .type-card {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 18px 20px;
+    border: 1px solid var(--g5); border-radius: 6px;
+    background: var(--white);
+  }
+
+  .type-card-num {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+    background: var(--g5); color: var(--g1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; margin-top: 2px;
+  }
+
+  .type-card h5 {
+    font-size: 13px; font-weight: 700; color: var(--black); margin-bottom: 6px;
+  }
+  .type-card p {
+    font-size: 13px; font-weight: 500; color: var(--g1); line-height: 1.6;
+  }
+  .type-card strong { font-weight: 700; color: var(--black); }
+
+  /* ── Responsive ──────────────────────────────────────────────────────── */
+  @media (max-width: 767px) {
+    .two-col { grid-template-columns: 1fr; }
+    .meta-item { grid-template-columns: 1fr; gap: 6px; }
+    .type-cards { grid-template-columns: 1fr; }
+    .output-grid { grid-template-columns: 1fr; }
+  }
+</style>

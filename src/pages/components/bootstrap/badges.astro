@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+---
+
+<BaseLayout title="Badges" activeSection="components">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.voyadores.theme.min.css" />
+  </Fragment>
+
+  <PageHeader
+    eyebrow="Components / Bootstrap"
+    title="Badges"
+    description="Small count or label components. Use .badge with a text-bg-* color utility. Add .rounded-pill for pill shape."
+  />
+
+  <div class="demo">
+      <div class="demo-preview bs-scope">
+        <span class="badge text-bg-primary">Primary</span>
+        <span class="badge text-bg-secondary">Secondary</span>
+        <span class="badge text-bg-success">Success</span>
+        <span class="badge text-bg-danger">Danger</span>
+        <span class="badge text-bg-warning">Warning</span>
+        <span class="badge text-bg-info">Info</span>
+      </div>
+      <div class="demo-preview bs-scope" style="margin-top:8px">
+        <span class="badge rounded-pill text-bg-primary">Primary pill</span>
+        <span class="badge rounded-pill text-bg-secondary">Secondary pill</span>
+        <span class="badge rounded-pill text-bg-success">Success pill</span>
+        <span class="badge rounded-pill text-bg-danger">Danger pill</span>
+      </div>
+      <div class="demo-preview bs-scope" style="margin-top:8px;align-items:center;gap:16px">
+        <button type="button" class="btn btn-primary">Notifications <span class="badge text-bg-danger ms-1">4</span></button>
+        <h5 style="margin:0">Heading <span class="badge text-bg-secondary">New</span></h5>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="html-badge">HTML</button>
+      </div>
+      <pre is:raw id="html-badge"><code>&lt;!-- Color variants --&gt;
+&lt;span class="badge text-bg-primary"&gt;Primary&lt;/span&gt;
+&lt;span class="badge text-bg-secondary"&gt;Secondary&lt;/span&gt;
+&lt;span class="badge text-bg-success"&gt;Success&lt;/span&gt;
+&lt;span class="badge text-bg-danger"&gt;Danger&lt;/span&gt;
+&lt;span class="badge text-bg-warning"&gt;Warning&lt;/span&gt;
+&lt;span class="badge text-bg-info"&gt;Info&lt;/span&gt;
+
+&lt;!-- Pill shape --&gt;
+&lt;span class="badge rounded-pill text-bg-primary"&gt;Primary pill&lt;/span&gt;
+
+&lt;!-- Inside a button --&gt;
+&lt;button type="button" class="btn btn-primary"&gt;
+  Notifications &lt;span class="badge text-bg-danger ms-1"&gt;4&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+    </div>
+
+  <!-- Bootstrap JS bundle (Popper included) -->
+  <script is:inline src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+
+  <script>
+      // Code tabs
+    document.querySelectorAll('.cb-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        const block  = btn.closest('.code-block');
+        block.querySelectorAll('.cb-tab').forEach(b => b.classList.remove('is-on'));
+        block.querySelectorAll('pre').forEach(p => p.style.display = 'none');
+        btn.classList.add('is-on');
+        const pre = document.getElementById(target);
+        if (pre) pre.style.display = '';
+      });
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  /* Sections */
+  .csec { margin-bottom: 72px; scroll-margin-top: 24px; }
+  .csec-desc {
+    font-size: 13px; font-weight: 400; color: var(--g2);
+    line-height: 1.7; margin-bottom: 20px;
+  }
+  .csec-desc code {
+    font-family: var(--mono); font-size: .875em;
+    background: var(--g5); padding: 1px 5px; border-radius: 3px;
+    color: var(--g1);
+  }
+
+  /* Demo box */
+  .demo { margin-bottom: 16px; }
+  .demo-preview {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    padding: 28px; border: 1px solid var(--g5);
+    border-radius: 4px; background: var(--white);
+    align-items: center;
+  }
+
+  /* Code block */
+  .code-block {
+    background: #111; border-radius: 4px; overflow: hidden;
+  }
+  .cb-tabs {
+    display: flex; gap: 0;
+    border-bottom: 1px solid #2a2a2a; padding: 0 16px;
+  }
+  .cb-tab {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: .04em; text-transform: uppercase;
+    color: #666; background: none; border: none;
+    padding: 10px 14px; border-bottom: 2px solid transparent;
+    transition: color .12s, border-color .12s;
+  }
+  .cb-tab:hover  { color: #ccc; }
+  .cb-tab.is-on  { color: var(--brand); border-bottom-color: var(--brand); }
+  .code-block pre { margin: 0; padding: 20px 24px; overflow-x: auto; }
+  .code-block code {
+    font-family: var(--mono); font-size: 12.5px;
+    color: #e8e8e8; line-height: 1.85; white-space: pre;
+  }
+
+  /* Override Bootstrap base styles to protect site layout */
+  .bs-scope * { cursor: auto !important; }
+  .bs-scope { font-family: var(--vds-font-sans-serif, "Lexend", sans-serif); }
+</style>

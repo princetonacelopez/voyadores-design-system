@@ -1,0 +1,694 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+---
+
+<BaseLayout title="UX Design Process & Guidelines">
+  <PageHeader
+    eyebrow="Get Started — Design"
+    title="UX Design Process & Guidelines"
+    description="A guide for designers creating design solutions after business requirement analysis. Design process should follow the Changelog guidelines."
+  />
+
+  <!-- Definition and Terms -->
+  <section class="sec">
+    <h2>Definition and Terms</h2>
+
+    <div class="def-block">
+      <div class="def-label">Definition</div>
+      <p>The UX Design process serves as a guide for the designer for creating design solutions after the business requirement analysis with the client. Design process should definitely follow the Changelog guidelines.</p>
+    </div>
+
+    <div class="terms-grid">
+      <div class="term-card">
+        <div class="term-header">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="12" y2="17"/></svg>
+          <h3>Wireframing</h3>
+        </div>
+        <p>A visual guide that represents the skeletal framework of the application. This is <em>not</em> the final look of the design.</p>
+      </div>
+      <div class="term-card">
+        <div class="term-header">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <h3>Mockup</h3>
+        </div>
+        <p>A visual draft of the application. Unlike wireframing, a mockup guides the client in terms of layout design, color, and styles of the application.</p>
+      </div>
+      <div class="term-card">
+        <div class="term-header">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <h3>Prototyping</h3>
+        </div>
+        <p>A simulation or sample version of the final application. It conceptualizes the actual function, layout design, color, and styles of the application.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Objectives -->
+  <section class="sec">
+    <h2>Objectives</h2>
+    <p class="body-text">The design process helps the team to:</p>
+    <div class="objectives-list">
+      {[
+        ['Define the problem', ''],
+        ['Narrow down solutions', 'Through the design process, solutions for the identified problem are refined and evaluated.'],
+        ['Validate system process flow', 'Helps the client determine whether the system process flow is coherent with the business requirements.'],
+      ].map(([title, desc], i) => (
+        <div class="obj-item">
+          <div class="obj-num">{i + 1}</div>
+          <div>
+            <span class="obj-title">{title}</span>
+            {desc && <span class="obj-desc"> — {desc}</span>}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- UX Design Process -->
+  <section class="sec">
+    <h2>UX Design Process</h2>
+    <p class="body-text">A tool that helps break down large projects into smaller, easier-to-handle stages.</p>
+
+    <div class="process-steps">
+      {[
+        {
+          n: '1', color: 'blue', title: 'Client Requirements Gathering',
+          items: ['High Level Scope', 'Business Requirement Document'],
+        },
+        {
+          n: '2', color: 'purple', title: 'Design',
+          items: ['Wireframe (Optional)', 'Mock-ups', 'Prototype (Optional)'],
+        },
+        {
+          n: '3', color: 'green', title: 'Development',
+          items: ['Creation of UI/UX assets', 'Conversion of mock-ups to code'],
+        },
+      ].map(step => (
+        <div class:list={['ps-card', `ps-card--${step.color}`]}>
+          <div class:list={['ps-num', `ps-num--${step.color}`]}>{step.n}</div>
+          <div class="ps-body">
+            <h3>{step.title}</h3>
+            <ul>
+              {step.items.map(item => <li>{item}</li>)}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- UX Design Guidelines -->
+  <section class="sec">
+    <h2>UX Design Guidelines</h2>
+
+    <!-- Application -->
+    <div class="subsec">
+      <h3 class="subsec-title">Application</h3>
+      <p class="subsec-def">Software designed to carry out a task for an end-user.</p>
+
+      <h4 class="parts-heading">Parts of Application</h4>
+      <div class="parts-grid">
+        {[
+          { label: 'Module',     desc: 'Part of a program that performs a distinct function.' },
+          { label: 'Submodule',  desc: 'A program unit that extends a module or another submodule.' },
+          { label: 'Screens',    desc: 'A screen used to display the output of a computer to the user.' },
+          { label: 'Dialogs',    desc: 'A temporary window an application creates to retrieve user input.' },
+          { label: 'Controls',   desc: 'An object in a window or dialog with the ability to manage, organize, or run something on an application.' },
+        ].map(p => (
+          <div class="part-chip">
+            <span class="part-chip-label">{p.label}</span>
+            <span class="part-chip-desc">{p.desc}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Typography -->
+    <div class="subsec">
+      <h3 class="subsec-title">Typography</h3>
+      <p class="subsec-def">Typography in web requires certain considerations to ensure legibility on all screen types. Keeping typography consistent and sticking to logical hierarchies ensures that elements in the UI are clear and easily recognizable when scanning the page.</p>
+      <div class="guideline-cards">
+        {[
+          {
+            n: 1, title: 'Choose a typeface that works well in various sizes',
+            items: ['Make sure the typeface is legible in small screens.', 'Make sure the typeface can be used for multiple sizes and weights to maintain readability and usability in every size.'],
+          },
+          {
+            n: 2, title: 'Keep the number of fonts to a minimum',
+            items: ['Better to use one typeface unless another is required based on branding or product changes.', 'Better to use default system fonts for every platform when needed.'],
+          },
+          {
+            n: 3, title: 'Limit the line length',
+            items: ['Line length should be around 60–70 characters wide for desktop and 30–40 characters on smaller devices.', 'Adjust the line length whenever possible to maintain a good reading experience.'],
+          },
+          {
+            n: 4, title: 'Adjust text format, size and color to establish hierarchy',
+            items: ['Follow HTML text semantics to create content hierarchy.', 'Use text formatting to emphasize important texts.', 'Adjust color and size appropriately to maintain content structure.'],
+          },
+          {
+            n: 5, title: 'Ensure WCAG minimum color contrast',
+            items: ['Regular Text (17pt and below): contrast ratio of at least 4.5:1 against its background.', 'Larger Text (18pt and above): contrast ratio of at least 3:1 against its background.'],
+          },
+        ].map(g => (
+          <div class="g-item-card">
+            <div class="g-item-num">{g.n}</div>
+            <div>
+              <p class="g-item-title">{g.title}</p>
+              <ul class="g-item-list">{g.items.map(i => <li>{i}</li>)}</ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Color -->
+    <div class="subsec">
+      <h3 class="subsec-title">Color</h3>
+      <p class="subsec-def">Color distinguishes our brand and helps us create consistent experiences across products.</p>
+      <div class="guideline-cards">
+        {[
+          'Choose primary, secondary, extended, and semantic colors that support usability by ensuring sufficient color contrast between elements.',
+          'Choose colors that will blend well on both light and dark mode.',
+          'Use the primary colors to bring authenticity and life to our brand in our products.',
+          'Use the secondary colors to provide meaningful feedback within our products such as semantic colors.',
+          'Use of extended colors depends on every touch point such as graphics, illustrations, or components.',
+        ].map((g, i) => (
+          <div class="g-item-card">
+            <div class="g-item-num">{i + 1}</div>
+            <p class="g-item-title">{g}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Media -->
+    <div class="subsec">
+      <h3 class="subsec-title">Media</h3>
+      <p class="subsec-def">The means of communication used in digital products or software.</p>
+
+      <h4 class="media-heading">Images</h4>
+      <div class="guideline-cards">
+        {[
+          'Make sure images are high quality for every kind of screen resolution.',
+          'Optimize images for web and mobile to reduce network bandwidth, especially for slow connections.',
+          'Be mindful of aspect ratio.',
+          'Provide alternative text for accessibility.',
+          'Use modern formats like .webp and .avif. Use .png or .jpeg as a fallback for browser compatibility.',
+          'Make sure they scale well on different screen sizes.',
+          'When using third-party images, ensure you have the appropriate license from the creator or platform and follow the license agreement in the License file.',
+        ].map((g, i) => (
+          <div class="g-item-card">
+            <div class="g-item-num">{i + 1}</div>
+            <p class="g-item-title">{g}</p>
+          </div>
+        ))}
+      </div>
+
+      <h4 class="media-heading">Video</h4>
+      <div class="guideline-cards">
+        {[
+          'Optimize videos for web and mobile to reduce network bandwidth, especially for slow connections.',
+          'Be mindful of aspect ratio.',
+          'Provide descriptions, captions/subtitles, and transcripts for accessibility.',
+          'When using third-party videos, ensure you have the appropriate license from the creator or platform and follow the license agreement in the License file.',
+        ].map((g, i) => (
+          <div class="g-item-card">
+            <div class="g-item-num">{i + 1}</div>
+            <p class="g-item-title">{g}</p>
+          </div>
+        ))}
+      </div>
+
+      <h4 class="media-heading">Iconography</h4>
+      <div class="guideline-cards">
+        {[
+          'Create or use icons that are recognizable to the user.',
+          'Maintain visual consistency across all interface icons in our products.',
+          'Match the weights of interface icons and adjacent text.',
+          'Add necessary spacing between icons and text.',
+          'Provide different icon styles based on element state — e.g., active, hover, focus, selected.',
+          'Include text to icons if necessary when it conveys additional meaning.',
+          'Use SVG format for icons.',
+          'Use third-party icons or web font icons if necessary.',
+          'When using third-party icons, ensure you have the appropriate license from the creator or platform and follow the license agreement in the License file.',
+        ].map((g, i) => (
+          <div class="g-item-card">
+            <div class="g-item-num">{i + 1}</div>
+            <p class="g-item-title">{g}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Layout -->
+    <div class="subsec">
+      <h3 class="subsec-title">Layout</h3>
+      <div class="guideline-cards">
+        {[
+          'Design a consistent layout that adapts and responds to different screen sizes.',
+          'Respect key display and system features in each platform.',
+          'Create visual hierarchy and groupings to help people find the information they want.',
+          'Be mindful of aspect ratio.',
+          'Test on different screens and orientations.',
+        ].map((g, i) => (
+          <div class="g-item-card">
+            <div class="g-item-num">{i + 1}</div>
+            <p class="g-item-title">{g}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Dark Mode -->
+    <div class="subsec">
+      <h3 class="subsec-title">Dark Mode</h3>
+      <div class="guideline-cards">
+        {[
+          'Consider the branding of the product.',
+          'Use base colors to design dark mode.',
+          'Maintain color contrast.',
+          'Use unsaturated colors.',
+          'Avoid pure blacks.',
+          'Adjust image/icon colors accordingly.',
+        ].map((g, i) => (
+          <div class="g-item-card">
+            <div class="g-item-num">{i + 1}</div>
+            <p class="g-item-title">{g}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Dialogs -->
+    <div class="subsec">
+      <h3 class="subsec-title">Dialogs</h3>
+      <p class="subsec-def">A dialog is an overlay that requires the user to interact with it and is designed to elicit a response from the user.</p>
+
+      <h4 class="media-heading">Types of Dialog</h4>
+      <div class="type-row">
+        {[
+          { n: 1, label: 'Prompt Dialog',  desc: 'Used for collecting data from users.' },
+          { n: 2, label: 'Confirm Dialog', desc: 'Used to get a confirmation from the user before executing an action.' },
+          { n: 3, label: 'Alert Dialog',   desc: 'Used for showing non-obstructive messages.' },
+          { n: 4, label: 'Message Dialog', desc: 'Used for showing information to users.' },
+        ].map(t => (
+          <div class="dialog-type">
+            <span class="dialog-type-n">{t.n}</span>
+            <div>
+              <p class="dialog-type-label">{t.label}</p>
+              <p class="dialog-type-desc">{t.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h4 class="media-heading">Guidelines</h4>
+      <div class="guideline-cards">
+        {[
+          'Select the proper dialog type.',
+          'Avoid suddenly opening dialogs.',
+          'Include important information.',
+          'Avoid too much content.',
+          'Provide a clear close option.',
+        ].map((g, i) => (
+          <div class="g-item-card">
+            <div class="g-item-num">{i + 1}</div>
+            <p class="g-item-title">{g}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Controls -->
+  <section class="sec">
+    <h2>Controls</h2>
+    <p class="body-text">Controls are the interactive components in a user interface.</p>
+
+    <!-- Input Controls -->
+    <h3 class="control-group-title">Input Controls</h3>
+
+    <div class="control-block">
+      <div class="control-header">
+        <span class="control-badge control-badge--input">Input</span>
+        <h4>Button</h4>
+      </div>
+      <p class="control-def">A push-button that can be pressed, tapped, or clicked by the user to perform an action.</p>
+      <div class="guideline-cards">
+        {['Create button hierarchy.', 'Group buttons with related components.', 'Buttons should be where you would expect to find them.'].map((g, i) => (
+          <div class="g-item-card"><div class="g-item-num">{i + 1}</div><p class="g-item-title">{g}</p></div>
+        ))}
+      </div>
+    </div>
+
+    <div class="control-block">
+      <div class="control-header">
+        <span class="control-badge control-badge--input">Input</span>
+        <h4>Text Input</h4>
+      </div>
+      <p class="control-def">A field that users can type free text into. Used in forms, status updates, search fields, and more.</p>
+      <div class="guideline-cards">
+        {['Keep consistent input styles.', 'Provide labels or placeholders to provide clarity for the user.', 'Display an error message to help users recover from an error.', 'Provide an input type to display the appropriate keyboard type when filling out a form.'].map((g, i) => (
+          <div class="g-item-card"><div class="g-item-num">{i + 1}</div><p class="g-item-title">{g}</p></div>
+        ))}
+      </div>
+    </div>
+
+    <div class="control-block">
+      <div class="control-header">
+        <span class="control-badge control-badge--input">Input</span>
+        <h4>Dropdown Menu</h4>
+      </div>
+      <p class="control-def">A dropdown menu provides a list of items to select from.</p>
+      <div class="guideline-cards">
+        {['Only show a few options at a time to avoid information overload.', 'Use dropdown only when there are more than six (6) options.', 'Allow for options not in the selection.'].map((g, i) => (
+          <div class="g-item-card"><div class="g-item-num">{i + 1}</div><p class="g-item-title">{g}</p></div>
+        ))}
+      </div>
+    </div>
+
+    <div class="control-block">
+      <div class="control-header">
+        <span class="control-badge control-badge--input">Input</span>
+        <h4>Radio Buttons</h4>
+      </div>
+      <p class="control-def">A control that allows users to select a single option from a list.</p>
+      <div class="guideline-cards">
+        {['Preselect the most popular option.', 'Use radio buttons when there are fewer than six (6) options.', 'Display labels to provide users information about which option best suits them.'].map((g, i) => (
+          <div class="g-item-card"><div class="g-item-num">{i + 1}</div><p class="g-item-title">{g}</p></div>
+        ))}
+      </div>
+    </div>
+
+    <div class="control-block">
+      <div class="control-header">
+        <span class="control-badge control-badge--input">Input</span>
+        <h4>Checkboxes</h4>
+      </div>
+      <p class="control-def">A control that allows users to select multiple options from a list.</p>
+      <div class="guideline-cards">
+        {['Display labels to provide users information about which option best suits them.', 'Use checkboxes when you want users to select multiple options or have the option to select nothing.', 'Consider adding the option to select all or deselect all options.'].map((g, i) => (
+          <div class="g-item-card"><div class="g-item-num">{i + 1}</div><p class="g-item-title">{g}</p></div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Navigation Controls -->
+    <h3 class="control-group-title">Navigation Controls</h3>
+
+    {[
+      {
+        label: 'Links',
+        def: 'A control or text piece that, when tapped or clicked, takes the user to another page.',
+        items: ['Link text should always be able to stand alone.', 'Make links look like links.', "Don't use a small font for links."],
+      },
+      {
+        label: 'Breadcrumbs',
+        def: 'A chain of links used on websites with hierarchical navigation.',
+        items: ['Breadcrumbs should show hierarchical navigation, not navigation history.', 'Breadcrumbs should never replace primary navigation.', 'Breadcrumbs should sit above the content but below the main navigation.', 'Consider condensing breadcrumbs when they get too long.', 'Breadcrumbs should show the currently selected page.', 'Separate links with an inactive character.'],
+      },
+      {
+        label: 'Tabs',
+        def: 'A form of navigation that allows users to move between different subsections of a page.',
+        items: ['Always have one tab preselected.', 'Tabs should group related content.', 'Only have one row of tabs.', 'Limit the number of tabs you have.', 'Arrange tabs in an order that makes sense.', 'Avoid nested or sub-tabs.'],
+      },
+      {
+        label: 'Tree Panes',
+        def: 'A great option when there are multiple levels of navigation or many navigation categories.',
+        items: ['Icons should be obvious.', 'Tree panes should sit on the left of the screen.', 'Sub-items should be indented to show nesting.', 'Allow multiple folders to be open at once.', 'Default all items to closed.'],
+      },
+      {
+        label: 'Menus',
+        def: 'Allow users to navigate using categories and sub-categories. They are persistent and unchanging across the app.',
+        items: ['Consider adding a secondary navigation menu.', 'Add a dropdown arrow to show that there is a dropdown menu.', 'Keep responsiveness in mind.', 'Only put links that will be used often in the top menu.', 'Make labels straightforward.'],
+      },
+      {
+        label: 'Accordions',
+        def: 'Used to hide or show information, and to navigate.',
+        items: ['Only put non-critical information inside an accordion.', 'Default to closed.'],
+      },
+    ].map(ctrl => (
+      <div class="control-block">
+        <div class="control-header">
+          <span class="control-badge control-badge--nav">Nav</span>
+          <h4>{ctrl.label}</h4>
+        </div>
+        <p class="control-def">{ctrl.def}</p>
+        <div class="guideline-cards">
+          {ctrl.items.map((g, i) => (
+            <div class="g-item-card"><div class="g-item-num">{i + 1}</div><p class="g-item-title">{g}</p></div>
+          ))}
+        </div>
+      </div>
+    ))}
+
+    <!-- Display Controls -->
+    <h3 class="control-group-title">Display Controls</h3>
+
+    {[
+      {
+        label: 'Text',
+        def: 'Text refers not only to written content on the page but the headings, messages, and labels that provide clarity and organization.',
+        items: ['Use text sparingly.', 'Provide text hierarchy.', 'Provide styles for different text formats.'],
+      },
+      {
+        label: 'Lists',
+        def: 'A great way to present ordered information in a way that is familiar and easy to read.',
+        items: ['Keep consistent line lengths.', 'Use negative space to improve scannability.', 'Alternating rows.'],
+      },
+      {
+        label: 'Data Grids / Tables',
+        def: 'Use rows and columns to display related information in a grid.',
+        items: ['Allow users to sort or filter rows.', 'Fix header on scroll.', 'Consider fixing the left column.', 'Space columns based on their content.', 'Use monospace fonts for numbers such as currency.'],
+      },
+      {
+        label: 'Tooltips',
+        def: 'A common form of contextual help that leverages the "details on demand" UX pattern.',
+        items: ['Provide short and concise text.', 'Use clear language.'],
+      },
+      {
+        label: 'Icons',
+        def: 'The power of an image helps users identify things quickly and accurately.',
+        items: ['Icon consistency.', 'Icons in context.', 'A text label is the best type of icon.'],
+      },
+      {
+        label: 'Dialogs',
+        def: "A UI control that captures the user's attention.",
+        items: ['Limit use.', 'Should be dismissable if appropriate.', 'Use descriptive button names.', 'Use clear language.'],
+      },
+    ].map(ctrl => (
+      <div class="control-block">
+        <div class="control-header">
+          <span class="control-badge control-badge--display">Display</span>
+          <h4>{ctrl.label}</h4>
+        </div>
+        <p class="control-def">{ctrl.def}</p>
+        <div class="guideline-cards">
+          {ctrl.items.map((g, i) => (
+            <div class="g-item-card"><div class="g-item-num">{i + 1}</div><p class="g-item-title">{g}</p></div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </section>
+
+</BaseLayout>
+
+<style>
+  .sec { margin-bottom: 80px; }
+
+  .sec h2 {
+    font-size: 20px; font-weight: 600; letter-spacing: -.4px; color: var(--black);
+    margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--g5);
+  }
+
+  .body-text {
+    font-size: 14px; font-weight: 500; color: var(--g1); line-height: 1.7;
+    max-width: 680px; margin-bottom: 20px;
+  }
+
+  /* ── Definition block ────────────────────────────────────────────────── */
+  .def-block {
+    background: var(--g6); border: 1px solid var(--g5); border-radius: 8px;
+    padding: 16px 20px; margin-bottom: 24px;
+  }
+  .def-label {
+    font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--brand); margin-bottom: 8px;
+  }
+  .def-block p {
+    font-size: 13px; font-weight: 500; color: var(--g1); line-height: 1.7;
+  }
+
+  /* ── Terms grid ──────────────────────────────────────────────────────── */
+  .terms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+
+  .term-card {
+    border: 1px solid var(--g5); border-radius: 8px;
+    padding: 16px 18px; background: var(--white);
+  }
+  .term-header {
+    display: flex; align-items: center; gap: 8px; margin-bottom: 10px;
+    color: var(--g2);
+  }
+  .term-card h3 { font-size: 13px; font-weight: 700; color: var(--black); }
+  .term-card p  { font-size: 12px; font-weight: 500; color: var(--g2); line-height: 1.6; }
+  .term-card em { font-style: italic; color: var(--g1); }
+
+  /* ── Objectives ──────────────────────────────────────────────────────── */
+  .objectives-list { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--g5); border-radius: 8px; overflow: hidden; }
+
+  .obj-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 12px 18px; border-bottom: 1px solid var(--g5);
+  }
+  .obj-item:last-child { border-bottom: none; }
+
+  .obj-num {
+    flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%;
+    background: var(--brand); color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; margin-top: 1px;
+  }
+
+  .obj-title  { font-size: 13px; font-weight: 700; color: var(--black); }
+  .obj-desc   { font-size: 13px; font-weight: 500; color: var(--g2); }
+
+  /* ── Process steps ───────────────────────────────────────────────────── */
+  .process-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+
+  .ps-card {
+    border: 1px solid var(--g5); border-radius: 8px;
+    padding: 18px 20px; background: var(--white);
+    border-top-width: 3px;
+  }
+  .ps-card--blue   { border-top-color: #186ade; }
+  .ps-card--purple { border-top-color: #7952b3; }
+  .ps-card--green  { border-top-color: #077d55; }
+
+  .ps-num {
+    font-family: var(--mono); font-size: 11px; font-weight: 700;
+    width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 12px;
+  }
+  .ps-num--blue   { background: rgba(24,106,222,.1);  color: #186ade; }
+  .ps-num--purple { background: rgba(121,82,179,.1);  color: #7952b3; }
+  .ps-num--green  { background: rgba(7,125,85,.1);    color: #077d55; }
+
+  .ps-body h3 {
+    font-size: 13px; font-weight: 700; color: var(--black); margin-bottom: 10px;
+  }
+  .ps-body ul { padding-left: 16px; list-style: disc; display: flex; flex-direction: column; gap: 5px; }
+  .ps-body li { font-size: 12px; font-weight: 500; color: var(--g2); line-height: 1.5; }
+
+  /* ── Subsection ──────────────────────────────────────────────────────── */
+  .subsec { margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--g5); }
+  .subsec:last-child { border-bottom: none; margin-bottom: 0; }
+
+  .subsec-title {
+    font-size: 16px; font-weight: 700; color: var(--black);
+    margin-bottom: 8px;
+  }
+  .subsec-def {
+    font-size: 13px; font-weight: 500; color: var(--g1); line-height: 1.7;
+    max-width: 680px; margin-bottom: 16px;
+  }
+
+  .parts-heading, .media-heading {
+    font-size: 11px; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--g2);
+    margin: 16px 0 10px;
+  }
+
+  /* ── Parts grid ──────────────────────────────────────────────────────── */
+  .parts-grid { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--g5); border-radius: 8px; overflow: hidden; }
+
+  .part-chip {
+    display: flex; align-items: baseline; gap: 10px;
+    padding: 10px 16px; border-bottom: 1px solid var(--g5);
+  }
+  .part-chip:last-child { border-bottom: none; }
+  .part-chip-label { font-size: 12px; font-weight: 700; color: var(--black); flex-shrink: 0; min-width: 88px; }
+  .part-chip-desc  { font-size: 12px; font-weight: 500; color: var(--g2); line-height: 1.5; }
+
+  /* ── Guideline cards ─────────────────────────────────────────────────── */
+  .guideline-cards { display: flex; flex-direction: column; gap: 6px; }
+
+  .g-item-card {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 10px 14px; background: var(--g6);
+    border: 1px solid var(--g5); border-radius: 6px;
+  }
+  .g-item-num {
+    flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%;
+    background: var(--white); border: 1px solid var(--g4);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 700; color: var(--g2); margin-top: 1px;
+  }
+  .g-item-title {
+    font-size: 12px; font-weight: 500; color: var(--g1); line-height: 1.6;
+  }
+  .g-item-list {
+    padding-left: 16px; list-style: disc; margin-top: 6px;
+    display: flex; flex-direction: column; gap: 3px;
+  }
+  .g-item-list li { font-size: 12px; font-weight: 500; color: var(--g2); line-height: 1.5; }
+
+  /* ── Dialog types ────────────────────────────────────────────────────── */
+  .type-row {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 4px;
+  }
+
+  .dialog-type {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 12px 14px; border: 1px solid var(--g5);
+    border-radius: 6px; background: var(--white);
+  }
+  .dialog-type-n {
+    flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+    background: rgba(247,146,30,.12); color: var(--brand);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 800; margin-top: 1px;
+  }
+  .dialog-type-label { font-size: 12px; font-weight: 700; color: var(--black); margin-bottom: 3px; }
+  .dialog-type-desc  { font-size: 11px; font-weight: 500; color: var(--g2); line-height: 1.5; }
+
+  /* ── Controls ────────────────────────────────────────────────────────── */
+  .control-group-title {
+    font-size: 13px; font-weight: 700; letter-spacing: .05em;
+    text-transform: uppercase; color: var(--g2);
+    margin: 32px 0 14px; padding-top: 32px;
+    border-top: 1px solid var(--g5);
+  }
+
+  .control-block { margin-bottom: 24px; }
+
+  .control-header {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 8px;
+  }
+  .control-header h4 {
+    font-size: 14px; font-weight: 700; color: var(--black);
+  }
+
+  .control-badge {
+    font-size: 9px; font-weight: 800; letter-spacing: .06em;
+    text-transform: uppercase; padding: 3px 8px; border-radius: 3px;
+  }
+  .control-badge--input   { background: rgba(24,106,222,.1);  color: #186ade; }
+  .control-badge--nav     { background: rgba(7,125,85,.1);    color: #077d55; }
+  .control-badge--display { background: rgba(121,82,179,.1);  color: #7952b3; }
+
+  .control-def {
+    font-size: 13px; font-weight: 500; color: var(--g1); line-height: 1.7;
+    max-width: 640px; margin-bottom: 12px;
+  }
+
+  /* ── Responsive ──────────────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .terms-grid  { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr; }
+    .type-row { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,262 @@
+﻿/* Main container */
+.vds-currency-amount-container {
+    display: flex;
+    flex-direction: row;
+    height: 2.5rem;
+    width: 100%;
+    background-color: var(--vds-body-bg);
+    border: var(--vds-border-width) solid var(--vds-border-color);
+    border-radius: var(--vds-border-radius);
+    overflow: visible;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    position: relative;
+}
+
+.vds-currency-amount-container:focus-within,
+.vds-currency-amount-container:has(.currency-picker-container.active) {
+    color: var(--vds-body-color);
+    background-color: var(--vds-body-bg);
+    border-color: #fbc98f;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(247, 146, 30, 0.25);
+}
+
+/* CURRENCY */
+/* Currency container */
+.vds-currency-amount-container .currency-picker-container {
+    border-radius: .25rem;
+}
+
+/* Currency item */
+.vds-currency-amount-container .currency-picker-container .currency-picker-item {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    justify-content: start;
+    align-items: center;
+    min-width: 6.5rem;
+    width: 100%;
+    height: 100%;
+    padding: 0.625rem 2rem 0.625rem 0.75rem;
+    border-right: var(--vds-border-width) solid var(--vds-border-color);
+    position: relative;
+    line-height: 100%;
+    cursor: pointer;
+    user-select: none;
+}
+
+.vds-currency-amount-container .currency-picker-container .currency-picker-item:focus-visible {
+    outline: none;
+}
+
+/* Currency label in currency item */ 
+.vds-currency-amount-container .currency-picker-container .currency-picker-item .currency-label {
+    display: none;
+}
+
+/* Currency code in currency item */
+.vds-currency-amount-container .currency-picker-container .currency-picker-item .currency-code {
+    font-weight: inherit;
+}
+
+/* Disabled currency item */
+.vds-currency-amount-container .currency-picker-container .currency-picker-item.disabled {
+    pointer-events: none;
+    background-color: var(--vds-tertiary-bg);
+    opacity: 0.75;
+    cursor: default;
+    padding: 0.625rem .75rem;
+    min-width: min-content;
+    max-width: max-content;
+    border-top-left-radius: var(--vds-border-radius);
+    border-bottom-left-radius: var(--vds-border-radius);
+}
+
+/* Single currency option */
+.vds-currency-amount-container .currency-picker-container .currency-picker-item.has-single-option {
+    pointer-events: none;
+    cursor: default;
+    padding: 0.625rem .75rem;
+    min-width: min-content;
+    max-width: max-content;
+    border-top-left-radius: var(--vds-border-radius);
+    border-bottom-left-radius: var(--vds-border-radius);
+}
+
+/* Currency item caret */
+.vds-currency-amount-container:not(.read-only) .currency-picker-container .currency-picker-item::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzE2MTYxNjt9PC9zdHlsZT48L2RlZnM+PHBhdGggaWQ9ImNhcmV0LWRvd24iIGNsYXNzPSJjbHMtMSIgZD0iTTEwLjcsMTUuNCw2LjMxOCwxMC4yQTEuMzQsMS4zNCwwLDAsMSw3LjM1Miw4aDkuM2ExLjM0LDEuMzQsMCwwLDEsMS4wMzQsMi4yTDEzLjMsMTUuNEExLjcwNiwxLjcwNiwwLDAsMSwxMC43LDE1LjRaIi8+PC9zdmc+");
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+/* Currency item caret in dark mode */
+html[data-bs-theme="dark"] .vds-currency-amount-container .currency-picker-container .currency-picker-item::after {
+    filter: invert(1);
+}
+
+/* Currency item caret in when the currency container is active */
+.vds-currency-amount-container .currency-picker-container.active .currency-picker-item::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* Currency item caret when currency is disabled and if it has single option */
+.vds-currency-amount-container .currency-picker-container .currency-picker-item.has-single-option::after,
+.vds-currency-amount-container .currency-picker-container .currency-picker-item.disabled::after,
+.vds-currency-amount-container.readonly .currency-picker-container .currency-picker-item::after {
+    display: none;
+}
+
+/* Currency item icon */
+.currency-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 20px !important;
+    height: 20px !important;
+    font-size: 14px !important;
+    padding-inline: .3rem;
+    background: var(--vds-primary-bg-subtle);
+    border-radius: .25rem;
+    line-height: 100%;
+}
+
+/* Currency options container */
+.vds-currency-amount-container .currency-options-container {
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    margin-top: 2px;
+    display: inline-block;
+    flex-shrink: 0;
+    max-height: 13.55rem;
+    padding: .5rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: var(--vds-secondary-bg);
+    border-radius: .5rem;
+    margin-top: 2px;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    border: var(--vds-border-width) solid var(--vds-border-color);
+    z-index: 99999;
+    scrollbar-width: none;
+}
+
+html[data-bs-theme="light"] .vds-currency-amount-container .currency-options-container {
+    background: var(--vds-body-bg);
+}
+
+/* Currency container scrollbar */
+.vds-currency-amount-container .currency-options-container:hover {
+    scrollbar-width: auto;
+}
+
+/* Currency options container in light mode */
+html [data-bs-theme=light] .vds-currency-amount-container .currency-options-container {
+    background: var(--vds-body-bg);
+}
+
+/* Currency options */
+.vds-currency-amount-container .currency-options-container .currency-option {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    padding: .75rem;
+    line-height: 100%;
+    border-radius: .25rem;
+    cursor: pointer;
+    height: 2.5rem;
+    user-select: none;
+}
+
+.vds-currency-amount-container .currency-options-container .currency-option:hover {
+    background: var(--vds-tertiary-bg);
+}
+
+/* Currency code in custom option */
+.vds-currency-amount-container .currency-options-container .currency-option .currency-code {
+    font-weight: 600;
+    color: var(--vds-primary-text-emphasis);
+}
+
+/* Currency native selector */
+.vds-currency-amount-container .currency-picker-container .currency-select-hidden {
+    display: none;
+}
+
+/* Common styles for currency and amount */
+.vds-currency-amount-container .currency-select-hidden,
+.vds-currency-amount-container .input-amount {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--vds-body-color);
+    background-color: var(--vds-body-bg);
+    background-clip: padding-box;
+    border: unset;
+}
+
+.vds-currency-amount-container .currency-select-hidden:disabled,
+.vds-currency-amount-container .input-amount:disabled {
+    background-color: var(--vds-tertiary-bg);
+    opacity: 0.75;
+}
+
+.vds-currency-amount-container .currency-select-hidden:focus-visible,
+.vds-currency-amount-container .input-amount:focus-visible {
+    outline: unset;
+}
+
+/* AMOUNT */
+/* Amount */
+.vds-currency-amount-container .input-amount {
+    flex: 1;
+    min-width: 8rem;
+    width: 100%;
+    height: 100%;
+    padding: 0.625rem 0.75rem;
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+
+/* READ-ONLY */
+/* Read-only container */
+.vds-currency-amount-container.readonly {
+    border: none !important;
+    pointer-events: none;
+    height: 22px;
+}
+
+.vds-currency-amount-container.readonly > .currency-picker-container {
+    margin-right: .5rem;
+}
+
+.vds-currency-amount-container.readonly .currency-picker-item,
+.vds-currency-amount-container.readonly .currency-picker-container,
+.vds-currency-amount-container.readonly .input-amount {
+    font-size: 1rem;
+    border: none;
+    min-width: unset !important;
+    padding: unset !important;
+    background: unset !important;
+    background-color: unset !important;
+    opacity: 1 !important;
+}
+
+@media (min-width: 769px) {
+    #img-currency-onboarding-image {
+        height: 324px;
+    }
+}

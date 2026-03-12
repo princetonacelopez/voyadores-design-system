@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+---
+
+<BaseLayout title="Progress" activeSection="components">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.voyadores.theme.min.css" />
+  </Fragment>
+
+  <PageHeader
+    eyebrow="Components / Bootstrap"
+    title="Progress"
+    description="Horizontal progress bars using the HTML5 &lt;progress&gt; element wrapped in Bootstrap's .progress. Supports stacked bars and animation."
+  />
+
+  <div class="demo">
+      <div class="demo-preview bs-scope" style="flex-direction:column;gap:12px;align-items:stretch">
+        <div class="progress" role="progressbar" aria-label="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar" style="width:25%"></div>
+        </div>
+        <div class="progress" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar bg-success" style="width:60%">60%</div>
+        </div>
+        <div class="progress" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar bg-warning" style="width:75%"></div>
+        </div>
+        <div class="progress" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar bg-danger" style="width:40%"></div>
+        </div>
+        <!-- Striped animated -->
+        <div class="progress" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" style="width:80%"></div>
+        </div>
+        <!-- Stacked -->
+        <div class="progress" style="height:20px">
+          <div class="progress-bar" role="progressbar" style="width:35%" aria-valuenow="35">Revenue</div>
+          <div class="progress-bar bg-success" role="progressbar" style="width:20%" aria-valuenow="20">Cost</div>
+          <div class="progress-bar bg-warning" role="progressbar" style="width:10%" aria-valuenow="10">Tax</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="html-prog">HTML</button>
+        <button class="cb-tab" data-tab="js-prog">JS</button>
+      </div>
+      <pre is:raw id="html-prog"><code>&lt;!-- Basic --&gt;
+&lt;div class="progress" role="progressbar"
+  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"&gt;
+  &lt;div class="progress-bar" style="width: 50%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Color variants --&gt;
+&lt;div class="progress-bar bg-success" style="width: 60%"&gt;60%&lt;/div&gt;
+&lt;div class="progress-bar bg-warning" style="width: 75%"&gt;&lt;/div&gt;
+&lt;div class="progress-bar bg-danger"  style="width: 40%"&gt;&lt;/div&gt;
+
+&lt;!-- Striped + animated --&gt;
+&lt;div class="progress-bar progress-bar-striped progress-bar-animated"
+  style="width: 80%"&gt;&lt;/div&gt;
+
+&lt;!-- Stacked bars --&gt;
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar" style="width: 35%"&gt;Revenue&lt;/div&gt;
+  &lt;div class="progress-bar bg-success" style="width: 20%"&gt;Cost&lt;/div&gt;
+  &lt;div class="progress-bar bg-warning" style="width: 10%"&gt;Tax&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      <pre is:raw id="js-prog" style="display:none"><code>// Animate progress bar from JS
+function setProgress(bar, value) {
+  bar.style.width = value + '%';
+  bar.setAttribute('aria-valuenow', value);
+  bar.textContent = value + '%';
+}
+
+const bar = document.querySelector('.progress-bar');
+setProgress(bar, 75);</code></pre>
+    </div>
+
+  <!-- Bootstrap JS bundle (Popper included) -->
+  <script is:inline src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+
+  <script>
+      // Code tabs
+    document.querySelectorAll('.cb-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        const block  = btn.closest('.code-block');
+        block.querySelectorAll('.cb-tab').forEach(b => b.classList.remove('is-on'));
+        block.querySelectorAll('pre').forEach(p => p.style.display = 'none');
+        btn.classList.add('is-on');
+        const pre = document.getElementById(target);
+        if (pre) pre.style.display = '';
+      });
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  /* Sections */
+  .csec { margin-bottom: 72px; scroll-margin-top: 24px; }
+  .csec-desc {
+    font-size: 13px; font-weight: 400; color: var(--g2);
+    line-height: 1.7; margin-bottom: 20px;
+  }
+  .csec-desc code {
+    font-family: var(--mono); font-size: .875em;
+    background: var(--g5); padding: 1px 5px; border-radius: 3px;
+    color: var(--g1);
+  }
+
+  /* Demo box */
+  .demo { margin-bottom: 16px; }
+  .demo-preview {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    padding: 28px; border: 1px solid var(--g5);
+    border-radius: 4px; background: var(--white);
+    align-items: center;
+  }
+
+  /* Code block */
+  .code-block {
+    background: #111; border-radius: 4px; overflow: hidden;
+  }
+  .cb-tabs {
+    display: flex; gap: 0;
+    border-bottom: 1px solid #2a2a2a; padding: 0 16px;
+  }
+  .cb-tab {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: .04em; text-transform: uppercase;
+    color: #666; background: none; border: none;
+    padding: 10px 14px; border-bottom: 2px solid transparent;
+    transition: color .12s, border-color .12s;
+  }
+  .cb-tab:hover  { color: #ccc; }
+  .cb-tab.is-on  { color: var(--brand); border-bottom-color: var(--brand); }
+  .code-block pre { margin: 0; padding: 20px 24px; overflow-x: auto; }
+  .code-block code {
+    font-family: var(--mono); font-size: 12.5px;
+    color: #e8e8e8; line-height: 1.85; white-space: pre;
+  }
+
+  /* Override Bootstrap base styles to protect site layout */
+  .bs-scope * { cursor: auto !important; }
+  .bs-scope { font-family: var(--vds-font-sans-serif, "Lexend", sans-serif); }
+</style>

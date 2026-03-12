@@ -1,0 +1,3 @@
+Name,Code,Barcode(Optional),Brand(Optional),Category,UOM,On Hand Qty,Unit Cost,Selling Price
+Name01,Code01,x,x,Cat 01,PC,10,100,110
+Name02,Code02,x,x,Cat 03,PC,20,200,220

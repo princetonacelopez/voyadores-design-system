@@ -1,0 +1,34 @@
+---
+interface Props {
+  name: string;
+  hex: string;
+  variable?: string;
+  large?: boolean;
+}
+const { name, hex, variable, large = false } = Astro.props;
+function lum(h: string) {
+  const n = parseInt(h.replace('#',''), 16);
+  return .2126*((n>>16)&0xff) + .7152*((n>>8)&0xff) + .0722*(n&0xff);
+}
+const tc = lum(hex) > 140 ? '#000' : '#fff';
+---
+<div class:list={['sw', { 'sw--lg': large }]}>
+  <div class="sw-color" style={`background:${hex};color:${tc}`}>
+    {large && <span class="sw-hex">{hex}</span>}
+  </div>
+  <div class="sw-info">
+    <span class="sw-name">{name}</span>
+    {!large && <span class="sw-hex2">{hex}</span>}
+    {variable && <span class="sw-var">{variable}</span>}
+  </div>
+</div>
+<style>
+  .sw { border-radius: 2px; overflow: hidden; border: 1px solid var(--g5); }
+  .sw-color { height: 56px; display: flex; align-items: flex-end; padding: 6px; }
+  .sw--lg .sw-color { height: 88px; }
+  .sw-hex { font-size: 10px; font-family: var(--mono); opacity: .75; }
+  .sw-info { padding: 8px 10px; background: var(--white); display: flex; flex-direction: column; gap: 1px; }
+  .sw-name { font-size: 11px; font-weight: 600; color: var(--black); }
+  .sw-hex2 { font-size: 10px; font-family: var(--mono); color: var(--g2); }
+  .sw-var  { font-size: 9px;  font-family: var(--mono); color: var(--g3); }
+</style>

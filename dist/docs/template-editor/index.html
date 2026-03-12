@@ -1,0 +1,1292 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Voyadores — Visual Identity Guidelines"><title>Template Editor — Voyadores</title><link rel="canonical" href="https://design.voyadores.com/docs/template-editor/"><link rel="icon" type="image/svg+xml" href="/icons/favicon/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon/favicon-32x32.png"><link rel="apple-touch-icon" href="/icons/favicon/apple-touch-icon.png"><!-- Urbanist + Chivo Mono --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"><!-- Voyadores Icon Font --><link rel="stylesheet" href="/fonts/Voyadores-Icon/voyadores-icon.css"><!-- Anti-flash theme init (must be inline, before render) --><script>
+      (function () {
+        var t = localStorage.getItem('voy-theme') || 'system';
+        var dark = t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+        document.documentElement.setAttribute('data-color-scheme', t);
+      })();
+    </script><!-- Page-specific head content --><link rel="stylesheet" href="/_astro/_slug_@_@astro.Dmf4ngD0.css">
+<link rel="stylesheet" href="/_astro/BaseLayout.CRrhjZsn.css"></head> <body> <!-- Modern inversion cursor --> <div class="c-cursor" id="c-cursor"></div> <div class="app-shell"> <!-- Topbar (mobile) — logo removed; sidebar has the logo at full height --> <header class="topbar" id="topbar"> <button class="ham" id="menu-toggle" aria-label="Open menu"> <span></span><span></span><span></span> </button> <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle theme" title="Toggle theme"> <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg> <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> <svg class="icon-system" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg> </button> </header> <div class="overlay" id="sidebar-overlay"></div> <aside id="sidebar" class="sidebar" data-astro-cid-ssfzsv2f> <!-- Logo --> <a href="/" class="s-logo" data-astro-cid-ssfzsv2f> <img class="logo-light" src="/images/voyadores-logo-combination-horizontal-light.svg" alt="Voyadores" width="128" data-astro-cid-ssfzsv2f> <img class="logo-dark" src="/images/voyadores-logo-combination-horizontal-dark.svg" alt="Voyadores" width="128" data-astro-cid-ssfzsv2f> </a> <!-- Nav --> <nav class="s-nav" aria-label="Main" data-astro-cid-ssfzsv2f> <!-- Design System flat links (top-level, no collapse) --> <div class="s-top-section" data-astro-cid-ssfzsv2f> <a href="/" class="s-link" data-astro-cid-ssfzsv2f> Home </a><a href="/introduction" class="s-link" data-astro-cid-ssfzsv2f> Introduction </a><a href="/strategy" class="s-link" data-astro-cid-ssfzsv2f> Strategy </a> </div> <!-- Get Started super-group --> <div class="s-group" id="grp-get-started" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-get-started" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Get Started</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <!-- Design sub-group --> <div class="s-subgroup" id="grp-gs-design" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-gs-design" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Design</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/figma-libraries" class="s-sublink" data-astro-cid-ssfzsv2f> Figma Libraries </a><a href="/get-started/design/ux-design-process" class="s-sublink" data-astro-cid-ssfzsv2f> UX Design Process &amp; Guidelines </a> </div> </div> <!-- Develop sub-group --> <div class="s-subgroup" id="grp-gs-develop" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-gs-develop" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Develop</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/get-started/develop/developer-setup" class="s-sublink" data-astro-cid-ssfzsv2f> Developer Setup </a><a href="/get-started/develop/build-categorization" class="s-sublink" data-astro-cid-ssfzsv2f> Build Categorization Process </a><a href="/get-started/develop/code-branching" class="s-sublink" data-astro-cid-ssfzsv2f> Code Branching Guidelines </a><a href="/get-started/develop/code-management" class="s-sublink" data-astro-cid-ssfzsv2f> Code Management Guidelines </a><a href="/get-started/develop/versioning" class="s-sublink" data-astro-cid-ssfzsv2f> Versioning </a> </div> </div> <!-- Internal sub-group --> <div class="s-subgroup" id="grp-gs-internal" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-gs-internal" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Internal</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/get-started/internal/changelog-guidelines" class="s-sublink" data-astro-cid-ssfzsv2f> Changelog Guidelines </a><a href="/get-started/internal/meeting-invitation-guidelines" class="s-sublink" data-astro-cid-ssfzsv2f> Meeting Guidelines </a> </div> </div> </div> </div> <!-- Grouped top-level nav --> <div class="s-group" id="grp-brand" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-brand" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Brand</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <a href="/color" class="s-link" data-astro-cid-ssfzsv2f> Color </a><a href="/images" class="s-link" data-astro-cid-ssfzsv2f> Images </a><a href="/logo" class="s-link" data-astro-cid-ssfzsv2f> Logo </a><a href="/typography" class="s-link" data-astro-cid-ssfzsv2f> Typography </a> </div> </div><div class="s-group" id="grp-content" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-content" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Content</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <a href="/language-and-grammar" class="s-link" data-astro-cid-ssfzsv2f> Language and Grammar </a><a href="/iconography" class="s-link" data-astro-cid-ssfzsv2f> Iconography </a><a href="/illustrations" class="s-link" data-astro-cid-ssfzsv2f> Illustrations </a> </div> </div> <!-- Components super-group --> <div class="s-group s-group--components" id="grp-components" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-components" aria-expanded="false" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Components</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <!-- Bootstrap sub-group --> <div class="s-subgroup" id="grp-bootstrap" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-bootstrap" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Bootstrap</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/components/bootstrap/accordion" class="s-sublink" data-astro-cid-ssfzsv2f> Accordion </a><a href="/components/bootstrap/alerts" class="s-sublink" data-astro-cid-ssfzsv2f> Alerts </a><a href="/components/bootstrap/badges" class="s-sublink" data-astro-cid-ssfzsv2f> Badges </a><a href="/components/bootstrap/breadcrumb" class="s-sublink" data-astro-cid-ssfzsv2f> Breadcrumb </a><a href="/components/bootstrap/button-group" class="s-sublink" data-astro-cid-ssfzsv2f> Button Group </a><a href="/components/bootstrap/buttons" class="s-sublink" data-astro-cid-ssfzsv2f> Buttons </a><a href="/components/bootstrap/cards" class="s-sublink" data-astro-cid-ssfzsv2f> Cards </a><a href="/components/bootstrap/carousel" class="s-sublink" data-astro-cid-ssfzsv2f> Carousel </a><a href="/components/bootstrap/dropdowns" class="s-sublink" data-astro-cid-ssfzsv2f> Dropdowns </a><a href="/components/bootstrap/forms" class="s-sublink" data-astro-cid-ssfzsv2f> Forms </a><a href="/components/bootstrap/input-group" class="s-sublink" data-astro-cid-ssfzsv2f> Input Group </a><a href="/components/bootstrap/list-group" class="s-sublink" data-astro-cid-ssfzsv2f> List Group </a><a href="/components/bootstrap/modal" class="s-sublink" data-astro-cid-ssfzsv2f> Modal </a><a href="/components/bootstrap/navbar" class="s-sublink" data-astro-cid-ssfzsv2f> Navbar </a><a href="/components/bootstrap/navs" class="s-sublink" data-astro-cid-ssfzsv2f> Navs &amp; Tabs </a><a href="/components/bootstrap/offcanvas" class="s-sublink" data-astro-cid-ssfzsv2f> Offcanvas </a><a href="/components/bootstrap/pagination" class="s-sublink" data-astro-cid-ssfzsv2f> Pagination </a><a href="/components/bootstrap/placeholders" class="s-sublink" data-astro-cid-ssfzsv2f> Placeholders </a><a href="/components/bootstrap/popovers" class="s-sublink" data-astro-cid-ssfzsv2f> Popovers </a><a href="/components/bootstrap/progress" class="s-sublink" data-astro-cid-ssfzsv2f> Progress </a><a href="/components/bootstrap/spinners" class="s-sublink" data-astro-cid-ssfzsv2f> Spinners </a><a href="/components/bootstrap/tables" class="s-sublink" data-astro-cid-ssfzsv2f> Tables </a><a href="/components/bootstrap/toasts" class="s-sublink" data-astro-cid-ssfzsv2f> Toasts </a><a href="/components/bootstrap/tooltips" class="s-sublink" data-astro-cid-ssfzsv2f> Tooltips </a><a href="/components/bootstrap/validation" class="s-sublink" data-astro-cid-ssfzsv2f> Validation </a> </div> </div> <!-- Others sub-group --> <div class="s-subgroup" id="grp-others" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-others" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Others</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/components/dropzone" class="s-sublink" data-astro-cid-ssfzsv2f> Dropzone </a><a href="/components/file-upload" class="s-sublink" data-astro-cid-ssfzsv2f> File Upload </a><a href="/components/file-viewer" class="s-sublink" data-astro-cid-ssfzsv2f> File Viewer </a><a href="/components/form-validation" class="s-sublink" data-astro-cid-ssfzsv2f> Form Validation </a><a href="/components/highcharts" class="s-sublink" data-astro-cid-ssfzsv2f> Highcharts </a><a href="/components/mask" class="s-sublink" data-astro-cid-ssfzsv2f> Mask </a><a href="/components/moment" class="s-sublink" data-astro-cid-ssfzsv2f> Moment </a><a href="/components/noty" class="s-sublink" data-astro-cid-ssfzsv2f> Noty </a><a href="/components/numeral" class="s-sublink" data-astro-cid-ssfzsv2f> Numeral </a><a href="/components/repeater" class="s-sublink" data-astro-cid-ssfzsv2f> Repeater </a><a href="/components/selectize" class="s-sublink" data-astro-cid-ssfzsv2f> Selectize </a><a href="/components/summernote" class="s-sublink" data-astro-cid-ssfzsv2f> Summernote </a><a href="/components/table" class="s-sublink" data-astro-cid-ssfzsv2f> Table 2.2.1 </a><a href="/components/template-editor" class="s-sublink" data-astro-cid-ssfzsv2f> Template Editor </a><a href="/components/treeview" class="s-sublink" data-astro-cid-ssfzsv2f> Treeview </a><a href="/components/wizard-form" class="s-sublink" data-astro-cid-ssfzsv2f> Wizard Form </a> </div> </div> </div> </div> <!-- Documentation super-group --> <div class="s-group s-group--docs is-open" id="grp-docs" data-astro-cid-ssfzsv2f> <button class="s-group-header" data-group="grp-docs" aria-expanded="true" data-astro-cid-ssfzsv2f> <span class="s-group-label" data-astro-cid-ssfzsv2f>Documentation</span> <svg class="s-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-group-items" data-astro-cid-ssfzsv2f> <!-- App Shell sub-group --> <div class="s-subgroup" id="grp-docs-shell" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-shell" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>App Shell</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/detection" class="s-sublink" data-astro-cid-ssfzsv2f> Browser &amp; TZ Detection </a><a href="/docs/menu-web" class="s-sublink" data-astro-cid-ssfzsv2f> Menu Web </a><a href="/docs/theme-picker" class="s-sublink" data-astro-cid-ssfzsv2f> Theme Picker </a> </div> </div> <!-- Modules sub-group --> <div class="s-subgroup" id="grp-docs-modules" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-modules" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Modules</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/default-url" class="s-sublink" data-astro-cid-ssfzsv2f> Default URL </a><a href="/docs/feature-onboarding" class="s-sublink" data-astro-cid-ssfzsv2f> Feature Onboarding </a><a href="/docs/notifications" class="s-sublink" data-astro-cid-ssfzsv2f> Notifications </a><a href="/docs/quicklinks" class="s-sublink" data-astro-cid-ssfzsv2f> Quick Links </a><a href="/docs/user-onboarding" class="s-sublink" data-astro-cid-ssfzsv2f> User Onboarding </a><a href="/docs/visual-indicator" class="s-sublink" data-astro-cid-ssfzsv2f> Visual Indicator </a> </div> </div> <!-- Utilities sub-group --> <div class="s-subgroup" id="grp-docs-utilities" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-utilities" aria-expanded="false" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Utilities</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/browser-storage" class="s-sublink" data-astro-cid-ssfzsv2f> Browser Storage </a><a href="/docs/datetime-picker" class="s-sublink" data-astro-cid-ssfzsv2f> DateTime Picker </a><a href="/docs/request-and-uri" class="s-sublink" data-astro-cid-ssfzsv2f> Request &amp; URI </a><a href="/docs/view-model" class="s-sublink" data-astro-cid-ssfzsv2f> ViewModelBase </a> </div> </div> <!-- Plugins sub-group --> <div class="s-subgroup is-open" id="grp-docs-plugins" data-astro-cid-ssfzsv2f> <button class="s-subgroup-header" data-group="grp-docs-plugins" aria-expanded="true" data-astro-cid-ssfzsv2f> <span data-astro-cid-ssfzsv2f>Plugins</span> <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f> <polyline points="6 9 12 15 18 9" data-astro-cid-ssfzsv2f></polyline> </svg> </button> <div class="s-subgroup-items" data-astro-cid-ssfzsv2f> <a href="/docs/action-button-manager" class="s-sublink" data-astro-cid-ssfzsv2f> Action Button Manager </a><a href="/docs/currency-picker" class="s-sublink" data-astro-cid-ssfzsv2f> Currency Picker </a><a href="/docs/file-template-editor" class="s-sublink" data-astro-cid-ssfzsv2f> File Template Editor </a><a href="/docs/repeater" class="s-sublink" data-astro-cid-ssfzsv2f> Repeater </a><a href="/docs/table-plugin" class="s-sublink" data-astro-cid-ssfzsv2f> Table Plugin </a><a href="/docs/template-editor" class="s-sublink is-on" data-astro-cid-ssfzsv2f> Template Editor </a><a href="/docs/treeview" class="s-sublink" data-astro-cid-ssfzsv2f> Treeview </a><a href="/docs/wizard-form" class="s-sublink" data-astro-cid-ssfzsv2f> Wizard Form </a> </div> </div> </div> </div> </nav> <!-- Sidebar footer: theme toggle --> <div class="s-footer" data-astro-cid-ssfzsv2f> <button class="theme-toggle s-theme-btn" id="theme-toggle-sidebar" aria-label="Toggle theme" title="Toggle theme" data-astro-cid-ssfzsv2f> <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f><circle cx="12" cy="12" r="5" data-astro-cid-ssfzsv2f></circle><line x1="12" y1="1" x2="12" y2="3" data-astro-cid-ssfzsv2f></line><line x1="12" y1="21" x2="12" y2="23" data-astro-cid-ssfzsv2f></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" data-astro-cid-ssfzsv2f></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" data-astro-cid-ssfzsv2f></line><line x1="1" y1="12" x2="3" y2="12" data-astro-cid-ssfzsv2f></line><line x1="21" y1="12" x2="23" y2="12" data-astro-cid-ssfzsv2f></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" data-astro-cid-ssfzsv2f></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" data-astro-cid-ssfzsv2f></line></svg> <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" data-astro-cid-ssfzsv2f></path></svg> <svg class="icon-system" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-ssfzsv2f><rect x="2" y="3" width="20" height="14" rx="2" data-astro-cid-ssfzsv2f></rect><line x1="8" y1="21" x2="16" y2="21" data-astro-cid-ssfzsv2f></line><line x1="12" y1="17" x2="12" y2="21" data-astro-cid-ssfzsv2f></line></svg> <span class="s-theme-label" data-astro-cid-ssfzsv2f> <span class="label-light" data-astro-cid-ssfzsv2f>Light mode</span> <span class="label-dark" data-astro-cid-ssfzsv2f>Dark mode</span> <span class="label-system" data-astro-cid-ssfzsv2f>System</span> </span> </button> </div> </aside> <script>
+(function () {
+  // Generic group toggle for all .s-group and .s-subgroup headers
+  document.querySelectorAll('[data-group]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id   = btn.getAttribute('data-group');
+      var el   = document.getElementById(id);
+      if (!el) return;
+      var open = el.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+})();
+</script> <main class="main" id="main">  <div class="doc-page" data-astro-cid-rnp3zwhq> <!-- Page header --> <header class="doc-header" data-astro-cid-rnp3zwhq> <p class="doc-eyebrow" data-astro-cid-rnp3zwhq>Documentation</p> <h1 data-astro-cid-rnp3zwhq>Template Editor</h1> <dl class="doc-meta" data-astro-cid-rnp3zwhq>  <dt data-astro-cid-rnp3zwhq>Version</dt> <dd data-astro-cid-rnp3zwhq>1.0.0</dd>  <dt data-astro-cid-rnp3zwhq>Files</dt> <dd data-astro-cid-rnp3zwhq>model.js · viewModel.js · commands.js · utils.js · template-builder.js · template-viewer.js · template-reviewer.js</dd>  <dt data-astro-cid-rnp3zwhq>Author</dt> <dd data-astro-cid-rnp3zwhq>Network Economic Services Ventures Philippines, Inc.</dd>  <dt data-astro-cid-rnp3zwhq>Last Updated</dt> <dd data-astro-cid-rnp3zwhq>2026-03-10</dd>  </dl> </header> <!-- Markdown body --> <div class="doc-body" data-astro-cid-rnp3zwhq> <p>A modular JavaScript component suite for building, previewing, and reviewing multi-section evaluation forms. The system is built on a Command pattern with undo/redo support, an Observable state model, and responsive CSS layout.</p>
+<hr>
+<hr>
+<h2 id="1-overview">1. Overview</h2>
+<p>The Template Editor is a three-mode evaluation form system:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Class</th><th>Mode</th><th>Use case</th></tr></thead><tbody><tr><td><code>TemplateBuilder</code></td><td><strong>Author</strong></td><td>Create and edit form templates (sections, questions, ordering, weights)</td></tr><tr><td><code>TemplateViewer</code></td><td><strong>Self-review</strong></td><td>A form respondent completes their own evaluation (single-role)</td></tr><tr><td><code>TemplateReview</code></td><td><strong>Dual-role review</strong></td><td>A reviewer and reviewee submit answers independently; a reconciled final score is agreed upon</td></tr></tbody></table>
+<p>All three are standalone ES6 classes that take a <code>containerId</code> and an <code>options</code> object. They render entirely into their respective container elements.</p>
+<hr>
+<h2 id="2-architecture">2. Architecture</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>template-builder.js   ←→  viewModel.js  ←→  commands.js</span></span>
+<span class="line"><span>template-viewer.js    ←→  model.js</span></span>
+<span class="line"><span>template-reviewer.js  ←→  utils.js</span></span>
+<span class="line"><span>                           vendor/sortable.js</span></span></code></pre>
+<h3 id="patterns-used">Patterns used</h3>
+<ul>
+<li><strong>MVVM</strong> — <code>FormViewModel</code> holds state; views subscribe and re-render on change</li>
+<li><strong>Command pattern</strong> — every mutation is a command object with <code>execute()</code> and <code>undo()</code>; the history stack enables unlimited undo/redo</li>
+<li><strong>Observer pattern</strong> — <code>Observable</code> class propagates state changes to all subscribers without coupling</li>
+<li><strong>Factory pattern</strong> — <code>QuestionFactory.create(type, ...)</code> normalizes question construction for both <code>linearScale</code> and <code>text</code> types</li>
+</ul>
+<hr>
+<h2 id="3-file-structure">3. File Structure</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>template-editor/</span></span>
+<span class="line"><span>├── template-builder.js   # Form authoring UI (TemplateBuilder)</span></span>
+<span class="line"><span>├── template-viewer.js    # Single-role form completion UI (TemplateViewer)</span></span>
+<span class="line"><span>├── template-reviewer.js  # Dual-role review UI (TemplateReview)</span></span>
+<span class="line"><span>├── viewModel.js          # State management (FormViewModel)</span></span>
+<span class="line"><span>├── commands.js           # Undoable command objects</span></span>
+<span class="line"><span>├── model.js              # Data models (FormTemplate, Section, QuestionFactory)</span></span>
+<span class="line"><span>├── utils.js              # Observable, DomHelper, debounce, generateUUID, Config</span></span>
+<span class="line"><span>└── vendor/</span></span>
+<span class="line"><span>    ├── sortable.js       # Drag-and-drop reordering (full source)</span></span>
+<span class="line"><span>    └── sortable.min.js   # Minified version</span></span></code></pre>
+<hr>
+<h2 id="4-dependencies">4. Dependencies</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Dependency</th><th>Source</th><th>Required by</th></tr></thead><tbody><tr><td>Bootstrap 5</td><td>External CDN or bundle</td><td>All three classes (form controls, badges, collapse, alerts)</td></tr><tr><td><code>vendor/sortable.js</code></td><td>Bundled</td><td><code>TemplateBuilder</code> only (drag-and-drop reordering)</td></tr><tr><td><code>template-editor.css</code></td><td><code>/css/template-editor/template-editor.css</code></td><td>All three classes</td></tr></tbody></table>
+<p>No jQuery dependency. All DOM manipulation is done via native APIs and the <code>DomHelper</code> utility.</p>
+<h3 id="import-order">Import order</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">link</span><span style="color:#B392F0"> rel</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"stylesheet"</span><span style="color:#B392F0"> href</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"/css/template-editor/template-editor.css"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">script</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"module"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#F97583">  import</span><span style="color:#E1E4E8"> { TemplateBuilder } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> '/js/template-editor/template-builder.js'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  import</span><span style="color:#E1E4E8"> { TemplateViewer } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> '/js/template-editor/template-viewer.js'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  import</span><span style="color:#E1E4E8"> { TemplateReview } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> '/js/template-editor/template-reviewer.js'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span></code></pre>
+<hr>
+<h2 id="5-data-models">5. Data Models</h2>
+<h3 id="formtemplate">FormTemplate</h3>
+<p>The root data object passed to all three classes.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#B392F0">  id</span><span style="color:#E1E4E8">:           string,     </span><span style="color:#6A737D">// UUID — generated automatically</span></span>
+<span class="line"><span style="color:#B392F0">  title</span><span style="color:#E1E4E8">:        string,     </span><span style="color:#6A737D">// Form title</span></span>
+<span class="line"><span style="color:#B392F0">  description</span><span style="color:#E1E4E8">:  string,     </span><span style="color:#6A737D">// Form description</span></span>
+<span class="line"><span style="color:#B392F0">  positionName</span><span style="color:#E1E4E8">: string,     </span><span style="color:#6A737D">// Associated position label</span></span>
+<span class="line"><span style="color:#B392F0">  positionId</span><span style="color:#E1E4E8">:   string,     </span><span style="color:#6A737D">// Associated position ID</span></span>
+<span class="line"><span style="color:#B392F0">  createdBy</span><span style="color:#E1E4E8">:    string,     </span><span style="color:#6A737D">// Creator name</span></span>
+<span class="line"><span style="color:#B392F0">  state</span><span style="color:#E1E4E8">:        number,     </span><span style="color:#6A737D">// 0 = draft, other values application-defined</span></span>
+<span class="line"><span style="color:#B392F0">  sections</span><span style="color:#E1E4E8">:     Section[]   </span><span style="color:#6A737D">// Ordered list of sections</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<blockquote>
+<p><strong>TemplateViewer / TemplateReview</strong> additionally expect <code>reviewee</code> and <code>reviewer</code> (string names) at the root level.</p>
+</blockquote>
+<h3 id="section">Section</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#B392F0">  id</span><span style="color:#E1E4E8">:          string,     </span><span style="color:#6A737D">// UUID</span></span>
+<span class="line"><span style="color:#B392F0">  title</span><span style="color:#E1E4E8">:       string,     </span><span style="color:#6A737D">// Section heading</span></span>
+<span class="line"><span style="color:#B392F0">  description</span><span style="color:#E1E4E8">: string,     </span><span style="color:#6A737D">// Optional section description</span></span>
+<span class="line"><span style="color:#B392F0">  weightScore</span><span style="color:#E1E4E8">: number,     </span><span style="color:#6A737D">// Fractional weight (0–1); auto-calculated by FormViewModel</span></span>
+<span class="line"><span style="color:#B392F0">  orderNumber</span><span style="color:#E1E4E8">: number,     </span><span style="color:#6A737D">// 0-based position index</span></span>
+<span class="line"><span style="color:#B392F0">  questions</span><span style="color:#E1E4E8">:   Question[]  </span><span style="color:#6A737D">// Ordered list of questions</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="question--linear-scale">Question — Linear Scale</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#B392F0">  id</span><span style="color:#E1E4E8">:           string,          </span><span style="color:#6A737D">// UUID</span></span>
+<span class="line"><span style="color:#B392F0">  sectionId</span><span style="color:#E1E4E8">:    string,          </span><span style="color:#6A737D">// Parent section ID</span></span>
+<span class="line"><span style="color:#B392F0">  title</span><span style="color:#E1E4E8">:        string,          </span><span style="color:#6A737D">// Question text</span></span>
+<span class="line"><span style="color:#B392F0">  type</span><span style="color:#E1E4E8">:         </span><span style="color:#9ECBFF">'linearScale'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  required</span><span style="color:#E1E4E8">:     boolean,</span></span>
+<span class="line"><span style="color:#B392F0">  orderNumber</span><span style="color:#E1E4E8">:  number,</span></span>
+<span class="line"><span style="color:#B392F0">  weightScore</span><span style="color:#E1E4E8">:  number,          </span><span style="color:#6A737D">// Fractional weight (0–1); auto-calculated</span></span>
+<span class="line"><span style="color:#B392F0">  weightedType</span><span style="color:#E1E4E8">: string,          </span><span style="color:#6A737D">// 'Default' or application-defined category</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // Linear scale range</span></span>
+<span class="line"><span style="color:#B392F0">  minScore</span><span style="color:#E1E4E8">:  number,             </span><span style="color:#6A737D">// Default: 1</span></span>
+<span class="line"><span style="color:#B392F0">  maxScore</span><span style="color:#E1E4E8">:  number,             </span><span style="color:#6A737D">// Default: 5</span></span>
+<span class="line"><span style="color:#B392F0">  minLabel</span><span style="color:#E1E4E8">:  string,             </span><span style="color:#6A737D">// Default: 'Poor'</span></span>
+<span class="line"><span style="color:#B392F0">  maxLabel</span><span style="color:#E1E4E8">:  string,             </span><span style="color:#6A737D">// Default: 'Excellent'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // TemplateViewer fields</span></span>
+<span class="line"><span style="color:#B392F0">  answer</span><span style="color:#E1E4E8">:    number </span><span style="color:#F97583">|</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // TemplateReview fields</span></span>
+<span class="line"><span style="color:#B392F0">  revieweeAnswer</span><span style="color:#E1E4E8">:        number </span><span style="color:#F97583">|</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  reviewerAnswer</span><span style="color:#E1E4E8">:        number </span><span style="color:#F97583">|</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  finalScore</span><span style="color:#E1E4E8">:            number </span><span style="color:#F97583">|</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">,   </span><span style="color:#6A737D">// Agreed score</span></span>
+<span class="line"><span style="color:#B392F0">  finalScoreOverridden</span><span style="color:#E1E4E8">:  boolean,         </span><span style="color:#6A737D">// Prevents auto-sync when true</span></span>
+<span class="line"><span style="color:#B392F0">  remarks</span><span style="color:#E1E4E8">:               string           </span><span style="color:#6A737D">// Reviewer comment</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="question--text">Question — Text</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#B392F0">  id</span><span style="color:#E1E4E8">:           string,</span></span>
+<span class="line"><span style="color:#B392F0">  sectionId</span><span style="color:#E1E4E8">:    string,</span></span>
+<span class="line"><span style="color:#B392F0">  title</span><span style="color:#E1E4E8">:        string,</span></span>
+<span class="line"><span style="color:#B392F0">  type</span><span style="color:#E1E4E8">:         </span><span style="color:#9ECBFF">'text'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  required</span><span style="color:#E1E4E8">:     boolean,</span></span>
+<span class="line"><span style="color:#B392F0">  orderNumber</span><span style="color:#E1E4E8">:  number,</span></span>
+<span class="line"><span style="color:#B392F0">  weightScore</span><span style="color:#E1E4E8">:  number,</span></span>
+<span class="line"><span style="color:#B392F0">  weightedType</span><span style="color:#E1E4E8">: string,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // TemplateViewer</span></span>
+<span class="line"><span style="color:#B392F0">  answer</span><span style="color:#E1E4E8">:          string </span><span style="color:#F97583">|</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // TemplateReview</span></span>
+<span class="line"><span style="color:#B392F0">  revieweeAnswer</span><span style="color:#E1E4E8">:  string </span><span style="color:#F97583">|</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  reviewerAnswer</span><span style="color:#E1E4E8">:  string </span><span style="color:#F97583">|</span><span style="color:#79B8FF"> null</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="question-types">Question types</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Type value</th><th>Numeric alias</th><th>Rendered as</th></tr></thead><tbody><tr><td><code>'linearScale'</code></td><td><code>0</code></td><td>Radio button scale with min/max labels and optional avatar overlays</td></tr><tr><td><code>'text'</code></td><td><code>1</code></td><td>Textarea</td></tr></tbody></table>
+<p><code>QuestionFactory.create()</code> accepts both the string and numeric forms.</p>
+<hr>
+<h2 id="6-templatebuilder">6. TemplateBuilder</h2>
+<p>The form authoring interface. Renders a full editor with a section list, per-section question cards, drag-and-drop reordering, undo/redo, and an optional live preview panel.</p>
+<h3 id="constructor">Constructor</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> builder</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TemplateBuilder</span><span style="color:#E1E4E8">(containerId, options);</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>containerId</code></td><td><code>string</code></td><td><strong>Required.</strong> <code>id</code> of the container <code>&#x3C;div></code>.</td></tr><tr><td><code>options</code></td><td><code>object</code></td><td>Configuration (see below).</td></tr></tbody></table>
+<h3 id="options">Options</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#B392F0">  enablePreview</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,       </span><span style="color:#6A737D">// Show TemplateViewer preview panel alongside the editor</span></span>
+<span class="line"><span style="color:#B392F0">  previewContainer</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,       </span><span style="color:#6A737D">// Container ID for the live preview (required when enablePreview: true)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  template</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#B392F0">    title</span><span style="color:#E1E4E8">:        </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,         </span><span style="color:#6A737D">// Pre-populate title field</span></span>
+<span class="line"><span style="color:#B392F0">    description</span><span style="color:#E1E4E8">:  </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,         </span><span style="color:#6A737D">// Pre-populate description field</span></span>
+<span class="line"><span style="color:#B392F0">    positions</span><span style="color:#E1E4E8">:    [],         </span><span style="color:#6A737D">// Array of { id, name } objects for position dropdown</span></span>
+<span class="line"><span style="color:#B392F0">    positionName</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,         </span><span style="color:#6A737D">// Pre-selected position label</span></span>
+<span class="line"><span style="color:#B392F0">    positionId</span><span style="color:#E1E4E8">:   </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,         </span><span style="color:#6A737D">// Pre-selected position ID</span></span>
+<span class="line"><span style="color:#B392F0">    createdBy</span><span style="color:#E1E4E8">:    </span><span style="color:#9ECBFF">''</span><span style="color:#6A737D">          // Creator name to embed in saved data</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  section</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#B392F0">    reorder</span><span style="color:#E1E4E8">:         </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,    </span><span style="color:#6A737D">// Allow drag-and-drop reordering of sections</span></span>
+<span class="line"><span style="color:#B392F0">    showDescription</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,    </span><span style="color:#6A737D">// Show the section minimap/navigation pane</span></span>
+<span class="line"><span style="color:#B392F0">    maxSection</span><span style="color:#E1E4E8">:      </span><span style="color:#79B8FF">20</span><span style="color:#6A737D">       // Maximum number of sections allowed</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  question</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#B392F0">    reorder</span><span style="color:#E1E4E8">:      </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,       </span><span style="color:#6A737D">// Allow drag-and-drop reordering of questions</span></span>
+<span class="line"><span style="color:#B392F0">    isRequired</span><span style="color:#E1E4E8">:   </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,       </span><span style="color:#6A737D">// New questions default to required</span></span>
+<span class="line"><span style="color:#B392F0">    maxQuestions</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">20</span><span style="color:#6A737D">          // Maximum questions per section</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  data</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">null</span><span style="color:#6A737D">                  // Load an existing FormTemplate object on init</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="public-methods">Public methods</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Parameters</th><th>Returns</th><th>Description</th></tr></thead><tbody><tr><td><code>save()</code></td><td>—</td><td><code>FormTemplate</code></td><td>Finalize order numbers on all sections/questions and return the complete template object. Call this to get serializable data to send to an API.</td></tr><tr><td><code>loadJsonData(data)</code></td><td><code>data: FormTemplate</code></td><td><code>void</code></td><td>Replace the current template with new data. Validates structure, rebuilds the ViewModel, and re-renders.</td></tr><tr><td><code>undo()</code></td><td>—</td><td><code>void</code></td><td>Step back one action in history (if available).</td></tr><tr><td><code>redo()</code></td><td>—</td><td><code>void</code></td><td>Replay the last undone action (if available).</td></tr><tr><td><code>render()</code></td><td>—</td><td><code>void</code></td><td>Manually trigger a full re-render. Normally called automatically.</td></tr><tr><td><code>getSaveState()</code></td><td>—</td><td><code>'Unsaved' | 'Saved'</code></td><td>Returns the current save state label.</td></tr><tr><td><code>setUnsaved(value)</code></td><td><code>value: boolean</code></td><td><code>void</code></td><td>Programmatically mark the form as unsaved/saved.</td></tr><tr><td><code>subscribeToState(listener)</code></td><td><code>listener: Function</code></td><td><code>void</code></td><td>Subscribe to state changes (fires with <code>'Unsaved'</code> or <code>'Saved'</code>).</td></tr></tbody></table>
+<h3 id="toolbar">Toolbar</h3>
+<p>A fixed floating toolbar is rendered on the right side of the viewport. It contains:</p>
+<ul>
+<li><strong>Add Section</strong> — creates a new <code>Section</code> and appends it</li>
+<li><strong>Add Linear Scale</strong> — adds a <code>linearScale</code> question to the selected section (or first section)</li>
+<li><strong>Add Text</strong> — adds a <code>text</code> question to the selected section</li>
+<li><strong>Undo</strong> — disabled when history is empty</li>
+<li><strong>Redo</strong> — disabled when undo stack is empty</li>
+</ul>
+<p>“Add Question” buttons disable when the selected section already has <code>maxQuestions</code> questions.</p>
+<h3 id="minimap">Minimap</h3>
+<p>When <code>section.showDescription: true</code> (default), a section navigation pane renders on the left column showing all section titles. Clicking a title scrolls the editor to that section. The active section is highlighted with the brand color border (<code>section-active</code> class).</p>
+<h3 id="live-preview">Live preview</h3>
+<p>When <code>enablePreview: true</code> and <code>previewContainer</code> is set, a <code>TemplateViewer</code> instance is instantiated in the preview container and kept in sync with every edit.</p>
+<h3 id="drag-and-drop">Drag-and-drop</h3>
+<p>Both section reordering and question reordering use <strong>Sortable.js</strong> (bundled in <code>vendor/</code>). Drag operations are translated into <code>ReorderSectionCommand</code> and <code>ReorderQuestionCommand</code> respectively, which are undo-able.</p>
+<p>Questions can also be dragged <strong>across sections</strong> via <code>TransferQuestionCommand</code>.</p>
+<hr>
+<h2 id="7-templateviewer">7. TemplateViewer</h2>
+<p>A single-role form completion interface. The respondent navigates section-by-section and answers questions. It supports an autosave callback and a preview (read-only) mode.</p>
+<h3 id="constructor-1">Constructor</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> viewer</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TemplateViewer</span><span style="color:#E1E4E8">(containerId, options);</span></span></code></pre>
+<h3 id="options-1">Options</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#B392F0">  data</span><span style="color:#E1E4E8">:               {},          </span><span style="color:#6A737D">// Required. FormTemplate object to render.</span></span>
+<span class="line"><span style="color:#B392F0">  previewMode</span><span style="color:#E1E4E8">:        </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,       </span><span style="color:#6A737D">// true = read-only, no answer submission, no autosave</span></span>
+<span class="line"><span style="color:#B392F0">  onCompletionChange</span><span style="color:#E1E4E8">: () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {},    </span><span style="color:#6A737D">// Callback(isComplete: boolean) — fired when section completion status changes</span></span>
+<span class="line"><span style="color:#B392F0">  submitId</span><span style="color:#E1E4E8">:           </span><span style="color:#9ECBFF">'submit-view'</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// id of the external submit button to enable/disable</span></span>
+<span class="line"><span style="color:#B392F0">  submitText</span><span style="color:#E1E4E8">:         </span><span style="color:#9ECBFF">'Finish'</span><span style="color:#E1E4E8">,    </span><span style="color:#6A737D">// Label text for the final section's navigation button</span></span>
+<span class="line"><span style="color:#B392F0">  titleAction</span><span style="color:#E1E4E8">:        </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,          </span><span style="color:#6A737D">// Prefix prepended to the form title (e.g. "Preview: ")</span></span>
+<span class="line"><span style="color:#B392F0">  onAutoSave</span><span style="color:#E1E4E8">:         () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {}     </span><span style="color:#6A737D">// Callback(formData: FormTemplate) — fired on debounced autosave</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="public-methods-1">Public methods</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Parameters</th><th>Returns</th><th>Description</th></tr></thead><tbody><tr><td><code>get data</code></td><td>—</td><td><code>FormTemplate</code></td><td>Read the current form data including all answers.</td></tr><tr><td><code>set data(value)</code></td><td><code>value: FormTemplate</code></td><td><code>void</code></td><td>Replace the form data, re-validate, reset to section 0, re-render.</td></tr><tr><td><code>save()</code></td><td>—</td><td><code>FormTemplate</code></td><td>Return the current form data.</td></tr><tr><td><code>navigate(direction)</code></td><td><code>'back' | 'next'</code></td><td><code>void</code></td><td>Move to previous or next section. Validates required questions on <code>'next'</code>.</td></tr><tr><td><code>updateAnswer(si, qi, value)</code></td><td><code>si: number, qi: number, value: any</code></td><td><code>void</code></td><td>Set the answer for a question by section/question index. Triggers autosave.</td></tr><tr><td><code>checkCompletion()</code></td><td>—</td><td><code>boolean</code></td><td>Returns <code>true</code> if all required questions in the current section are answered.</td></tr><tr><td><code>render()</code></td><td>—</td><td><code>void</code></td><td>Re-render the entire form.</td></tr></tbody></table>
+<h3 id="section-navigation">Section navigation</h3>
+<ul>
+<li>Sections are shown one at a time. The current section index starts at <code>0</code>.</li>
+<li>A progress bar shows the overall percentage of answered required questions.</li>
+<li><strong>Back</strong> button is hidden on the first section.</li>
+<li><strong>Next</strong> button is replaced by <code>submitText</code> (default <code>"Finish"</code>) on the last section.</li>
+<li>Clicking <strong>Next</strong> validates required questions in the current section. If any are unanswered, validation feedback is shown and navigation is blocked.</li>
+<li>The progress bar and “next” button are hidden when only one section exists.</li>
+</ul>
+<h3 id="validation">Validation</h3>
+<p>When required questions are unanswered and the user tries to advance:</p>
+<ul>
+<li>Each unanswered question’s radio group or textarea gets <code>is-invalid</code> styling</li>
+<li>An alert is injected: <em>“Please answer N required question(s) before continuing.”</em></li>
+<li>The alert auto-dismisses and highlights clear once all required questions are filled</li>
+</ul>
+<h3 id="autosave">Autosave</h3>
+<p>In non-preview mode, <code>onAutoSave</code> is debounced with a 2-second delay. It only fires if the current data differs from the last saved snapshot (prevents no-op saves). After firing, the save state transitions through: <code>changed → saving → saved → lastEdited</code> (1 minute after last save).</p>
+<h3 id="data-initialization">Data initialization</h3>
+<p><code>TemplateViewer</code> calls <code>initializeReview(data)</code> on construction:</p>
+<ul>
+<li>Text questions default to <code>answer: ''</code></li>
+<li>Linear scale questions default to <code>answer: null</code></li>
+<li>Existing answer values are preserved</li>
+</ul>
+<h3 id="validation-rules">Validation rules</h3>
+<p>The viewer throws on construction if:</p>
+<ul>
+<li><code>data</code> is not a plain object</li>
+<li>No sections exist</li>
+<li>Any section has no questions</li>
+<li>Any <code>linearScale</code> question is missing <code>minScore</code> or <code>maxScore</code></li>
+</ul>
+<hr>
+<h2 id="8-templatereview">8. TemplateReview</h2>
+<p>A dual-role review interface where both a reviewee and a reviewer submit scores for the same form. The class navigates question-by-question (not section-by-section), reconciles answers into a <code>finalScore</code>, and calculates weighted performance scores.</p>
+<h3 id="constructor-2">Constructor</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> review</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TemplateReview</span><span style="color:#E1E4E8">(containerId, options);</span></span></code></pre>
+<h3 id="options-2">Options</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#B392F0">  data</span><span style="color:#E1E4E8">:               {},              </span><span style="color:#6A737D">// Required. FormTemplate with reviewee/reviewer string properties.</span></span>
+<span class="line"><span style="color:#B392F0">  previewMode</span><span style="color:#E1E4E8">:        </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,           </span><span style="color:#6A737D">// Read-only mode</span></span>
+<span class="line"><span style="color:#B392F0">  showScoreSection</span><span style="color:#E1E4E8">:   </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,            </span><span style="color:#6A737D">// Show the score tally page at the end</span></span>
+<span class="line"><span style="color:#B392F0">  showScores</span><span style="color:#E1E4E8">:         </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,            </span><span style="color:#6A737D">// Show score displays per question/section</span></span>
+<span class="line"><span style="color:#B392F0">  onCompletionChange</span><span style="color:#E1E4E8">: () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {},        </span><span style="color:#6A737D">// Callback(isComplete: boolean) — all linear scale questions have finalScore</span></span>
+<span class="line"><span style="color:#B392F0">  submitId</span><span style="color:#E1E4E8">:           </span><span style="color:#9ECBFF">'submit-review'</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// id of external submit button</span></span>
+<span class="line"><span style="color:#B392F0">  submitText</span><span style="color:#E1E4E8">:         </span><span style="color:#9ECBFF">'Finish'</span><span style="color:#E1E4E8">,        </span><span style="color:#6A737D">// Last-question button label</span></span>
+<span class="line"><span style="color:#B392F0">  titleAction</span><span style="color:#E1E4E8">:        </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,              </span><span style="color:#6A737D">// Title prefix</span></span>
+<span class="line"><span style="color:#B392F0">  submitEnable</span><span style="color:#E1E4E8">:       </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,            </span><span style="color:#6A737D">// Initial enabled/disabled state of submit button</span></span>
+<span class="line"><span style="color:#B392F0">  onAutoSave</span><span style="color:#E1E4E8">:         () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {}         </span><span style="color:#6A737D">// Callback(reviewData: FormTemplate) — debounced autosave</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="public-methods-2">Public methods</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Parameters</th><th>Returns</th><th>Description</th></tr></thead><tbody><tr><td><code>get data</code></td><td>—</td><td><code>FormTemplate</code></td><td>Read the current review data including all answers and scores.</td></tr><tr><td><code>set data(value)</code></td><td><code>value: FormTemplate</code></td><td><code>void</code></td><td>Replace review data, validate, reset to question 0, re-render.</td></tr><tr><td><code>navigate(direction)</code></td><td><code>'back' | 'next'</code></td><td><code>void</code></td><td>Move between questions. On the last question, navigates to the score tally page (if enabled).</td></tr><tr><td><code>updateAnswer(si, qi, role, value)</code></td><td><code>si: number, qi: number, role: 'Reviewee'|'Reviewer', value: any</code></td><td><code>void</code></td><td>Set a role-specific answer. Auto-syncs <code>finalScore</code> if both roles match and not overridden.</td></tr><tr><td><code>updateFinalScore(si, qi, value)</code></td><td><code>si: number, qi: number, value: number</code></td><td><code>void</code></td><td>Manually set the agreed score. Sets <code>finalScoreOverridden: true</code> to prevent future auto-sync.</td></tr><tr><td><code>updateRemarks(si, qi, value)</code></td><td><code>si: number, qi: number, value: string</code></td><td><code>void</code></td><td>Update the reviewer’s remarks for a question.</td></tr><tr><td><code>checkCompletion()</code></td><td>—</td><td><code>boolean</code></td><td>Returns <code>true</code> if all <code>linearScale</code> questions have a <code>finalScore</code> set.</td></tr><tr><td><code>render()</code></td><td>—</td><td><code>void</code></td><td>Re-render the entire review interface.</td></tr><tr><td><code>updateScoreTally()</code></td><td>—</td><td><code>void</code></td><td>Re-render the score tally page if it is currently visible.</td></tr><tr><td><code>calculateSectionAverage(section, role)</code></td><td><code>section, 'Reviewee'|'Reviewer'</code></td><td><code>number|null</code></td><td>Simple average of a role’s answers in a section.</td></tr><tr><td><code>calculateWeightedScore(section, role)</code></td><td><code>section, 'Reviewee'|'Reviewer'</code></td><td><code>number|null</code></td><td>Weighted average using question <code>weightScore</code>.</td></tr><tr><td><code>calculateTotalWeightedAverage(role)</code></td><td><code>'Reviewee'|'Reviewer'</code></td><td><code>string</code></td><td>Overall weighted average to 1 decimal place.</td></tr><tr><td><code>calculateOverallPerformanceScore()</code></td><td>—</td><td><code>string</code></td><td>Final score from agreed <code>finalScore</code> values × section weights.</td></tr><tr><td><code>getInitials(name)</code></td><td><code>name: string</code></td><td><code>string</code></td><td>Extract 1–2 initials from a name (for avatar rendering).</td></tr></tbody></table>
+<h3 id="question-by-question-navigation">Question-by-question navigation</h3>
+<p>Unlike <code>TemplateViewer</code> which advances by section, <code>TemplateReview</code> navigates one question at a time across all sections. Navigation state tracks both <code>currentSection</code> and <code>currentQuestion</code> indices simultaneously.</p>
+<h3 id="auto-sync-of-finalscore">Auto-sync of finalScore</h3>
+<p>When <code>updateAnswer()</code> is called for either role:</p>
+<ul>
+<li>If the reviewee and reviewer answers are <strong>equal</strong> AND <code>finalScoreOverridden</code> is <code>false</code>, <code>finalScore</code> is automatically set to that value</li>
+<li>If a reviewer manually calls <code>updateFinalScore()</code>, <code>finalScoreOverridden</code> is set to <code>true</code> — preventing future auto-sync even if both roles later agree</li>
+</ul>
+<p>This means the agreed score box stays unlocked only when the two parties disagree.</p>
+<h3 id="score-tally-page">Score tally page</h3>
+<p>When <code>showScoreSection: true</code> (default), after the last question the interface shows a score summary:</p>
+<ul>
+<li>Per-section averages for both reviewee and reviewer</li>
+<li>Per-section final (agreed) scores</li>
+<li>Overall performance score</li>
+</ul>
+<p>Use <code>showScores: false</code> to hide individual score displays on each question card (useful in blind review scenarios).</p>
+<h3 id="avatars">Avatars</h3>
+<p>Each linear scale option renders small circular avatar badges above the selected value for each role:</p>
+<ul>
+<li><strong>Reviewee</strong> — blue circle (<code>template-avatar-reviewee</code>)</li>
+<li><strong>Reviewer</strong> — yellow circle (<code>template-avatar-reviewer</code>)</li>
+</ul>
+<p>On desktop, when both avatars are present on the same option, they are staggered left/right. On mobile (≤ 768px), both are centered.</p>
+<h3 id="wavy-circle-badge">Wavy circle badge</h3>
+<p>The score tally page uses a <code>.wavy-circle</code> CSS badge to display the overall performance score visually. Two variants exist: default (brand warning/orange) and <code>.silver</code> (for secondary/neutral scores).</p>
+<hr>
+<h2 id="9-formviewmodel">9. FormViewModel</h2>
+<p>The internal state manager for <code>TemplateBuilder</code>. You do not instantiate it directly — <code>TemplateBuilder</code> creates it internally — but understanding it helps with custom integrations.</p>
+<h3 id="constructor-options">Constructor options</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> vm</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> FormViewModel</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  isQuestionRequired: </span><span style="color:#79B8FF">true</span><span style="color:#6A737D">   // Default required state for new questions</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="mutation-methods">Mutation methods</h3>
+<p>Every method below creates a command, executes it, pushes it to <code>history</code>, and clears <code>undone</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td><code>addSection()</code></td><td>Append a new section, recalculate weights</td></tr><tr><td><code>addQuestion(type, title?, sectionIndex?)</code></td><td>Add a question of <code>'linearScale'</code> or <code>'text'</code>; creates a section if none exist</td></tr><tr><td><code>deleteSection(sectionIndex)</code></td><td>Remove section at index, recalculate weights</td></tr><tr><td><code>deleteQuestion(sectionIndex, questionIndex)</code></td><td>Remove question, recalculate weights</td></tr><tr><td><code>duplicateSection(sectionIndex)</code></td><td>Deep-copy section + all questions with new UUIDs, insert after original</td></tr><tr><td><code>duplicateQuestion(sectionIndex, questionIndex)</code></td><td>Deep-copy question with new UUID, title gets ” (Copy)” suffix</td></tr><tr><td><code>reorderSection(fromIndex, toIndex)</code></td><td>Move section, update <code>orderNumber</code> on all sections</td></tr><tr><td><code>reorderQuestion(sectionIndex, fromIndex, toIndex)</code></td><td>Move question within a section</td></tr><tr><td><code>transferQuestion(fromSI, toSI, fromQI, toQI)</code></td><td>Move question across sections, update <code>sectionId</code></td></tr><tr><td><code>updateTemplateTitle(title)</code></td><td>Update <code>formTemplate.title</code></td></tr><tr><td><code>updateTemplateDescription(description)</code></td><td>Update <code>formTemplate.description</code></td></tr><tr><td><code>updateTemplatePosition(positionId)</code></td><td>Update <code>formTemplate.positionId</code></td></tr><tr><td><code>updateTemplateProperty(property, value)</code></td><td>Generic template property update</td></tr><tr><td><code>updateSectionTitle(sectionIndex, title)</code></td><td>Update section title</td></tr><tr><td><code>updateSectionDescription(sectionIndex, description)</code></td><td>Update section description</td></tr><tr><td><code>updateQuestionTitle(si, qi, title)</code></td><td>Update question title</td></tr><tr><td><code>updateQuestionType(si, qi, type)</code></td><td>Replace question type, preserving id/title/weights</td></tr><tr><td><code>updateQuestionRequired(si, qi, required, noRender?)</code></td><td>Toggle required flag; <code>noRender: true</code> skips re-render</td></tr><tr><td><code>updateQuestionMinValue(si, qi, minValue)</code></td><td>Set linear scale min (integer-clamped)</td></tr><tr><td><code>updateQuestionMaxValue(si, qi, maxValue)</code></td><td>Set linear scale max (integer-clamped)</td></tr><tr><td><code>updateQuestionMinLabel(si, qi, label)</code></td><td>Set min axis label</td></tr><tr><td><code>updateQuestionMaxLabel(si, qi, label)</code></td><td>Set max axis label</td></tr><tr><td><code>updateQuestionWeightedType(si, qi, type)</code></td><td>Set question weighted type category</td></tr><tr><td><code>calculateWeights()</code></td><td>Recalculate uniform section and question weights (1/n each)</td></tr><tr><td><code>undo()</code></td><td>Pop from <code>history</code>, call <code>.undo()</code>, push to <code>undone</code></td></tr><tr><td><code>redo()</code></td><td>Pop from <code>undone</code>, re-execute, push back to <code>history</code></td></tr><tr><td><code>subscribe(listener)</code></td><td>Register a listener for state changes</td></tr></tbody></table>
+<h3 id="weight-calculation">Weight calculation</h3>
+<p><code>calculateWeights()</code> distributes weights uniformly:</p>
+<ul>
+<li>Each section gets <code>weightScore = 1 / totalSections</code></li>
+<li>Each question within a section gets <code>weightScore = 1 / totalQuestionsInSection</code></li>
+</ul>
+<p>This is called automatically after every structural mutation (add, delete, duplicate).</p>
+<hr>
+<h2 id="10-commands">10. Commands</h2>
+<p>All commands are in <code>commands.js</code>. They implement <code>execute()</code> and <code>undo()</code>. The ViewModel calls <code>calculateWeights()</code> and <code>notifyUpdate()</code> after structural changes.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Command class</th><th>What it does</th></tr></thead><tbody><tr><td><code>AddSectionCommand</code></td><td>Push new section onto <code>sections</code> array</td></tr><tr><td><code>AddQuestionCommand</code></td><td>Push new question onto a section’s <code>questions</code> array</td></tr><tr><td><code>UpdatePropertyCommand</code></td><td>Set a single property at template, section, or question scope</td></tr><tr><td><code>DeleteSectionCommand</code></td><td><code>splice</code> section out; <code>undo</code> splices it back at same index</td></tr><tr><td><code>DeleteQuestionCommand</code></td><td><code>splice</code> question out; <code>undo</code> splices it back</td></tr><tr><td><code>DuplicateSectionCommand</code></td><td>Deep-copy section + questions with fresh UUIDs, <code>splice</code> in after original</td></tr><tr><td><code>DuplicateQuestionCommand</code></td><td>Deep-copy question with fresh UUID, <code>splice</code> in after original</td></tr><tr><td><code>ReorderSectionCommand</code></td><td><code>splice</code> from source, <code>splice</code> into target; updates <code>orderNumber</code>; <code>undo</code> reverses</td></tr><tr><td><code>ReorderQuestionCommand</code></td><td>Same as above but scoped to a single section</td></tr><tr><td><code>TransferQuestionCommand</code></td><td><code>splice</code> from source section, <code>splice</code> into target section; updates <code>sectionId</code> and <code>orderNumber</code> on both sides</td></tr></tbody></table>
+<p><code>UpdatePropertyCommand</code> has a <code>scope</code> parameter:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><code>scope</code> value</th><th>Target</th></tr></thead><tbody><tr><td><code>'template'</code></td><td><code>formTemplate[property]</code></td></tr><tr><td><code>'section'</code> (default) with <code>questionIndex === null</code></td><td><code>section[property]</code></td></tr><tr><td><code>'section'</code> with <code>questionIndex !== null</code></td><td><code>section.questions[questionIndex][property]</code></td></tr></tbody></table>
+<hr>
+<h2 id="11-utilities">11. Utilities</h2>
+<h3 id="observable">Observable</h3>
+<p>A minimal pub-sub implementation.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { Observable } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> './utils.js'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> obs</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Observable</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">obs.</span><span style="color:#B392F0">subscribe</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'changed:'</span><span style="color:#E1E4E8">, data));</span></span>
+<span class="line"><span style="color:#E1E4E8">obs.</span><span style="color:#B392F0">notify</span><span style="color:#E1E4E8">({ key: </span><span style="color:#9ECBFF">'value'</span><span style="color:#E1E4E8"> });</span></span>
+<span class="line"><span style="color:#E1E4E8">obs.</span><span style="color:#B392F0">unsubscribe</span><span style="color:#E1E4E8">(myListener);</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td><code>subscribe(listener)</code></td><td>Add listener function to array</td></tr><tr><td><code>notify(data)</code></td><td>Call all listeners with <code>data</code></td></tr><tr><td><code>unsubscribe(listener)</code></td><td>Remove a specific listener by reference</td></tr></tbody></table>
+<h3 id="domhelper">DomHelper</h3>
+<p>Static helpers for DOM manipulation.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { DomHelper } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> './utils.js'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> btn</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> DomHelper.</span><span style="color:#B392F0">createElement</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'button'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">  className: </span><span style="color:#9ECBFF">'btn btn-primary'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  type: </span><span style="color:#9ECBFF">'button'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  disabled: </span><span style="color:#79B8FF">false</span></span>
+<span class="line"><span style="color:#E1E4E8">}, </span><span style="color:#9ECBFF">'Click me'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">DomHelper.</span><span style="color:#B392F0">appendChildren</span><span style="color:#E1E4E8">(container, btn, otherElement);</span></span>
+<span class="line"><span style="color:#E1E4E8">DomHelper.</span><span style="color:#B392F0">clear</span><span style="color:#E1E4E8">(container);</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td><code>createElement(tag, attrs, innerHTML)</code></td><td>Create an element. <code>className</code> sets <code>element.className</code>; <code>checked</code> sets both property and attribute.</td></tr><tr><td><code>appendChildren(parent, ...children)</code></td><td>Append all non-null children to parent.</td></tr><tr><td><code>clear(element)</code></td><td>Set <code>element.innerHTML = ''</code>.</td></tr></tbody></table>
+<h3 id="debouncefunc-wait"><code>debounce(func, wait)</code></h3>
+<p>Returns a debounced version of <code>func</code> that delays invocation by <code>wait</code> ms.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { debounce } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> './utils.js'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> save</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> debounce</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> api.</span><span style="color:#B392F0">save</span><span style="color:#E1E4E8">(data), </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">input.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'input'</span><span style="color:#E1E4E8">, save);</span></span></code></pre>
+<h3 id="generateuuid"><code>generateUUID()</code></h3>
+<p>Returns a v4-style UUID string (<code>xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx</code>).</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { generateUUID } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> './utils.js'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> id</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> generateUUID</span><span style="color:#E1E4E8">(); </span><span style="color:#6A737D">// e.g. "f47ac10b-58cc-4372-a567-0e02b2c3d479"</span></span></code></pre>
+<h3 id="config-constants">Config constants</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { Config } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> './utils.js'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">Config.debounceDelay  </span><span style="color:#6A737D">// 300 (ms)</span></span>
+<span class="line"><span style="color:#E1E4E8">Config.toolbarClass   </span><span style="color:#6A737D">// Bootstrap utility classes for fixed toolbar</span></span>
+<span class="line"><span style="color:#E1E4E8">Config.buttonClass    </span><span style="color:#6A737D">// Bootstrap classes for toolbar buttons</span></span></code></pre>
+<hr>
+<h2 id="12-css-layout--classes">12. CSS Layout &#x26; Classes</h2>
+<h3 id="color-tokens">Color tokens</h3>
+<p>The CSS file defines its own scoped color scale (independent of the Bootstrap theme):</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Scale</th><th>Range</th><th>Example</th></tr></thead><tbody><tr><td><code>--gray-0</code> – <code>--gray-12</code></td><td>Light → dark grays</td><td><code>--gray-0: #f8f9fa</code>, <code>--gray-9: #212529</code></td></tr><tr><td><code>--blue-0</code> – <code>--blue-12</code></td><td>Light → dark blues</td><td><code>--blue-6: #228be6</code> (reviewee avatar)</td></tr><tr><td><code>--green-0</code> – <code>--green-12</code></td><td>Light → dark greens</td><td></td></tr><tr><td><code>--yellow-0</code> – <code>--yellow-12</code></td><td>Light → dark yellows</td><td><code>--yellow-6: #fab005</code> (reviewer avatar)</td></tr><tr><td><code>--shadow-1</code> – <code>--shadow-6</code></td><td>Layered box shadows</td><td>Increasing depth</td></tr></tbody></table>
+<p>Dark theme shadows are strengthened via <code>--shadow-strength: 10%</code> under <code>[data-bs-theme=dark]</code>.</p>
+<h3 id="layout">Layout</h3>
+<h4 id="template-container"><code>.template-container</code></h4>
+<p>The outermost wrapper. Uses CSS Grid.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Variant</th><th>Grid columns</th></tr></thead><tbody><tr><td>Default (with description pane)</td><td><code>300px 1fr</code></td></tr><tr><td>With <code>.template-description</code> child only</td><td><code>1fr</code></td></tr><tr><td>With single <code>.template-section-container</code> child</td><td><code>1fr</code></td></tr><tr><td>Mobile (≤ 768px)</td><td><code>1fr</code> (stacked)</td></tr></tbody></table>
+<h4 id="template-toolbar"><code>.template-toolbar</code></h4>
+<p>Fixed floating toolbar. Vertically centered on the right edge of the viewport (<code>position: fixed; inset: 50% 0 auto auto; transform: translateY(-50%)</code>).</p>
+<h4 id="template-description"><code>.template-description</code></h4>
+<p>Fixed left sidebar panel (300px wide) containing the section minimap. Scrollable. Sticky within its column.</p>
+<h4 id="template-section-container"><code>.template-section-container</code></h4>
+<p>Right column flex container. Sections stack vertically with <code>gap: 1.5rem</code>. Uses <code>align-content: center</code> on desktop, <code>start</code> on mobile.</p>
+<h4 id="template-section"><code>.template-section</code></h4>
+<p>Individual section card. <code>min(100%, 600px)</code> wide on default, <code>max(600px, 768px)</code> on <code>≥ 1400px</code>. Has <code>section-active</code> state variant with brand-color border.</p>
+<h3 id="key-component-classes">Key component classes</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Class</th><th>Purpose</th></tr></thead><tbody><tr><td><code>.template-title</code></td><td>Section/form title with <code>text-wrap: pretty</code></td></tr><tr><td><code>.template-question-card</code></td><td>White card with <code>shadow-2</code>, rounded corners</td></tr><tr><td><code>.template-question-title</code></td><td>Question label text</td></tr><tr><td><code>.template-question-number</code></td><td>Small gray ordinal number above question</td></tr><tr><td><code>.template-question-actions</code></td><td>Flex row for question-level action buttons</td></tr><tr><td><code>.template-question-linear-scale-container</code></td><td>Horizontal flex container for radio scale</td></tr><tr><td><code>.template-question-linear-scale-label-container</code></td><td>Space-between row for min/max labels</td></tr><tr><td><code>.template-section-pane</code></td><td>Section navigation tile in the minimap</td></tr><tr><td><code>.template-section-pane-list</code></td><td>Unstyle list of section tiles</td></tr><tr><td><code>.template-navigation</code></td><td>Bottom navigation bar (Back/Next/Progress)</td></tr><tr><td><code>.template-score-badge</code></td><td>Pill badge for score display</td></tr><tr><td><code>.template-section-weight-score</code></td><td>Section weight pill</td></tr><tr><td><code>.template-question-weight-score</code></td><td>Question weight pill</td></tr><tr><td><code>.template-table-remarks</code></td><td>Small italic remarks below a score table</td></tr><tr><td><code>.template-button-collapse</code></td><td>Styled collapse toggle button</td></tr><tr><td><code>.template-avatar-reviewee</code></td><td>Blue circle avatar (1.5rem × 1.5rem)</td></tr><tr><td><code>.template-avatar-reviewer</code></td><td>Yellow circle avatar (1.5rem × 1.5rem)</td></tr><tr><td><code>.wavy-circle</code></td><td>Star-burst badge for overall performance score</td></tr><tr><td><code>.wavy-circle.silver</code></td><td>Silver variant for secondary scores</td></tr></tbody></table>
+<h3 id="collapse-toggle-arrow">Collapse toggle arrow</h3>
+<p>The <code>[data-bs-toggle="collapse"] .vi-angle-down</code> icon rotates 180° when expanded:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#E1E4E8">[</span><span style="color:#B392F0">aria-expanded</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"true"</span><span style="color:#E1E4E8">]</span><span style="color:#B392F0">:not</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">.collapsed</span><span style="color:#E1E4E8">) </span><span style="color:#B392F0">.vi-angle-down</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">transform</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">rotate</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">180</span><span style="color:#F97583">deg</span><span style="color:#E1E4E8">); }</span></span>
+<span class="line"><span style="color:#E1E4E8">[</span><span style="color:#B392F0">aria-expanded</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"false"</span><span style="color:#E1E4E8">]</span><span style="color:#B392F0">.collapsed</span><span style="color:#B392F0">      .vi-angle-down</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">transform</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">rotate</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#F97583">deg</span><span style="color:#E1E4E8">); }</span></span></code></pre>
+<h3 id="spin-animation">Spin animation</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#B392F0">.vi-repeat</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">animation</span><span style="color:#E1E4E8">: spin </span><span style="color:#79B8FF">1</span><span style="color:#F97583">s</span><span style="color:#79B8FF"> linear</span><span style="color:#79B8FF"> infinite</span><span style="color:#E1E4E8">; }</span></span></code></pre>
+<p>Used for loading/saving indicator states.</p>
+<h3 id="dark-theme">Dark theme</h3>
+<p>All major surfaces have <code>[data-bs-theme=dark]</code> overrides. Apply dark mode to a parent element or <code>&#x3C;html></code>:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">html</span><span style="color:#B392F0"> data-bs-theme</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"dark"</span><span style="color:#E1E4E8">></span></span></code></pre>
+<hr>
+<h2 id="13-scoring-system">13. Scoring System</h2>
+<h3 id="weight-calculation-1">Weight calculation</h3>
+<p>Weights are auto-calculated uniformly by <code>FormViewModel.calculateWeights()</code>:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>section.weightScore  = 1 / totalSections</span></span>
+<span class="line"><span>question.weightScore = 1 / totalQuestionsInSection</span></span></code></pre>
+<p>This recalculates after every structural change (add, delete, duplicate).</p>
+<h3 id="templatereview-score-calculations">TemplateReview score calculations</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Formula</th></tr></thead><tbody><tr><td>Section average</td><td><code>sum(answers) / count(answered)</code></td></tr><tr><td>Section weighted score</td><td><code>sum(answer × questionWeight)</code></td></tr><tr><td>Total weighted average</td><td><code>sum(sectionWeightedScore × sectionWeight) / sum(sectionWeight for answered sections)</code></td></tr><tr><td>Overall performance score</td><td><code>sum(section.finalScore × section.weightScore)</code> across sections that have at least one <code>finalScore</code></td></tr><tr><td>Section final score</td><td><code>sum(question.finalScore × normalized_questionWeight)</code></td></tr></tbody></table>
+<p>All scores are displayed to <strong>1 decimal place</strong> with EPSILON-based rounding to avoid floating-point drift.</p>
+<hr>
+<h2 id="14-save-state-machine">14. Save State Machine</h2>
+<p>Both <code>TemplateViewer</code> and <code>TemplateReview</code> track the save state for their autosave UI indicator.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>                   answer changed</span></span>
+<span class="line"><span>  idle  ──────────────────────────►  changed</span></span>
+<span class="line"><span>                                         │</span></span>
+<span class="line"><span>                        2s debounce fires │</span></span>
+<span class="line"><span>                                         ▼</span></span>
+<span class="line"><span>                                      saving  ──► (onAutoSave callback fires)</span></span>
+<span class="line"><span>                                         │</span></span>
+<span class="line"><span>                          2s transition  │</span></span>
+<span class="line"><span>                                         ▼</span></span>
+<span class="line"><span>                                       saved</span></span>
+<span class="line"><span>                                         │</span></span>
+<span class="line"><span>                        1 minute idle    │</span></span>
+<span class="line"><span>                                         ▼</span></span>
+<span class="line"><span>                                   lastEdited</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>State</th><th>Description</th></tr></thead><tbody><tr><td><code>idle</code></td><td>Initial state, no changes since init</td></tr><tr><td><code>changed</code></td><td>User has answered/changed something</td></tr><tr><td><code>saving</code></td><td>2-second transition while showing “Saving…”</td></tr><tr><td><code>saved</code></td><td>Shows “Saved” with timestamp</td></tr><tr><td><code>lastEdited</code></td><td>Shows “Last edited [time]” after 1 minute</td></tr></tbody></table>
+<p>The <code>onAutoSave</code> callback only fires if the current JSON differs from the last saved snapshot — preventing repeated no-op requests.</p>
+<hr>
+<h2 id="15-usage-examples">15. Usage Examples</h2>
+<h3 id="151-templatebuilder--new-form">15.1 TemplateBuilder — new form</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"builder-container"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"save-btn"</span><span style="color:#E1E4E8">>Save Template&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { TemplateBuilder } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> '/js/template-editor/template-builder.js'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> builder</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TemplateBuilder</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'builder-container'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">  template: {</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#9ECBFF">'Annual Performance Review'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    positions: [</span></span>
+<span class="line"><span style="color:#E1E4E8">      { id: </span><span style="color:#9ECBFF">'1'</span><span style="color:#E1E4E8">, name: </span><span style="color:#9ECBFF">'Software Engineer'</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">      { id: </span><span style="color:#9ECBFF">'2'</span><span style="color:#E1E4E8">, name: </span><span style="color:#9ECBFF">'Product Manager'</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">    ],</span></span>
+<span class="line"><span style="color:#E1E4E8">    createdBy: </span><span style="color:#9ECBFF">'HR Admin'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">  section: { maxSection: </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">  question: { maxQuestions: </span><span style="color:#79B8FF">15</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">document.</span><span style="color:#B392F0">getElementById</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'save-btn'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'click'</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> template</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> builder.</span><span style="color:#B392F0">save</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">  fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/templates'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">    method: </span><span style="color:#9ECBFF">'POST'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">(template),</span></span>
+<span class="line"><span style="color:#E1E4E8">    headers: { </span><span style="color:#9ECBFF">'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">  });</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="152-templatebuilder--load-existing-form">15.2 TemplateBuilder — load existing form</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { TemplateBuilder } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> '/js/template-editor/template-builder.js'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> builder</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TemplateBuilder</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'builder-container'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">  data: existingTemplateFromApi,   </span><span style="color:#6A737D">// FormTemplate object</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Listen for unsaved changes</span></span>
+<span class="line"><span style="color:#E1E4E8">builder.</span><span style="color:#B392F0">subscribeToState</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">state</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  document.</span><span style="color:#B392F0">getElementById</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'status'</span><span style="color:#E1E4E8">).textContent </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> state; </span><span style="color:#6A737D">// 'Unsaved' or 'Saved'</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="153-templatebuilder--with-live-preview">15.3 TemplateBuilder — with live preview</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"builder"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> id</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"preview"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> builder</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TemplateBuilder</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'builder'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">  enablePreview: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  previewContainer: </span><span style="color:#9ECBFF">'preview'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  data: myTemplate,</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="154-templateviewer--self-review-with-autosave">15.4 TemplateViewer — self-review with autosave</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { TemplateViewer } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> '/js/template-editor/template-viewer.js'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> viewer</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TemplateViewer</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'viewer-container'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">  data: formTemplateFromApi,</span></span>
+<span class="line"><span style="color:#E1E4E8">  submitId: </span><span style="color:#9ECBFF">'submit-self-review'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  submitText: </span><span style="color:#9ECBFF">'Submit Review'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  titleAction: </span><span style="color:#9ECBFF">'Self-Review: '</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  onCompletionChange</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">isComplete</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    document.</span><span style="color:#B392F0">getElementById</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'submit-self-review'</span><span style="color:#E1E4E8">).disabled </span><span style="color:#F97583">=</span><span style="color:#F97583"> !</span><span style="color:#E1E4E8">isComplete;</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#B392F0">  onAutoSave</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">formData</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">    fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/reviews/draft'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">      method: </span><span style="color:#9ECBFF">'PUT'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">(formData),</span></span>
+<span class="line"><span style="color:#E1E4E8">      headers: { </span><span style="color:#9ECBFF">'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">document.</span><span style="color:#B392F0">getElementById</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'submit-self-review'</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'click'</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> answers</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> viewer.data;</span></span>
+<span class="line"><span style="color:#B392F0">  fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/reviews/submit'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">    method: </span><span style="color:#9ECBFF">'POST'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">(answers),</span></span>
+<span class="line"><span style="color:#E1E4E8">    headers: { </span><span style="color:#9ECBFF">'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">  });</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="155-templatereview--dual-role-review">15.5 TemplateReview — dual-role review</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { TemplateReview } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> '/js/template-editor/template-reviewer.js'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// formData must include reviewee and reviewer names</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> formData</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  ...</span><span style="color:#E1E4E8">template,</span></span>
+<span class="line"><span style="color:#E1E4E8">  reviewee: </span><span style="color:#9ECBFF">'Maria Santos'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  reviewer: </span><span style="color:#9ECBFF">'Juan dela Cruz'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  sections: template.sections,</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> review</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TemplateReview</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'review-container'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">  data: formData,</span></span>
+<span class="line"><span style="color:#E1E4E8">  showScoreSection: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  showScores: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  submitId: </span><span style="color:#9ECBFF">'submit-review-btn'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  submitText: </span><span style="color:#9ECBFF">'Finalize Review'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#B392F0">  onCompletionChange</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">isComplete</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    document.</span><span style="color:#B392F0">getElementById</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'submit-review-btn'</span><span style="color:#E1E4E8">).disabled </span><span style="color:#F97583">=</span><span style="color:#F97583"> !</span><span style="color:#E1E4E8">isComplete;</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#B392F0">  onAutoSave</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">reviewData</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">    fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/reviews/save'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">      method: </span><span style="color:#9ECBFF">'PUT'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">(reviewData),</span></span>
+<span class="line"><span style="color:#E1E4E8">      headers: { </span><span style="color:#9ECBFF">'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="156-templateviewer-in-preview-mode-read-only">15.6 TemplateViewer in preview mode (read-only)</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> preview</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TemplateViewer</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'preview-container'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">  data: myTemplate,</span></span>
+<span class="line"><span style="color:#E1E4E8">  previewMode: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  titleAction: </span><span style="color:#9ECBFF">'Preview: '</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<hr>
+<h2 id="16-debugging--troubleshooting">16. Debugging &#x26; Troubleshooting</h2>
+<h3 id="container-with-id--not-found">”Container with ID ’…’ not found”</h3>
+<p>The <code>containerId</code> string must match an existing <code>id</code> attribute in the DOM <strong>at the time the constructor is called</strong>. Ensure the element exists before importing/initializing the class.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Wrong — DOM not ready</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> builder</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TemplateBuilder</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'builder'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Correct — wait for DOM</span></span>
+<span class="line"><span style="color:#E1E4E8">document.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'DOMContentLoaded'</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> builder</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TemplateBuilder</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'builder'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<hr>
+<h3 id="data-must-be-a-single-formtemplate-object">”Data must be a single FormTemplate object”</h3>
+<p>The <code>data</code> option must be a plain object (not an array, not <code>null</code>). If your API wraps the data in an array, unwrap it first:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> data</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> apiResponse[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">]; </span><span style="color:#6A737D">// or apiResponse.data</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> viewer</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TemplateViewer</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'viewer'</span><span style="color:#E1E4E8">, { data });</span></span></code></pre>
+<hr>
+<h3 id="weights-showing-as-0-or-nan">Weights showing as <code>0</code> or <code>NaN</code></h3>
+<p>All sections and questions must exist in the data before <code>calculateWeights()</code> runs. If you build a <code>FormTemplate</code> manually without going through the ViewModel, call <code>vm.calculateWeights()</code> explicitly after adding all sections/questions.</p>
+<hr>
+<h3 id="finalscore-not-auto-syncing-in-templatereview"><code>finalScore</code> not auto-syncing in TemplateReview</h3>
+<p>Auto-sync only works for <code>linearScale</code> questions when:</p>
+<ol>
+<li>Both <code>revieweeAnswer</code> and <code>reviewerAnswer</code> are equal</li>
+<li><code>finalScoreOverridden</code> is <code>false</code></li>
+</ol>
+<p>If a form loaded from the API has <code>finalScoreOverridden: true</code> on any question, that question’s agreed score will not auto-sync even if answers match. This is intentional — if a facilitator has already set the final score, it is not overwritten.</p>
+<hr>
+<h3 id="section-not-scrolling-into-view">Section not scrolling into view</h3>
+<p><code>scroll-margin-block-start: 1.5rem</code> is set on <code>.template-section</code> and <code>.template-section-container</code>. If your page has a fixed topbar taller than <code>1.5rem</code>, increase this value in your page-specific CSS override.</p>
+<hr>
+<h3 id="drag-and-drop-not-working">Drag-and-drop not working</h3>
+<ul>
+<li>Verify <code>vendor/sortable.js</code> is being loaded (check the browser console for import errors).</li>
+<li>Drag-and-drop requires <code>section.reorder: true</code> and <code>question.reorder: true</code> (both default <code>true</code>). Confirm neither was set to <code>false</code>.</li>
+<li>Mobile touch drag requires that Bootstrap’s <code>* { cursor: none }</code> global is not interfering — Sortable.js needs native drag events. Wrap the builder container in <code>.bs-scope</code> if needed.</li>
+</ul>
+<hr>
+<h3 id="undo-does-not-fully-revert-a-change">Undo does not fully revert a change</h3>
+<p><code>undo()</code> reverts one command at a time. Each property edit (title, description, min/max label, etc.) is a separate command. Multiple rapid edits in debounced fields (300ms debounce) may produce multiple commands — each requiring a separate <code>Ctrl+Z</code>.</p>
+<hr>
+<p><em>Documentation maintained by the Voyadores Design System team. For plugin issues or feature requests, contact the frontend platform team.</em></p> </div> </div>  </main> <!-- Right TOC sidebar --> <aside class="r-toc" id="r-toc" aria-label="On this page"> <div class="toc-label">On this page</div> <nav class="toc-nav" id="toc-nav"></nav> </aside> </div> <script type="module">const d=document.documentElement,L=document.querySelectorAll(".theme-toggle"),f=window.matchMedia("(prefers-color-scheme: dark)"),u=["light","dark","system"];function v(t){t==="dark"||t==="system"&&f.matches?d.setAttribute("data-theme","dark"):d.removeAttribute("data-theme"),d.setAttribute("data-color-scheme",t),localStorage.setItem("voy-theme",t)}f.addEventListener("change",()=>{d.getAttribute("data-color-scheme")==="system"&&v("system")});L.forEach(t=>{t.addEventListener("click",()=>{const n=d.getAttribute("data-color-scheme")||"system",s=u[(u.indexOf(n)+1)%u.length];v(s)})});const m=document.getElementById("c-cursor");if(m&&window.matchMedia("(pointer: fine)").matches){let t=0,n=0,s=0,c=0;const a=.16;document.addEventListener("mousemove",r=>{t=r.clientX,n=r.clientY}),(function r(){s+=(t-s)*a,c+=(n-c)*a,m.style.transform=`translate(${s}px,${c}px)`,requestAnimationFrame(r)})(),document.addEventListener("mouseleave",()=>{m.style.opacity="0"}),document.addEventListener("mouseenter",()=>{m.style.opacity="1"})}const g=document.getElementById("menu-toggle"),y=document.getElementById("sidebar-overlay"),h=document.getElementById("sidebar"),b=()=>{h.classList.add("open"),y.classList.add("show"),document.body.style.overflow="hidden",g.classList.add("open")},E=()=>{h.classList.remove("open"),y.classList.remove("show"),document.body.style.overflow="",g.classList.remove("open")};g.addEventListener("click",()=>h.classList.contains("open")?E():b());y.addEventListener("click",E);(function(){const n=document.getElementById("main"),s=document.getElementById("r-toc"),c=document.getElementById("toc-nav");if(!n||!s||!c)return;const a=Array.from(n.querySelectorAll("h2"));if(a.length<2)return;a.forEach((e,o)=>{if(!e.id){const i=e.textContent.trim().toLowerCase().replace(/[^a-z0-9\s-]/g,"").replace(/\s+/g,"-").replace(/-+/g,"-").replace(/^-|-$/g,"")||`section-${o}`;e.id=i}}),a.forEach(e=>{const o=document.createElement("a");o.href="#"+e.id,o.className="toc-link",o.textContent=e.textContent.trim(),o.addEventListener("click",i=>{i.preventDefault();const l=document.getElementById(e.id);l&&l.scrollIntoView({behavior:"smooth",block:"start"})}),c.appendChild(o)}),s.classList.add("has-items"),d.classList.add("has-toc");const r=Array.from(c.querySelectorAll(".toc-link")),p=new IntersectionObserver(e=>{e.forEach(o=>{const i=r.find(l=>l.getAttribute("href")==="#"+o.target.id);i&&i.classList.toggle("is-active",o.isIntersecting)})},{rootMargin:"-5% 0px -75% 0px",threshold:0});a.forEach(e=>p.observe(e))})();</script> </body> </html>
