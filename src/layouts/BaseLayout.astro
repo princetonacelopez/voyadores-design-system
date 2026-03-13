@@ -9,18 +9,18 @@ interface Props {
 }
 
 const {
-  title,
-  description = 'Voyadores Design System — Visual identity, components, and guidelines for building consistent Voyadores products.',
+  title = 'Voyadores Design System',
+  description = 'Visual identity, components, and guidelines for building consistent Voyadores products.',
   activeSection = '',
   ogImage,
 } = Astro.props;
 
-const siteURL    = Astro.site ?? 'https://design.voyadores.com';
+const siteURL    = Astro.site ?? Astro.url.origin;
 const canonicalURL = new URL(Astro.url.pathname, siteURL);
 const ogImageURL   = ogImage
   ? new URL(ogImage, siteURL).toString()
-  : new URL('/images/voyadores-design-system-social.jpg', siteURL).toString();
-const ogTitle    = `${title} — Voyadores`;
+  : new URL('/images/voyadores-logo-combination-horizontal-post.jpg', siteURL).toString();
+const ogTitle    = 'Voyadores Design System';
 ---
 
 <!DOCTYPE html>
