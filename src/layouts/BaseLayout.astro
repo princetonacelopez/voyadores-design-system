@@ -19,7 +19,7 @@ const siteURL    = Astro.site ?? Astro.url.origin;
 const canonicalURL = new URL(Astro.url.pathname, siteURL);
 const ogImageURL   = ogImage
   ? new URL(ogImage, siteURL).toString()
-  : new URL('/images/voyadores-logo-combination-horizontal-post.jpg', siteURL).toString();
+  : new URL('/images/voyadores-design-system-social.jpg', siteURL).toString();
 const ogTitle    = 'Voyadores Design System';
 ---
 
