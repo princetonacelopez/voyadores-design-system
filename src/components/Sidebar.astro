@@ -44,10 +44,13 @@ const navGroups = [
     id: 'grp-brand',
     label: 'Brand',
     items: [
-      { label: 'Color',      href: '/color'      },
-      { label: 'Images',     href: '/images'     },
-      { label: 'Logo',       href: '/logo'       },
-      { label: 'Typography', href: '/typography' },
+      { label: 'Accessibility', href: '/get-started/design/accessibility'   },
+      { label: 'Breakpoints',   href: '/components/bootstrap/breakpoints'   },
+      { label: 'Color',         href: '/color'                              },
+      { label: 'Images',        href: '/images'                             },
+      { label: 'Logo',          href: '/logo'                               },
+      { label: 'Spacing',       href: '/components/bootstrap/spacing'       },
+      { label: 'Typography',    href: '/typography'                         },
     ],
   },
   {
@@ -64,12 +67,14 @@ const navGroups = [
 const bootstrapComponents = [
   { label: 'Accordion',    href: '/components/bootstrap/accordion'    },
   { label: 'Alerts',       href: '/components/bootstrap/alerts'       },
+  { label: 'Avatars',      href: '/components/bootstrap/avatars'      },
   { label: 'Badges',       href: '/components/bootstrap/badges'       },
   { label: 'Breadcrumb',   href: '/components/bootstrap/breadcrumb'   },
   { label: 'Button Group', href: '/components/bootstrap/button-group' },
   { label: 'Buttons',      href: '/components/bootstrap/buttons'      },
   { label: 'Cards',        href: '/components/bootstrap/cards'        },
   { label: 'Carousel',     href: '/components/bootstrap/carousel'     },
+  { label: 'Containers',   href: '/components/bootstrap/containers'   },
   { label: 'Dropdowns',    href: '/components/bootstrap/dropdowns'    },
   { label: 'Forms',        href: '/components/bootstrap/forms'        },
   { label: 'Input Group',  href: '/components/bootstrap/input-group'  },
@@ -83,6 +88,7 @@ const bootstrapComponents = [
   { label: 'Popovers',     href: '/components/bootstrap/popovers'     },
   { label: 'Progress',     href: '/components/bootstrap/progress'     },
   { label: 'Spinners',     href: '/components/bootstrap/spinners'     },
+  { label: 'Statuses',     href: '/components/bootstrap/statuses'     },
   { label: 'Tables',       href: '/components/bootstrap/tables'       },
   { label: 'Toasts',       href: '/components/bootstrap/toasts'       },
   { label: 'Tooltips',     href: '/components/bootstrap/tooltips'     },
@@ -141,7 +147,14 @@ const docsPlugins = [
   { label: 'Wizard Form',           href: '/docs/wizard-form'           },
 ];
 
-const isDocs = path.startsWith('/docs');
+const docsSeo = [
+  { label: 'Open Graph',    href: '/docs/seo/open-graph'     },
+  { label: 'X (Twitter) Cards', href: '/docs/seo/twitter-cards' },
+  { label: 'UTM Parameters',    href: '/docs/seo/utm'           },
+];
+
+const isDocs    = path.startsWith('/docs');
+const isSeoPath = docsSeo.some(i => path === i.href || path === i.href + '/');
 ---
 
 <aside id="sidebar" class="sidebar">
@@ -434,6 +447,27 @@ const isDocs = path.startsWith('/docs');
           </button>
           <div class="s-subgroup-items">
             {docsPlugins.map(item => (
+              <a href={item.href} class:list={['s-sublink', { 'is-on': path === item.href || path === item.href + '/' }]}>
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- SEO sub-group -->
+        <div class:list={['s-subgroup', { 'is-open': isSeoPath }]} id="grp-docs-seo">
+          <button
+            class="s-subgroup-header"
+            data-group="grp-docs-seo"
+            aria-expanded={isSeoPath ? 'true' : 'false'}
+          >
+            <span>SEO</span>
+            <svg class="s-chevron" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="s-subgroup-items">
+            {docsSeo.map(item => (
               <a href={item.href} class:list={['s-sublink', { 'is-on': path === item.href || path === item.href + '/' }]}>
                 {item.label}
               </a>

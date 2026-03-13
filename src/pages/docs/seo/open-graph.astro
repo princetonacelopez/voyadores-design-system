@@ -1,0 +1,323 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+
+const properties = [
+  { tag: 'og:title',       req: true,  desc: 'Title of the page as it appears in the share card. Match the page <title> or write a more compelling version (60 chars max).' },
+  { tag: 'og:description', req: true,  desc: 'Summary of the content. Shown below the title in most platforms. 155 chars max — truncated by Facebook at ~300 chars.' },
+  { tag: 'og:image',       req: true,  desc: 'URL of the preview image. Must be absolute. Recommended: 1200×630px, JPEG or PNG, under 8 MB. Facebook enforces a 200×200 minimum.' },
+  { tag: 'og:url',         req: true,  desc: 'Canonical URL of the page. Always use the full absolute URL including https://.' },
+  { tag: 'og:type',        req: true,  desc: 'Content type. Use "website" for most pages, "article" for blog posts, "product" for e-commerce.' },
+  { tag: 'og:site_name',   req: false, desc: 'Human-readable name of your site (e.g. "Voyadores"). Displayed alongside the page title on some platforms.' },
+  { tag: 'og:locale',      req: false, desc: 'Locale of the content: "en_US", "es_MX". Defaults to en_US if omitted.' },
+  { tag: 'og:image:width', req: false, desc: 'Width of og:image in pixels. Helps platforms size the image without fetching it first.' },
+  { tag: 'og:image:height',req: false, desc: 'Height of og:image in pixels.' },
+  { tag: 'og:image:alt',   req: false, desc: 'Alt text for the image — important for accessibility and screen reader users on social platforms.' },
+];
+
+const platformSpecs = [
+  { platform: 'Facebook / Meta', imgSize: '1200 × 630 px', minSize: '200 × 200 px', ratio: '1.91:1',   fileSize: '< 8 MB',   formats: 'JPEG, PNG, GIF', titleLen: '~88 chars', descLen: '~300 chars' },
+  { platform: 'LinkedIn',        imgSize: '1200 × 627 px', minSize: '200 × 200 px', ratio: '1.91:1',   fileSize: '< 5 MB',   formats: 'JPEG, PNG',     titleLen: '~119 chars',descLen: '~300 chars' },
+  { platform: 'WhatsApp',        imgSize: '1200 × 630 px', minSize: '300 × 200 px', ratio: '1.91:1',   fileSize: '< 300 KB', formats: 'JPEG, PNG',     titleLen: '~60 chars', descLen: '~130 chars' },
+  { platform: 'Slack',           imgSize: '1200 × 630 px', minSize: '500 × 262 px', ratio: '≥1.91:1', fileSize: 'Any',      formats: 'JPEG, PNG',     titleLen: 'No limit',  descLen: 'No limit'   },
+  { platform: 'Discord',         imgSize: '1200 × 630 px', minSize: 'None',          ratio: 'Any',     fileSize: 'Any',      formats: 'JPEG, PNG',     titleLen: 'No limit',  descLen: '~350 chars' },
+];
+---
+
+<BaseLayout title="Open Graph" activeSection="docs">
+  <PageHeader
+    eyebrow="Documentation / SEO"
+    title="Open Graph"
+    description="Open Graph (OG) meta tags control how your pages appear when shared on Facebook, LinkedIn, WhatsApp, Slack, Discord, and other platforms that read the OG protocol."
+  />
+
+  <!-- What is Open Graph -->
+  <div class="csec">
+    <h2 class="csec-heading">What is Open Graph?</h2>
+    <p class="csec-desc">Open Graph is a protocol created by Facebook (2010) that lets any web page become a "rich object" in a social graph. When a URL is shared, the platform's crawler reads <code>&lt;meta property="og:*"&gt;</code> tags from the <code>&lt;head&gt;</code> and uses them to build a preview card — title, description, image, and site name.</p>
+    <p class="csec-desc">Without OG tags, platforms either show a blank card or attempt to guess the title and description from page content — often poorly.</p>
+  </div>
+
+  <!-- Required tags -->
+  <div class="csec">
+    <h2 class="csec-heading">Tag Reference</h2>
+    <p class="csec-desc">The four required tags are the minimum needed for a consistent preview on all major platforms. Additional optional tags improve fidelity.</p>
+    <div class="tag-table">
+      <div class="tag-thead">
+        <span>Property</span>
+        <span>Required</span>
+        <span>Description</span>
+      </div>
+      {properties.map(p => (
+        <div class="tag-row">
+          <span class="tag-prop"><code>{p.tag}</code></span>
+          <span class="tag-req">
+            {p.req
+              ? <span class="badge-req">Required</span>
+              : <span class="badge-opt">Optional</span>
+            }
+          </span>
+          <span class="tag-desc">{p.desc}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Full example -->
+  <div class="csec">
+    <h2 class="csec-heading">Implementation</h2>
+    <p class="csec-desc">Place all OG meta tags inside the <code>&lt;head&gt;</code> element. Use absolute URLs for <code>og:image</code> and <code>og:url</code>.</p>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="og-html">HTML</button>
+        <button class="cb-tab" data-tab="og-astro">Astro</button>
+        <button class="cb-tab" data-tab="og-next">Next.js</button>
+      </div>
+      <pre is:raw id="og-html"><code>&lt;!-- Required --&gt;
+&lt;meta property="og:title"       content="Page Title — Site Name" /&gt;
+&lt;meta property="og:description" content="A concise summary of the page in 155 characters or fewer." /&gt;
+&lt;meta property="og:image"       content="https://example.com/images/og/home.jpg" /&gt;
+&lt;meta property="og:url"         content="https://example.com/page-slug" /&gt;
+&lt;meta property="og:type"        content="website" /&gt;
+
+&lt;!-- Recommended --&gt;
+&lt;meta property="og:site_name"   content="Site Name" /&gt;
+&lt;meta property="og:locale"      content="en_US" /&gt;
+&lt;meta property="og:image:width"  content="1200" /&gt;
+&lt;meta property="og:image:height" content="630" /&gt;
+&lt;meta property="og:image:alt"   content="Descriptive alt text for the preview image" /&gt;</code></pre>
+
+      <pre is:raw id="og-astro" style="display:none"><code>---
+// src/layouts/BaseLayout.astro
+interface Props {
+  title:       string;
+  description: string;
+  ogImage?:    string;
+  ogType?:     string;
+  canonical:   string;
+}
+
+const {
+  title,
+  description,
+  ogImage   = 'https://example.com/images/og/default.jpg',
+  ogType    = 'website',
+  canonical,
+} = Astro.props;
+
+const siteName = 'Your Site Name';
+---
+&lt;head&gt;
+  &lt;title&gt;{title} — {siteName}&lt;/title&gt;
+
+  &lt;!-- Open Graph --&gt;
+  &lt;meta property="og:title"        content={`${title} — ${siteName}`} /&gt;
+  &lt;meta property="og:description"  content={description} /&gt;
+  &lt;meta property="og:image"        content={ogImage} /&gt;
+  &lt;meta property="og:url"          content={canonical} /&gt;
+  &lt;meta property="og:type"         content={ogType} /&gt;
+  &lt;meta property="og:site_name"    content={siteName} /&gt;
+  &lt;meta property="og:locale"       content="en_US" /&gt;
+  &lt;meta property="og:image:width"  content="1200" /&gt;
+  &lt;meta property="og:image:height" content="630" /&gt;
+  &lt;meta property="og:image:alt"    content={`${title} preview`} /&gt;
+&lt;/head&gt;</code></pre>
+
+      <pre is:raw id="og-next" style="display:none"><code>// app/page.tsx — Next.js 13+ App Router (generateMetadata)
+import type { Metadata } from 'next';
+
+export async function generateMetadata(): Promise&lt;Metadata&gt; {
+  return {
+    title: 'Page Title',
+    description: 'Page description.',
+    openGraph: {
+      title:       'Page Title — Site Name',
+      description: 'Page description.',
+      url:         'https://example.com/page-slug',
+      siteName:    'Site Name',
+      locale:      'en_US',
+      type:        'website',
+      images: [
+        {
+          url:    'https://example.com/images/og/page.jpg',
+          width:  1200,
+          height: 630,
+          alt:    'Descriptive alt text',
+        },
+      ],
+    },
+  };
+}
+
+export default function Page() { return &lt;main&gt;...&lt;/main&gt;; }</code></pre>
+    </div>
+  </div>
+
+  <!-- Article type -->
+  <div class="csec">
+    <h2 class="csec-heading">Article Type</h2>
+    <p class="csec-desc">For blog posts and news articles use <code>og:type="article"</code> and add the article-specific properties to provide richer metadata to Facebook and other readers.</p>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="og-article">HTML</button>
+      </div>
+      <pre is:raw id="og-article"><code>&lt;meta property="og:type"              content="article" /&gt;
+&lt;meta property="article:published_time" content="2026-03-13T08:00:00+00:00" /&gt;
+&lt;meta property="article:modified_time"  content="2026-03-14T10:30:00+00:00" /&gt;
+&lt;meta property="article:author"         content="https://example.com/team/jane" /&gt;
+&lt;meta property="article:section"        content="Design System" /&gt;
+&lt;meta property="article:tag"            content="SEO" /&gt;
+&lt;meta property="article:tag"            content="Open Graph" /&gt;</code></pre>
+    </div>
+  </div>
+
+  <!-- Platform image specs -->
+  <div class="csec">
+    <h2 class="csec-heading">Platform Image Specifications</h2>
+    <p class="csec-desc">One 1200×630 image works well across all platforms. Avoid placing critical content in the outer 15% of the image — some platforms crop to a square.</p>
+    <div class="spec-table">
+      <div class="spec-thead">
+        <span>Platform</span>
+        <span>Recommended</span>
+        <span>Minimum</span>
+        <span>Ratio</span>
+        <span>File size</span>
+        <span>Formats</span>
+        <span>Title</span>
+        <span>Description</span>
+      </div>
+      {platformSpecs.map(r => (
+        <div class="spec-row">
+          <span class="spec-platform">{r.platform}</span>
+          <span class="spec-val"><code>{r.imgSize}</code></span>
+          <span class="spec-val">{r.minSize}</span>
+          <span class="spec-val">{r.ratio}</span>
+          <span class="spec-val">{r.fileSize}</span>
+          <span class="spec-val">{r.formats}</span>
+          <span class="spec-val">{r.titleLen}</span>
+          <span class="spec-val">{r.descLen}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Image guidelines -->
+  <div class="csec">
+    <h2 class="csec-heading">Image Guidelines</h2>
+    <div class="tips-grid">
+      {[
+        { label: 'Use absolute URLs', body: 'og:image must be a full URL (https://...). Relative paths and data URIs are not supported.' },
+        { label: 'Stay in the safe zone', body: 'Keep text and logos in the center 960×504px. Outer 15% may be cropped to a 1:1 square on Instagram and mobile Facebook.' },
+        { label: 'Optimize file size', body: 'WhatsApp limits images to 300 KB. Aim for under 300 KB JPEG for universal compatibility. Use Squoosh or Sharp to compress.' },
+        { label: 'No text on image', body: 'Prefer images without text overlays. If you add text, ensure at least 16px size and high contrast — it may be tiny on mobile.' },
+        { label: 'Cache-bust on update', body: 'Some platforms cache OG images aggressively. Append a query string (?v=2) or rename the file when updating the image.' },
+        { label: 'Test before publishing', body: 'Use the Facebook Sharing Debugger, LinkedIn Post Inspector, or Twitter Card Validator to preview and force cache refresh.' },
+      ].map(t => (
+        <div class="tip-card">
+          <span class="tip-title">{t.label}</span>
+          <span class="tip-body">{t.body}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Testing -->
+  <div class="csec">
+    <h2 class="csec-heading">Testing &amp; Validation</h2>
+    <p class="csec-desc">Always validate OG tags before publishing. These tools fetch your page as a crawler, render the preview card, and let you clear the cached version.</p>
+    <div class="tools-list">
+      {[
+        { name: 'Facebook Sharing Debugger',  url: 'https://developers.facebook.com/tools/debug/', note: 'Fetch + force cache refresh for Facebook / Instagram / WhatsApp.' },
+        { name: 'LinkedIn Post Inspector',    url: 'https://www.linkedin.com/post-inspector/',      note: 'Preview and re-scrape for LinkedIn shares.'                        },
+        { name: 'Twitter Card Validator',     url: 'https://cards-dev.twitter.com/validator',       note: 'Preview how X reads OG tags (X falls back to OG if twitter: tags are absent).' },
+        { name: 'OpenGraph.xyz',              url: 'https://www.opengraph.xyz/',                    note: 'Preview across Facebook, Twitter, LinkedIn, Slack simultaneously.'  },
+        { name: 'Metatags.io',               url: 'https://metatags.io/',                           note: 'Visual editor + live multi-platform preview.'                      },
+      ].map(t => (
+        <div class="tool-row">
+          <span class="tool-name">{t.name}</span>
+          <span class="tool-note">{t.note}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.cb-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        const block  = btn.closest('.code-block');
+        block.querySelectorAll('.cb-tab').forEach(b => b.classList.remove('is-on'));
+        block.querySelectorAll('pre').forEach(p => (p as HTMLElement).style.display = 'none');
+        btn.classList.add('is-on');
+        const pre = document.getElementById(target!);
+        if (pre) pre.style.display = '';
+      });
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  .csec { margin-bottom: 56px; }
+  .csec-heading { font-size: 16px; font-weight: 700; color: var(--black); margin: 0 0 8px; letter-spacing: -.01em; }
+  .csec-desc { font-size: 13px; color: var(--g2); line-height: 1.7; margin-bottom: 12px; max-width: 680px; }
+  .csec-desc code { font-family: var(--mono); font-size: .875em; background: var(--g5); padding: 1px 5px; border-radius: 3px; color: var(--g1); }
+
+  /* Tag reference table */
+  .tag-table { border: 1px solid var(--g5); border-radius: 6px; overflow: hidden; }
+  .tag-thead {
+    display: grid; grid-template-columns: 200px 90px 1fr;
+    background: var(--g6); border-bottom: 1px solid var(--g5); padding: 0;
+  }
+  .tag-thead > span { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--g3); padding: 10px 14px; }
+  .tag-row { display: grid; grid-template-columns: 200px 90px 1fr; border-top: 1px solid var(--g5); align-items: start; }
+  .tag-prop { padding: 12px 14px; }
+  .tag-prop code { font-family: var(--mono); font-size: 12px; color: var(--g1); background: var(--g5); padding: 2px 6px; border-radius: 3px; }
+  .tag-req  { padding: 12px 14px; }
+  .tag-desc { padding: 12px 14px 12px 0; font-size: 13px; color: var(--g2); line-height: 1.6; }
+  .badge-req { display: inline-block; font-size: 10px; font-weight: 700; font-family: var(--mono); background: #fadcd9; color: #a1160a; padding: 2px 7px; border-radius: 100px; }
+  .badge-opt { display: inline-block; font-size: 10px; font-weight: 700; font-family: var(--mono); background: var(--g5); color: var(--g3); padding: 2px 7px; border-radius: 100px; }
+
+  /* Platform spec table */
+  .spec-table { border: 1px solid var(--g5); border-radius: 6px; overflow-x: auto; }
+  .spec-thead {
+    display: grid; grid-template-columns: 160px repeat(7, 1fr);
+    background: var(--g6); border-bottom: 1px solid var(--g5); min-width: 800px;
+  }
+  .spec-thead > span { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--g3); padding: 10px 12px; }
+  .spec-row { display: grid; grid-template-columns: 160px repeat(7, 1fr); border-top: 1px solid var(--g5); align-items: center; min-width: 800px; }
+  .spec-platform { padding: 10px 12px; font-size: 13px; font-weight: 600; color: var(--black); }
+  .spec-val { padding: 10px 12px; font-size: 12px; color: var(--g2); }
+  .spec-val code { font-family: var(--mono); font-size: 11px; background: var(--g5); padding: 1px 5px; border-radius: 3px; }
+
+  /* Tips grid */
+  .tips-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .tip-card { border: 1px solid var(--g5); border-radius: 6px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+  .tip-title { font-size: 13px; font-weight: 700; color: var(--black); }
+  .tip-body  { font-size: 12px; color: var(--g2); line-height: 1.6; }
+
+  /* Tools list */
+  .tools-list { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--g5); border-radius: 6px; overflow: hidden; }
+  .tool-row { display: grid; grid-template-columns: 220px 1fr; align-items: baseline; gap: 16px; padding: 12px 16px; border-top: 1px solid var(--g5); }
+  .tool-row:first-child { border-top: none; }
+  .tool-name { font-size: 13px; font-weight: 600; color: var(--black); }
+  .tool-note { font-size: 13px; color: var(--g2); line-height: 1.5; }
+
+  /* Code block */
+  .code-block { background: #111; border-radius: 6px; overflow: hidden; margin-bottom: 0; }
+  .cb-tabs { display: flex; border-bottom: 1px solid #2a2a2a; padding: 0 16px; }
+  .cb-tab { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: #666; background: none; border: none; padding: 10px 14px; border-bottom: 2px solid transparent; transition: color .12s, border-color .12s; cursor: pointer; }
+  .cb-tab:hover { color: #ccc; }
+  .cb-tab.is-on { color: var(--brand); border-bottom-color: var(--brand); }
+  .code-block pre { margin: 0; padding: 20px 24px; overflow-x: auto; }
+  .code-block code { font-family: var(--mono); font-size: 12.5px; color: #e8e8e8; line-height: 1.85; white-space: pre; }
+
+  @media (max-width: 900px) {
+    .tips-grid { grid-template-columns: repeat(2, 1fr); }
+    .tag-thead, .tag-row { grid-template-columns: 160px 80px 1fr; }
+  }
+  @media (max-width: 600px) {
+    .tips-grid { grid-template-columns: 1fr; }
+    .tag-thead, .tag-row { grid-template-columns: 1fr; }
+    .tag-thead > span:not(:first-child) { display: none; }
+  }
+</style>

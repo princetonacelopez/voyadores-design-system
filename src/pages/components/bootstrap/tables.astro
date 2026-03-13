@@ -11,10 +11,14 @@ import PageHeader from '../../../components/PageHeader.astro';
   <PageHeader
     eyebrow="Components / Bootstrap"
     title="Tables"
-    description="Wrap &lt;table&gt; in .table. Combine modifiers: .table-striped, .table-hover, .table-bordered, .table-sm. Wrap in .table-responsive for scroll overflow."
+    description="Wrap &lt;table&gt; in .table. Combine modifiers: .table-striped, .table-hover, .table-bordered, .table-sm, .table-dark. Wrap in .table-responsive for scroll overflow."
   />
 
-  <div class="demo">
+  <!-- Base table + modifiers -->
+  <div class="csec">
+    <h2 class="csec-heading">Variants</h2>
+    <p class="csec-desc">Bootstrap 5.3 table modifiers: <code>.table-striped</code>, <code>.table-striped-columns</code>, <code>.table-hover</code>, <code>.table-bordered</code>, <code>.table-borderless</code>, <code>.table-sm</code>, <code>.table-dark</code>.</p>
+    <div class="demo">
       <div class="demo-preview bs-scope" style="flex-direction:column;align-items:stretch">
         <div class="table-responsive">
           <table class="table table-striped table-hover">
@@ -31,7 +35,6 @@ import PageHeader from '../../../components/PageHeader.astro';
         </div>
       </div>
     </div>
-
     <div class="code-block">
       <div class="cb-tabs">
         <button class="cb-tab is-on" data-tab="html-table">HTML</button>
@@ -40,11 +43,7 @@ import PageHeader from '../../../components/PageHeader.astro';
 &lt;div class="table-responsive"&gt;
   &lt;table class="table table-striped table-hover"&gt;
     &lt;thead&gt;
-      &lt;tr&gt;
-        &lt;th&gt;#&lt;/th&gt;
-        &lt;th&gt;Name&lt;/th&gt;
-        &lt;th&gt;Status&lt;/th&gt;
-      &lt;/tr&gt;
+      &lt;tr&gt;&lt;th&gt;#&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;&lt;/tr&gt;
     &lt;/thead&gt;
     &lt;tbody&gt;
       &lt;tr&gt;
@@ -56,20 +55,310 @@ import PageHeader from '../../../components/PageHeader.astro';
   &lt;/table&gt;
 &lt;/div&gt;
 
-&lt;!-- Modifiers (combinable) --&gt;
+&lt;!-- Available modifiers (combinable) --&gt;
 &lt;table class="table"&gt;&lt;/table&gt;
 &lt;table class="table table-striped"&gt;&lt;/table&gt;
+&lt;table class="table table-striped-columns"&gt;&lt;/table&gt;
 &lt;table class="table table-bordered"&gt;&lt;/table&gt;
+&lt;table class="table table-borderless"&gt;&lt;/table&gt;
 &lt;table class="table table-hover"&gt;&lt;/table&gt;
 &lt;table class="table table-sm"&gt;&lt;/table&gt;
 &lt;table class="table table-dark"&gt;&lt;/table&gt;</code></pre>
     </div>
+  </div>
+
+  <!-- Colored rows / active state -->
+  <div class="csec">
+    <h2 class="csec-heading">Colored Rows &amp; Active State</h2>
+    <p class="csec-desc">Apply contextual color classes to <code>&lt;tr&gt;</code>, <code>&lt;td&gt;</code>, or <code>&lt;th&gt;</code> via <code>.table-{'{color}'}</code>. Use <code>.table-active</code> for a selected highlight.</p>
+    <div class="demo">
+      <div class="demo-preview bs-scope" style="flex-direction:column;align-items:stretch">
+        <table class="table table-bordered mb-0">
+          <thead class="table-dark">
+            <tr><th>Class</th><th>Preview</th></tr>
+          </thead>
+          <tbody>
+            <tr class="table-active"><td><code>.table-active</code></td><td>Active / selected row</td></tr>
+            <tr class="table-primary"><td><code>.table-primary</code></td><td>Primary</td></tr>
+            <tr class="table-secondary"><td><code>.table-secondary</code></td><td>Secondary</td></tr>
+            <tr class="table-success"><td><code>.table-success</code></td><td>Success</td></tr>
+            <tr class="table-danger"><td><code>.table-danger</code></td><td>Danger</td></tr>
+            <tr class="table-warning"><td><code>.table-warning</code></td><td>Warning</td></tr>
+            <tr class="table-info"><td><code>.table-info</code></td><td>Info</td></tr>
+            <tr class="table-light"><td><code>.table-light</code></td><td>Light</td></tr>
+            <tr class="table-dark"><td><code>.table-dark</code></td><td>Dark</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="tbl-color">HTML</button>
+      </div>
+      <pre is:raw id="tbl-color"><code>&lt;table class="table"&gt;
+  &lt;tbody&gt;
+    &lt;tr class="table-active"&gt;&lt;td&gt;Active row&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr class="table-primary"&gt;&lt;td&gt;Primary&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr class="table-success"&gt;&lt;td&gt;Success&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr class="table-danger"&gt;&lt;td&gt;Danger&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr class="table-warning"&gt;&lt;td&gt;Warning&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr class="table-info"&gt;&lt;td&gt;Info&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+    </div>
+  </div>
+
+  <!-- Caption -->
+  <div class="csec">
+    <h2 class="csec-heading">Caption</h2>
+    <p class="csec-desc">Add a <code>&lt;caption&gt;</code> to describe the table. Use <code>.caption-top</code> on the table to move it above.</p>
+    <div class="demo">
+      <div class="demo-preview bs-scope" style="flex-direction:column;align-items:stretch">
+        <table class="table caption-top">
+          <caption>Employee list — Q1 2026</caption>
+          <thead class="table-light"><tr><th>#</th><th>Name</th><th>Role</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Alice Santos</td><td>Designer</td></tr>
+            <tr><td>2</td><td>Bob Cruz</td><td>Developer</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="tbl-caption">HTML</button>
+      </div>
+      <pre is:raw id="tbl-caption"><code>&lt;table class="table caption-top"&gt;
+  &lt;caption&gt;Employee list — Q1 2026&lt;/caption&gt;
+  &lt;thead&gt;...&lt;/thead&gt;
+  &lt;tbody&gt;...&lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+    </div>
+  </div>
+
+  <!-- Striped columns (BS 5.2+) -->
+  <div class="csec">
+    <h2 class="csec-heading">Striped Columns</h2>
+    <p class="csec-desc">New in Bootstrap 5.2 — <code>.table-striped-columns</code> stripes alternating <em>columns</em> instead of rows.</p>
+    <div class="demo">
+      <div class="demo-preview bs-scope" style="flex-direction:column;align-items:stretch">
+        <table class="table table-striped-columns table-bordered mb-0">
+          <thead class="table-dark">
+            <tr><th>Name</th><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Alice</td><td>₱9,000</td><td>₱9,200</td><td>₱9,500</td><td>₱9,800</td></tr>
+            <tr><td>Bob</td><td>₱7,500</td><td>₱7,500</td><td>₱8,000</td><td>₱8,200</td></tr>
+            <tr><td>Carol</td><td>₱6,000</td><td>₱6,400</td><td>₱6,400</td><td>₱6,600</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="tbl-striped-col">HTML</button>
+      </div>
+      <pre is:raw id="tbl-striped-col"><code>&lt;table class="table table-striped-columns table-bordered"&gt;
+  &lt;thead class="table-dark"&gt;...&lt;/thead&gt;
+  &lt;tbody&gt;...&lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+    </div>
+  </div>
+
+  <!-- Frozen / Sticky header -->
+  <div class="csec">
+    <h2 class="csec-heading">Frozen Header</h2>
+    <p class="csec-desc">Add <code>.table-freeze</code> to the table and <code>.row-freeze</code> to the <code>thead tr</code> to freeze the header row while the body scrolls. Wrap in a height-limited <code>.table-responsive</code>.</p>
+    <div class="demo">
+      <div class="demo-preview bs-scope" style="flex-direction:column;align-items:stretch;padding:0">
+        <div class="table-responsive" style="max-height:180px">
+          <table class="table table-bordered table-hover table-freeze mb-0">
+            <thead class="table-dark">
+              <tr class="row-freeze">
+                <th>#</th><th>Name</th><th>Department</th><th>Role</th><th>Status</th><th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Array.from({length: 10}, (_, i) => (
+                <tr>
+                  <td>{i+1}</td>
+                  <td>Employee {i+1}</td>
+                  <td>{['HR','Finance','IT','Sales'][i % 4]}</td>
+                  <td>{['Admin','Manager','Viewer','Editor'][i % 4]}</td>
+                  <td><span class={`badge text-bg-${['success','warning','danger','success'][i%4]}`}>{['Active','Pending','Inactive','Active'][i%4]}</span></td>
+                  <td>₱ {((i + 5) * 1000 + 500).toLocaleString()}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="tbl-freeze-html">HTML</button>
+        <button class="cb-tab" data-tab="tbl-freeze-css">CSS</button>
+      </div>
+      <pre is:raw id="tbl-freeze-html"><code>&lt;!-- Wrap in a scrollable container with fixed height --&gt;
+&lt;div class="table-responsive" style="max-height:300px"&gt;
+  &lt;!-- .table-freeze sets border-collapse:separate so sticky works --&gt;
+  &lt;table class="table table-bordered table-hover table-freeze mb-0"&gt;
+    &lt;thead class="table-dark"&gt;
+      &lt;!-- .row-freeze sticks this row to the top --&gt;
+      &lt;tr class="row-freeze"&gt;
+        &lt;th&gt;#&lt;/th&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Role&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Juan&lt;/td&gt;&lt;td&gt;Admin&lt;/td&gt;&lt;/tr&gt;
+      &lt;!-- more rows... --&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+      <pre is:raw id="tbl-freeze-css" style="display:none"><code>/* VDS theme classes (bootstrap.voyadores.theme.css) */
+.table-freeze {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table-freeze > :not(caption) > *.row-freeze {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}</code></pre>
+    </div>
+  </div>
+
+  <!-- Frozen first column -->
+  <div class="csec">
+    <h2 class="csec-heading">Frozen Column</h2>
+    <p class="csec-desc">Add <code>.table-freeze</code> to the table and <code>.col-freeze</code> to each <code>th</code> / <code>td</code> in the first column to lock it while scrolling horizontally.</p>
+    <div class="demo">
+      <div class="demo-preview bs-scope" style="flex-direction:column;align-items:stretch;padding:0">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover table-freeze mb-0" style="min-width:700px">
+            <thead class="table-dark">
+              <tr>
+                <th class="col-freeze">Name</th>
+                <th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul</th>
+              </tr>
+            </thead>
+            <tbody>
+              {['Alice Santos','Bob Cruz','Carol Reyes','Dan Lim'].map((name, ri) => (
+                <tr>
+                  <td class="col-freeze fw-semibold">{name}</td>
+                  {Array.from({length:7},(_,i) => <td>₱{((ri+1)*1200+(i+1)*150).toLocaleString()}</td>)}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="tbl-col-html">HTML</button>
+        <button class="cb-tab" data-tab="tbl-col-css">CSS</button>
+      </div>
+      <pre is:raw id="tbl-col-html"><code>&lt;div class="table-responsive"&gt;
+  &lt;!-- .table-freeze required on the table --&gt;
+  &lt;table class="table table-bordered table-freeze" style="min-width:700px"&gt;
+    &lt;thead class="table-dark"&gt;
+      &lt;tr&gt;
+        &lt;!-- .col-freeze sticks this column to the left --&gt;
+        &lt;th class="col-freeze"&gt;Name&lt;/th&gt;
+        &lt;th&gt;Jan&lt;/th&gt;
+        &lt;th&gt;Feb&lt;/th&gt;
+        &lt;!-- more columns... --&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td class="col-freeze fw-semibold"&gt;Alice Santos&lt;/td&gt;
+        &lt;td&gt;₱1,200&lt;/td&gt;
+        &lt;!-- more cells... --&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+      <pre is:raw id="tbl-col-css" style="display:none"><code>/* VDS theme classes (bootstrap.voyadores.theme.css) */
+.table-freeze {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table-freeze > :not(caption) > * > *.col-freeze {
+  position: sticky;
+  left: 0;
+  z-index: 9;
+}
+
+/* Combined: frozen header + frozen column corner cell */
+.table-freeze > :not(caption) > *.row-freeze > *.col-freeze {
+  z-index: 11; /* above both row-freeze and col-freeze */
+}</code></pre>
+    </div>
+  </div>
+
+  <!-- Frozen header + frozen column -->
+  <div class="csec">
+    <h2 class="csec-heading">Frozen Header + Column</h2>
+    <p class="csec-desc">Combine <code>.row-freeze</code> on the header row and <code>.col-freeze</code> on the first column for a fully locked corner. The corner cell needs no extra class — the theme handles stacking order automatically.</p>
+    <div class="demo">
+      <div class="demo-preview bs-scope" style="flex-direction:column;align-items:stretch;padding:0">
+        <div class="table-responsive" style="max-height:200px">
+          <table class="table table-bordered table-hover table-freeze mb-0" style="min-width:700px">
+            <thead class="table-dark">
+              <tr class="row-freeze">
+                <th class="col-freeze">#</th>
+                <th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul</th>
+              </tr>
+            </thead>
+            <tbody>
+              {['Alice Santos','Bob Cruz','Carol Reyes','Dan Lim','Eva Torres','Frank Ocampo'].map((name, ri) => (
+                <tr>
+                  <td class="col-freeze fw-semibold">{name}</td>
+                  {Array.from({length:7},(_,i) => <td>₱{((ri+1)*1200+(i+1)*150).toLocaleString()}</td>)}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="tbl-both-html">HTML</button>
+      </div>
+      <pre is:raw id="tbl-both-html"><code>&lt;div class="table-responsive" style="max-height:300px"&gt;
+  &lt;table class="table table-bordered table-freeze" style="min-width:700px"&gt;
+    &lt;thead class="table-dark"&gt;
+      &lt;tr class="row-freeze"&gt;
+        &lt;th class="col-freeze"&gt;Name&lt;/th&gt; &lt;!-- corner: both frozen --&gt;
+        &lt;th&gt;Jan&lt;/th&gt;
+        &lt;th&gt;Feb&lt;/th&gt;
+        &lt;!-- more columns... --&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td class="col-freeze fw-semibold"&gt;Alice Santos&lt;/td&gt;
+        &lt;td&gt;₱9,000&lt;/td&gt;
+        &lt;!-- more cells... --&gt;
+      &lt;/tr&gt;
+      &lt;!-- more rows... --&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+  </div>
 
   <!-- Bootstrap JS bundle (Popper included) -->
   <script is:inline src="/js/bootstrap/bootstrap.bundle.min.js"></script>
 
   <script>
-      // Code tabs
     document.querySelectorAll('.cb-tab').forEach(btn => {
       btn.addEventListener('click', () => {
         const target = btn.dataset.tab;
@@ -87,6 +376,10 @@ import PageHeader from '../../../components/PageHeader.astro';
 <style>
   /* Sections */
   .csec { margin-bottom: 72px; scroll-margin-top: 24px; }
+  .csec-heading {
+    font-size: 16px; font-weight: 700; color: var(--black);
+    margin: 0 0 8px; letter-spacing: -.01em;
+  }
   .csec-desc {
     font-size: 13px; font-weight: 400; color: var(--g2);
     line-height: 1.7; margin-bottom: 20px;
@@ -104,6 +397,24 @@ import PageHeader from '../../../components/PageHeader.astro';
     padding: 28px; border: 1px solid var(--g5);
     border-radius: 4px; background: var(--white);
     align-items: center;
+  }
+
+  /* Full-width table demos */
+  .demo-preview .table-responsive,
+  .demo-preview table { width: 100%; }
+
+  /* Dark mode: demo preview background adapts */
+  @media (prefers-color-scheme: dark) {
+    .demo-preview { background: var(--vds-body-bg, #1a1a1a); border-color: var(--vds-border-color, #3a3a3a); }
+  }
+
+  /* col-freeze background inherits from table theme via Bootstrap's --bs-table-bg */
+  .bs-scope .col-freeze {
+    background: var(--bs-table-bg, var(--vds-body-bg, #fff));
+  }
+  .bs-scope .table-dark .col-freeze,
+  .bs-scope .table-dark .row-freeze .col-freeze {
+    background: var(--vds-table-dark-bg, #212529);
   }
 
   /* Code block */

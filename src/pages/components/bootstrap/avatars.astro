@@ -1,0 +1,297 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+---
+
+<BaseLayout title="Avatars" activeSection="components">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.voyadores.theme.min.css" />
+  </Fragment>
+
+  <PageHeader
+    eyebrow="Components / Bootstrap"
+    title="Avatars"
+    description="Use .avatar to display user profile images or initials. Eight size modifiers from .avatar-xs to .avatar-xxxxl. Add .avatar-overlay for hover interactions."
+  />
+
+  <!-- Sizes -->
+  <div class="csec">
+    <h2 class="csec-heading">Sizes</h2>
+    <p class="csec-desc">Eight size variants from <code>.avatar-xs</code> (1.25rem) to <code>.avatar-xxxxl</code> (8rem). Use <code>.rounded-circle</code> to clip to a circle.</p>
+    <div class="demo">
+      <div class="demo-preview bs-scope" style="align-items:flex-end;gap:12px">
+        <div style="text-align:center">
+          <img src="/images/voyadores-logo-icon.svg" class="avatar avatar-xs rounded-circle" alt="xs" />
+          <div class="size-label">xs</div>
+        </div>
+        <div style="text-align:center">
+          <img src="/images/voyadores-logo-icon.svg" class="avatar avatar-sm rounded-circle" alt="sm" />
+          <div class="size-label">sm</div>
+        </div>
+        <div style="text-align:center">
+          <img src="/images/voyadores-logo-icon.svg" class="avatar rounded-circle" alt="default" />
+          <div class="size-label">default</div>
+        </div>
+        <div style="text-align:center">
+          <img src="/images/voyadores-logo-icon.svg" class="avatar avatar-lg rounded-circle" alt="lg" />
+          <div class="size-label">lg</div>
+        </div>
+        <div style="text-align:center">
+          <img src="/images/voyadores-logo-icon.svg" class="avatar avatar-xl rounded-circle" alt="xl" />
+          <div class="size-label">xl</div>
+        </div>
+        <div style="text-align:center">
+          <img src="/images/voyadores-logo-icon.svg" class="avatar avatar-xxl rounded-circle" alt="xxl" />
+          <div class="size-label">xxl</div>
+        </div>
+        <div style="text-align:center">
+          <img src="/images/voyadores-logo-icon.svg" class="avatar avatar-xxxl rounded-circle" alt="xxxl" />
+          <div class="size-label">xxxl</div>
+        </div>
+        <div style="text-align:center">
+          <img src="/images/voyadores-logo-icon.svg" class="avatar avatar-xxxxl rounded-circle" alt="xxxxl" />
+          <div class="size-label">xxxxl</div>
+        </div>
+      </div>
+    </div>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="av-sizes">HTML</button>
+      </div>
+      <pre is:raw id="av-sizes"><code>&lt;img src="..." class="avatar avatar-xs rounded-circle" alt="xs" /&gt;
+&lt;img src="..." class="avatar avatar-sm rounded-circle" alt="sm" /&gt;
+&lt;img src="..." class="avatar rounded-circle" alt="default (2rem)" /&gt;
+&lt;img src="..." class="avatar avatar-lg rounded-circle" alt="lg" /&gt;
+&lt;img src="..." class="avatar avatar-xl rounded-circle" alt="xl" /&gt;
+&lt;img src="..." class="avatar avatar-xxl rounded-circle" alt="xxl" /&gt;
+&lt;img src="..." class="avatar avatar-xxxl rounded-circle" alt="xxxl" /&gt;
+&lt;img src="..." class="avatar avatar-xxxxl rounded-circle" alt="xxxxl (8rem)" /&gt;</code></pre>
+    </div>
+  </div>
+
+  <!-- Text / Initials -->
+  <div class="csec">
+    <h2 class="csec-heading">Initials</h2>
+    <p class="csec-desc">Initials-based avatars using Bootstrap background and text utilities. Works at any size.</p>
+    <div class="demo">
+      <div class="demo-preview bs-scope" style="align-items:flex-end;gap:12px">
+        <div class="avatar avatar-xs rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-semibold" style="font-size:.5rem">JD</div>
+        <div class="avatar avatar-sm rounded-circle bg-success text-white d-flex align-items-center justify-content-center fw-semibold" style="font-size:.6rem">AB</div>
+        <div class="avatar rounded-circle bg-danger text-white d-flex align-items-center justify-content-center fw-semibold">CD</div>
+        <div class="avatar avatar-lg rounded-circle bg-warning text-dark d-flex align-items-center justify-content-center fw-semibold">EF</div>
+        <div class="avatar avatar-xl rounded-circle bg-info text-white d-flex align-items-center justify-content-center fw-semibold">GH</div>
+        <div class="avatar avatar-xxl rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center fw-semibold">IJ</div>
+        <div class="avatar avatar-xxxl rounded-circle bg-dark text-white d-flex align-items-center justify-content-center fw-semibold">KL</div>
+      </div>
+    </div>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="av-initials">HTML</button>
+      </div>
+      <pre is:raw id="av-initials"><code>&lt;div class="avatar rounded-circle bg-primary text-white
+     d-flex align-items-center justify-content-center fw-semibold"&gt;
+  JD
+&lt;/div&gt;
+
+&lt;!-- With size modifier --&gt;
+&lt;div class="avatar avatar-xl rounded-circle bg-success text-white
+     d-flex align-items-center justify-content-center fw-semibold"&gt;
+  AB
+&lt;/div&gt;</code></pre>
+    </div>
+  </div>
+
+  <!-- Avatar with status -->
+  <div class="csec">
+    <h2 class="csec-heading">With Status Indicator</h2>
+    <p class="csec-desc">Combine avatars with <code>.status-*</code> indicators to show online presence. Position the dot absolutely over the avatar's bottom-right corner.</p>
+    <div class="demo">
+      <div class="demo-preview bs-scope" style="gap:20px">
+        {[
+          ['green','Online'],
+          ['red','Offline'],
+          ['yellow','Away'],
+          ['gray','Inactive'],
+        ].map(([color, label]) => (
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+            <div style="position:relative;display:inline-block">
+              <img src="/images/voyadores-logo-icon.svg" class="avatar avatar-xl rounded-circle" alt="user" />
+              <span class={`status-${color}`} style="position:absolute;bottom:2px;right:2px;width:12px;height:12px;border-radius:50%;border:2px solid white;display:block"></span>
+            </div>
+            <span style="font-size:11px;color:#888">{label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="av-status">HTML</button>
+      </div>
+      <pre is:raw id="av-status"><code>&lt;div style="position:relative;display:inline-block"&gt;
+  &lt;img src="..." class="avatar avatar-xl rounded-circle" alt="user" /&gt;
+  &lt;span class="status-green"
+    style="position:absolute;bottom:2px;right:2px;
+           width:12px;height:12px;border-radius:50%;
+           border:2px solid white;display:block"&gt;&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+  </div>
+
+  <!-- Avatar overlay -->
+  <div class="csec">
+    <h2 class="csec-heading">Overlay on Hover</h2>
+    <p class="csec-desc">Add <code>.avatar-overlay</code> inside any <code>.avatar</code> wrapper. The overlay fades in on hover — defined in the theme CSS.</p>
+    <div class="demo">
+      <div class="demo-preview bs-scope" style="gap:16px">
+        {['avatar-xl','avatar-xxl','avatar-xxxl'].map(size => (
+          <div class={`avatar ${size} rounded-circle`} style="overflow:hidden">
+            <img src="/images/voyadores-logo-icon.svg" class="rounded-circle" style="width:100%;height:100%;object-fit:cover" alt="user" />
+            <div class="avatar-overlay rounded-circle" style="font-size:10px">Edit</div>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="av-overlay">HTML</button>
+        <button class="cb-tab" data-tab="av-overlay-css">CSS</button>
+      </div>
+      <pre is:raw id="av-overlay"><code>&lt;div class="avatar avatar-xl rounded-circle" style="overflow:hidden"&gt;
+  &lt;img src="..." class="rounded-circle"
+       style="width:100%;height:100%;object-fit:cover" alt="user" /&gt;
+  &lt;div class="avatar-overlay rounded-circle"&gt;Edit&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      <pre is:raw id="av-overlay-css" style="display:none"><code>/* From bootstrap.voyadores.theme.css */
+.avatar-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.64);
+  opacity: 0;
+  z-index: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+[class*="avatar"]:hover .avatar-overlay {
+  opacity: 1;
+}</code></pre>
+    </div>
+  </div>
+
+  <!-- Avatar group -->
+  <div class="csec">
+    <h2 class="csec-heading">Avatar Group</h2>
+    <p class="csec-desc">Stack avatars with negative margin to create a group. Use a border to visually separate them.</p>
+    <div class="demo">
+      <div class="demo-preview bs-scope" style="flex-direction:column;gap:16px">
+        <div style="display:flex">
+          {['bg-primary','bg-success','bg-danger','bg-warning','bg-info'].map((bg, i) => (
+            <div class={`avatar rounded-circle ${bg} text-white d-flex align-items-center justify-content-center fw-semibold`}
+                 style={`margin-left:${i === 0 ? 0 : -10}px;border:2px solid white;z-index:${5-i}`}>
+              {String.fromCharCode(65 + i)}
+            </div>
+          ))}
+          <div class="avatar rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center fw-semibold"
+               style="margin-left:-10px;border:2px solid white;font-size:.65rem">+3</div>
+        </div>
+        <div style="display:flex">
+          {['bg-primary','bg-success','bg-danger'].map((bg, i) => (
+            <img src="/images/voyadores-logo-icon.svg"
+                 class={`avatar avatar-lg rounded-circle ${bg}`}
+                 style={`margin-left:${i === 0 ? 0 : -12}px;border:2px solid white;z-index:${3-i}`}
+                 alt="user" />
+          ))}
+          <div class="avatar avatar-lg rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center"
+               style="margin-left:-12px;border:2px solid white;font-size:.65rem">+5</div>
+        </div>
+      </div>
+    </div>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="av-group">HTML</button>
+      </div>
+      <pre is:raw id="av-group"><code>&lt;div style="display:flex"&gt;
+  &lt;div class="avatar rounded-circle bg-primary text-white ..."
+       style="border:2px solid white"&gt;A&lt;/div&gt;
+  &lt;div class="avatar rounded-circle bg-success text-white ..."
+       style="margin-left:-10px;border:2px solid white"&gt;B&lt;/div&gt;
+  &lt;!-- repeat for each avatar --&gt;
+  &lt;div class="avatar rounded-circle bg-secondary ..."
+       style="margin-left:-10px;border:2px solid white"&gt;+3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+  </div>
+
+  <!-- Size reference table -->
+  <div class="csec">
+    <h2 class="csec-heading">Size Reference</h2>
+    <div class="demo">
+      <div class="demo-preview bs-scope" style="display:block;padding:0">
+        <table class="table table-bordered table-sm mb-0">
+          <thead class="table-dark">
+            <tr><th>Class</th><th>Size</th><th>Use case</th></tr>
+          </thead>
+          <tbody>
+            {[
+              ['.avatar-xs',    '1.25rem (20px)', 'Tight list rows, inline labels'],
+              ['.avatar-sm',    '1.5rem (24px)',  'Comment threads, compact UIs'],
+              ['.avatar',       '2rem (32px)',    'Default — navbar, dropdowns'],
+              ['.avatar-lg',    '2.5rem (40px)',  'Cards, user cards'],
+              ['.avatar-xl',    '3rem (48px)',    'Profile headers'],
+              ['.avatar-xxl',   '4rem (64px)',    'Team pages'],
+              ['.avatar-xxxl',  '5rem (80px)',    'Profile modals'],
+              ['.avatar-xxxxl', '8rem (128px)',   'Full-page profile view'],
+            ].map(([cls, sz, use]) => (
+              <tr>
+                <td><code>{cls}</code></td>
+                <td>{sz}</td>
+                <td style="color:#888;font-size:12px">{use}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelectorAll('.cb-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        const block  = btn.closest('.code-block');
+        block.querySelectorAll('.cb-tab').forEach(b => b.classList.remove('is-on'));
+        block.querySelectorAll('pre').forEach(p => p.style.display = 'none');
+        btn.classList.add('is-on');
+        const pre = document.getElementById(target);
+        if (pre) pre.style.display = '';
+      });
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  .csec { margin-bottom: 56px; }
+  .csec-heading {
+    font-size: 16px; font-weight: 700; color: var(--black);
+    margin: 0 0 8px; letter-spacing: -.01em;
+  }
+  .csec-desc { font-size: 13px; font-weight: 400; color: var(--g2); line-height: 1.7; margin-bottom: 16px; }
+  .csec-desc code { font-family: var(--mono); font-size: .875em; background: var(--g5); padding: 1px 5px; border-radius: 3px; color: var(--g1); }
+  .size-label { font-size: 10px; color: #888; margin-top: 4px; font-family: var(--mono); }
+  .demo { margin-bottom: 16px; }
+  .demo-preview { display: flex; flex-wrap: wrap; gap: 8px; padding: 28px; border: 1px solid var(--g5); border-radius: 4px; background: var(--white); align-items: center; }
+  .code-block { background: #111; border-radius: 4px; overflow: hidden; }
+  .cb-tabs { display: flex; border-bottom: 1px solid #2a2a2a; padding: 0 16px; }
+  .cb-tab { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: #666; background: none; border: none; padding: 10px 14px; border-bottom: 2px solid transparent; transition: color .12s, border-color .12s; }
+  .cb-tab:hover { color: #ccc; }
+  .cb-tab.is-on { color: var(--brand); border-bottom-color: var(--brand); }
+  .code-block pre { margin: 0; padding: 20px 24px; overflow-x: auto; }
+  .code-block code { font-family: var(--mono); font-size: 12.5px; color: #e8e8e8; line-height: 1.85; white-space: pre; }
+  .bs-scope * { cursor: auto !important; }
+  .bs-scope { font-family: var(--vds-font-sans-serif, "Lexend", sans-serif); }
+</style>

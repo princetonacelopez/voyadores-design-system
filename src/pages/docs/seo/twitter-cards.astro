@@ -1,0 +1,346 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+
+const cardTypes = [
+  {
+    type: 'summary',
+    label: 'Summary',
+    desc: 'Default card type. Shows a small square thumbnail on the left with title and description. Best for articles, documentation, and landing pages.',
+    required: ['twitter:card', 'twitter:title', 'twitter:description'],
+    optional: ['twitter:image', 'twitter:site', 'twitter:creator'],
+    imgSpec: '144×144 px minimum, 1:1 ratio, < 5 MB',
+  },
+  {
+    type: 'summary_large_image',
+    label: 'Summary Large Image',
+    desc: 'Full-width banner image above the title and description. The most common card type for marketing pages, blog posts, and product pages.',
+    required: ['twitter:card', 'twitter:title', 'twitter:description', 'twitter:image'],
+    optional: ['twitter:site', 'twitter:creator', 'twitter:image:alt'],
+    imgSpec: '1200×628 px recommended, < 5 MB, ≥ 300×157 px minimum',
+  },
+  {
+    type: 'app',
+    label: 'App',
+    desc: 'Links directly to an iOS or Android app in the App Store / Play Store. Used for mobile app deep-link campaigns.',
+    required: ['twitter:card', 'twitter:app:id:iphone or twitter:app:id:googleplay'],
+    optional: ['twitter:app:name:iphone', 'twitter:app:url:iphone', 'twitter:app:country'],
+    imgSpec: 'N/A — app icon pulled from store',
+  },
+  {
+    type: 'player',
+    label: 'Player',
+    desc: 'Embeds an iframe video or audio player inline in the tweet. Requires Twitter approval — submit via the Card Validator.',
+    required: ['twitter:card', 'twitter:player', 'twitter:player:width', 'twitter:player:height', 'twitter:image'],
+    optional: ['twitter:player:stream'],
+    imgSpec: '1200×628 px poster image required',
+  },
+];
+
+const tags = [
+  { tag: 'twitter:card',        req: true,  desc: 'Card type. One of: summary, summary_large_image, app, player. This tag is required — without it X ignores all other twitter: tags.' },
+  { tag: 'twitter:site',        req: false, desc: 'The @username of the website or company (e.g. @Voyadores). Displayed in the card footer.' },
+  { tag: 'twitter:creator',     req: false, desc: 'The @username of the content author (e.g. @janedoe for a blog post).' },
+  { tag: 'twitter:title',       req: true,  desc: 'Title shown in the card. Max 70 chars — truncated on mobile. Falls back to og:title if absent.' },
+  { tag: 'twitter:description', req: true,  desc: 'Description below the title. Max 200 chars. Falls back to og:description if absent.' },
+  { tag: 'twitter:image',       req: false, desc: 'Absolute URL of the card image. Required for summary_large_image. Falls back to og:image if absent.' },
+  { tag: 'twitter:image:alt',   req: false, desc: 'Alt text for the image. Max 420 chars. Critical for accessibility.' },
+];
+---
+
+<BaseLayout title="X (Twitter) Cards" activeSection="docs">
+  <PageHeader
+    eyebrow="Documentation / SEO"
+    title="X (Twitter) Cards"
+    description="Twitter Cards (now X Cards) let you attach rich media previews to tweets. When someone shares a URL on X, the platform reads twitter: meta tags to build the card shown beneath the tweet."
+  />
+
+  <!-- How it works -->
+  <div class="csec">
+    <h2 class="csec-heading">How X Cards Work</h2>
+    <p class="csec-desc">When a URL is posted to X, the platform's crawler visits the page and reads <code>&lt;meta name="twitter:*"&gt;</code> tags from the <code>&lt;head&gt;</code>. If twitter: tags are missing, X automatically falls back to the page's Open Graph (<code>og:*</code>) tags. This means a well-implemented OG setup works on X with minimal extra work — you only need to add <code>twitter:card</code> to select the card layout.</p>
+    <div class="info-box">
+      <span class="info-icon">💡</span>
+      <span>If you have <code>og:title</code>, <code>og:description</code>, and <code>og:image</code> already implemented, adding just <code>&lt;meta name="twitter:card" content="summary_large_image" /&gt;</code> is enough for a full large-image card on X.</span>
+    </div>
+  </div>
+
+  <!-- Card types -->
+  <div class="csec">
+    <h2 class="csec-heading">Card Types</h2>
+    <p class="csec-desc">X supports four card types. <code>summary_large_image</code> is the most widely used for marketing and content pages.</p>
+    <div class="card-types-grid">
+      {cardTypes.map(c => (
+        <div class="ct-card">
+          <div class="ct-header">
+            <code class="ct-type">{c.type}</code>
+            <span class="ct-label">{c.label}</span>
+          </div>
+          <p class="ct-desc">{c.desc}</p>
+          <div class="ct-meta">
+            <span class="ct-meta-label">Required tags</span>
+            <div class="ct-tags">
+              {c.required.map(t => <code class="ct-tag req">{t}</code>)}
+            </div>
+            {c.optional.length > 0 && <>
+              <span class="ct-meta-label" style="margin-top:8px">Optional</span>
+              <div class="ct-tags">
+                {c.optional.map(t => <code class="ct-tag opt">{t}</code>)}
+              </div>
+            </>}
+            <span class="ct-meta-label" style="margin-top:8px">Image spec</span>
+            <span class="ct-img-spec">{c.imgSpec}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Tag reference -->
+  <div class="csec">
+    <h2 class="csec-heading">Tag Reference</h2>
+    <div class="tag-table">
+      <div class="tag-thead">
+        <span>Tag</span>
+        <span>Required</span>
+        <span>Description</span>
+      </div>
+      {tags.map(t => (
+        <div class="tag-row">
+          <span class="tag-name"><code>{t.tag}</code></span>
+          <span class="tag-req">
+            {t.req
+              ? <span class="badge-req">Required</span>
+              : <span class="badge-opt">Optional</span>}
+          </span>
+          <span class="tag-desc">{t.desc}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Implementation -->
+  <div class="csec">
+    <h2 class="csec-heading">Implementation</h2>
+    <p class="csec-desc">Place <code>twitter:</code> meta tags inside <code>&lt;head&gt;</code> alongside your OG tags.</p>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="tw-summary">summary_large_image</button>
+        <button class="cb-tab" data-tab="tw-summary-sm">summary</button>
+        <button class="cb-tab" data-tab="tw-astro">Astro</button>
+        <button class="cb-tab" data-tab="tw-next">Next.js</button>
+      </div>
+      <pre is:raw id="tw-summary"><code>&lt;!-- X Card: large image (most common) --&gt;
+&lt;meta name="twitter:card"        content="summary_large_image" /&gt;
+&lt;meta name="twitter:site"        content="@YourHandle" /&gt;
+&lt;meta name="twitter:creator"     content="@AuthorHandle" /&gt;
+&lt;meta name="twitter:title"       content="Page Title (max 70 chars)" /&gt;
+&lt;meta name="twitter:description" content="A concise page description, max 200 chars." /&gt;
+&lt;meta name="twitter:image"       content="https://example.com/images/og/page.jpg" /&gt;
+&lt;meta name="twitter:image:alt"   content="Descriptive alt text for the image" /&gt;
+
+&lt;!-- OG tags are used as fallback — keep them in sync --&gt;
+&lt;meta property="og:title"       content="Page Title" /&gt;
+&lt;meta property="og:description" content="A concise page description." /&gt;
+&lt;meta property="og:image"       content="https://example.com/images/og/page.jpg" /&gt;
+&lt;meta property="og:url"         content="https://example.com/page-slug" /&gt;
+&lt;meta property="og:type"        content="website" /&gt;</code></pre>
+
+      <pre is:raw id="tw-summary-sm" style="display:none"><code>&lt;!-- X Card: summary (small thumbnail) --&gt;
+&lt;meta name="twitter:card"        content="summary" /&gt;
+&lt;meta name="twitter:site"        content="@YourHandle" /&gt;
+&lt;meta name="twitter:title"       content="Page Title" /&gt;
+&lt;meta name="twitter:description" content="Brief description." /&gt;
+&lt;meta name="twitter:image"       content="https://example.com/images/og/thumb.jpg" /&gt;
+&lt;!-- Image should be at least 144×144 px, ideally 400×400 px, 1:1 ratio --&gt;</code></pre>
+
+      <pre is:raw id="tw-astro" style="display:none"><code>---
+// src/layouts/BaseLayout.astro
+interface Props {
+  title:       string;
+  description: string;
+  ogImage?:    string;
+  twitterHandle?: string;
+}
+const {
+  title,
+  description,
+  ogImage       = 'https://example.com/images/og/default.jpg',
+  twitterHandle = '@YourSiteHandle',
+} = Astro.props;
+---
+&lt;head&gt;
+  &lt;!-- Open Graph (required) --&gt;
+  &lt;meta property="og:title"       content={title} /&gt;
+  &lt;meta property="og:description" content={description} /&gt;
+  &lt;meta property="og:image"       content={ogImage} /&gt;
+
+  &lt;!-- X / Twitter Card (falls back to OG if omitted) --&gt;
+  &lt;meta name="twitter:card"        content="summary_large_image" /&gt;
+  &lt;meta name="twitter:site"        content={twitterHandle} /&gt;
+  &lt;meta name="twitter:title"       content={title} /&gt;
+  &lt;meta name="twitter:description" content={description} /&gt;
+  &lt;meta name="twitter:image"       content={ogImage} /&gt;
+  &lt;meta name="twitter:image:alt"   content={`${title} preview`} /&gt;
+&lt;/head&gt;</code></pre>
+
+      <pre is:raw id="tw-next" style="display:none"><code>// app/page.tsx — Next.js 13+ App Router
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Page Title',
+  description: 'Page description.',
+  twitter: {
+    card:        'summary_large_image',
+    site:        '@YourHandle',
+    creator:     '@AuthorHandle',
+    title:       'Page Title',
+    description: 'Page description.',
+    images: [
+      {
+        url:    'https://example.com/images/og/page.jpg',
+        width:  1200,
+        height: 628,
+        alt:    'Descriptive alt text',
+      },
+    ],
+  },
+  openGraph: {
+    // Keep in sync with twitter: above
+    title:       'Page Title',
+    description: 'Page description.',
+    images: ['https://example.com/images/og/page.jpg'],
+  },
+};</code></pre>
+    </div>
+  </div>
+
+  <!-- Image specs -->
+  <div class="csec">
+    <h2 class="csec-heading">Image Specifications</h2>
+    <div class="tips-grid">
+      {[
+        { label: 'summary_large_image', body: '1200×628 px (2:1 ratio). Minimum 300×157 px. Max 5 MB. JPEG or PNG. Displayed full-width above title.' },
+        { label: 'summary', body: '400×400 px recommended (1:1 ratio). Minimum 144×144 px. Max 5 MB. Displayed as a small left-aligned thumbnail.' },
+        { label: 'Absolute URLs only', body: 'X does not resolve relative URLs. Always use https:// — HTTP images may be blocked.' },
+        { label: 'No animated GIFs', body: 'X renders only the first frame of GIFs used as card images. Use a static JPEG or PNG.' },
+        { label: 'Text-safe area', body: 'Keep important content in the center 900×450 px — edges may be cropped on some clients.' },
+        { label: 'Alt text required', body: 'twitter:image:alt is strongly recommended for accessibility. Max 420 characters.' },
+      ].map(t => (
+        <div class="tip-card">
+          <span class="tip-title">{t.label}</span>
+          <span class="tip-body">{t.body}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Testing -->
+  <div class="csec">
+    <h2 class="csec-heading">Testing &amp; Validation</h2>
+    <p class="csec-desc">X caches card previews. After updating tags, use the Card Validator to force a re-fetch.</p>
+    <div class="tools-list">
+      {[
+        { name: 'X / Twitter Card Validator', url: 'https://cards-dev.twitter.com/validator', note: 'Official tool. Enter a URL to preview the card and force a cache refresh on X.' },
+        { name: 'OpenGraph.xyz',              url: 'https://www.opengraph.xyz/',               note: 'Multi-platform preview including X, Facebook, LinkedIn simultaneously.' },
+        { name: 'Metatags.io',               url: 'https://metatags.io/',                      note: 'Live visual editor — paste any URL or edit tags and see the card update in real time.' },
+        { name: 'socialsharepreview.com',    url: 'https://socialsharepreview.com/',            note: 'Shows card previews for X, Facebook, LinkedIn, Pinterest, and Google.' },
+      ].map(t => (
+        <div class="tool-row">
+          <span class="tool-name">{t.name}</span>
+          <span class="tool-note">{t.note}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.cb-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        const block  = btn.closest('.code-block');
+        block.querySelectorAll('.cb-tab').forEach(b => b.classList.remove('is-on'));
+        block.querySelectorAll('pre').forEach(p => (p as HTMLElement).style.display = 'none');
+        btn.classList.add('is-on');
+        const pre = document.getElementById(target!);
+        if (pre) pre.style.display = '';
+      });
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  .csec { margin-bottom: 56px; }
+  .csec-heading { font-size: 16px; font-weight: 700; color: var(--black); margin: 0 0 8px; letter-spacing: -.01em; }
+  .csec-desc { font-size: 13px; color: var(--g2); line-height: 1.7; margin-bottom: 12px; max-width: 680px; }
+  .csec-desc code { font-family: var(--mono); font-size: .875em; background: var(--g5); padding: 1px 5px; border-radius: 3px; color: var(--g1); }
+
+  /* Info box */
+  .info-box {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: #d4e4fa22; border: 1px solid #186ade33;
+    border-radius: 6px; padding: 14px 16px;
+    font-size: 13px; color: var(--g1); line-height: 1.6;
+  }
+  .info-box code { font-family: var(--mono); font-size: .875em; background: var(--g5); padding: 1px 5px; border-radius: 3px; }
+  .info-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+  /* Card types grid */
+  .card-types-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .ct-card { border: 1px solid var(--g5); border-radius: 6px; overflow: hidden; }
+  .ct-header { padding: 12px 16px; background: var(--g6); border-bottom: 1px solid var(--g5); display: flex; flex-direction: column; gap: 4px; }
+  .ct-type { font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--brand); background: rgba(247,146,30,.1); padding: 2px 8px; border-radius: 4px; display: inline-block; width: fit-content; }
+  .ct-label { font-size: 13px; font-weight: 600; color: var(--black); }
+  .ct-desc { font-size: 13px; color: var(--g2); line-height: 1.6; padding: 12px 16px 0; margin: 0; }
+  .ct-meta { padding: 12px 16px; display: flex; flex-direction: column; gap: 4px; }
+  .ct-meta-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--g3); }
+  .ct-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .ct-tag { font-family: var(--mono); font-size: 10px; padding: 2px 6px; border-radius: 3px; }
+  .ct-tag.req { background: #fadcd9; color: #a1160a; }
+  .ct-tag.opt { background: var(--g5); color: var(--g2); }
+  .ct-img-spec { font-size: 12px; color: var(--g2); }
+
+  /* Tag table */
+  .tag-table { border: 1px solid var(--g5); border-radius: 6px; overflow: hidden; }
+  .tag-thead { display: grid; grid-template-columns: 210px 90px 1fr; background: var(--g6); border-bottom: 1px solid var(--g5); }
+  .tag-thead > span { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--g3); padding: 10px 14px; }
+  .tag-row { display: grid; grid-template-columns: 210px 90px 1fr; border-top: 1px solid var(--g5); align-items: start; }
+  .tag-name { padding: 12px 14px; }
+  .tag-name code { font-family: var(--mono); font-size: 12px; color: var(--g1); background: var(--g5); padding: 2px 6px; border-radius: 3px; }
+  .tag-req  { padding: 12px 14px; }
+  .tag-desc { padding: 12px 14px 12px 0; font-size: 13px; color: var(--g2); line-height: 1.6; }
+  .badge-req { display: inline-block; font-size: 10px; font-weight: 700; font-family: var(--mono); background: #fadcd9; color: #a1160a; padding: 2px 7px; border-radius: 100px; }
+  .badge-opt { display: inline-block; font-size: 10px; font-weight: 700; font-family: var(--mono); background: var(--g5); color: var(--g3); padding: 2px 7px; border-radius: 100px; }
+
+  /* Tips grid */
+  .tips-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .tip-card { border: 1px solid var(--g5); border-radius: 6px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+  .tip-title { font-size: 13px; font-weight: 700; color: var(--black); }
+  .tip-body  { font-size: 12px; color: var(--g2); line-height: 1.6; }
+
+  /* Tools list */
+  .tools-list { display: flex; flex-direction: column; border: 1px solid var(--g5); border-radius: 6px; overflow: hidden; }
+  .tool-row { display: grid; grid-template-columns: 240px 1fr; align-items: baseline; gap: 16px; padding: 12px 16px; border-top: 1px solid var(--g5); }
+  .tool-row:first-child { border-top: none; }
+  .tool-name { font-size: 13px; font-weight: 600; color: var(--black); }
+  .tool-note { font-size: 13px; color: var(--g2); line-height: 1.5; }
+
+  /* Code block */
+  .code-block { background: #111; border-radius: 6px; overflow: hidden; }
+  .cb-tabs { display: flex; border-bottom: 1px solid #2a2a2a; padding: 0 16px; }
+  .cb-tab { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: #666; background: none; border: none; padding: 10px 14px; border-bottom: 2px solid transparent; transition: color .12s, border-color .12s; cursor: pointer; }
+  .cb-tab:hover { color: #ccc; }
+  .cb-tab.is-on { color: var(--brand); border-bottom-color: var(--brand); }
+  .code-block pre { margin: 0; padding: 20px 24px; overflow-x: auto; }
+  .code-block code { font-family: var(--mono); font-size: 12.5px; color: #e8e8e8; line-height: 1.85; white-space: pre; }
+
+  @media (max-width: 900px) {
+    .card-types-grid { grid-template-columns: 1fr; }
+    .tips-grid { grid-template-columns: repeat(2, 1fr); }
+    .tag-thead, .tag-row { grid-template-columns: 180px 80px 1fr; }
+  }
+  @media (max-width: 600px) {
+    .tips-grid { grid-template-columns: 1fr; }
+    .tool-row { grid-template-columns: 1fr; gap: 4px; }
+  }
+</style>

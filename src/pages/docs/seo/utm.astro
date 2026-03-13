@@ -1,0 +1,331 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+
+const params = [
+  {
+    param: 'utm_source',
+    req: true,
+    desc: 'The platform or site that sent the traffic.',
+    examples: ['google', 'facebook', 'newsletter', 'linkedin', 'instagram'],
+  },
+  {
+    param: 'utm_medium',
+    req: true,
+    desc: 'The marketing channel or ad format.',
+    examples: ['cpc', 'email', 'social', 'banner', 'organic'],
+  },
+  {
+    param: 'utm_campaign',
+    req: true,
+    desc: 'The specific campaign name, promotion, or initiative.',
+    examples: ['q1-launch', 'summer-sale', 'onboarding-flow', 'brand-awareness'],
+  },
+  {
+    param: 'utm_term',
+    req: false,
+    desc: 'Paid search keywords. Use to track which keyword triggered an ad. Auto-populated by Google Ads with {keyword}.',
+    examples: ['design+system', 'bootstrap+theme', '{keyword}'],
+  },
+  {
+    param: 'utm_content',
+    req: false,
+    desc: 'Differentiates links that point to the same URL — useful for A/B testing ad copy or CTA placement.',
+    examples: ['hero-cta', 'sidebar-link', 'nav-button', 'image-ad'],
+  },
+  {
+    param: 'utm_id',
+    req: false,
+    desc: 'A unique identifier for the campaign. Useful when importing offline data into GA4 via the data import feature.',
+    examples: ['camp-2026-q1', 'fb-12345'],
+  },
+];
+
+const mediums = [
+  { medium: 'cpc',          desc: 'Cost-per-click paid search (Google, Bing)' },
+  { medium: 'email',        desc: 'Email campaigns (newsletters, drip flows)' },
+  { medium: 'social',       desc: 'Unpaid social media posts' },
+  { medium: 'paidsocial',   desc: 'Paid social ads (Facebook, Instagram, LinkedIn)' },
+  { medium: 'display',      desc: 'Display / banner ads' },
+  { medium: 'video',        desc: 'Video ads (YouTube, TikTok)' },
+  { medium: 'affiliate',    desc: 'Affiliate / partner links' },
+  { medium: 'referral',     desc: 'Traffic from other websites (non-campaign)' },
+  { medium: 'organic',      desc: 'Organic (non-paid) social posts — sometimes used' },
+  { medium: 'qr',           desc: 'QR codes in print, packaging, or signage' },
+  { medium: 'sms',          desc: 'SMS / text message campaigns' },
+  { medium: 'push',         desc: 'Browser or app push notifications' },
+];
+
+const examples = [
+  {
+    scenario: 'Google paid search ad',
+    url: 'https://example.com/landing?utm_source=google&utm_medium=cpc&utm_campaign=q1-brand&utm_term={keyword}&utm_content=ad-v1',
+  },
+  {
+    scenario: 'Monthly email newsletter',
+    url: 'https://example.com/blog/post?utm_source=newsletter&utm_medium=email&utm_campaign=march-digest&utm_content=hero-cta',
+  },
+  {
+    scenario: 'Instagram paid story',
+    url: 'https://example.com/product?utm_source=instagram&utm_medium=paidsocial&utm_campaign=summer-launch&utm_content=story-swipeup',
+  },
+  {
+    scenario: 'LinkedIn organic post',
+    url: 'https://example.com/case-study?utm_source=linkedin&utm_medium=social&utm_campaign=thought-leadership',
+  },
+  {
+    scenario: 'QR code on packaging',
+    url: 'https://example.com/welcome?utm_source=packaging&utm_medium=qr&utm_campaign=unboxing-flow&utm_content=product-box',
+  },
+];
+---
+
+<BaseLayout title="UTM Parameters" activeSection="docs">
+  <PageHeader
+    eyebrow="Documentation / SEO"
+    title="UTM Parameters"
+    description="UTM parameters are query string tags appended to URLs to track the source, medium, and campaign of traffic in Google Analytics, GA4, and other analytics platforms."
+  />
+
+  <!-- What are UTMs -->
+  <div class="csec">
+    <h2 class="csec-heading">What are UTM Parameters?</h2>
+    <p class="csec-desc">UTM stands for <strong>Urchin Tracking Module</strong> — named after Urchin Software, acquired by Google in 2005 to become Google Analytics. UTM parameters are appended to a destination URL as a query string and are read by analytics tools to attribute sessions to specific campaigns.</p>
+    <p class="csec-desc">Example URL with UTMs:</p>
+    <div class="url-example">
+      <span class="ue-base">https://example.com/landing</span><!--
+      --><span class="ue-sep">?</span><!--
+      --><span class="ue-param"><span class="ue-key">utm_source</span>=<span class="ue-val">google</span></span><!--
+      --><span class="ue-sep">&amp;</span><!--
+      --><span class="ue-param"><span class="ue-key">utm_medium</span>=<span class="ue-val">cpc</span></span><!--
+      --><span class="ue-sep">&amp;</span><!--
+      --><span class="ue-param"><span class="ue-key">utm_campaign</span>=<span class="ue-val">q1-brand</span></span><!--
+      --><span class="ue-sep">&amp;</span><!--
+      --><span class="ue-param"><span class="ue-key">utm_content</span>=<span class="ue-val">hero-cta</span></span>
+    </div>
+    <p class="csec-desc" style="margin-top:12px">UTMs don't affect page content or SEO — they're invisible to search engines and stripped from URLs in most share contexts. They only appear in your analytics reports.</p>
+  </div>
+
+  <!-- Parameters reference -->
+  <div class="csec">
+    <h2 class="csec-heading">Parameters Reference</h2>
+    <p class="csec-desc">GA4 reads all six UTM parameters. The first three (<code>utm_source</code>, <code>utm_medium</code>, <code>utm_campaign</code>) are required for attribution to work correctly.</p>
+    <div class="param-table">
+      <div class="pt-thead">
+        <span>Parameter</span>
+        <span>Required</span>
+        <span>Description</span>
+        <span>Example values</span>
+      </div>
+      {params.map(p => (
+        <div class="pt-row">
+          <span class="pt-param"><code>{p.param}</code></span>
+          <span class="pt-req">
+            {p.req
+              ? <span class="badge-req">Required</span>
+              : <span class="badge-opt">Optional</span>}
+          </span>
+          <span class="pt-desc">{p.desc}</span>
+          <span class="pt-ex">
+            {p.examples.map(e => <code class="ex-tag">{e}</code>)}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Medium taxonomy -->
+  <div class="csec">
+    <h2 class="csec-heading">Standard Medium Values</h2>
+    <p class="csec-desc">Use a consistent <code>utm_medium</code> taxonomy across your team. GA4 uses medium to group sessions into Default Channel Groups (Paid Search, Email, Social, etc.). Non-standard values will land in "Unassigned".</p>
+    <div class="medium-grid">
+      {mediums.map(m => (
+        <div class="medium-row">
+          <code class="medium-val">{m.medium}</code>
+          <span class="medium-desc">{m.desc}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Examples -->
+  <div class="csec">
+    <h2 class="csec-heading">Real-World Examples</h2>
+    <p class="csec-desc">Copy and adapt these patterns for your campaigns. Replace placeholder values with your actual campaign names.</p>
+    <div class="examples-list">
+      {examples.map(e => (
+        <div class="ex-card">
+          <span class="ex-scenario">{e.scenario}</span>
+          <div class="ex-url">{e.url}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Naming conventions -->
+  <div class="csec">
+    <h2 class="csec-heading">Naming Conventions</h2>
+    <p class="csec-desc">UTM values are case-sensitive in GA4. <code>Email</code> and <code>email</code> appear as two separate dimensions. Agree on and enforce a naming convention across your team.</p>
+    <div class="tips-grid">
+      {[
+        { label: 'Always lowercase', body: 'Use lowercase only. "Google" and "google" are different sources in GA4. Consistent casing is the single most important rule.' },
+        { label: 'Use hyphens, not spaces', body: 'Spaces become %20 or + in URLs and look messy. Use hyphens: q1-product-launch not "Q1 Product Launch".' },
+        { label: 'No special characters', body: 'Avoid &, =, #, ?, /, \\. These break URL parsing. Stick to letters, numbers, hyphens, and underscores.' },
+        { label: 'Be specific in campaign', body: 'Include year, quarter, or intent: 2026-q1-brand-awareness. Vague names like "campaign1" make reports unreadable.' },
+        { label: 'Document in a spreadsheet', body: 'Keep a shared UTM tracking sheet. Record the full URL, creation date, owner, and channel for every tagged link.' },
+        { label: 'Never use on internal links', body: 'Do not add UTM parameters to links within your own site. This resets the session source and pollutes attribution data.' },
+        { label: 'Use a URL builder', body: 'Use Google\'s Campaign URL Builder or UTM.io to generate tagged URLs and avoid typos. Never hand-write UTM strings.' },
+        { label: 'Shorten long URLs', body: 'After tagging, shorten with Bitly or your own domain shortener for cleaner sharing in social and print.' },
+      ].map(t => (
+        <div class="tip-card">
+          <span class="tip-title">{t.label}</span>
+          <span class="tip-body">{t.body}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- GA4 channel groupings -->
+  <div class="csec">
+    <h2 class="csec-heading">GA4 Default Channel Groups</h2>
+    <p class="csec-desc">GA4 uses <code>utm_source</code> and <code>utm_medium</code> combinations to automatically assign sessions to Default Channel Groups. Non-matching combinations land in "Unassigned".</p>
+    <div class="channel-table">
+      <div class="ch-thead">
+        <span>Channel</span>
+        <span>utm_medium matches</span>
+        <span>utm_source matches</span>
+      </div>
+      {[
+        { channel: 'Paid Search',      mediums: 'cpc, ppc, paidsearch',                sources: 'google, bing, yahoo, baidu' },
+        { channel: 'Organic Search',   mediums: 'organic',                              sources: 'google, bing, yahoo (auto)' },
+        { channel: 'Paid Social',      mediums: 'paidsocial, paid_social, paid-social', sources: 'facebook, instagram, linkedin, twitter, tiktok' },
+        { channel: 'Organic Social',   mediums: 'social, social-network',               sources: 'facebook, instagram, linkedin, twitter (auto)' },
+        { channel: 'Email',            mediums: 'email, e-mail, e_mail, newsletter',    sources: 'Any' },
+        { channel: 'Display',          mediums: 'display, banner, cpm',                 sources: 'Any' },
+        { channel: 'Affiliates',       mediums: 'affiliate',                            sources: 'Any' },
+        { channel: 'Referral',         mediums: 'referral',                             sources: 'Any' },
+        { channel: 'Direct',           mediums: '(none) or (not set)',                  sources: '(direct)' },
+      ].map(r => (
+        <div class="ch-row">
+          <span class="ch-name">{r.channel}</span>
+          <span class="ch-val"><code>{r.mediums}</code></span>
+          <span class="ch-val">{r.sources}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Tools -->
+  <div class="csec">
+    <h2 class="csec-heading">Tools</h2>
+    <div class="tools-list">
+      {[
+        { name: 'Google Campaign URL Builder', url: 'https://ga-dev-tools.google/campaign-url-builder/', note: 'Official Google tool. Fill in fields and it generates the tagged URL.' },
+        { name: 'UTM.io',                      url: 'https://utm.io/',                                    note: 'Team UTM builder with link history, templates, and shared workspaces.' },
+        { name: 'Bitly',                        url: 'https://bitly.com/',                                 note: 'URL shortener. Shorten long UTM-tagged URLs for cleaner sharing.' },
+        { name: 'GA4 Traffic Acquisition',      url: 'https://analytics.google.com/',                     note: 'Reports > Acquisition > Traffic Acquisition — see utm_source / utm_medium / utm_campaign breakdowns.' },
+        { name: 'GA4 Campaign Explorer',        url: 'https://analytics.google.com/',                     note: 'Explore > Blank exploration — create custom UTM attribution tables.' },
+      ].map(t => (
+        <div class="tool-row">
+          <span class="tool-name">{t.name}</span>
+          <span class="tool-note">{t.note}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+</BaseLayout>
+
+<style>
+  .csec { margin-bottom: 56px; }
+  .csec-heading { font-size: 16px; font-weight: 700; color: var(--black); margin: 0 0 8px; letter-spacing: -.01em; }
+  .csec-desc { font-size: 13px; color: var(--g2); line-height: 1.7; margin-bottom: 12px; max-width: 680px; }
+  .csec-desc code { font-family: var(--mono); font-size: .875em; background: var(--g5); padding: 1px 5px; border-radius: 3px; color: var(--g1); }
+  .csec-desc strong { color: var(--black); }
+
+  /* URL example */
+  .url-example {
+    font-family: var(--mono); font-size: 12.5px; line-height: 1.8;
+    background: #111; color: #e8e8e8;
+    padding: 16px 20px; border-radius: 6px;
+    overflow-x: auto; white-space: nowrap;
+    word-break: keep-all;
+  }
+  .ue-base    { color: #aaa; }
+  .ue-sep     { color: #555; }
+  .ue-key     { color: #f9b361; }
+  .ue-val     { color: #77dd77; }
+
+  /* Parameter table */
+  .param-table { border: 1px solid var(--g5); border-radius: 6px; overflow: hidden; }
+  .pt-thead { display: grid; grid-template-columns: 180px 90px 1fr 200px; background: var(--g6); border-bottom: 1px solid var(--g5); }
+  .pt-thead > span { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--g3); padding: 10px 14px; }
+  .pt-row { display: grid; grid-template-columns: 180px 90px 1fr 200px; border-top: 1px solid var(--g5); align-items: start; }
+  .pt-param { padding: 12px 14px; }
+  .pt-param code { font-family: var(--mono); font-size: 12px; color: var(--brand); background: rgba(247,146,30,.08); padding: 2px 6px; border-radius: 3px; }
+  .pt-req   { padding: 12px 14px; }
+  .pt-desc  { padding: 12px 14px 12px 0; font-size: 13px; color: var(--g2); line-height: 1.6; }
+  .pt-ex    { padding: 12px 14px 12px 0; display: flex; flex-wrap: wrap; gap: 4px; align-content: flex-start; }
+  .ex-tag   { font-family: var(--mono); font-size: 10px; background: var(--g5); color: var(--g2); padding: 2px 6px; border-radius: 3px; }
+  .badge-req { display: inline-block; font-size: 10px; font-weight: 700; font-family: var(--mono); background: #fadcd9; color: #a1160a; padding: 2px 7px; border-radius: 100px; }
+  .badge-opt { display: inline-block; font-size: 10px; font-weight: 700; font-family: var(--mono); background: var(--g5); color: var(--g3); padding: 2px 7px; border-radius: 100px; }
+
+  /* Medium grid */
+  .medium-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border: 1px solid var(--g5); border-radius: 6px; overflow: hidden; }
+  .medium-row { display: flex; align-items: center; gap: 14px; padding: 10px 14px; border-top: 1px solid var(--g5); border-right: 1px solid var(--g5); }
+  .medium-row:nth-child(even) { border-right: none; }
+  .medium-row:nth-child(-n+2) { border-top: none; }
+  .medium-val { font-family: var(--mono); font-size: 12px; color: var(--brand); background: rgba(247,146,30,.08); padding: 2px 8px; border-radius: 3px; min-width: 100px; flex-shrink: 0; }
+  .medium-desc { font-size: 13px; color: var(--g2); }
+
+  /* Examples */
+  .examples-list { display: flex; flex-direction: column; gap: 8px; }
+  .ex-card { border: 1px solid var(--g5); border-radius: 6px; overflow: hidden; }
+  .ex-scenario { display: block; padding: 10px 14px; font-size: 12px; font-weight: 600; color: var(--black); background: var(--g6); border-bottom: 1px solid var(--g5); }
+  .ex-url {
+    padding: 12px 14px; font-family: var(--mono); font-size: 12px; color: var(--g1);
+    line-height: 1.6; word-break: break-all; background: #0a0a0a; color: #aaa;
+  }
+
+  /* Tips grid */
+  .tips-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .tip-card { border: 1px solid var(--g5); border-radius: 6px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+  .tip-title { font-size: 12px; font-weight: 700; color: var(--black); }
+  .tip-body  { font-size: 12px; color: var(--g2); line-height: 1.6; }
+
+  /* Channel table */
+  .channel-table { border: 1px solid var(--g5); border-radius: 6px; overflow: hidden; }
+  .ch-thead { display: grid; grid-template-columns: 160px 1fr 1fr; background: var(--g6); border-bottom: 1px solid var(--g5); }
+  .ch-thead > span { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--g3); padding: 10px 14px; }
+  .ch-row { display: grid; grid-template-columns: 160px 1fr 1fr; border-top: 1px solid var(--g5); align-items: center; }
+  .ch-name { padding: 10px 14px; font-size: 13px; font-weight: 600; color: var(--black); }
+  .ch-val  { padding: 10px 14px; font-size: 12px; color: var(--g2); }
+  .ch-val code { font-family: var(--mono); font-size: 11px; background: var(--g5); padding: 1px 5px; border-radius: 3px; color: var(--g1); }
+
+  /* Tools list */
+  .tools-list { display: flex; flex-direction: column; border: 1px solid var(--g5); border-radius: 6px; overflow: hidden; }
+  .tool-row { display: grid; grid-template-columns: 240px 1fr; align-items: baseline; gap: 16px; padding: 12px 16px; border-top: 1px solid var(--g5); }
+  .tool-row:first-child { border-top: none; }
+  .tool-name { font-size: 13px; font-weight: 600; color: var(--black); }
+  .tool-note { font-size: 13px; color: var(--g2); line-height: 1.5; }
+
+  @media (max-width: 1100px) {
+    .tips-grid { grid-template-columns: repeat(2, 1fr); }
+    .pt-thead, .pt-row { grid-template-columns: 160px 80px 1fr; }
+    .pt-ex { display: none; }
+  }
+  @media (max-width: 900px) {
+    .medium-grid { grid-template-columns: 1fr; }
+    .medium-row { border-right: none !important; }
+    .medium-row:nth-child(-n+2) { border-top: 1px solid var(--g5); }
+    .medium-row:first-child { border-top: none; }
+    .ch-thead, .ch-row { grid-template-columns: 140px 1fr; }
+    .ch-thead > span:last-child, .ch-row > span:last-child { display: none; }
+  }
+  @media (max-width: 600px) {
+    .tips-grid { grid-template-columns: 1fr; }
+    .tool-row { grid-template-columns: 1fr; gap: 4px; }
+    .pt-thead, .pt-row { grid-template-columns: 1fr; }
+    .pt-thead > span:not(:first-child) { display: none; }
+  }
+</style>

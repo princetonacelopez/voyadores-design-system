@@ -1,0 +1,681 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+---
+
+<BaseLayout title="Accessibility">
+  <PageHeader
+    eyebrow="Get Started — Design"
+    title="Accessibility"
+    description="Guidelines for designing and developing inclusive Voyadores products that meet WCAG 2.1 standards and work for everyone."
+  />
+
+  <!-- Principles -->
+  <section class="sec">
+    <h2>Core Principles</h2>
+    <p class="body-text">Accessibility in Voyadores products is guided by the four WCAG 2.1 principles — POUR. Every UI element and interaction should satisfy all four.</p>
+
+    <div class="pour-grid">
+      {[
+        {
+          letter: 'P',
+          label: 'Perceivable',
+          color: 'blue',
+          desc: 'Information and UI components must be presentable to users in ways they can perceive — nothing should be invisible to all of their senses.',
+          items: ['Provide text alternatives for non-text content', 'Add captions and alternatives for time-based media', 'Create content that can be presented in different ways without losing meaning', 'Make it easy for users to see and hear content'],
+        },
+        {
+          letter: 'O',
+          label: 'Operable',
+          color: 'orange',
+          desc: 'UI components and navigation must be operable — users must be able to operate the interface regardless of input method.',
+          items: ['All functionality must be accessible via keyboard', 'Give users enough time to read and use content', 'Do not design content that causes seizures or physical reactions', 'Help users navigate and find content'],
+        },
+        {
+          letter: 'U',
+          label: 'Understandable',
+          color: 'purple',
+          desc: 'Information and the operation of the UI must be understandable — users must be able to understand both the content and how to use it.',
+          items: ['Make text readable and understandable', 'Make content appear and operate in predictable ways', 'Help users avoid and correct mistakes'],
+        },
+        {
+          letter: 'R',
+          label: 'Robust',
+          color: 'green',
+          desc: 'Content must be robust enough to be interpreted by a wide variety of user agents, including assistive technologies.',
+          items: ['Maximize compatibility with current and future tools', 'Use valid, well-structured semantic HTML', 'Ensure name, role, and value are exposed to assistive technologies'],
+        },
+      ].map(p => (
+        <div class:list={['pour-card', `pour-card--${p.color}`]}>
+          <div class:list={['pour-letter', `pour-letter--${p.color}`]}>{p.letter}</div>
+          <h3>{p.label}</h3>
+          <p class="pour-desc">{p.desc}</p>
+          <ul class="pour-list">
+            {p.items.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Color & Contrast -->
+  <section class="sec">
+    <h2>Color &amp; Contrast</h2>
+    <p class="body-text">Color must never be the only means of conveying information. Always pair color with text, icons, or patterns. All text must meet WCAG 2.1 Level AA contrast ratios.</p>
+
+    <div class="contrast-grid">
+      <div class="contrast-card">
+        <div class="contrast-badge contrast-badge--pass">AA</div>
+        <p class="contrast-label">Normal Text</p>
+        <p class="contrast-ratio">4.5 : 1</p>
+        <p class="contrast-size">17pt / 22.67px and below</p>
+      </div>
+      <div class="contrast-card">
+        <div class="contrast-badge contrast-badge--pass">AA</div>
+        <p class="contrast-label">Large Text</p>
+        <p class="contrast-ratio">3 : 1</p>
+        <p class="contrast-size">18pt / 24px and above, or 14pt bold</p>
+      </div>
+      <div class="contrast-card">
+        <div class="contrast-badge contrast-badge--pass">AA</div>
+        <p class="contrast-label">UI Components &amp; Graphics</p>
+        <p class="contrast-ratio">3 : 1</p>
+        <p class="contrast-size">Against adjacent colors</p>
+      </div>
+      <div class="contrast-card">
+        <div class="contrast-badge contrast-badge--aaa">AAA</div>
+        <p class="contrast-label">Enhanced Normal Text</p>
+        <p class="contrast-ratio">7 : 1</p>
+        <p class="contrast-size">Target for primary body text</p>
+      </div>
+    </div>
+
+    <div class="subsec-spacer"></div>
+
+    <div class="guideline-cards">
+      {[
+        'Never use color alone to convey status, meaning, or required action — always pair with text or an icon.',
+        'Test all designs in grayscale to confirm information is still perceivable without color.',
+        'Avoid placing text over busy or low-contrast background images.',
+        'Brand orange (#f7921e) on white does not meet AA — always pair brand color with sufficient contrast support text.',
+        'Provide a focus indicator with a minimum contrast ratio of 3:1 against adjacent colors.',
+        'Support both light and dark mode; verify contrast ratios in both.',
+      ].map((g, i) => (
+        <div class="g-item-card">
+          <div class="g-item-num">{i + 1}</div>
+          <p class="g-item-title">{g}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Typography -->
+  <section class="sec">
+    <h2>Typography Accessibility</h2>
+
+    <div class="subsec">
+      <h3 class="subsec-title">Legibility</h3>
+      <div class="guideline-cards">
+        {[
+          'Minimum body font size of 14px (1rem). Do not use font sizes below 11px for any visible content.',
+          'Line height (line-spacing) of at least 1.5× the font size for body text.',
+          'Paragraph spacing at least 2× the font size.',
+          'Letter spacing at least 0.12× the font size; word spacing at least 0.16× the font size.',
+          'Limit line length to 60–80 characters for optimal readability.',
+          'Do not justify body text — left-aligned text is easier for users with dyslexia to read.',
+        ].map((g, i) => (
+          <div class="g-item-card">
+            <div class="g-item-num">{i + 1}</div>
+            <p class="g-item-title">{g}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="subsec">
+      <h3 class="subsec-title">Hierarchy</h3>
+      <div class="guideline-cards">
+        {[
+          'Use semantic heading elements (h1–h6) in logical order — never skip heading levels.',
+          'Do not use heading elements purely for visual styling; use CSS classes instead.',
+          'Ensure heading hierarchy reflects page structure so screen readers can navigate sections.',
+          'Use <strong> and <em> for semantic emphasis, not purely decorative bold/italic.',
+        ].map((g, i) => (
+          <div class="g-item-card">
+            <div class="g-item-num">{i + 1}</div>
+            <p class="g-item-title">{g}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Keyboard Navigation -->
+  <section class="sec">
+    <h2>Keyboard Navigation</h2>
+    <p class="body-text">Every interactive element must be fully operable by keyboard alone. Users who cannot use a mouse depend entirely on keyboard access.</p>
+
+    <div class="keyboard-grid">
+      {[
+        { key: 'Tab',          action: 'Move focus to the next focusable element' },
+        { key: 'Shift + Tab', action: 'Move focus to the previous focusable element' },
+        { key: 'Enter',        action: 'Activate a link or button' },
+        { key: 'Space',        action: 'Toggle checkboxes; activate buttons' },
+        { key: '↑ ↓',          action: 'Navigate between radio buttons, menu items, or list options' },
+        { key: '← →',          action: 'Navigate between tabs or sliders' },
+        { key: 'Esc',          action: 'Close modals, dropdowns, or tooltips' },
+        { key: 'Home / End',   action: 'Jump to the first or last item in a list or menu' },
+      ].map(k => (
+        <div class="key-row">
+          <kbd class="key-badge">{k.key}</kbd>
+          <span class="key-action">{k.action}</span>
+        </div>
+      ))}
+    </div>
+
+    <div class="subsec-spacer"></div>
+
+    <div class="guideline-cards">
+      {[
+        'Ensure a visible, high-contrast focus indicator is present on all interactive elements.',
+        'Do not suppress the default browser focus outline without providing a clearly visible custom alternative.',
+        'Logical focus order must follow the visual reading order of the page.',
+        'Trap focus inside open modals and dialogs so keyboard users cannot tab behind them.',
+        'Provide a "Skip to main content" link as the first focusable element on every page.',
+        'Interactive components built with non-semantic HTML (div, span) must receive tabindex="0" and keyboard event handlers.',
+      ].map((g, i) => (
+        <div class="g-item-card">
+          <div class="g-item-num">{i + 1}</div>
+          <p class="g-item-title">{g}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ARIA & Semantic HTML -->
+  <section class="sec">
+    <h2>ARIA &amp; Semantic HTML</h2>
+    <p class="body-text">Use native HTML elements wherever possible. ARIA supplements — it never replaces — native semantics. Follow the first rule of ARIA: if a native HTML element can do the job, use it.</p>
+
+    <div class="aria-rules">
+      {[
+        {
+          rule: 'Rule 1',
+          title: 'Use native HTML first',
+          desc: 'Prefer <button>, <a>, <input>, <select>, <nav>, <main>, <aside>, and other semantic elements before reaching for ARIA roles.',
+        },
+        {
+          rule: 'Rule 2',
+          title: 'Do not change native semantics',
+          desc: 'Avoid role="button" on a <div> when a <button> works. Adding ARIA to override a native role confuses assistive technologies.',
+        },
+        {
+          rule: 'Rule 3',
+          title: 'Keyboard support is required',
+          desc: 'All interactive ARIA widgets (role="combobox", role="listbox", etc.) must have full keyboard support matching their WAI-ARIA design pattern.',
+        },
+        {
+          rule: 'Rule 4',
+          title: 'Do not hide focusable elements',
+          desc: 'Elements with aria-hidden="true" must not receive keyboard focus. Remove from tab order with tabindex="-1" or restructure the DOM.',
+        },
+        {
+          rule: 'Rule 5',
+          title: 'All interactive elements need an accessible name',
+          desc: 'Buttons, links, and form controls must have a visible label or an aria-label / aria-labelledby so screen readers can announce them.',
+        },
+      ].map((r, i) => (
+        <div class="aria-card">
+          <div class="aria-rule-badge">{r.rule}</div>
+          <div>
+            <p class="aria-title">{r.title}</p>
+            <p class="aria-desc">{r.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="subsec-spacer"></div>
+
+    <h3 class="subsec-title">Common ARIA Patterns</h3>
+    <div class="aria-table">
+      <div class="aria-table-head">
+        <span>Component</span>
+        <span>Required Attributes</span>
+        <span>Notes</span>
+      </div>
+      {[
+        { comp: 'Icon button',      attrs: 'aria-label',                    note: 'Visible label not needed when icon is self-explanatory, but label is required.' },
+        { comp: 'Modal / Dialog',   attrs: 'role="dialog", aria-modal, aria-labelledby', note: 'Focus must be trapped inside while open.' },
+        { comp: 'Toggle button',    attrs: 'aria-pressed',                  note: 'Use true / false to reflect pressed state.' },
+        { comp: 'Accordion',        attrs: 'aria-expanded, aria-controls',  note: 'Toggle aria-expanded on trigger; target content id in aria-controls.' },
+        { comp: 'Tab panel',        attrs: 'role="tablist", role="tab", aria-selected, aria-controls', note: 'Follow WAI-ARIA Tabs pattern for keyboard.' },
+        { comp: 'Alert / Toast',    attrs: 'role="alert" or aria-live',     note: 'Use role="alert" (assertive) for errors; aria-live="polite" for notices.' },
+        { comp: 'Form field error', attrs: 'aria-describedby, aria-invalid',note: 'Link error message id to field via aria-describedby.' },
+        { comp: 'Progress bar',     attrs: 'role="progressbar", aria-valuenow, aria-valuemin, aria-valuemax', note: 'Update aria-valuenow dynamically.' },
+      ].map(row => (
+        <div class="aria-table-row">
+          <span class="aria-comp">{row.comp}</span>
+          <code class="aria-attrs">{row.attrs}</code>
+          <span class="aria-note">{row.note}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Images & Media -->
+  <section class="sec">
+    <h2>Images &amp; Media</h2>
+
+    <div class="subsec">
+      <h3 class="subsec-title">Images</h3>
+      <div class="guideline-cards">
+        {[
+          'Every <img> must have an alt attribute — even if empty (alt="") for decorative images.',
+          'Alt text should describe the purpose of the image, not its appearance. "Chart showing 40% growth in Q3" not "bar chart".',
+          'Decorative images that add no informational value should use alt="" so screen readers skip them.',
+          'Complex images (charts, diagrams) should also have a long description via aria-describedby or an adjacent visible caption.',
+          'CSS background images used for decoration need no alt text, but if they convey meaning, reproduce that meaning in text.',
+        ].map((g, i) => (
+          <div class="g-item-card">
+            <div class="g-item-num">{i + 1}</div>
+            <p class="g-item-title">{g}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="subsec">
+      <h3 class="subsec-title">Video &amp; Audio</h3>
+      <div class="guideline-cards">
+        {[
+          'Provide captions for all pre-recorded audio and video content.',
+          'Provide audio descriptions for pre-recorded video when the audio track does not describe the visual content.',
+          'Provide transcripts for all audio-only content (podcasts, recordings).',
+          'Do not auto-play audio. Always provide player controls.',
+          'Provide a way to pause, stop, or hide any auto-playing content that lasts more than 3 seconds.',
+          'Avoid content that flashes more than 3 times per second to prevent seizure risk.',
+        ].map((g, i) => (
+          <div class="g-item-card">
+            <div class="g-item-num">{i + 1}</div>
+            <p class="g-item-title">{g}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Forms -->
+  <section class="sec">
+    <h2>Forms</h2>
+    <p class="body-text">Forms are the primary way users input data. Inaccessible forms are a critical barrier. Follow these guidelines for every form in Voyadores products.</p>
+
+    <div class="guideline-cards">
+      {[
+        'Every form input must have a visible, persistent label. Placeholder text is not a substitute for a label.',
+        'Associate labels programmatically using for/id pairing or aria-labelledby.',
+        'Group related fields using <fieldset> and <legend> (especially radio buttons and checkboxes).',
+        'Display inline error messages immediately adjacent to the offending field — not only at the top of the form.',
+        'Error messages must be specific: "Enter a valid email address" not "Invalid input".',
+        'Mark required fields with both a visual indicator and aria-required="true".',
+        'Do not rely on color alone to indicate field errors — pair with an icon and error text.',
+        'Provide autocomplete attributes on common fields (name, email, tel, etc.) to assist users.',
+        'Ensure form submission feedback (success or error) is announced to screen readers via an aria-live region or focus shift.',
+      ].map((g, i) => (
+        <div class="g-item-card">
+          <div class="g-item-num">{i + 1}</div>
+          <p class="g-item-title">{g}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Motion & Animation -->
+  <section class="sec">
+    <h2>Motion &amp; Animation</h2>
+    <p class="body-text">Animations can cause discomfort or trigger vestibular disorders for some users. Always respect the user's motion preference.</p>
+
+    <div class="guideline-cards">
+      {[
+        'Wrap all non-essential animations in @media (prefers-reduced-motion: reduce) and disable or minimize them.',
+        'Do not rely on animation to convey critical information.',
+        'Avoid parallax scrolling effects or large motion sequences without a way to disable them.',
+        'Keep animation durations short — under 300ms for transitions; under 500ms for entrances.',
+        'Avoid looping animations that have no user benefit.',
+        'If autoplaying animations exist, provide a pause/stop control visible on focus.',
+      ].map((g, i) => (
+        <div class="g-item-card">
+          <div class="g-item-num">{i + 1}</div>
+          <p class="g-item-title">{g}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Testing -->
+  <section class="sec">
+    <h2>Testing for Accessibility</h2>
+    <p class="body-text">Automated tools catch roughly 30% of accessibility issues. Manual testing — including assistive technology testing — is required before shipping.</p>
+
+    <div class="testing-steps">
+      {[
+        {
+          n: '1', color: 'blue', title: 'Automated Scan',
+          items: ['Run axe DevTools or Lighthouse Accessibility audit', 'Fix all Critical and Serious issues before review', 'Use eslint-plugin-jsx-a11y for React/JSX components'],
+        },
+        {
+          n: '2', color: 'purple', title: 'Keyboard Test',
+          items: ['Tab through the entire page — verify all interactive elements are reachable', 'Confirm logical focus order matches visual order', 'Verify focus indicator is always visible'],
+        },
+        {
+          n: '3', color: 'orange', title: 'Screen Reader Test',
+          items: ['macOS: VoiceOver (Cmd+F5)', 'Windows: NVDA (free) or JAWS', 'Mobile: VoiceOver (iOS), TalkBack (Android)', 'Verify all content is announced correctly'],
+        },
+        {
+          n: '4', color: 'green', title: 'Visual Check',
+          items: ['Test at 200% browser zoom — no content should be clipped or lost', 'Test in grayscale (color-blind simulation)', 'Verify contrast ratios with browser DevTools or Colour Contrast Analyser'],
+        },
+      ].map(step => (
+        <div class:list={['ts-card', `ts-card--${step.color}`]}>
+          <div class:list={['ts-num', `ts-num--${step.color}`]}>{step.n}</div>
+          <div class="ts-body">
+            <h3>{step.title}</h3>
+            <ul>
+              {step.items.map(item => <li>{item}</li>)}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- WCAG Levels Reference -->
+  <section class="sec">
+    <h2>WCAG 2.1 Conformance Levels</h2>
+    <p class="body-text">Voyadores products must meet Level AA at minimum. Aim for AAA where practical.</p>
+
+    <div class="wcag-levels">
+      {[
+        {
+          level: 'A',
+          label: 'Minimum',
+          color: 'red',
+          desc: 'The most basic accessibility requirements. Without these, content is inaccessible to many users. Non-negotiable — must pass.',
+        },
+        {
+          level: 'AA',
+          label: 'Target',
+          color: 'orange',
+          desc: 'The standard level for most legal compliance and is the Voyadores minimum. Addresses the most common barriers for users with disabilities.',
+        },
+        {
+          level: 'AAA',
+          label: 'Enhanced',
+          color: 'green',
+          desc: 'The highest level of accessibility. Not always achievable for all content but should be targeted for key user journeys and critical interfaces.',
+        },
+      ].map(l => (
+        <div class:list={['wcag-card', `wcag-card--${l.color}`]}>
+          <div class:list={['wcag-badge', `wcag-badge--${l.color}`]}>
+            <span class="wcag-level">{l.level}</span>
+            <span class="wcag-label">{l.label}</span>
+          </div>
+          <p class="wcag-desc">{l.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .sec { margin-bottom: 80px; }
+
+  .sec h2 {
+    font-size: 20px; font-weight: 600; letter-spacing: -.4px; color: var(--black);
+    margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--g5);
+  }
+
+  .body-text {
+    font-size: 14px; font-weight: 500; color: var(--g1); line-height: 1.7;
+    max-width: 680px; margin-bottom: 20px;
+  }
+
+  .subsec-spacer { height: 24px; }
+
+  /* ── POUR grid ───────────────────────────────────────────────────────── */
+  .pour-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
+  }
+
+  .pour-card {
+    border: 1px solid var(--g5); border-radius: 8px;
+    padding: 20px 22px; background: var(--white);
+    border-top-width: 3px;
+  }
+  .pour-card--blue   { border-top-color: #186ade; }
+  .pour-card--orange { border-top-color: var(--brand); }
+  .pour-card--purple { border-top-color: #7952b3; }
+  .pour-card--green  { border-top-color: #077d55; }
+
+  .pour-letter {
+    font-family: var(--mono); font-size: 22px; font-weight: 800;
+    line-height: 1; margin-bottom: 10px;
+  }
+  .pour-letter--blue   { color: #186ade; }
+  .pour-letter--orange { color: var(--brand); }
+  .pour-letter--purple { color: #7952b3; }
+  .pour-letter--green  { color: #077d55; }
+
+  .pour-card h3 {
+    font-size: 14px; font-weight: 700; color: var(--black); margin-bottom: 8px;
+  }
+  .pour-desc {
+    font-size: 12px; font-weight: 500; color: var(--g2); line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .pour-list {
+    padding-left: 16px; list-style: disc;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .pour-list li { font-size: 11.5px; font-weight: 500; color: var(--g2); line-height: 1.5; }
+
+  /* ── Contrast grid ───────────────────────────────────────────────────── */
+  .contrast-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .contrast-card {
+    border: 1px solid var(--g5); border-radius: 8px;
+    padding: 16px 18px; background: var(--white);
+    text-align: center;
+  }
+
+  .contrast-badge {
+    display: inline-block; font-size: 9px; font-weight: 800;
+    letter-spacing: .08em; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 3px; margin-bottom: 10px;
+  }
+  .contrast-badge--pass { background: rgba(7,125,85,.1);  color: #077d55; }
+  .contrast-badge--aaa  { background: rgba(24,106,222,.1); color: #186ade; }
+
+  .contrast-label {
+    font-size: 11px; font-weight: 700; color: var(--black); margin-bottom: 6px;
+  }
+  .contrast-ratio {
+    font-family: var(--mono); font-size: 22px; font-weight: 700;
+    color: var(--black); margin-bottom: 4px;
+  }
+  .contrast-size { font-size: 10.5px; font-weight: 500; color: var(--g3); line-height: 1.4; }
+
+  /* ── Subsection ──────────────────────────────────────────────────────── */
+  .subsec { margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid var(--g5); }
+  .subsec:last-child { border-bottom: none; margin-bottom: 0; }
+
+  .subsec-title {
+    font-size: 15px; font-weight: 700; color: var(--black);
+    margin-bottom: 12px;
+  }
+
+  /* ── Guideline cards ─────────────────────────────────────────────────── */
+  .guideline-cards { display: flex; flex-direction: column; gap: 6px; }
+
+  .g-item-card {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 10px 14px; background: var(--g6);
+    border: 1px solid var(--g5); border-radius: 6px;
+  }
+  .g-item-num {
+    flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%;
+    background: var(--white); border: 1px solid var(--g4);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 700; color: var(--g2); margin-top: 1px;
+  }
+  .g-item-title {
+    font-size: 12px; font-weight: 500; color: var(--g1); line-height: 1.6;
+  }
+
+  /* ── Keyboard grid ───────────────────────────────────────────────────── */
+  .keyboard-grid {
+    display: flex; flex-direction: column; gap: 0;
+    border: 1px solid var(--g5); border-radius: 8px; overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .key-row {
+    display: flex; align-items: center; gap: 14px;
+    padding: 10px 16px; border-bottom: 1px solid var(--g5);
+  }
+  .key-row:last-child { border-bottom: none; }
+
+  .key-badge {
+    flex-shrink: 0; font-family: var(--mono); font-size: 11px; font-weight: 700;
+    background: var(--g6); border: 1px solid var(--g4); border-radius: 4px;
+    padding: 3px 8px; color: var(--black); min-width: 96px; text-align: center;
+  }
+  .key-action { font-size: 12px; font-weight: 500; color: var(--g1); }
+
+  /* ── ARIA rules ──────────────────────────────────────────────────────── */
+  .aria-rules { display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
+
+  .aria-card {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 14px 16px; border: 1px solid var(--g5);
+    border-radius: 6px; background: var(--white);
+  }
+  .aria-rule-badge {
+    flex-shrink: 0; font-size: 9px; font-weight: 800; letter-spacing: .06em;
+    text-transform: uppercase; padding: 3px 8px; border-radius: 3px;
+    background: rgba(247,146,30,.12); color: var(--brand); margin-top: 2px;
+    white-space: nowrap;
+  }
+  .aria-title { font-size: 13px; font-weight: 700; color: var(--black); margin-bottom: 4px; }
+  .aria-desc  { font-size: 12px; font-weight: 500; color: var(--g2); line-height: 1.6; }
+
+  /* ── ARIA table ──────────────────────────────────────────────────────── */
+  .aria-table {
+    border: 1px solid var(--g5); border-radius: 8px; overflow: hidden;
+  }
+
+  .aria-table-head {
+    display: grid; grid-template-columns: 160px 1fr 1fr;
+    padding: 8px 14px;
+    background: var(--g6); border-bottom: 1px solid var(--g5);
+    font-size: 10px; font-weight: 800; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--g2);
+    gap: 12px;
+  }
+
+  .aria-table-row {
+    display: grid; grid-template-columns: 160px 1fr 1fr;
+    padding: 10px 14px; border-bottom: 1px solid var(--g5);
+    gap: 12px; align-items: start;
+  }
+  .aria-table-row:last-child { border-bottom: none; }
+
+  .aria-comp  { font-size: 12px; font-weight: 700; color: var(--black); }
+  .aria-attrs {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    color: #7952b3; line-height: 1.6; word-break: break-word;
+  }
+  .aria-note  { font-size: 11.5px; font-weight: 500; color: var(--g2); line-height: 1.5; }
+
+  /* ── Testing steps ───────────────────────────────────────────────────── */
+  .testing-steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  .ts-card {
+    border: 1px solid var(--g5); border-radius: 8px;
+    padding: 18px 20px; background: var(--white);
+    border-top-width: 3px;
+  }
+  .ts-card--blue   { border-top-color: #186ade; }
+  .ts-card--purple { border-top-color: #7952b3; }
+  .ts-card--orange { border-top-color: var(--brand); }
+  .ts-card--green  { border-top-color: #077d55; }
+
+  .ts-num {
+    font-family: var(--mono); font-size: 11px; font-weight: 700;
+    width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 12px;
+  }
+  .ts-num--blue   { background: rgba(24,106,222,.1);  color: #186ade; }
+  .ts-num--purple { background: rgba(121,82,179,.1);  color: #7952b3; }
+  .ts-num--orange { background: rgba(247,146,30,.12); color: var(--brand); }
+  .ts-num--green  { background: rgba(7,125,85,.1);    color: #077d55; }
+
+  .ts-body h3 {
+    font-size: 13px; font-weight: 700; color: var(--black); margin-bottom: 10px;
+  }
+  .ts-body ul { padding-left: 16px; list-style: disc; display: flex; flex-direction: column; gap: 5px; }
+  .ts-body li { font-size: 12px; font-weight: 500; color: var(--g2); line-height: 1.5; }
+
+  /* ── WCAG levels ─────────────────────────────────────────────────────── */
+  .wcag-levels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+
+  .wcag-card {
+    border: 1px solid var(--g5); border-radius: 8px;
+    padding: 20px; background: var(--white);
+    border-top-width: 3px;
+  }
+  .wcag-card--red    { border-top-color: #dc3545; }
+  .wcag-card--orange { border-top-color: var(--brand); }
+  .wcag-card--green  { border-top-color: #077d55; }
+
+  .wcag-badge {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+  }
+
+  .wcag-level {
+    font-family: var(--mono); font-size: 28px; font-weight: 800; line-height: 1;
+  }
+  .wcag-card--red    .wcag-level { color: #dc3545; }
+  .wcag-card--orange .wcag-level { color: var(--brand); }
+  .wcag-card--green  .wcag-level { color: #077d55; }
+
+  .wcag-label {
+    font-size: 10px; font-weight: 800; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--g2);
+    padding: 3px 8px; border-radius: 3px; background: var(--g6);
+    border: 1px solid var(--g5);
+  }
+
+  .wcag-desc { font-size: 12px; font-weight: 500; color: var(--g2); line-height: 1.6; }
+
+  /* ── Responsive ──────────────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .pour-grid      { grid-template-columns: 1fr; }
+    .contrast-grid  { grid-template-columns: repeat(2, 1fr); }
+    .testing-steps  { grid-template-columns: 1fr; }
+    .wcag-levels    { grid-template-columns: 1fr; }
+    .aria-table-head,
+    .aria-table-row { grid-template-columns: 120px 1fr; }
+    .aria-table-head span:last-child,
+    .aria-table-row .aria-note { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .contrast-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -16,15 +16,20 @@ const typeScale = [
   { label: 'Overline',    size: '.6875rem',weight: 600, ls: '.08em',   sample: 'OVERLINE TEXT'                    },
 ];
 
+const lexendWeights   = [100,200,300,400,500,600,700,800,900];
 const urbanistWeights = [100,200,300,400,500,600,700,800,900];
 const chivoWeights    = [100,200,300,400,500,600,700,800,900];
 ---
 
 <BaseLayout title="Typography" activeSection="typography">
+  <Fragment slot="head">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  </Fragment>
+
   <PageHeader
     eyebrow="Typography"
     title="Type System"
-    description="Urbanist is our primary typeface. Chivo Mono handles all code and monospace contexts."
+    description="Lexend is the primary typeface. Urbanist is the alternative sans-serif. Chivo Mono handles all code and monospace contexts."
   />
 
   <!-- Tokens -->
@@ -32,8 +37,13 @@ const chivoWeights    = [100,200,300,400,500,600,700,800,900];
     <h2>Font Tokens</h2>
     <div class="token-row">
       <div class="token-card">
-        <span class="tk-label">Sans-serif</span>
-        <span class="tk-var">--font</span>
+        <span class="tk-label">Primary Sans-serif</span>
+        <span class="tk-var">--vds-font-sans-serif</span>
+        <span class="tk-sample" style="font-family:'Lexend',sans-serif">Lexend</span>
+      </div>
+      <div class="token-card">
+        <span class="tk-label">Alternative Sans-serif</span>
+        <span class="tk-var">--vds-font-alt</span>
         <span class="tk-sample tk-sample--sans">Urbanist</span>
       </div>
       <div class="token-card">
@@ -54,7 +64,7 @@ const chivoWeights    = [100,200,300,400,500,600,700,800,900];
             <span class="st-label">{t.label}</span>
             <span class="st-props">{t.size} / {t.weight}</span>
           </div>
-          <div class="st-sample" style={`font-size:${t.size};font-weight:${t.weight};letter-spacing:${t.ls};font-family:var(--font);`}>
+          <div class="st-sample" style={`font-size:${t.size};font-weight:${t.weight};letter-spacing:${t.ls};font-family:'Lexend',sans-serif;`}>
             {t.sample}
           </div>
         </div>
@@ -62,9 +72,29 @@ const chivoWeights    = [100,200,300,400,500,600,700,800,900];
     </div>
   </section>
 
+  <!-- Lexend specimen -->
+  <section class="sec">
+    <h2>Lexend</h2>
+    <p class="sec-note">Primary sans-serif — the main typeface for all Voyadores product interfaces.</p>
+    <div class="specimen">
+      <div class="sp-display" style="font-family:'Lexend',sans-serif">Aa</div>
+      <p class="sp-pangram" style="font-family:'Lexend',sans-serif">The quick brown fox jumps over the lazy dog.</p>
+      <p class="sp-alpha" style="font-family:'Lexend',sans-serif">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789 !@#$%&</p>
+      <div class="sp-weights">
+        {lexendWeights.map(w => (
+          <div class="spw-row">
+            <span class="spw-label">{w}</span>
+            <span class="spw-sample" style={`font-weight:${w};font-family:'Lexend',sans-serif`}>The quick brown fox — {w}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- Urbanist specimen -->
   <section class="sec">
     <h2>Urbanist</h2>
+    <p class="sec-note">Alternative sans-serif — for contexts requiring a more geometric, modern feel.</p>
     <div class="specimen">
       <div class="sp-display" style="font-family:var(--font)">Aa</div>
       <p class="sp-pangram" style="font-family:var(--font)">The quick brown fox jumps over the lazy dog.</p>
@@ -125,7 +155,8 @@ const chivoWeights    = [100,200,300,400,500,600,700,800,900];
   }
 
   /* Tokens */
-  .token-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .token-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .sec-note { font-size: 13px; font-weight: 500; color: var(--g2); line-height: 1.6; margin-bottom: 20px; }
   .token-card { padding: 24px; border: 1px solid var(--g5); border-radius: 2px; }
   .tk-label { display: block; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--g2); margin-bottom: 6px; }
   .tk-var   { display: block; font-size: 12px; font-family: var(--mono); color: var(--g2); margin-bottom: 12px; }
@@ -168,6 +199,9 @@ const chivoWeights    = [100,200,300,400,500,600,700,800,900];
   .code-block pre { margin: 0; padding: 24px; }
   .code-block code { font-family: var(--mono); font-size: 13px; color: #f5f5f5; line-height: 1.8; white-space: pre; }
 
+  @media (max-width: 767px) {
+    .token-row { grid-template-columns: repeat(2, 1fr); }
+  }
   @media (max-width: 480px) {
     .token-row { grid-template-columns: 1fr; }
     .st-row { grid-template-columns: 1fr; gap: 6px; }

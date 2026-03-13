@@ -20,37 +20,23 @@ import PageHeader from '../../../components/PageHeader.astro';
       <div class="format-card">
         <div class="format-num">1</div>
         <div class="format-body">
-          <p class="format-name">Internal Change Request Presentation <span class="format-abbr">ICRP</span></p>
+          <p class="format-name">Change Request Presentation <span class="format-abbr">CRP</span></p>
           <div class="format-row">
             <span class="format-badge format-badge--format">Format</span>
-            <code>[Ticket No.] [Project Name] [High Level Description] – ICRP</code>
+            <code>[Ticket No.] [Project Name] [High Level Description] – CRP</code>
           </div>
           <div class="format-row">
             <span class="format-badge format-badge--example">Example</span>
-            <span class="format-example">VOYW-000001 Voyadores Incident Report – ICRP</span>
+            <span class="format-example">VOYW-000001 Voyadores Incident Report – CRP</span>
           </div>
+          <p class="format-note">Used for both Internal (ICRP) and External (ECRP) presentations.</p>
         </div>
       </div>
 
       <div class="format-card">
         <div class="format-num">2</div>
         <div class="format-body">
-          <p class="format-name">External Change Request Presentation <span class="format-abbr">ECRP</span></p>
-          <div class="format-row">
-            <span class="format-badge format-badge--format">Format</span>
-            <code>[Ticket No.] [Project Name] [High Level Description] – ECRP</code>
-          </div>
-          <div class="format-row">
-            <span class="format-badge format-badge--example">Example</span>
-            <span class="format-example">VOYW-000001 Voyadores Incident Report – ECRP</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="format-card">
-        <div class="format-num">3</div>
-        <div class="format-body">
-          <p class="format-name">Change Request Requirement Discussion <span class="format-abbr">CRRD</span></p>
+          <p class="format-name">Change Request Requirements Discussion <span class="format-abbr">CRRD</span></p>
           <div class="format-row">
             <span class="format-badge format-badge--format">Format</span>
             <code>[Ticket No.] [Project Name] [High Level Description] – CRRD</code>
@@ -63,7 +49,7 @@ import PageHeader from '../../../components/PageHeader.astro';
       </div>
 
       <div class="format-card">
-        <div class="format-num">4</div>
+        <div class="format-num">3</div>
         <div class="format-body">
           <p class="format-name">Change Request Design Discussion <span class="format-abbr">CRDD</span></p>
           <div class="format-row">
@@ -78,7 +64,7 @@ import PageHeader from '../../../components/PageHeader.astro';
       </div>
 
       <div class="format-card">
-        <div class="format-num">5</div>
+        <div class="format-num">4</div>
         <div class="format-body">
           <p class="format-name">Change Request Technical Discussion <span class="format-abbr">CRTD</span></p>
           <div class="format-row">
@@ -145,7 +131,7 @@ import PageHeader from '../../../components/PageHeader.astro';
       </div>
       <div class="meta-item">
         <span class="meta-label">Meeting Title</span>
-        <code class="meta-code">CRRD – [Ticket No.] [Short Description]</code>
+        <code class="meta-code">[Ticket No.] [Project Name] [High Level Description] – CRRD</code>
       </div>
     </div>
 
@@ -289,7 +275,7 @@ import PageHeader from '../../../components/PageHeader.astro';
       </div>
       <div class="meta-item">
         <span class="meta-label">Meeting Title</span>
-        <code class="meta-code">CRDD – [Ticket No.] [Short Description]</code>
+        <code class="meta-code">[Ticket No.] [Project Name] [High Level Description] – CRDD</code>
       </div>
     </div>
 
@@ -417,7 +403,7 @@ import PageHeader from '../../../components/PageHeader.astro';
 
   <!-- Change Request Presentation -->
   <section class="sec">
-    <h2>Change Request Presentation</h2>
+    <h2>Change Request Presentation <span class="h2-abbr">CRP</span></h2>
 
     <!-- Internal -->
     <div class="cr-type-header">
@@ -436,7 +422,7 @@ import PageHeader from '../../../components/PageHeader.astro';
       </div>
       <div class="meta-item">
         <span class="meta-label">Meeting Title</span>
-        <code class="meta-code">ICRP – [Ticket No.] [High Level Description]</code>
+        <code class="meta-code">[Ticket No.] [Project Name] [High Level Description] – CRP</code>
       </div>
     </div>
 
@@ -528,7 +514,7 @@ import PageHeader from '../../../components/PageHeader.astro';
       </div>
       <div class="meta-item">
         <span class="meta-label">Meeting Title</span>
-        <code class="meta-code">ECRP – [Ticket No.] [High Level Description]</code>
+        <code class="meta-code">[Ticket No.] [Project Name] [High Level Description] – CRP</code>
       </div>
     </div>
 
@@ -560,6 +546,129 @@ import PageHeader from '../../../components/PageHeader.astro';
         <div>
           <h5>Post-Deployment Presentation</h5>
           <p>Provided to clients <strong>after</strong> the deployment of a change request or enhancement feature to production.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Change Request Technical Discussion -->
+  <section class="sec">
+    <h2>Change Request Technical Discussion <span class="h2-abbr">CRTD</span></h2>
+
+    <div class="meeting-meta">
+      <div class="meta-item">
+        <span class="meta-label">Purpose</span>
+        <p>Discuss and align on the technical requirements and architectural decisions needed to implement the change request. Participants focus on technical feasibility, system design, data modeling, and the structural impact of the proposed changes.</p>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Meeting Setup</span>
+        <p>Scheduled after the Change Request Design Discussion (CRDD) and before development begins.</p>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Meeting Title</span>
+        <code class="meta-code">[Ticket No.] [Project Name] [High Level Description] – CRTD</code>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="participants-card">
+        <h4>Participants</h4>
+        <div class="participant-group">
+          <span class="p-badge p-badge--required">Required</span>
+          <div class="p-tags">
+            <span class="p-tag">Systems Engineers</span>
+            <span class="p-tag">UI/UX Engineers</span>
+          </div>
+        </div>
+        <div class="participant-group">
+          <span class="p-badge p-badge--optional">Optional</span>
+          <div class="p-tags">
+            <span class="p-tag">Systems Analysts</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="agenda-card">
+        <h4>Agenda Items</h4>
+        <ol class="agenda-list">
+          <li>Technical Scope Review</li>
+          <li>System Architecture Impact</li>
+          <li>Data Modeling</li>
+          <li>API &amp; Integration Requirements</li>
+          <li>Technical Constraints &amp; Risks</li>
+          <li>Implementation Approach</li>
+        </ol>
+      </div>
+    </div>
+
+    <h3 class="sub-heading">Agenda Item Explanations</h3>
+    <div class="explanation-list">
+      <div class="exp-item">
+        <div class="exp-title">Technical Scope Review</div>
+        <p>Review the requirements gathered from the CRRD and CRDD to confirm that the technical team has a complete and accurate understanding of what needs to be built. Any ambiguities or technical blockers are surfaced and resolved at this stage.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-title">System Architecture Impact</div>
+        <p>Assess how the change request affects the existing system architecture — including modules, services, and dependencies. Identify components that need to be created, modified, or deprecated to support the change.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-title">Data Modeling</div>
+        <p>Define or update the data structures required by the change request — including entities, relationships, attributes, and constraints. Class and Entity-Relationship (ERD) diagrams are produced to document the agreed data model.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-title">API &amp; Integration Requirements</div>
+        <p>Identify new or modified API endpoints, third-party integrations, and inter-service communication needed to support the change. Define request/response contracts and data exchange formats where applicable.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-title">Technical Constraints &amp; Risks</div>
+        <p>Surface technical limitations, performance considerations, security implications, and potential risks associated with the implementation. Agree on mitigation strategies before development begins.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-title">Implementation Approach</div>
+        <p>Agree on the technical approach, coding patterns, and standards to follow during implementation. This includes decisions on reusable components, libraries, frameworks, and any deviation from existing conventions that requires justification.</p>
+      </div>
+    </div>
+
+    <h3 class="sub-heading">Output</h3>
+    <div class="output-grid">
+      <div class="output-card">
+        <div class="output-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
+        <div>
+          <h5>Class Diagrams</h5>
+          <p>A structural diagram depicting the classes, their attributes, methods, and relationships within the system. Helps engineers understand the object-oriented design and how components interact with each other.</p>
+          <div class="tools-row">
+            <span class="tool-tag">Visio</span>
+            <span class="tool-tag">Lucid Chart</span>
+            <span class="tool-tag">Draw.io</span>
+          </div>
+        </div>
+      </div>
+      <div class="output-card">
+        <div class="output-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
+        <div>
+          <h5>ERD Diagrams</h5>
+          <p>An Entity-Relationship Diagram illustrating the data model — entities, their attributes, and the relationships between them. Serves as the blueprint for database schema design and ensures data integrity across the change.</p>
+          <div class="tools-row">
+            <span class="tool-tag">Visio</span>
+            <span class="tool-tag">Lucid Chart</span>
+            <span class="tool-tag">Draw.io</span>
+          </div>
+        </div>
+      </div>
+      <div class="output-card">
+        <div class="output-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div>
+          <h5>Updated Changelog</h5>
+          <p>Technical decisions, constraints, and the agreed implementation approach are documented in the changelog as a reference for developers throughout the implementation phase.</p>
+          <div class="tools-row">
+            <span class="tool-tag">OneNote</span>
+          </div>
         </div>
       </div>
     </div>
@@ -654,6 +763,11 @@ import PageHeader from '../../../components/PageHeader.astro';
   }
 
   .format-examples { display: flex; flex-direction: column; gap: 4px; }
+
+  .format-note {
+    font-size: 11px; font-weight: 500; color: var(--g3);
+    font-style: italic;
+  }
 
   /* ── Meeting meta ────────────────────────────────────────────────────── */
   .meeting-meta {

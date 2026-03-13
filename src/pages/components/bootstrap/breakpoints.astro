@@ -1,0 +1,231 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+
+const breakpoints = [
+  { name: 'Extra small', abbr: 'xs',   min: '0',        cls: '',       cols: 12, container: 'None (auto)',  note: 'Mobile-first base' },
+  { name: 'Small',       abbr: 'sm',   min: '≥600px',   cls: '-sm',    cols: 12, container: '735px',       note: 'Large phones' },
+  { name: 'Medium',      abbr: 'md',   min: '≥768px',   cls: '-md',    cols: 12, container: '959px',       note: 'Tablets' },
+  { name: 'Large',       abbr: 'lg',   min: '≥1024px',  cls: '-lg',    cols: 12, container: '1199px',      note: 'Small laptops' },
+  { name: 'X-Large',     abbr: 'xl',   min: '≥1280px',  cls: '-xl',    cols: 12, container: '1359px',      note: 'Laptops / desktops' },
+  { name: 'XX-Large',    abbr: 'xxl',  min: '≥1440px',  cls: '-xxl',   cols: 12, container: '1800px',      note: 'Wide screens' },
+  { name: 'XXX-Large',   abbr: 'xxxl', min: '≥1600px',  cls: '-xxxl',  cols: 12, container: '1800px',      note: 'Ultra-wide / 4K' },
+];
+---
+
+<BaseLayout title="Breakpoints" activeSection="components">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.voyadores.theme.min.css" />
+  </Fragment>
+
+  <PageHeader
+    eyebrow="Components / Bootstrap"
+    title="Breakpoints"
+    description="The VDS theme extends Bootstrap 5 with 7 breakpoints — adding xxxl at 1600px. All responsive utilities (grid, flex, display, spacing) support every breakpoint infix."
+  />
+
+  <!-- Reference table -->
+  <div class="csec">
+    <h2 class="csec-heading">Reference Table</h2>
+    <p class="csec-desc">All seven VDS breakpoints with their min-widths, class infixes, and container max-widths. Values differ from stock Bootstrap 5.</p>
+    <div class="demo">
+      <div class="demo-preview bs-scope" style="display:block;padding:0">
+        <table class="table table-bordered mb-0">
+          <thead class="table-dark">
+            <tr>
+              <th>Breakpoint</th>
+              <th>Abbr</th>
+              <th>Min width</th>
+              <th>Class infix</th>
+              <th>Container max-width</th>
+              <th style="color:#aaa;font-weight:400">Note</th>
+            </tr>
+          </thead>
+          <tbody>
+            {breakpoints.map((bp, i) => (
+              <tr class={i === 0 ? 'table-light' : ''}>
+                <td>{bp.name}</td>
+                <td><code>{bp.abbr}</code></td>
+                <td><code>{bp.min}</code></td>
+                <td>
+                  {bp.cls
+                    ? <code>{bp.cls}</code>
+                    : <span class="text-muted fst-italic">none (xs)</span>
+                  }
+                </td>
+                <td><code>{bp.container}</code></td>
+                <td style="font-size:12px;color:#888">{bp.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="bp-vars">CSS Variables</button>
+      </div>
+      <pre is:raw id="bp-vars"><code>/* VDS breakpoint CSS variables */
+:root {
+  --vds-breakpoint-xs:   0;
+  --vds-breakpoint-sm:   600px;
+  --vds-breakpoint-md:   768px;
+  --vds-breakpoint-lg:   1024px;
+  --vds-breakpoint-xl:   1280px;
+  --vds-breakpoint-xxl:  1440px;
+  --vds-breakpoint-xxxl: 1600px;
+}</code></pre>
+    </div>
+  </div>
+
+  <!-- Comparison: VDS vs Bootstrap -->
+  <div class="csec">
+    <h2 class="csec-heading">VDS vs Stock Bootstrap 5</h2>
+    <p class="csec-desc">VDS shifts breakpoints to better match modern device widths and adds a seventh tier for ultra-wide displays.</p>
+    <div class="demo">
+      <div class="demo-preview bs-scope" style="display:block;padding:0">
+        <table class="table table-bordered table-sm mb-0">
+          <thead class="table-dark">
+            <tr><th>Breakpoint</th><th>Stock Bootstrap 5</th><th>VDS Theme</th><th>Difference</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>xs</td><td><code>0</code></td><td><code>0</code></td><td class="text-muted">—</td></tr>
+            <tr><td>sm</td><td><code>576px</code></td><td><code class="text-warning">600px</code></td><td style="font-size:12px;color:#888">+24px</td></tr>
+            <tr><td>md</td><td><code>768px</code></td><td><code>768px</code></td><td class="text-muted">—</td></tr>
+            <tr><td>lg</td><td><code>992px</code></td><td><code class="text-warning">1024px</code></td><td style="font-size:12px;color:#888">+32px</td></tr>
+            <tr><td>xl</td><td><code>1200px</code></td><td><code class="text-warning">1280px</code></td><td style="font-size:12px;color:#888">+80px</td></tr>
+            <tr><td>xxl</td><td><code>1400px</code></td><td><code class="text-warning">1440px</code></td><td style="font-size:12px;color:#888">+40px</td></tr>
+            <tr class="table-success"><td>xxxl</td><td><span class="text-muted fst-italic">not in Bootstrap</span></td><td><code>1600px</code></td><td style="font-size:12px;color:#077d55;font-weight:600">VDS only</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Usage patterns -->
+  <div class="csec">
+    <h2 class="csec-heading">Usage Patterns</h2>
+    <p class="csec-desc">Append the infix <code>-{'{bp}'}</code> to most utility classes. xs has no infix — it's the default (mobile-first).</p>
+    <div class="demo">
+      <div class="demo-preview bs-scope" style="flex-direction:column;align-items:flex-start;gap:10px">
+        <div style="font-size:13px"><strong>Display</strong>: <code>d-none d-md-block</code> — hidden below md, visible md+</div>
+        <div style="font-size:13px"><strong>Flex direction</strong>: <code>flex-column flex-lg-row</code></div>
+        <div style="font-size:13px"><strong>Grid column</strong>: <code>col-12 col-md-6 col-lg-4 col-xl-3</code></div>
+        <div style="font-size:13px"><strong>Text align</strong>: <code>text-center text-md-start</code></div>
+        <div style="font-size:13px"><strong>Spacing (VDS scale)</strong>: <code>mt-3 mt-lg-6 mt-xxxl-8</code></div>
+        <div style="font-size:13px"><strong>Float</strong>: <code>float-none float-sm-end</code></div>
+        <div style="font-size:13px"><strong>Order</strong>: <code>order-last order-md-first</code></div>
+      </div>
+    </div>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="bp-usage">HTML</button>
+        <button class="cb-tab" data-tab="bp-css">CSS / SCSS</button>
+      </div>
+      <pre is:raw id="bp-usage"><code>&lt;!-- Responsive grid (all 7 tiers) --&gt;
+&lt;div class="row"&gt;
+  &lt;div class="col-12 col-sm-6 col-lg-4 col-xl-3 col-xxxl-2"&gt;Column&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Show/hide at breakpoints --&gt;
+&lt;div class="d-none d-md-block"&gt;Visible on md and up&lt;/div&gt;
+&lt;div class="d-md-none"&gt;Visible below md&lt;/div&gt;
+&lt;div class="d-none d-xxxl-block"&gt;Ultra-wide only&lt;/div&gt;
+
+&lt;!-- Responsive flex --&gt;
+&lt;div class="d-flex flex-column flex-lg-row gap-3 gap-lg-6"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      <pre is:raw id="bp-css" style="display:none"><code>/* Plain CSS media queries matching VDS breakpoints */
+@media (min-width: 600px)  { /* sm+  */ }
+@media (min-width: 768px)  { /* md+  */ }
+@media (min-width: 1024px) { /* lg+  */ }
+@media (min-width: 1280px) { /* xl+  */ }
+@media (min-width: 1440px) { /* xxl+ */ }
+@media (min-width: 1600px) { /* xxxl (VDS only) */ }
+
+/* Down (max-width is 1px below the breakpoint) */
+@media (max-width: 599.98px)  { /* below sm  */ }
+@media (max-width: 767.98px)  { /* below md  */ }
+@media (max-width: 1023.98px) { /* below lg  */ }
+
+/* SCSS mixins (Bootstrap API) */
+@include media-breakpoint-up(md)      { ... }
+@include media-breakpoint-down(lg)    { ... }
+@include media-breakpoint-only(xl)    { ... }
+@include media-breakpoint-between(md, xl) { ... }</code></pre>
+    </div>
+  </div>
+
+  <!-- Live responsive demo -->
+  <div class="csec">
+    <h2 class="csec-heading">Live Demo</h2>
+    <p class="csec-desc">Resize your browser to see columns reflow across VDS breakpoints: 1 col → 2 col (sm 600px) → 3 col (lg 1024px) → 4 col (xl 1280px).</p>
+    <div class="demo">
+      <div class="demo-preview bs-scope" style="display:block;padding:16px">
+        <div class="container-fluid">
+          <div class="row g-3">
+            {['1','2','3','4'].map(n => (
+              <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                <div class="p-4 bg-primary text-white rounded text-center" style="font-size:13px">
+                  col {n}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="bp-demo">HTML</button>
+      </div>
+      <pre is:raw id="bp-demo"><code>&lt;div class="row g-3"&gt;
+  &lt;div class="col-12 col-sm-6 col-lg-4 col-xl-3"&gt;...&lt;/div&gt;
+  &lt;div class="col-12 col-sm-6 col-lg-4 col-xl-3"&gt;...&lt;/div&gt;
+  &lt;div class="col-12 col-sm-6 col-lg-4 col-xl-3"&gt;...&lt;/div&gt;
+  &lt;div class="col-12 col-sm-6 col-lg-4 col-xl-3"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+&lt;!--
+  xs  (&lt;600px):  1 column  (col-12)
+  sm  (≥600px):  2 columns (col-sm-6)
+  lg  (≥1024px): 3 columns (col-lg-4)
+  xl  (≥1280px): 4 columns (col-xl-3)
+--&gt;</code></pre>
+    </div>
+  </div>
+
+  <script is:inline src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelectorAll('.cb-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        const block  = btn.closest('.code-block');
+        block.querySelectorAll('.cb-tab').forEach(b => b.classList.remove('is-on'));
+        block.querySelectorAll('pre').forEach(p => p.style.display = 'none');
+        btn.classList.add('is-on');
+        const pre = document.getElementById(target);
+        if (pre) pre.style.display = '';
+      });
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  .csec { margin-bottom: 56px; }
+  .csec-heading { font-size: 16px; font-weight: 700; color: var(--black); margin: 0 0 8px; letter-spacing: -.01em; }
+  .csec-desc { font-size: 13px; font-weight: 400; color: var(--g2); line-height: 1.7; margin-bottom: 16px; }
+  .csec-desc code { font-family: var(--mono); font-size: .875em; background: var(--g5); padding: 1px 5px; border-radius: 3px; color: var(--g1); }
+  .demo { margin-bottom: 16px; }
+  .demo-preview { display: flex; flex-wrap: wrap; gap: 8px; padding: 28px; border: 1px solid var(--g5); border-radius: 4px; background: var(--white); align-items: center; }
+  .code-block { background: #111; border-radius: 4px; overflow: hidden; }
+  .cb-tabs { display: flex; border-bottom: 1px solid #2a2a2a; padding: 0 16px; }
+  .cb-tab { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: #666; background: none; border: none; padding: 10px 14px; border-bottom: 2px solid transparent; transition: color .12s, border-color .12s; }
+  .cb-tab:hover { color: #ccc; }
+  .cb-tab.is-on { color: var(--brand); border-bottom-color: var(--brand); }
+  .code-block pre { margin: 0; padding: 20px 24px; overflow-x: auto; }
+  .code-block code { font-family: var(--mono); font-size: 12.5px; color: #e8e8e8; line-height: 1.85; white-space: pre; }
+  .bs-scope * { cursor: auto !important; }
+  .bs-scope { font-family: var(--vds-font-sans-serif, "Lexend", sans-serif); }
+</style>

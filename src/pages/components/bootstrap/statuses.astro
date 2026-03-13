@@ -1,0 +1,299 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+---
+
+<BaseLayout title="Statuses" activeSection="components">
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.voyadores.theme.min.css" />
+  </Fragment>
+
+  <PageHeader
+    eyebrow="Components / Bootstrap"
+    title="Statuses"
+    description="Use .status-{color} for small circular indicators. All VDS color tokens are available. Combine with avatars, table rows, or list items to show presence, health, or state."
+  />
+
+  <!-- Semantic variants (most common) -->
+  <div class="csec">
+    <h2 class="csec-heading">Semantic Variants</h2>
+    <p class="csec-desc">The most commonly used status colors mapped to semantic meanings. Each renders as a 0.875rem filled circle inline.</p>
+    <div class="demo">
+      <div class="demo-preview bs-scope" style="flex-direction:column;align-items:flex-start;gap:12px">
+        {[
+          ['status-green',     'Online / Active',   'Use for success, confirmed, live states'],
+          ['status-red',       'Offline / Error',   'Use for failure, blocked, critical states'],
+          ['status-yellow',    'Away / Pending',    'Use for caution, in-progress, waiting'],
+          ['status-blue',      'Info / In Review',  'Use for informational or review states'],
+          ['status-gray',      'Inactive / Draft',  'Use for neutral, disabled, archived'],
+          ['status-orange',    'Warning / Urgent',  'Use for elevated warnings'],
+        ].map(([cls, label, note]) => (
+          <div style="display:flex;align-items:center;gap:10px">
+            <span class={cls}></span>
+            <span style="font-size:13px;min-width:160px"><code>.{cls}</code></span>
+            <span style="font-size:13px;color:#555">{label}</span>
+            <span style="font-size:12px;color:#aaa">— {note}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="st-semantic">HTML</button>
+      </div>
+      <pre is:raw id="st-semantic"><code>&lt;span class="status-green"&gt;&lt;/span&gt;   &lt;!-- Online / Active --&gt;
+&lt;span class="status-red"&gt;&lt;/span&gt;     &lt;!-- Offline / Error --&gt;
+&lt;span class="status-yellow"&gt;&lt;/span&gt;  &lt;!-- Away / Pending --&gt;
+&lt;span class="status-blue"&gt;&lt;/span&gt;    &lt;!-- Info / In Review --&gt;
+&lt;span class="status-gray"&gt;&lt;/span&gt;    &lt;!-- Inactive / Draft --&gt;
+&lt;span class="status-orange"&gt;&lt;/span&gt;  &lt;!-- Warning / Urgent --&gt;</code></pre>
+    </div>
+  </div>
+
+  <!-- Full color palette -->
+  <div class="csec">
+    <h2 class="csec-heading">All Color Variants</h2>
+    <p class="csec-desc">Every VDS color token has a corresponding <code>.status-{'{color}'}</code> class. These map directly to VDS brand color values.</p>
+    <div class="demo">
+      <div class="demo-preview bs-scope" style="flex-wrap:wrap;gap:16px 24px">
+        {[
+          ['status-blue',      '#186ade'],
+          ['status-indigo',    '#545fe8'],
+          ['status-purple',    '#8f49de'],
+          ['status-pink',      '#cc1d92'],
+          ['status-red',       '#d91f11'],
+          ['status-orange',    '#e86427'],
+          ['status-yellow',    '#f5c518'],
+          ['status-green',     '#077d55'],
+          ['status-teal',      '#167b7d'],
+          ['status-cyan',      '#067a91'],
+          ['status-black',     '#000000'],
+          ['status-white',     '#ffffff'],
+          ['status-gray',      '#6a6a6a'],
+          ['status-luminous-orange-500', '#f7921e'],
+        ].map(([cls, hex]) => (
+          <div style="display:flex;align-items:center;gap:8px">
+            <span class={cls} style={cls === 'status-white' ? 'border:1px solid #ddd' : ''}></span>
+            <span style="font-size:12px;font-family:monospace">.{cls}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="st-all">HTML</button>
+      </div>
+      <pre is:raw id="st-all"><code>&lt;span class="status-blue"&gt;&lt;/span&gt;
+&lt;span class="status-indigo"&gt;&lt;/span&gt;
+&lt;span class="status-purple"&gt;&lt;/span&gt;
+&lt;span class="status-pink"&gt;&lt;/span&gt;
+&lt;span class="status-red"&gt;&lt;/span&gt;
+&lt;span class="status-orange"&gt;&lt;/span&gt;
+&lt;span class="status-yellow"&gt;&lt;/span&gt;
+&lt;span class="status-green"&gt;&lt;/span&gt;
+&lt;span class="status-teal"&gt;&lt;/span&gt;
+&lt;span class="status-cyan"&gt;&lt;/span&gt;
+&lt;span class="status-gray"&gt;&lt;/span&gt;
+&lt;span class="status-black"&gt;&lt;/span&gt;
+&lt;span class="status-white"&gt;&lt;/span&gt;
+&lt;span class="status-luminous-orange-500"&gt;&lt;/span&gt;</code></pre>
+    </div>
+  </div>
+
+  <!-- Inline with text -->
+  <div class="csec">
+    <h2 class="csec-heading">Inline with Labels</h2>
+    <p class="csec-desc">Use status indicators inline alongside text labels for status columns or lists.</p>
+    <div class="demo">
+      <div class="demo-preview bs-scope" style="flex-direction:column;align-items:flex-start;gap:10px">
+        {[
+          ['status-green',  'Active'],
+          ['status-yellow', 'Pending'],
+          ['status-red',    'Inactive'],
+          ['status-gray',   'Draft'],
+          ['status-blue',   'In Review'],
+          ['status-orange', 'Urgent'],
+        ].map(([cls, label]) => (
+          <span style="display:inline-flex;align-items:center;gap:7px;font-size:13px">
+            <span class={cls}></span> {label}
+          </span>
+        ))}
+      </div>
+    </div>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="st-inline">HTML</button>
+      </div>
+      <pre is:raw id="st-inline"><code>&lt;span style="display:inline-flex;align-items:center;gap:7px"&gt;
+  &lt;span class="status-green"&gt;&lt;/span&gt; Active
+&lt;/span&gt;
+&lt;span style="display:inline-flex;align-items:center;gap:7px"&gt;
+  &lt;span class="status-yellow"&gt;&lt;/span&gt; Pending
+&lt;/span&gt;
+&lt;span style="display:inline-flex;align-items:center;gap:7px"&gt;
+  &lt;span class="status-red"&gt;&lt;/span&gt; Inactive
+&lt;/span&gt;</code></pre>
+    </div>
+  </div>
+
+  <!-- In a table -->
+  <div class="csec">
+    <h2 class="csec-heading">In a Table</h2>
+    <p class="csec-desc">Status indicators in a data table alongside user rows.</p>
+    <div class="demo">
+      <div class="demo-preview bs-scope" style="display:block;padding:0">
+        <table class="table table-hover mb-0">
+          <thead class="table-light">
+            <tr><th>Name</th><th>Role</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alice Santos</td><td>Designer</td>
+              <td><span style="display:inline-flex;align-items:center;gap:6px"><span class="status-green"></span> Active</span></td>
+            </tr>
+            <tr>
+              <td>Bob Cruz</td><td>Developer</td>
+              <td><span style="display:inline-flex;align-items:center;gap:6px"><span class="status-yellow"></span> Away</span></td>
+            </tr>
+            <tr>
+              <td>Carol Reyes</td><td>Analyst</td>
+              <td><span style="display:inline-flex;align-items:center;gap:6px"><span class="status-red"></span> Offline</span></td>
+            </tr>
+            <tr>
+              <td>Dan Lim</td><td>QA</td>
+              <td><span style="display:inline-flex;align-items:center;gap:6px"><span class="status-gray"></span> Inactive</span></td>
+            </tr>
+            <tr>
+              <td>Eva Torres</td><td>PM</td>
+              <td><span style="display:inline-flex;align-items:center;gap:6px"><span class="status-blue"></span> In Review</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="st-table">HTML</button>
+      </div>
+      <pre is:raw id="st-table"><code>&lt;td&gt;
+  &lt;span style="display:inline-flex;align-items:center;gap:6px"&gt;
+    &lt;span class="status-green"&gt;&lt;/span&gt; Active
+  &lt;/span&gt;
+&lt;/td&gt;</code></pre>
+    </div>
+  </div>
+
+  <!-- Badge-style status -->
+  <div class="csec">
+    <h2 class="csec-heading">Badge Chips</h2>
+    <p class="csec-desc">Combine with Bootstrap badges for pill-style status chips. Use Bootstrap's <code>bg-{'{color}'}-subtle</code> and <code>text-{'{color}'}-emphasis</code> utilities.</p>
+    <div class="demo">
+      <div class="demo-preview bs-scope">
+        <span class="badge rounded-pill bg-success-subtle text-success-emphasis d-inline-flex align-items-center gap-1" style="font-size:.75rem;padding:.35em .7em">
+          <span class="status-green" style="width:.6rem;height:.6rem"></span> Active
+        </span>
+        <span class="badge rounded-pill bg-warning-subtle text-warning-emphasis d-inline-flex align-items-center gap-1" style="font-size:.75rem;padding:.35em .7em">
+          <span class="status-yellow" style="width:.6rem;height:.6rem"></span> Pending
+        </span>
+        <span class="badge rounded-pill bg-danger-subtle text-danger-emphasis d-inline-flex align-items-center gap-1" style="font-size:.75rem;padding:.35em .7em">
+          <span class="status-red" style="width:.6rem;height:.6rem"></span> Inactive
+        </span>
+        <span class="badge rounded-pill bg-secondary-subtle text-secondary-emphasis d-inline-flex align-items-center gap-1" style="font-size:.75rem;padding:.35em .7em">
+          <span class="status-gray" style="width:.6rem;height:.6rem"></span> Draft
+        </span>
+        <span class="badge rounded-pill bg-info-subtle text-info-emphasis d-inline-flex align-items-center gap-1" style="font-size:.75rem;padding:.35em .7em">
+          <span class="status-blue" style="width:.6rem;height:.6rem"></span> In Review
+        </span>
+      </div>
+    </div>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="st-badge">HTML</button>
+      </div>
+      <pre is:raw id="st-badge"><code>&lt;span class="badge rounded-pill bg-success-subtle text-success-emphasis
+             d-inline-flex align-items-center gap-1"&gt;
+  &lt;span class="status-green" style="width:.6rem;height:.6rem"&gt;&lt;/span&gt;
+  Active
+&lt;/span&gt;
+
+&lt;span class="badge rounded-pill bg-warning-subtle text-warning-emphasis
+             d-inline-flex align-items-center gap-1"&gt;
+  &lt;span class="status-yellow" style="width:.6rem;height:.6rem"&gt;&lt;/span&gt;
+  Pending
+&lt;/span&gt;
+
+&lt;span class="badge rounded-pill bg-danger-subtle text-danger-emphasis
+             d-inline-flex align-items-center gap-1"&gt;
+  &lt;span class="status-red" style="width:.6rem;height:.6rem"&gt;&lt;/span&gt;
+  Inactive
+&lt;/span&gt;</code></pre>
+    </div>
+  </div>
+
+  <!-- Custom sizes -->
+  <div class="csec">
+    <h2 class="csec-heading">Custom Sizes</h2>
+    <p class="csec-desc">Override the default 0.875rem size using inline <code>width</code> and <code>height</code> styles.</p>
+    <div class="demo">
+      <div class="demo-preview bs-scope" style="align-items:center;gap:16px">
+        {[
+          ['6px',  '6px'],
+          ['10px', '10px'],
+          ['14px', '14px (default)'],
+          ['20px', '20px'],
+          ['28px', '28px'],
+        ].map(([sz, label]) => (
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+            <span class="status-green" style={`width:${sz};height:${sz}`}></span>
+            <span style="font-size:10px;color:#888;font-family:monospace">{label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="code-block">
+      <div class="cb-tabs">
+        <button class="cb-tab is-on" data-tab="st-size">HTML</button>
+      </div>
+      <pre is:raw id="st-size"><code>&lt;span class="status-green" style="width:6px;height:6px"&gt;&lt;/span&gt;
+&lt;span class="status-green" style="width:10px;height:10px"&gt;&lt;/span&gt;
+&lt;span class="status-green"&gt;&lt;/span&gt; &lt;!-- default 0.875rem --&gt;
+&lt;span class="status-green" style="width:20px;height:20px"&gt;&lt;/span&gt;</code></pre>
+    </div>
+  </div>
+
+  <script is:inline src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelectorAll('.cb-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        const block  = btn.closest('.code-block');
+        block.querySelectorAll('.cb-tab').forEach(b => b.classList.remove('is-on'));
+        block.querySelectorAll('pre').forEach(p => p.style.display = 'none');
+        btn.classList.add('is-on');
+        const pre = document.getElementById(target);
+        if (pre) pre.style.display = '';
+      });
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  .csec { margin-bottom: 56px; }
+  .csec-heading {
+    font-size: 16px; font-weight: 700; color: var(--black);
+    margin: 0 0 8px; letter-spacing: -.01em;
+  }
+  .csec-desc { font-size: 13px; font-weight: 400; color: var(--g2); line-height: 1.7; margin-bottom: 16px; }
+  .csec-desc code { font-family: var(--mono); font-size: .875em; background: var(--g5); padding: 1px 5px; border-radius: 3px; color: var(--g1); }
+  .demo { margin-bottom: 16px; }
+  .demo-preview { display: flex; flex-wrap: wrap; gap: 8px; padding: 28px; border: 1px solid var(--g5); border-radius: 4px; background: var(--white); align-items: center; }
+  .code-block { background: #111; border-radius: 4px; overflow: hidden; }
+  .cb-tabs { display: flex; border-bottom: 1px solid #2a2a2a; padding: 0 16px; }
+  .cb-tab { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: #666; background: none; border: none; padding: 10px 14px; border-bottom: 2px solid transparent; transition: color .12s, border-color .12s; }
+  .cb-tab:hover { color: #ccc; }
+  .cb-tab.is-on { color: var(--brand); border-bottom-color: var(--brand); }
+  .code-block pre { margin: 0; padding: 20px 24px; overflow-x: auto; }
+  .code-block code { font-family: var(--mono); font-size: 12.5px; color: #e8e8e8; line-height: 1.85; white-space: pre; }
+  .bs-scope * { cursor: auto !important; }
+  .bs-scope { font-family: var(--vds-font-sans-serif, "Lexend", sans-serif); }
+</style>
