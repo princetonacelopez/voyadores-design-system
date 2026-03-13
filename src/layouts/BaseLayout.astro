@@ -1,5 +1,7 @@
 ---
 import Sidebar from '../components/Sidebar.astro';
+import Analytics from '@vercel/analytics/astro';
+import SpeedInsights from "@vercel/speed-insights/astro";
 
 interface Props {
   title: string;
@@ -72,8 +74,10 @@ const ogTitle    = 'Voyadores Design System';
 
     <!-- Page-specific head content -->
     <slot name="head" />
+    <Analytics />
   </head>
   <body>
+    <SpeedInsights />
     <!-- Modern inversion cursor -->
     <div class="c-cursor" id="c-cursor"></div>
 
