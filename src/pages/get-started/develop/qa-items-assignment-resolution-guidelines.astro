@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeader from '../../../components/PageHeader.astro';
+---
+
+<BaseLayout title="QA Items Assignment and Resolution Guidelines">
+  <PageHeader
+    eyebrow="Get Started — Develop"
+    title="QA Items Assignment and Resolution Guidelines"
+    description="Guidelines to simplify and clarify the collection, identification, and assignment of QA items."
+  />
+
+  <section class="sec">
+    <h2>Guidelines</h2>
+    <p class="body-text">
+      This guideline aims to provide guidance and to simplify with clarity the collection, identification, and
+      assignment of QA items by the QA to the developer. QA items are issues raised after a Development Change.
+      Development Changes can be new application or additional features. QA items can be sourced from a QA, client,
+      and/or any concerned party.
+    </p>
+
+    <p class="body-text">
+      Once QA items are received, a QA file must be created. QA file should reside to a directory local to its
+      project workspace and agreed upon by involved parties. A QA file should only contain items specific to the
+      project. It should follow the following conventions:
+    </p>
+
+    <h3>File Format and Tab Structure</h3>
+    <h4>Filename</h4>
+    <p class="body-text">
+      <strong>Format:</strong> QA-Project Name-Version<br />
+      <strong>Example:</strong> QA-eBilling-2.0
+    </p>
+
+    <h4>Tabs</h4>
+    <p class="body-text">
+      <strong>Tabname:</strong> Current Project Version
+    </p>
+    <h5>Version</h5>
+    <h6>Major version</h6>
+    <ul class="body-text">
+      <li>This requires a new QA file spreadsheet</li>
+    </ul>
+    <h6>Minor version</h6>
+    <ul class="body-text">
+      <li>New tab from the major version of the QA file</li>
+    </ul>
+
+    <h4>Columns</h4>
+    <p class="body-text">This are the required columns for the QA file.</p>
+    <ul class="body-text">
+      <li>Function</li>
+      <li>Sub-Function</li>
+      <li>Description of Feedback/Issues</li>
+      <li>Screenshot</li>
+      <li>Remarks</li>
+      <li>Assigned To</li>
+    </ul>
+
+    <h3>Updating</h3>
+    <p class="body-text">Assignment of items are agreed upon the team</p>
+    <p class="body-text">Once items are assigned, developers should follow the following steps</p>
+
+    <h3>Color Coding Standard</h3>
+    <p class="body-text">Below is the color scheme for updating the status of items in the QA file</p>
+    <ul class="body-text">
+      <li><strong>White/No Color:</strong> Indicates an OPEN item</li>
+      <li><strong>Orange:</strong> Indicates an item that is currently ON GOING fix by the developer</li>
+      <li><strong>Green:</strong> Indicates a PASSED item</li>
+      <li><strong>Red:</strong> Denotes a FAILED item</li>
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .sec { margin-bottom: 72px; }
+
+  .sec h2 {
+    font-size: 20px; font-weight: 600; letter-spacing: -.4px; color: var(--black);
+    margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--g5);
+  }
+
+  .sec h3 {
+    font-size: 18px; font-weight: 600; letter-spacing: -.3px; color: var(--black);
+    margin-top: 36px; margin-bottom: 16px;
+  }
+
+  .sec h4 {
+    font-size: 16px; font-weight: 600; letter-spacing: -.2px; color: var(--black);
+    margin-top: 28px; margin-bottom: 12px;
+  }
+
+  .sec h5 {
+    font-size: 15px; font-weight: 600; letter-spacing: -.1px; color: var(--black);
+    margin-top: 24px; margin-bottom: 10px;
+  }
+
+  .sec h6 {
+    font-size: 14px; font-weight: 600; color: var(--black);
+    margin-top: 20px; margin-bottom: 8px;
+  }
+
+  .body-text {
+    font-size: 14px; font-weight: 500; color: var(--g1); line-height: 1.7;
+    max-width: 680px; margin-bottom: 16px;
+  }
+
+  .body-text strong {
+    font-weight: 700;
+  }
+
+  .body-text ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 16px;
+  }
+
+  .body-text ul li {
+    margin-bottom: 8px;
+  }
+</style>
