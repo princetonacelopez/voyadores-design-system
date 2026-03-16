@@ -1,5 +1,5 @@
 ---
-title: "View Model"
+title: "View Model Base Class"
 version: "1.0.0"
 files: "`content/js/application/application.view-model.js`"
 author: "Network Economic Services Ventures Philippines, Inc."

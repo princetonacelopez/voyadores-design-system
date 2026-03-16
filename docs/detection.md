@@ -1,5 +1,5 @@
 ---
-title: "Browser Detection"
+title: "Browser and Timezone Detection"
 version: "1.0.0"
 files: "`content/js/application/application.detection.js` · `content/css/application/application.detection.css`"
 author: "Network Economic Services Ventures Philippines, Inc."

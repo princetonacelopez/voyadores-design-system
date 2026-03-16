@@ -1,5 +1,5 @@
 ---
-title: "Request And Uri"
+title: "Request And URI"
 version: "1.0.0"
 files: "`content/js/application/application.request.js` · `content/js/application/application.uri.js`"
 author: "Network Economic Services Ventures Philippines, Inc."
